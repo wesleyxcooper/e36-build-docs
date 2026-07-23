@@ -1,12 +1,12 @@
 Phase,Category,Item,Detail,Price Low,Price High,Interval / Action,Notes
-Phase 4,CAN-Bus,Engine RPM / TPS,MaxxECU native 8HP CAN output,,,No separate TCU — MaxxECU sends RPM and TPS directly to 8HP via CAN. Essential for shift logic and line pressure scaling.
-Phase 4,CAN-Bus,Torque Request,8HP → MaxxECU CAN input,,,Triggers ignition cut/retard during shifts to protect 8HP internals
-Phase 4,CAN-Bus,Gear Position,8HP → MaxxECU CAN input,,,Allows gear-dependent boost control and digital dash display
-Phase 4,CAN-Bus,Trans Temp,8HP → MaxxECU CAN input,,,Safety limiter - triggers limp mode if fluid exceeds 120°C
-Phase 4,Tuning,M5x Base Tune,Initial MaxxECU map — M52 pump gas + flex fuel,800,1200,,Full standalone tune: VE table, ignition table, idle, flex fuel scaling. Pump gas + E85 in one map. Estimate — confirm with tuner.
+Phase 4,CAN-Bus,Engine RPM / TPS,MaxxECU native 8HP CAN output,,,No separate TCU — MaxxECU sends RPM and TPS directly to 8HP via CAN. Essential for shift logic and line pressure scaling.,
+Phase 4,CAN-Bus,Torque Request,8HP → MaxxECU CAN input,,,Triggers ignition cut/retard during shifts to protect 8HP internals,
+Phase 4,CAN-Bus,Gear Position,8HP → MaxxECU CAN input,,,Allows gear-dependent boost control and digital dash display,
+Phase 4,CAN-Bus,Trans Temp,8HP → MaxxECU CAN input,,,Safety limiter - triggers limp mode if fluid exceeds 120°C,
+Phase 4,Tuning,M5x Base Tune,Initial MaxxECU map — M52 pump gas + flex fuel,800,1200,,Full standalone tune: VE table
 Phase 4,Tuning,Engine Break-In,Run mineral-based oil - limit to 4000 RPM,60,80,,First 500 miles. Cheap mineral oil only — do not run synthetic during break-in.
 Phase 4,Tuning,Transmission Calibration,MaxxECU 8HP shift pressure and solenoid timing,0,0,,Included in MaxxECU 8HP CAN control. No separate TCU calibration cost.
-Phase 4,Tuning,07K Base Tune,MaxxECU remap for 07K — pump gas + flex fuel + boost,1200,1800,,Full retune on 07K: new VE/ignition tables, boost targets, flex fuel re-scaling, injector deadtimes. Estimate — confirm with tuner.
+Phase 4,Tuning,07K Base Tune,MaxxECU remap for 07K — pump gas + flex fuel + boost,1200,1800,,Full retune on 07K: new VE/ignition tables
 Phase 4,Tuning,High-RPM Validation,Verify 07K valvetrain stability to 9000 RPM on dyno,0,0,,Included in 07K tune session. Separate session only if issues arise.
 Phase 4,Tuning,Flex Fuel Mapping,Included in both M5x and 07K tune sessions,0,0,,MaxxECU single-map flex fuel — no separate tune file needed. Calibrate ethanol sensor + blend tables during primary tune session.
 Phase 4,Maintenance,Engine Oil (07K),Motul 300V 15W50 (High Zinc),80,95,,3000 miles street / 3 track days
