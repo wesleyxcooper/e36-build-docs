@@ -481,6 +481,10 @@
 
 ### Coolant System  [COOLANT]
 - [ ] ✅ Route and connect custom 07K coolant hoses (measure in-car before ordering lengths)
+  - **Reference:** [alliedcam1 — 07K Coolant Line Overview (YouTube)](https://www.youtube.com/watch?v=sCYZoCULSXo) — best longitudinal 07K coolant routing walkthrough available. [Routing diagram](https://photos.app.goo.gl/dAAYu7NJUUTBheyb8) | [Rennlist p138 coolant guide](https://rennlist.com/forums/944-turbo-and-turbo-s-forum/803341-vw-audi-07k-2-5l-20v-i5-swap-thread-138.html)
+  - **Heater valve:** GM 12380318 (4-port inline heater valve) — used in 944 07K swaps, approach is directly portable. Routes cabin heat inline without a separate shutoff. Source on Amazon.
+  - **Hose sizes:** 5/8" and 3/4" bulk coolant hose + formed elbows (90°/180°). Dorman 56152 heater fittings for firewall barb adapters. HPS HTSEC180-075-BLK silicone 180° elbow (3/4"). 5/16" vent line to reservoir. URO 032121142 C-clip for hose flange retention.
+  - > ⚠️ **Pitfall:** Specific hose part numbers from 944 builds (Dayco 72193/72365, Gates 22503/20416) are 944-chassis-specific — measure E36 routing with engine in car before ordering. Use those as diameter/type reference only, not direct part numbers.
 
 ### Oil System  [OIL]
 - [ ] ✅ iABED baffled oil pan — pre-installed during Phase 2 engine build; no Phase 3 action required
