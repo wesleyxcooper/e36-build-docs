@@ -85,14 +85,8 @@ function syncSheet(ss, csvFile, sheetName) {
   const dataRows = parseCsvRobust(response.getContentText()).slice(1); // drop header
   if (dataRows.length === 0) return "no data rows";
 
-  const totalRowIndex = findTotalRow(sheet);
   const firstDataRow = HEADER_ROWS + 1;
-  const lastDataRow  = totalRowIndex > 0 ? totalRowIndex - 1 : sheet.getLastRow();
-  const sheetCols    = sheet.getLastColumn();
-
-  if (lastDataRow >= firstDataRow) {
-    sheet.getRange(firstDataRow, 1, lastDataRow - firstDataRow + 1, sheetCols).clearContent();
-  }
+  let totalRowIndex = findTotalRow(sheet);
 
   // Normalize all rows to same width before writing
   const maxCols = Math.max(...dataRows.map(r => r.length));
@@ -101,9 +95,28 @@ function syncSheet(ss, csvFile, sheetName) {
     return r.slice(0, maxCols);
   });
 
-  const writeCount = totalRowIndex > 0 ? Math.min(normalized.length, totalRowIndex - firstDataRow) : normalized.length;
-  sheet.getRange(firstDataRow, 1, writeCount, maxCols).setValues(normalized.slice(0, writeCount));
-  return `${writeCount} rows written`;
+  if (totalRowIndex > 0) {
+    const currentSlots = totalRowIndex - firstDataRow; // rows available before totals
+    const needed = normalized.length;
+    if (needed > currentSlots) {
+      // Insert rows before totals row so it moves down — Sheets auto-adjusts SUM ranges
+      sheet.insertRowsBefore(totalRowIndex, needed - currentSlots);
+      totalRowIndex += (needed - currentSlots);
+    } else if (needed < currentSlots) {
+      // Delete surplus rows above totals row
+      sheet.deleteRows(firstDataRow + needed, currentSlots - needed);
+      totalRowIndex -= (currentSlots - needed);
+    }
+  }
+
+  // Clear and rewrite data section
+  const lastDataRow = totalRowIndex > 0 ? totalRowIndex - 1 : sheet.getLastRow();
+  if (lastDataRow >= firstDataRow) {
+    sheet.getRange(firstDataRow, 1, lastDataRow - firstDataRow + 1, sheet.getLastColumn()).clearContent();
+  }
+
+  sheet.getRange(firstDataRow, 1, normalized.length, maxCols).setValues(normalized);
+  return `${normalized.length} rows written`;
 }
 
 // ============================================================
