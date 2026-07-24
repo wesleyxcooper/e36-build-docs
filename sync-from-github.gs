@@ -48,8 +48,14 @@ function exportAllToGoogleDrive() {
   }
 
   const msg = results.join("\n") + "\n\nFolder: " + folder.getUrl();
-  Logger.log(msg);
-  SpreadsheetApp.getUi().alert("Export complete:\n\n" + msg);
+  notify_("Export complete:\n\n" + msg);
+}
+
+// Always log; only alert if a UI is available (manual run).
+// Time-based triggers have no UI — calling getUi() from one throws.
+function notify_(message) {
+  Logger.log(message);
+  try { SpreadsheetApp.getUi().alert(message); } catch (_) {}
 }
 
 // ============================================================
@@ -68,8 +74,7 @@ function syncAllFromGitHub() {
     }
   }
 
-  Logger.log(results.join("\n"));
-  SpreadsheetApp.getUi().alert("Sync complete:\n\n" + results.join("\n"));
+  notify_("Sync complete:\n\n" + results.join("\n"));
 }
 
 function syncSheet(ss, csvFile, sheetName) {
