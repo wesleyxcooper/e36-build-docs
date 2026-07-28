@@ -73,9 +73,11 @@ Flow formed. Closest match to current fitment of any option on this list. Ball s
 
 **19.4 lbs · ~$230/ea · 60° Conical · +0.6mm protrusion**
 
-5x112 ✓. Made in Japan, Spec-E certified (tougher than JWL). Best weight-per-dollar on this list. **72.6mm center bore** — unlike the other 66.6mm wheels here, this needs inexpensive 66.5→72.6mm hub rings (~$15/set). Available in F1 Silver or Hyper Black.
+⚠️ **5x112 is NOT a factory Enkei offering** — the NT03+M is only manufactured in 5x114.3, 5x100, 5x108, and 5x120. The 5x112 listing on 5x112.com is a custom-redrilled 5x114.3 casting. This is structurally acceptable (lug holes are re-machined) but is not factory spec. If you want factory 5x112 in this price range, use the Konig Heliogram instead.
 
-[Buy at Enkei](https://enkei.com/shop/wheels/racing/nt03m/) · [5x112.com listing](https://5x112.com/enkei-nt03-m-silver-18x9-5-40-custom-drill)
+Made in Japan, Spec-E certified (tougher than JWL). Best weight-per-dollar on this list if custom drill is acceptable. **72.6mm center bore** — needs inexpensive 66.5→72.6mm hub rings (~$15/set). Available in F1 Silver or Hyper Black.
+
+[Enkei product page](https://enkei.com/shop/wheels/racing/nt03m/) · [5x112.com custom drill listing](https://5x112.com/enkei-nt03-m-silver-18x9-5-40-custom-drill)
 
 ---
 
@@ -131,7 +133,7 @@ The Macan 4-pot sits on a **345mm rotor** (30mm smaller diameter than B9 RS5). T
 Standard 18" wheels have inner barrel IDs in the **420–455mm range**, so **barrel diameter is not the limiting constraint** for the Macan 4-pot on 18" wheels. The actual constraint is always axial/spoke geometry (the 46mm forward protrusion of the caliper body).
 
 Confirmed 18" wheels for **B9 RS5 6-piston** on B8 S4 (barrel ID ≥ 420mm confirmed):
-- **Enkei GTC02 18"** — available in 5x112 / 66.5mm CB, direct fit
+- **Enkei GTC02** — factory 5x112 / 66.5mm CB, direct fit. 18x9.5 ET45: **20.79 lbs** (Enkei spec). 19x9.5 available in ET27/ET40/ET45 (Enkei doesn't publish 19" weights, est. ~21.5–22.5 lbs). ET45 in either size = 75.7mm protrusion, −4.5mm vs current. FI-reported weight of ~30 lbs is incorrect.
 - **Neuspeed RSe10 18"** (Brokevw31, same post) — ⚠️ standard sizing is 57.1mm CB which **cannot fit** a 66.5mm hub (hub is larger than bore — no ring solution). Only the **18x9 ET40 / 66.5mm CB** Audi-specific variant is compatible with the B8 S4.
 These also clear the Macan by definition since it's a smaller caliper.
 
@@ -206,6 +208,31 @@ Hub bore: B8 S4 is 66.5mm — **direct fit** for all 66.6mm center bore wheels l
 ---
 
 ## 4. Additional Researched Options
+
+### Enkei GTC02 · 18x9.5 / 19x9.5 · Flow Formed (MAT) · 5x112 / 66.5mm CB
+
+![Enkei GTC02](https://enkei.com/wp-content/uploads/2021/06/GTC02-HS-2.png)
+
+**18x9.5 ET45: 20.79 lbs (Enkei spec) · 19x9.5: est. ~21.5–22.5 lbs · 60° Conical · Direct fit 66.5mm CB**
+
+Factory 5x112 / 66.5mm CB — no hub rings needed. Confirmed to clear B9 RS5 Akebono 6-piston on B8 S4 (Audizine, user Brokevw31). Clears Macan 4-pot by definition since it's a smaller caliper.
+
+5x112 size matrix (weights from Enkei spec table; 19" weights not published by Enkei):
+
+| Size | ET | Weight | Protrusion | Δ vs 034 |
+|---|---|---|---|---|
+| 18x9.5 | 45 | **20.79 lbs** | 75.7mm | −4.5mm |
+| 19x9.5 | 45 | est. ~22 lbs | 75.7mm | −4.5mm |
+| 19x9.5 | 40 | est. ~22 lbs | 80.7mm | ≈ 0mm |
+| 19x9.5 | 27 | est. ~22 lbs | 93.7mm | ⚠️ +13.5mm |
+
+ET27 in 19x9.5 is too aggressive for street. ET40 or ET45 are the practical choices.
+
+Note on FI weight: Fitment Industries lists the GTC02 at ~30 lbs — this is incorrect by ~9 lbs. Use Enkei's own spec table for accurate weights.
+
+[Buy at Enkei](https://enkei.com/shop/wheels/racing/gtc02/) · [Vivid Racing 18x9.5](https://www.vividracing.com/enkei-gtc02-wheel-18x95-5x112-45mm-silver-p-152788410.html) · [Vivid Racing 19x9.5](https://www.vividracing.com/enkei-gtc02-wheel-19x95-5x112-45mm-hyper-silver-p-154635738.html)
+
+---
 
 ### APR A02 · 19x9.0 ET40 · Flow Formed · 5x112 / 66.5mm CB
 
