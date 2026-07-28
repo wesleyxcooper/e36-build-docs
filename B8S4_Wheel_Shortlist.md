@@ -120,6 +120,25 @@ Budget-friendly flow formed option you mentioned. Knurled bead seat (prevents ti
 
 **Source:** [killerbrakes.com B8 S4/S5 Macan kit fitment chart](https://www.killerbrakes.com/product/audi-a4-a5-s4-s5-b8-brake-kit-porsche-macan-brembo-4pot-dba-345x30mm-slotted-discs-new/) — community-sourced wheel compatibility list for B8 A4/S4/A5/S5 with 95B Macan 4-pot calipers on 345mm rotors.
 
+### Barrel ID vs. Caliper Radius
+
+The radial dimension of the caliper (hub center → outermost radial point) is **not publicly documented** for the Macan 4-pot. However, from forum data (Audizine, B8 S4 thread, Jul 2022 — user Brokevw31):
+
+> **"Anything with a 420mm inner barrel should work"** — stated for **B9 RS5 Akebono 6-piston on 375mm rotors** on a B8 S4.
+
+The Macan 4-pot sits on a **345mm rotor** (30mm smaller diameter than B9 RS5). The caliper body is proportionally closer to the hub, meaning its radial clearance requirement is lower. **Minimum barrel ID for Macan calipers is less than 420mm** — likely ~385–400mm based on proportional scaling.
+
+Standard 18" wheels have inner barrel IDs in the **420–455mm range**, so **barrel diameter is not the limiting constraint** for the Macan 4-pot on 18" wheels. The actual constraint is always axial/spoke geometry (the 46mm forward protrusion of the caliper body).
+
+Confirmed 18" wheels for **B9 RS5 6-piston** on B8 S4 (barrel ID ≥ 420mm confirmed):
+- **Enkei GTC02 18"** — available in 5x112 / 66.5mm CB, direct fit
+- **Neuspeed RSe10 18"** (Brokevw31, same post) — ⚠️ standard sizing is 57.1mm CB which **cannot fit** a 66.5mm hub (hub is larger than bore — no ring solution). Only the **18x9 ET40 / 66.5mm CB** Audi-specific variant is compatible with the B8 S4.
+These also clear the Macan by definition since it's a smaller caliper.
+
+Note on the **4M Q7 380mm** setup (larger than Macan): one user (SNice, Audizine Feb 2025) reported "I was able to get my 10-spoke 18's on but clearance between wheel barrel and caliper was **too close for comfort**" — this is for the 380mm caliper, not Macan. The Macan is repeatedly described as "**plug n play**" with no wheel clearance caveats reported.
+
+### Spoke/Axial Clearance (the real constraint)
+
 - **Confirmed minimum: 18"** (can fit some 17" depending on spoke design)
 - Someone ran 17" OEM wheels over 345mm Macan calipers with ~5–7mm clearance (worked, looked awful)
 - **APEX SM-10RS 18x10 ET30**: Explicitly 3D-laser-scanned and optimized for BBK clearance. **Best confirmed choice** for 18" with Macan calipers
