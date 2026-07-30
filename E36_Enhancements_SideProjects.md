@@ -17,6 +17,75 @@
 | **Rear Bumper Addons** | **Fitmentlab E36 Phase 3 Rear Bumper Addons** | [fitmentlab.net/product/e36-phase-3-rear-bumper-addons](https://fitmentlab.net/product/e36-phase-3-rear-bumper-addons/) — **€100 (~$110 USD)**. |
 | **Widebody (Alt.)** | **Hard Motorsports / DTM Fiberwerks** | Established US-based alternatives with wider availability and more aggressive fitment options. Referenced by Apex Wheels fitment guide for extreme-offset setups. Search current inventory — no fixed storefront link. |
 
+### E46 Fender Profile in Metal — Research References
+
+> **Goal:** Achieve the E46 (M or non-M) fender arch shape on the E36 convertible via metal fabrication — not bolt-on FRP/ABS kits. Dedicated build threads documenting E46 donor steel grafted to an E36 cabrio are genuinely rare; the approach exists conceptually but is not well-documented publicly. Best path is a skilled fabricator using an E46 donor fender as a physical template to hammer/weld matching steel into the E36 arch. References below cover: (a) confirmation of the target profile, (b) technique references from comparable BMW metal widening work, and (c) an E36 cabrio custom fender build in-progress.
+
+| Source | Summary | Link |
+| :---- | :---- | :---- |
+| **HARD Motorsport E36 Widebody** | Explicitly shaped from factory BMW E46 330 fender profiles — their words. Confirms the E46 330 arch geometry translates to the E36 body without gross incompatibility. Useful as a dimensional target: if the profile works as a bolt-on template, it works as a metal template too. ABS kit itself is not the goal — the profile reference is. | [hardmotorsport.com](https://www.hardmotorsport.com/hard-motorsport-bmw-e36-coupe-widebody-overfender-kit/) |
+| **Bimmerforums: E36 M3 Track Car — Making E46 Fender Flares** | **Primary reference.** 1997 E36 M3 4-door sedan built for track use. Builder (bimerok) grafts E46 330 non-M front fenders onto the E36 using edge-to-edge welds (not overlap). All four arch inserts come from E46 front fenders — 4 fronts total, 2 reused for the E36 rears. Photo-documented process, full detail in OP and post #8. [Post #23332530](https://www.bimmerforums.com/forum/showthread.php?1727098-e36-M3-Track-Car-Prep-Making-e46-Fender-Flares-Pix-More&p=23332530#post23332530) confirms E46 330 non-M as donor (~$27/ea from RockAuto) and wheel sizing implications. [Post #24328928](https://www.bimmerforums.com/forum/showthread.php?1727098-e36-M3-Track-Car-Prep-Making-e46-Fender-Flares-Pix-More&p=24328928#post24328928) is the builder's own procedural summary for the rears. Skip the YouTube link in the first post and bimerok's post on page 2. | [Full thread](https://www.bimmerforums.com/forum/showthread.php?1727098-e36-M3-Track-Car-Prep-Making-e46-Fender-Flares-Pix-More) |
+
+> **Process detail (from thread):**
+>
+> **Donor selection:**
+> - **Material:** E46 front fenders — OEM and aftermarket — are **steel sheet metal**. Confirmed directly for the sedan body style: costautoricambi.com lists OEM `41358240405` (E46 sedan, 1998–2001) with feature ["Made of sheet metal"](https://www.costautoricambi.com/gb/lamierato/40639-front-left-fender-for-bmw-3-series-e46-1998-2001-oem-41358240405.html). Facelift sedan aftermarket equivalents are marketed as ["primed steel replacement"](https://ancientamerica.com/1999-2001-BMW-323i-325i-328i-330i-Primed-Steel-Replacement-Part-580277) and ["made from steel, just like the original"](https://premoli-automobiles.com/2002-2005-BMW-3-Series-330i-325i-Etc-Primed-Steel-220036/). The Bimmerforums build thread itself corroborates this — the builder cuts with a cut-off wheel and reciprocating metal saw, tack welds, and grinds flush ([posts #1 and #8](https://www.bimmerforums.com/forum/showthread.php?1727098-e36-M3-Track-Car-Prep-Making-e46-Fender-Flares-Pix-More)) — operations that only apply to steel.
+> - **Variant differences — what actually matters:**
+>   - **Sedan/wagon vs. coupe/cabrio:** *Different fenders, different OEM part numbers.* Sedan/wagon left = `41357042323`; coupe left = `41347065263` ([costautoricambi.com](https://www.costautoricambi.com/gb/lamierato/40646-front-left-fender-for-bmw-3-series-e46-coupe-2003-2006-oem-41347065263.html)). Coupe fender has a shorter rear section. **Use sedan front fenders** — that's what the thread used.
+>   - **330i vs. 325i vs. 328i vs. 323i (non-M sedan):** **Same part.** BMW OEM `41357042323` fits 2001-2005 320i, 325i, 325xi, 330i, and 330xi sedan/wagon — one part number covers all of them ([BMW Parts Deal](https://www.bmwpartsdeal.com/parts/bmw-side_panel_front_left-41357042323.html)). Model designation on the eBay listing is irrelevant; buy whichever is cheapest.
+>   - **Pre-facelift (1998–2001) vs. facelift (2001–2005):** Different OEM numbers — `41358240405` pre-facelift, `41357042323` facelift — due to headlight surround geometry. Arch profile is the same; either works for the graft. Facelift parts are easier to source.
+>   - **E46 M3:** Wider, distinct part number. ~$275+/ea. Only relevant if targeting 11"+ wheel width at the rear (see sizing note below).
+> - E46 non-M sedan front fenders (any model, 2001–2005 facelift preferred). You need 4 total — all from E46 *front* fenders, 2 used for E36 rear arches. Thread quoted ~$27/ea in 2011. Current pricing (Jul 2026):
+>   | Source | Type | Per side | Notes |
+>   | :----- | :--- | :------- | :---- |
+>   | RockAuto ([2003 330i](https://www.rockauto.com/en/catalog/bmw,2003,330i,3.0l+l6,1411580,body+&+lamp+assembly,fender,1380)) | Aftermarket CAPA (TECHPRO) | **$17–49** | Only 1 of each in stock Jul 2026 — check before ordering |
+>   | eBay (new aftermarket, primed) | Aftermarket steel | **$67–85** | Several listings for 02-05 E46 sedan; buy-it-now |
+>   | Partify | Aftermarket | **~$110** | |
+>   | BMW Parts Deal (genuine OEM) | OEM steel | **~$283–296** | Overkill — you're cutting the arch out |
+>   - For a graft, primed aftermarket from eBay (~$68–85/side) is the sweet spot — 4× donor fenders ≈ **$270–340 total**.
+> - E46 M3 fenders (~$275+/ea) only worth it for the rear if targeting 11"+ wheels. Non-M handles 10" front and rear easily. Experienced fabricator in thread (vjlax18, 2005–2006 builds) ran 9.5" front / 11" rear with 295s on non-M flares and notes "MUCH more work to get M fenders to work in the rear."
+>
+> **Front arch process (from OP posts #1 and #8):**
+> 1. Rough-cut arch section from E46 fender with cut-off wheel, leaving excess
+> 2. Mock up against E36 fender, mark excess, trim and smooth on grinding stone — iterate until satisfied
+> 3. Place final piece against E36, trace with sharpie, score line with grinder
+> 4. Cut stock E36 arch off with small reciprocating metal saw
+> 5. Sand paint from both mating edges
+> 6. Tack weld every ~2 inches, then knock high spots with a light hammer to align
+> 7. Full weld alternating sides (prevent distortion/pull); grind welds flush
+> 8. Bondo and block sand to blend
+> - **Key method choice:** edge-to-edge weld, not overlapping the new piece over the old — gives a cleaner result
+>
+> **Rear arch process (from post #24328928 — builder's own words):**
+> - "Cut the whole arch off, welded the E46 arch, once the arch was added I banged the original remains towards the new arch for better clearance"
+> - Same E46 front fender donor piece, same weld method
+>
+> **E36 sedan vs. convertible note (post #61 — dallas02E39):**
+> - E36 sedan front fender back half is longer than coupe — he had to fabricate custom fronts when doing his sedan, using E46 grafting as the starting method then going DTM-style all-metal. Convertible rear quarter beltline is lower than coupe — factor this into templating the rear arch insert height.
+>
+> **E36 front fender material:**
+> - Also **stamped steel sheet metal** — same as the E46 donor. Confirmed by costautoricambi.com listing for E36 OEM fender `41358215271` (E36 1990–1998), which explicitly states ["Made of sheet metal"](https://www.costautoricambi.com/gb/lamierato/40638-front-left-fender-for-bmw-3-series-e36-1990-1998-oem-41358215271.html) — identical language to their E46 sedan listing. The graft is steel-to-steel throughout.
+>
+> **Philadelphia-area labor estimate (custom fab + paint):**
+>
+> Independent body shop rates in Philadelphia: **$90–145/hr** for most shops; premium/specialty shops (Center City, Main Line) run $115–165/hr ([woogoro.com](https://woogoro.com/philadelphia-pa-auto-repair-cost.html), [localservicecost.com](https://localservicecost.com/services/auto-body/)). Custom welding/fabrication shops lean toward the upper end. **This is not a standard repair — most volume body shops won't take it.** You need a shop comfortable with custom metal fab on European sheetmetal; expect to call around.
+>
+> | Phase | Est. Hours | Notes |
+> | :---- | :--------- | :---- |
+> | Fabrication (4 arches — 2 front, 2 rear) | 20–28 hrs | Fronts ~4–5 hrs each; rears ~6–8 hrs each (into unibody) |
+> | Body work (filler, block sand, primer, 4 panels) | 8–12 hrs | |
+> | **Subtotal — fab + body work** | **28–40 hrs** | |
+> | Paint option A: color-match 4 panels + blend | +8–12 hrs | Blend into adjacent panels (doors, quarters) required for invisible seam |
+> | Paint option B: full respray | +25–40 hrs | Strip, prep, mask, spray all panels |
+>
+> | Finish option | Est. labor cost | Est. materials | **Total est.** |
+> | :------------ | :-------------- | :------------- | :------------- |
+> | Fab + color-match new fenders only | $3,600–$6,200 | $500–$900 | **~$4,100–$7,100** |
+> | Fab + full respray | $5,300–$10,000 | $700–$1,800 | **~$6,000–$11,800** |
+>
+> - Donor fenders add ~$270–340 to either option (see pricing table above).
+> - Full respray makes more sense if the car needs paint anyway — the marginal cost of doing it during this job is lower than a standalone respray later. Color-match-only is higher risk for visible blending seams on metallic/complex colors.
+
 ---
 
 ## Wheels & Tires  [WHEELS]
