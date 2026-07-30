@@ -85,6 +85,19 @@
 >
 > - Donor fenders add ~$270–340 to either option (see pricing table above).
 > - Full respray makes more sense if the car needs paint anyway — the marginal cost of doing it during this job is lower than a standalone respray later. Color-match-only is higher risk for visible blending seams on metallic/complex colors.
+>
+> **Regional shops to contact (custom metal fab / widebody):**
+>
+> Most of these are not E36-specific — that's fine. What matters is sheet metal fabrication + welding capability. Call and describe the job: cutting E46 arch sections and grafting them edge-to-edge onto E36 fenders.
+>
+> | Shop | Location | Why Relevant | Contact |
+> | :--- | :------- | :----------- | :------ |
+> | **Performance Metalcraft Solutions** | South Jersey | Best fit for this job — specializes in chassis, suspension, sheet metal, welding, CNC plasma cutting. Motorsports-focused. | (856) 723-2494 · [performancemetalcraft.com](https://www.performancemetalcraft.com/) · sales@performancemetalcraft.com |
+> | **Brandywine Valley Fabricators** | Coatesville, PA (~45 min W of Philly) | 69 years automotive sheet metal fabrication + stamping. Tri-state area shop; does custom body panels, welded assemblies, powder coating. | [brandywinevalleyfab.com](https://brandywinevalleyfab.com/automotive-sheet-metal-fabrication-metal-stamping/) |
+> | **AS1 Automotive** | Emmaus, PA (Lehigh Valley, ~1 hr N) | Custom fabrication + welding shop, 20 years experience, 3,200 sq ft. Explicit testimonials for custom fab work on builds. | [as1automotive.com](https://as1automotive.com/) |
+> | **Golden Custom NY** | Pine Island, NY (Orange County, ~1.5 hr N) | Widebody fabrication, fender flares, sheet metal custom panels — explicitly listed services. | (845) 537-0357 · [goldencustomsny.com](https://goldencustomsny.com/services/custom-exterior/) |
+> | **Nizo Motorsports** | Queens, NYC | Full custom fabrication (steel, aluminum, titanium, carbon fiber), widebody conversions, fender flares. European-friendly. | [nizomotors.com](https://www.nizomotors.com/services/customization/) |
+> | **Custom Import Performance** | East Stroudsburg, PA (Poconos) | Foreign/import specialist, collision + custom bodywork. Worth a call — European focus and Poconos proximity. | (570) 476-9484 · [customimportperformance.com](https://www.customimportperformance.com/) |
 
 ---
 
