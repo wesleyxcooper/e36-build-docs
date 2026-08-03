@@ -384,6 +384,53 @@
   - Verify forged crank (engine serial prefix + Torx T30 lower oil pan bolts) **before** it goes in their door. Do not pay teardown labor on a cast-crank motor you didn't plan to replace.
   - [Euromotive Autohaus](https://www.eurohauspa.com/) — West Chester, PA · **(610) 416-5702** · VW/Audi/BMW specialist, engine rebuilds & swaps, authorized 034 Motorsports + Integrated Engineering dealer. Appointment-based.
 
+### Storage & Transport  [ADMIN · LOGISTICS]
+
+> **Crank verification (pre-Euromotive):** Part number is stamped on the rear crank flange — visible only after flywheel/flexplate is removed. Forging seam (1/8"–1/4" wide ground parting line vs. thin cast line) is visible on the crank body with pan off and crank rotated. *(Source: [VW Vortex — telling a forged crank from a cast](https://www.vwvortex.com/threads/telling-a-forged-crank-from-a-cast.5516409/))* partslink24 already confirms `07K105101E` — defer physical confirmation to Euromotive teardown.
+
+#### 07K Engine — Long-Term Storage (Uninsulated Garage)
+*Applies both before Euromotive dropoff (donor longblock as-received) and after return (sealed build longblock).*
+- [ ] ✅ Mount on S&P adapter + HF 1000 lb stand on receipt — keeps it off concrete, in natural (horizontal crank) orientation
+- [ ] ✅ Plug **intake ports** — rubber plugs or tape
+- [ ] ✅ Plug **exhaust ports** — rubber plugs or rags + tape
+- [ ] ✅ Confirm **oil fill cap** is seated
+- [ ] ✅ Tape over any open coolant ports or sensor bungs
+- [ ] ✅ Optional: wipe external cast iron block surfaces with WD-40 or ACF-50 for cosmetic rust protection
+  - > **Note:** No dehumidifier required for a sealed longblock. Cast iron exterior will surface rust cosmetically; internals are protected by oil film and sealed gaskets.
+
+#### ZF 8HP Transmission — Long-Term Storage
+- [ ] ✅ Leave **ATF in** — do not drain. Fluid protects internal seals and friction clutches.
+- [ ] ✅ Store **horizontal** (longest axis horizontal = in-car orientation). Cradle in a tire or wooden V-cradle (two 2×4 blocks in a V). Do not stand on end.
+- [ ] ✅ Tape/plug the **vent/breather port** — prevents humid air cycling in/out with temperature changes
+- [ ] ✅ Keep off concrete floor — tire or V-cradle handles this
+- [ ] ✅ Leave torque converter installed — if stored separately it drains dry
+  - > **Note:** Aluminum case is immune to rust. External steel fasteners may surface rust cosmetically — not a functional concern.
+
+#### Transport Options
+
+**ZF 8HP (~195 lbs)**
+
+| Scenario | Vehicle | Method |
+| :---- | :---- | :---- |
+| **With helper** | U-Haul cargo van | 2× lifting slings as carry handles (loop under trans case, each person holds both eyes). Lift directly into van (~21" floor). |
+| **Solo** | U-Haul 15' truck | Roll trans on hand truck (platform mode) up the built-in ramp. Ramp + hand truck = genuinely solo-loadable. |
+
+- Secure: 2× U-Haul ratchet tie-downs (12', 800 lb WLL, [$7.95 each](https://www.uhaul.com/MovingSupplies/Ropes-Tie-Downs/Ratchets-Straps/Ratchet-Tie-Down/?id=3109)) strapped over the case to floor D-rings. Trans horizontal on a tire or moving blanket.
+- Confirm seller will help load before deciding between van vs. 15' truck.
+
+**07K Engine (~400 lbs dressed)**
+
+| Scenario | Vehicle | Method |
+| :---- | :---- | :---- |
+| **Either** | U-Haul 15' truck | Engine seated in a tire on the truck floor, 2× ratchet straps over it to floor D-rings. Tire cradles and prevents tipping. |
+
+**In-Garage Lifting**
+- **Hoist:** [HF 2-Ton Foldable Shop Crane, SKU 58755](https://www.harborfreight.com/2-ton-capacity-asme-pase-certified-foldable-shop-crane-58755.html) — $369.99
+- **Stand:** [HF 1000 lb Engine Stand, SKU 59201](https://www.harborfreight.com/1000-lb-capacity-engine-stand-59201.html) — $109.99 + [S&P Automotive 07K Engine Stand Mount](https://s-pautomotive.com/product/07k-engine-stand-mount/)
+- **Slings:** 2× [HF Web Lifting Sling, SKU 71451](https://www.harborfreight.com/2000-lb-capacity-2-in-x-6-12-ft-web-lifting-sling-71451.html) — $9.99 each. Basket hitch: loop under the component, both sewn loop eyes on the crane hook. Adjust fore/aft to level the load. No knots, no shackles required.
+
+---
+
 ### Rotating Assembly  [ROTATING-ASSEMBLY]
 - [ ] 🏭 **360° Thrust Bearing Mod** — #4 main cap (both sides) machined to accept 034-block full-circle thrust washers   [ROTATING-ASSEMBLY · MACHINING]
   - Euromotive/machine shop machines the #4 main cap to accept the full-circle washers you brought at dropoff (see sourcing step above). Show them the reference video at dropoff: [Five (5) Cylinder VW Thrust Washer Repair](https://www.youtube.com/watch?v=hCIZny5uc4Q)
