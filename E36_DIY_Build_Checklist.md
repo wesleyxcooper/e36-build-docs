@@ -496,7 +496,19 @@
 - [ ] 🔧 Pull M5x interim engine
   - > Reference: [E36 engine removal (YouTube)](https://www.youtube.com/watch?v=kracqUH216s)
   - > ⚠️ **Pitfall:** Drain coolant and oil before pulling. Disconnect the battery. Label every hose and connector as you remove it — the 07K bay will look different and you will not remember where the M52 AC line went 6 months later.
-- [ ] 🏭 Install custom E36 07K engine mounts (Race3 / JNC) — welded steel, shop work
+- [ ] 🏭 Fabricate or source E36 07K engine mounts — welded steel, polyurethane isolators
+  - **Sourced option:** Contact [Race3.ca](https://www.race3.ca) — they make E30 07K mounts and have the block-side geometry already solved; inquire directly about E36 fitment
+  - **DIY SCS path:**
+    1. Install SLG crossmember fully torqued to chassis — this is the anchor for everything forward
+    2. Seat 8HP on crossmember OEM rubber rear mounts, snugged
+    3. Fully mate DomiWorks adapter to 8HP (all fasteners engaged and snugged — no slop)
+    4. Fully mate 07K block to DomiWorks adapter (all bolts snugged)
+    5. Hang engine on crane + leveler; level the block deck laterally — this is now the one fixed position the block ears can occupy
+    6. Measure 3D position of right-side block ear relative to nearest E36 subframe mount tower — that geometry IS your bracket design
+    7. Left-side: iABED oil filter adapter required — the 07K has no block provision on the intake side; iABED doubles as the left mount point
+    8. CAD brackets from measurements → SendCutSend (.25" HRPO steel plate + tube sections) → TIG weld → press-fit poly bushing
+  - **Do not use fully solid mounts.** The SLG crossmember already uses OEM rubber 8HP rear mounts. Solid engine mounts + rigid DomiWorks adapter + rubber trans mount = over-constrained triangle under torque and thermal load. Use **polyurethane isolators** — press-fit cylindrical poly bushings (50–60mm OD) into a tube welded to the bracket. More stable and heat-resistant than OEM rubber; more compliant than solid.
+  - > ⚠️ **Pitfall:** Driveshaft does NOT need to be connected during mock-up — the SLG crossmember locates the trans, not the driveshaft. Don't delay the measurement step waiting to have a driveshaft.
 - [ ] 🔧 Lower 07K into engine bay, align to mounts + 8HP adapter
   - > ⚠️ **Pitfall:** Do not torque engine mount bolts until the engine is hanging freely at the correct height and the 8HP adapter plate is loosely mated. Torquing mounts before final positioning locks you into a misaligned drivetrain.
 
@@ -506,6 +518,7 @@
   - 068911024GX (reman, FCP Euro lifetime guarantee) = 068911024H (Bosch new) = same nose, fully interchangeable. NOT the N54 starter from Phase 1.
 
 ### ECU & Engine Harness  [ECU]
+- [ ] ✅ **Wiring management:** [ZBAD1 Magnet Cable Tie Holders](https://zbad1.com/products/magnet-cable-tie-holders) — N45 magnets, 16–32mm sizes, $19/set of 5. Stick-anywhere magnetic base with zip tie slot — useful for routing harness runs along sheet metal without drilling. 20mm (11kg pull) is the general-purpose size for engine bay wiring.
 - [ ] 🔧 Connect MaxxECU 07K harness (plug in pre-built harness, load 07K base map)
   - > Confirm accelerator pedal connector variant (MK4 vs MK5/MK6) matches the harness built in Phase 2 before plugging in.
   - > ⚠️ **Wideband sensor:** Use a **genuine Bosch** wideband sensor for the primary lambda input to MaxxECU. Aftermarket wideband sensors have documented accuracy issues at WOT and at rich lambda values below 0.75. Tune quality depends entirely on accurate AFR data — do not substitute.

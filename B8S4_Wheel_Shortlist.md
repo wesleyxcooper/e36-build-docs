@@ -149,6 +149,31 @@ Note on the **4M Q7 380mm** setup (larger than Macan): one user (SNice, Audizine
 
 ---
 
+### Golf R (MK7/7.5) + Macan Caliper — Confirmed Fitment, Cross-Referenced to B8.5 S4
+
+**Sources:** [GolfMK7 Consolidated Macan Thread](https://www.golfmk7.com/forums/index.php?threads/consolidated-macan-brembo-upgrade-thread-read-first-post.371028/) (Golf R primary) · [Killerbrakes B8 S4/S5 fitment table](https://www.killerbrakes.com/product/audi-a4-a5-s4-s5-b8-brake-kit-porsche-macan-brembo-4pot-dba-345x30mm-slotted-discs-new/)
+
+**Hub bore gap:** Golf R MK7 = **57.1mm** · B8.5 S4 = **66.5–66.6mm**. A 57.1mm CB wheel physically cannot go on the S4's larger hub — no ring solution exists. The fix: buy the **Audi-spec variant** (66.5mm CB) of the same wheel, which then needs only cheap 66.6→57.1mm hub rings for the Golf R. Wheels with universal bore (73mm+) need hub rings for both platforms but work on either.
+
+> **Spacer vs hub ring:** A hub ring is a thin center bore adapter (~$10–15/set) with essentially zero width — it does not change effective ET or fitment. A spacer physically moves the wheel outward and changes effective ET. All "spacers" listed in the caliper tables below are **caliper-driven** (spoke clearance), not hub bore-driven.
+
+| Wheel | Size | ET | Golf R spacer | S4 spacer | Hub bore | S4 outer protrusion | Δ vs S4 baseline |
+|---|---|---|---|---|---|---|---|
+| **Neuspeed RSe10** ⭐ | 18x8.5 | 45 | **0mm** ✅ | **0mm** ✅ | 57.1mm (VW) **or** 66.5mm (Audi) — buy **66.5mm for S4 direct fit**, add hub rings for Golf R | 63.0mm | −17.1mm |
+| **Advan GT** ⭐ | 18x9 | 45 | **0mm** ✅ | **0mm** ✅ | 73mm CB — hub rings for both (73→57.1mm Golf R, 73→66.5mm S4) | 69.3mm | −10.8mm |
+| **Neuspeed RSe05** | 17x8 | 45 | **0mm** ✅ | **0mm** ✅ | 66.5mm Audi spec — direct fit S4, add hub rings for Golf R | 56.6mm | −23.5mm |
+| **Neuspeed RSe16** | 17x8.5 | 45 | **0mm** ✅ | **0mm** ✅ | 66.5mm Audi spec — direct fit S4, add hub rings for Golf R | 62.95mm | −17.15mm |
+| **Konig Runlites** | 17x7.5 | 45 | **10mm** ✅ | **10mm** ✅ | 66.6mm — same 10mm spacer required on both | 52.6mm | −27.5mm |
+| **Motegi MR145** | 18x8.5 | 42 | not confirmed | **0mm** ✅ (S4 only) | verify CB | 65.95mm | −14.15mm |
+| **Titan7 T-R10** | 18x8.5 | 44 | not confirmed | **0mm** ✅ (S4 only) | 73mm CB — hub rings for both | 63.95mm | −16.15mm |
+| **Konig Rennform** | 18x9 | 45 | not confirmed | **5mm** ✅ (S4 only) | 66.6mm | 69.3mm | −10.8mm |
+| **OEM VW Pretorias** | 19x8 | 50 | **10mm** ✅ | **10mm** ✅ | 66.5mm — direct fit S4 with same 10mm spacer | 51.0mm | −29.1mm |
+| **OZ Racing Ultraleggera** | 19x8.5 | 47 | not confirmed | **0mm** ✅ (S4 only) | 75mm CB — hub rings for both | 75.75mm | −4.35mm |
+
+> All protrusion values use formula `(width_mm / 2) − ET`. S4 baseline = 80.1mm. These fitments are significantly more conservative than the current S4 setup — none approach the ~87mm safe zone ceiling. The Advan GT 18x9 ET45 is the best balance: confirmed no-spacer on both platforms, 73mm universal CB, and only −10.8mm vs current.
+
+---
+
 ## Hardware Summary
 
 You have **wheel studs** — so you need lug **nuts**, not bolts.
