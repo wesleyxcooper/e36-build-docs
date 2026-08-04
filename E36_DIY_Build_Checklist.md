@@ -55,7 +55,7 @@
   - Displays actual oil temp °C and oil pressure bar/psi as live numbers (M52 has no factory oil temp sensor — OEM gauge is a binary idiot light only)
   - MaxxECU can also read PST-F1 outputs in parallel via its own analog inputs — wire once, two consumers
   - > ⚠️ **Pitfall:** A1/A2 are 5V-tolerant; A3/A4 are 3.3V-tolerant with NTC pullup. **Do not swap them** — pressure signal on A3/A4 will read incorrectly; NTC temp on A1/A2 will not read at all without the pullup.
-  - **Phase 3 relocation (07K):** The 07K longitudinal oil filter housing (S-PAU or iABED — required for the swap) has a dedicated M10×1.0 port. Unbolt PST-F1 from VANOS adapter, thread into new housing port. Zero wiring changes.
+  - **Phase 3 relocation (07K):** The iABED 07K longitudinal oil filter housing (required for the swap) has a dedicated M10×1.0 port. Unbolt PST-F1 from VANOS adapter, thread into new housing port. Zero wiring changes.
 - [ ] ✅ **Sensor tap note for SPAL FAN-PWM-V3 (if running standalone PWM controller):**
   - The OEM coolant NTC sensor signal wire can be tapped in parallel — Gauge.S, the ECU, and the FAN-PWM-V3 all read the same sensor simultaneously with no interference
   - At the same temp threshold you set in the FAN-PWM-V3, you'll see the matching number on the Gauge.S cluster in real time
@@ -375,6 +375,11 @@
   - **Parts:** M14×2 hand tap ~$20, M14×2 button head cap bolts × 2 ~$5–10 (McMaster `92949A533`), Resbond 907TS Blue ~$35, blanking plates × 2 (source/fab), Permatex Ultra Copper ~$12. Total ~$80–90.
   - > ⚠️ **Pitfall:** Standard hex or flanged hex head will not clear at the rear freeze plug location — button head only.
   - > ⚠️ **Pitfall:** Resbond 907 for the bolt threads only. Blanking plate faces use standard high-temp RTV (Permatex Ultra Copper). Do NOT use Resbond on a face seal — it's not an RTV.
+- [ ] ✅ **SAI delete — billet port plugs; do on stand same session as EGR delete**   [AIR]
+  - The 07K SAI (Secondary Air Injection) system pumps fresh air into the exhaust manifold during cold start for emissions compliance — not needed on a turbo build with no cat.
+  - Install **S&P Automotive SAI delete plugs** ([s-pautomotive.com](https://s-pautomotive.com/product/billet-parts-sai-plugs-mafmap-sensor-housings/)) — $18–39 — billet plugs block the SAI ports on the block/head cleanly.
+  - SAI wiring is already marked "discard" in the ME7.1.1 harness section — these plugs are the complementary physical step.
+  - > ⚠️ **Pitfall:** Do not skip plugs and assume wiring discard is sufficient — open SAI ports can ingest debris and will pass exhaust gases under boost.
 - [ ] 🏭 Machine work (Euromotive-coordinated): bore inspection + deck flatness check + head pressure test + valve seat cut if using Inconel valves   [ROTATING-ASSEMBLY · HEAD/VALVETRAIN · MACHINING]
   - Euromotive sends block and head to their machine shop and bills you for the work. Not a separate shop engagement you manage.
   - > ⚠️ **Pitfall:** Do not start assembling until machine shop results come back. A bore out of spec or a head that won't hold pressure is a rebuild before the engine ever runs.
