@@ -110,67 +110,28 @@
 > **Alternative Sourcing — Full Scan Results (18-page car-part.com, Aug 2026, RWD only, Philadelphia PA 19151):**
 > All F-series (F01/F06/F10/F11/F12/F13) N63/N63TU RWD 8-speed are GEN1 by platform — compatible with MaxxECU 8HP GEN1 harness. ⚠️ = call to confirm unit is physically in-yard before driving.
 >
-> **— PICKUP OPTIONS — sorted by true all-in cost —**
+> **— MASTER PRIORITY TABLE — Aug 2026, all options, sorted by recommended purchase order —**
+> *Pickup all-in = part + local tax + RT gas (18 MPG @ $4.18/gal) + tolls. Shipped all-in = delivered (part + freight). Queens/NYC tolls ≈ $45 RT (Lincoln Tunnel + NJ Tpk + congestion pricing). All F-series N63/N63TU RWD are GEN1 — confirm STUECKL 1087 on receipt per checklist below.*
 >
-> | # | Dealer | Address | Dist | Donor | Miles | Price | Phone | Notes |
-> | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-> | **P1** | Michaelson Foreign Car Parts | 56 Causeway St, South River NJ 08882 | 56mi | 2014 BMW 550i F10 N63TU | 79,597 | **$347** | 732-254-0043 | PRP-ELITE · M–F 8–5:30pm · ⚠️ same unit cross-listed at Patterson Auto PA — confirm Michaelson physically holds it · [michaelsonauto.com](https://www.michaelsonauto.com) |
-> | **P2** | Giant Auto Salvage | Newark, NJ | 78mi | 2015 BMW 750i F01 N63TU | 72,135 | **$385** | 973-465-9383 | "Moves Good" · 2nd unit available same yard: 2013 BMW 650i 72,426mi also $385 |
-> | **P3** | Alliance Auto Parts | Woodside, NY (Queens) | 88mi | 2015 BMW 750i F01 N63TU | 76,000 | **$350** | 718-672-3800 | PRP Northeast network |
-> | **P4** | Elizabeth Auto Wrecking | Elizabeth, NJ | 68mi | 2013 BMW 750i F01 N63 | ~102K | **$400** | 908-353-6389 | "102K MILES TESTED" |
-> | **P5** | Capital Auto Salvage | Ridgewood, NY (Queens) | 105mi | 2016 BMW 650i F13 N63TU | **54,475** | **$435** | 718-386-3032 · capitalautosalvage46@gmail.com | **90-day warranty** · lowest mileage of all pickup options · [capitalautosalvage.net](http://www.capitalautosalvage.net/) |
-> | **P6** | Linder's Inc. | Worcester, MA | 238mi | 2015 BMW 750i F01 N63TU | 56,580 | **$425** | 800-521-8000 | "OUT&READY" · CDC certified |
-> | **P7** | General Auto Recycling | Tiverton, RI | 241mi | 2015 BMW 750i F01 N63TU | 88,792 | **$475** | 401-624-6687 | "SHIFTS FINE" · stock# 00231015 · ⚠️ 25K-mi entry in national search was stale — confirmed 88,792mi on their live system at [generalautori.com](https://www.generalautori.com) |
-> | **P8** | GZ Autoparts eBay [#800288897916](https://www.ebay.com/itm/800288897916) | Reading, PA — pickup | 57mi | 2014–2016 BMW F10 550i N63TU | unknown | **$689.89** | eBay msg | Best-documented unit · ZFS sticker: `LU 8615277 / 1087 016 / 098WUG` · casting: `1087 401 347` · STUECKL 1087 GEN1 confirmed in photos · 30-day warranty |
-> | **P9** | eBay [#800210197196](https://www.ebay.com/itm/800210197196) | — | ship | 2011–2013 BMW F06/F12/F13 650i N63 | — | **$949.49** | eBay msg | Original N63 donor · BMW PN `24007616610` · casting `1087 401 205` · ZFS label absent from photos |
->
-> **— SHIPPABLE OPTIONS — PRP Freight network, sorted by delivered cost —**
->
-> | # | Dealer | Location | Donor | Miles | Part $ | Est. Freight | **Est. Delivered** | Phone | Notes |
-> | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-> | **S1** | Eagle Auto Parts | Three-Rivers, MI (559mi) | 2014 BMW 550i F10 N63TU | 79,597 | **$240** | ~$230 | **~$470** | 269-273-1265 | PRP Freight · N63TU donor · "AOD,4.4L" |
-> | **S2** | J.C. Auto & Truck Parts | Viola, IL (644mi) | 2015 BMW 650i F06 N63TU | 93,578 | **$294** | ~$260 | **~$554** | 800-769-3499 | Team PRP · stock# 6G0805 · same unit cross-listed at Bionic ($348) and Mullins ($324) — call J.C. for lowest rate, freight ships from Bionic Chicago |
-> | **S3** | Bionic Auto Parts | Chicago, IL (666mi) | 2015 BMW 650i F06 N63TU | 93,578 | **$348** | ~$260 | **~$608** | 888-626-9618 | Team PRP · stock# 6G0805 · physical holder of S2 unit |
-> | **S4** | LKQ Blue-Island | Blue Island, IL (666mi) | 2015 BMW 750i F01 N63TU | 94,000 | **$388** | ~$260 | **~$648** | 800-385-2385 ext 6540 | LKQ national chain · "AT; (8 SPEED), RWD" |
->
-> *Freight estimate: ~$200–280 for bare 8HP70 (~150 lb) via uShip or PRP network. Request quote at car-part.com listing or call dealer directly with destination zip 19151. Add 7–10 business days.*
->
-> **— eBay SHIPPED — Aug 2026 scan, RWD N63/N63TU 8HP70 complete assembly only —**
->
-> | # | Listing | Donor | Miles | Part $ | Freight | **Est. Delivered** | Seller | Notes |
-> | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-> | **E1** | [#168586159396](https://www.ebay.com/itm/168586159396) | 2013–2015 BMW 750i F01 N63TU | **99K** | **$631** or BO | **FREE** | **~$631** | Butler Auto Recycling, Pensacola FL | ✅ Best eBay shipped deal · NoCore · 60-day returns · ⚠️ no photos of actual unit — request before buying |
-> | **E2** | [#168569960805](https://www.ebay.com/itm/168569960805) | 2010 BMW 550i GT F07 N63 | **72K** | $497 | $250 | **~$747** | OK Auto Parts, Richland MS | 10% off (was $552) · N63 original — compatible · listed as commercial address required but worth asking for residential exception |
-> | **E3** | [#800288897916](https://www.ebay.com/itm/800288897916) *(also P8 above)* | 2014–2016 BMW F10 550i N63TU | unk | $690 | $350 | **~$1,040** *(or $731 pickup Reading PA)* | GZ Autoparts, Reading PA | ✅ STUECKL 1087 GEN1 verified in photos · ZFS sticker + casting confirmed · best-documented unit |
-> | **E4** | [#800210197196](https://www.ebay.com/itm/800210197196) *(also P9 above)* | 2011–2013 BMW F06/F12/F13 650i N63 | unk | $949 | $350 | **~$1,300** | GZ Autoparts | BMW PN `24007616610` · original N63 donor |
->
-> **— autopartsearch.com — Aug 2026 scan, 2014 BMW 550i AT (8 speed) RWD filter, top picks only —**
-> *United Recyclers Group platform — all-in price shown (part + freight), VIN provided on every listing, Grade A, PRP network. No photos of actual unit on most listings. Shipping only — no pickup. Warranty upgrades available at checkout (up to 3yr parts + labor).*
->
-> | # | Donor | VIN | Miles | **Delivered** | Dealer | Notes |
-> | :---- | :---- | :---- | :---- | :---- | :---- | :---- |
-> | **APS1** | 2014 BMW 650i F06/F13 N63TU | WBA6B2C54ED129377 | **95K** | **$645** | [A&C Auto Parts, Cleveland OH (PRP)](https://autopartsearch.com/parts/bmw/bmw_650i/2014/transmission/OH59277163-LM0394) — stock LM0394 · 800-545-6842 | ✅ **Ready to Ship** · 6-mo free warranty · 10 photos of actual pulled unit · best value overall |
-> | **APS2** | 2013 BMW 750i F01 N63TU | WBAYE8C59DD131921 | **76K** | **$650** | [A&C Auto Parts, Cleveland OH (PRP)](https://autopartsearch.com/parts/bmw/bmw_750i/2013/transmission/OH59352763-IP0260) — stock IP0260 · 800-545-6842 | ✅ **Ready to Ship** · 6-mo free warranty · ⚠️ 10 photos are of donor car interior, not pulled unit — call to request unit photos before buying · lowest mileage under $700 |
-> | **APS3** | 2013 BMW 650i F06 N63TU | WBA6B2C53DD128462 | **130K** | **$559** | Midway Auto Parts, Kansas City MO (PRP) — stock NBF25057 | cheapest delivered · 90-day free · higher miles |
-> | **APS4** | 2014 BMW 750i F01 N63TU | WBAYE8C52ED134953 | **137K** | **$559** | Midway Auto Parts, Kansas City MO (PRP) — stock CAE26889 | cheapest delivered · 90-day free · higher miles |
-> | **APS5** | 2013 BMW 750i F01 N63TU | WBAYA8C56DC996797 | **147K** | **$562** | Midway Auto Parts, Kansas City MO (PRP) — stock NBE26101 | 90-day free · highest miles of the group |
->
-> ⚠️ All autopartsearch listings show "AT (8 speed) AWD" and "AT (8 speed) RWD" as fitments — this is the platform listing what the part number can serve, NOT the donor drivetrain. Donor VINs confirmed RWD via WBAYE8/WBAYA8 (F01 750i RWD) and WBA6B2 (F06 Gran Coupe 650i RWD base) prefixes. Confirm STUECKL 1087 GEN1 per verification checklist below before install — cannot verify remotely.
->
-> **True all-in cost — pickup options (part + tax + RT gas from 19151, cargo van 18 MPG, $4.18/gal Aug 2026):**
->
-> | Option | Part + Tax | Gas (RT) | Tolls (RT) | **True Total** |
-> | :---- | :---- | :---- | :---- | :---- |
-> | P1 — Michaelson South River NJ (112mi RT) | $347 + NJ 6.625% ≈ $370 | ~$26 | $0 | **~$396** |
-> | P3 — Alliance Woodside NY (176mi RT) | $350 + NY 8.875% ≈ $381 | ~$41 | ~$40 | **~$462** |
-> | P2 — Giant Auto Newark NJ (156mi RT) | $385 + NJ 6.625% ≈ $411 | ~$36 | $0 | **~$447** |
-> | P4 — Elizabeth Auto NJ (136mi RT) | $400 + NJ 6.625% ≈ $427 | ~$32 | $0 | **~$459** |
-> | P5 — Capital Auto Ridgewood NY (210mi RT) | $435 + NY 8.875% ≈ $474 | ~$49 | ~$45 | **~$568** |
-> | P6 — Linder's Worcester MA (476mi RT) | $425 + MA 6.25% ≈ $452 | ~$110 | $0 | **~$562** |
-> | P7 — General Auto Tiverton RI (482mi RT) | $475 + RI 7% ≈ $508 | ~$112 | $0 | **~$620** |
-> | P8 — eBay/GZ Reading PA (114mi RT) | $690 + PA 6% ≈ $731 | ~$26 | $0 | **~$757** |
->
-> *Queens/NYC tolls: Lincoln Tunnel ~$18 RT + NJ Turnpike ~$18 RT + NYC Congestion Pricing ~$9 inbound ≈ $45 RT total.*
+> | # | ID | Donor | Miles | **All-In** | Method | Contact | Notes |
+> | :- | :- | :---- | ----: | ---------: | :----- | :----- | :---- |
+> | **1** | P1 | 2014 BMW 550i F10 N63TU | 79,597 | **~$396** | 🚗 Pickup · 56mi RT | 732-254-0043 · Michaelson Foreign Car Parts, South River NJ · M–F 8–5:30pm | **Call first** — confirm unit in-hand (cross-listed w/ Patterson PA & Eagle MI at same mileage) · [michaelsonauto.com](https://www.michaelsonauto.com) |
+> | **2** | P5 | 2016 BMW 650i F13 N63TU | **54,475** | **~$568** | 🚗 Pickup · 105mi RT | 718-386-3032 · Capital Auto Salvage, Ridgewood NY · capitalautosalvage46@gmail.com | **Lowest mileage of all options · 90-day warranty** · best fallback if P1 unavailable · [capitalautosalvage.net](http://www.capitalautosalvage.net/) |
+> | **3** | P2 | 2015 BMW 750i F01 N63TU | 72,135 | **~$447** | 🚗 Pickup · 78mi RT | 973-465-9383 · Giant Auto Salvage, Newark NJ | "Moves Good" · 2nd unit same yard (2013 650i 72,426mi, also $385) |
+> | **4** | P3 | 2015 BMW 750i F01 N63TU | 76,000 | **~$462** | 🚗 Pickup · 88mi RT | 718-672-3800 · Alliance Auto Parts, Woodside NY (Queens) | PRP Northeast |
+> | **5** | APS2 | 2013 BMW 750i F01 N63TU | **76,000** | **$650** | 📦 Shipped · online order | [autopartsearch.com — stock IP0260](https://autopartsearch.com/parts/bmw/bmw_750i/2013/transmission/OH59352763-IP0260) · 800-545-6842 · A&C Auto, Cleveland OH | ✅ Ready to Ship · 6-mo free warranty · ⚠️ call for unit photos before ordering · VIN WBAYE8C59DD131921 |
+> | **6** | APS1 | 2014 BMW 650i F06 N63TU | 95,000 | **$645** | 📦 Shipped · online order | [autopartsearch.com — stock LM0394](https://autopartsearch.com/parts/bmw/bmw_650i/2014/transmission/OH59277163-LM0394) · 800-545-6842 · A&C Auto, Cleveland OH | ✅ Ready to Ship · 6-mo free warranty · 10 photos of actual pulled unit · VIN WBA6B2C54ED129377 |
+> | **7** | E1 | 2013–2015 BMW 750i F01 N63TU | 99,000 | **~$631** | 📦 Shipped · eBay | [eBay #168586159396](https://www.ebay.com/itm/168586159396) · Butler Auto Recycling, Pensacola FL | Free freight · NoCore · 60-day returns · Best Offer (may go lower) · ⚠️ no unit photos — request before buying |
+> | **8** | S1 | 2014 BMW 550i F10 N63TU | 79,597 | **~$470** | 📦 Shipped · freight call | 269-273-1265 · Eagle Auto Parts, Three Rivers MI | Call to arrange PRP freight to 19151 · ⚠️ may be same physical unit as P1 — confirm independently |
+> | **9** | S2 | 2015 BMW 650i F06 N63TU | 93,578 | **~$554** | 📦 Shipped · freight call | 800-769-3499 · J.C. Auto IL (call first for rate) → 888-626-9618 · Bionic Auto Parts Chicago (physical holder) | Same unit stock# 6G0805 · call J.C. for lowest price, Bionic ships |
+> | **10** | P4 | 2013 BMW 750i F01 N63 | ~102,000 | **~$459** | 🚗 Pickup · 68mi RT | 908-353-6389 · Elizabeth Auto Wrecking, Elizabeth NJ | "102K MILES TESTED" · original N63 (pre-TU) · higher miles |
+> | **11** | APS3 | 2013 BMW 650i F06 N63TU | 130,000 | **$559** | 📦 Shipped · online order | [autopartsearch.com — stock NBF25057](https://autopartsearch.com/parts/bmw/bmw_650i/2013/transmission/MO061007224655-NBF25057) · Midway Auto, Kansas City MO | Cheapest shipped · high miles · 90-day free · VIN WBA6B2C53DD128462 |
+> | **12** | APS4 | 2014 BMW 750i F01 N63TU | 137,000 | **$559** | 📦 Shipped · online order | [autopartsearch.com — stock CAE26889](https://autopartsearch.com/parts/bmw/bmw_750i/2014/transmission/MO061007638890-CAE26889) · Midway Auto, Kansas City MO | Cheapest shipped · high miles · 90-day free · VIN WBAYE8C52ED134953 |
+> | **13** | P6 | 2015 BMW 750i F01 N63TU | 56,580 | **~$562** | 🚗 Pickup · 476mi RT | 800-521-8000 · Linder's Inc., Worcester MA | "OUT&READY" · low miles but 238mi each way — not worth drive vs shipping equivalent |
+> | **14** | P7 | 2015 BMW 750i F01 N63TU | 88,792 | **~$620** | 🚗 Pickup · 482mi RT | 401-624-6687 · General Auto Recycling, Tiverton RI | "SHIFTS FINE" · confirmed 88.8K live · too far to drive |
+> | **15** | S4 | 2015 BMW 750i F01 N63TU | 94,000 | **~$648** | 📦 Shipped · freight call | 800-385-2385 x6540 · LKQ Blue Island IL | LKQ chain · no advantage over APS1/APS2 at same price point |
+> | **16** | E2 | 2010 BMW 550i GT F07 N63 | 72,000 | **~$747** | 📦 Shipped · eBay | [eBay #168569960805](https://www.ebay.com/itm/168569960805) · OK Auto Parts, Richland MS | N63 original (pre-TU) · commercial address req · worth asking for residential exception |
+> | **—** | P8 | 2014–2016 BMW F10 550i N63TU | unknown | **~$757** pickup / ~$1,040 shipped | 🚗 57mi RT or 📦 | [eBay #800288897916](https://www.ebay.com/itm/800288897916) · GZ Autoparts, Reading PA | **Only if GEN1 confirmation required before install** — STUECKL 1087 verified in listing photos · skip unless all above unavailable |
 
 > **In-person verification checklist — confirm before paying:**
 >
