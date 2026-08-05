@@ -55,7 +55,7 @@
   - Displays actual oil temp °C and oil pressure bar/psi as live numbers (M52 has no factory oil temp sensor — OEM gauge is a binary idiot light only)
   - MaxxECU can also read PST-F1 outputs in parallel via its own analog inputs — wire once, two consumers
   - > ⚠️ **Pitfall:** A1/A2 are 5V-tolerant; A3/A4 are 3.3V-tolerant with NTC pullup. **Do not swap them** — pressure signal on A3/A4 will read incorrectly; NTC temp on A1/A2 will not read at all without the pullup.
-  - **Phase 3 relocation (07K):** The iABED 07K longitudinal oil filter housing (required for the swap) has a dedicated M10×1.0 port. Unbolt PST-F1 from VANOS adapter, thread into new housing port. Zero wiring changes.
+  - **Phase 3 relocation (07K):** The 07K longitudinal oil filter housing (S-PAU or iABED — required for the swap) has a dedicated M10×1.0 port. Unbolt PST-F1 from VANOS adapter, thread into new housing port. Zero wiring changes.
 - [ ] ✅ **Sensor tap note for SPAL FAN-PWM-V3 (if running standalone PWM controller):**
   - The OEM coolant NTC sensor signal wire can be tapped in parallel — Gauge.S, the ECU, and the FAN-PWM-V3 all read the same sensor simultaneously with no interference
   - At the same temp threshold you set in the FAN-PWM-V3, you'll see the matching number on the Gauge.S cluster in real time
@@ -208,6 +208,13 @@
 ### ECU & Chassis Wiring  [ECU · ELECTRICAL] ⚠️
 > **Do this section before the 8HP swap.** Get the M52 running on MaxxECU with the Getrag still in place first.
 
+- [ ] ✅ **Procure wire labeling kit before starting any harness work**   [ELECTRICAL · TOOLING]
+  - **Brady M210 + PermaSleeve starter bundle** (~$130): [Amazon](https://a.co/d/3qZ8sAa) — printer + M21-125-C-342 cartridge (22–16 AWG, covers all signal wires)
+  - **M21-250-C-342** (~$55–60): [Brady direct](https://www.bradyid.com/labels/bmp21-plus-series-permasleeve-heat-shrink-tubing-cps-3392081?part-number=m21-250-c-342) — 16–8 AWG, for 12 AWG fuel pump power runs
+  - **M21-375-C-342** (~$55–60): [Brady direct](https://www.bradyid.com/labels/bmp21-plus-series-permasleeve-heat-shrink-tubing-cps-3392081?part-number=m21-375-c-342) — 12–4 AWG, for 10 AWG EWP power runs
+  - Print WireViz wire designators on both ends of **every wire** before looming. Slide sleeve onto wire, run to position, shrink in place with heat gun after routing is confirmed.
+  - Also label connector bodies and sub-loom exit points — anything you will need to identify during troubleshooting.
+
 - [ ] ⚠️ **EWS2 bypass — required before MaxxECU will start the M52**   [ECU · ELECTRICAL]
   - The E36 M52 (OBD2, 1996+) has EWS2 immobilizer. The stock MS41/MS42 ECU handshakes with the EWS2 module via a dedicated wire to authorize fuel and ignition. MaxxECU has no EWS protocol — without bypass, the car cranks normally but will not fire (no injector or spark release).
   - **Option A (preferred):** EWS delete/emulator module — a small unit that sits in the EWS signal path and continuously returns the authorized signal. Available from BMW ECU tuning vendors. Clean, reversible, no harness modification.
@@ -215,6 +222,11 @@
   - Research this before ordering MaxxECU — confirm current preferred method with the MaxxECU community or SLG/MaxxECU support, as specifics vary by EWS version and harness.
   - > ⚠️ **Pitfall:** This is not a MaxxECU quirk — any replacement ECU (TurboLamik, MegaSquirt, etc.) faces identical EWS2 incompatibility. It is not optional.
 - [ ] ✅ Mount MaxxECU Race unit (firewall or under dash — keep away from heat)
+- [ ] 🔧 Install Deutsch AS / Souriau 8STA firewall bulkhead connector (47- or 79-way flanged receptacle)   [ELECTRICAL]
+  - > Mount on upper firewall near OEM harness grommet. **LHD: left (driver's) side. RHD: LEFT side (passenger side) — the OEM engine harness grommet is on the passenger side in both LHD and RHD E36; the driver's/right side on RHD contains steering column and brake/clutch pass-throughs and is also the exhaust side of a longitudinal 07K (SPA manifold exits right-hand side of engine). ⚠️ Do NOT place bulkhead connector on the driver's/right side in a RHD 07K build.** Custom aluminum plate or direct 54mm center-drill + flanged receptacle. Additive — no OEM connectors removed.
+  - > Wire cabin side permanently (ECU CMC, fuse block, relay board, cluster X20 signals). Engine harnesses each terminate in a mating plug on the engine side.
+  - > **Pre-allocate 6 pins for e-pedal (Phase 3):** APS1 SIG, APS2 SIG, VCC1, VCC2, GND1, GND2. Leave engine-side pins unconnected until Phase 3; Deutsch AS supports field-adding pins at any time. This avoids running new wires through the firewall later.
+  - > Spec and cost: see Enhancements doc `[ELECTRICAL]` — Firewall Bulkhead Connector section.
 - [ ] 🔧 Resolve M52 VANOS cam sensor connector before connecting harness   [ECU · ENGINE]
   - The MaxxECU M50 terminated harness uses the non-VANOS M50 cam sensor connector. The M52 VANOS head uses a **different connector**.
   - **Option A (recommended):** Swap sensor to BMW PN `12141726590` — direct fit to M50 harness connector, no harness modification.
@@ -375,11 +387,6 @@
   - **Parts:** M14×2 hand tap ~$20, M14×2 button head cap bolts × 2 ~$5–10 (McMaster `92949A533`), Resbond 907TS Blue ~$35, blanking plates × 2 (source/fab), Permatex Ultra Copper ~$12. Total ~$80–90.
   - > ⚠️ **Pitfall:** Standard hex or flanged hex head will not clear at the rear freeze plug location — button head only.
   - > ⚠️ **Pitfall:** Resbond 907 for the bolt threads only. Blanking plate faces use standard high-temp RTV (Permatex Ultra Copper). Do NOT use Resbond on a face seal — it's not an RTV.
-- [ ] ✅ **SAI delete — billet port plugs; do on stand same session as EGR delete**   [AIR]
-  - The 07K SAI (Secondary Air Injection) system pumps fresh air into the exhaust manifold during cold start for emissions compliance — not needed on a turbo build with no cat.
-  - Install **S&P Automotive SAI delete plugs** ([s-pautomotive.com](https://s-pautomotive.com/product/billet-parts-sai-plugs-mafmap-sensor-housings/)) — $18–39 — billet plugs block the SAI ports on the block/head cleanly.
-  - SAI wiring is already marked "discard" in the ME7.1.1 harness section — these plugs are the complementary physical step.
-  - > ⚠️ **Pitfall:** Do not skip plugs and assume wiring discard is sufficient — open SAI ports can ingest debris and will pass exhaust gases under boost.
 - [ ] 🏭 Machine work (Euromotive-coordinated): bore inspection + deck flatness check + head pressure test + valve seat cut if using Inconel valves   [ROTATING-ASSEMBLY · HEAD/VALVETRAIN · MACHINING]
   - Euromotive sends block and head to their machine shop and bills you for the work. Not a separate shop engagement you manage.
   - > ⚠️ **Pitfall:** Do not start assembling until machine shop results come back. A bore out of spec or a head that won't hold pressure is a rebuild before the engine ever runs.
@@ -481,14 +488,18 @@
 - [ ] ✅ Install LPS phenolic intake gasket between head and manifold — limits IAT heat soak into the charge   [AIR]
   - [LPS 07K Phenolic Intake Gasket](https://lpsfab.com/products/lps-07k-phenolic-intake-gasket) — 1/8" thick phenolic. Fits between cylinder head and any aftermarket aluminum manifold (BBG or LPS). Install before manifold bolts go in.
 - [ ] ✅ Install BBG longitudinal intake manifold
-- [ ] ✅ Install VR6 OBD2 throttle body (021133064A — OBD2 96-99 only)
+- [ ] ⚠️ **Decide throttle path — DBW or cable TB** (see Phase 3 Air/Throttle for full tradeoff comparison)
+  - **Option A — DBW (stock 07K TB, MaxxECU e-throttle):** Retain factory 07K TB. Wire TB connector (Motor+, Motor−, TPS1, TPS2, 5V, GND) into offline 07K engine harness targeting MaxxECU e-throttle H-bridge outputs. Enables throttle blip, traction control, launch control, flat shift. ME7.1.1 TB pins: 84, 92, 117, 118.
+  - **Option B — Cable (VR6 TB + Lokar cable):** Install VR6 OBD2 throttle body `021133064A` on BBG longitudinal manifold. Do NOT wire any DBW TB connector — TB is purely cable-driven. Simpler setup; stock E36 floor pedal is retained (no E46 pedal module needed), but stock E36 cable cannot be reused — Lokar LOK-TC-1000LS148 required (VR6 drum uses different cable end than M52). MaxxECU still receives TPS signal passively but does not control throttle position — no e-throttle features.
 
 ### ECU — Offline Harness Build  [ECU]
 - [ ] ⚠️ Build MaxxECU 07K engine harness offline (VW sensor connector ends, MaxxECU CMC on ECU side) — budget $300–500 in connector ends, wire, and conduit
   - > ⚠️ **Pitfall:** Build and test this harness on the bench before the swap day. Label every connector. Photograph the completed harness against the 07K engine before it goes in the car. A miswired sensor on swap day adds hours to a stressful job.
   - > ⚠️ **Apply Phase 1 loom discipline:** Crank and cam triggers shielded and in their own sleeve — separate from all other wires. Sensor input sub-loom (CLT, IAT, TPS, MAP, knock) separate from injector sub-loom, both separate from coil primaries. No high-current feeds (pump, fan) inside the signal harness at any point.
   - > Route the completed harness dry against the installed 07K before final sleeving — confirm connector reach, correct lengths, and clearance from exhaust headers and moving parts. Sleeve only after the routing is confirmed.
-  - > ⚠️ **Pedal connector variant:** The VW accelerator pedal uses a different connector on MK4 vs MK5/MK6 assemblies — confirm which pedal unit you're running before pinning the throttle wires. MaxxECU requires dual-track TPS input; wire both tracks to separate analog inputs.
+  - > ⚠️ **Throttle wiring depends on path chosen above:**
+    - **DBW (Option A):** Wire TB (Motor+, Motor−, TPS1, TPS2, 5V, GND) to MaxxECU e-throttle H-bridge pins. The BMW E46 accelerator pedal is a separate 6-wire run through the bulkhead connector to MaxxECU APS1/APS2 analog inputs — NOT part of the 07K engine harness. Both pedal and TB use dual-track sensors; wire both tracks to separate MaxxECU analog inputs. ME7.1.1 pinout: DBW TB pins 84/92/117/118; APS1+2 pins 35/72 and 34/73.
+    - **Cable (Option B):** No DBW wiring needed. Include TPS1/TPS2 signal wires to MaxxECU so ECU can read throttle position. Pedal and cable install happens at Phase 3; no harness action needed now.
   - > **Alternator — confirmed 140A (partslink24 VIN `WVWAR71K17W082055`, PR T59):** OEM part `07K 903 023 A` (Bosch, 12V, 140A, CW rotation). Reman: `06F 903 023 FX` → superseded by `07K 903 023 AX`. Decoupler pulley: `07K 903 119`. **140A provides sufficient headroom for the electric AC compressor (25–40A draw) — no alternator upgrade needed.** Reuse the OEM donor unit; aftermarket replacement if needed ~$80–120 on Amazon cross-referencing `07K 903 023 A`.
   - > **Alternator excite wire:** Plan a dedicated wire from the body harness to the alternator D+ (excite) terminal. Without it the alternator may not begin charging below ~1,500 RPM. It will self-excite above that threshold via the voltage regulator, but correct wiring ensures reliable cold-start charging from the first start.
 - [ ] ✅ Document all sensor connector pinouts, oil line fittings, and coolant port locations before engine leaves the stand
@@ -501,19 +512,7 @@
 - [ ] 🔧 Pull M5x interim engine
   - > Reference: [E36 engine removal (YouTube)](https://www.youtube.com/watch?v=kracqUH216s)
   - > ⚠️ **Pitfall:** Drain coolant and oil before pulling. Disconnect the battery. Label every hose and connector as you remove it — the 07K bay will look different and you will not remember where the M52 AC line went 6 months later.
-- [ ] 🏭 Fabricate or source E36 07K engine mounts — welded steel, polyurethane isolators
-  - **Sourced option:** Contact [Race3.ca](https://www.race3.ca) — they make E30 07K mounts and have the block-side geometry already solved; inquire directly about E36 fitment
-  - **DIY SCS path:**
-    1. Install SLG crossmember fully torqued to chassis — this is the anchor for everything forward
-    2. Seat 8HP on crossmember OEM rubber rear mounts, snugged
-    3. Fully mate DomiWorks adapter to 8HP (all fasteners engaged and snugged — no slop)
-    4. Fully mate 07K block to DomiWorks adapter (all bolts snugged)
-    5. Hang engine on crane + leveler; level the block deck laterally — this is now the one fixed position the block ears can occupy
-    6. Measure 3D position of right-side block ear relative to nearest E36 subframe mount tower — that geometry IS your bracket design
-    7. Left-side: iABED oil filter adapter required — the 07K has no block provision on the intake side; iABED doubles as the left mount point
-    8. CAD brackets from measurements → SendCutSend (.25" HRPO steel plate + tube sections) → TIG weld → press-fit poly bushing
-  - **Do not use fully solid mounts.** The SLG crossmember already uses OEM rubber 8HP rear mounts. Solid engine mounts + rigid DomiWorks adapter + rubber trans mount = over-constrained triangle under torque and thermal load. Use **polyurethane isolators** — press-fit cylindrical poly bushings (50–60mm OD) into a tube welded to the bracket. More stable and heat-resistant than OEM rubber; more compliant than solid.
-  - > ⚠️ **Pitfall:** Driveshaft does NOT need to be connected during mock-up — the SLG crossmember locates the trans, not the driveshaft. Don't delay the measurement step waiting to have a driveshaft.
+- [ ] 🏭 Install custom E36 07K engine mounts (Race3 / JNC) — welded steel, shop work
 - [ ] 🔧 Lower 07K into engine bay, align to mounts + 8HP adapter
   - > ⚠️ **Pitfall:** Do not torque engine mount bolts until the engine is hanging freely at the correct height and the 8HP adapter plate is loosely mated. Torquing mounts before final positioning locks you into a misaligned drivetrain.
 
@@ -523,7 +522,6 @@
   - 068911024GX (reman, FCP Euro lifetime guarantee) = 068911024H (Bosch new) = same nose, fully interchangeable. NOT the N54 starter from Phase 1.
 
 ### ECU & Engine Harness  [ECU]
-- [ ] ✅ **Wiring management:** [ZBAD1 Magnet Cable Tie Holders](https://zbad1.com/products/magnet-cable-tie-holders) — N45 magnets, 16–32mm sizes, $19/set of 5. Stick-anywhere magnetic base with zip tie slot — useful for routing harness runs along sheet metal without drilling. 20mm (11kg pull) is the general-purpose size for engine bay wiring.
 - [ ] 🔧 Connect MaxxECU 07K harness (plug in pre-built harness, load 07K base map)
   - > Confirm accelerator pedal connector variant (MK4 vs MK5/MK6) matches the harness built in Phase 2 before plugging in.
   - > ⚠️ **Wideband sensor:** Use a **genuine Bosch** wideband sensor for the primary lambda input to MaxxECU. Aftermarket wideband sensors have documented accuracy issues at WOT and at rich lambda values below 0.75. Tune quality depends entirely on accurate AFR data — do not substitute.
@@ -557,8 +555,47 @@
   - The iABED longitudinal oil filter housing (Phase 2) has built-in thermostatic -AN ports — no sandwich plate needed. The MMOCF-BMW fitting kit stays with the pulled M52 engine.
   - > ⚠️ **Note:** If stock oil housing was used in Phase 2 instead of iABED, install the Mishimoto MMOP-SPT thermostatic sandwich plate ($170.95) between the filter and housing + run -10AN lines to the Setrab/Mocal core.
 
-### Air / Throttle  [AIR]
+### Air / Throttle  [AIR · ECU]
+
+> **Throttle path decision.** The 07K has a factory DBW throttle body. You have two options at swap time:
+> - **DBW** — keep the stock 07K TB + install an E46 e-pedal. Enables MaxxECU throttle blip, traction control, launch control, flat shift. Requires e-pedal wiring through bulkhead connector and MTune calibration.
+> - **Cable** — swap in a VR6 OBD2 TB (`021133064A`), keep the stock E36 floor pedal, install Lokar cable. Simpler setup; stock E36 pedal is retained but the stock E36 cable is NOT reusable (VR6 drum uses a different cable end than the M52 drum). No e-throttle calibration needed; no MaxxECU e-throttle features.
+
+**Option A — DBW (stock 07K TB + MaxxECU e-throttle):**
+> **TB sizing:** Stock 07K TB is ~65mm bore — adequate for ~500 whp at 25 psi per Rennlist 07K community airflow calcs. For 600–750+ whp, plan to upgrade to **VW 3.6 VR6 TB `03H 133 062`** (~74mm, same VAG flange, ~$40–80 used, direct fit candidate on BBG manifold). Do not upgrade before tune is dialed in. Full TB pinout: see Enhancements doc → DBW Wiring Pinouts.
+- [ ] ✅ Confirm stock 07K DBW throttle body is retained from Phase 2 engine build
+- [ ] ✅ Install BMW E46 accelerator pedal module (`35426786282`) in E36 cabin via adapter bracket
+  - > **[Strom Motorsports E36 Adapter for E46 DBW Throttle Pedal](https://strommotorsports.com/products/e36-dbw-e46-accelerator-pedal-adapter)** — CNC 6061 Al, no cutting/welding/drilling. Explicitly lists PN `35426786282` (manual) and `35426786281` (auto). Also: [Garagistic](https://www.garagistic.com/products/e46-gas-pedal-for-e36-adapter-bracket) | [Boost Monkey](https://boostmonkey.com/products/e36-electronic-drive-by-wire-gas-pedal-adapter-brackey) | [Drift HQ](https://drifthq.com/products/e46-gas-pedal-for-e36-adapter-bracket). E46 pedal module eBay used: **$80–120 all-in** (see listings below). Bracket: ~$40–60.
+  - > **eBay sourcing — E46 pedal `35426786282`** · [Saved search](https://www.ebay.com/sch/i.html?_nkw=bmw+35426786282&_svsrch=1)
+    - [407117477828](https://www.ebay.com/itm/407117477828) — $119.98 OBO, used, US domestic (emsauto). Multi-chassis title — confirm PN `35426786282` with seller first.
+    - [176400301948](https://www.ebay.com/itm/176400301948) — £59 (~$79 + intl. shipping), used, UK (burning oil). E46 M3/330i/328i/325i manual ✅
+    - [176400305397](https://www.ebay.com/itm/176400305397) — £59 (~$79 + intl. shipping), used, UK (burning oil). E46 330i manual ✅
+    - [176400302753](https://www.ebay.com/itm/176400302753) — £59 (~$79 + intl. shipping), used, UK (burning oil). E46 323i/320i/318i/316i manual ✅
+    - ❌ **Skip** [176400306849](https://www.ebay.com/itm/176400306849) — E39/E38/X5/E53 pedal, wrong connector and pinout
+    - New Genuine BMW (AutohausAZ): $524 — not worth it, sensor doesn't wear, MaxxECU recalibrates fresh
+  - > **RHD bracket fitment:** No vendor explicitly confirms RHD E36 pedal box compatibility. Community finding: LHD brackets often misalign or crowd the brake pedal in RHD — typically resolved by trimming carpet/sound deadening at the transmission tunnel edge. Try the Strom/Garagistic bracket first. If RHD pedal box geometry prevents fitment, use the **Hella 6PV010946-141** instead (see below) — it has no OEM pedal box dependency. Reference: [Bimmerforums 2072569](https://www.bimmerforums.com/forum/showthread.php?2072569-Mounting-the-E46-DBW-electronic-throttle-pedal-in-an-E36).
+  - > The LHD vs RHD pedal PN split is **manual vs auto** (not LHD vs RHD) — PN `35426786282` works in any market RHD car.
+  - > **RHD fallback pedal — Hella 6PV010946-141:** Standalone floor-mount module, no OEM pedal box geometry required. MaxxECU has a native pre-defined profile. Fabricate any mounting position. Pin 1=SGND1, Pin 2=+5V(2), Pin 3=TPS2, Pin 4=SGND2, Pin 5=+5V(1), Pin 6=TPS1. Widely used in 944/914 swaps and kit cars for exactly this reason. ~$80–120 new.
+- [ ] 🔧 Wire e-pedal through firewall bulkhead connector (6 pins reserved in Phase 1) → MaxxECU APS1/APS2 analog inputs + 5V refs + GNDs
+  - > **Pin order (E46 pedal connector, bench-verified):** Pin 1 = GND1, Pin 2 = GND2, Pin 3 = VCC2 (+5V), Pin 4 = Output1/APS1 (0.7V idle→4.5V WOT), Pin 5 = VCC1 (+5V), Pin 6 = Output2/APS2 (0.36V idle→2.2V WOT). Total draw ~20mA; 24 AWG sufficient. Source: [HP Academy forum bench test](https://www.hpacademy.com/forum/efi-wiring-fundamentals/show/bmw-epedal-for-dbw-setup-wiring/) · [openinverter.org BMW Throttle Pedal wiki](https://openinverter.org/wiki/BMW_Electronic_Throttle_Pedal)
+- [ ] 🔧 Calibrate MaxxECU e-throttle in MTune — full procedure in [`e36-wiring/docs/etb-pid-tuning.md`](https://github.com/wesleyxcooper/e36-wiring/blob/main/docs/etb-pid-tuning.md)
+  - > ⚠️ **Pitfall:** Disconnect the TB motor wires before enabling e-throttle in MTune for the first time. Leave sensor wires connected — verify APS/TPS voltages read correctly before activating motor drive. Prevents runaway on first output enable.
+  - > **Sequence (don't skip steps):**
+    1. Enable e-throttle in MTune, assign APS1/APS2 to AIN pins, assign TPS1/TPS2 and motor output
+    2. Run **pedal calibration wizard** — captures idle/WOT min/max for both APS tracks automatically
+    3. Reconnect TB motor wires, run **TB calibration wizard** — sweeps to physical stops, captures TPS range
+    4. Run **PID auto-tune** (MTune built-in): engine at idle, MaxxECU sweeps TB through step inputs and calculates P/I/D
+    5. Verify on MTune scope: add APS% and TPS% channels, snap pedal sharply — TPS should track APS with <20ms lag, no sustained oscillation
+  - > **PID symptoms:** Lag = P too low. Oscillation/buzz = P too high. Slow creep to target = I too low. Jitter at fixed pedal = D too high (amplifies sensor noise). Start with MaxxECU Bosch 0280 750 defaults — auto-tune usually gets it right from there.
+  - > **If upgrading TB** (stock 65mm to VR6 74mm): re-run TB calibration wizard and PID auto-tune. Motor response and spring force differ. Pedal calibration is TB-agnostic, no need to redo.
+  - > ⚠️ **Pitfall:** Never disable APS ratio, TPS ratio, or APS-vs-TPS agreement safety checks. When any check faults, MaxxECU cuts motor output and the return spring closes the plate — that is the correct behavior. Diagnose the root cause (wiring fault, bad sensor, swapped wires) instead of widening tolerances.
+  - > [MaxxECU E-Throttle Docs](https://maxxecu.se/webhelp/settings-ethrottle.html) · [E-Throttle Body Wiring](https://maxxecu.se/webhelp/wirings-e-throttle_bodies.html)
+
+**Option B — Cable throttle (VR6 TB + Lokar cable):**
+- [ ] ✅ Install VR6 OBD2 throttle body `021133064A` onto BBG longitudinal manifold (OBD2 96–99 only, bolt pattern matches)
 - [ ] ✅ Install Lokar LOK-TC-1000LS148 throttle cable (cut to fit, adjust drum end for VR6 TB)
+  - > **Stock E36 cable cannot be reused** — the VR6 TB drum uses a different cable end than the M52 drum. The stock E36 floor pedal is retained (no E46 pedal module needed). The Lokar universal cable fits both the E36 pedal bracket and the VR6 drum. ~$40–60.
+  - > MaxxECU still receives TPS signal passively (for datalog + boost control). No e-throttle calibration needed. No throttle blip, traction control throttle management, launch control, or flat shift available with cable.
 
 ### Electrical  [ELECTRICAL]
 - [ ] ✅ Install 140A 07K alternator (PN 07K903023A — native 07K unit, OEM mounting points)
@@ -654,5 +691,10 @@
 | RevMap 07K harness connector docs | [docs.revmapperformance.com](https://docs.revmapperformance.com/en/07K-harness) |
 | RevMap 2.5T turbo prep guide | [revmapperformance.com](https://revmapperformance.com/07K-Turbo-Preparation/) |
 | 07K Hard to Find Parts Wiki | [the07k.wiki](https://the07k.wiki/wiki/Hard_to_Find_Parts) |
+| Strom Motorsports — E36 DBW adapter bracket | [strommotorsports.com](https://strommotorsports.com/products/e36-dbw-e46-accelerator-pedal-adapter) |
+| Garagistic — E46 pedal adapter for E36 | [garagistic.com](https://www.garagistic.com/products/e46-gas-pedal-for-e36-adapter-bracket) |
+| MaxxECU E-Throttle settings | [maxxecu.se/webhelp](https://maxxecu.se/webhelp/settings-ethrottle.html) |
+| MaxxECU E-Throttle body wiring | [maxxecu.se/webhelp](https://maxxecu.se/webhelp/wirings-e-throttle_bodies.html) |
+| Autoworks — DBW conversion guide | [autoworks.com.au](https://autoworks.com.au/blog/items/drive-by-wire-conversion-a-modern-upgrade-for-tuners-and-engine-swaps) |
 | FB 07K Swap — Thrust Bearing Thread | [facebook.com](https://www.facebook.com/groups/07kswap/permalink/3607377339428880/) |
 | FB 07K Swap — Oil Squirter Thread | [facebook.com](https://www.facebook.com/groups/07kswap/permalink/3608094966023784/) |
