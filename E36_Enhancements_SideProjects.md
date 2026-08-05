@@ -458,3 +458,77 @@ A **47-way** connector comfortably handles the full M52 or 07K engine harness si
 | **Total per harness termination** | | **~$250–400** |
 
 > Well-regarded harness supplier and connector source: [RaceSpec Online](https://racespeconline.com) — also publishes detailed guides on planform selection, contact installation, and backshell fitment.
+
+---
+
+## DBW Wiring Pinouts  [ELECTRICAL]
+
+### BMW E-Pedal (35426786282 manual / 35426786281 auto) — Bench-Verified Pinout
+
+6-pin connector, dual independent hall-effect sensor circuits. Pinout confirmed by bench test at HP Academy forum ([source](https://www.hpacademy.com/forum/efi-wiring-fundamentals/show/bmw-epedal-for-dbw-setup-wiring/)) and consistent with openinverter.org BMW pedal wiki.
+
+| Pin | Function | Notes |
+| :---- | :---- | :---- |
+| 1 | Ground 1 (APS1 GND) | Sensor ground, circuit 1 |
+| 2 | Ground 2 (APS2 GND) | Sensor ground, circuit 2 |
+| 3 | VCC 2 (+5V supply) | 5V supply for circuit 2 |
+| 4 | Output 1 (APS1 signal) | 0.7V idle → 4.5V WOT |
+| 5 | VCC 1 (+5V supply) | 5V supply for circuit 1 |
+| 6 | Output 2 (APS2 signal) | 0.36V idle → 2.2V WOT (inverse ratio = redundancy check) |
+
+> **Total current draw ~20mA — 24 AWG wire is sufficient for all 6 pins.** Two independent circuits allow MaxxECU to cross-check sensors for safety shutoff. Output 2 is intentionally ~half the voltage of Output 1 at any given position — MaxxECU uses this dual-track ratio to detect sensor failure. Wire all 6 through dedicated bulkhead connector pins (reserved in Phase 1).
+
+> **MaxxECU mapping:** APS1 signal → AIN (low-number priority, e.g. AIN 5); APS2 signal → AIN (e.g. AIN 6); VCC1/VCC2 → MaxxECU +5V sensor supply outputs; GND1/GND2 → MaxxECU sensor GND. Configure in MTune: Settings → E-Throttle → Pedal position.
+
+> **Reference:** [openinverter.org — BMW Electronic Throttle Pedal](https://openinverter.org/wiki/BMW_Electronic_Throttle_Pedal) | [HP Academy bench test thread](https://www.hpacademy.com/forum/efi-wiring-fundamentals/show/bmw-epedal-for-dbw-setup-wiring/)
+
+---
+
+### 07K DBW Throttle Body — Pinout
+
+The stock 07K TB is a VDO/Continental unit in the Bosch 0280 750 family (6-pin connector). MaxxECU has **pre-defined profiles** for this family — use the identification method below if your exact variant isn't listed.
+
+**Bosch 0280 750 474** (common 1.8T/VAG family TB, closest to 07K unit):
+
+| Pin | MaxxECU Function |
+| :---- | :---- |
+| 1 | Motor − |
+| 2 | Sensor GND |
+| 3 | +5V power supply |
+| 4 | Motor + |
+| 5 | TPS 2 (Analog input) |
+| 6 | TPS 1 (Analog input) |
+
+**Audi S3/A4 variant (Bosch 0280 750 009)** — also in MaxxECU docs, same family:
+
+| Pin | MaxxECU Function |
+| :---- | :---- |
+| 1 | TPS 1 (Analog input) |
+| 2 | Sensor GND |
+| 3 | Motor − |
+| 4 | TPS 2 (Analog input) |
+| 5 | Motor + |
+| 6 | +5V supply |
+
+> **If pin order is uncertain:** Use MaxxECU's self-ID method — measure resistance between all pairs. Two pins reading 0.1–10Ω = motor (Motor+/Motor−, polarity doesn't matter at this stage). Of the remaining 4: the pair with stable ~1–10kΩ resistance = 5V and GND. The remaining two vary with throttle plate position = TPS1 and TPS2.
+
+> **Source:** [MaxxECU E-Throttle Bodies Wiring Docs](https://maxxecu.se/webhelp/wirings-e-throttle_bodies.html)
+
+---
+
+### Larger Throttle Body for High-Power 07K Builds
+
+**Stock 07K TB bore: ~65mm.** Community consensus from Rennlist 944 07K swap thread: *"adequate for well beyond 500 hp at 7000 rpm, 25 psi"* — calculated at ~220 mph air speed, well below choked flow. Not a limitation at moderate power. ([Rennlist source](https://rennlist.com/forums/944-turbo-and-turbo-s-forum/803341-vw-audi-07k-2-5l-20v-i5-swap-thread-28.html))
+
+**At very high power (600–750+ whp at crank), a larger TB is worth considering.** Options with pre-defined MaxxECU profiles:
+
+| TB | Bore | Part # | MaxxECU Profile | Notes |
+| :---- | :---- | :---- | :---- | :---- |
+| **VW 3.6 VR6 TB** | ~74mm | `03H 133 062` | Bosch 0280 750 family | **Best direct upgrade** — same VAG flange as 07K, confirmed fitment on MKV 2.5 (VW Vortex). Used by 07K community. |
+| **Audi RS6 TB** | ~70mm | `077133062` | Yes — native MaxxECU | VAG V8 origin; verify flange compatibility with BBG manifold before ordering. |
+| **Chrysler 80mm** | 80mm | `53032801AC` | Yes — native MaxxECU | Requires adapter flange. |
+| **Corvette LS2** | 90mm | `12570790` | Yes — native MaxxECU | Requires adapter flange; very large for this application. |
+
+> **Recommended upgrade path:** VW 3.6 VR6 TB (`03H 133 062`, ~$40–80 used eBay). Direct flange fit candidate on BBG manifold. Confirm flange O-ring compatibility before ordering. Re-calibrate in MTune e-throttle wizard — same procedure as stock TB, just different PID starting values. **Do not upgrade TB before the tune is dialed in** — start with stock 65mm TB, upgrade at or above 550–600 whp if flow modeling shows restriction.
+
+> **BBG manifold note:** The BBG cast aluminum intake manifold may use the same stock 07K TB flange, OR a custom/modified inlet for the longitudinal orientation. Confirm TB flange spec directly with Boost Brothers Garage before ordering an upgraded TB.
