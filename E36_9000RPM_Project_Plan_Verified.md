@@ -273,7 +273,7 @@ KPI (King Pin Inclination / Steering Axis Inclination) is the inward tilt of the
 ### Chassis Reinforcement  [CHASSIS]
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Rear Subframe** | **Reinforcement Kit** | [BimmerWorld Rear Subframe Kit](https://www.bimmerworld.com/Suspension-Steering/Reinforcements/E36-Rear-Subframe-Chassis-Reinforcement-Kit.html) - $274.20 (verified) |
+| **Rear Subframe** | **Reinforcement Kit** | [BimmerWorld Rear Subframe Kit](https://www.bimmerworld.com/Suspension-Steering/Reinforcements/E36-Rear-Subframe-Chassis-Reinforcement-Kit.html) - $289.96 (verified Aug 2026) — full chassis kit matching factory E36 M3 spec (more coverage than Condor's 4-plate $47.98 pocket-only option) |
 | **RTAB Pockets** | **Reinforcement Kit** | [BimmerWorld Trailing Arm Kit](https://www.bimmerworld.com/Suspension-Steering/Reinforcements/Rear-Trailing-Arm-Pocket-Reinforcement-Kit.html) - $42.49 (verified) |
 | **Front Subframe** | **Reinforcement Kit** | [RallyRoad Front Subframe Plates](https://rallyroad.net/products/e36frontsubframereinforcementplates) - $19.95 (verified) |
 | **Strut Towers** | **Reinforcement Plates** | [BimmerWorld Front Plates](https://www.bimmerworld.com/Suspension-Steering/Reinforcements/Front-Strut-Tower-Reinforcement-Plates-E36.html) - $27.04 (verified) |
@@ -287,6 +287,8 @@ KPI (King Pin Inclination / Steering Axis Inclination) is the inward tilt of the
 > | **U Wrench It Auto** | 705 NJ-73, Palmyra NJ · (267) 225-3773 | $54.99/hr supervised | **$1,465–2,290** | Costs overlap VAC at beginner pace (20–35 hrs). **Call to verify before planning:** (1) multi-day car storage allowed? (not on website); (2) MIG welding available for chassis plates? (site lists "exhaust repair welding/torch" only — may not qualify for structural plate work). |
 >
 > **Market rate benchmark (E46 Fanatics forum, Aug 2026):** ~$2,000+ for full welded reinforcement (not epoxy), not including bushings and lines. Eurobahn Motorsports NC documented job: $1,491 all-in (full TMS E46 kit + OEM bushings + labor). VAC and U Wrench It are cost-competitive at beginner pace — choose VAC for certainty, U Wrench It for hands-on learning if verified viable.
+
+> **Installation resources:** [Garagistic Complete Chassis Reinforcement Guide](https://www.garagistic.com/pages/e36-complete-chassis-reinforcement-kit-installation-guide) (comprehensive written walkthrough) · [YouTube walkthrough #1](https://www.youtube.com/watch?v=qdHj_MjvSAU) · [YouTube walkthrough #2](https://www.youtube.com/watch?v=4_xz8q7XQIE)
 
 ---
 
