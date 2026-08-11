@@ -525,11 +525,12 @@
 - [ ] ✅ Order 07K harness pigtail connectors — buy before Phase 2 harness build kickoff:
   - **EV14 injector connectors:** [8-pack $9.93 — Amazon B07STLGB7Z](https://www.amazon.com/dp/B07STLGB7Z) — 5 needed for 07K I5 injectors + 3 spares (Amazon's Choice)
   - **VAG COP coil connectors (4-pin OE# 4B0973724):** [4-pack $11.99 — Amazon B093HK7PN1](https://www.amazon.com/dp/B093HK7PN1) — buy **2 packs** (~$24 total): 5 needed per 07K I5 COP + 3 spares
-  - **3-pin VAG sensor connectors (cam / crank / MAP), OE# 3B0973703G:** [$11.99 each — Amazon B0DY4CC12Q](https://www.amazon.com/dp/B0DY4CC12Q) — buy **4** (~$48): cam×1 + crank×1 + MAP×1 + spare. ⚠️ 07K crank trigger is **active (Hall)**, not passive VR
+  - **3-pin VAG sensor connectors (cam / crank / MAP), OE# 3B0973703G:** [$11.99 each — Amazon B0DY4CC12Q](https://www.amazon.com/dp/B0DY4CC12Q) — buy **4** (~$48): cam×1 + crank×1 + MAP×1 + spare. ⚠️ Same connector body for cam and crank but **different pinouts** — label pigtails clearly at crimp time
   - **2-pin NTC sensor connectors (CLT + IAT), OE# 1J0973702:** [$5.99 each — Amazon B0GLPX5HN5](https://www.amazon.com/dp/B0GLPX5HN5) — buy **3** (~$18): CLT×1 + IAT×1 + spare
   - **2-pin flat knock sensor connector, OE# 1J0973712:** source from ECS Tuning or FCP Euro (~$5–10 each) — buy **2**. ⚠️ Different connector body from 2-pin NTC above — do NOT substitute
 - [ ] 🔧 Connect MaxxECU 07K harness (plug in pre-built harness, load 07K base map)
   - > Confirm accelerator pedal connector variant (MK4 vs MK5/MK6) matches the harness built in Phase 2 before plugging in.
+  - > ⚠️ **MTune trigger setup — verify before first crank:** Crank = **VR input, N-1 / 60-2 pattern** (same type as M52 — MaxxECU "VR" label is correct). Cam = **Hall / HOME input, +5V supply type** (not +12V). Both sensors use the same 3B0973703G connector body but opposite pinouts — a swapped pigtail will produce no-start with no obvious failure mode.
   - > ⚠️ **Wideband sensor:** Use a **genuine Bosch** wideband sensor for the primary lambda input to MaxxECU. Aftermarket wideband sensors have documented accuracy issues at WOT and at rich lambda values below 0.75. Tune quality depends entirely on accurate AFR data — do not substitute.
 
 ### Air & Boost  [AIR]
