@@ -537,6 +537,17 @@ The 07K was designed for transverse FWD use. In a longitudinal BMW chassis its a
 > **07K OEM ECU (ME7.1.1) Pinout Reference:** When building the 07K engine harness, the OEM ME7.1.1 pinout identifies which wire at each VW connector maps to which sensor/actuator — critical for building the engine-side pigtails that plug into the MaxxECU. Key signals: crank trigger (Conn B pin 82), cam sensor (pin 86), injectors 1–5 (pins 96, 97, 112, 88, 89), coils 1–5 (pins 102, 103, 111, 94, 95), knock sensors (pins 106/107), MAP (pin 101), ECT (pin 93), DBW throttle body (pins 84/92/117/118), APS 1+2 (pins 35/72 and 34/73), cam actuator (pin 115). Discard: MAF, both OEM O2 sensors, SAI, EVAP, cruise, K-Line. **Pinout PDF (Google Drive):** [ME7.1.1 Pinout PDF](https://drive.google.com/file/d/15RPWyYPLHGEMMQZIlUgpoo77T-CxjyMP/view) · **Google Docs version:** [ME7.1.1 Pinout Doc](https://docs.google.com/document/d/1YAVQSiHIVDmD4jtIVNzIDVkd9qCpaQc1yFIbnHwPwww/edit)
 >
 > **Trigger advantage:** Both M52 and 07K use 60-2 crank trigger wheels with VR sensors. MaxxECU trigger type (`N-1 missing tooth`) is **identical** on both. Only the crank angle offset calibration differs — significantly reducing 07K tune bring-up time.
+>
+> **Harness build tooling** — buy before Phase 2 harness build kickoff (~$340–375 one-time):
+>
+> | Tool | Model | ~Price | Use |
+> | :--- | :--- | :--- | :--- |
+> | Micro-pin ratcheting crimper | Knipex 97 52 68 | $90 | VAG sensor / COP pigtails, ECU pin contacts (most-used tool) |
+> | Open-barrel crimper | IWISS IWS-2820M | $40 | Ring terminals, relay contacts, general open-barrel |
+> | Deutsch AS crimper | Deutsch WT-0460-8-0800 | $150–180 | Bulkhead size 20 contacts — no substitute |
+> | Ferrule crimper | IWISS IWS-10 | $25 | Stranded wire ends → screw-clamp terminals (ECU power/GND) |
+> | Deutsch contact extraction | Deutsch 1680-73-01 | $15 | AS bulkhead contact removal (size 20) |
+> | VW/Bosch de-pinning picks | Lisle 57750 | $20 | Sensor pigtails, COP connector de-pinning |
 
 ---
 
