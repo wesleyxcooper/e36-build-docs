@@ -584,6 +584,8 @@ The 07K was designed for transverse FWD use. In a longitudinal BMW chassis its a
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
 | **07K Engine Harness** | **MaxxECU Custom 07K Harness (build offline in Phase 2) + Deutsch AS / Souriau 8STA firewall bulkhead** | Build using MaxxECU CMC connector ends with VW sensor connectors (crank VR, cam Hall, CLT NTC, TPS, injectors EV14 ×5, MAP, IAT, wideband). Same ECU as M5x phase — harness swap replaces M52 harness; no additional ECU cost. **If firewall bulkhead was installed in Phase 1:** swap is a single connector disconnect. ~$550–900 total (harness materials + contacts + mating plug). See Enhancements doc `[ELECTRICAL]` for full bulkhead connector detail. |
+| **EV14 Injector Connector Pigtails** | **8-pack EV6/EV14 USCAR pigtails — 5 needed for 07K I5** | [Amazon B07STLGB7Z](https://www.amazon.com/dp/B07STLGB7Z) — **$9.93** (Amazon's Choice, 4.5★). EV14 is the 07K injector connector standard — direct fit for ID1050x. 8-pack covers all 5 cylinders with 3 spares. Order at Phase 2 harness build kickoff. |
+| **VAG Ignition Coil Connector Pigtails** | **4-pin COP pigtails OE# 4B0973724 — need 5 for 07K I5; buy 2 packs** | [Amazon B093HK7PN1](https://www.amazon.com/dp/B093HK7PN1) — **$11.99/4-pack** (4.4★). Individual pencil coil connector, one per cylinder. 2 packs = 8 connectors ($23.98) — 5 installed + 3 spares. Order at Phase 2 harness build kickoff. |
 
 #### Chassis — Engine Install  [CHASSIS]
 | Component | Specification | Cost / Action |

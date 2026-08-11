@@ -522,6 +522,9 @@
   - 068911024GX (reman, FCP Euro lifetime guarantee) = 068911024H (Bosch new) = same nose, fully interchangeable. NOT the N54 starter from Phase 1.
 
 ### ECU & Engine Harness  [ECU]
+- [ ] ✅ Order 07K harness pigtail connectors — buy before Phase 2 harness build kickoff:
+  - **EV14 injector connectors:** [8-pack $9.93 — Amazon B07STLGB7Z](https://www.amazon.com/dp/B07STLGB7Z) — 5 needed for 07K I5 injectors + 3 spares (Amazon's Choice)
+  - **VAG COP coil connectors (4-pin OE# 4B0973724):** [4-pack $11.99 — Amazon B093HK7PN1](https://www.amazon.com/dp/B093HK7PN1) — buy **2 packs** (~$24 total): 5 needed per 07K I5 COP + 3 spares
 - [ ] 🔧 Connect MaxxECU 07K harness (plug in pre-built harness, load 07K base map)
   - > Confirm accelerator pedal connector variant (MK4 vs MK5/MK6) matches the harness built in Phase 2 before plugging in.
   - > ⚠️ **Wideband sensor:** Use a **genuine Bosch** wideband sensor for the primary lambda input to MaxxECU. Aftermarket wideband sensors have documented accuracy issues at WOT and at rich lambda values below 0.75. Tune quality depends entirely on accurate AFR data — do not substitute.
