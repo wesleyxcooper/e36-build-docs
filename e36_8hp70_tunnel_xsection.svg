@@ -10,8 +10,7 @@
 <path d="M 223,390 L 223,178 Q 223,152 249,152 L 491,152 Q 517,152 517,178 L 517,390 Z" fill="url(#h2)" opacity="0.4"/>
 <path d="M 236,390 L 236,182 Q 236,164 254,164 L 486,164 Q 504,164 504,182 L 504,390 Z" fill="#f4f4f4" stroke="#888" stroke-width="1.5"/>
 <rect x="236" y="173" width="269" height="200" fill="rgba(30,150,30,0.18)" stroke="#1e961e" stroke-width="1.5" stroke-dasharray="6,4"/>
-<rect x="221" y="372" width="298" height="52" fill="rgba(30,150,30,0.1)" stroke="#1e961e" stroke-width="1.5" stroke-dasharray="6,4"/>
-<text x="370" y="166" font-size="9" fill="#1e961e" text-anchor="middle" font-weight="normal" font-family="sans-serif">5HP-19 ref ~256mm case*</text>
+<text x="370" y="166" font-size="9" fill="#1e961e" text-anchor="middle" font-weight="normal" font-family="sans-serif">S5D-320Z case body ~256mm* (ext. ~279mm* at widest)</text>
 <rect x="250" y="173" width="239" height="215" fill="rgba(210,70,10,0.38)" stroke="#d24010" stroke-width="2.5"/>
 <rect x="235" y="388" width="270" height="91" fill="rgba(210,70,10,0.22)" stroke="#d24010" stroke-width="1.5" stroke-dasharray="4,3"/>
 <text x="370" y="438" font-size="9" fill="#d24010" text-anchor="middle" font-weight="normal" font-family="sans-serif">Pan 257mm wide ✓GRM | ~44mm deep ✓TMD</text>
@@ -44,7 +43,7 @@
 <line x1="370" y1="45" x2="370" y2="505" stroke="#ccc" stroke-width="1" stroke-dasharray="8,4"/>
 <text x="373" y="60" font-size="9" fill="#bbb" text-anchor="start" font-weight="normal" font-family="sans-serif">CL</text>
 <rect x="16" y="60" width="16" height="11" fill="rgba(30,150,30,0.2)" stroke="#1e961e" stroke-width="1.5" stroke-dasharray="6,4"/>
-<text x="36" y="69" font-size="9" fill="#333" text-anchor="start" font-weight="normal" font-family="sans-serif">ZF 5HP-19 stock auto (reference)</text>
+<text x="36" y="69" font-size="9" fill="#333" text-anchor="start" font-weight="normal" font-family="sans-serif">ZF S5D-320Z stock manual (reference)</text>
 <rect x="16" y="76" width="16" height="11" fill="rgba(210,70,10,0.38)" stroke="#d24010" stroke-width="1.5"/>
 <text x="36" y="85" font-size="9" fill="#333" text-anchor="start" font-weight="normal" font-family="sans-serif">Dodge 8HP70 case body</text>
 <rect x="16" y="92" width="16" height="11" fill="rgba(210,70,10,0.22)" stroke="#d24010" stroke-width="1.5" stroke-dasharray="4,3"/>

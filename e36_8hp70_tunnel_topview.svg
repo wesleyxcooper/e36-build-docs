@@ -1,0 +1,48 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="980" height="460">
+<rect width="100%" height="100%" fill="#f4f4f4"/>
+<defs><pattern id="h1" patternUnits="userSpaceOnUse" width="8" height="8"><path d="M0,8 L8,0 M-2,2 L2,-2 M6,10 L10,6" stroke="#aaa" stroke-width="0.7"/></pattern></defs>
+<text x="16" y="22" font-size="13" fill="#222" text-anchor="start" font-weight="bold" font-family="sans-serif">E36 Transmission Tunnel — TOP VIEW (plan, looking down from above)</text>
+<text x="16" y="38" font-size="9" fill="#888" text-anchor="start" font-weight="normal" font-family="sans-serif">* = estimated  |  ✓ = cited source  |  ~1.3px/mm</text>
+<polygon points="120,34.099999999999994 809.0,105.6 809.0,334.4 120,405.9" fill="#d0d0d0" stroke="#777" stroke-width="2.5"/>
+<polygon points="120,34.099999999999994 809.0,105.6 809.0,334.4 120,405.9" fill="url(#h1)" opacity="0.4"/>
+<line x1="120" y1="55" x2="120" y2="420" stroke="#444" stroke-width="3"/>
+<text x="116" y="50" font-size="9" fill="#444" text-anchor="end" font-weight="normal" font-family="sans-serif">FIREWALL</text>
+<line x1="40" y1="220" x2="960" y2="220" stroke="#ccc" stroke-width="1" stroke-dasharray="10,5"/>
+<text x="44" y="217" font-size="8" fill="#bbb" text-anchor="start" font-weight="normal" font-family="sans-serif">CL</text>
+<rect x="195" y="41" width="693" height="359" fill="rgba(30,140,30,0.15)" stroke="#1e8c1e" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="541" y="33" font-size="9" fill="#1e8c1e" text-anchor="middle" font-weight="normal" font-family="sans-serif">ZF S5D-320Z (stock manual) ~279mm* ext. × 533mm ✓</text>
+<rect x="195" y="90" width="39" height="260" fill="rgba(30,80,200,0.5)" stroke="#1e50c8" stroke-width="2"/>
+<text x="215" y="364" font-size="8" fill="#1e50c8" text-anchor="middle" font-weight="normal" font-family="sans-serif">Adapter</text>
+<rect x="234" y="53" width="933" height="334" fill="rgba(210,70,10,0.28)" stroke="#d24010" stroke-width="2.5"/>
+<rect x="234" y="70" width="933" height="299" fill="rgba(210,70,10,0.1)" stroke="#d24010" stroke-width="1.2" stroke-dasharray="4,3"/>
+<rect x="440" y="53" width="50" height="17" fill="rgba(220,0,0,0.5)" stroke="#cc0000" stroke-width="1.5"/>
+<rect x="440" y="370" width="50" height="17" fill="rgba(220,0,0,0.5)" stroke="#cc0000" stroke-width="1.5"/>
+<line x1="70" y1="34" x2="80" y2="34" stroke="#666" stroke-width="1.2"/>
+<line x1="70" y1="406" x2="80" y2="406" stroke="#666" stroke-width="1.2"/>
+<line x1="75" y1="34" x2="75" y2="406" stroke="#666" stroke-width="1.2"/>
+<text x="70" y="224" font-size="9" fill="#666" text-anchor="end" font-weight="normal" font-family="sans-serif">~286mm*</text>
+<line x1="839" y1="106" x2="849" y2="106" stroke="#666" stroke-width="1.2"/>
+<line x1="839" y1="334" x2="849" y2="334" stroke="#666" stroke-width="1.2"/>
+<line x1="844" y1="106" x2="844" y2="334" stroke="#666" stroke-width="1.2"/>
+<text x="849" y="224" font-size="9" fill="#666" text-anchor="start" font-weight="normal" font-family="sans-serif">~176mm*</text>
+<line x1="234" y1="420" x2="234" y2="430" stroke="#d24010" stroke-width="1.2"/>
+<line x1="1167" y1="420" x2="1167" y2="430" stroke="#d24010" stroke-width="1.2"/>
+<line x1="234" y1="425" x2="1167" y2="425" stroke="#d24010" stroke-width="1.2"/>
+<text x="701" y="417" font-size="9" fill="#d24010" text-anchor="middle" font-weight="normal" font-family="sans-serif">8HP70 total 717.6mm ✓DomiWorks</text>
+<line x1="234" y1="389" x2="234" y2="423" stroke="#d24010" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="1167" y1="389" x2="1167" y2="423" stroke="#d24010" stroke-width="1" stroke-dasharray="3,2"/>
+<line x1="624" y1="402" x2="624" y2="412" stroke="#d24010" stroke-width="1.2"/>
+<line x1="958" y1="402" x2="958" y2="412" stroke="#d24010" stroke-width="1.2"/>
+<line x1="624" y1="407" x2="958" y2="407" stroke="#d24010" stroke-width="1.2"/>
+<text x="791" y="399" font-size="9" fill="#d24010" text-anchor="middle" font-weight="normal" font-family="sans-serif">pan 257mm ✓GRM</text>
+<line x1="728" y1="19" x2="728" y2="421" stroke="#777" stroke-width="1" stroke-dasharray="5,3"/>
+<text x="731" y="17" font-size="8" fill="#777" text-anchor="start" font-weight="normal" font-family="sans-serif">↕ new crossmember zone</text>
+<rect x="16" y="65" width="16" height="11" fill="rgba(30,140,30,0.2)" stroke="#1e8c1e" stroke-width="1.5" stroke-dasharray="6,4"/>
+<text x="36" y="74" font-size="9" fill="#333" text-anchor="start" font-weight="normal" font-family="sans-serif">ZF S5D-320Z stock manual (reference) ✓TeamImpulse</text>
+<rect x="16" y="81" width="16" height="11" fill="rgba(30,80,200,0.5)" stroke="#1e50c8" stroke-width="1.5"/>
+<text x="36" y="90" font-size="9" fill="#333" text-anchor="start" font-weight="normal" font-family="sans-serif">Chatham CNC adapter plate</text>
+<rect x="16" y="97" width="16" height="11" fill="rgba(210,70,10,0.3)" stroke="#d24010" stroke-width="1.5"/>
+<text x="36" y="106" font-size="9" fill="#333" text-anchor="start" font-weight="normal" font-family="sans-serif">Dodge 8HP70 pan footprint (257mm wide ✓)</text>
+<rect x="16" y="113" width="16" height="11" fill="rgba(220,0,0,0.5)" stroke="#cc0000" stroke-width="1.5"/>
+<text x="36" y="122" font-size="9" fill="#333" text-anchor="start" font-weight="normal" font-family="sans-serif">Pan exceeds tunnel width → boss grind zone</text>
+</svg>
