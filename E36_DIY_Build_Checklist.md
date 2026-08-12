@@ -36,7 +36,7 @@
 - [ ] ✅ Order Bosch PST-F1 + M14×1.5→M10×1.0 adapter ([sorek.uk](https://shop.sorek.uk/products/bosch-pst-f-1-vanos-banjo-m14x1-5-to-m10x1-0-sensor-adapter-m50-m52-m54)) — ~$65
 
 ### Instrumentation  [INSTRUMENTS · OIL · ELECTRICAL]
-- [ ] 🔧 Install Gauge.S cluster — plugs into OEM E36 cluster connectors (PNP)
+- [ ] 🔧 Install Gauge.S cluster — plugs into OEM E36 cluster connectors (PNP) — wiring: [`gauge-s-can.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/gauge-s-can.wv) ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/gauge-s-can.html)) · [`body-x20.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/body-x20.wv) ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/body-x20.html))
   - **Video:** [Gauge.S E36 Features & Installation](https://www.youtube.com/watch?v=v5P81D6qujs) — **7:00** installation | **1:12** features | **13:32** software/setup
   - Displays actual °C / °F numbers for coolant temp, oil temp, oil pressure — not needle gauges
   - Reads OEM NTC coolant sensor at the block via existing harness (no extra wiring for coolant temp)
@@ -45,7 +45,7 @@
   - **Phase 3 upgrade:** In MaxxECU phase, switch from raw sensor mode to **MaxxECU CAN bus feed** — richer data, no sensor wiring changes needed
   - > ⚠️ **Pitfall:** Read the wiki at [wiki.sorek.uk](https://wiki.sorek.uk) before installing — definition files need to match your ECU type (MS41.x for OBD2 E36; MaxxECU CAN profile from Phase 1 onward). Wrong definition = missing or wrong readings.
   - > ⚠️ **Pitfall:** Do NOT buy the OBD2 adapter ($68) for the PNP cluster — it is redundant. The OEM cluster harness already provides everything the unit needs.
-- [ ] 🔧 Install Bosch PST-F1 dual oil temp/pressure sensor at M52 VANOS banjo bolt location
+- [ ] 🔧 Install Bosch PST-F1 dual oil temp/pressure sensor at M52 VANOS banjo bolt location — wiring: [`pst-f1-sensor.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/pst-f1-sensor.wv) ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/pst-f1-sensor.html))
   - Mount: M14×1.5 banjo port at block → sorek M14×1.5→M10×1.0 adapter → PST-F1 threads directly in (M10×1.0)
   - **Wiring (4-pin sensor):**
     - Pressure output (0–5V, 0–10 bar) → Gauge.S **A1 or A2** — these are 5V-tolerant pins
@@ -157,7 +157,7 @@
   - > ⚠️ **Pitfall:** The 8HP is significantly heavier than the Getrag. Two people minimum. A transmission jack on a floor makes this manageable — doing it with jack stands and a floor jack is possible but risky for the ECU wiring on the unit.
 - [ ] ✅ Swap output flange to BMW 96mm PCD (E90 non-35i, PN 26117511454)
   - > ⚠️ **Pitfall:** Both the 8HP50Z and 8HP70Z ship with a 105mm flange. The E36 guibo is 96mm. The wrong flange is a no-start situation that isn't obvious until driveshaft fitment.
-- [ ] ✅ Install DCT Shifter E36 unit ([dctshifter.com](https://dctshifter.com/)) — **4-wire digital connection to MaxxECU**
+- [ ] ✅ Install DCT Shifter E36 unit ([dctshifter.com](https://dctshifter.com/)) — **4-wire digital connection to MaxxECU** — wiring: [`dct-shifter.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/dct-shifter.wv) ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/dct-shifter.html))
   - Models: 270GT Aluminum (compact), 290GTE Carbon (taller throw), 390GT (full-size) — all wire identically, choice is ergonomic
   - **Wiring (4 wires):** +12V switched (fused), GND, UP signal → MaxxECU DIN = **Transmission UP shift**, DOWN signal → MaxxECU DIN = **Transmission DOWN shift**
   - No CAN — pure momentary GND closure. Use shielded wire if routing near the engine harness loom.
@@ -166,7 +166,7 @@
   - While driving: UP/DOWN = manual gear requests. Unsafe shifts blocked automatically.
   - **Hold UP** → launch control and/or 8HP transbrake (configurable hold time) — your drift launch feature
   - > ⚠️ **Pitfall:** Do NOT wire an OEM BMW CAN shifter at the same time as the DCTShifter SEQ mode. The two paths conflict. BMW 10-pin end of #2287 is capped — that is the correct state.
-- [ ] ✅ Install MaxxECU 8HP GEN1 CAN harness #2287 (BMW 8HP shifter variant) — **mandatory TCU link regardless of shifter choice**
+- [ ] ✅ Install MaxxECU 8HP GEN1 CAN harness #2287 (BMW 8HP shifter variant) — **mandatory TCU link regardless of shifter choice** — wiring: [`8hp-can.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/8hp-can.wv) ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/8hp-can.html))
   - Pre-terminated: 2,100mm run → 12-pin GT150 (8HP TCU: CAN H/L, main 12V, wakeup, GND) + 1,800mm run → BMW F-series 10-pin CAN shifter connector (cap unused with DCTShifter)
   - **Power-up relay circuit — design before install:** TCU main 12V (GT150 pin A) must be live 10–15s **before** the wakeup signal (pin B) is applied. If both are on the same ignition-switched fuse, the TCU partially fails to initialize and SEQ mode won’t function. Use a power-hold relay: main 12V constant or long-hold; wakeup = key-on only.
   - **This harness stays untouched at the 07K swap.** It connects MaxxECU → 8HP TCU via CAN. The same MaxxECU and the same gearbox remain — only the engine harness changes.
@@ -222,7 +222,7 @@
   - Research this before ordering MaxxECU — confirm current preferred method with the MaxxECU community or SLG/MaxxECU support, as specifics vary by EWS version and harness.
   - > ⚠️ **Pitfall:** This is not a MaxxECU quirk — any replacement ECU (TurboLamik, MegaSquirt, etc.) faces identical EWS2 incompatibility. It is not optional.
 - [ ] ✅ Mount MaxxECU Race unit (firewall or under dash — keep away from heat)
-- [ ] 🔧 Install Deutsch AS / Souriau 8STA firewall bulkhead connector (47- or 79-way flanged receptacle)   [ELECTRICAL]
+- [ ] 🔧 Install Deutsch AS / Souriau 8STA firewall bulkhead connector (47- or 79-way flanged receptacle)   [ELECTRICAL] — wiring: [`firewall-bulkhead.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/firewall-bulkhead.wv) ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/firewall-bulkhead.html))
   - > Mount on upper firewall near OEM harness grommet. **LHD: left (driver's) side. RHD: LEFT side (passenger side) — the OEM engine harness grommet is on the passenger side in both LHD and RHD E36; the driver's/right side on RHD contains steering column and brake/clutch pass-throughs and is also the exhaust side of a longitudinal 07K (SPA manifold exits right-hand side of engine). ⚠️ Do NOT place bulkhead connector on the driver's/right side in a RHD 07K build.** Custom aluminum plate or direct 54mm center-drill + flanged receptacle. Additive — no OEM connectors removed.
   - > Wire cabin side permanently (ECU CMC, fuse block, relay board, cluster X20 signals). Engine harnesses each terminate in a mating plug on the engine side.
   - > **Pre-allocate 6 pins for e-pedal (Phase 3):** APS1 SIG, APS2 SIG, VCC1, VCC2, GND1, GND2. Leave engine-side pins unconnected until Phase 3; Deutsch AS supports field-adding pins at any time. This avoids running new wires through the firewall later.
@@ -232,7 +232,7 @@
   - **Option A (recommended):** Swap sensor to BMW PN `12141726590` — direct fit to M50 harness connector, no harness modification.
   - **Option B:** Add adapter pigtail between M52 sensor and M50 harness connector.
   - Without this: no cam/home signal → MaxxECU cannot resolve firing order → no-start. Confirm before first start attempt.
-- [ ] 🔧 Connect MaxxECU M50 terminated engine harness to all engine sensors
+- [ ] 🔧 Connect MaxxECU M50 terminated engine harness to all engine sensors — wiring: [`maxxecu-m52.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/maxxecu-m52.wv) ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/maxxecu-m52.html))
   - > Reference: [MaxxECU M50 Harness Docs](https://www.maxxecu.com/webhelp/wirings-terminated_engine_harness-bmw_m50.html) | [22RPD E36 OBD2 Chassis Adapter](https://22rpd.com/shop/product/127)
   - > ⚠️ **Harness looming discipline — plan before you sleeve anything:**
     - **Loom together:** Engine sensor inputs (CLT, IAT, TPS, MAP, knock, PST-F1) as one sensor sub-loom. Injector wires as one sub-loom. Coil primaries as one sub-loom. The sensor sub-loom and the injector/coil sub-looms share the same general route but go into **separate sleeves** — same destination, different wraps.
