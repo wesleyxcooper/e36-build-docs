@@ -22,6 +22,20 @@ Planning documents and bill-of-materials CSVs for the E36 restomod build.
 | [E36_Phase3_FinalSwap.csv](E36_CSVs/E36_Phase3_FinalSwap.csv) | Phase 3 — Final swap + turbo |
 | [E36_Phase4_Calibration.csv](E36_CSVs/E36_Phase4_Calibration.csv) | Phase 4 — Tune and calibration |
 
+## Technical Diagrams
+
+### 8HP70 Tunnel Fitment — E36 vs Dodge 8HP70
+Generated Aug 2026. Dimensions marked `*` are estimated from ZF 5HP-19 fitment + community reports. Dimensions marked `✓` are cited from primary sources.
+
+| Diagram | View | Source |
+|---------|------|--------|
+| [Top/Plan View](e36_8hp70_tunnel_topview.svg) | Looking down — tunnel footprint vs 8HP70 pan + length | [DomiWorks length 717.6mm](https://www.domi-works.com/pages/transmission-information) · pan width from Truck Master Diesel PPE pan listing (257mm / 10.125") |
+| [Front Cross-Section](e36_8hp70_tunnel_xsection.svg) | Looking forward at crossmember — tunnel arch vs case + boss protrusions | [lateral-g T56 comparison](https://lateral-g.net/forums/printthread.php?t=59958) · [guruautowerks boss grind](https://www.guruautowerks.com/) |
+
+**Key findings:** 8HP70 case (~228mm wide) clears E36 tunnel inner (~256mm*) with ~14mm each side. Bellhousing mounting bosses (+21mm/side) are the primary collision — grind ~7 bosses (angle grinder, 1–2 hrs, no sheet metal cutting). Pan (257mm wide) extends below floor — ground clearance issue only, not tunnel conflict. Trans is 717.6mm total vs ~645mm* for stock ZF 5HP-19 — new crossmember position + custom driveshaft required.
+
+> ⚠️ **Diagram confidence caveat:** These are schematic illustrations, not engineering drawings. Only `717.6mm` total length (DomiWorks) and `257mm` pan width (PPE pan listing) are from cited sources — all other dimensions are community estimates with no primary source. The `~87mm deep` pan label in the cross-section is suspect: the PPE aftermarket pan measures 1.75" = 44.5mm deep (pan depth only), and 87mm may incorrectly represent total case-to-pan-bottom drop. The `✓GRM` pan citation in the SVG files points to a dead link — source is actually the PPE pan product listing, which is an aftermarket deep pan, not a stock 8HP70 dimension. E36 tunnel widths (256mm, 286mm) have no BMW dimensional source and should be verified by physical measurement. **Do not use these diagrams for fabrication clearance decisions — mock-up with the actual transmission.**
+
 ## Related
 - [Wiring repo (e36-wiring)](https://github.com/wesleyxcooper/e36-wiring)
 - [Google Sheets BOM](https://docs.google.com/spreadsheets/d/1RvWglJQ5h60HYXyukfPzipnDcFYT3F9rwGVZZGb-tCE)
