@@ -400,23 +400,37 @@
 
 > **Crank verification (pre-Euromotive):** Part number is stamped on the rear crank flange — visible only after flywheel/flexplate is removed. Forging seam (1/8"–1/4" wide ground parting line vs. thin cast line) is visible on the crank body with pan off and crank rotated. *(Source: [VW Vortex — telling a forged crank from a cast](https://www.vwvortex.com/threads/telling-a-forged-crank-from-a-cast.5516409/))* partslink24 already confirms `07K105101E` — defer physical confirmation to Euromotive teardown.
 
-#### 07K Engine — Long-Term Storage (Uninsulated Garage)
-*Applies both before Euromotive dropoff (donor longblock as-received) and after return (sealed build longblock).*
-- [ ] ✅ Mount on S&P adapter + HF 1000 lb stand on receipt — keeps it off concrete, in natural (horizontal crank) orientation
-- [ ] ✅ Plug **intake ports** — rubber plugs or tape
-- [ ] ✅ Plug **exhaust ports** — rubber plugs or rags + tape
-- [ ] ✅ Confirm **oil fill cap** is seated
-- [ ] ✅ Tape over any open coolant ports or sensor bungs
-- [ ] ✅ Optional: wipe external cast iron block surfaces with WD-40 or ACF-50 for cosmetic rust protection
-  - > **Note:** No dehumidifier required for a sealed longblock. Cast iron exterior will surface rust cosmetically; internals are protected by oil film and sealed gaskets.
+#### 07K Engine — Storage (Uninsulated Garage)
+*Applies to donor longblock as-received and to sealed build longblock returned from Euromotive.*
 
-#### ZF 8HP Transmission — Long-Term Storage
-- [ ] ✅ Leave **ATF in** — do not drain. Fluid protects internal seals and friction clutches.
-- [ ] ✅ Store **horizontal** (longest axis horizontal = in-car orientation). Cradle in a tire or wooden V-cradle (two 2×4 blocks in a V). Do not stand on end.
-- [ ] ✅ Tape/plug the **vent/breather port** — prevents humid air cycling in/out with temperature changes
+**Immediately on delivery — on pallet (stand not yet available)**
+- [ ] ✅ Leave on pallet — keeps engine off concrete; do not move without a hoist
+- [ ] ✅ **Plug every port** — all 5 intake runners, all 5 exhaust ports, oil filler cap, dipstick tube, coolant inlet/outlet, all open sensor bungs. Summit Racing foam engine storage plugs by port size, or tape.
+- [ ] ✅ Check oil level — if donor had oil, leave it in (protective). If dry or very low, add a quart of cheap motor oil to coat internals.
+- [ ] ✅ **Fog the cylinders** — pull all 5 spark plugs, shoot fogging oil or motor oil from a squirt bottle into each bore, reinstall plugs
+- [ ] ✅ Coat exposed machined surfaces (flywheel mating face, head deck if exposed, bare steel) with Fluid Film or CRC 3-36. WD-40 evaporates — not suitable for this.
+- [ ] ✅ Cover with a moving blanket or breathable tarp — **not plastic** (traps condensation)
+
+**Long-term — on stand (weeks to a year+)**
+- [ ] ✅ Mount on [S&P adapter](https://s-pautomotive.com/product/07k-engine-stand-mount/) + [HF 1000 lb Engine Stand SKU 59201](https://www.harborfreight.com/1000-lb-capacity-engine-stand-59201.html) as soon as crane is available — keeps engine off concrete, in natural crank orientation
+- [ ] ✅ **Primary protection: [Zerust VCI Engine Storage Bag (24"×26"×46", Amazon ~$35)](https://www.amazon.com/Zerust-Engine-Storage-Bag-24/dp/B0CJMMPGF5)** — VCI built into bag material; no secondary products required inside. Rated 3–5 years. Validated at industrial scale: 2,000+ engines stored 5+ years in non-climate-controlled conditions ([Zerust case study](https://www.zerust.com/resources/case-studies/zerust-designs-a-long-term-engine-storage-system-to-protect-from-corrosion/))
+  - If engine is already on stand (hardware passes through block, can't fully seal the bag): place Zerust ActivPak VCI emitter packets inside the sealed intake and exhaust ports; place Wisedry desiccant under a breathable cover over the assembly instead
+- [ ] ✅ **Supplemental: [Wisedry 4×500g rechargeable silica gel packs (Amazon)](https://www.amazon.com/wisedry-Silica-Gel-Desiccant-Packs/dp/B0CKYSZ31J)** — place 2 under the cover. Microwave recharge in 10–16 min; color indicator (orange = dry, green = saturated). Recharge when green.
+  - > **No periodic crank rotation required:** Fogging the cylinders before sealing provides the cylinder wall oil film. VCI bag or emitters handle all external surfaces. With both in place, no rotation is needed for the storage duration.
+  - > **Skip whole-garage dehumidifiers** (Eva-Dry E-500 etc.) — they are sized for gun safes (~500 cu ft) and are not effective under a breathable cover in an open garage. Bag the parts; do not attempt to dehumidify the space.
+
+#### ZF 8HP Transmission — Storage (Uninsulated Garage, Dodge Donor)
+- [ ] ✅ **Remove Dodge TMU before install** (bench job — 4 bolts, two pieces: coolant heater body + cast aluminum manifold). The Dodge TMU uses Ram 1500 coolant routing that does not exist in the E36 chassis — must come off before the trans goes in the car. Do it now while the trans is on the bench; the same job in-car during the swap is significantly harder. Reference: [RevMax delete manual](https://manuals.plus/m/d0ce99a6bd3cd18188a5abebed567d585dc6320d60b1577f57e77db30a5fd270) · [RamForum TBV assembly diagram](https://www.ramforum.com/threads/8hp70-thermostatic-valve.109089/)
+  - > **Storage note:** Not required for storage — with TMU *on*, the ATF ports are sealed by the TMU's own gaskets. If leaving TMU on for storage, plug the two TMU coolant hose fittings (rubber caps) instead of the ATF case ports.
+- [ ] ✅ **Plug the two exposed ATF case ports** (cooler in/out, exposed after TMU removal) with M10×1.0 threaded caps — do immediately after TMU comes off
+- [ ] ✅ **Plug torque converter opening** with a foam circle cut to fit or a rubber expansion plug
+- [ ] ✅ **Plug output shaft bore** with a rag + tape or rubber bung
+- [ ] ✅ **Leave ATF in** — do not drain. ATF coats all internal gear sets, clutch packs, and bearing surfaces. Draining leaves them exposed.
+- [ ] ✅ **Grease external input shaft splines** (TC-engagement end) with assembly lube or anti-seize before bagging — the one externally exposed machined surface ATF does not coat
+- [ ] ✅ **Bag with [Zerust VCI Engine Storage Bag (24"×26"×46", Amazon ~$35)](https://www.amazon.com/Zerust-Engine-Storage-Bag-24/dp/B0CJMMPGF5)** — same bag fits the 8HP70Z (~23"L × 16"W × 16"H). Seal with zip ties after all ports are plugged.
+- [ ] ✅ Store **horizontal** (longest axis horizontal = in-car orientation) in a tire or V-cradle (two 2×4 blocks). Do not stand on end.
 - [ ] ✅ Keep off concrete floor — tire or V-cradle handles this
-- [ ] ✅ Leave torque converter installed — if stored separately it drains dry
-  - > **Note:** Aluminum case is immune to rust. External steel fasteners may surface rust cosmetically — not a functional concern.
+  - > **No periodic input shaft rotation required:** ATF inside the sealed case coats all internal gear sets, clutch packs, and bearings. With ATF in and VCI bag sealed, no rotation is needed for the storage duration.
 
 #### Transport Options
 
