@@ -555,7 +555,7 @@ The 07K was designed for transverse FWD use. In a longitudinal BMW chassis its a
 >
 > **Trigger advantage:** Both M52 and 07K use 60-2 crank trigger wheels with VR sensors. MaxxECU trigger type (`N-1 missing tooth`) is **identical** on both. Only the crank angle offset calibration differs — significantly reducing 07K tune bring-up time.
 >
-> **Harness build tooling** — buy before Phase 2 harness build kickoff (~$340–375 one-time):
+> **Harness build tooling** — buy before Phase 2 harness build kickoff (~$340–375 one-time). Full pinning/depinning workflow and connector family reference: [`e36-wiring/docs/harness-build.md`](https://github.com/wesleyxcooper/e36-wiring/blob/main/docs/harness-build.md). Estimated ~200–230 individual pin insertions across all harnesses — budget a full day per major harness (engine, bulkhead, cabin loom). Never sleeve before bench continuity + resistance test passes.
 >
 > | Tool | Model | ~Price | Use |
 > | :--- | :--- | :--- | :--- |
@@ -565,6 +565,8 @@ The 07K was designed for transverse FWD use. In a longitudinal BMW chassis its a
 > | Ferrule crimper | IWISS IWS-10 | $25 | Stranded wire ends → screw-clamp terminals (ECU power/GND) |
 > | Deutsch contact extraction | Deutsch 1680-73-01 | $15 | AS bulkhead contact removal (size 20) |
 > | VW/Bosch de-pinning picks | Lisle 57750 | $20 | Sensor pigtails, COP connector de-pinning |
+> | **Radlok GND stud adapters** | Amphenol 8mm M8×1.25 Male (×2–3) | ~$15 CAD ea | Engine GND strap attachment points (head + block) — press-lock replaces ring terminal + bolt. [Racing History Co.](https://www.racinghistorycompany.com/product/radlok-8mm-stud-m8x1-25-male/) |
+> | **Radlok alternator B+ adapter** | Amphenol 8mm M8×1.25 Female (×1) | ~$22 CAD | 07K alternator B+ stud — tool-free charge wire disconnect. [Racing History Co.](https://www.racinghistorycompany.com/product/radlok-8mm-stud-m8x1-25-female/) |
 
 ---
 
