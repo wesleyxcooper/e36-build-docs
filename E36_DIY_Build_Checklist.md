@@ -162,8 +162,8 @@
 ### Drivetrain — 8HP Swap  [DRIVETRAIN] ⚠️
 > **Prerequisite:** MaxxECU should already be installed, EWS2 bypassed, and M52 running on MaxxECU before starting this section. See ECU & Chassis Wiring below.
 
-- [ ] ✅ Source ZF 8HP50Z or 8HP70Z (N57 diesel donor preferred for 8HP70)
-- [ ] ✅ Check 8HP hardware ID against MaxxECU compatibility list ([maxxecu.com](https://www.maxxecu.com/webhelp/advanced-8hp-hardware_identifier.html)) before committing
+- [x] ✅ Source ZF 8HP50Z or 8HP70Z (N57 diesel donor preferred for 8HP70) — **DONE: 2014 Ram 1500 5.7L HEMI 8HP70, $700, FB-R1, GEN1 confirmed (STUECKL 1087)**
+- [x] ✅ Check 8HP hardware ID against MaxxECU compatibility list ([maxxecu.com](https://www.maxxecu.com/webhelp/advanced-8hp-hardware_identifier.html)) before committing — **DONE: GEN1 confirmed, TCU inferred `1034420288` (Bosch `0260550074`) — supported. Verify via ACDP-2 before flash.**
 - [ ] 🔧 Remove stock Getrag manual transmission
   - > ⚠️ **Pitfall:** Rent a transmission jack — the Getrag is heavy and awkward to lower alone. Unbolt the driveshaft at the diff end first, not the trans end. Support the rear of the engine with a jack stand under the oil pan (use a wood block) once the trans is out.
 - [ ] 🔧 Swap manual flywheel for N54 automatic flexplate (engine in car, trans removed)
