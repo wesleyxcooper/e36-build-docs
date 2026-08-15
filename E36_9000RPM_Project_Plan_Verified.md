@@ -8,6 +8,30 @@
 >
 > **Companion checklist:** Task-level DIY/shop checklist by phase and system: [`E36_DIY_Build_Checklist.md`](https://github.com/wesleyxcooper/e36-build-docs/blob/main/E36_DIY_Build_Checklist.md).
 
+---
+
+## Document Conventions
+
+**Engine lateral sides — always use exhaust/intake, never left/right or driver/passenger.**
+
+Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. All references in this document use:
+
+| Term | Meaning |
+| :--- | :--- |
+| **Exhaust side** | The long side of the 07K block where the exhaust ports and primary OEM mount bosses are located |
+| **Intake side** | The long side of the 07K block where the intake ports and oil filter housing are located |
+
+**RHD E36 orientation reference (longitudinal, timing chain forward):**
+
+| Car direction | 07K engine side |
+| :--- | :--- |
+| Driver side (right side of car) | **Exhaust side** |
+| Passenger side (left side of car) | **Intake side** |
+
+This also means: the SPA TMW22 exhaust manifold, turbo, and downpipe are all on the **driver side** in this RHD car; the iABED oil filter housing and intake manifold are on the **passenger side**.
+
+---
+
 ## Phase 0: Chassis Sourcing & Admin  [ADMIN]
 
 **Primary Recommendation:** Source the **easiest, cheapest RHD 6-cylinder E36 convertible with a manual gearbox** — typically a **323i or 328i** (alloy M52 block). These are the most common 6-cyl E36 convertibles in RHD markets and the correct platform for the NA M52 build path.

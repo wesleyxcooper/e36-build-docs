@@ -6,6 +6,26 @@
 
 ---
 
+## Document Conventions
+
+**Engine lateral sides — always use exhaust/intake, never left/right or driver/passenger.**
+
+Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. All references use:
+
+| Term | Meaning |
+| :--- | :--- |
+| **Exhaust side** | Long side of 07K block with exhaust ports and primary OEM mount bosses |
+| **Intake side** | Long side of 07K block with intake ports and oil filter housing |
+
+**RHD E36 orientation (longitudinal, timing chain forward):**
+
+| Car direction | 07K side |
+| :--- | :--- |
+| Driver side (right) | **Exhaust side** — SPA manifold, turbo, downpipe, engine stand adapter |
+| Passenger side (left) | **Intake side** — iABED housing, intake manifold |
+
+---
+
 ## Phase 0 — Sourcing & Admin
 
 ### Admin & Sourcing  [ADMIN]
