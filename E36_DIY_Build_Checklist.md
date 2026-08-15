@@ -88,6 +88,10 @@
 - [ ] 🔧 Install Revshift full poly bushing kit throughout
   - > ⚠️ **Pitfall:** Poly bushings require grease at install and periodic re-greasing. Dry poly bushings squeak constantly and wear unevenly. Use the Revshift-supplied grease or equivalent poly-compatible lubricant.
 - [ ] ✅ Schedule alignment after coilovers (shop)
+- [ ] 🔧 **Swap E36 M3 trailing arms** during subframe-out Phase 1 work — subframe is already removed for reinforcement
+  - Source from 1996–1999 US E36 M3 or Z3M (same arm, more Z3M supply). ~$300–500/pair (eBay/LKQ/salvage)
+  - M3 arms use larger wheel bearings and M3 hubs — required for Born2Drift halfshaft fitment, 996 Brembo front BBK geometry, and hydro handbrake bracket bolt pattern
+  - > ⚠️ **Pitfall:** Trailing arm swap must happen while subframe is out. Once the subframe is back in, this becomes a major teardown. Do not skip it at Phase 1.
 
 ### Front Suspension Geometry  [SUSPENSION · STEERING]
 
@@ -124,8 +128,22 @@
   - Find an alignment shop familiar with drift or track builds — standard shops will try to return to OEM spec
 
 ### Brakes  [BRAKES]
-- [ ] ✅ Swap E46 330i front calipers and carriers
-  - > ⚠️ **Pitfall:** Confirm carrier bolt pattern matches E36 spindle (it does on all 6-cyl E36). Use new caliper slide pins and grease — seized slides are the #1 reason used calipers go back on eBay within 6 months.
+- [ ] 🔧 **Install Porsche 996 Brembo 4-piston front calipers** via [RallyRoad E36 M3 Front BBK Adapter Brackets](https://rallyroad.net/products/bmwe36m3frontbbkadapterbrackets) — $224.95
+  - Calipers: 1999–2004 Porsche 996 (non-turbo), Boxster-S, or Cayman-S. PN `996.351.425` (L) / `996.351.426` (R). Source used: ~$200–300/pair
+  - ⚠️ E46 330i calipers do **not** fit E36 M3 knuckles — confirmed incompatible ([R3VLimited thread](https://www.r3vlimited.com/board/forum/e30-technical-forums/suspension-unsprung/brakes-subframe-arms/386832-e46-330i-brakes-with-e36-m3-knuckles))
+  - **17" wheel machining required:** 12mm must be turned off the caliper mounting boss — not DIY. Options: RallyRoad machining add-on (send calipers with bracket order) or VAC Motorsports Philly (215-462-4666)
+  - **Rotors:** E46 M3 325×28mm (PN `34112282445`/`446`) — EBC GD or Zimmermann Sport ~$80–120/pair
+  - **Braided lines:** [RallyRoad BBK Front Lines](https://rallyroad.net/collections/brakes/products/e36bigbrakekitfrontlines) — $64.95
+  - > ⚠️ **Pitfall:** Machine the calipers before the bracket arrives — caliper + bracket order together is the easiest path via RallyRoad's add-on service.
+- [ ] 🔧 **Install OEM E36 M3 rear calipers (ATE single-piston) + 312×20mm rotors**
+  - Source from same E36 M3 or Z3M donor as trailing arms — ~$80–150/pair (calipers)
+  - Direct bolt-on to M3 trailing arm. No brackets, no machining.
+  - Rotors: 312×20mm matched brand/style to front (EBC GD or Zimmermann Sport make matched front+rear sets)
+- [ ] 🔧 **Install hydraulic handbrake** — Kakuma dual-caliper bracket (preferred path)
+  - [Kakuma bracket](https://www.kakumaracingparts.com/product/bmw-e36-dual-caliper-bracket-kit/) — **€160 (~$175)** — bolt-on to M3 trailing arm, uses a second OEM E36 M3 rear caliper as the hydro unit
+  - Alt: [SLG bracket](https://drifthq.com/products/slg-bmw-e36-m3-wilwood-dual-caliper-bracket-kit) ($335) + Wilwood Dynapro 4-piston PN 120-9703 (⚠️ M3 arm requires Dynapro 4-piston — NOT Dynalite)
+  - Hydraulic MC + lever kit: ~$80–200. Total Kakuma path: ~$250–400
+  - > ⚠️ **Pitfall:** Both bracket options bolt to the factory handbrake mounting point on the M3 trailing arm only — will not fit non-M arms.
 - [ ] 🔧 Install NES Engineering brake booster delete ([nesengineering.com](https://nesengineering.com/products/brakboster-delete?variant=57108005880191)) — $216
   - Changes pedal ratio 3:1 → 6:1 using stock master cylinder. **Do this at Phase 1** — firewall mods are easiest with the engine bay open.
   - Required mods: grind 2mm off firewall hole + pedal box, drill new hole in brake pedal. Irreversible — confirm before cutting.
@@ -175,8 +193,13 @@
   - > ⚠️ **Pitfall:** The flash procedure must be done before CAN control will function. Rent the tool if possible — single use in this build.
 - [ ] ✅ Install HPR Setrab 8HP oil cooler kit
 - [ ] ✅ Order custom 1-piece driveshaft ([Seems Legit Garage](https://www.seemslegitgarage.com/product-page/single-piece-driveshaft)) — send exact measurement from trans output flange to diff input flange with drivetrain at ride height
-- [ ] 🔧 Swap 3.15 LSD into differential
-  - > ⚠️ **Pitfall:** Drain diff fluid before dropping. The E36 diff is a subframe-mounted unit — you're unbolting the subframe mounts to drop it on some variants. Torque the output flange nut correctly (it's a crush washer design on some — verify for your unit before installing).
+- [ ] ✅ **Verify differential** — stock Euro non-M 328i diff is **188mm case, 3.46** and is directly compatible with Born2Drift halfshaft kit. No swap needed unless upgrading ratio.
+  - If upgrading to 3.15 for ratio preference: source Euro M3 S50 diff (188mm) only. ⚠️ US M3 S52 diff may be 210mm — NOT Born2Drift compatible. Field ID: **6 side cap bolts = 188mm ✓, 8 bolts = 210mm ✗**
+  - If swapping: drain fluid first. Torque output flange nut to spec — some use a crush washer, verify for your unit.
+- [ ] 🔧 **Install Born2Drift Heavy Duty E36 Halfshaft Kit** ([born2drift.net](https://www.born2drift.net/products/bmw-e36-rear-halfshafts-kit-drift-track-axles-heavy-duty)) — **€1,099 (~$1,190)** — install with trailing arms at Phase 1 subframe-out work
+  - Includes 2 driveshafts + 2 diff adapters + 2 hub adapters
+  - Confirmed: Euro 328i 3.46 diff (188mm) + US M3 trailing arms (M3 hubs OD 75mm / ID 42mm match) — fully compatible
+  - > ⚠️ **Pitfall:** Do not reinstall trailing arms without the halfshaft kit installed — you'll have to pull them again to install later.
 
 ### Fuel System  [FUEL]
 - [ ] ✅ Install Aeromotive 13129 FPR (return-style, adjustable)
