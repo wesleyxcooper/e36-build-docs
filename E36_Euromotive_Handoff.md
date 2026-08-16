@@ -20,7 +20,7 @@
 | 1 kit | **ARP Main Stud Kit** | ARP-CVB2 | [Four Season Tuning](https://www.fourseasontuning.com/arp-cvb2-arp-main-stud-kit-for-mk5mk6-25l-5-cylinder-engines) | IE-designed. ARP 8740 alloy, 200K psi. **Shop installs then align hones** — add align hone to scope explicitly. |
 | 2 pcs | **034-block Full-Circle Thrust Washers** (for 360° mod) | Glyco **026 198 421** (likely — confirm before ordering) | [FCP Euro (Glyco)](https://www.fcpeuro.com/products/vw-audi-engine-crankshaft-thrust-washer-set-026198421) | Full-circle washers from the older VW 026/034 inline-5 engine family. Different from the 07K stock half-shell (WHT000033). Shop machines the #4 main cap to accept these. Bring the reference video (see "Reference Materials" section below). |
 | 5 pcs | **TTRS Oil Squirters** | `06J103154B` | ECS Tuning / FCP Euro / eBay | Upgraded piston cooling jets from the TTRS/RS3 (EA855 turbocharged application). Thread-in replacement for BGP stock jets. Torque to **27 ft-lbs**. 4-hole banjo bolt design vs 2-hole stock. Install during short block assembly. |
-| 1 pc | **OEM Water Pump** | `07K121011B` | [VWPartsGiant](https://www.vwpartsgiant.com/oem-2007-volkswagen-rabbit-water_pump) | $134.93. Supersedes 07K121029 / 07K121011BX. Replace during longblock build — do not reuse donor unit. |
+| 1 pc | **OEM Water Pump** | `07K121011B` | [VWPartsGiant](https://www.vwpartsgiant.com/oem-2007-volkswagen-rabbit-water_pump) | $134.93. Supersedes 07K121029 / 07K121011BX. Replace during longblock build — do not reuse donor unit. Impeller removal required — housing stays mounted as a passive coolant manifold; **Pierburg CWA400 (PWM version)** handles all pumping (Phase 3 install, MaxxECU PWM GPO control). |
 
 ### Head / Valvetrain
 
@@ -136,4 +136,4 @@ These bolt onto the completed sealed longblock at home:
 
 ---
 
-*Last updated: 2026-07-13*
+*Last updated: 2026-08-15*

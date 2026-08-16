@@ -348,13 +348,13 @@
 ### AutoPlumb — No-Weld AN Water Neck Adapters
 | Component | Description | Price | Link |
 | :---- | :---- | :---- | :---- |
-| **-16AN / -20AN Water Neck Adapters** | Clamp-on adapters that convert radiator neck / thermostat housing to AN fitting — no welding, no bung required. Pair with braided silicone AN hose + Dyme fittings for fully tool-free coolant hose removal. | **$69.95/pair** | [autoplumb.com](https://autoplumb.com/collections/20an-cooling-system-conversion-parts) |
+| **-16AN / -20AN Water Neck Adapters** | Screw-together collar + silicone-sealed compression ring that clamps onto an existing rubber-hose neck (radiator, water pump, or thermostat housing) and converts it directly to AN — no welding, no clamps, no cut bungs. Removable/reusable, warranted against mechanical failure. Sized by measured neck OD behind the raised bead, in 0.025" steps from 1.250"–2.040". Pair with braided silicone AN hose + Dyme fittings above for fully tool-free coolant hose removal. | **$69.95 each** (not a pair — budget ~$140 for a radiator's 2 necks) | [autoplumb.com](https://autoplumb.com/products/autoplumb-16an-20an-water-neck-adapters) |
 
-**Best applications:**
-- **07K coolant hoses (Phase 3)** — you're building custom routing anyway; run AN from the start
-- **Heater core circuit** — smaller bore, clean fit for -10AN to -12AN
-- **Radiator lower hose** — ~1.25" ID matches -20AN (verify neck OD before ordering)
-- **Radiator upper hose** — ~1.5" ID is borderline for -20AN; confirm with AutoPlumb
+**Where this could apply on this build:**
+- **CSF radiator (Phase 1)** — convert its factory hose-barb inlet/outlet to AN. Only worth doing at Phase 1 install, while the radiator is out of the car anyway; retrofitting later means pulling it again.
+- **07K thermostat housing outlet (Phase 3)** — avoids welding onto a cast/machined housing you'd rather not modify.
+
+**Reality check — not currently recommended over what's already in the main plan:** the Phase 3 coolant routing already specs a proven approach (Samco/Vibrant silicone hose + Dorman barb adapters) sourced directly from the 944 07K-swap community reference build (alliedcam1/Rennlist p138) for this exact swap. None of those reference builds use AN for coolant — it's a low-pressure circuit (~15–20 psi cap) where clamps are the accepted standard, and AN adds cost + rigid routing (worse for first-time custom-fit hose runs) without a functional gain. Revisit this only if the "measure at engine-in-car stage" tool-free-service angle becomes genuinely appealing once the car is track-active — not as a default.
 
 ---
 
@@ -460,6 +460,20 @@ A **47-way** connector comfortably handles the full M52 or 07K engine harness si
 | **Total per harness termination** | | **~$250–400** |
 
 > Well-regarded harness supplier and connector source: [RaceSpec Online](https://racespeconline.com) — also publishes detailed guides on planform selection, contact installation, and backshell fitment.
+
+---
+
+## Harness Mockup Tooling  [ELECTRICAL]
+
+### Magnetic Cable Tie Mounts — Trial-Fit Aid
+
+**Mag-Daddy 62411-10** — [magdaddyusa.com](https://magdaddyusa.com/products/small-magnetic-cable-tie-mount-black-ul-listed-10lbs/) — **$19.71–27.85 per 10-pack (~$2/unit)**, 10 lb pull, **cUL/UL Listed** (genuine third-party safety certification) and **Plenum rated**. Cheapest per-unit and best-certified option checked — sold through actual electrical-trade distributors (ispsupplies.com, homelectrical.com). Also checked and ruled out: Mr. Gasket/Holley ($5–10.40/unit, no certification found, paying for brand name only) and Accele WTM-16 (price unconfirmed, reasonable trade-standard fallback if Mag-Daddy is unavailable).
+
+**Primary use — form-board layout / trial-fit (matches the open TODOs in `e36-wiring/docs/loom-routing.md`):** the loom-routing doc explicitly defers final breakout points and P-clip anchor locations to a trial-fit session ("Confirm firewall bulkhead pass-through hole location," "Trial-fit before final sleeve"). Magnetic mounts are reusable and repositionable with zero commitment — route a sub-loom, live with it for a day, move it, no drilled holes or adhesive residue to undo. Once the actual path is confirmed, replace with permanent P-clips/Adel clamps at the same points.
+
+**Do not use near the Engine Bay Trunk loom or any turbo/exhaust-adjacent run** — per `loom-routing.md`'s own Sleeving Reference table, that zone requires DR-25 heat-shrink rated to 135°C continuous; standard N45 magnets used in these mounts top out around 80°C. Rule applies during mockup too, not just final install — a magnet that demagnetizes mid-fitment session is a dropped harness onto a hot surface.
+
+**Is there a case for permanent use, not just mockup?** Yes, but narrow — only in the Cabin Loom and Trans Tunnel/Rear Loom zones, which `loom-routing.md` classifies as "lower heat exposure." In those zones a magnetic mount is a legitimate permanent fastener choice over a P-clip when: (a) the panel is bare sheet metal with no existing captive stud/grommet to reuse (avoids adding a new drilled hole), or (b) the run may need to be repositioned again later (e.g. if the DCT shifter or gauge cluster wiring gets revised after the harness is otherwise finished). For anywhere with an existing factory P-clip anchor point or body grommet already planned in `loom-routing.md`, use that instead — it's free and it's what the doc already specifies as the permanent solution. Treat magnetic mounts as filling gaps in the permanent plan, not replacing it wholesale.
 
 ---
 

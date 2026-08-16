@@ -18,7 +18,7 @@ Check off each item at intake. Everything below is labeled and bagged.
 - [ ] 034-block full-circle thrust washers — for 360° #4 main cap mod (see note below)
 - [ ] 5× TTRS piston cooling nozzles — `06J103154B` — thread-in, 27 ft-lbs
 - [ ] LPS-modified 07K oil pump — pre-modified by Linder Power Systems (returned from send-in)
-- [ ] OEM water pump `07K121011B` — **IMPELLER REMOVAL REQUIRED: remove impeller, install housing only.** No commercial block-off plate exists for the 07K water pump. Housing stays mounted and plumbed to the coolant circuit — acts as coolant distribution manifold. Davies Craig EWP150 (electric, installed at Phase 3) handles all pumping. Housing pulley freewheels passively in the accessory belt path. ⚠️ Water pump is belt-driven (accessory belt) — pulley stays in belt routing.
+- [ ] OEM water pump `07K121011B` — **IMPELLER REMOVAL REQUIRED: remove impeller, install housing only.** No commercial block-off plate exists for the 07K water pump. Housing stays mounted and plumbed to the coolant circuit — acts as coolant distribution manifold. **Pierburg CWA400 (PWM version, electric, installed at Phase 3)** handles all pumping. Housing pulley freewheels passively in the accessory belt path. ⚠️ Water pump is belt-driven (accessory belt) — pulley stays in belt routing.
 
 ### Head
 - [ ] ARP Head Stud Kit — ARP-CVB1 (IE-designed, 07K MK5/MK6 2.5L)
@@ -70,7 +70,7 @@ Check off each item at intake. Everything below is labeled and bagged.
 - **Cam adjuster bolts (`N91042802`):** single-use TTY — discard old ones, use new bolts provided
 - **King XP bearings:** plastigauge every journal before final assembly. Target: mains 0.0015–0.0025", rods 0.001–0.002"
 - **Head studs (ARP-CVB1):** torque to ARP spec with provided lubricant
-- **Water pump:** remove impeller from OEM `07K121011B`, install housing only. Housing stays bolted to block and plumbed to coolant circuit — acts as coolant manifold. Davies Craig EWP150 (Phase 3 install) handles pumping. Do NOT install impeller. Do NOT source a block-off plate — no commercial plate exists for the 07K water pump; housing-in-place is the correct approach.
+- **Water pump:** remove impeller from OEM `07K121011B`, install housing only. Housing stays bolted to block and plumbed to coolant circuit — acts as coolant manifold. **Pierburg CWA400 (PWM version, Phase 3 install)** handles pumping — controlled directly by MaxxECU PWM GPO, no separate pump controller. Do NOT install impeller. Do NOT source a block-off plate — no commercial plate exists for the 07K water pump; housing-in-place is the correct approach.
 
 ---
 
@@ -83,3 +83,7 @@ Complete **sealed longblock** — block + head assembled, timed, sealed. Custome
 *Date dropped off: ____________*  
 *Est. completion: ____________*  
 *Tech assigned: ____________*
+
+---
+
+*Last updated: 2026-08-15*
