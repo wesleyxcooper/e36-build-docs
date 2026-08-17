@@ -183,18 +183,22 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 > **Prerequisite:** MaxxECU should already be installed, EWS2 bypassed, and M52 running on MaxxECU before starting this section. See ECU & Chassis Wiring below.
 
 - [x] ✅ Source ZF 8HP50Z or 8HP70Z (N57 diesel donor preferred for 8HP70) — **DONE: 2014 Ram 1500 5.7L HEMI 8HP70, $700, FB-R1, GEN1 confirmed (STUECKL 1087)**
+  - > ⚠️ **Unit is 4WD (confirmed by photo):** Rear of the case is the NV244 transfer case mounting face (large bolt circle, 23-spline TC output shaft) — NOT the factory 1350 RWD output flange. [Guru Autowerks](https://www.guruautowerks.com/post/faq-n54-n55-s55-to-8hp70-75-dodge-adapter-bmw-e9x-e8x-e6x) recommends the Ram "Truck" **2WD** version, which has a factory 1350 output flange. **Action required before install:** Either (A) source a 2WD Ram 1500 8HP70 ($300–700 — same HEMI bellhousing, RWD output already fitted) and swap the core, or (B) identify and install a TC-to-RWD conversion adapter. The NV244 TC must come off in either case.
 - [x] ✅ Check 8HP hardware ID against MaxxECU compatibility list ([maxxecu.com](https://www.maxxecu.com/webhelp/advanced-8hp-hardware_identifier.html)) before committing — **DONE: GEN1 confirmed, TCU inferred `1034420288` (Bosch `0260550074`) — supported. Verify via ACDP-2 before flash.**
 - [ ] 🔧 Remove stock Getrag manual transmission
   - > ⚠️ **Pitfall:** Rent a transmission jack — the Getrag is heavy and awkward to lower alone. Unbolt the driveshaft at the diff end first, not the trans end. Support the rear of the engine with a jack stand under the oil pan (use a wood block) once the trans is out.
 - [ ] 🔧 Swap manual flywheel for N54 automatic flexplate (engine in car, trans removed)
   - > ⚠️ **Pitfall:** You need a flywheel lock tool to hold the crank from rotating while breaking loose the flywheel bolts. Do not use a screwdriver in the ring gear — you'll damage teeth you'll need for the starter. Torque the new flexplate bolts to spec with thread locker.
 - [ ] ✅ Install George W. Hill M5x Starter Adapter + N54 starter ([Hill Performance](https://www.hillperformance.com/products/starter-adapter)) | [Demo video](https://youtu.be/bWVo-TpdQCQ)
-- [ ] ✅ Install PMC Motorsport M5x→8HP adapter plate
+- [ ] ✅ Install engine→8HP adapter plate (**path-dependent — confirm before ordering**)
+  - > **BMW N57 path:** [PMC Motorsport M5x→N57](https://pmcmotorsport-shop.com/product-eng-2998-Gearbox-Adapter-Plate-BMW-M50-M52-M54-S50-S52-S54-BMW-ZF-8HP-8HP70-8HP50-GS6-53DZ.html) ~$350 or [DomiWorks M5x→N57 Std Tilt](https://www.domi-works.com/collections/8hp-adapter-kits) ~$420. **BMW N63 path:** [DomiWorks M5x→N63](https://www.domi-works.com/collections/8hp-adapter-kits) ~$1,353. **Dodge "Truck" path:** No confirmed production M5x→Dodge adapter exists. [Guru GA5](https://www.guruautowerks.com/post/faq-n54-n55-s55-to-8hp70-75-dodge-adapter-bmw-e9x-e8x-e6x) is N54/N55/S55→Dodge only (not M5x) — contact Guru to ask about M5x/E36 variant. Chatham CNC (mike@chathamcnc.com) is a custom fabrication fallback. Do NOT order PMC or DomiWorks M5x adapters if running the Dodge unit — those are BMW-bellhousing-specific.
 - [ ] ✅ Install Seems Legit Garage E36 8HP crossmember
 - [ ] 🔧 Lower 8HP into place, align to adapter plate and crossmember
   - > ⚠️ **Pitfall:** The 8HP is significantly heavier than the Getrag. Two people minimum. A transmission jack on a floor makes this manageable — doing it with jack stands and a floor jack is possible but risky for the ECU wiring on the unit.
-- [ ] ✅ Swap output flange to BMW 96mm PCD (E90 non-35i, PN 26117511454)
-  - > ⚠️ **Pitfall:** Both the 8HP50Z and 8HP70Z ship with a 105mm flange. The E36 guibo is 96mm. The wrong flange is a no-start situation that isn't obvious until driveshaft fitment.
+- [ ] ✅ Resolve RWD output — **path-dependent, Dodge vs BMW unit** (do before lowering trans in)
+  - > **Dodge 4WD unit (in hand):** NV244 TC must be removed first. Then either **(A)** swap to a 2WD Ram 1500 8HP70 (same HEMI bellhousing — only the tail section differs) so the factory 43-spline shaft + OEM 1350 U-joint flange (PN `68417910AA`) is in place; or **(B)** install a TC-to-RWD conversion adapter on the existing 4WD unit (DomiWorks AWD-to-RWD category; confirm Ram 4WD applicability with them directly). After RWD conversion, NO BMW guibo flange swap needed — the Dodge path uses 1350 U-joints into the custom driveshaft, not a guibo.
+  - > **BMW N57 path:** Swap stock 105mm output flange to 96mm (PN 26117511454, ~$50–80 used). E36 guibo is 96mm — wrong flange = driveshaft won't fit.
+  - > **BMW N63 path:** Stock flange is 110mm — verify correct 96mm swap flange before ordering; DomiWorks can advise.
 - [ ] ✅ Install DCT Shifter E36 unit ([dctshifter.com](https://dctshifter.com/)) — **4-wire digital connection to MaxxECU** — wiring: [`dct-shifter.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/dct-shifter.wv) ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/dct-shifter.html))
   - Models: 270GT Aluminum (compact), 290GTE Carbon (taller throw), 390GT (full-size) — all wire identically, choice is ergonomic
   - **Wiring (4 wires):** +12V switched (fused), GND, UP signal → MaxxECU DIN = **Transmission UP shift**, DOWN signal → MaxxECU DIN = **Transmission DOWN shift**
@@ -212,7 +216,9 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] ✅ Flash/reflash 8HP via Yanhua ACDP-2 tool (rent ~$138 or buy ~$738)
   - > ⚠️ **Pitfall:** The flash procedure must be done before CAN control will function. Rent the tool if possible — single use in this build.
 - [ ] ✅ Install HPR Setrab 8HP oil cooler kit
-- [ ] ✅ Order custom 1-piece driveshaft ([Seems Legit Garage](https://www.seemslegitgarage.com/product-page/single-piece-driveshaft)) — send exact measurement from trans output flange to diff input flange with drivetrain at ride height
+- [ ] ✅ Order custom 1-piece driveshaft ([Seems Legit Garage](https://www.seemslegitgarage.com/product-page/single-piece-driveshaft)) — $1,350; send exact measurement from trans output to diff input at ride height
+  - > **Dodge 2WD "Truck" path:** Connection is 1350 U-joint via OEM Dodge flange PN `68417910AA` — NOT a guibo. Specify "Dodge 8HP70 RWD output" when ordering. [SLG "RAM 1350" yoke adapter](https://www.seemslegitgarage.com/product-page/3102-42x-t35-alfy-07-flange-yokes) ($70 billet, $70 cast) bolts direct to the 2WD output flange; SLG's custom shaft billet adapter interfaces to this.
+  - > **BMW N57/N63 path:** 96mm guibo flange on trans → BMW guibo (flex disc) → driveshaft. Specify "BMW 8HP70 N57" or "N63" when ordering.
 - [ ] ✅ **Verify differential** — stock Euro non-M 328i diff is **188mm case, 3.46** and is directly compatible with Born2Drift halfshaft kit. No swap needed unless upgrading ratio.
   - If upgrading to 3.15 for ratio preference: source Euro M3 S50 diff (188mm) only. ⚠️ US M3 S52 diff may be 210mm — NOT Born2Drift compatible. Field ID: **6 side cap bolts = 188mm ✓, 8 bolts = 210mm ✗**
   - If swapping: drain fluid first. Torque output flange nut to spec — some use a crush washer, verify for your unit.
@@ -470,7 +476,9 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - > **Storage note:** Not required for storage — with TMU *on*, the ATF ports are sealed by the TMU's own gaskets. If leaving TMU on for storage, plug the two TMU coolant hose fittings (rubber caps) instead of the ATF case ports.
 - [ ] ✅ **Plug the two exposed ATF case ports** (cooler in/out, exposed after TMU removal) with M10×1.0 threaded caps — do immediately after TMU comes off
 - [ ] ✅ **Plug torque converter opening** with a foam circle cut to fit or a rubber expansion plug
-- [ ] ✅ **Plug output shaft bore** with a rag + tape or rubber bung
+- [ ] ✅ **Remove NV244 transfer case from rear of unit** — the TC is a bolt-on assembly secured to the TC mounting face (the large bolt circle visible at the rear). Remove before storage if possible; must come off before install regardless. After removal, the 23-spline TC output shaft stub is exposed at the rear of the case. This is where the RWD conversion adapter or 2WD tailhousing will mate.
+  - > **Storage note:** With TC removed, plug the TC output bore (rear of case) with a rubber bung or foam plug sealed with tape to keep debris out during storage.
+- [ ] ✅ **Plug output shaft bore / TC output bore** with a rag + tape or rubber bung
 - [ ] ✅ **Leave ATF in** — do not drain. ATF coats all internal gear sets, clutch packs, and bearing surfaces. Draining leaves them exposed.
 - [ ] ✅ **Grease external input shaft splines** (TC-engagement end) with assembly lube or anti-seize before bagging — the one externally exposed machined surface ATF does not coat
 - [ ] ✅ **Bag with [Zerust VCI Engine Storage Bag (24"×26"×46", Amazon ~$35)](https://www.amazon.com/Zerust-Engine-Storage-Bag-24/dp/B0CJMMPGF5)** — same bag fits the 8HP70Z (~23"L × 16"W × 16"H). Seal with zip ties after all ports are plugged.
