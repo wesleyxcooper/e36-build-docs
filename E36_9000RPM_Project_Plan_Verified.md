@@ -426,7 +426,7 @@ MaxxECU sells a **pre-terminated M50 engine harness** that covers both M50 and M
 
 > **Early Phase 2 Actions — do these before placing any component orders:**
 > 1. **Contact DomiWorks** — confirm your 07K block code (BGP/CBUA/CEPA) and 8HP variant (70Z N57) are compatible with their adapter kit. Get written confirmation. Non-returnable hardware. ([domi-works.com](https://www.domi-works.com/collections/8hp-adapter-kits))
-> 2. **Measure G30-770 hood clearance** — with the M5x still in the car, test-position the SPA MK5 manifold and measure vertical clearance to the hood line. The G30-770 is large-frame; E36 top-mount clearance is tight. If marginal: (a) vented/bubble hood, (b) step down to G25-660 RR (~$2,000), (c) Precision Turbo RR T3-inlet (eliminates adapter height). Resolve before ordering.
+> 2. **Confirm G25-660 RR hood clearance** — turbo is now the G25-660 RR (decided: hood clearance concern was a primary driver; G25-660 is smaller-frame than G30-770 and fits the E36 top-mount position without a vented hood). With the M5x still in the car, test-position the SPA MK5 manifold + a G25-660 mock-up (or the actual turbo if available) and verify clearance to the hood line. This is a confirmation step, not a decision point — clearance issues at this stage would be resolved by a bubble/vented hood rather than changing the turbo again.
 > 3. **Order BBG billet valve cover + timing cover + coolant flange combo immediately** — ~6-week lead time. Order at Phase 2 kickoff.
 > 4. **Send 07K oil pump to LPS** for oil pump mod early — 4–8 week lead time. Contact: `linderpowersystems@gmail.com` ([lpsfab.com](https://lpsfab.com)). **$150 send-in service + shipping (~$190–210 all-in).** Sets cold relief pressure to 80–85 PSI with SAE30; hot WOT target ~55–65 PSI at block. **Sequence:** drop pan → inspect crank → pull pump → send to LPS. Reinstall pan hand-tight, no RTV (storage only — Euromotive drops it again). **LPS ships pump directly to Euromotive** (local dropoff — no shipping needed); Euromotive installs it during longblock assembly. Do not reinstall pump yourself.
 
@@ -495,7 +495,7 @@ Verify early forged crankshaft (pre-2007 production date) before ordering any bl
 #### Head & Valvetrain  [HEAD/VALVETRAIN · MACHINING]
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Valvetrain** | **Supertech Dual** | [Supertech Valve Spring Kit](https://us.ctsturbo.com/product/supertech-valve-spring-retainer-set-for-audi-vw-2-5l-fits-vw-mk5-mk6-audi-ttrs-rs3/) - $523.63 (verified). **Note — RS3/TTRS spring cross-compatibility confirmed:** The 07K NA head and the EA855 RS3/TTRS head share the same valve spring seat geometry — springs are physically interchangeable (confirmed by CTS Turbo, IE, and Supertech fitment listings). OEM RS3/TTRS valve springs are a documented drop-in upgrade over stock 07K springs (stiffer due to turbocharged application) and available used for ~$30–60. Tuner data on the RS3 platform (Audizine) indicates stock springs are comfortable to ~7,800–8,000 RPM, with some tuners reporting 8,500 RPM on stock internals — notably the RS3 head has stiffer OEM springs than many other turbo platforms. This 07K build is turbocharged (G30-770, 18–28 psi), so boost-assisted valve closure conditions are directly comparable to the RS3. At the plan's stated 8,000 RPM target (described as a safety margin — meaning the engine will occasionally exceed it), OEM RS3 springs would be operating at their absolute ceiling with zero headroom. Additionally, OEM RS3 retainers are steel — the Drifting Reliability section (below) explicitly identifies stock steel retainers as too heavy for stable operation at 8,000+ RPM. Supertech Dual with titanium retainers is the correct choice. OEM RS3 springs are not a viable budget option for this specific build — they might survive at 8,000 RPM in steady use but offer no margin for limiter hits or overrev, and the steel retainers are a separate disqualifying factor at this RPM. |
+| **Valvetrain** | **Supertech Dual** | [Supertech Valve Spring Kit](https://us.ctsturbo.com/product/supertech-valve-spring-retainer-set-for-audi-vw-2-5l-fits-vw-mk5-mk6-audi-ttrs-rs3/) - $523.63 (verified). **Note — RS3/TTRS spring cross-compatibility confirmed:** The 07K NA head and the EA855 RS3/TTRS head share the same valve spring seat geometry — springs are physically interchangeable (confirmed by CTS Turbo, IE, and Supertech fitment listings). OEM RS3/TTRS valve springs are a documented drop-in upgrade over stock 07K springs (stiffer due to turbocharged application) and available used for ~$30–60. Tuner data on the RS3 platform (Audizine) indicates stock springs are comfortable to ~7,800–8,000 RPM, with some tuners reporting 8,500 RPM on stock internals — notably the RS3 head has stiffer OEM springs than many other turbo platforms. This 07K build is turbocharged (G25-660 RR, 18–28 psi), so boost-assisted valve closure conditions are directly comparable to the RS3. At the plan's stated 8,000 RPM target (described as a safety margin — meaning the engine will occasionally exceed it), OEM RS3 springs would be operating at their absolute ceiling with zero headroom. Additionally, OEM RS3 retainers are steel — the Drifting Reliability section (below) explicitly identifies stock steel retainers as too heavy for stable operation at 8,000+ RPM. Supertech Dual with titanium retainers is the correct choice. OEM RS3 springs are not a viable budget option for this specific build — they might survive at 8,000 RPM in steady use but offer no margin for limiter hits or overrev, and the steel retainers are a separate disqualifying factor at this RPM. |
 | **Solid Lifter Conv.** | **Ferrea Shims** | [Ferrea 07K Lifter Shims (Set of 20)](https://www.ecodetuning.com/lp1102-20-lp1102-20-ferrea-racing-components-volkswagen-2-5l-lifter-shims-set-of-20.html) - $46.30 (verified) |
 | **Camshafts** | **TTRS/CEPA OEM intake cam (primary) · CAT Cams 7604002 (alt)** | **Primary — TTRS/CEPA OEM intake cam:** Direct drop-in from any CEPA/TTRS donor, used ~$100–250. 1.5mm larger intake valves vs stock BGP head; VVT fully active and mapped via MaxxECU PWM solenoid output (smooth closed-loop cam timing — NOT on/off switching, which VWVortex notes is "kind of hard on guides"). NA ceiling ~7,500 RPM per TheProjectPad — **irrelevant for a turbo build**: at 18–28 psi, the turbo provides mass airflow well past what the cam profile would NA-limit. Jim Green (ProjectPad / Audizine) confirms: *"I have no problems with my stock cams at 630 whp. It is fast."* — stock cams at 630whp on a turbo 07K. At 600–700whp E85 / 8k shift point / 9k limiter headroom, TTRS cam + Supertech dual springs + Ti retainers is the mechanically correct and street-friendly combination. VVT active = tractable low-end torque for street / beach cruiser use. **Alt — CAT Cams 7604002:** [sbpartsdirect.com](https://www.sbpartsdirect.com/product_p/cat-7604002.htm) — $1,284.99 (verified). Intake: 11.75mm / 279° · Exhaust: 11.00mm / 271°. Listed for CBT/CBU — verify BGP fitment before ordering. NA ceiling ~9,000 RPM. **⚠️ Requires VVT lock in MaxxECU** (full-retard position for high-RPM flow); hurts low-end street torque. Only warranted if the 9k RPM target is a hard NA-breathing ceiling, which it is not on a boosted build at this power level. |
 | **Exhaust Valves** | **Supertech Inconel Exhaust Valves** | [Supertech Valves (IE)](https://performancebyie.com/products/supertech-valves-vw-audi-20t-fsi-tsi-25l) - ~$220 — **Optional for this use case.** Inconel is a longevity upgrade for sustained high-EGT racing. For a few track events/year on E85, stock exhaust valves are defensible. Skipping saves ~$220 + reduces machine shop cost to ~$200–400 (lap existing valves, deck check only — no seat cut required). Valve **springs and retainers are still mandatory** regardless. |
@@ -507,7 +507,7 @@ Verify early forged crankshaft (pre-2007 production date) before ordering any bl
 #### Oil System  [OIL]
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Oil Housing** | **iABED Housing** | [iABED Longitudinal Filter Housing](https://byiabed.com/07K-LONGITUDINAL-Oil-Filter-housing-W-THERMOSTAT_p_156.html) - $529.00 (verified). **Turbo oil feed port built in** — install -4AN fitting (M12×1.5 to -4AN adapter or direct -4AN per iABED port spec) for G30-770 oil feed line. Include 0.9–1.0mm orifice restrictor inline — standard for journal bearing turbos. Confirmed by @wingman703. |
+| **Oil Housing** | **iABED Housing** | [iABED Longitudinal Filter Housing](https://byiabed.com/07K-LONGITUDINAL-Oil-Filter-housing-W-THERMOSTAT_p_156.html) - $529.00 (verified). **Turbo oil feed port built in** — install -4AN fitting (M12×1.5 to -4AN adapter or direct -4AN per iABED port spec) for G25-660 RR oil feed line. Include 0.9–1.0mm orifice restrictor inline — standard for journal bearing turbos. Confirmed by @wingman703. |
 
 #### Air / Intake  [AIR]
 | Component | Specification | Cost / Action |
@@ -528,10 +528,10 @@ Verify early forged crankshaft (pre-2007 production date) before ordering any bl
 
 | Component | Specification | Notes |
 | :---- | :---- | :---- |
-| **Turbo** | **Garrett G30-770 Reverse Rotation** | V-band inlet (.83 A/R) — $2,731 verified ([Full Race](https://www.full-race.com/garrett-g-series-g30-770-reverse-rotation-turbo)). **Reverse rotation required** to correctly orient the compressor outlet when using the SPA MK5 manifold in a longitudinal installation — confirmed approach by the Rennlist 944 07K community. ~$89 premium over standard rotation. |
+| **Turbo** | **Garrett G25-660 Reverse Rotation** | V-band inlet — ~$1,800–2,000 est. (verify at order; [Full Race G-series](https://www.full-race.com/collections/garrett-g-series)). **Decision:** Power target is ≤600whp; G25-660 is rated to ~660whp, giving real headroom without running against the compressor map boundary. G30-770 was the original candidate but is unnecessarily large for this target and creates hood clearance risk with the SPA MK5 manifold on the E36. G25-660 spools faster on a 2.5L I5 — better suited to the RPM character goal. **Reverse rotation required** — same logic as G30-770: correctly orients the compressor outlet with the SPA MK5 manifold in longitudinal installation. Confirmed working combination: NineX Engineering mounts were specifically designed for G25-660 RR + SPA TMW manifold in 944 07K builds (Rennlist 944 07K thread). ~$89 RR premium over standard rotation — verify RR part number at purchase (Full Race G-series RR listings use distinct SKUs from standard rotation). |
 | **Wastegate** | **Tial 44mm MVR** (V-band) | External, V-band, $435 verified. Direct fit to SPA MK5 manifold V-band WG provision. 44mm required for boost control above ~500whp on E85. |
-| **Manifold** | **SPA Turbo MK5 T3 Twin Scroll (TMW22)** | $459.90 verified ([SPA Turbo USA](https://spaturbousa.com/products/vw-5-cyl-2-5l-20v-fsi-t3-top-mount-twin-scroll-turbo-manifold-wastegate-v-band)). Usable in longitudinal orientation **with reverse rotation turbo** (944 community confirmed). T3 turbo flange → T3-to-V-band adapter (~$40) for G30-770. V-band 44mm WG port. RHD clearance is a **downpipe** issue, not a manifold issue — see below. |
-| **Downpipe** | **Custom RHD Downpipe** | Custom fab, ~$400–600. Routes turbo outlet around/under the RHD steering rack to 3-inch exhaust. **Far cheaper than a custom manifold** ($400–600 vs $1,200–1,800). Must be ceramic coated (see Heat Control row). |
+| **Manifold** | **SPA Turbo MK5 T3 Twin Scroll (TMW22)** | $459.90 verified ([SPA Turbo USA](https://spaturbousa.com/products/vw-5-cyl-2-5l-20v-fsi-t3-top-mount-twin-scroll-turbo-manifold-wastegate-v-band)). Usable in longitudinal orientation **with reverse rotation turbo** (944 community confirmed; G25-660 RR + SPA combination is confirmed by NineX Engineering 944 07K mount design). T3 turbo flange → T3-to-V-band adapter (~$40) for G25-660. V-band 44mm WG port. RHD clearance is a **downpipe** issue, not a manifold issue — see below. |
+| **Downpipe** | **Custom RHD Downpipe** | Custom fab, ~$400–600. Routes turbo outlet around/under the RHD steering rack to 3-inch exhaust. **Far cheaper than a custom manifold** ($400–600 vs $1,200–1,800). Must be ceramic coated (see Heat Control row). **Pre-fab workflow:** use Scaniverse + Blender to model the tube path before sending to fabricator — see 3D Scanning Workflow section in Phase 3. |
 | **Flex Fuel Sensor** | **Ethanol content sensor (inline)** | Install on fuel feed line. MaxxECU supports flex fuel natively — single map auto-adjusts timing and boost target based on ethanol %. No separate E85 tune needed. |
 
 **Boost targets (approximate):**
@@ -657,6 +657,55 @@ The 07K was designed for transverse FWD use. In a longitudinal BMW chassis its a
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
 | **Engine Mounts** | **Custom E36 Mounts — NBR rubber isolators, 43–68A, no hydraulic** | [Race3](https://www.race3.ca/) (**⚠️ call to confirm E36 kit** — site shows E30 07K kit only, no confirmed E36-specific listing) / custom fab — ~$400–600. **Install sequence:** engine + trans drop as a single pre-assembled unit (bellhousing mated, flexplate on, trans bolted before entering the car). Load leveler mandatory — controls longitudinal pitch during placement. Mock-up: lower drivetrain, support on wood blocks or trans jack, tack-weld temporary stub brackets to chassis rail and 07K block simultaneously while drivetrain is suspended in final position; confirm fore-aft, lateral, and pitch geometry; pull engine; finish-weld brackets on bench; reinstall with isolators. **Isolator spec:** NBR rubber sandwich pucks, 43–68A durometer. No hydraulic, no solid aluminum pucks. OEM E36 mounts are hydraulic fluid-filled (~55A equivalent per AKG) and cannot be reused regardless — 07K block geometry is incompatible with BMW engine mount bosses. Source rubber-to-metal bonded sandwich isolators from industrial suppliers (McMaster-Carr, Lord Corporation) sized to bracket designer's dimensions. Reference durometer: MSW EEM 68A NBR "race" insert is the practical ceiling for a dual-purpose street/track car ([moreheadspeedworks.com](https://www.moreheadspeedworks.com/product/msw-enhanced-engine-mounts-e36-e46-e9x-m3/)). **⚠️ LHD/RHD mirror:** all directional references in 944, Ur-Quattro, and LS swap install guides are mirrored — driver/passenger are reversed throughout for this RHD car. |
+
+#### Pre-Fabrication: 3D Scanning Workflow  [AIR · DRIVETRAIN · MACHINING]
+
+Use iPhone 16 Pro LiDAR to generate reference geometry for downpipe routing and engine mount bracket design before committing to fabrication. Iterate in CAD and printed plastic at home; send finalized geometry to the fabricator once.
+
+**Recommended app: Scaniverse (Niantic) — free, no subscription required**
+- Exports OBJ, GLB, USDZ, PLY natively without a paid plan
+- More accurate than Polycam on the same hardware: 10.36% vs 42.58% mean error in a peer-reviewed comparative study ([Procedia Computer Science 2025, doi:10.1016/j.procs.2025.09.013](https://doi.org/10.1016/j.procs.2025.09.013))
+- In-app crop/trim tools handle scene cleanup before export — crop away floor, surrounding environment, and floating fragments in-app before exporting
+- AirDrop OBJ directly to Mac; no cloud processing step needed
+
+**Scanning tips:**
+- Move deliberately; maintain high overlap between passes
+- Reflective or polished surfaces scan poorly — mist with aerosol developer chalk (or dry shampoo) before scanning, wipe off after. Makes surfaces temporarily matte
+- iPhone LiDAR accuracy: ~1–3 cm geometric for room-scale captures — sufficient for clearance verification and routing mockup; **not sufficient alone for bolt hole positions** (supplement with direct caliper/tape measurements)
+- Run in-app crop after every scan before exporting
+
+**Workflow A — Downpipe routing (Blender)**
+1. Scaniverse scan of engine bay with 07K + 8HP installed → in-app crop → export OBJ → AirDrop to Mac
+2. Blender: File → Import → Wavefront OBJ
+3. Add Decimate modifier (Un-Subdivide, 2–3 iterations) if the scene is sluggish
+4. Design tube path as a Bezier curve using the scan as a 3D backdrop — curve positions translate directly to bend angles and radii for the fabricator
+5. Export routing geometry or annotated screenshot as fabricator reference
+
+**Workflow B — Engine mount bracket design (Fusion 360)**
+1. Same OBJ → Fusion 360: **Insert Mesh** (Solid toolbar or Mesh workspace)
+2. **Scale manually after import** — OBJ carries no units. Measure a known reference dimension in Scaniverse's in-app ruler before exporting; verify scale in Fusion and correct via Mesh Scale (1000× default error is common)
+3. **Repair → One Touch Fix** to close holes and fix non-manifold edges
+4. Design bracket solid bodies around the reference mesh using Fusion's parametric tools
+5. Export STL for printed fitment templates; DXF or STEP for fabricator
+
+> **Note — Polycam workaround (free tier):** Polycam free → export GLB → import into Blender → File → Export → Wavefront (.obj) → use in Fusion. Mesh data is identical; this just repackages the format. No Polycam subscription needed.
+
+**3D-printed fitment templates — engine mount brackets**
+Printed brackets (PLA or PETG) are **fitment verification templates only — not structural components**. Use them to confirm bolt hole alignment between the E36 subframe and the 07K exhaust-side bosses before the fabricator cuts steel. The printed part goes in the bin after validation.
+
+**Supplement scan with direct physical measurements for all bolt hole interfaces:**
+
+| Interface | What to measure | Expected spec |
+| :---- | :---- | :---- |
+| **07K exhaust-side mount bosses** | Center-to-center spacing of the two boss holes; height of each boss center relative to crank centerline | Thread: M10×1.5 expected — verify with tap or bolt at teardown. No published dimensions online; measure at Phase 2 teardown. |
+| **E36 subframe mount crossmember** | Position of each mount pad; height above subframe; spacing between driver/passenger pad centers | M8 studs at crossmember for rubber mount; M10 bolts to engine bracket arm above ([RealOEM E36 328i engine mounting](https://www.realoem.com/bmw/enUS/showparts?diagId=11_6073&id=CD11-EUR-12-1995-E36-BMW-328i)). No published center-to-center dimension; measure with engine out. |
+
+**Record measured dimensions here once captured:**
+- 07K boss hole center-to-center: **TBD at Phase 2 teardown**
+- 07K boss thread confirmed: **TBD at Phase 2 teardown**
+- E36 subframe mount pad center-to-center: **TBD at Phase 3 engine-out**
+
+---
 
 #### Drivetrain  [DRIVETRAIN]
 | Component | Specification | Cost / Action |

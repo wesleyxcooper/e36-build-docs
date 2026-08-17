@@ -383,8 +383,8 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] ⚠️ **Decide: DomiWorks or Chatham CNC for 07K→8HP adapter** — get quotes from both before committing
   - **DomiWorks** ([domi-works.com](https://www.domi-works.com/collections/8hp-adapter-kits)) — ~$1,200–1,397. Provide 07K block code + 8HP variant; non-returnable. Requires VW starter swap (068911024GX). Includes SS2541 billet flywheel.
   - **Chatham CNC** (@chathamcnc / mike@chathamcnc.com / 919-740-9748 / [chathamcnc.com](https://www.chathamcnc.com/contact.html)) — custom kit: adapter plate + adapter flex plate + modified TC. Quote required. Confirm whether N54 starter is reused or a VW starter is needed.
-- [ ] ⚠️ **Measure G30-770 RR hood clearance now** — while the engine bay is still open with the M5x in place
-  - Test-fit the SPA MK5 manifold position and measure vertical clearance to hood line. Resolve clearance issues (vented hood, step down to G25-660 RR) **before** ordering or ceramic coating anything. This cannot be undone after the order.
+- [ ] ⚠️ **Confirm G25-660 RR hood clearance** — while the engine bay is still open with the M5x in place
+  - Turbo is now G25-660 RR (decided — smaller frame than G30-770, hood clearance concern was a primary driver). Test-fit SPA MK5 manifold position + G25-660 mock-up (or actual turbo) and verify clearance to hood line. This is a **confirmation step**, not a decision point — clearance issues at this stage resolve with a bubble/vented hood, not a turbo change.
 - [ ] ✅ Place BBG billet valve cover + timing cover + coolant flange combo order early (~6-week lead time — order at Phase 2 kickoff, not at assembly time)
 - [ ] ✅ Order intake cam adjuster stretch bolts early — **currently hard to source through VW directly**
   - Cross-ref: **N91042802** (DAZA/Audi/Porsche spec — M12x1.25x60x30, slightly longer, confirmed working by 07K community) — [$9.19/ea at FCP Euro](https://www.fcpeuro.com/products/audi-camshaft-sprocket-bolt-genuine-audi-n91042802). Order 2.
@@ -536,7 +536,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 
 ### Oil System  [OIL]
 - [ ] ✅ Install iABED longitudinal oil filter housing
-  - iABED housing has a dedicated **turbo oil feed port** — install **-4AN fitting** (M12×1.5 to -4AN adapter or direct -4AN, per iABED port spec) at this port for the G30-770 oil feed line. Confirmed by @wingman703. Include a **0.9–1.0mm orifice restrictor** inline on the feed line — standard for journal bearing turbos; prevents over-oiling at idle.
+  - iABED housing has a dedicated **turbo oil feed port** — install **-4AN fitting** (M12×1.5 to -4AN adapter or direct -4AN, per iABED port spec) at this port for the G25-660 RR oil feed line. Confirmed by @wingman703. Include a **0.9–1.0mm orifice restrictor** inline on the feed line — standard for journal bearing turbos; prevents over-oiling at idle.
 - [ ] ✅ Install iABED baffled longitudinal oil pan
 - [ ] ⚠️ **Send 07K oil pump to Linder Power Systems (LPS) for oil pump mod** (send-in service — no storefront)
   - Contact LPS directly: [linderpowersystems.com](https://linderpowersystems.com). **Early-style 07K pump only** — verify pump version before sending; later pumps use a different design.
@@ -572,6 +572,14 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] 🔧 Pull M5x interim engine
   - > Reference: [E36 engine removal (YouTube)](https://www.youtube.com/watch?v=kracqUH216s)
   - > ⚠️ **Pitfall:** Drain coolant and oil before pulling. Disconnect the battery. Label every hose and connector as you remove it — the 07K bay will look different and you will not remember where the M52 AC line went 6 months later.
+- [ ] ⚠️ **Complete 3D scan of engine bay and engine mount bracket design before fabrication**
+  - See 3D Scanning Workflow section in project plan (Phase 3 → Pre-Fabrication)
+  - Use Scaniverse (free, iPhone 16 Pro) → export OBJ → Fusion 360 (bracket solid body design) + Blender (downpipe routing)
+  - 3D-printed templates (PLA/PETG) are **fitment verification only — not structural**. Validate bolt hole alignment between 07K exhaust-side bosses and E36 subframe, then bin the prints
+  - **Measure and record before scan-to-CAD step:**
+    - 07K exhaust-side boss hole center-to-center spacing (calipers)
+    - 07K boss thread spec (expected M10×1.5 — verify with tap at teardown)
+    - E36 subframe mount pad positions and center-to-center spacing (engine out)
 - [ ] 🏭 Install custom E36 07K engine mounts (Race3 / JNC) — welded steel, shop work
 - [ ] 🔧 Lower 07K into engine bay, align to mounts + 8HP adapter
   - > ⚠️ **Pitfall:** Do not torque engine mount bolts until the engine is hanging freely at the correct height and the 8HP adapter plate is loosely mated. Torquing mounts before final positioning locks you into a misaligned drivetrain.
@@ -595,13 +603,16 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 
 ### Air & Boost  [AIR]
 - [ ] ✅ Install SPA Turbo MK5 T3 manifold (TMW22) — top-mount position
-- [ ] ✅ Install Garrett G30-770 RR — $2,731 (supercore $1,883.91 + 0.83 A/R housing $847.29)
-  - > ⚠️ **Pitfall:** The G30-770 must be reverse rotation — standard rotation will direct the compressor outlet into the firewall with the SPA MK5 manifold in a longitudinal installation. Double-check the Full Race listing at purchase time (RR part numbers differ from standard).
-- [ ] ✅ Install T3-to-V-band adapter — ~$35–50 (connects SPA T3 manifold outlet to G30-770 V-band turbine inlet; adds ~25–35mm to stack height)
+- [ ] ✅ Install Garrett G25-660 RR — ~$1,800–2,000 est. (verify at order; [Full Race G-series](https://www.full-race.com/collections/garrett-g-series))
+  - > **Decision:** G25-660 RR chosen over G30-770. Power target ≤600whp; G25-660 rated to ~660whp — real headroom without riding the map boundary. Smaller frame fits E36 top-mount without hood clearance concerns. Faster spool on the 2.5L I5. G25-660 RR + SPA TMW manifold combination confirmed by NineX Engineering (Rennlist 944 07K community).
+  - > ⚠️ **Pitfall:** Must be reverse rotation — standard rotation directs the compressor outlet into the firewall with the SPA MK5 manifold in longitudinal installation. Full Race G-series RR listings use distinct SKUs from standard rotation — double-check at purchase.
+- [ ] ✅ Install T3-to-V-band adapter — ~$35–50 (connects SPA T3 manifold outlet to G25-660 V-band turbine inlet; adds ~25–35mm to stack height)
 - [ ] ✅ Install Tial 44mm MVR wastegate (V-band direct fit to SPA manifold WG port)
+- [ ] ⚠️ **Complete 3D scan workflow before sending downpipe to fabricator** — see 3D Scanning Workflow section in project plan Phase 3
+  - Scan engine bay with Scaniverse (iPhone 16 Pro, free) after 07K + 8HP are installed → design tube routing path in Blender as Bezier curve → send annotated routing reference to fabricator
 - [ ] 🏭 Measure downpipe routing and send to fabricator — custom RHD downpipe around [STEERING] rack
-- [ ] ✅ Re-pipe CXRacing FMIC core for new G30-770 RR turbo position (all Phase 1A piping unusable)
-- [ ] 🔧 Re-plumb Turbosmart boost solenoid for G30-770 + Tial 44mm wastegate setup
+- [ ] ✅ Re-pipe CXRacing FMIC core for G25-660 RR turbo position (all Phase 1A piping unusable)
+- [ ] 🔧 Re-plumb Turbosmart boost solenoid for G25-660 RR + Tial 44mm wastegate setup
   - Solenoid from Phase 1A carries over; all boost control plumbing is turbo-position specific. Re-route: compressor outlet reference line → solenoid inlet; solenoid outlet → Tial 44mm actuator port.
 
 ### Fuel System  [FUEL]
