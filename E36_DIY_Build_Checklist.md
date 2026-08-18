@@ -283,9 +283,9 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - > **Pre-allocate 6 pins for e-pedal (Phase 3):** APS1 SIG, APS2 SIG, VCC1, VCC2, GND1, GND2. Leave engine-side pins unconnected until Phase 3; Deutsch AS supports field-adding pins at any time. This avoids running new wires through the firewall later.
   - > Spec and cost: see Enhancements doc `[ELECTRICAL]` — Firewall Bulkhead Connector section.
 
-- [ ] 🔧 **Source TNE/DMC solid barrel crimper before starting the AS79 bulkhead build**   [ELECTRICAL · TOOLING]
-  - The Deutsch AS79 uses **solid barrel size-20 contacts** requiring a TNE/DMC ratcheting crimper (Daniels DMC TL-10 handle + die, or AMP CET-1 + MH860 die). Cannot substitute the Knipex 97 52 68 or a generic Deutsch die — wrong geometry produces cold crimps that pass pull-test but fail under vibration. Source: StreetCarJoe Race Car Wiring Pt.1.
-  - Also procure: flush cutters (Milwaukee 48-22-6106 or equiv), rivnut tool (Astro Pneumatic 1442) — both used constantly during harness work and board mounting regardless of bulkhead choice.
+- [ ] 🔧 **Source Deutsch HDT-48-00 solid barrel crimper before starting the AS79 bulkhead build**   [ELECTRICAL · TOOLING]
+  - The Deutsch AS79 uses **solid barrel size-20 contacts** requiring the **Deutsch HDT-48-00** 8-indent ratcheting crimper ([deutschconnector.com](https://www.deutschconnector.com/products/deutsch_connector_tools/deutsch_connector_crimp_tools/HDT-48-00/), ~$350–465). This is the Deutsch/TE Connectivity-specified tool — covers all three solid contact sizes (12, 16, 20) with no die swap. Budget alternative: JRready NEW-DT2 (~$169, Amazon `B09B562XDT`). Cannot substitute a generic open-barrel die or the IWISS IWS-2820M — wrong geometry produces cold crimps that pass pull-test but fail under vibration. ⚠️ "Daniels DMC TL-10" was previously listed here but that part number does not exist on any Daniels/DMC product page.
+  - Also procure: flush cutters (Milwaukee 48-22-6106, Home Depot `205652216`, ~$20), rivnut tool (Astro Pneumatic 1442, Amazon `B003TODXQW`, ~$71) — both used constantly during harness work and board mounting regardless of bulkhead choice.
 
 - [ ] 🔧 **Battery cutoff switch — optional, install only if track/org rules require it**   [ELECTRICAL]
   - Not required on a dual-duty street/drift car with a working ignition key. Check your specific event org's rules before buying.
