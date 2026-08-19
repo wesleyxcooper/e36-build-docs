@@ -299,7 +299,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - **IGN sense:** IGN-switched +12V → PMU16 pin 7 (+12V SW) — switches PMU on/off with key
   - **GND:** PMU16 GND lug → chassis GND stud (M8, engine bay)
   - **CAN:** PMU16 CAN2 H/L → MaxxECU CAN1 H/L (twisted pair, 22 AWG). Load MaxxECU.canx template in PMU software. Configure MaxxECU MTune: Configuration → CAN settings → Data transmission → enable.
-  - **Output channel assignments:** O1 ECU logic power · O2 coil+inj supply · O3 radiator fan (PWM) · O4 fuel pump (PWM — replaces Crydom SSR) · O5 EWP supply · O6 condenser fan · O7 AC relay coil
+  - **Output channel assignments:** O1 ECU logic power · O2 coil+inj supply · O3 radiator fan (PWM) · O4 fuel pump (PWM — replaces Crydom SSR) · O5+O14 EWP parallel (50A combined) · O6 condenser fan · O7 AC relay coil
   - **Post-shutdown EWP:** Program PMU16 to hold O5 active after key-off until CLT < 70°C CAN message from MaxxECU (or 3-min fallback timer) — no MaxxECU power-hold relay needed
   - **Programming:** requires Ecumaster USB-CAN adapter ($85) for initial setup via PMU software
   - Docs: [PMU16 manual](https://www.ecumaster.com/files/PMU/PMU_Manual.pdf) · [pinout v1.2](https://www.ecumaster.com/files/PMU/PMU-16_Pinout_v1.2.pdf) · [MaxxECU integration](https://www.ecumaster.com/files/ADU/AN/maxxEcu.pdf) · `e36-wiring/harnesses/power-distribution.wv`
@@ -459,8 +459,8 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - > ⚠️ **Version critical — must verify part number:** Pre-March 2024 = PWM version (MaxxECU-controllable). Post-March 2024 = LIN bus version (NOT directly PWM-controllable). **Source PWM version only:** Pierburg `7.07223.10.0` / BMW `11515A05704` / `11517563659` / `11517568594`. Do NOT accept Pierburg `7.03665.66.0` or BMW `11517604027` (LIN).
   - **Sourcing:** New ~$720 (Dedicated Motorsports); OEM BMW pull from eBay $50–150 used (verify PWM part# before buying).
   - **MaxxECU config:** PWM GPO at 680 Hz. Duty cycle map: 20% @ 60°C / 55% @ 85°C / 97% @ 105°C. Duty 13–85% = controlled speed; 86–97% = full speed. Wake pulse: MaxxECU must send ≥ 3ms high at ignition-on before CLT map kicks in — configure startup duty override.
-  - **Power wiring:** 40A relay (Bosch 0 332 002 150) + 10 AWG feed/ground (35.5A max draw). Connector: Kostal 2+2 (4-pin) — Pins 1/2 = signal (2.8mm terminals), Pins 3/4 = power (5.8mm terminals).
-  - **Post-shutdown cooling:** MaxxECU power hold relay keeps ECU alive after key-off — MaxxECU continues commanding pump via PWM until CLT < 70°C. Dedicated power hold relay required.
+  - **Power wiring:** PMU16 O5+O14 parallel (50A combined, 8 AWG each from PMU16 → CWA400 Pin 3). No external relay — PMU16 MOSFET outputs drive the pump directly. Connector: Kostal 2+2 (4-pin) — Pins 1/2 = signal (2.8mm terminals), Pins 3/4 = power (5.8mm terminals).
+  - **Post-shutdown cooling:** PMU16 holds O5+O14 active after key-off until CLT < 70°C CAN message from MaxxECU (or 3-min fallback timer). No external power-hold relay needed — PMU16 handles this natively.
   - OEM pump `07K121011B` — bring to Euromotive, remove impeller only, housing stays. ⚠️ Belt-driven (accessory belt, not timing chain). Housing pulley freewheels passively in belt path.
   - > 🔄 **@wingman703 diverges:** full pump delete — removes OEM housing, welds off rear coolant port, deletes heater core (Miata track build, no cabin heat). This build retains housing-in-place **intentionally** to preserve cabin heat (street car).
   - **Wiring reference:** [github.com/wesleyxcooper/e36-wiring — ewp-wiring-reference.md](https://github.com/wesleyxcooper/e36-wiring/blob/main/ewp-wiring-reference.md)
