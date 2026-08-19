@@ -597,6 +597,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 ### Oil System  [OIL]
 - [ ] ✅ Install iABED longitudinal oil filter housing
   - iABED housing has a dedicated **turbo oil feed port** — install **-4AN fitting** (M12×1.5 to -4AN adapter or direct -4AN, per iABED port spec) at this port for the G25-660 RR oil feed line. Confirmed by @wingman703. Include a **0.9–1.0mm orifice restrictor** inline on the feed line — standard for journal bearing turbos; prevents over-oiling at idle.
+  - **Install reference:** [07k iABED Industries Oil Filter Block Install (YouTube)](https://www.youtube.com/watch?v=oO_H64Pp7HY) — covers what the block is, port identification, and installation procedure.
 - [ ] ✅ Install iABED baffled longitudinal oil pan
 - [ ] ⚠️ **Send 07K oil pump to Linder Power Systems (LPS) for oil pump mod** (send-in service — no storefront)
   - Contact LPS directly: [linderpowersystems.com](https://linderpowersystems.com). **Early-style 07K pump only** — verify pump version before sending; later pumps use a different design.
