@@ -323,7 +323,17 @@
 | Component | Specification | Cost | Notes |
 | :---- | :---- | :---- | :---- |
 | **Brake Pads (Track)** | Ferodo DS2500 / Hawk HPS 5.0 / Carbotech XP8 | $80–160/axle | Required alongside any rotor upgrade — OEM pads fade quickly on track |
-| **Brake Lines** | Stainless braided (all corners) | ~$100–150 | Eliminates pedal sponginess under heat. Do before any track event. |
+
+> **Braided SS brake lines** are in Phase 1 of the main checklist (Condor E36 kit, $154–169 — not listed here as optional).
+
+### Brake Line Routing — Billet Holders (Optional)  [BRAKES · AESTHETIC]
+
+> Add these if original routing clips are damaged/missing, or you want clean line presentation with the widebody + respray. The lines themselves are a Phase 1 required item.
+
+| Option | Description | Notes |
+| :---- | :---- | :---- |
+| **Finishing Lines billet holders** | CNC-machined billet aluminum routing clamps — secure and display braided lines along chassis/firewall | [@finishing_lines on Instagram](https://www.instagram.com/finishing_lines/) — small-batch, DM for pricing. Compatible with any braided SS line including Condor. Purely cosmetic vs. standard plastic clips. |
+| **OEM-style replacement clips** | BMW E36 plastic brake line routing clips | Available from FCP Euro / RealOEM. Cheap and correct — use if existing clips are broken and billet isn’t a priority. |
 
 ---
 

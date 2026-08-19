@@ -170,6 +170,12 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - Alt: [SLG bracket](https://drifthq.com/products/slg-bmw-e36-m3-wilwood-dual-caliper-bracket-kit) ($335) + Wilwood Dynapro 4-piston PN 120-9703 (⚠️ M3 arm requires Dynapro 4-piston — NOT Dynalite)
   - Hydraulic MC + lever kit: ~$80–200. Total Kakuma path: ~$250–400
   - > ⚠️ **Pitfall:** Both bracket options bolt to the factory handbrake mounting point on the M3 trailing arm only — will not fit non-M arms.
+- [ ] ✅ **Replace all factory rubber brake hoses with braided SS lines** — [Condor Speed Shop E36 kit](https://www.condorspeedshop.com/products/e36-stainless-steel-brake-line) — **$154–169**
+  - BrakeQuip-made in Florida: PTFE inner core, 4-wire 304SS braid, DOT-compliant (MVSS-1006), burst-tested to 6,000 psi, lifetime warranty
+  - Variants: Regular or Extended-length front lines (extended for lock kit/wide-angle kit clearance) + standard 2-piece or single-piece rear lines — all in the same price tier
+  - **Note on BBK front lines:** The [RallyRoad BBK front lines](https://rallyroad.net/collections/brakes/products/e36bigbrakekitfrontlines) ($64.95) above are caliper-specific for the 996 Brembo fitment. The Condor rear lines are still required — they are not duplicated by the RallyRoad kit.
+  - > ⚠️ **Pitfall:** Factory rubber hoses swell under sustained braking heat and degrade with age — spongy pedal is often the result. Do this before any track event regardless of caliper choice.
+
 - [ ] 🔧 Install NES Engineering brake booster delete ([nesengineering.com](https://nesengineering.com/products/brakboster-delete?variant=57108005880191)) — $216
   - Changes pedal ratio 3:1 → 6:1 using stock master cylinder. **Do this at Phase 1** — firewall mods are easiest with the engine bay open.
   - Required mods: grind 2mm off firewall hole + pedal box, drill new hole in brake pedal. Irreversible — confirm before cutting.
