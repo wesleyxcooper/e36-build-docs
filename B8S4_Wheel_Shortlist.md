@@ -349,6 +349,36 @@ One-piece 6061-T6 forged aluminum monoblock. Fully custom — you specify bolt p
 
 ---
 
+### BBS RI-D · 19x9.5 ET38 · Full Forged Duralumin Monoblock · 5x112 / PFS Bore
+
+**17.6 lbs (8.0 kg) · ~$2,600/ea new · 60° Conical · 82.7mm protrusion (+2.6mm vs current 034 ZTF)**
+
+The lightest confirmed 19x9.5 5x112 wheel found in research — and it's not close. BBS's RI-D uses extra-super duralumin (aerospace aluminum alloy), introduced in 2011 as the world's first duralumin wheel. The alloy is roughly 20% lighter than standard 6061-T6 forged aluminum at equivalent cross-section. 5-spoke minimalist monoblock design. **PFS bore (Pilot Fit System)** — BBS's floating hub ring accommodates multiple center bore diameters including 66.5mm directly; no separate hub rings needed. Part number: RI099.
+
+At 17.6 lbs, this is 3.4 lbs lighter than the next lightest option on this list (APEX SM-10RS at 21 lbs) and 13.4 lbs lighter than the Momo Ferrara. ET38 = 82.7mm protrusion — nearly identical to APEX SM-10RS ET38.
+
+**Caveat:** $2,600/ea new is absurd. The play is the used market — sets appear on eBay and JDM import auction sites. Confirm the PFS ring is intact when buying used (replaceable but annoying to source in the US).
+
+**Weight source:** [BBS Japan official spec table](https://bbs-japan.co.jp/en/products/1108/) — RI099 listed as 8.0 kg at 19x9.5. Also available at ET50 (8.0 kg, 70.7mm protrusion — more conservative).
+
+[Buy new at Evasive Motorsports (ET50)](https://www.evasivemotorsports.com/store/product/bbs-ri-d-wheel-19x95-offset-50-5x1120-diamond-black/) · [BBS Japan official](https://bbs-japan.co.jp/en/products/1108/)
+
+---
+
+### Volk TE37 Ultra M-Spec · 19x9.5 ET44 Face-2 · Forged Monoblock · 5x112 / 66.5mm CB
+
+**~22 lbs · ~$1,145/ea new · 60° Conical · 76.7mm protrusion (−3.5mm vs current 034 ZTF)**
+
+Rays' current production forged 6-spoke. The M-Spec is the updated successor to the original TE37 Ultra (discontinued ~2018). In 5x112 at 19x9.5, the only ET that works within your protrusion limit is **ET44 (Face-2)** — the other 5x112 option is ET23 (Face-4) at 97.7mm, which is 11mm over your limit. ET44 is slightly conservative vs your current 034 ZTF — wheel tucks ~3.5mm more vs current stance. If you want a flush or slightly aggressive look, this isn't the move; if you want performance and weight and don't mind tucked-flush stance, this is it.
+
+At 22 lbs it just makes the under-23-lb ceiling. Weight confirmed by [ZEV Centric spec](https://zevcentric.com/products/volk-racing-te37-ultra-m-spec-tm3-y-19-set-of-four-bronze-almite) (19x9.5 TE37 Ultra M-Spec, multiple sources). **66.5mm center bore** — direct fit, no hub rings. 60° conical M14×1.5 lug nuts required.
+
+Available new in Blast Bronze, Bronze Almite, and other colors at ~$1,145–1,197/ea. Also appears on the used market — the Tesla community runs the exact same 5x114.3 sizes but the 5x112 ET44 is less common used, so new may be the better path unless a used set surfaces locally.
+
+[Buy new at System Motorsports](https://www.systemmotorsports.com/products/rays-volk-te37-ultra-m-spec-19) · [Rays official](https://www.rayseng.com/en/brand/volkracing/te37-ultra-m-spec/)
+
+---
+
 ## 5. Tire Width Guide
 
 Current: **255/35-19 on 9.3" rims**. Here's how tire sizing changes as you go wider:
