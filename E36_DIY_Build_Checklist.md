@@ -103,15 +103,21 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - > ⚠️ **Pitfall:** Surface prep before welding is the critical step — bare metal welds only. Sand, grind, and clean every contact surface. Weld porosity from paint contamination is invisible and structurally weak.
 
 ### Suspension  [SUSPENSION]
-- [ ] ✅ Install BC Racing BR coilovers (front + rear)
+- [ ] ✅ Install Fortune Auto 500 Series coilovers (front + rear) — [FA500-E36](https://www.fortuneautosuperstore.com/fortune-auto-500-series-coilovers-for-bmw-3-series-e36/), $1,928
   - > ⚠️ **Pitfall:** Set ride height before torquing pinch bolts — you cannot adjust after. Start at mid-range and corner-balance at alignment shop. Alignment required after this step.
 - [ ] 🔧 Install Revshift full poly bushing kit throughout
   - > ⚠️ **Pitfall:** Poly bushings require grease at install and periodic re-greasing. Dry poly bushings squeak constantly and wear unevenly. Use the Revshift-supplied grease or equivalent poly-compatible lubricant.
 - [ ] ✅ Schedule alignment after coilovers (shop)
 - [ ] 🔧 **Swap E36 M3 trailing arms** during subframe-out Phase 1 work — subframe is already removed for reinforcement
   - Source from 1996–1999 US E36 M3 or Z3M (same arm, more Z3M supply). ~$300–500/pair (eBay/LKQ/salvage)
-  - M3 arms use larger wheel bearings and M3 hubs — required for Born2Drift halfshaft fitment, 996 Brembo front BBK geometry, and hydro handbrake bracket bolt pattern
+  - **OEM part numbers:** Left `33322227985` / Right `33322227986` — 1996–1999 E36 M3 and 1996–2002 Z3M (source: [RealOEM](https://www.realoem.com/bmw/enUS/showparts?diagId=33_1004&id=BG93-USA-05-1999-E36-BMW-M3)). New OEM discontinued; source used only.
+  - M3 arms use larger wheel bearings and M3 hubs — required for Born2Drift halfshaft fitment and hydro handbrake bracket bolt pattern
   - > ⚠️ **Pitfall:** Trailing arm swap must happen while subframe is out. Once the subframe is back in, this becomes a major teardown. Do not skip it at Phase 1.
+- [ ] 🔧 **Install VAC Motorsports billet differential cover** during Phase 1 subframe-out window   [DRIVETRAIN · DIFFERENTIAL]
+  - Diff is already exposed while trailing arms and halfshafts are out — ~30 min incremental
+  - Steps: drain gear oil → unbolt old cover → clean mating surface → install billet cover → transfer speed sensor → refill with gear oil. No internal diff disassembly.
+  - Benefits: increased fluid capacity + cooling fins (LSD clutch pack protection during sustained drifting), temp sensor port (MaxxECU analog input for diff temp logging), AN fittings for future external cooler, reinforced mounting ears (eliminates OEM cast ear failure mode)
+  - Source: [VAC Motorsports Philadelphia](https://store.vacmotorsports.com/) — local (2501 Snyder Ave, 215-462-4666). ~$150–200 est. Compatible with 188mm Euro 328i diff.
 
 ### Front Suspension Geometry  [SUSPENSION · STEERING]
 
@@ -240,7 +246,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - > ⚠️ **Pitfall:** Depressurize the fuel system before opening the tank. The E36 tank has a locking ring — a large channel-lock or a BMW ring tool (rent). Don't pry it with a screwdriver; you'll crack the plastic retainer.
   - > ⚠️ **Pitfall (hanger terminals):** Stainless stud terminals are live in a fuel-saturated environment. Clean contact surfaces before install. Use ring terminals + provided acorn nuts — anti-rotation feature prevents stud from spinning during tightening.
   - > ⚠️ **Swivel fittings:** Thread 20-1000-1010 (10AN ORB swivel) into pump-out port hand-tight first, then attach -10AN braided line before final torque — lets fitting rotate to correct routing angle before locking.
-  - > ⚠️ **Wiring — SSR required, not a mechanical relay:** F90000267 draws 14.1A; MaxxECU PWM cannot be done through a mechanical relay. Use a 40A DC SSR (Crydom D1D40 or equiv opto-isolated DC-DC SSR). **Circuit:** Fused BATT+ (25A) → SSR Load(+) → SSR Load(-) → pump(+) stud (12 AWG). IGN switched 12V → SSR Ctrl(+) (22 AWG). MaxxECU GPO → SSR Ctrl(-) (22 AWG, shielded). Pump(-) stud → dedicated chassis GND bolt — **not shared with ECU sensor grounds.**
+  - > ⚠️ **Wiring — PMU16 handles fuel pump PWM directly:** With the Ecumaster PMU16, output O4 (25A, PWM-capable) drives the pump via CAN command from MaxxECU — no separate DC SSR needed. The Crydom D1D40 SSR is removed from the build. **Circuit:** PMU16 O4 → pump(+) stud on Radium 20-1170 hanger (12 AWG). PMU16 BATT+ stud carries the load current. Pump(-) stud → dedicated chassis GND bolt — **not shared with ECU sensor grounds.**
   - **MTune:** Outputs → Output config → Function: **PWM fuel pump control** → frequency 100–500 Hz. Duty table: 65% idle / 80% cruise / 100% WOT. Phase 3 (07K): tune duty table to MAP — full duty under boost. Carries to 07K with no hardware changes.
 - [ ] ✅ Install ethanol content sensor inline on fuel feed line ([Seems Legit Garage](https://www.seemslegitgarage.com/product-page/ethanol-content-sensor))   → digital input to MaxxECU [ECU]
 - [ ] ✅ Install Bosch 440cc injectors (Phase 1 baseline)
@@ -279,7 +285,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] ✅ Mount MaxxECU Race unit (firewall or under dash — keep away from heat)
 - [ ] 🔧 Install Deutsch AS / Souriau 8STA firewall bulkhead connector (47- or 79-way flanged receptacle)   [ELECTRICAL] — wiring: [`firewall-bulkhead.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/firewall-bulkhead.wv) ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/firewall-bulkhead.html))
   - > Mount on upper firewall near OEM harness grommet. **LHD: left (driver's) side. RHD: LEFT side (passenger side) — the OEM engine harness grommet is on the passenger side in both LHD and RHD E36; the driver's/right side on RHD contains steering column and brake/clutch pass-throughs and is also the exhaust side of a longitudinal 07K (SPA manifold exits right-hand side of engine). ⚠️ Do NOT place bulkhead connector on the driver's/right side in a RHD 07K build.** Custom aluminum plate or direct 54mm center-drill + flanged receptacle. Additive — no OEM connectors removed.
-  - > Wire cabin side permanently (ECU Molex C1/C2 connectors, fuse block, relay board, cluster X20 signals). Engine harnesses each terminate in a mating plug on the engine side.
+  - > Wire cabin side permanently (ECU Molex C1/C2 connectors, PMU16 CAN harness, cluster X20 signals). Engine harnesses each terminate in a mating plug on the engine side.
   - > **Pre-allocate 6 pins for e-pedal (Phase 3):** APS1 SIG, APS2 SIG, VCC1, VCC2, GND1, GND2. Leave engine-side pins unconnected until Phase 3; Deutsch AS supports field-adding pins at any time. This avoids running new wires through the firewall later.
   - > Spec and cost: see Enhancements doc `[ELECTRICAL]` — Firewall Bulkhead Connector section.
 
@@ -287,10 +293,22 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - The Deutsch AS79 uses **solid barrel size-20 contacts** requiring the **Deutsch HDT-48-00** 8-indent ratcheting crimper ([deutschconnector.com](https://www.deutschconnector.com/products/deutsch_connector_tools/deutsch_connector_crimp_tools/HDT-48-00/), ~$350–465). This is the Deutsch/TE Connectivity-specified tool — covers all three solid contact sizes (12, 16, 20) with no die swap. Budget alternative: JRready NEW-DT2 (~$169, Amazon `B09B562XDT`). Cannot substitute a generic open-barrel die or the IWISS IWS-2820M — wrong geometry produces cold crimps that pass pull-test but fail under vibration. ⚠️ "Daniels DMC TL-10" was previously listed here but that part number does not exist on any Daniels/DMC product page.
   - Also procure: flush cutters (Milwaukee 48-22-6106, Home Depot `205652216`, ~$20), rivnut tool (Astro Pneumatic 1442, Amazon `B003TODXQW`, ~$71) — both used constantly during harness work and board mounting regardless of bulkhead choice.
 
+- [ ] 🔧 **Mount and wire Ecumaster PMU16 power management unit**   [ELECTRICAL · POWER DISTRIBUTION]
+  - Replaces: relay board, mini blade fuse block, and Crydom D1D40 SSR — one unit handles all
+  - **Power path:** BATT+ → (optional 4-post cutoff) → ANL main fuse (≤18 in of battery) → PMU16 M6 BATT+ stud
+  - **IGN sense:** IGN-switched +12V → PMU16 pin 7 (+12V SW) — switches PMU on/off with key
+  - **GND:** PMU16 GND lug → chassis GND stud (M8, engine bay)
+  - **CAN:** PMU16 CAN2 H/L → MaxxECU CAN1 H/L (twisted pair, 22 AWG). Load MaxxECU.canx template in PMU software. Configure MaxxECU MTune: Configuration → CAN settings → Data transmission → enable.
+  - **Output channel assignments:** O1 ECU logic power · O2 coil+inj supply · O3 radiator fan (PWM) · O4 fuel pump (PWM — replaces Crydom SSR) · O5 EWP supply · O6 condenser fan · O7 AC relay coil
+  - **Post-shutdown EWP:** Program PMU16 to hold O5 active after key-off until CLT < 70°C CAN message from MaxxECU (or 3-min fallback timer) — no MaxxECU power-hold relay needed
+  - **Programming:** requires Ecumaster USB-CAN adapter ($85) for initial setup via PMU software
+  - Docs: [PMU16 manual](https://www.ecumaster.com/files/PMU/PMU_Manual.pdf) · [pinout v1.2](https://www.ecumaster.com/files/PMU/PMU-16_Pinout_v1.2.pdf) · [MaxxECU integration](https://www.ecumaster.com/files/ADU/AN/maxxEcu.pdf) · `e36-wiring/harnesses/power-distribution.wv`
+  - > ⚠️ **Pitfall:** PMU16 CAN2 bus must be terminated at both ends (120Ω). PMU16 has software-controlled termination on CAN2 — enable it in PMU config. Verify MaxxECU CAN1 termination. Unterminated CAN causes intermittent dropouts that are hard to diagnose at the track.
+
 - [ ] 🔧 **Battery cutoff switch — optional, install only if track/org rules require it**   [ELECTRICAL]
   - Not required on a dual-duty street/drift car with a working ignition key. Check your specific event org's rules before buying.
   - If required: must be **4-post** (Moroso 74108 or equiv), NOT 2-post. A 2-post switch only disconnects the battery; with an alternator fitted the car keeps running. The 4-post disconnects battery and alternator simultaneously.
-  - Power path if installed: BATT+ → CUTOFF_4POST → ANL main fuse (≤18 in) → fuse block. Alternator B+ also routes through the switch.
+  - Power path if installed: BATT+ → CUTOFF_4POST → ANL main fuse (≤18 in) → PMU16 M6 BATT+ stud. Alternator B+ also routes through the switch.
   - Wiring reference: `e36-wiring/harnesses/power-distribution.wv` — CUTOFF_4POST connector.
 
 - [ ] 🔧 **Verify ground straps; run MaxxECU engine GND to cylinder head**   [ELECTRICAL]
