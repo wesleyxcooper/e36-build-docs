@@ -64,16 +64,19 @@ This also means: the SPA TMW22 exhaust manifold, turbo, and downpipe are all on 
 | **AU** | 328i Conv. Manual | Driver | AUD $10,000 - $18,000 (~$6,500-$11,700) | Gumtree / Carsales |
 | **AU** | 323i Conv. Manual | Driver | AUD $7,000 - $12,000 (~$4,600-$7,800) | Gumtree / Carsales |
 
+> **Candidate Vehicle — Current Preferred:** 1995 BMW 328i E36 Convertible, RHD, blue, 143k miles, service history, UK car throughout. [eBay UK #377188165950](https://www.ebay.co.uk/itm/377188165950) — £5,000 asking. All-in estimate **~$10,000 to door** via Double Mint Imports. Auction ended 23 May — follow up with seller to confirm availability.
+>
 > **Import Services — Evaluated Options:**
 >
 > | Service | Role | Sourcing? | Notes |
 > | :---- | :---- | :---- | :---- |
-> | **[Open Air Imports](https://www.openairimports.com/)** (Baltimore/Richmond, VA) | Full-service US importer | ✅ Yes | Confirmed active. Sources the car, photographs pre-purchase, collects, ships, clears US customs, delivers or holds for pickup. Enthusiast-focused. Best single-vendor option. Ph: 443-300-8745 |
-> | **[CFR Classic](https://cfrclassic.com/international-car-shipping/import-car-from-uk-to-usa/)** | Freight forwarder + buyer contacts | ⚠️ Secondary | Primarily a shipping company. Has UK buyer contacts who can source on commission — useful if you've already identified a car. Shipping from UK starts ~$2,450. |
-> | **[AutoTrader UK](https://www.autotrader.co.uk/) / [PistonHeads](https://www.pistonheads.com/)** | UK classifieds | ✅ Self-source | Find the car yourself, then hand off to OAI or CFR for collection and shipping. PistonHeads "Wanted" ads surface private sellers actively. |
-> | **Independent UK PPI inspector** | Pre-purchase inspection only | ❌ No | Use [Drewmotive](https://www.drewmotive.com/pre-purchase-inspections/classic-import-car-pre-purchase-inspection.html) or a local independent BMW specialist for a PPI on any self-sourced UK car before committing. |
+> | ⭐ **[Double Mint Imports](https://www.doublemintimports.com/)** — **preferred** | RHD UK classic specialist | ❌ You source | You find the car; they handle collection, deregistration/export docs, shipping to **Port Newark NJ**, US customs/EPA/DOT, and accompany you to NY DMV for titling. Owner: Raphael Hickling. [Cost estimator](https://www.doublemintimports.com/estimator). All-in at £5,000: **~$10,000 to door.** |
+> | **[Open Air Imports](https://www.openairimports.com/)** (Baltimore/Richmond, VA) | Full-service US importer | ✅ Yes | Confirmed active. Sources the car, photographs pre-purchase, collects, ships, clears US customs, delivers or holds for pickup. Ph: 443-300-8745 |
+> | **[CFR Classic](https://cfrclassic.com/international-car-shipping/import-car-from-uk-to-usa/)** | Freight forwarder + buyer contacts | ⚠️ Secondary | Primarily a shipping company; has UK buyer contacts. Shipping from UK starts ~$2,450. |
+> | **[AutoTrader UK](https://www.autotrader.co.uk/) / [PistonHeads](https://www.pistonheads.com/)** | UK classifieds | ✅ Self-source | Find the car yourself, then hand off to Double Mint or OAI for collection and shipping. |
+> | **Independent UK PPI inspector** | Pre-purchase inspection only | ❌ No | Use [Drewmotive](https://www.drewmotive.com/pre-purchase-inspections/classic-import-car-pre-purchase-inspection.html) or a local BMW specialist for any self-sourced UK car before committing. |
 >
-> **Recommended workflow for a specific-spec car:** Search AutoTrader UK / PistonHeads yourself with the target spec → commission a UK independent PPI on any candidate → hand off to Open Air Imports for collection, shipping, US customs clearance, and East Coast delivery. This gives you the most control over which car you buy while offloading the logistics.
+> **Recommended workflow (current):** Contact seller of [eBay UK #377188165950](https://www.ebay.co.uk/itm/377188165950) to confirm availability → commission UK independent PPI → if clean, engage Double Mint Imports for collection, Port Newark shipping, and NY DMV titling.
 
 > **Hardtop:** Prioritize sourcing a car that comes with an OEM hardtop. E36 hardtops are increasingly rare but do appear with cars or separately on eBay/FB Marketplace (~$500–1,500). Soft top condition is secondary — only needed as a weather backup.
 

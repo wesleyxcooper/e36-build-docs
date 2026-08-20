@@ -40,13 +40,50 @@
 4. ✅ Commission pre-ship PPI in country of origin.
    > ⚠️ **Pitfall:** Confirm alloy block (M52) vs iron (M50). Look for rust in chassis rail seams and convertible floor pans — these rot badly in UK cars. Verify VIN decodes to convertible body style.
 
-### Import Path — Choose One
+### Candidate Vehicle — Current Preferred Pick
 
-5. ✅ Choose your sourcing and import path:
-   - **Option A — Full turnkey:** [Open Air Imports](https://www.openairimports.com/) (Baltimore/Richmond VA, ph: 443-300-8745). Sources the car, photographs pre-purchase, collects, ships, clears US customs, delivers. Best for hands-off buyers. Confirmed active.
-   - **Option B — Self-source, outsource shipping:** Find the car yourself on [AutoTrader UK](https://www.autotrader.co.uk/) or [PistonHeads](https://www.pistonheads.com/) (post a "Wanted" ad to have sellers come to you) → commission a UK independent PPI ([Drewmotive](https://www.drewmotive.com/pre-purchase-inspections/classic-import-car-pre-purchase-inspection.html) or local BMW specialist) → hand off to Open Air Imports or [CFR Classic](https://cfrclassic.com/international-car-shipping/import-car-from-uk-to-usa/) (~$2,450 UK→US) for collection and shipping. Most control over which car you buy.
-   - **Option C — AU sourced:** [Gumtree](https://www.gumtree.com.au/) / [Carsales](https://www.carsales.com.au/) for finding the car; similar handoff process for shipping. West Coast US port (LA/Long Beach) is closer for AU origin.
+> **Status:** eBay auction ended Sat, 23 May — follow up with seller directly to confirm availability before pursuing further.
+
+| Field | Detail |
+| :---- | :---- |
+| **Listing** | [eBay UK #377188165950](https://www.ebay.co.uk/itm/377188165950) — BMW 328i E36 1995 |
+| **Asking price** | £5,000 |
+| **All-in to door (est.)** | **~$10,000 USD** via Double Mint Imports at £5,000 purchase price |
+| **Year** | 1995 |
+| **Body** | Convertible ✓ |
+| **Drive side** | Right-Hand Drive ✓ |
+| **Engine** | 2793cc inline-6 (M52B28) ✓ |
+| **Transmission** | Manual ✓ |
+| **Mileage** | 143,000 miles |
+| **Colour** | Blue |
+| **Service history** | Available ✓ |
+| **Previously reg'd overseas** | No — UK car throughout ✓ |
+| **Previous owners** | 5 |
+| **ABS** | Yes |
+
+**PPI priorities for this specific car:**
+- Confirm M52 alloy block (not iron M50) — rule out by confirming it's a 328i (2.8L), which is M52 by definition
+- 143k miles on a 30-year-old convertible: inspect soft top condition (headliner, seals, frame rails), floor pan rust, and chassis rail seams — standard UK concern
+- Request service history documentation before agreeing on price
+- Confirm VIN codes: check for EPS-incompatible tilt column codes 244/245/246/247 (see step 3)
+- Check diff: confirm ratio and LSD status (step 2)
+
+**Import path:** Double Mint Imports (see Option D below)
+
+---
+
+### Import Path
+
+5. ✅ **Preferred import path: [Double Mint Imports](https://www.doublemintimports.com/)**
+   - RHD UK classic specialist. Owner: Raphael Hickling. Ships to **Port Newark NJ**.
+   - You source the car (or contact seller of the candidate vehicle directly); Double Mint handles collection, deregistration/export docs, shipping, US customs/EPA/DOT clearance, and accompanies you to NY DMV for titling.
+   - Use their [cost estimator](https://www.doublemintimports.com/estimator) for any car. All-in at £5,000: **~$10,000 to door.**
    > ⚠️ **Pitfall:** The 25-year rule uses the **manufacture date** on the door jamb plate, not the model year. Confirm the specific car's build date clears the threshold before it ships — a December 1999 build date is not the same as a 1999 model year.
+
+   **Alternative import paths (if Double Mint is unavailable or you prefer a different approach):**
+   - **Open Air Imports** — [openairimports.com](https://www.openairimports.com/), ph: 443-300-8745. Full-turnkey: sources the car, photographs, ships, clears customs, delivers. Best if you don't want to find the car yourself.
+   - **Self-source + CFR Classic** — Find on [AutoTrader UK](https://www.autotrader.co.uk/) or [PistonHeads](https://www.pistonheads.com/) → UK PPI ([Drewmotive](https://www.drewmotive.com/pre-purchase-inspections/classic-import-car-pre-purchase-inspection.html)) → [CFR Classic](https://cfrclassic.com/international-car-shipping/import-car-from-uk-to-usa/) for shipping (~$2,450 UK→US).
+   - **AU sourced** — [Gumtree](https://www.gumtree.com.au/) / [Carsales](https://www.carsales.com.au/); ship to West Coast US (LA/Long Beach).
 
 ### Insurance & Registration
 
@@ -104,6 +141,9 @@
 - [Drewmotive PPI](https://www.drewmotive.com/pre-purchase-inspections/classic-import-car-pre-purchase-inspection.html)
 - [Open Air Imports](https://www.openairimports.com/) · ph: 443-300-8745
 - [CFR Classic](https://cfrclassic.com/international-car-shipping/import-car-from-uk-to-usa/)
+- [Double Mint Imports](https://www.doublemintimports.com/) — RHD UK classic specialist, Port Newark NJ, Raphael Hickling
+- [Double Mint cost estimator](https://www.doublemintimports.com/estimator)
+- [Candidate vehicle — eBay UK #377188165950](https://www.ebay.co.uk/itm/377188165950) — 1995 328i Convertible, RHD, blue, 143k mi, £5,000
 - [Gauge.S E36 Features & Installation (YouTube)](https://www.youtube.com/watch?v=v5P81D6qujs)
 - [Gauge.S wiki](https://wiki.sorek.uk)
 - Wiring: [`gauge-s-can.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/gauge-s-can.wv) · [`body-x20.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/body-x20.wv) · [`pst-f1-sensor.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/pst-f1-sensor.wv)
