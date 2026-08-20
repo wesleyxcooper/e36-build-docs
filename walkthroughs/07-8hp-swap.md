@@ -24,14 +24,14 @@
 | N54 starter — **BMW 8HP path only** | BMW PN `12412354701` | — |
 | Adapter plate — **BMW N63 path** | [DomiWorks M5x→N63](https://www.domi-works.com/collections/8hp-adapter-kits) | $1,353 |
 | Adapter plate — **BMW N57 path** | [PMC Motorsport M5x→N57](https://pmcmotorsport-shop.com/product-eng-2998-Gearbox-Adapter-Plate-BMW-M50-M52-M54-S50-S52-S54-BMW-ZF-8HP-8HP70-8HP50-GS6-53DZ.html) | ~$350 |
-| Adapter plate — **Dodge path** | Custom — Chatham CNC (mike@chathamcnc.com / 919-740-9748) or Guru Autowerks M5x variant (contact Guru) | Quote required |
+| Adapter plate — **Dodge path** | Custom — Chatham CNC (mike@chathamcnc.com / 919-740-9748) or Guru Autowerks M5x variant (contact Guru) | Quote required — **note: kit quote also covers starter, flexplate, and flywheel selection for the Dodge path; these are not separately listed in this table** |
 | DomiWorks Dodge 8HP70/75 RAM 1500 AWD→RWD Adapter Kit | [DomiWorks direct](https://www.domi-works.com/products/dodge-8hp70-75-ram-1500-and-ram-ecodiesel-awd-to-rwd-conversion-adapter-kit-1350) (SKU 22005004) | ~$1,069 |
 | Guru Autowerks Adjustable Dodge 8HP Mount (BMW-style) | [SLG "E8X/E9X for Dodge 8HP Ram/Charg..."](https://www.seemslegitgarage.com/product-page/adjustable-universal-dodge-8hp-transmission-mount) or [Guru E9x/E8x direct](https://www.guruautowerks.com/product-page/ls-8hp70-75-upbrkt-bmw-e9x-e8x) | $240–$250 (+$50 Energy Bushing) |
 | SLG E36/Z3 8HP Crossmember | [SLG](https://www.seemslegitgarage.com/product-page/e36-dct-crossmember) or [HPR direct](https://hpr-tuning.com) | $205 |
 | SLG Custom 1-Piece Aluminum Driveshaft | [Seems Legit Garage](https://www.seemslegitgarage.com/product-page/single-piece-driveshaft) | $1,350 |
 | SPICER #3-2-119 yoke — **Dodge AWD + DomiWorks path (this build)** | Included with DomiWorks SKU 22005004 output flange | Included |
-| OEM Dodge output flange — **Dodge 2WD "Truck" path only** | PN `68417910AA` | — |
-| DCT Shifter E36 | [dctshifter.com](https://dctshifter.com/) — 270GT Aluminum / 290GTE Carbon / 390GT | $454 |
+| ~~OEM Dodge output flange — **Dodge 2WD "Truck" path only**~~ | ~~PN `68417910AA`~~ | ~~—~~ **NOT APPLICABLE — this build uses the 4WD DomiWorks kit (SKU 22005004) which includes the SPICER #3-2-119 yoke; the 2WD OEM flange is not needed** |
+| DCT Shifter E36 *(order at 8HP commissioning — not needed before swap)* | [dctshifter.com](https://dctshifter.com/) — 270GT Aluminum / 290GTE Carbon / 390GT | $454 |
 | MaxxECU 8HP GEN1 CAN harness #2287 | [MaxxECU store](https://www.maxxecu.com/store/gearbox/8hp/maxxecu-8hp-gen1-cable-harness) / [LPS](https://lpsfab.com/products/maxxecu-8hp-gen1-cable-harness-bmw-8hp-shifter) | ~$368.61 |
 | ISO mini relay (reverse light) | Bosch `0 332 209 150` or equivalent — 12V coil, ≥10A contact | — |
 | 1N4007 flyback diode (×2: relay coil + VANOS solenoid) | Electronics supply | < $1 |

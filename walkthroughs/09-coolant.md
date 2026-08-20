@@ -3,7 +3,7 @@
 **Phase:** 1  
 **System tags:** `[COOLANT]` `[ELECTRICAL]`  
 **Shop-mandatory:** No  
-**Prerequisites:** Engine bay accessible (M52 in car). Ecumaster PMU16 mounted and wired — PMU16 outputs O3 (radiator fan PWM) and O5+O14 (EWP, Phase 3) are pre-assigned in the PMU channel plan. MaxxECU installed for Stage 2 fan control.
+**Prerequisites:** Engine bay accessible (M52 in car). **Stage 1 fan install has no ECU or PMU16 dependency** — thermostat switch and relay only. Stage 2 fan control (PWM SPAL motor, MaxxECU-driven) requires MaxxECU installed; PMU16 O3 is pre-assigned for that stage but is not needed until then.
 
 ---
 

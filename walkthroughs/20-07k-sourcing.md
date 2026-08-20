@@ -5,6 +5,8 @@
 **Shop-mandatory:** No  
 **Prerequisites:** Phase 1 foundation underway; car running on M52 (or at minimum MaxxECU + 8HP commissioned). 8HP variant decision locked before ordering any adapter plate.
 
+> **Status (current):** Block sourced and in hand. One open item: **forged vs. cast crank not yet confirmed** — requires pulling the lower sump pan and physically inspecting the counterweight parting line (see Step 2). All other sourcing decisions complete.
+
 ---
 
 ## Parts
