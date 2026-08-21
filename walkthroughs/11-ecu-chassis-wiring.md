@@ -105,7 +105,11 @@
    - Physical position **12** (middle ring, ~4 o'clock): Chassis GND engine bay (14 AWG)
    All other positions are size-20 (7.5A max, 16–22 AWG).
 
-   > ⚠️ **Verify size-16 positions at first use:** The Deutsch HD30 manual diagram identifies positions 4, 7, 12 as size-16, but confirm these cavities are visibly larger than neighbors before inserting contacts. A size-16 contact inserted into a size-20 cavity will not seat correctly and will pull out under load.
+   > ⚠️ **Verify size-16 positions at first use.** The HD30 24-35 arrangement contains exactly **3 size-16 cavities** and 32 size-20 cavities. Confirmed by: [Deutsch HD30 & HDP20 Series Technical Manual, Edition 2007, Insert Arrangements (ManualsLib p.5)](https://www.manualslib.com/manual/1545583/Deutsch-Hd30-Series.html?page=5); corroborated by [TE Connectivity HD30 product page](https://www.te.com/en/products/connectors/automotive-connectors/intersection/deutsch-hd30-connectors.html) and [Farnell datasheet](https://www.farnell.com/datasheets/818845.pdf).
+   >
+   > **Which positions:** The manual diagram (image-only, not text-extractable) places the size-16 cavities at positions 4, 7, and 12 — those position numbers are used above. Position 7 is described as the largest-cavity position at 12 o'clock in the insert. **Mandatory verification before inserting any contact:** Hold the connector face toward a light and locate the 3 apertures that are visibly larger. Size-16 bore is ~1.59mm vs. ~1.02mm for size-20 — a 56% diameter difference clearly visible to the naked eye. If the 3 larger holes align with positions 4, 7, 12 as expected, proceed. If they do not, remap your wire assignments to whatever positions are actually size-16.
+   >
+   > A size-16 contact in a size-20 cavity: shoulder too wide — won't seat. A size-20 contact in a size-16 cavity: retention lance won't engage — seats but pulls out under load with no click warning.
 
    Cabin side of both connectors wired permanently (ECU Molex C1/C2 connectors, relay board, PMU16 CAN harness). Engine harnesses terminate in mating plugs on the AS79 engine side.
 
