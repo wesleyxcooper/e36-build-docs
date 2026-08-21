@@ -27,6 +27,8 @@
 | Fluid Film or CRC 3-36 (machined surface protection) | Hardware/auto store | — |
 | Summit Racing foam engine storage plugs (assorted port sizes) | Summit Racing | — |
 | HF Web Lifting Sling 2000 lb (×2) | SKU 71451 · [harborfreight.com](https://www.harborfreight.com/2000-lb-capacity-2-in-x-6-12-ft-web-lifting-sling-71451.html) | $9.99 ea |
+| HF Load Leveler | SKU 96497 · [harborfreight.com](https://www.harborfreight.com/1-ton-capacity-engine-load-leveler-96497.html) — mandatory for car installation (see `30-07k-install.md`) | ~$30 |
+| M10×1.5 DIN 580 shoulder eyebolts ×4 | McMaster-Carr `3100T12` — installation lift attachment points at T03001 holes (gearbox end) and belt-pulley-end motor mount boss | ~$8–12 ea |
 
 ---
 
@@ -130,7 +132,13 @@ While the M52 is still in the car, test-position the SPA MK5 manifold + G25-660 
 ### In-Garage Lifting
 
 - **Hoist:** HF 2-Ton Foldable Shop Crane, SKU 58755 — $369.99
-- **Slings:** 2× HF Web Lifting Sling 2000 lb, SKU 71451 — $9.99 ea. Basket hitch: loop under the component, both sewn loop eyes on the crane hook. Adjust fore/aft to level the load. No knots, no shackles required.
+
+**Pallet → stand (this phase):**
+- **Slings:** 2× HF Web Lifting Sling 2000 lb, SKU 71451 — $9.99 ea. Basket hitch: loop under the block near each end, both sewn loop eyes on the crane hook. Adjust fore/aft to level the load. No knots, no shackles required.
+
+**Stand → car (Phase 3 — `30-07k-install.md` Step 22):**
+- Web slings are not suitable — angle is uncontrolled and a load leveler cannot function with them.
+- Use **HF Load Leveler SKU 96497** + **M10×1.5 DIN 580 shoulder eyebolts** (McMaster `3100T12`) threaded into the T03001 holes at the gearbox/timing-chain-end face and the intake-side motor mount boss at the belt-pulley end. Test-hang 50–75 mm before committing to the bay drop.
 
 ---
 

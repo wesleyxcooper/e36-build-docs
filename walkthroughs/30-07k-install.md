@@ -26,6 +26,8 @@ This walkthrough covers removing the M52 interim engine and installing the Phase
 | Engine crane (rent) | Local tool rental | ~$80–120/day |
 | Transmission jack (rent) | Local tool rental | ~$40–60/day |
 | Engine stand (own or rent) | — | — |
+| HF Load Leveler | SKU 96497 · [harborfreight.com](https://www.harborfreight.com/1-ton-capacity-engine-load-leveler-96497.html) | ~$30 |
+| M10×1.5 DIN 580 shoulder eyebolts ×4 | McMaster-Carr `3100T12` | ~$8–12 ea |
 
 ---
 
@@ -120,7 +122,18 @@ This walkthrough covers removing the M52 interim engine and installing the Phase
 
 ### 07K Drop-In
 
-22. Attach load leveler to 07K lifting eyes. Adjust leveler angle to match the expected drivetrain angle in the car.
+22. **Rig the 07K for installation using the load leveler — two fixed attachment points required.**
+
+    Web slings are not suitable here. The load leveler cannot function without two fixed points along the crankshaft axis to pivot against.
+
+    | End | Attachment | Hardware |
+    | --- | --- | --- |
+    | Gearbox / timing-chain end | Two M10×1.5 DIN 580 shoulder eyebolts into the T03001 bolt holes on the block's end face. These are the same three M10×1.5 threaded bosses used by the VW T03001 lateral bracket (factory stand-mount tool). Use holes 1 and 3 (the 40 Nm pair — wider spacing gives a more stable two-point hang). | McMaster `3100T12` |
+    | Belt-pulley end | M10 eyebolt through the intake-side OEM motor mount boss at the front of the block, or through an upper hole in the OEM accessory bracket if still installed. Confirm a usable M10×1.5 boss is accessible here during Phase 2 teardown — if not, fabricate a simple bracket (50 mm angle iron + welded M10 nut) that picks up existing head or block bolt holes at this end. | McMaster `3100T12` |
+
+    Attach both eyebolts to the load leveler chains (HF SKU 96497). Pre-wind the leveler adjuster toward the gearbox/timing-chain end (the heavier end with the timing chain housing) until the assembly test-hangs approximately level. Test-lift 50–75 mm off the stand, verify the angle, then adjust before committing to the bay drop.
+
+    > ⚠️ **Pitfall:** Eyebolts must be fully threaded to the shoulder — partial engagement fails at load. Torque to 40 Nm hand-snug and verify the eye orientation is in-plane with the load leveler chain before lifting.
 
 23. With a second person guiding, lower 07K into engine bay. Pass exhaust side (driver side) down first to clear the steering shaft and firewall.
     > ⚠️ **Pitfall:** Do not torque engine mount bolts until the engine is hanging freely at the correct height and the 8HP adapter plate is loosely mated. Torquing mounts before final positioning locks you into a misaligned drivetrain. Source: `E36_DIY_Build_Checklist.md` Phase 3 Chassis.
