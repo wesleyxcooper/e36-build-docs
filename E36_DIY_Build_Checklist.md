@@ -385,7 +385,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 ### Prep  [ELECTRICAL · TOOLING]
 - [ ] ⚠️ **Order all pigtail connectors before starting harness build** — EV14 injector, VAG COP, 3-pin VAG sensor (cam/crank/MAP), 2-pin NTC (CLT/IAT), knock sensor. See Parts table in `26-07k-harness.md`. These must be on-hand before the first wire is cut.
 - [ ] ✅ Procure Raychem SRGB solder sleeves (22–26 AWG, box of 25) and Techflex F6 sleeving (1/2" and 1/4") — required to finish the harness. See `e36-wiring/docs/wiring-bom.md` Harness Consumables section.
-- [ ] ✅ Procure heat-zone sleeving: DEI Fire Sleeve 1/2" ID p/n 010461 (WBO2 cable, 300 mm from bung) + DEI Fire Sleeve 3/8" ID p/n 010460 (CLT pigtail, 150 mm) + DEI Reflect-A-Gold 1" foil tape p/n 010417 (knock sub-loom if within 100 mm of manifold). See `e36-wiring/docs/wiring-bom.md` Heat-zone sleeving section.
+- [ ] ✅ Procure heat-zone sleeving: **DEI Fire Sleeve 3/8" ID p/n 010470, $26.99** ([designengineering.com](https://www.designengineering.com/fire-sleeve-tape-kit-0-375-id-x-36/)) — 36" kit covers WBO2 cable (300 mm from bung) and CLT pigtail (150 mm) from one purchase. Note: DEI makes no 1/2" size. Also procure **DEI Reflect-A-Gold p/n 010394, 1-1/2"×15' roll, $42.99** ([designengineering.com](https://www.designengineering.com/reflect-a-gold-heat-reflective-tape-1-5-x-15/)) for knock sub-loom if within 100 mm of manifold. See `e36-wiring/docs/wiring-bom.md` Heat-zone sleeving section.
 - [ ] ✅ Procure Engineer PA-09 micro-pin crimper (~$30, Amazon) — required for all VAG pigtail contacts (cam, crank, MAP, CLT, IAT, knock, COP, injector). *The previously listed Knipex 97 52 68 does not exist in the Knipex catalog — use Engineer PA-09.*
 - [ ] ✅ Procure Brady M210 + PermaSleeve M21-375-C-342 (3/8") and M21-500-C-342 (1/2") cartridges for sub-loom and trunk labels — in addition to the M21-125-C-342 already in the kit for wire labels.
 
@@ -402,9 +402,9 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 ### Phase C — Route, splice, and test  [ELECTRICAL]
 - [ ] 🔧 Route main trunk along engine; confirm all wire lengths reach components
 - [ ] 🔧 **Apply heat-zone sleeving before final looming:**
-  - WBO2 cable: slide DEI Fire Sleeve 1/2" ID over the cable from the sensor body outward; cover first 300 mm. Clamp ends with stainless band clamp or high-temp silicone tape.
-  - CLT pigtail: DEI Fire Sleeve 3/8" ID for first 150 mm from sensor body.
-  - KNOCK sub-loom: after routing is confirmed, wrap any section within 100 mm of exhaust manifold with DEI Reflect-A-Gold 1" foil tape over the Techflex sleeve.
+  - WBO2 cable: slide **DEI Fire Sleeve 3/8" ID (p/n 010470)** over the cable from the sensor body outward; cover first 300 mm. Clamp ends with supplied Fire Tape or silicone self-fusing tape.
+  - CLT pigtail: same **DEI Fire Sleeve 3/8" ID (p/n 010470)** for first 150 mm from sensor body. One 36" kit provides enough sleeve for both runs combined.
+  - KNOCK sub-loom: after routing is confirmed, wrap any section within 100 mm of exhaust manifold with **DEI Reflect-A-Gold 1-1/2" (p/n 010394)** over the Techflex sleeve.
   - Route WBO2 cable ≥100 mm from turbine housing and wastegate; tie-strap to block or manifold stud boss to prevent contact under vibration.
   - Source: `e36-wiring/docs/wiring-bom.md` Heat-zone sleeving section; `maxxecu-07k.wv` W_WBO2 and W_KNOCK notes.
 - [ ] 🔧 Splice all pigtails to harness wires using Raychem SRGB solder sleeves (heat gun only — no iron) or butt crimp + adhesive heat-shrink
