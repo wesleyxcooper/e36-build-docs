@@ -19,7 +19,7 @@ This walkthrough covers connecting the Phase 2 07K engine harness to the MaxxECU
 | --- | --- | --- | --- |
 | GPO 1 (CMC B4 / pin 8) | Reverse lights (boost solenoid connector unpopulated NA) | **Boost solenoid** (now physically connected) | Connect BOOST_SOL Superseal 2-pin; MTune verify function = boost solenoid |
 | GPO 3 (CMC D4 / pin 16) | VANOS solenoid (M52) | **07K intake cam VVT actuator** (freed from VANOS — immediately reused) | MTune: disable VANOS function; assign PWM solenoid output for closed-loop cam timing (ME7.1.1 pin 115) |
-| GPO 4 (CMC E4 / pin 20) | ICV coil A (M52) | **DBW throttle body Motor+** | MTune: disable ICV A; assign as ETh Motor+ in E-Throttle wizard |
+| GPO 4 (CMC E4 / pin 20) | ICV coil A (M52) | **Freed — SPARE** | MTune: disable ICV A; leave unassigned (ETh motor uses C2 H4/H2, not GPO 4) |
 | GPO 5 (CMC A1 / pin 1) | ICV coil B (M52) | **Reverse light relay** | MTune: disable ICV B; reassign to "Transmission Reverse" function |
 
 > ⚠️ **Critical:** GPO 3 in Phase 3 = **VVT actuator, NOT reverse lights.** GPO 3 is freed from VANOS but immediately reused for the 07K intake cam VVT actuator (cam actuator ME7.1.1 pin 115 — MaxxECU PWM solenoid output, closed-loop cam timing). Reverse lights swap from GPO 1 to **GPO 5** in Phase 3. The wiring to GPO 5 was pre-run in Phase 1 per `8hp-body-integrations.wv`. Source: `harnesses/8hp-body-integrations.wv` lines 36–43.
@@ -150,7 +150,7 @@ See `harnesses/8hp-can.wv` for the full 8HP power sequencing and CAN signal map.
 
    > ⚠️ **Pitfall (crank vs cam):** OE# `3B0973703G` is the same connector body for both crank and cam sensors but with **opposite pinouts**. Swapped pigtails produce no-start with no obvious failure mode. Label pigtails at crimp time. Source: `harnesses/maxxecu-07k.wv` CRANK_VR notes.
 
-9. Connect E46 accelerator pedal (APS) wiring through bulkhead pins 72–77 (added at Phase 3) to MaxxECU C2 APS inputs. See `35-dbw-throttle.md` for full APS wiring procedure.
+9. Wire E46 accelerator pedal (APS) — **cabin-to-cabin, no bulkhead crossing.** Run 6-wire shielded cable from pedal (footwell) directly to MaxxECU C2: APS1 signal → C2 E4 (AIN 6), APS2 signal → C2 F1 (AIN 7). VCC1/VCC2 → CMC G1 (+5V rail). GND1/GND2 → CMC H1 (sensor GND). AS79 pins 72–77 are **not used** for APS. See `harnesses/epedal-bmw-e46.wv` for full connector and cable spec.
 
 ### MTune — Load 07K Base Map
 
@@ -181,8 +181,12 @@ See `harnesses/8hp-can.wv` for the full 8HP power sequencing and CAN signal map.
    - In MTune cam timing map: configure closed-loop cam timing targets vs RPM/load. The VVT actuator is ME7.1.1 cam actuator pin 115 — driven by MaxxECU GPO 3 PWM
    - **Do not disable or leave this as VANOS.** The VANOS function (from M52) is replaced by the VVT function. Closed-loop cam timing is active across the RPM range on the TTRS/CEPA intake cam.
 
-15. **GPO 4 → DBW throttle body Motor+:**
-    - MTune → Throttle → E-Throttle wizard → assign ETh Motor+ to GPO 4 (CMC E4/pin 20)
+15. **ETh motor — MaxxECU C2 H4/H2 (MOTOR 1+/MOTOR 1-):**
+    - DBW throttle body motor is driven by the MaxxECU C2 dedicated H-bridge outputs, **not GPO 3 or GPO 4**
+    - Motor+ → C2 H4 (MOTOR 1+) → AS79 pin 22 → TB motor lead
+    - Motor- → C2 H2 (MOTOR 1-) → AS79 pin 23 → TB motor lead
+    - MTune → Settings → E-Throttle → Motor output → **Motor 1** (select C2 motor channel)
+    - Verify motor polarity: in E-Throttle wizard, if TB runs in wrong direction, swap Motor+ and Motor- at the TB connector — do not swap at C2
     - See `35-dbw-throttle.md` for full DBW calibration procedure
 
 16. **GPO 5 → Reverse lights (relocated from GPO 1):**
