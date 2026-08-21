@@ -37,8 +37,11 @@ This walkthrough covers connecting the Phase 2 07K engine harness to the MaxxECU
 | Deutsch Autosport AS79 firewall receptacle + jam-nut plug (engine connector) | [RaceSpec Online](https://racespeconline.com) — Deutsch AS616-79PN or Souriau 8STA79PN | ~$120–180 |
 | Maven Speed single connector bulkhead, **35-pin** (accessories connector) | [mavenspeed.com](https://mavenspeed.com/products/single-connector-bulkhead-s24) — "35 PIN" option | ~$156 |
 | Deutsch DT 2-pin connectors × 4 (high-current bypass for fan/EWP/AC relay outputs) | ConnectorExperts or Del City — DT06-2S + DT04-2P + W2S wedge | ~$5–8 ea |
-| Deutsch HDT-48-00 ratcheting crimper (AS79 solid barrel contacts) | [deutschconnector.com](https://www.deutschconnector.com/products/deutsch_connector_tools/deutsch_connector_crimp_tools/HDT-48-00/) | ~$350–465 |
-| JRready NEW-DT2 crimper (budget alternative) | [Amazon](https://www.amazon.com/) | ~$169 |
+| Daniels DMC AFM8 crimp tool body | racespec, buydeutsch, or direct | ~$400–550 |
+| AFM8 positioner K42 (pin contacts 22-26 AWG) | [buydeutsch.com — K42](https://www.buydeutsch.com/products/k42-afm8-crimper-positioner-pin-38941-22-size-22-contacts-22-26awg-blue) | ~$60–80 |
+| AFM8 positioner K40 (socket contacts) | buydeutsch or equivalent | ~$60–80 |
+| Deutsch HDT-48-00 ratcheting crimper | [deutschconnector.com](https://www.deutschconnector.com/products/deutsch_connector_tools/deutsch_connector_crimp_tools/HDT-48-00/) | ~$350–465 |
+| JRready NEW-DT2 crimper | [Amazon](https://www.amazon.com/) | ~$169 |
 | Brady M210 + M21-125-C-342 PermaSleeve cartridge | [Amazon](https://a.co/d/3qZ8sAa) | ~$130 |
 | Raychem SRGB solder sleeves, assorted | SLG / Waytek / Del City | — |
 | Rivnut tool (bulkhead plate mounting) | Astro Pneumatic 1442 or equiv | — |
@@ -68,7 +71,18 @@ Install the hybrid two-connector bulkhead on the firewall. Reference: `harnesses
 
 **HD30 24-35 size-16 cavity verification** (Maven 35-pin): The insert has exactly 3 size-16 cavities (bore ~1.59mm, vs ~1.02mm for size-20 — clearly visible to the naked eye). From the Deutsch HD30 & HDP20 Series Technical Manual diagram, these are at positions 4, 7, and 12. Verify by holding the connector face toward a light and confirming which 3 apertures are visibly larger before inserting any contact. See `11-ecu-chassis-wiring.md` size-16 verification note for the full failure mode description. Sources: [Deutsch HD30 & HDP20 Technical Manual (ManualsLib p.5)](https://www.manualslib.com/manual/1545583/Deutsch-Hd30-Series.html?page=5); [TE Connectivity HD30 product page](https://www.te.com/en/products/connectors/automotive-connectors/intersection/deutsch-hd30-connectors.html).
 
-**Cabin-side wiring — AS79 (engine connector):** The cabin face of the AS79 is permanent. Wire all cabin-side pins to MaxxECU C1 (Molex CMC 48-pin) per `harnesses/firewall-bulkhead.wv` BULKHEAD_CABIN pin labels and CMC pin references. All AS79 contacts are size-22D solid barrel — use HDT-48-00 or JRready NEW-DT2 crimper. Service loop every wire (1–2 turns, ~35mm diameter) before the boot is shrunk onto the AS79 back.
+**Cabin-side wiring — AS79 (engine connector):** The cabin face of the AS79 is permanent. Wire all cabin-side pins to MaxxECU C1 (Molex CMC 48-pin) per `harnesses/firewall-bulkhead.wv` BULKHEAD_CABIN pin labels and CMC pin references. Service loop every wire (1–2 turns, ~35mm diameter) before the boot is shrunk onto the AS79 back.
+
+**AS79 crimp spec:** All AS79 contacts are size-22 solid barrel (38941-22 pin / 38943-22 socket). Required tool: **Daniels DMC AFM8** (or M22520/2-01 equivalent) with positioner **K42** for pin contacts (22–26 AWG) or **K40** for sockets. Strip length: 3.5–5.5 mm. After crimp: conductor visible in inspection hole; 0.63–2.54 mm gap between contact and insulation. Pull-test each contact: ≥15 lbf. **The HDT-48-00 does not support size-22 contacts** (it covers size 12/16/20 for Maven HD30 and DT bypass only). Sources: [Deutsch AS catalog / crimptech.com.au autosport tooling guide](https://www.crimptech.com.au/autosport-tooling-guide-for-te-deutsch-connectors/); [HDT-48-00 instructions](https://www.deutschconnector.com/downloads/HDT-48-00%20Instructions.pdf).
+
+**AS79 contact insertion sequence (per MIL-C-38999):**
+1. Before inserting any contact, slide the back shell and all accessories onto the wire bundle in the correct assembly order.
+2. Lubricate grommet cavities with isopropyl alcohol — no other lubricant.
+3. Insert **center pin 79 first** (Sensor GND — innermost cavity). Then work outward: R4 (pins 68–77), R3 (51–67), R2 (29–50), R1 outer (1–28) last. Inner rings become inaccessible once outer contacts and cables are installed.
+4. Use insertion tool M81969/14-01: slide wire into tool groove, butt tip against contact shoulder, steady even pressure perpendicular to insert face. Contact seats with an audible click.
+5. Pull back lightly on the wire after each insertion to confirm seating.
+6. After all contacts inserted: slide back shell forward, tighten, apply boot.
+Source: [Aero-Electric MIL-C-38999 Series I assembly instructions](https://www.aero-electric.com/product/MIL-C-38999_SERIES_I/assembly_instructions.html).
 
 **Cabin-side wiring — Maven 35-pin (accessories connector):** The cabin face of the Maven 35-pin is also permanent. Wire per `harnesses/firewall-bulkhead-dual.wv` BULKHEAD_A_CABIN pin labels:
 
@@ -135,18 +149,18 @@ See `harnesses/8hp-can.wv` for the full 8HP power sequencing and CAN signal map.
 8. Connect the 07K engine harness sensor ends:
    - **CRANK_VR** → crank sensor (60-2, cylinder 5 end — timing chain compartment cover). OE# `3B0973703G` connector body. **Label crank vs cam pigtails clearly at crimp time — same connector body, different pinouts.** Crank: Signal+/Signal-/Shield (passive VR). Cam: +5V/GND/Signal (active Hall).
    - **CAM_HALL** → cam Hall sensor (intake side, top of head). +5V supply type (not +12V).
-   - **CLT** → coolant temp sensor (cylinder 1 side, exhaust face — in E36: front of engine, exhaust/driver side). Route pigtail with heat sleeving — adjacent to exhaust manifold.
+   - **CLT** → coolant temp sensor (cylinder 1 side, exhaust face — in E36: front of engine, exhaust/driver side). **Heat sleeve:** DEI Fire Sleeve 3/8" ID (or silicone-over-fiberglass ≥500°F) for the first 150 mm from the sensor body — pigtail runs adjacent to exhaust manifold.
    - **IAT** → intake air temp (in charge pipe downstream of FMIC)
    - **MAP** → Bosch 3-bar MAP sensor (vacuum hose to BBG intake manifold post-TB)
    - **DBW_TB** → 07K throttle body 6-pin (Motor+, Motor-, TPS1, TPS2, +5V, GND)
-   - **KNOCK_1** / **KNOCK_2** → flat knock sensors, exhaust side lower block. GND via M8 mounting bolt — no separate GND wire.
+   - **KNOCK_1** / **KNOCK_2** → flat knock sensors, exhaust side lower block. GND via M8 mounting bolt — no separate GND wire. **Routing:** run pigtails down the block face, away from exhaust manifold, then bundle into KNOCK sub-loom across the bottom of the engine. **Heat sleeve:** if any section runs within 100 mm of exhaust manifold, wrap with DEI Reflect-A-Gold aluminized foil tape (DEI 010417 or equiv) over the Techflex sleeve.
    - **IGN_1–5** → VAG 4-pin COP connectors (07K firing order: 1-2-4-5-3)
    - **INJ_1–5** → ID1050x EV14 connectors (firing order: 1-2-4-5-3, cylinder 1 at timing chain end)
    - **BOOST_SOL** → Superseal 2-pin on boost solenoid (GPO 1, now physically connected)
    - **FLEX_FUEL** → carry-forward, already inline on fuel feed
    - **PST_F1** → iABED M10×1.0 port on oil filter housing (4-pin: +5V, GND, pressure, temp)
-   - **WIDEBAND** → LSU 4.9 in manifold/downpipe bung
-   - **VVT solenoid** → 07K intake cam VVT actuator (ME7.1.1 pin 115) via GPO 3 — see MTune section below
+   - **WIDEBAND** → LSU 4.9 in manifold/downpipe bung. **Heat sleeve:** DEI Fire Sleeve 1/2" ID for first 300 mm from sensor body — bung is on the exhaust manifold. Transition to Techflex F6 after clearing the manifold/turbo heat zone. Route clear of turbine housing and wastegate (≥100 mm). Tie-strap to block or manifold stud boss to prevent contact under vibration.
+   - **VVT solenoid** → 07K intake cam VVT actuator (ME7.1.1 pin 115) via GPO 3 / AS79 pin 35 — see MTune section below. Confirm connector body at engine before ordering pigtail.
 
    > ⚠️ **Pitfall (crank vs cam):** OE# `3B0973703G` is the same connector body for both crank and cam sensors but with **opposite pinouts**. Swapped pigtails produce no-start with no obvious failure mode. Label pigtails at crimp time. Source: `harnesses/maxxecu-07k.wv` CRANK_VR notes.
 

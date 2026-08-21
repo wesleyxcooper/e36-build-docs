@@ -28,14 +28,17 @@
 
 | Part | Spec | Notes |
 | --- | --- | --- |
-| TXL 22 AWG wire — 6 colors | Red, Black, White, Grey, Green, Yellow | All wires going through AS79 contacts are 22 AWG (AS79 contact size-22D barrel). See `wiring-bom.md` Wire Specification section for spool quantities |
-| Shielded twisted pair (crank and cam signal runs) | 22 AWG STP | Most noise-sensitive wires — shielded, own sleeve, physically away from injector and coil primaries at all points |
+| TXL 22 AWG wire — 6 colors | Red, Black, White, Grey, Green, Yellow | All wires through AS79 size-22 contacts are 22 AWG. See `wiring-bom.md` Wire Specification section for spool quantities |
+| Shielded twisted pair (crank, cam, knock signal runs) | 22 AWG STP | Noise-sensitive wires — shielded, own sleeve, physically away from injector and coil primaries at all points |
 | Techflex F6 expandable braid — 1/2" (main trunk) | 13mm OD | Main trunk from AS79 to engine mid-point |
 | Techflex F6 expandable braid — 1/4" (sub-looms) | 6mm OD | Injector, coil, sensor, trigger, knock sub-looms — one sleeve per group |
+| DEI Fire Sleeve — 1/2" ID, 3 ft | silicone-over-fiberglass, ≥500°F continuous | WBO2 cable: first 300 mm from sensor bung. CLT pigtail: first 150 mm from sensor body. Both bung and CLT are near the turbo / exhaust manifold. DEI p/n 010461. Source: DEI product spec. |
+| DEI Reflect-A-Gold aluminized foil tape | 1" wide self-adhesive, 90% radiant heat reflection | Knock sensor sub-loom: wrap any section running within 100 mm of exhaust manifold, over the Techflex sleeve. DEI p/n 010417 or equiv. |
 | Raychem SRGB solder sleeves — 22–26 AWG | Small, blue band | Pigtail-to-harness splices. Heat gun only — not iron. Buy a box of 25. |
 | 3:1 adhesive-lined heat-shrink, assorted | 1/4", 3/8", 1/2" | Breakout boot transitions, sub-loom end caps |
 | Engineer PA-09 micro-pin crimper | ~$30–40, Amazon | All VAG pigtail contacts (cam/crank/MAP/CLT/IAT/knock/COP/EV14). Covers Bosch JMT 1.5mm and JPT 2.8mm contacts. *Note: previously listed as Knipex 97 52 68 — that PN does not exist in the Knipex catalog* |
-| Deutsch HDT-48-00 or JRready NEW-DT2 | ~$350–465 / ~$169 budget | HD30 size-16 and size-20 contacts (Maven 35-pin) + DT 2-pin bypass connectors |
+| Daniels DMC AFM8 crimp tool + positioner K42 (pin) / K40 (socket) | ~$400–550 AFM8 body; ~$60–80 positioners | **AS79 / 8STA size-22 contacts only.** The AFM8 (M22520/2-01 equiv) gives the required 8-impression MIL crimp for 38941-22 / 8599-0702-900 contacts. The HDT-48-00 does NOT support size-22 contacts. Source: [crimptech.com.au/autosport-tooling-guide](https://www.crimptech.com.au/autosport-tooling-guide-for-te-deutsch-connectors/) |
+| Deutsch HDT-48-00 or JRready NEW-DT2 | ~$350–465 / ~$169 budget | **Maven HD30 size-16/20 contacts and DT 2-pin bypass connectors only** — not for AS79 size-22 contacts |
 | Brady M210 + PermaSleeve M21-125-C-342 | Wire labels — 22–16 AWG | Print wire designators on both ends of every wire before looming |
 | Brady M210 + PermaSleeve M21-375-C-342 | Sub-loom breakout labels | Slide over 1/4" sub-loom at each breakout before Techflex goes on. Print: `INJECTORS`, `COILS`, `SENSORS`, `TRIGGER`, `KNOCK` |
 | Brady M210 + PermaSleeve M21-500-C-342 | Main trunk label | Slide over main trunk at AS79 exit. Print: `ENGINE M52 PH1` or `ENGINE 07K PH3` |
@@ -106,37 +109,39 @@ Connector: VAG 4-pin COP (OE# `4B0973724`).
 
 | Signal | ME7.1.1 Pin | MaxxECU CMC | Notes |
 | --- | --- | --- | --- |
-| Knock sensor 1 | **pin 106** | K3 (DIN/VR1) | Bosch flat 1-pin, M8 bolt mount; GND via bolt — no GND wire. Bulkhead expansion pin 69. |
-| Knock sensor 2 | **pin 107** | K4 (DIN/VR2) | Same; bulkhead expansion pin 70. |
+| Knock sensor 1 | **pin 106** | K3 (DIN/VR1, CMC pin 39) | Bosch flat 1-pin, M8 bolt mount; GND via bolt. AS79 pin 43. Shielded 22 AWG STP; drain → AS79 pin 45 → CMC H1. |
+| Knock sensor 2 | **pin 107** | K4 (DIN/VR2, CMC pin 40) | Same. AS79 pin 44; shield drain shared via pin 45. |
 | MAP sensor | **pin 101** | AIN 4 | 3-bar Bosch (GM 12592525). +5V/Signal/GND — `W_MAP` cable. |
-| ECT (coolant temp) | **pin 93** | F1 — CLT | 2-pin NTC (`1J0973702`). Cylinder 1 side, exhaust face. Route with heat sleeving. |
+| ECT (coolant temp) | **pin 93** | F1 — CLT (CMC pin 13) | 2-pin NTC (`1J0973702`). Cylinder 1 side, exhaust face. Sleeve first 150 mm from sensor with DEI Fire Sleeve 3/8" ID — adjacent to exhaust manifold. |
 | IAT (intake air temp) | — | F2 — IAT | 2-pin NTC; mount downstream of intercooler in intake pipe. |
 
 ### DBW throttle body (DBW path only — see `25-07k-air.md`)
 
 | Signal | ME7.1.1 Pin | MaxxECU | Notes |
 | --- | --- | --- | --- |
-| TB Motor+ | **pin 84** | GPO 3 (ETh Motor+) — CMC D4 | 20 AWG min. Verify polarity at install — swap Motor+/− if TB runs backward in e-throttle wizard. |
-| TB Motor− | **pin 92** | GPO 4 (ETh Motor−) — CMC E4 | Same |
-| TPS1 signal | **pin 117** | CMC G2 / bulkhead pin 31 | — |
-| TPS2 signal | **pin 118** | CMC J2 / bulkhead pin 51 | — |
+| TB Motor+ | **pin 84** | C2 H4 (MOTOR 1+) | 20 AWG min. AS79 pin 22 (cabin side only; 07K plug only). Verify polarity at install — swap Motor+/− at TB connector only if TB runs backward in e-throttle wizard. |
+| TB Motor− | **pin 92** | C2 H2 (MOTOR 1−) | Same. AS79 pin 23. Do NOT use GPO 3 or GPO 4 for motor drive. |
+| TPS1 signal | **pin 117** | CMC G2 (pin 26) / AS79 pin 48 | — |
+| TPS2 signal | **pin 118** | CMC J2 / AIN 2 (pin 34) / AS79 pin 56 | — |
 
-### Accelerator pedal (DBW path — APS 1 + APS 2, runs through cabin bulkhead)
+### Accelerator pedal (DBW path — APS 1 + APS 2, cabin-to-cabin — no bulkhead crossing)
 
 | Signal | ME7.1.1 Ref Pin | MaxxECU | Notes |
 | --- | --- | --- | --- |
-| APS 1 signal | **pin 35** | CMC APS1 AIN | E46 pedal → bulkhead cabin pins 75 → engine side |
-| APS 1 GND | **pin 72** | Sensor GND | Bulkhead cabin pin 72 |
-| APS 2 signal | **pin 34** | CMC APS2 AIN | Bulkhead cabin pin 77 |
-| APS 2 GND | **pin 73** | Sensor GND | Bulkhead cabin pin 73 |
+| APS 1 signal | **pin 35** | C2 E4 (AIN 6) | E46 or Hella 6PV pedal → direct cabin run → MaxxECU C2 |
+| APS 1 VCC | — | CMC G1 (+5V rail) | Shared +5V sensor rail |
+| APS 1 GND | **pin 72** | CMC H1 (Sensor GND) | Shared sensor GND |
+| APS 2 signal | **pin 34** | C2 F1 (AIN 7) | Same direct cabin run |
+| APS 2 VCC | — | CMC G1 (+5V rail) | — |
+| APS 2 GND | **pin 73** | CMC H1 (Sensor GND) | — |
 
-Separate 6-wire shielded run from E46 pedal module → firewall bulkhead cabin face (pins 72–77 reserved in Phase 1). Not part of the engine-side harness loom.
+**APS does NOT cross the AS79 bulkhead.** MaxxECU is cabin-mounted. Run a single shielded 6-wire cable from the pedal (footwell) directly to MaxxECU C2 — no firewall penetration for APS. AS79 pins 72–77 are spare and should remain cavity-plugged. Source: `harnesses/epedal-bmw-e46.wv`.
 
 ### VVT cam actuator solenoid
 
 | Signal | ME7.1.1 Pin | MaxxECU | Notes |
 | --- | --- | --- | --- |
-| VVT solenoid output | **pin 115** | GPO — freed from M52 VANOS | Confirm final GPO assignment in MTune before harness build. See `maxxecu-07k.wv` for current GPO allocation — ETh paths also use freed GPO outputs; confirm no conflict before wiring. |
+| VVT solenoid output | **pin 115** | GPO 3 (CMC D4, pin 16) / AS79 pin 35 | GPO 3 is freed from M52 VANOS and immediately reused for 07K VVT. +12V from coil/inj relay. Flyback diode at solenoid connector (1N4007, cathode to +12V). See `maxxecu-07k.wv` VVT_SOL connector notes. |
 
 ---
 
@@ -174,24 +179,24 @@ Two separate connectors. Engine-side AS79 mating plug swaps at M52→07K. Maven 
 | --- | --- | --- | --- | --- |
 | 🔴 | 1, 2, 29, 30 | +12V Coils/Inj ×4 parallel | 22 | 4×5A = 20A; Option A: bypass separately |
 | 🔴 | 3, 31, 52 | Engine GND ×3 parallel | 22 | 3×5A = 15A; Option A: bypass separately |
-| 🔴 | 4, 5, 6, 7 | IGN 1, 2, 3, 4 | 18 | R1 outer ring |
-| 🔴 | 32, 33 | IGN 5, IGN 6 | 18 | R2; IGN 6 M52 only, cavity-plugged at 07K |
-| 🔴 | 34 | EXP: IGN 7 (07K 5th cyl) | 18 | R2; cavity-plugged on M52 |
+| 🔴 | 4, 5, 6, 7 | IGN 1, 2, 3, 4 | 22 | R1 outer ring — 22 AWG max (size-22 contacts; 18 AWG incompatible) |
+| 🔴 | 32, 33 | IGN 5, IGN 6 | 22 | R2; IGN 6 M52 only, cavity-plugged at 07K |
+| 🔴 | 34 | EXP: IGN 7 (07K 5th cyl) | 22 | R2; cavity-plugged on M52 |
 | 🟠 | 8–12 | INJ 1–5 | 20 | R1 outer ring |
 | 🟠 | 13 | INJ 6 | 20 | R1; M52 only, cavity-plugged at 07K |
 | 🟠 | 14 | EXP: INJ 7 (07K 5th cyl) | 20 | R1; cavity-plugged on M52 |
-| 🟠 | 35, 36, 37 | GPO 3 (VANOS), GPO 4 (ICV-A), GPO 5 (ICV-B) | 20 | R2; M52 only, cavity-plugged at 07K |
-| 🟠 | 38, 39 | Starter trigger, Alt D+ | 18 | R2 |
-| 🔵 | 16, 17, 18 | Crank VR+, VR−, shield drain | 22 shld | R1; shielded twisted pair — shield drain ties to pin 79 cabin-side |
-| 🔵 | 19 | Cam Hall signal (M52) | 22 | R1; BMW 12141726590 |
-| 🔵 | 20 | EXP: 07K cam signal | 22 | R1; verify Hall vs VR type at install |
-| 🔵 | 41 | EXP: 07K crank signal | 22 | R2; cavity-plugged on M52 |
-| 🔵 | 43, 44, 45 | EXP: Knock 1, Knock 2, Knock GND | 22 | R2; 07K only, shielded |
+| 🟠 | 35 | GPO 3 → VVT solenoid (07K) / VANOS (M52) | 20 | R2 |
+| 🟠 | 36, 37 | GPO 4 (ICV-A M52 / SPARE 07K), GPO 5 (ICV-B M52) | 20 | R2 |
+| 🟠 | 38, 39 | Starter trigger, Alt D+ | 22 | R2 |
+| 🔵 | 16, 17, 18 | Crank VR+, VR−, shield drain | 22 shld | R1; shielded twisted pair — same pins M52 and 07K, only engine-side connector body changes |
+| 🔵 | 19 | Cam Hall signal | 22 | R1; same pin M52 and 07K — engine-side connector body changes only. 07K cam is Hall +5V supply type. |
+| 🔵 | 20, 41 | SPARE (07K cam and crank reuse pins 19 and 16/17/18) | — | Cavity-plugged on both M52 and 07K |
+| 🔵 | 43, 44, 45 | Knock 1, Knock 2, Knock shield drain | 22 shld | R2; 07K only, shielded STP; drain both sensors shared via pin 45 → CMC H1 |
+| 🟢 | 22, 23 | ETh Motor+, ETh Motor− | 20 | R1; 07K only (→ C2 H4/H2). Cavity-plugged on M52. |
 | 🟢 | 25, 26 | CLT, IAT | 22 | R1 |
 | 🟢 | 27 | Flex fuel +12V | 22 | R1 |
-| 🟢 | 22, 23, 24 | EXP: DBW TB signal, +5V, GND | 22 | R1; 07K only |
-| 🟢 | 47, 48, 49, 50 | +5V sensor, TPS, MAP, PST-F1 pressure | 22 | R2 |
-| 🟢 | 51 | PST-F1 temp | 22 | R3 |
+| 🟢 | 47, 48, 49 | +5V sensor, TPS1 (DBW or M52 TPS), MAP | 22 | R2 |
+| 🟢 | 50, 51 | PST-F1 pressure, PST-F1 temp | 22 | R2/R3; routed as individual wires separate from main loom (see cable notes) |
 | 🟢 | 64 | Flex fuel signal | 22 | R3 |
 | ⚫ | 79 | Sensor GND (CMC H1) | 22 | Center pin |
 
@@ -230,6 +235,13 @@ All pigtail connectors (injector, coil, sensor, knock) must be on-hand before ha
 #### A2 — Dry-route the engine and measure wire lengths
 
 With the 07K engine on a stand in its intended longitudinal orientation, route a tape/rope mock-up of the main trunk path from the AS79 firewall position along the engine. Identify sub-loom breakout points for each component group. Measure each wire's required length (AS79 pin → splice point → component). Add 10% slack. Record all measurements.
+
+**M52 sub-loom reuse check (do at this step):** Lay the M52 mating plug harness alongside the 07K engine in position. Check each sub-loom branch:
+- **Can reuse with pigtail swap only** (connector body changes, same routing): crank VR, cam Hall, MAP, Starter, Alt D+, flex fuel, most sensor runs
+- **Needs extension or reroute**: CLT moves to cylinder-1 side exhaust face on 07K (opposite end of block from M52 front CLT position); knock sensors are new (07K expansion pins 43/44); VVT solenoid is new
+- **Discard**: INJ 6, IGN 6 (6th cylinder positions unused on 5-cyl 07K)
+
+This assessment resolves at this step — it cannot be done accurately without the 07K engine in position.
 
 #### A3 — Loom discipline — plan sub-looms before cutting
 
