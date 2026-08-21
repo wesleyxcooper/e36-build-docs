@@ -292,11 +292,13 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - Research this before ordering MaxxECU — confirm current preferred method with the MaxxECU community or SLG/MaxxECU support, as specifics vary by EWS version and harness.
   - > ⚠️ **Pitfall:** This is not a MaxxECU quirk — any replacement ECU (TurboLamik, MegaSquirt, etc.) faces identical EWS2 incompatibility. It is not optional.
 - [ ] ✅ Mount MaxxECU Race unit (firewall or under dash — keep away from heat)
-- [ ] 🔧 Install Deutsch AS / Souriau 8STA firewall bulkhead connector (47- or 79-way flanged receptacle)   [ELECTRICAL] — wiring: [`firewall-bulkhead.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/firewall-bulkhead.wv) ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/firewall-bulkhead.html))
-  - > Mount on upper firewall near OEM harness grommet. **LHD: left (driver's) side. RHD: LEFT side (passenger side) — the OEM engine harness grommet is on the passenger side in both LHD and RHD E36; the driver's/right side on RHD contains steering column and brake/clutch pass-throughs and is also the exhaust side of a longitudinal 07K (SPA manifold exits right-hand side of engine). ⚠️ Do NOT place bulkhead connector on the driver's/right side in a RHD 07K build.** Custom aluminum plate or direct 54mm center-drill + flanged receptacle. Additive — no OEM connectors removed.
-  - > Wire cabin side permanently (ECU Molex C1/C2 connectors, PMU16 CAN harness, cluster X20 signals). Engine harnesses each terminate in a mating plug on the engine side.
-  - > **Pre-allocate 6 pins for e-pedal (Phase 3):** APS1 SIG, APS2 SIG, VCC1, VCC2, GND1, GND2. Leave engine-side pins unconnected until Phase 3; Deutsch AS supports field-adding pins at any time. This avoids running new wires through the firewall later.
-  - > Spec and cost: see Enhancements doc `[ELECTRICAL]` — Firewall Bulkhead Connector section.
+- [ ] 🔧 Install hybrid firewall bulkhead: **Deutsch AS79** (engine connector) + **Maven HD30 35-pin** (accessories connector)   [ELECTRICAL] — wiring: [`firewall-bulkhead.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/firewall-bulkhead.wv) + [`firewall-bulkhead-dual.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/firewall-bulkhead-dual.wv) (Connector A section)
+  - > **AS79 (engine):** Deutsch AS616-79PN or Souriau 8STA79PN, ~$120–180 from RaceSpec Online. Carries engine power, IGN/INJ, triggers, sensors, VANOS/ICV, starter. Engine-side mating plug swaps at M52→07K. Mount on upper firewall near OEM harness grommet. **RHD build: mount LEFT side (passenger side)** — exhaust, steering column, and brake/clutch are all on the driver's/right side with a 07K and SPA manifold.
+  - > **Maven HD30 35-pin (accessories):** Maven Speed single connector bulkhead 35-pin, ~$156. Carries 8HP CAN/power, WBO2, boost solenoid, EWP PWM, AC enable, APS e-pedal (Phase 3). Never disconnected at engine swap. Mount alongside AS79.
+  - > **High-current bypass (DT 2-pin, ×4):** +12V Fan, +12V Cond Fan, +12V EWP (36.3A), +12V AC relay out bypass both connectors via 4× Deutsch DT 2-pin connectors through a separate grommet. The HD30 24-35 max contact is size-16 (13A) — insufficient for relay power outputs.
+  - > ⚠️ **HIGH PRIORITY — Verify HD30 size-16 cavity positions before crimping:** Deutsch HD30 manual (Ed.2007, p.9) identifies positions **4, 7, 12** as size-16 (13A). At connector delivery, confirm these 3 cavities are visibly larger than the adjacent size-20 cavities. Insert: A1 (+12V 8HP Main) → pos 4; A3 (8HP TCU GND) → pos 7 (12 o'clock, largest); A8 (Chassis GND) → pos 12. A size-16 contact pressed into a size-20 cavity will not retain — it will pull out under load with no visible indication.
+  - > **Pre-allocate Maven 35-pin positions A14–A19 for Phase 3 e-pedal** (APS GND1/GND2, APS VCC2, APS1 sig, APS VCC1, APS2 sig) — cavity-plug at Phase 1.
+  - > Full wiring spec and sector-optimized AS79 pin map: [`11-ecu-chassis-wiring.md`](walkthroughs/11-ecu-chassis-wiring.md) · [`firewall-bulkhead.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/firewall-bulkhead.wv)
 
 - [ ] 🔧 **Source Deutsch HDT-48-00 solid barrel crimper before starting the AS79 bulkhead build**   [ELECTRICAL · TOOLING]
   - The Deutsch AS79 uses **solid barrel size-20 contacts** requiring the **Deutsch HDT-48-00** 8-indent ratcheting crimper ([deutschconnector.com](https://www.deutschconnector.com/products/deutsch_connector_tools/deutsch_connector_crimp_tools/HDT-48-00/), ~$350–465). This is the Deutsch/TE Connectivity-specified tool — covers all three solid contact sizes (12, 16, 20) with no die swap. Budget alternative: JRready NEW-DT2 (~$169, Amazon `B09B562XDT`). Cannot substitute a generic open-barrel die or the IWISS IWS-2820M — wrong geometry produces cold crimps that pass pull-test but fail under vibration. ⚠️ "Daniels DMC TL-10" was previously listed here but that part number does not exist on any Daniels/DMC product page.
@@ -372,6 +374,45 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] 🏭 Weld in Autopower U-Weld roll bar + harness bar (shop — safety-critical)
   - > ⚠️ **Pitfall:** HPDE venues will tech-inspect your roll bar. The bar must be welded, not bolted, and must be within the rollover envelope. A fabricator with cage experience is not optional here — a poorly placed hoop is worse than none in a rollover.
 - [ ] ✅ Mount Kidde Halotron 2.5lb fire extinguisher within driver reach
+
+---
+
+## Phase 2 — 07K Engine Harness Build (Offline, Before Swap Day)
+
+> Build and bench-test the 07K engine harness before swap day. This harness is built offline on the engine stand — it does not go in the car until Phase 3 install.
+> Full procedure: [`walkthroughs/26-07k-harness.md`](walkthroughs/26-07k-harness.md) · Build methodology: [`e36-wiring/docs/harness-build.md`](https://github.com/wesleyxcooper/e36-wiring/blob/main/docs/harness-build.md)
+
+### Prep  [ELECTRICAL · TOOLING]
+- [ ] ⚠️ **Order all pigtail connectors before starting harness build** — EV14 injector, VAG COP, 3-pin VAG sensor (cam/crank/MAP), 2-pin NTC (CLT/IAT), knock sensor. See Parts table in `26-07k-harness.md`. These must be on-hand before the first wire is cut.
+- [ ] ✅ Procure Raychem SRGB solder sleeves (22–26 AWG, box of 25) and Techflex F6 sleeving (1/2" and 1/4") — required to finish the harness. See `e36-wiring/docs/wiring-bom.md` Harness Consumables section.
+- [ ] ✅ Procure Engineer PA-09 micro-pin crimper (~$30, Amazon) — required for all VAG pigtail contacts (cam, crank, MAP, CLT, IAT, knock, COP, injector). *The previously listed Knipex 97 52 68 does not exist in the Knipex catalog — use Engineer PA-09.*
+- [ ] ✅ Procure Brady M210 + PermaSleeve M21-375-C-342 (3/8") and M21-500-C-342 (1/2") cartridges for sub-loom and trunk labels — in addition to the M21-125-C-342 already in the kit for wire labels.
+
+### Phase A — Dry-route and measure  [ELECTRICAL]
+- [ ] 🔧 Dry-route the 07K engine (on stand, longitudinal orientation) with tape/rope mock-up of main harness trunk — confirm routing path and bracket attachment points
+- [ ] 🔧 Measure all wire lengths from AS79 position to each component; add 10% slack; document against `.wv` file before cutting
+
+### Phase B — Bench build  [ELECTRICAL]
+- [ ] 🔧 Cut and label all main harness wires — PermaSleeve on both ends before crimping any terminal
+- [ ] 🔧 Crimp all AS79 engine-side contacts (Daniels AFM8 + K43) and insert into AS79 mating plug body — verify seating click on every pin
+- [ ] 🔧 Label all pigtails at connector end (before snapping body on) — `INJ1`–`INJ5`, `COL1`–`COL5`, `CAM`, `CRANK`, `CLT`, `IAT`, `MAP`, `KS1`, `KS2`
+  - > ⚠️ **Critical:** 3B0973703G cam and crank connectors are physically identical — wrong label = no-start. Label at crimp time, not after.
+
+### Phase C — Route, splice, and test  [ELECTRICAL]
+- [ ] 🔧 Route main trunk along engine; confirm all wire lengths reach components
+- [ ] 🔧 Splice all pigtails to harness wires using Raychem SRGB solder sleeves (heat gun only — no iron) or butt crimp + adhesive heat-shrink
+- [ ] ⚠️ **Bench continuity test — mandatory before sleeving:**
+  - [ ] Continuity: every signal ECU pin → sensor pigtail pin (verify against `maxxecu-07k.wv`)
+  - [ ] No shorts between adjacent pins
+  - [ ] Shield drain terminates at Sensor GND (AS79 pin 79), not chassis GND
+  - [ ] Pull-test: every AS79 contact survives a firm hand tug
+  - [ ] Photograph all connectors against engine — visible before sleeving, reference for future debug
+
+### Phase D — Sleeve and finish  [ELECTRICAL]
+- [ ] 🔧 Apply sub-loom PermaSleeve breakout labels (M21-375-C-342) at each breakout point before Techflex goes on — `INJECTORS`, `COILS`, `SENSORS`, `TRIGGER`, `KNOCK`
+- [ ] 🔧 Sleeve sub-looms with 1/4" Techflex F6; sleeve main trunk with 1/2" Techflex F6; secure breakout transitions with 3:1 adhesive heat-shrink boots
+- [ ] 🔧 Apply main trunk PermaSleeve label (M21-500-C-342) at AS79 exit: `ENGINE 07K PH3`
+- [ ] ✅ Store completed harness with AS79 mating plug capped — install at Phase 3 swap day
 
 ---
 

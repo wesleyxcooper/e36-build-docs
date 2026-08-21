@@ -26,15 +26,19 @@
 
 ### Wire, loom, and hardware
 
-| Part | Notes |
-| --- | --- |
-| Shielded twisted pair (crank and cam signal runs) | Crank and cam triggers are the most noise-sensitive wires in the system — shielded, own sleeve, physically away from injector and coil primaries. MaxxECU confirms this. |
-| 16–18 AWG wire (injectors, coils, sensors) | — |
-| 20 AWG minimum (DBW TB motor wires) | H-bridge output; verify polarity before final assembly |
-| 24 AWG (APS pedal runs through bulkhead) | — |
-| Expandable braid or split-loom conduit | — |
-| Deutsch HDT-48-00 solid barrel crimper | [deutschconnector.com](https://www.deutschconnector.com/products/deutsch_connector_tools/deutsch_connector_crimp_tools/HDT-48-00/) ~$350–465. Required for Deutsch AS79 size-20 solid contacts. Budget alternative: JRready NEW-DT2 ~$169. Cannot substitute a generic open-barrel die. |
-| Brady M210 + PermaSleeve label cartridge | [Amazon](https://a.co/d/3qZ8sAa) — print wire designators on both ends of every wire before looming |
+| Part | Spec | Notes |
+| --- | --- | --- |
+| TXL 22 AWG wire — 6 colors | Red, Black, White, Grey, Green, Yellow | All wires going through AS79 contacts are 22 AWG (AS79 contact size-22D barrel). See `wiring-bom.md` Wire Specification section for spool quantities |
+| Shielded twisted pair (crank and cam signal runs) | 22 AWG STP | Most noise-sensitive wires — shielded, own sleeve, physically away from injector and coil primaries at all points |
+| Techflex F6 expandable braid — 1/2" (main trunk) | 13mm OD | Main trunk from AS79 to engine mid-point |
+| Techflex F6 expandable braid — 1/4" (sub-looms) | 6mm OD | Injector, coil, sensor, trigger, knock sub-looms — one sleeve per group |
+| Raychem SRGB solder sleeves — 22–26 AWG | Small, blue band | Pigtail-to-harness splices. Heat gun only — not iron. Buy a box of 25. |
+| 3:1 adhesive-lined heat-shrink, assorted | 1/4", 3/8", 1/2" | Breakout boot transitions, sub-loom end caps |
+| Engineer PA-09 micro-pin crimper | ~$30–40, Amazon | All VAG pigtail contacts (cam/crank/MAP/CLT/IAT/knock/COP/EV14). Covers Bosch JMT 1.5mm and JPT 2.8mm contacts. *Note: previously listed as Knipex 97 52 68 — that PN does not exist in the Knipex catalog* |
+| Deutsch HDT-48-00 or JRready NEW-DT2 | ~$350–465 / ~$169 budget | HD30 size-16 and size-20 contacts (Maven 35-pin) + DT 2-pin bypass connectors |
+| Brady M210 + PermaSleeve M21-125-C-342 | Wire labels — 22–16 AWG | Print wire designators on both ends of every wire before looming |
+| Brady M210 + PermaSleeve M21-375-C-342 | Sub-loom breakout labels | Slide over 1/4" sub-loom at each breakout before Techflex goes on. Print: `INJECTORS`, `COILS`, `SENSORS`, `TRIGGER`, `KNOCK` |
+| Brady M210 + PermaSleeve M21-500-C-342 | Main trunk label | Slide over main trunk at AS79 exit. Print: `ENGINE M52 PH1` or `ENGINE 07K PH3` |
 
 ---
 
@@ -145,62 +149,186 @@ Use a **Deutsch Autosport AS series** (or Souriau 8STA) flanged bulkhead recepta
 
 The engine mating plug (engine side) is swapped at Phase 3: M52 plug out, 07K plug in. Cabin side is permanent — cabin wiring is unchanged at engine swap.
 
-**Bulkhead pin group allocation (07K Phase 3 reference — see `maxxecu-07k.wv` for full map):**
+**Bulkhead architecture — hybrid (AS79 engine + Maven HD30 35-pin accessories):**
 
-| Group | Pins | Content |
+Two separate connectors. Engine-side AS79 mating plug swaps at M52→07K. Maven 35-pin never disconnected.
+
+**AS79 engine connector — sector-optimized layout (see `firewall-bulkhead.wv`):**
+
+**Legend:**
+- **Sector** = 90° arc of the connector face (pin 1 at 12 o'clock, clockwise)
+- **R1** = outermost ring (28 pins, r ≈ 0.43″) · **R2** = second ring (22 pins) · **R3** = third ring · **Ctr** = center triangle (3 pins)
+- 🔴 S1 · 🟠 S2 · 🔵 S3 · 🟢 S4 — used consistently in the pin table below *(diagram grouping only — unrelated to wire insulation color)*
+
+| | Sector | Arcs | Signals |
+| --- | --- | --- | --- |
+| 🔴 | S1 — Power + IGN | 12→3 o'clock | Engine power rails; all 6 ignition outputs (R1 + R2) |
+| 🟠 | S2 — INJ + actuators | 3→6 o'clock | All 6 injector outputs; VANOS/ICV; Starter; Alt D+ |
+| 🔵 | S3 — Triggers + knock | 6→9 o'clock | Crank/cam triggers; 07K knock sensors — **maximum angular separation from IGN** |
+| 🟢 | S4 — Sensors | 9→12 o'clock | CLT, IAT, TPS, MAP, PST-F1, Flex fuel, DBW TB (07K) |
+| ⚫ | Center pin 79 | — | Sensor GND (CMC H1) — innermost cavity, per HPA convention |
+
+**AS79 pin assignments (07K Phase 3 — stubs cavity-plugged on M52 plug):**
+
+| | AS79 pins | Signal | AWG | Notes |
+| --- | --- | --- | --- | --- |
+| 🔴 | 1, 2, 29, 30 | +12V Coils/Inj ×4 parallel | 22 | 4×5A = 20A; Option A: bypass separately |
+| 🔴 | 3, 31, 52 | Engine GND ×3 parallel | 22 | 3×5A = 15A; Option A: bypass separately |
+| 🔴 | 4, 5, 6, 7 | IGN 1, 2, 3, 4 | 18 | R1 outer ring |
+| 🔴 | 32, 33 | IGN 5, IGN 6 | 18 | R2; IGN 6 M52 only, cavity-plugged at 07K |
+| 🔴 | 34 | EXP: IGN 7 (07K 5th cyl) | 18 | R2; cavity-plugged on M52 |
+| 🟠 | 8–12 | INJ 1–5 | 20 | R1 outer ring |
+| 🟠 | 13 | INJ 6 | 20 | R1; M52 only, cavity-plugged at 07K |
+| 🟠 | 14 | EXP: INJ 7 (07K 5th cyl) | 20 | R1; cavity-plugged on M52 |
+| 🟠 | 35, 36, 37 | GPO 3 (VANOS), GPO 4 (ICV-A), GPO 5 (ICV-B) | 20 | R2; M52 only, cavity-plugged at 07K |
+| 🟠 | 38, 39 | Starter trigger, Alt D+ | 18 | R2 |
+| 🔵 | 16, 17, 18 | Crank VR+, VR−, shield drain | 22 shld | R1; shielded twisted pair — shield drain ties to pin 79 cabin-side |
+| 🔵 | 19 | Cam Hall signal (M52) | 22 | R1; BMW 12141726590 |
+| 🔵 | 20 | EXP: 07K cam signal | 22 | R1; verify Hall vs VR type at install |
+| 🔵 | 41 | EXP: 07K crank signal | 22 | R2; cavity-plugged on M52 |
+| 🔵 | 43, 44, 45 | EXP: Knock 1, Knock 2, Knock GND | 22 | R2; 07K only, shielded |
+| 🟢 | 25, 26 | CLT, IAT | 22 | R1 |
+| 🟢 | 27 | Flex fuel +12V | 22 | R1 |
+| 🟢 | 22, 23, 24 | EXP: DBW TB signal, +5V, GND | 22 | R1; 07K only |
+| 🟢 | 47, 48, 49, 50 | +5V sensor, TPS, MAP, PST-F1 pressure | 22 | R2 |
+| 🟢 | 51 | PST-F1 temp | 22 | R3 |
+| 🟢 | 64 | Flex fuel signal | 22 | R3 |
+| ⚫ | 79 | Sensor GND (CMC H1) | 22 | Center pin |
+
+**Maven HD30 35-pin accessories connector — pin assignments (see `firewall-bulkhead-dual.wv` Connector A):**
+
+| Pin | Signal | Contact size / notes |
 | --- | --- | --- |
-| A — Power | 1–9 | +12V rails (coils/inj, 8HP, EWP, fan, AC), Engine GND, 8HP GND |
-| B — Ignition | 10–15 | IGN 1–5 (pin 15 cavity-plugged — 5-cyl) |
-| C — Injectors | 16–21 | INJ 1–5 (pin 21 cavity-plugged — 5-cyl) |
-| D — Crank/Cam | 22–26 | Crank VR+/−/shield; Cam Hall signal |
-| E — Sensor signals | 27–36 | Sensor GND; CLT; IAT; +5V; DBW TPS1; MAP; PST-F1 pressure/temp; Flex fuel |
-| F — WBO2 | 37–41 | LSU 4.9 wideband (VS/VREF/IP/RCAL/Heater−) |
-| G — GPO actuators | 42–46 | GPO 1 (boost); GPO 3 (ETh Mot+); GPO 4 (ETh Mot−); spare; EWP PWM |
-| H — CAN | 47–48 | CAN H / CAN L (22 AWG twisted pair) |
-| N — Expansion | 54–71 | Knock 1/2 signals; DBW TPS2; MAP2; misc spares |
-| APS (added Phase 3) | 72–77 | APS GND1/GND2; APS VCC2; APS1 signal; APS VCC1; APS2 signal |
+| A1 → phys pos 4 | +12V 8HP Main (constant) | Size-16 (13A) |
+| A2 | +12V 8HP Wakeup (IGN) | Size-20 |
+| A3 → phys pos 7 | 8HP TCU GND | Size-16 (13A) — largest cavity, 12 o'clock |
+| A4–A5 | CAN H / CAN L | Size-20, twisted pair |
+| A6 | EWP PWM (GPO) | Size-20 |
+| A7 | AC enable (GPO) | Size-20 |
+| A8 → phys pos 12 | Chassis GND engine bay | Size-16 (13A) |
+| A9–A13 | WBO2 (VS/VREF/IP/RCAL/Heater−) | Size-20 |
+| A14–A19 | APS e-pedal (Phase 3) | Size-20; cavity-plugged Phase 1 |
+| A20 | GPO 1 → Boost solenoid | Size-20 |
+| A21–A35 | Spare | — |
+
+> ⚠️ **High-current relay outputs bypass both connectors:** +12V Fan, +12V Condenser fan, +12V EWP (CWA400 36.3A max), and +12V AC relay out each route through a Deutsch DT 2-pin connector via a separate firewall grommet. The HD30 24-35 max contact is size-16 (13A) — insufficient for relay outputs.
 
 ---
 
 ## Procedure
 
-### 1 — Plan the harness before cutting any wire
+> **Reference throughout:** [`e36-wiring/docs/harness-build.md`](../../e36-wiring/docs/harness-build.md) — full harness architecture, sub-loom groupings, splice types, build sequence, labeling procedure, and bench test checklist. This walkthrough covers the 07K-specific signal assignments; `harness-build.md` covers the physical construction methodology.
 
-Route the completed harness dry against the installed 07K engine (on stand) before final sleeving. Confirm connector reach, correct lengths, and clearance from exhaust headers and moving parts. **Sleeve only after routing is confirmed.**
+### Phase A — Before any wire is cut
 
-### 2 — Loom discipline — apply before sleeving
+#### A1 — Confirm signal mapping and order pigtails first
 
-| Bundle | Rule |
-| --- | --- |
-| Crank and cam triggers | **Most noise-sensitive.** Shielded twisted pair, own sleeve, physically away from injector drives and coil primaries at all points |
-| Injector sub-loom | Separate sleeve from sensor sub-loom (same routing direction, different wrap) |
-| Coil primary sub-loom | Separate sleeve from injector sub-loom |
-| Sensor input sub-loom (CLT, IAT, MAP, knock, PST-F1) | Own sleeve |
-| Wideband O2 signal wire | Shielded, own run, away from coil primaries and injector wires |
-| High-current feeds (fuel pump, fan) | Never bundled inside ECU signal loom — own dedicated circuit back to PMU16 |
-| CAN bus (8HP) | Twisted pair inside sleeve at all times; MaxxECU CAN port → 8HP TCU connector, nothing else shares that sleeve |
+All pigtail connectors (injector, coil, sensor, knock) must be on-hand before harness build starts. See Parts table above. You cannot complete the harness without them — the sub-loom ends terminate at the splice point; the pigtail bridges to the component.
 
-### 3 — Wire all key signals per the mapping table above
+> ⚠️ **CRITICAL — `3B0973703G` cam/crank labeling:** Both sensors use the identical housing with opposite pinouts. Label pigtails `CAM` and `CRANK` on the wire before snapping the connector body on. Swapping them = no-start with no obvious indicator.
 
-Build connector by connector. Label every pigtail with a Brady M210 + PermaSleeve sleeve on both ends before inserting into loom.
+#### A2 — Dry-route the engine and measure wire lengths
 
-> ⚠️ **Pitfall:** Build and bench-test this harness before swap day. Label every connector. Photograph the completed harness against the 07K engine before it goes in the car. A miswired sensor on swap day adds hours to a stressful job.
+With the 07K engine on a stand in its intended longitudinal orientation, route a tape/rope mock-up of the main trunk path from the AS79 firewall position along the engine. Identify sub-loom breakout points for each component group. Measure each wire's required length (AS79 pin → splice point → component). Add 10% slack. Record all measurements.
+
+#### A3 — Loom discipline — plan sub-looms before cutting
+
+Every signal belongs to exactly one sub-loom. Decide before cutting any wire.
+
+| Sub-loom label | Contents | Route |
+| --- | --- | --- |
+| `INJECTORS` | INJ 1–5 signal wires + shared +12V Coils/Inj rail stubs | Along injector rail |
+| `COILS` | IGN 1–5 signal wires + shared +12V Coils/Inj rail stubs | Along valve cover rail |
+| `TRIGGER` | Crank VR+, VR−, shield drain; Cam Hall signal — **shielded twisted pair, own sleeve, physically away from all others** | Front of engine to sensor positions |
+| `SENSORS` | CLT, IAT, MAP, TPS, +5V sensor, Sensor GND | Around intake manifold |
+| `KNOCK` | KS1, KS2, Knock GND — shielded, 07K only | Below intake manifold |
+
+High-current feeds (fuel pump, fan, EWP) are **never** in the ECU signal loom — dedicated circuits back to PMU16.
+
+---
+
+### Phase B — Bench build
+
+#### B1 — Cut, label, and crimp
+
+1. Cut all wires to measured length
+2. Before crimping any terminal: slide a Brady PermaSleeve label sleeve onto each wire — the sleeve cannot pass through a terminal body after crimping
+3. Crimp AS79 engine-side contact (Daniels AFM8/K43 for AS79 solid barrel size-20 contacts)
+4. Verify with pull-test before insertion
+5. Insert into AS79 engine-side mating plug body; verify seating click
+
+> **Label content:** AS79 pin number + signal name on both ends. Example: wire in pin 8 gets label `8 INJ1` at the AS79 end and `8 INJ1` at the loose engine-side end.
+
+#### B2 — Prep pigtails before splicing
+
+For each pigtail (before snapping the connector body on):
+1. Slide a PermaSleeve label sleeve onto the pigtail wire near the connector end
+2. Print and apply the label: signal + cylinder (e.g., `INJ1`, `INJ2`, ... `COL1`, `CAM`, `CRANK`)
+3. Snap the connector body on — the label is now permanently positioned just behind the connector
+
+For identical connectors (6 injectors, 5 coils, 3-pin VAG sensors): this label is what you look at with your hands inside the engine bay to grab the right connector. If you skip it, you will swap them.
+
+---
+
+### Phase C — Route, splice, and test
+
+#### C1 — Route the main trunk
+
+Lay the fully-crimped main trunk along the engine with the AS79 mating plug at the firewall position and all wire ends at their branch points. Confirm lengths reach all components with slack. Trim or extend now — not after sleeving.
+
+#### C2 — Splice pigtails
+
+At each branch point:
+1. Cut the main harness wire to its final length
+2. Label the cut end (PermaSleeve: signal name within 20mm of the splice point)
+3. Join to pigtail bare end with a **Raychem SRGB solder sleeve** (heat gun, not iron) or non-insulated butt crimp + adhesive heat-shrink
+4. The pigtail connector body snaps onto the component at install time
+
+> ⚠️ **Do not solder with an iron.** Iron solder creates a rigid joint at the flex point. Under engine vibration, the wire cracks at the insulation boundary — the break is invisible inside heat-shrink. Raychem sleeves fully encapsulate the joint and the sleeving provides strain relief.
+
+#### C3 — Bench continuity test — mandatory before sleeving
+
+With the harness fully wired but completely **un-sleeved**, verify against the `.wv` file:
+
+- [ ] Continuity: every signal wire ECU pin → sensor pigtail connector pin
+- [ ] No shorts between adjacent pins (especially power to sensor GND)
+- [ ] Shield drain: terminates at Sensor GND (CMC H1 / AS79 pin 79), not chassis GND
+- [ ] Pull-test: every terminal in the AS79 mating plug survives a firm hand tug
+
+**Do not sleeve until all checks pass.** Techflex expandable braid makes depinning destructive. Fix any fault before sleeving.
+
+Photograph all pigtail connectors against the engine at this stage — before sleeving, every wire is visible and traceable. This photograph is your reference for any future debugging.
+
+---
+
+### Phase D — Sleeve and install
+
+#### D1 — Sleeve
+
+1. Apply sub-loom breakout PermaSleeve labels *before* Techflex goes on each sub-loom (the label slides over the bare sub-loom wires, then Techflex goes over the label)
+2. Sleeve sub-looms with 1/4" Techflex F6
+3. Sleeve main trunk with 1/2" Techflex F6
+4. Secure all breakout transitions with 3:1 adhesive-lined heat-shrink boots
+5. Apply main trunk PermaSleeve label at AS79 exit
+
+#### D2 — Mount and connect
+
+- Secure loom to engine with P-clips at ~250mm intervals — no dangling sections
+- 50mm bare wire between sub-loom Techflex end and each pigtail connector — this bare section is intentional, allows the connector to pivot when mating
+- Connect all pigtail connectors; verify locking click on each
+- Photograph complete installed harness routing before hood goes on
+
+#### D3 — Alternator excite wire
+
+Plan a dedicated wire from the body harness to the 07K alternator D+ (excite) terminal. The 07K alternator (`07K903023A`, OEM, 140A; reman `06F903023FX` / `07K903023AX`) will self-excite above ~1,500 RPM via the voltage regulator, but correct D+ wiring ensures reliable cold-start charging from the first start.
+
+---
+
+### Phase E — Throttle wiring (DBW path only)
 
 > ⚠️ **Throttle wiring depends on path chosen in `25-07k-air.md`:**
-> - **DBW path:** Wire TB Motor+/−/TPS1/TPS2 to MaxxECU e-throttle H-bridge pins. The E46 APS pedal runs separately through the bulkhead (6 pins reserved in Phase 1). Both pedal and TB use dual-track sensors — wire both tracks to separate MaxxECU analog inputs.
+> - **DBW path:** Wire TB Motor+/−/TPS1/TPS2 to MaxxECU e-throttle H-bridge pins. The E46 APS pedal runs separately through the Maven HD30 35-pin bulkhead connector (pins A14–A19 reserved in Phase 1). Both pedal and TB use dual-track sensors — wire both tracks to separate MaxxECU analog inputs.
 > - **Cable path:** No DBW motor wiring needed. Include TPS1/TPS2 signal wires for MaxxECU throttle position reading. No APS pedal harness needed.
-
-### 4 — Bench test before sleeving
-
-With harness built but unloomed, bench-test on the engine stand:
-- Verify continuity on every signal pair (sensor pin to ECU pin)
-- Verify no shorts between adjacent pins
-- Check shield termination (sensor GND, not chassis GND)
-- Photograph all connectors against engine before sleeving
-
-### 5 — Alternator excite wire
-
-Plan a dedicated wire from the body harness to the alternator D+ (excite) terminal. The 07K alternator (`07K903023A`, OEM, 140A; reman `06F903023FX` / `07K903023AX`) will self-excite above ~1,500 RPM via the voltage regulator, but correct D+ wiring ensures reliable cold-start charging from the first start.
 
 ---
 

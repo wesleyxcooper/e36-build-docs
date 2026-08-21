@@ -23,7 +23,9 @@
 | Brady M21-250-C-342 cartridge (16–8 AWG, for 12 AWG fuel pump power runs) | [Brady direct](https://www.bradyid.com/labels/bmp21-plus-series-permasleeve-heat-shrink-tubing-cps-3392081?part-number=m21-250-c-342) | ~$55–60 |
 | Deutsch HDT-48-00 ratcheting crimper (for Deutsch AS79 bulkhead contacts) | [deutschconnector.com](https://www.deutschconnector.com/products/deutsch_connector_tools/deutsch_connector_crimp_tools/HDT-48-00/) | ~$350–465 |
 | JRready NEW-DT2 crimper (budget alternative to HDT-48-00) | [Amazon](https://www.amazon.com/) | ~$169 |
-| Deutsch AS79 / Souriau 8STA 79-way firewall bulkhead connector | [RaceSpec Online](https://racespeconline.com) | ~$120–180 |
+| Deutsch Autosport AS79 / Souriau 8STA 79-way firewall bulkhead receptacle + jam-nut plug (engine connector) | [RaceSpec Online](https://racespeconline.com) — Deutsch AS616-79PN or Souriau 8STA79PN | ~$120–180 |
+| Maven Speed single connector bulkhead, **35-pin** (HD30 shell-size-24 / arrangement 24-35) — accessories connector | [mavenspeed.com](https://mavenspeed.com/products/single-connector-bulkhead-s24) — select "35 PIN" option | ~$156 |
+| Deutsch DT 2-pin connectors × 4 (high-current bypass for +12V Fan, +12V Cond Fan, +12V EWP, +12V AC relay outputs — these cannot route through HD30 24-35) | ConnectorExperts or Del City — DT06-2S receptacle + DT04-2P plug + W2S wedge | ~$5–8 ea |
 | ISO mini relay × 4 (fuel pump, fan, reverse light, starter — as applicable) | Bosch `0 332 209 150` or equivalent | — |
 | 1N4007 flyback diodes (×6 minimum: VANOS, ICV A, ICV B, fuel pump relay, fan relay, reverse light relay) | Electronics supply | — |
 | 18mm×1.5 O2 bung (for exhaust — weld-in, shop step) | Exhaust supply | — |
@@ -88,10 +90,26 @@
 
 ### Firewall Bulkhead Connector
 
-6. **Install Deutsch AS79 / Souriau 8STA 79-way flanged firewall bulkhead connector** (~$120–180 from RaceSpec Online).  
-   Mount on upper firewall near the OEM harness grommet. **In this RHD build: mount on the LEFT side (passenger side) — the OEM engine harness grommet is on the passenger side in both LHD and RHD E36. The driver's / right side in the RHD build contains the steering column, brake/clutch pass-throughs, and is the exhaust side of a longitudinal 07K (SPA manifold exits right-hand side). Do NOT place the bulkhead connector on the driver's/right side in a RHD 07K build.**  
-   Cabin side wired permanently (ECU Molex C1/C2 connectors, PMU16 CAN harness, cluster X20 signals). Engine harnesses terminate in mating plugs on the engine side for plug-and-play engine swaps.  
-   Pre-allocate 6 pins for Phase 3 e-pedal (APS1 SIG, APS2 SIG, VCC1, VCC2, GND1, GND2) — leave engine-side pins unconnected until Phase 3.
+6. **Install hybrid firewall bulkhead (Deutsch Autosport AS79 + Maven HD30 35-pin, two separate connectors).**
+
+   **Hybrid architecture:** The bulkhead uses two connectors, not one:
+   - **AS79 (engine)** — Deutsch AS616-79PN or Souriau 8STA79PN, ~$120–180 from RaceSpec Online. Carries all engine-specific signals (ignition, injectors, crank/cam triggers, sensors, VANOS/ICV, starter). Engine-side mating plug swaps at M52→07K engine swap.
+   - **Maven HD30 35-pin (accessories)** — Maven Speed single connector bulkhead, 35-pin, ~$156. Carries permanent accessories: 8HP CAN/power, WBO2, boost solenoid, EWP PWM, AC enable, APS e-pedal (Phase 3). This connector is never disconnected at engine swap.
+   - **High-current relay bypass** — +12V Fan, +12V Condenser fan, +12V EWP (36.3A), and +12V AC relay outputs route through 4× individual Deutsch DT 2-pin connectors via a separate weatherproof grommet. The HD30 24-35 insert supports only size-16 contacts (13A max) — insufficient for relay power outputs. Use 12 AWG DT contacts for fan relays; 10 AWG or 2× DT in parallel for EWP.
+
+   **Mounting:** Mount AS79 on upper firewall near OEM harness grommet. **In this RHD build: mount on the LEFT side (passenger side)** — OEM harness grommet is passenger-side in both LHD and RHD E36. The driver's/right side contains the steering column, brake/clutch pass-throughs, and is the exhaust exit side for the 07K with SPA manifold. Mount the Maven 35-pin alongside or nearby. Route the DT high-current bypass connectors through a separate grommet adjacent to the main connectors.
+
+   **HD30 24-35 size-16 positions** (source: Deutsch HD30 & HDP20 Technical Manual, Ed.2007, p.9):
+   - Physical position **4** (inner ring, ~6 o'clock): +12V 8HP Main (14 AWG)
+   - Physical position **7** (middle ring, 12 o'clock — largest cavity in the insert): 8HP TCU GND (14 AWG)
+   - Physical position **12** (middle ring, ~4 o'clock): Chassis GND engine bay (14 AWG)
+   All other positions are size-20 (7.5A max, 16–22 AWG).
+
+   > ⚠️ **Verify size-16 positions at first use:** The Deutsch HD30 manual diagram identifies positions 4, 7, 12 as size-16, but confirm these cavities are visibly larger than neighbors before inserting contacts. A size-16 contact inserted into a size-20 cavity will not seat correctly and will pull out under load.
+
+   Cabin side of both connectors wired permanently (ECU Molex C1/C2 connectors, relay board, PMU16 CAN harness). Engine harnesses terminate in mating plugs on the AS79 engine side.
+
+   Pre-allocate 6 Maven 35-pin positions for Phase 3 e-pedal (A14–A19: APS GND1, APS GND2, APS VCC2, APS1 sig, APS VCC1, APS2 sig) — leave cavity-plugged at Phase 1.
 
 ### Ground Straps
 
