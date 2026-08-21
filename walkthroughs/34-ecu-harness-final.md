@@ -37,9 +37,9 @@ This walkthrough covers connecting the Phase 2 07K engine harness to the MaxxECU
 | Deutsch Autosport AS79 firewall receptacle + jam-nut plug (engine connector) | [RaceSpec Online](https://racespeconline.com) — Deutsch AS616-79PN or Souriau 8STA79PN | ~$120–180 |
 | Maven Speed single connector bulkhead, **35-pin** (accessories connector) | [mavenspeed.com](https://mavenspeed.com/products/single-connector-bulkhead-s24) — "35 PIN" option | ~$156 |
 | Deutsch DT 2-pin connectors × 4 (high-current bypass for fan/EWP/AC relay outputs) | ConnectorExperts or Del City — DT06-2S + DT04-2P + W2S wedge | ~$5–8 ea |
-| Daniels DMC AFM8 crimp tool body | racespec, buydeutsch, or direct | ~$400–550 |
-| AFM8 positioner K42 (pin contacts 22-26 AWG) | [buydeutsch.com — K42](https://www.buydeutsch.com/products/k42-afm8-crimper-positioner-pin-38941-22-size-22-contacts-22-26awg-blue) | ~$60–80 |
-| AFM8 positioner K40 (socket contacts) | buydeutsch or equivalent | ~$60–80 |
+| Daniels DMC AFM8 crimp tool body (M22520/2-01) | [dmctools.com](https://dmctools.com/afm8) | **$601.65** verified |
+| AFM8 positioner K42 (pin contacts, size-22, 22–26 AWG) | [deltaintl.com — K42](https://deltaintl.com/products/k42) | **$112.64** verified |
+| AFM8 positioner K40 (socket contacts, size-22, 22–26 AWG) | [dmctools.com — K40](https://dmctools.com/k40) | **$93.86** verified |
 | Deutsch HDT-48-00 ratcheting crimper | [deutschconnector.com](https://www.deutschconnector.com/products/deutsch_connector_tools/deutsch_connector_crimp_tools/HDT-48-00/) | ~$350–465 |
 | JRready NEW-DT2 crimper | [Amazon](https://www.amazon.com/) | ~$169 |
 | Brady M210 + M21-125-C-342 PermaSleeve cartridge | [Amazon](https://a.co/d/3qZ8sAa) | ~$130 |

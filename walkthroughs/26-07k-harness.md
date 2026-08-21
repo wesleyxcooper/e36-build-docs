@@ -265,7 +265,7 @@ High-current feeds (fuel pump, fan, EWP) are **never** in the ECU signal loom �
 
 1. Cut all wires to measured length
 2. Before crimping any terminal: slide a Brady PermaSleeve label sleeve onto each wire — the sleeve cannot pass through a terminal body after crimping
-3. Crimp AS79 engine-side contact (Daniels AFM8/K43 for AS79 solid barrel size-20 contacts)
+3. Crimp AS79 engine-side contact: **Daniels AFM8 + K42 positioner** for pin contacts (size-22, 22–26 AWG) — K40 for socket contacts. Source: m-cal.com AS020-35SN ("Primary Contacts Size: 22 AWG"). NOT K43 (size-20 positioner).
 4. Verify with pull-test before insertion
 5. Insert into AS79 engine-side mating plug body; verify seating click
 
