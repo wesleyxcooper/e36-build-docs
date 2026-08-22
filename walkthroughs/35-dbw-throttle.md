@@ -66,15 +66,18 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
 
    ME7.1.1 APS reference pins (for harness documentation): APS1 signal at pins 35/72; APS2 signal at pins 34/73. Source: `E36_DIY_Build_Checklist.md` Phase 3 Air/Throttle and Phase 2 ECU section.
 
-5. Run 6-wire shielded cable from pedal connector → firewall bulkhead cabin-side pins 72–77 (pre-allocated at Phase 1):
-   - Pin 72 = APS GND 1
-   - Pin 73 = APS GND 2
-   - Pin 74 = APS VCC2
-   - Pin 75 = APS1 signal
-   - Pin 76 = APS VCC1
-   - Pin 77 = APS2 signal
+5. Run 6-wire shielded cable from pedal connector → **Maven HD30 Connector A cabin face, pins A14–A19**
+   (pre-allocated at Phase 1, cavity-plugged until Phase 3):
+   - A14 = APS GND 1
+   - A15 = APS GND 2
+   - A16 = APS VCC2
+   - A17 = APS1 signal
+   - A18 = APS VCC1
+   - A19 = APS2 signal
 
-   These connect through the bulkhead to MaxxECU C2 APS inputs on the engine side.
+   APS is **cabin-to-cabin only** — MaxxECU is cabin-mounted. The HD30 cabin face acts as a junction
+   block; engine side of A14–A19 is cavity-plugged. AS79 pins 72–77 are not used for APS.
+   Source: `harnesses/firewall-bulkhead-dual.wv`, `harnesses/epedal-bmw-e46.wv`.
 
 6. Label both ends of each wire with the Brady M210 before looming.
 
@@ -83,12 +86,16 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
 7. The 07K DBW throttle body uses a 6-pin connector. ME7.1.1 reference: Motor+ = pin 84, Motor− = pin 92, TPS1 = pin 117, TPS2 = pin 118.
 
    MaxxECU ETh1 assignment (confirm in MTune E-Throttle wizard before final wiring):
-   - Motor+ → GPO 4 (CMC E4/pin 20), 20 AWG minimum (3A H-bridge output)
-   - Motor− → GPO 3 (CMC D4/pin 16), 20 AWG minimum
-   - TPS1 → CMC G2 (pin 26) / bulkhead pin 31
-   - TPS2 → CMC J2 (pin 34) / bulkhead pin 51
-   - +5V → shared sensor supply rail
-   - GND → sensor GND
+   - Motor+ → MaxxECU **C2 H4 (MOTOR 1+)** via AS79 pin 22, 20 AWG minimum
+   - Motor− → MaxxECU **C2 H2 (MOTOR 1−)** via AS79 pin 23, 20 AWG minimum
+   - TPS1 → CMC G2 (pin 26) / AS79 pin **48**, 22 AWG shielded
+   - TPS2 → CMC J2 (pin 34) / AS79 pin **56**, 22 AWG shielded
+   - +5V → shared sensor supply rail (AS79 pin 47)
+   - GND → sensor GND (AS79 pin 79)
+
+   > ⚠️ Motor+/− connect to the **dedicated H-bridge outputs (C2 H4/H2)**, NOT GPO 3 or GPO 4.
+   > GPO 3 = VVT solenoid; GPO 4 = spare. Using GPO for motor drive would damage the output.
+   > Source: `harnesses/maxxecu-07k.wv`.
 
    > ⚠️ **Pitfall:** Verify TB motor polarity with a voltmeter before wiring. Swap Motor+/− if the throttle plate runs in the wrong direction during the e-throttle wizard calibration. The wizard will flag this and prompt a swap. Source: `harnesses/maxxecu-07k.wv` DBW_TB notes.
 
@@ -98,7 +105,7 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
    > ⚠️ **Pitfall:** Disconnect the TB motor wires before enabling e-throttle in MTune for the first time. Leave sensor wires connected — verify APS/TPS voltages read correctly before activating motor drive. Prevents runaway on first output enable. Source: `E36_DIY_Build_Checklist.md` Phase 3 Air/Throttle.
 
 9. **Sequence — do not skip steps:**
-   1. Enable e-throttle in MTune → assign APS1/APS2 to their AIN pins; assign TPS1/TPS2 and motor output (GPO 3/4)
+   1. Enable e-throttle in MTune → assign APS1/APS2 to their AIN pins; assign TPS1/TPS2 and motor output (Motor 1 — C2 H4/H2 H-bridge, not GPO)
    2. Run **pedal calibration wizard** — captures idle/WOT min/max for both APS tracks automatically. Slowly depress pedal from floor to WOT and back, twice.
    3. Verify APS1 reads ~0.7V at idle, ~4.5V at WOT. APS2 reads ~0.36V at idle, ~2.2V at WOT (approximately half of APS1 — dual-track redundant sensor).
    4. Reconnect TB motor wires. Run **TB calibration wizard** — motor sweeps to physical stops, captures TPS1/TPS2 min/max range. The throttle plate will move fully open and fully closed during this step — normal.

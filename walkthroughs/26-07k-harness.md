@@ -124,18 +124,21 @@ Connector: VAG 4-pin COP (OE# `4B0973724`).
 | TPS1 signal | **pin 117** | CMC G2 (pin 26) / AS79 pin 48 | — |
 | TPS2 signal | **pin 118** | CMC J2 / AIN 2 (pin 34) / AS79 pin 56 | — |
 
-### Accelerator pedal (DBW path — APS 1 + APS 2, cabin-to-cabin — no bulkhead crossing)
+### Accelerator pedal (DBW path — APS 1 + APS 2, cabin-to-cabin via HD30 Connector A)
 
-| Signal | ME7.1.1 Ref Pin | MaxxECU | Notes |
-| --- | --- | --- | --- |
-| APS 1 signal | **pin 35** | C2 E4 (AIN 6) | E46 or Hella 6PV pedal → direct cabin run → MaxxECU C2 |
-| APS 1 VCC | — | CMC G1 (+5V rail) | Shared +5V sensor rail |
-| APS 1 GND | **pin 72** | CMC H1 (Sensor GND) | Shared sensor GND |
-| APS 2 signal | **pin 34** | C2 F1 (AIN 7) | Same direct cabin run |
-| APS 2 VCC | — | CMC G1 (+5V rail) | — |
-| APS 2 GND | **pin 73** | CMC H1 (Sensor GND) | — |
+| Signal | ME7.1.1 Ref Pin | MaxxECU | HD30 A pin | Notes |
+| --- | --- | --- | --- | --- |
+| APS 1 GND | **pin 72** | CMC H1 (Sensor GND) | A14 | Pedal → HD30 A cabin face → MaxxECU |
+| APS 2 GND | **pin 73** | CMC H1 (Sensor GND) | A15 | — |
+| APS 2 VCC | — | CMC G1 (+5V rail) | A16 | — |
+| APS 1 signal | **pin 35** | C2 E4 (AIN 6) | A17 | — |
+| APS 1 VCC | — | CMC G1 (+5V rail) | A18 | — |
+| APS 2 signal | **pin 34** | C2 F1 (AIN 7) | A19 | — |
 
-**APS does NOT cross the AS79 bulkhead.** MaxxECU is cabin-mounted. Run a single shielded 6-wire cable from the pedal (footwell) directly to MaxxECU C2 — no firewall penetration for APS. AS79 pins 72–77 are spare and should remain cavity-plugged. Source: `harnesses/epedal-bmw-e46.wv`.
+APS is **cabin-to-cabin** — no signal crosses to the engine side. The 6-wire shielded cable runs from the pedal
+(footwell) to the **Maven HD30 Connector A cabin face (pins A14–A19)**, which acts as a junction block. A
+second short cable runs from the same pins to MaxxECU C2. AS79 pins 72–77 are not used for APS; they remain
+spare. Source: `harnesses/firewall-bulkhead-dual.wv`, `harnesses/epedal-bmw-e46.wv`.
 
 ### VVT cam actuator solenoid
 
