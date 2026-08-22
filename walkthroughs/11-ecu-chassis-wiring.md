@@ -157,7 +157,33 @@ Install Bosch LSU 4.2 wideband O2 sensor. The MaxxECU M50 terminated harness inc
 
 > ⚠️ **Note:** `maxxecu-m52.wv` has an open TODO — the wideband O2 circuit is unmodeled in the M52 harness diagram (no WIDEBAND connector, no cable, no shield flag — unlike `maxxecu-07k.wv` which models it correctly). Author this before Phase 1 harness build: add LSU 4.2 connector, shielded cable, and connections block. Verify LSU 4.2 pinout differs from LSU 4.9 before copying from the 07K diagram.
 
-### Step 10 — GPO Assignments Summary
+### Step 10 — PST-F1 Oil Pressure+Temperature Sensor
+
+Install the Bosch PST-F1 dual sensor on the M52 VANOS banjo bolt using the M14×1.5 → M10×1.0 adapter
+(confirm adapter thread spec at install — `maxxecu-m52.wv` line 67 TODO). The sensor mounts in the
+engine bay; its 4-pin connector pinout per `maxxecu-m52.wv`:
+
+| PST-F1 pin | Signal | ECU_16PIN pin | MaxxECU input |
+| --- | --- | --- | --- |
+| +5V supply | +5V | Pin 1 (+5V OUT) | Sensor supply rail |
+| GND | Sensor GND | Pin 2 (Sensor GND) | Sensor GND |
+| Pressure | 0–5V analog | Pin 12 (AIN 3) | AIN 3 — 0–10 bar / 0–145 PSI |
+| Temp | NTC thermistor | Pin 14 (AIN 1) | AIN 1 — −40 to +140°C |
+
+Run a 4-wire shielded cable (22 AWG) from the PST-F1 connector, **bundled alongside the M50 harness**
+through the OEM firewall grommet into the cabin, then to the ECU_16PIN breakout. Keep the cable in its
+own sleeve within the loom — do not bundle with injector or coil wires. Float the OEM oil pressure
+switch (X20 pin 23 — already noted in Step 7 above).
+
+MTune: AIN 3 → type = 0–5V, function = Oil pressure. AIN 1 → type = Temperature (enable 2.5k pullup).
+
+> ⚠️ **Phase 3 transition:** At the 07K swap, the PST-F1 moves from the M52 VANOS banjo bolt to the
+> 07K oil housing. The ECU_16PIN path is removed with the M50 harness. The 4 wires now cross the
+> **AS79 firewall bulkhead** — pin 79 (GND), pin 47 (+5V), pin 50 (AIN 3 pressure), pin 51 (AIN 1 temp)
+> — and terminate at MaxxECU CMC J1 (AIN 1) and J3 (AIN 3). See `walkthroughs/34-ecu-harness-final.md`.
+> Source: `harnesses/pst-f1-sensor.wv`, `harnesses/firewall-bulkhead.wv`.
+
+### Step 11 — GPO Assignments Summary
 
 | GPO | Function | CMC pin | Access point |
 | --- | --- | --- | --- |
@@ -167,6 +193,7 @@ Install Bosch LSU 4.2 wideband O2 sensor. The MaxxECU M50 terminated harness inc
 | GPO 4 | ICV coil A | CMC E4 (pin 20) | Within M50 harness — ICV connector |
 | GPO 5 | ICV coil B | CMC A1 (pin 1) | Within M50 harness — ICV connector |
 | GPO 6 | Fan relay (low-side) | CMC B1 (pin 5) | ECU_16PIN pin 6 |
+| GPO 7/DIN 3 | Flex fuel sensor signal | CMC (DIN 3) | ECU_16PIN pin 5 |
 | GPO 8 | TACHO output → X20 pin 20 | CMC A4 (pin 4) | ECU_16PIN pin 4 |
 
 **Harness looming discipline** (from `maxxecu-m52.wv`):
@@ -177,7 +204,7 @@ Install Bosch LSU 4.2 wideband O2 sensor. The MaxxECU M50 terminated harness inc
 
 > ⚠️ **Pitfall:** ~200–230 pin insertions across all harnesses. Never sleeve or loom any sub-harness before a bench test passes. Reference `e36-wiring/docs/harness-build.md` for connector family tool matrix, depin procedures, and bench test sequence.
 
-### Step 11 — First Start Commissioning
+### Step 12 — First Start Commissioning
 
 Load MaxxECU M5x base map.
 

@@ -64,16 +64,22 @@
 8. **Lower hanger assembly into tank.** Align the orientation tab. Hand-thread the locking ring clockwise. Torque per Radium install instructions.  
    > ⚠️ **Pitfall (hanger terminals):** The stainless stud terminals on top of the hanger are live in a fuel-saturated environment. Clean contact surfaces before installing ring terminals. Use ring terminals with the provided acorn nuts — the anti-rotation feature prevents the stud from spinning during tightening, which would damage the internal seal.
 
-### Pump Power Wiring (per `fuel-pump-hanger.wv`)
+### Pump Power Wiring — Phase 1 (per `fuel-pump-hanger-reference.md`)
 
-9. **Run PMU16 O4 output → pump(+) stud on Radium 20-1170 hanger.**  
-   PMU16 O4 (physical pin 13, 25A PWM-capable high-side MOSFET output) is the fuel pump power source. No separate DC solid-state relay is needed — PMU16 handles this directly via CAN command from MaxxECU. Wire: 12 AWG minimum, red, from PMU16 engine bay location through the transmission tunnel to the fuel tank hanger pump(+) stud. Estimated run: 3.5–4 m — measure on the car and add 20% slack before cutting. Loom in expandable braid for the full tunnel run. Keep away from exhaust-side tunnel routing where heat is a concern.
+Phase 1 has no PMU16. The pump is switched by relay R1 on the relay block wired in `11-ecu-chassis-wiring.md`.
+
+9. **Run relay R1 pin 87 → pump(+) stud on Radium 20-1170 hanger.**  
+   Wire: 12 AWG minimum, red, from the relay block (engine bay or inner fender) through the transmission tunnel to the fuel tank hanger pump(+) stud. Estimated run: 3.5–4 m — measure on the car and add 20% slack before cutting. Loom in expandable braid for the full tunnel run. Keep away from exhaust-side tunnel routing.  
+   Relay R1 coil: GPO 2 low-side (ECU_12PIN pin 3) → relay pin 85. +12V IGN → relay pin 86. Source: `11-ecu-chassis-wiring.md` Step 4 relay block.
+
+   > ⚠️ **Phase 3 note:** At the 07K swap, relay R1 is removed. PMU16 O4 (25A, PWM-capable) replaces it — wire directly from PMU16 O4 to the same pump(+) stud using the same 12 AWG run. The pump stud connection does not change. See `fuel-pump-hanger-reference.md` Phase 3 section.
 
 10. **Run pump(−) stud → dedicated chassis GND bolt.**  
     Wire: 12 AWG minimum, black. Ring terminal at both ends. The pump ground must be a dedicated stud bolted to body metal — **do not share with ECU sensor grounds or other signal-ground star points.**
 
-11. **MTune fuel pump config:**  
-    Outputs → Output config → Function: **PWM fuel pump control** → frequency 100–500 Hz (start at 100 Hz). Duty table by MAP/RPM: ~65% at idle / ~80% cruise / 100% at WOT. At Phase 3 (07K), tune duty table to MAP for full duty under boost. PMU16 O4 frequency set in PMU software (4–400 Hz range).
+11. **MTune fuel pump config (Phase 1):**  
+    Outputs → Output config → GPO 2 → Function: **Fuel pump relay** (on/off, not PWM). Pump runs at 100% whenever the ECU is running — no duty cycle control in Phase 1.  
+    > ⚠️ **Phase 3 note:** At the 07K swap, reconfigure GPO 2 (or the MaxxECU CAN output to PMU16) as **PWM fuel pump control** → frequency 100–500 Hz. Duty table by MAP/RPM: ~75% at idle / 100% at WOT. PMU16 O4 frequency is set in PMU software (4–400 Hz range).
 
 ### Flex Fuel Sensor Installation
 
@@ -87,6 +93,8 @@
 
     The signal wire is open-collector; MaxxECU provides an internal 5V pull-up on the DIN input. A single wire encodes two channels: frequency (50–150 Hz) = ethanol content %; pulse width = fuel temperature. MaxxECU reads both natively on DIN 3.  
     **MTune:** Inputs → Digital inputs → DIN 3 → Function: **Flex fuel sensor**. Enable flex fuel map: Advanced → Flex fuel → set base (0% E) and E85 (85% E) maps.
+
+    > ⚠️ **Phase 3 transition:** At the 07K swap, the M50 harness and ECU_16PIN breakout are removed. The flex fuel signal wire must be extended to cross the AS79 firewall bulkhead on **pin 64** (engine side) → **pin 64** (cabin side) → MaxxECU CMC DIN 3 (same input, new path). +12V supply transitions from the Phase 1 relay rail to the Phase 3 harness +12V supply. GND remains chassis GND. No MTune change required — DIN 3 assignment stays. Source: `harnesses/firewall-bulkhead.wv` pin 64; `walkthroughs/26-07k-harness.md`.
 
 ### FPR Installation
 

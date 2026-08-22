@@ -59,9 +59,30 @@ This walkthrough covers connecting the Phase 2 07K engine harness to the MaxxECU
 
 ## Procedure
 
-### Step 1 — Remove M5x Relay Board and M50 Harness
+### Step 1 — Remove M5x Relay Board and M50 Harness; Re-wire Phase 1 Carryover Components
 
 Remove the three-relay board and the MaxxECU M50 terminated harness installed during the M5x phase. Unplug and remove the M50 harness from the OEM firewall grommet. The grommet hole will be reused or enlarged for the new custom harness bundle. The MaxxECU itself stays mounted — do not disturb C1/C2 connectors until the new custom harness is ready to plug in.
+
+**Phase 1 carryover components that require re-wiring at this step:**
+
+Several loads were wired to the Phase 1 relay board and M50 harness. Each must be transitioned to the new architecture before the car can run.
+
+| Component | Phase 1 wiring (now removed) | Phase 3 replacement | Wire gauge |
+| --- | --- | --- | --- |
+| Radiator fan +12V | Relay R2 pin 87 → fan(+) stud | **PMU16 O3** (25A) → fan(+) stud — same stud, new wire | 12 AWG |
+| Fuel pump +12V | Relay R1 pin 87 → pump(+) stud | **PMU16 O4** (25A) → pump(+) stud — same stud, new wire | 12 AWG |
+| Flex fuel signal | ECU_16PIN pin 5 (DIN 3) → sensor pin C | **AS79 pin 64** engine side → sensor pin C; AS79 pin 64 cabin side → MaxxECU CMC DIN 3 | 22 AWG |
+| Flex fuel +12V | Phase 1 relay rail → sensor pin A | Phase 3 harness +12V switched supply → sensor pin A | 22 AWG |
+| PST-F1 pressure | ECU_16PIN pin 12 (AIN 3) | **AS79 pin 50** → MaxxECU CMC J3 (AIN 3) | 22 AWG |
+| PST-F1 temp | ECU_16PIN pin 14 (AIN 1) | **AS79 pin 51** → MaxxECU CMC J1 (AIN 1) | 22 AWG |
+| PST-F1 +5V | ECU_16PIN pin 1 (+5V) | AS79 pin 47 → MaxxECU CMC sensor +5V rail | 22 AWG |
+| PST-F1 GND | ECU_16PIN pin 2 (GND) | AS79 pin 79 → MaxxECU CMC H1 (SGND) | 22 AWG |
+
+**Additional physical change:** The PST-F1 sensor body moves from the M52 VANOS banjo bolt to the 07K oil housing fitting. Remove the M14×1.5 adapter with the M52; the 07K oil housing uses a different fitting — confirm thread spec on the 07K block at install. Source: `harnesses/pst-f1-sensor.wv`.
+
+> ⚠️ The fan and fuel pump ground studs (pump(−) and fan(−)) are unchanged — the GND runs installed in Phase 1 stay. Only the +12V supply side changes (relay pin 87 → PMU16 output).
+
+> ⚠️ No MTune changes are required for the AIN/DIN inputs (PST-F1, flex fuel) — same inputs, same configuration. GPO 2 (fuel pump) and GPO 6 (fan) are re-mapped to PMU16 CAN commands in MTune — see Step 7 GPO reassignments below.
 
 ### Step 2 — Firewall Bulkhead Installation
 
