@@ -604,11 +604,11 @@ The 07K was designed for transverse FWD use. In a longitudinal BMW chassis its a
 >
 > | Tool | Model | ~Price | Use |
 > | :--- | :--- | :--- | :--- |
-> | Micro-pin ratcheting crimper | Knipex 97 52 68 | $90 | VAG sensor / COP pigtails, ECU pin contacts (most-used tool) |
+> | Micro-pin ratcheting crimper | **Engineer PA-09** ([amazon.com/dp/B002AVVO7K](https://www.amazon.com/dp/B002AVVO7K)) | $30 | VAG sensor / COP pigtails, ECU pin contacts (most-used tool). ⚠️ Knipex 97 52 68 was previously listed here — that PN does not exist in the Knipex catalog. |
 > | Open-barrel crimper | IWISS IWS-2820M | $40 | Ring terminals, relay contacts, general open-barrel |
-> | Deutsch AS crimper | Deutsch WT-0460-8-0800 | $150–180 | Bulkhead size 20 contacts — no substitute |
+> | Deutsch AS crimper | **Daniels AFM8 (M22520/2-01)** + **K42** positioner (pin, $112.64) + **K40** positioner (socket, $93.86) | **$808 total** | Bulkhead size-**22** contacts — AFM8 $601.65 ([dmctools.com](https://dmctools.com/afm8)). Sources: m-cal.com AS020-35SN ("Primary Contacts Size: 22 AWG"); ecuplus.de AS620-35PN. ⚠️ WT-0460-8-0800 was previously listed — that PN is unverified and the price ($150-180) is inconsistent with actual AFM8 pricing. |
 > | Ferrule crimper | IWISS IWS-10 | $25 | Stranded wire ends → screw-clamp terminals (ECU power/GND) |
-> | Deutsch contact extraction | Deutsch 1680-73-01 | $15 | AS bulkhead contact removal (size 20) |
+> | Deutsch contact extraction | Deutsch 1680-73-01 | $15 | AS bulkhead contact removal (size-**22**) |
 > | VW/Bosch de-pinning picks | Lisle 57750 | $20 | Sensor pigtails, COP connector de-pinning |
 > | **Radlok GND stud adapters** | Amphenol 8mm M8×1.25 Male (×2–3) | ~$15 CAD ea | Engine GND strap attachment points (head + block) — press-lock replaces ring terminal + bolt. [Racing History Co.](https://www.racinghistorycompany.com/product/radlok-8mm-stud-m8x1-25-male/) |
 > | **Radlok alternator B+ adapter** | Amphenol 8mm M8×1.25 Female (×1) | ~$22 CAD | 07K alternator B+ stud — tool-free charge wire disconnect. [Racing History Co.](https://www.racinghistorycompany.com/product/radlok-8mm-stud-m8x1-25-female/) |
