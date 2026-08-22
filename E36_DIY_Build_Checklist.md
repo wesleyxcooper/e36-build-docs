@@ -193,6 +193,23 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - Confirm column lower output spline size matches Condor shaft upper U-joint if running KPower/EPowerSteering column-core EPS (spline should be unchanged, but verify at order time).
   - > ⚠️ **Pitfall:** Mandatory before Phase 3 turbo work — do it now while the engine bay is accessible. The stock RHD rubber coupler will conflict with any top-mount manifold. Do not skip.
 
+### Steering — EPS  [STEERING]
+
+> **Phase 1 item.** EPS is independent of the engine — installs with M52 in car. No 07K swap or custom bulkhead required.
+>
+> **Primary approach: Stock hydraulic rack + de-powered lines + column EPS + SLR Mini Kit = ~900° LTL.** Mini Kit reduces LTL by 28–30% (3.5 LTL → ~2.5 LTL = ~893°). This matches the Moza R5 sim baseline exactly — no Z3 rack required. EPS assist knob is the real-world equivalent of FFB weight adjustment.
+
+- [ ] ⚠️ Confirm EPS path: contact EPowerSteering.com about RHD column compatibility ([epowersteering.com](https://epowersteering.com/purchase/product/bmw-e36/)) — or plan for Peugeot 206 GTi / Toyota MR2 ZZW30 salvage column with fabricated bracket
+- [ ] 🔧 **De-power stock hydraulic rack** (do not replace rack — keep stock)
+  - **Preferred method — return-line loop:** Route the hydraulic return line back into the reservoir instead of capping the ports. Rack stays lubricated, no internal drag from trapped air, acts as a clean manual rack. Remove or leave the pump belt — pump freewheels harmlessly.
+  - Do NOT fully cap ports dry — trapped air causes uneven rack feel and inconsistent center return.
+  - Stock rack = 3.5 LTL = 1,260° travel. After Mini Kit install: ~2.5 LTL = ~900°. EPS provides all assist.
+  - **Alternative (skip for this build):** Z3 rack swap (direct bolt-in, 2.75 LTL = 990°) — adds cost and ratio complexity without benefit when Mini Kit already hits 900°. Only consider if Mini Kit is not being run. If Z3 rack + Mini Kit are stacked: combined ratio drops to ~2.0–2.2 LTL (~720–800°) — supercar/drift car territory; requires significantly lighter EPS assist calibration.
+- [ ] ⚠️ Install column-assist EPS unit (under dash) — see `walkthroughs/13-eps.md`
+  - > ⚠️ **Pitfall:** The assist knob is set once before driving. The EPowerSteering.com KIT-33 Basic EPS Controller has **no VSS or external signal input of any kind** — assist level is fixed via the dashboard potentiometer only. There is no port to wire MaxxECU into. Set the knob to a level that works acceptably at both parking and highway speeds. Source: `harnesses/eps-column.wv`; `E36_9000RPM_Project_Plan_Verified.md` Power Steering row (speed-sensitive assist recommendation explicitly removed).   → [ECU]
+  - > ⚠️ **Pitfall — EPS calibration at ~900°:** Start with lighter assist than you expect to need. At ~900° the steering is already substantially quicker than the stock 1,260° rack — heavy EPS assist amplifies small inputs and makes the car feel twitchy at highway speeds. Dial in: full parking assist → reduce until highway feels settled → confirm feel in a drive session. If Z3 rack is added later (drops to ~720–800°), re-calibrate assist lighter again.
+  - > **Phase 3 provision:** At PMU16 installation (07K swap), move the EPS Controller IGN wire from the Phase 1 relay board rail → **PMU16 O8** (10A channel). One wire re-termination; no other EPS changes at Phase 3. Source: `harnesses/eps-column.wv` lines 58–63; `harnesses/power-distribution.wv` O8.
+
 ### Drivetrain — 8HP Swap  [DRIVETRAIN] ⚠️
 > **Prerequisite:** MaxxECU should already be installed, EWS2 bypassed, and M52 running on MaxxECU before starting this section. See ECU & Chassis Wiring below.
 
@@ -799,20 +816,6 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - > ⚠️ **Pitfall:** The alternator charge wire runs from the B+ terminal on the alternator to the main battery/fusebox. In the new longitudinal orientation this run may be longer than in the transverse MK5 — plan the wire route before cutting to length.
   - > Wire the alternator D+ (excite) terminal to a switched 12V source in the body harness. The alternator will self-excite above ~1,500 RPM via the voltage regulator, but without the excite wire it will not charge reliably from cold start.
   - > **Radlok option for B+ terminal:** Amphenol Radlok 8mm M8×1.25 Female adapter ([Racing History Co.](https://www.racinghistorycompany.com/product/radlok-8mm-stud-m8x1-25-female/), ~$22 CAD) threads onto the M8 B+ stud of the `07K 903 023 A` alternator, presenting a Radlok socket for the charge wire cable end. Tool-free alternator disconnect at engine removal. **Cable end connector (not sold by Racing History Co.):** genuine Amphenol `RL00801-35RE` or `-50RE` (red, sized to your B+ wire gauge — 50mm²/~1/0AWG for the higher-current alternator run) from [TTI](https://www.tti.com/content/ttiinc/en/manufacturers/amphenol/products/amphenol-industrial-radlok-series.html), ~$7.40–11.56/ea. Crimp the Radlok cable end onto the charge wire before sleeving the loom.
-
-### Steering — EPS  [STEERING]
-
-> **Primary approach: Stock hydraulic rack + de-powered lines + column EPS + SLR Mini Kit = ~900° LTL.** Mini Kit reduces LTL by 28–30% (3.5 LTL → ~2.5 LTL = ~893°). This matches the Moza R5 sim baseline exactly — no Z3 rack required. EPS assist knob is the real-world equivalent of FFB weight adjustment.
-
-- [ ] ⚠️ Confirm EPS path: contact EPowerSteering.com about RHD column compatibility ([epowersteering.com](https://epowersteering.com/purchase/product/bmw-e36/)) — or plan for Peugeot 206 GTi / Toyota MR2 ZZW30 salvage column with fabricated bracket
-- [ ] 🔧 **De-power stock hydraulic rack** (do not replace rack — keep stock)
-  - **Preferred method — return-line loop:** Route the hydraulic return line back into the reservoir instead of capping the ports. Rack stays lubricated, no internal drag from trapped air, acts as a clean manual rack. Remove or leave the pump belt — pump freewheels harmlessly.
-  - Do NOT fully cap ports dry — trapped air causes uneven rack feel and inconsistent center return.
-  - Stock rack = 3.5 LTL = 1,260° travel. After Mini Kit install: ~2.5 LTL = ~900°. EPS provides all assist.
-  - **Alternative (skip for this build):** Z3 rack swap (direct bolt-in, 2.75 LTL = 990°) — adds cost and ratio complexity without benefit when Mini Kit already hits 900°. Only consider if Mini Kit is not being run. If Z3 rack + Mini Kit are stacked: combined ratio drops to ~2.0–2.2 LTL (~720–800°) — supercar/drift car territory; requires significantly lighter EPS assist calibration.
-- [ ] ⚠️ Install column-assist EPS unit (under dash)
-  - > ⚠️ **Pitfall:** The assist knob is set once before driving. The EPowerSteering.com KIT-33 Basic EPS Controller has **no VSS or external signal input of any kind** — assist level is fixed via the dashboard potentiometer only. There is no port to wire MaxxECU into. Set the knob to a level that works acceptably at both parking and highway speeds. Source: `harnesses/eps-column.wv`; `E36_9000RPM_Project_Plan_Verified.md` Power Steering row (speed-sensitive assist recommendation explicitly removed).   → [ECU]
-  - > ⚠️ **Pitfall — EPS calibration at ~900°:** Start with lighter assist than you expect to need. At ~900° the steering is already substantially quicker than the stock 1,260° rack — heavy EPS assist amplifies small inputs and makes the car feel twitchy at highway speeds. Dial in: full parking assist → reduce until highway feels settled → confirm drift session feel. If Z3 rack is added later (drops to ~720–800°), re-calibrate assist lighter again.
 
 ### Air Conditioning  [AC]
 - [ ] ✅ Mount 12V electric AC compressor ([Cold Hose universal kit](https://coldhose.com/products/universal-12v-electric-compressor-kit)) — mount away from exhaust heat

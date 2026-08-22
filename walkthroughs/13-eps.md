@@ -1,9 +1,10 @@
 # Electric Power Steering — EPS Column Installation
 
-**Phase:** 3  
+**Phase:** 1 (preferred — M52 in car; EPS is independent of engine and does not require 07K swap)  
+**Phase 3 note:** At the 07K swap, one wire re-termination is required — see Step 5 below.  
 **System tags:** `[STEERING]` `[ELECTRICAL]`  
 **Shop-mandatory:** No  
-**Prerequisites:** Condor Speed Shop Slim RHD steering shaft installed (`$308.99`, already done in Phase 1); SLR Mini Kit installed; non-tilt steering column confirmed at car sourcing; column shipped to EPowerSteering for core-exchange rebuild
+**Prerequisites:** Condor Speed Shop Slim RHD steering shaft installed (`$308.99`); SLR Mini Kit installed; non-tilt steering column confirmed at car sourcing; column shipped to EPowerSteering for core-exchange rebuild
 
 ---
 
@@ -49,7 +50,7 @@ Vendor explicitly calls out the column tube OD (1.87" or 1.75") as a common mism
 | 10 AWG wire, ~3m (Steering ECU battery + GND) | — | ~$10–15 |
 | 18 AWG wire, ~2m (EPS Controller IGN + GND) | — | ~$5 |
 | 22 AWG wire, ~2m (Adjustment Knob) | — | ~$5 |
-| PMU16 spare output O8 (IGN-switched 10A source for EPS Controller) | Already wired (PMU16 from Phase 1 — O8 designated spare) | — |
+| PMU16 spare output O8 (Phase 3 only — IGN-switched 10A source for EPS Controller) | Wired at Phase 3 PMU16 install; not needed for Phase 1 | — |
 
 ---
 
@@ -80,11 +81,12 @@ Vendor explicitly calls out the column tube OD (1.87" or 1.75") as a common mism
    - Steering ECU receptacle C GND → chassis ground stud → 10 AWG GND cable
    - Source: `harnesses/eps-column.wv` STEERING_ECU and CABLE_ECU_PWR_POS notes
 
-5. **EPS Controller IGN power:**
-   - IGN-switched +12V from PMU16 O8 (spare 10A channel, power-distribution.wv) → 10A Mini ATM fuse (supplied) → EPS Controller red wire
+5. **EPS Controller IGN power — Phase 1:**
+   - Tap the relay board IGN-switched +12V rail (same switched +12V feed used for fan/pump relay coil pin 86 in `11-ecu-chassis-wiring.md`) → 10A Mini ATM fuse (kit-supplied) → EPS Controller red wire
    - EPS Controller black wire → nearest chassis ground
-   - PMU16 O8 provides digital fusing — no additional blade fuse at fuse block needed
    - Source: `harnesses/eps-column.wv` IGN_12V_TAP notes
+
+   > **Phase 3 transition:** At PMU16 installation, move this one wire end from the relay board IGN rail to **PMU16 O8** (10A digital channel — `harnesses/power-distribution.wv`). PMU16 per-channel fusing replaces the discrete 10A Mini ATM fuse at that point; remove the fuse from the inline holder. No other EPS wiring changes at Phase 3. Source: `harnesses/eps-column.wv` lines 58–63.
 
 6. **Adjustment Knob:**
    - Route 22 AWG yellow + gray pair from planned dash-mount location → EPS Controller box location
@@ -115,8 +117,8 @@ Vendor explicitly calls out the column tube OD (1.87" or 1.75") as a common mism
     - Wait ~10 seconds → relay clicks off (no assist mode confirmed)
     - Slowly turn Adjustment Knob clockwise until relay clicks back on — that is minimum assist. Continue clockwise to desired level.
 
-14. **EPS calibration at ~900° lock-to-lock (SLR Mini Kit installed):** Start with lighter assist than expected. At ~900° the steering is already substantially quicker than the stock 1,260° rack — heavy EPS assist amplifies small inputs and makes the car feel twitchy at highway speeds. Dial in: full parking assist → reduce until highway feels settled → confirm feel in drift session. Source: `E36_DIY_Build_Checklist.md` Phase 3 Steering.
-    > ⚠️ **Pitfall — EPS calibration at ~900°:** Start lighter than you expect to need. At this ratio the steering is already substantially quicker than stock — heavy assist amplifies small inputs and feels twitchy at speed. If Z3 rack is added later (drops to ~720–800°), re-calibrate lighter again. Source: `E36_DIY_Build_Checklist.md` Phase 3 Steering.
+14. **EPS calibration at ~900° lock-to-lock (SLR Mini Kit installed):** Start with lighter assist than expected. At ~900° the steering is already substantially quicker than the stock 1,260° rack — heavy EPS assist amplifies small inputs and makes the car feel twitchy at highway speeds. Dial in: full parking assist → reduce until highway feels settled → confirm feel in a drive session. Source: `E36_DIY_Build_Checklist.md` Phase 1 Steering.
+    > ⚠️ **Pitfall — EPS calibration at ~900°:** Start lighter than you expect to need. At this ratio the steering is already substantially quicker than stock — heavy assist amplifies small inputs and feels twitchy at speed. If Z3 rack is added later (drops to ~720–800°), re-calibrate lighter again. Source: `E36_DIY_Build_Checklist.md` Phase 1 Steering.
 
 15. **Left/right effort balance:** The Calibration Potentiometer (under the round cover hole on the Steering ECU, **separate from the driver-facing Adjustment Knob**) trims left vs right steering effort. Extremely sensitive — small adjustments only. Adjust only if left/right effort is noticeably asymmetric.
 
@@ -125,7 +127,7 @@ Vendor explicitly calls out the column tube OD (1.87" or 1.75") as a common mism
 ## References
 
 - `harnesses/eps-column.wv` — full wiring spec, connector pinout, TODO list, calibration procedure
-- `E36_DIY_Build_Checklist.md` — Phase 3, Steering — EPS (lines 746–758)
+- `E36_DIY_Build_Checklist.md` — Phase 1, Steering — EPS
 - `E36_9000RPM_Project_Plan_Verified.md` — Power Steering row; Accessory Belt row
 - EPowerSteering install PDFs: [BMWE30Kit.pdf](http://epowersteering.com/pdf/BMWE30Kit.pdf) · [BasicEPSController.pdf](http://epowersteering.com/pdf/BasicEPSController.pdf) (same controller family as KIT-33)
 - [EPowerSteering E36 kit product page](https://epowersteering.com/purchase/product/bmw-e36/)

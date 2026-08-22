@@ -41,7 +41,20 @@
 
 ### Step 1 — MaxxECU Mounting
 
-Mount MaxxECU Race on the firewall or under dash — keep away from heat sources and direct water paths. Follow MaxxECU GEN2 RACE quick-start guide for mounting orientation. The M50 terminated harness connectors (C1/C2 Molex + breakout pigtails) extend from the ECU and exit through the firewall via the OEM engine harness grommet — plan the mounting position so the harness reaches the grommet without excessive slack or strain.
+**The MaxxECU Race must be mounted inside the cabin — it is not waterproof.** Per MaxxECU quickstart guide: "STREET/SPORT/RACE units must be mounted inside the vehicle (not waterproofed)." The MINI, RACE H2O, and PRO variants can go in the engine bay; the Race cannot. Source: [MaxxECU Quickstart Guide](https://www.maxxecu.com/files/Documentation/Manuals/MaxxECU%20Quickstart%20Guide%20(MINI-STREET-SPORT-RACE-PRO)-en.pdf).
+
+**Do not use the OEM E36 DME compartment.** The OEM DME is in the engine bay — a sealed compartment on the passenger-side firewall accessible from under the rubber pad, not from inside the car. It is not a cabin location. It is also prone to water ingress from the HVAC plenum cowl (BMW service bulletin 41 03 93, July 1994). Mounting a $2,900+ ECU there is not acceptable.
+
+**Correct location — RHD build:** Mount on the **left (passenger-side) cabin firewall panel**, in the passenger footwell area. This is the same side as:
+- The OEM engine harness grommet (where the M50 harness exits into the engine bay)
+- The AS79 + Maven HD30 bulkhead connectors installed at Phase 3
+- The intake side of both the M52 and 07K engines
+
+This location keeps the C1/C2 connections short to the bulkhead, puts the USB port accessible for MTune sessions without opening the hood, and keeps C2 (virtual clutch, APS, wideband) within arm's reach of the pedal box.
+
+**Harness grommet:** The OEM E36 engine harness grommet on the left firewall is already large enough for the M50 terminated harness bundle — no new hole required. The MaxxECU M50 harness docs generically say "drill a 54mm hole" but that is for vehicles without a suitable existing grommet. Do not drill; use the OEM grommet. Plan the ECU mounting position so the harness reaches the grommet without excessive slack or strain.
+
+Follow the MaxxECU GEN2 RACE quick-start guide for mounting orientation (connector-face direction, vibration isolation).
 
 ### Step 2 — EWS2 Bypass
 

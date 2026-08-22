@@ -169,7 +169,7 @@ These are not in the source checklist but are standard practice for any track ca
 - `E36_DIY_Build_Checklist.md` — Phase 4 Ongoing Maintenance Schedule (lines 794–802)
 - `40-calibration.md` — break-in milestones, initial Blackstone Labs sample
 - `30-07k-install.md` — valve clearance specs, shim sourcing
-- `36-eps.md` — EPS post-install calibration notes
+- `13-eps.md` — EPS post-install calibration notes
 - [Blackstone Labs oil analysis](https://blackstone-labs.com)
 - [Motul 300V 15W50 product page](https://www.motul.com/us/en/300-v-4t-15w50)
 - [ZF Lifeguard 8 product page](https://aftermarket.zf.com/go/en/products/product/lifeguard-fluid-8/)

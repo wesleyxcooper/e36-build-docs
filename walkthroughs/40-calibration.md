@@ -108,7 +108,7 @@ Source: `E36_DIY_Build_Checklist.md` line 788.
     - **Highway (70+ mph):** should feel light and settled without requiring active correction
     - **Parking / low speed:** should feel assisted enough that three-point turns are effortless
     - If the car feels twitchy at highway speeds but you want more low-speed assist: the Adjustment Knob is a single-point control — there is no speed-sensitive mapping in the Basic EPS Controller (KIT-33). Choose the assist level that prioritizes the driving you do most.
-    - Source: `36-eps.md` Calibration section; `harnesses/eps-column.wv`
+    - Source: `13-eps.md` Calibration section; `harnesses/eps-column.wv`
 
 15. If the Z3 rack is added later (Phase 5 plan item — drops lock-to-lock from ~900° to ~720–800°): re-calibrate EPS lighter again, as the already-quick ratio becomes even more reactive.
 
@@ -140,7 +140,7 @@ Source: `E36_DIY_Build_Checklist.md` line 788.
 - `E36_DIY_Build_Checklist.md` — Phase 4, Calibration & Ongoing Maintenance (lines 786–803)
 - `38-commissioning.md` — first-start procedure (prerequisite to this walkthrough)
 - `30-07k-install.md` — valve clearance specs and shim sourcing
-- `36-eps.md` — EPS calibration notes
+- `13-eps.md` — EPS calibration notes
 - `37-ac.md` — AC duty cycle commissioning
 - [Blackstone Labs oil analysis](https://blackstone-labs.com)
 - MaxxECU 8HP virtual clutch: [maxxecu.com/webhelp/advanced-8hp-virtual_clutch.html](https://www.maxxecu.com/webhelp/advanced-8hp-virtual_clutch.html)
