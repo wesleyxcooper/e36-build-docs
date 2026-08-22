@@ -119,8 +119,8 @@ Connector: VAG 4-pin COP (OE# `4B0973724`).
 
 | Signal | ME7.1.1 Pin | MaxxECU | Notes |
 | --- | --- | --- | --- |
-| TB Motor+ | **pin 84** | C2 H4 (MOTOR 1+) | 20 AWG min. AS79 pin 22 (cabin side only; 07K plug only). Verify polarity at install — swap Motor+/− at TB connector only if TB runs backward in e-throttle wizard. |
-| TB Motor− | **pin 92** | C2 H2 (MOTOR 1−) | Same. AS79 pin 23. Do NOT use GPO 3 or GPO 4 for motor drive. |
+| TB Motor+ | **pin 84** | C2 H4 (MOTOR 1+) | **22 AWG** (size-22D contact accepts 22–26 AWG only; 3A peak, 0.5 m run — 22 AWG adequate). AS79 pin 22 (cabin side only; 07K plug only). Verify polarity at install — swap Motor+/− at TB connector only if TB runs backward in e-throttle wizard. |
+| TB Motor− | **pin 92** | C2 H2 (MOTOR 1−) | Same. 22 AWG. AS79 pin 23. Do NOT use GPO 3 or GPO 4 for motor drive. |
 | TPS1 signal | **pin 117** | CMC G2 (pin 26) / AS79 pin 48 | — |
 | TPS2 signal | **pin 118** | CMC J2 / AIN 2 (pin 34) / AS79 pin 56 | — |
 
