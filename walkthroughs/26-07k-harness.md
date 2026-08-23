@@ -3,7 +3,7 @@
 **Phase:** 2  
 **System tags:** `[ECU]` `[ELECTRICAL]`  
 **Shop-mandatory:** No — owner-built offline, bench-tested before Phase 3 swap day  
-**Prerequisites:** Throttle path decision locked (`25-07k-air.md`); firewall bulkhead connector installed in car (Phase 1); all sensor pigtail connectors ordered (see Parts table); `maxxecu-07k.wv` harness file reviewed
+**Prerequisites:** Throttle path decision locked (`25-07k-air.md`); all sensor pigtail connectors ordered (see Parts table); `maxxecu-07k.wv` harness file reviewed. The AS79 + Maven HD30 firewall bulkhead connectors are **not** installed until Phase 3 (Step 2 of `34-ecu-harness-final.md`) — this bench build terminates at the engine-side mating plug only.
 
 ---
 
@@ -215,7 +215,7 @@ Two separate connectors. Engine-side AS79 mating plug swaps at M52→07K. Maven 
 | A7 | AC enable (GPO) | Size-20 |
 | A8 → phys pos 12 | Chassis GND engine bay | Size-16 (13A) |
 | A9–A13 | WBO2 (VS/VREF/IP/RCAL/Heater−) | Size-20 |
-| A14–A19 | APS e-pedal (Phase 3) | Size-20; cavity-plugged Phase 1 |
+| A14–A19 | APS e-pedal (Phase 3) | Size-20; cavity-plugged at Phase 3 install until DBW commissioning |
 | A20 | GPO 1 → Boost solenoid | Size-20 |
 | A21–A35 | Spare | — |
 
@@ -342,7 +342,7 @@ Plan a dedicated wire from the body harness to the 07K alternator D+ (excite) te
 ### Phase E — Throttle wiring (DBW path only)
 
 > ⚠️ **Throttle wiring depends on path chosen in `25-07k-air.md`:**
-> - **DBW path:** Wire TB Motor+/−/TPS1/TPS2 to MaxxECU e-throttle H-bridge pins. The E46 APS pedal runs separately through the Maven HD30 35-pin bulkhead connector (pins A14–A19 reserved in Phase 1). Both pedal and TB use dual-track sensors — wire both tracks to separate MaxxECU analog inputs.
+> - **DBW path:** Wire TB Motor+/−/TPS1/TPS2 to MaxxECU e-throttle H-bridge pins. The E46 APS pedal runs separately through the Maven HD30 35-pin bulkhead connector (pins A14–A19 cavity-plugged at Phase 3 bulkhead install). Both pedal and TB use dual-track sensors — wire both tracks to separate MaxxECU analog inputs.
 > - **Cable path:** No DBW motor wiring needed. Include TPS1/TPS2 signal wires for MaxxECU throttle position reading. No APS pedal harness needed.
 
 ---

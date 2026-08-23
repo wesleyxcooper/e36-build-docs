@@ -69,7 +69,7 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
    ME7.1.1 APS reference pins (for harness documentation): APS1 signal at pins 35/72; APS2 signal at pins 34/73. Source: `E36_DIY_Build_Checklist.md` Phase 3 Air/Throttle and Phase 2 ECU section.
 
 5. Run 6-wire shielded cable from pedal connector → **Maven HD30 Connector A cabin face, pins A14–A19**
-   (pre-allocated at Phase 1, cavity-plugged until Phase 3):
+   (cavity-plugged at Phase 3 bulkhead install until DBW commissioning):
    - A14 = APS GND 1
    - A15 = APS GND 2
    - A16 = APS VCC2

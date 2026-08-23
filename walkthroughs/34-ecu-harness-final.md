@@ -117,7 +117,7 @@ Source: [Aero-Electric MIL-C-38999 Series I assembly instructions](https://www.a
 | A6 — EWP PWM (20 AWG) | MaxxECU GPO output | CMC pin (assign in MTune — confirm available GPO) |
 | A7 — AC enable (18 AWG) | MaxxECU GPO output | CMC pin (assign in MTune) |
 | A8 — Chassis GND (14 AWG, size-16) | Chassis GND | Engine bay chassis GND lug (same stud as A3) |
-| A9–A13 — WBO2 VS/VREF/IP/RCAL/Heater− | MaxxECU M50 wideband controller | Stays on existing wiring |
+| A9–A13 — WBO2 VS/VREF/IP/RCAL/Heater− | MaxxECU built-in WBO2 controller (CMC wideband pins) | Routed via HD30 A9–A13 → engine harness → LSU 4.9 connector |
 | A14–A19 — APS e-pedal (Phase 3) | MaxxECU C2 APS inputs | See `35-dbw-throttle.md` |
 | A20 — GPO1 boost solenoid (20 AWG) | MaxxECU CMC B4 (pin 8) | Cabin side → through bulkhead → Superseal 2-pin at solenoid |
 
