@@ -145,7 +145,7 @@ Mount PMU16 in the cabin — firewall or inner fender, accessible for USB-CAN se
 | O6 | Condenser fan | Through DT bypass grommet |
 | O7 | AC relay coil | |
 
-**Post-shutdown EWP:** Program PMU16 to hold O5 active after key-off until CLT < 70°C CAN message from MaxxECU (or 3-min fallback timer). MaxxECU transmits CLT on CAN1 — PMU16 reads it via CAN2. Enable in MTune: Configuration → CAN settings → Data transmission.
+**Post-shutdown EWP:** Program PMU16 to hold **O5+O14** active after key-off until CLT < 70°C CAN message from MaxxECU (or 3-min fallback timer). Both outputs must be programmed — O14 provides the second 25A leg of the parallel EWP supply. MaxxECU transmits CLT on CAN1 — PMU16 reads it via CAN2. Enable in MTune: Configuration → CAN settings → Data transmission.
 
 > ⚠️ **Pitfall:** PMU16 CAN2 bus must be terminated at both ends (120Ω). PMU16 has software-controlled termination on CAN2 — enable it in PMU config if PMU16 is an endpoint. Unterminated CAN causes intermittent dropouts that are hard to diagnose at the track.
 
@@ -233,7 +233,7 @@ See `harnesses/8hp-can.wv` for the full 8HP power sequencing and CAN signal map.
 
 17. **The 07K cam sensor is a Hall effect sensor (+5V supply type); the M52 VANOS cam sensor was also Hall effect but a different connector body.** The MaxxECU HOME input (CMC H4/pin 32) receives both. In MTune, confirm:
     - Trigger → CAM/HOME input → Signal type: Digital / Hall (not VR)
-    - +5V supply is shared with MAP/TPS/PST-F1 sensor rail (bulkhead pin 30)
+    - +5V supply is shared with MAP/TPS/PST-F1 sensor rail (bulkhead pin **47** — AS79 pin 47, CMC G1)
     - Verify the HOME signal goes high on cam tooth in MTune live data before cranking. A flat line = no signal (wrong pinout, bad connection, or wrong sensor type setting).
 
 ### MTune — Wideband & Oil Pressure Protection

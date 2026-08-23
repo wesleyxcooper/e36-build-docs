@@ -195,7 +195,7 @@ Two separate connectors. Engine-side AS79 mating plug swaps at M52→07K. Maven 
 | 🔵 | 19 | Cam Hall signal | 22 | R1; same pin M52 and 07K — engine-side connector body changes only. 07K cam is Hall +5V supply type. |
 | 🔵 | 20, 41 | SPARE (07K cam and crank reuse pins 19 and 16/17/18) | — | Cavity-plugged on both M52 and 07K |
 | 🔵 | 43, 44, 45 | Knock 1, Knock 2, Knock shield drain | 22 shld | R2; 07K only, shielded STP; drain both sensors shared via pin 45 → CMC H1 |
-| 🟢 | 22, 23 | ETh Motor+, ETh Motor− | 20 | R1; 07K only (→ C2 H4/H2). Cavity-plugged on M52. |
+| 🟢 | 22, 23 | ETh Motor+, ETh Motor− | 22 | R1; 07K only (→ C2 H4/H2). Cavity-plugged on M52. AS79 size-22D contacts accept 22–26 AWG only — cannot accept 20 AWG. |
 | 🟢 | 25, 26 | CLT, IAT | 22 | R1 |
 | 🟢 | 27 | Flex fuel +12V | 22 | R1 |
 | 🟢 | 47, 48, 49 | +5V sensor, TPS1 (DBW or M52 TPS), MAP | 22 | R2 |

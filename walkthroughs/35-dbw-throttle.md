@@ -11,9 +11,11 @@
 
 The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers retaining it with MaxxECU e-throttle control, installing the BMW E46 accelerator pedal (APS) module in the E36 cabin, wiring both pedal and throttle body to MaxxECU, and completing calibration in MTune. DBW replaces ICV for idle control — MTune idle control mode changes from stepper to DBW.
 
-**GPO assignments used here:**
-- GPO 4 (CMC E4/pin 20) → DBW TB Motor+ (freed from ICV coil A)
-- The full e-throttle H-bridge output uses GPO 3 (Motor−) and GPO 4 (Motor+) in MTune. Confirm GPO/ETh assignments in MTune E-Throttle wizard before wiring.
+**Motor output used here:**
+- TB Motor+ → MaxxECU **C2 H4 (MOTOR 1+)** — dedicated H-bridge output, NOT GPO 3 or GPO 4
+- TB Motor− → MaxxECU **C2 H2 (MOTOR 1−)** — dedicated H-bridge output
+
+> ⚠️ GPO 3 = VVT solenoid; GPO 4 = spare (freed from ICV A). Using any GPO for e-throttle motor drive will damage the output stage. Assign ETh motor in MTune E-Throttle wizard as "Motor 1" (C2 outputs), not as a GPO.
 
 > Note: The VR6 74mm cable TB (Option B) is an alternative if DBW is not desired. See `E36_DIY_Build_Checklist.md` Phase 3 Air/Throttle Option B for that path. This walkthrough covers Option A (DBW only).
 
@@ -86,8 +88,8 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
 7. The 07K DBW throttle body uses a 6-pin connector. ME7.1.1 reference: Motor+ = pin 84, Motor− = pin 92, TPS1 = pin 117, TPS2 = pin 118.
 
    MaxxECU ETh1 assignment (confirm in MTune E-Throttle wizard before final wiring):
-   - Motor+ → MaxxECU **C2 H4 (MOTOR 1+)** via AS79 pin 22, 20 AWG minimum
-   - Motor− → MaxxECU **C2 H2 (MOTOR 1−)** via AS79 pin 23, 20 AWG minimum
+   - Motor+ → MaxxECU **C2 H4 (MOTOR 1+)** via AS79 pin 22, **22 AWG** (AS79 size-22D contact max — cannot accept 20 AWG)
+   - Motor− → MaxxECU **C2 H2 (MOTOR 1−)** via AS79 pin 23, **22 AWG** (AS79 size-22D contact max — cannot accept 20 AWG)
    - TPS1 → CMC G2 (pin 26) / AS79 pin **48**, 22 AWG shielded
    - TPS2 → CMC J2 (pin 34) / AS79 pin **56**, 22 AWG shielded
    - +5V → shared sensor supply rail (AS79 pin 47)

@@ -121,7 +121,7 @@ The shop dyno tune (MaxxECU 07K map, flex fuel scaling, 8HP shift calibration) i
 ### Step 9 — Coolant Bleed
 
 27. With engine idling: monitor coolant temp in MTune. Watch for coolant weeping at any hose joint. Open bleed nipples briefly when the coolant reaches 50°C to purge air pockets.
-28. The CWA400 electric water pump (configured in `33-coolant-turbo.md`) should already be running at its thermostat setpoint. Verify in MTune that the EWP is receiving its PWM signal (GPO 2, from `34-ecu-harness-final.md`).
+28. The CWA400 electric water pump (configured in `33-coolant-turbo.md`) should already be running at its thermostat setpoint. Verify the EWP is spinning — PMU16 O5+O14 drive it directly. The MaxxECU GPO channel for EWP PWM is confirmed at build time in `34-ecu-harness-final.md` (HD30 A6 — GPO assignment TBD at wiring stage). Note: GPO 2 = fuel pump relay — do not confuse.
 29. Drive the heater to MAX heat to circulate coolant through the heater core and purge air. Monitor temp until stable.
 
 ### Step 10 — Post-First-Start Inspection

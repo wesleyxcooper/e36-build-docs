@@ -21,8 +21,7 @@ This walkthrough covers two parallel systems: (1) the engine coolant circuit usi
 | --- | --- | --- |
 | Pierburg CWA400 (PWM version) | Pierburg `7.07223.10.0` / BMW `11515A05704` · [Dedicated Motorsports](https://dedicatedmotorsports.com/products/pierburg-cwa400-intercooler-pump-pwm-version.html) new ~$720; eBay OEM pull $50–150 used | ~$50–720 |
 | Kostal 2+2 connector + terminals (CWA400 connector) | SLK 2.8 ELA terminals (PN 22124499560) for pins 1–2; SLK 5.8 ELA terminals (PN 22124544900) for pins 3–4 | ~$20–30 |
-| 40A relay for CWA400 power | Bosch `0 332 002 150` | ~$10–15 |
-| 10 AWG wire, min 1m (CWA400 power + GND) | — | — |
+| 10 AWG wire, min 1m per leg (CWA400 power + GND) | 2× runs, one per PMU16 output — O5 and O14 each get a separate 10 AWG feed to the hanger stud | — |
 | GM 12380318 4-port inline heater valve | Carry-forward from Phase 1A coolant routing (or source on Amazon) | ~$20–40 |
 | 5/8" and 3/4" silicone coolant hose (bulk) | Measure in-car; various lengths | ~$60–100 |
 | 90° and 180° silicone elbows | HPS HTSEC180-075-BLK (3/4" 180° elbow) + various 90° units | ~$30–60 |

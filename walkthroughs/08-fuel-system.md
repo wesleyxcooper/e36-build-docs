@@ -3,7 +3,7 @@
 **Phase:** 1  
 **System tags:** `[FUEL]` `[ELECTRICAL]`  
 **Shop-mandatory:** No  
-**Prerequisites:** Rear subframe out (subframe reinforcement window) gives easiest access to the fuel tank. Ecumaster PMU16 mounted and wired (O4 output is the pump power source). MaxxECU installed with MTune access for fuel pump PWM config.
+**Prerequisites:** Rear subframe out (subframe reinforcement window) gives easiest access to the fuel tank. Relay block wired per `11-ecu-chassis-wiring.md` (GPO 2 low-side relay R1 is the pump power source in Phase 1 — PMU16 is not installed until Phase 3). MaxxECU installed with MTune access for fuel pump relay config.
 
 ---
 
@@ -17,7 +17,7 @@
 | Aeromotive 13129 Compact EFI FPR (return-style, 40–75 PSI adjustable) | [Aeromotive 13129](https://aeromotiveinc.com/products/compact-efi-regulators) | $185.95 |
 | Ethanol / flex fuel sensor | [Seems Legit Garage Ethanol Content Sensor](https://www.seemslegitgarage.com/product-page/ethanol-content-sensor) | $80.00 |
 | Bosch 440cc injectors (Green EV1) × 6 | [TRE Performance — 0280155968 set of 6](https://treperformance.com/i-18598170-genuine-bosch-42lb-green-giant-ev1-fuel-injectors-0280155968-6.html) | $399.00 |
-| 12 AWG red wire — pump(+) run, PMU16 O4 to hanger stud | Wire supply | — |
+| 12 AWG red wire — pump(+) run, relay R1 pin 87 to hanger stud (Phase 1; at Phase 3 this run re-terminates at PMU16 O4) | Wire supply | — |
 | 12 AWG black wire — pump(−) dedicated GND run | Wire supply | — |
 | Ring terminals, 12 AWG (M4 or M5 stud — confirm at install) | Electrical supply | — |
 

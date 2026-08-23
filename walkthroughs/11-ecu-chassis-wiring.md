@@ -200,7 +200,7 @@ MTune: AIN 3 → type = 0–5V, function = Oil pressure. AIN 1 → type = Temper
 
 | GPO | Function | CMC pin | Access point |
 | --- | --- | --- | --- |
-| GPO 1 | Reverse light relay (Phase 1) / Boost solenoid (07K Phase 3) | CMC B4 (pin 8) | ECU_12PIN pin 8 |
+| GPO 1 | Reverse light relay (Phase 1) / Boost solenoid (07K Phase 3) | CMC B4 (pin 8) | M50 harness **BOOST_SOL connector stub** (Superseal 2-way, repurposed as rev light relay low-side in Ph1; `8hp-body-integrations.wv`) |
 | GPO 2 | Fuel pump relay (low-side) | CMC C4 (pin 12) | ECU_12PIN pin 3 |
 | GPO 3 | VANOS solenoid (PWM) | CMC D4 (pin 16) | Within M50 harness — VANOS connector |
 | GPO 4 | ICV coil A | CMC E4 (pin 20) | Within M50 harness — ICV connector |
