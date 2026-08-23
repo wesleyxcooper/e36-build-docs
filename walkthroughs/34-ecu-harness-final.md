@@ -238,7 +238,7 @@ See `harnesses/8hp-can.wv` for the full 8HP power sequencing and CAN signal map.
 
 ### MTune — Wideband & Oil Pressure Protection
 
-18. Set MTune wideband input to LSU 4.9 (same sensor as M52 phase — same harness wiring). Verify the wideband sensor is a **genuine Bosch** unit — aftermarket wideband sensors have documented accuracy issues at WOT and at rich lambda values below 0.75. Tune quality depends on accurate AFR data. Source: `E36_DIY_Build_Checklist.md` Phase 3 Commissioning.
+18. Set MTune wideband input to LSU 4.9. Note: the M52 phase uses LSU 4.2 (different sensor, different pinout); Phase 3 switches to LSU 4.9 — do not swap sensors between phases. The ECU-side CMC channel assignments are the same across both phases, but the sensor connector pinout differs. Source: maxxecu.com/webhelp/wirings-lambda_sensors.html. Verify the wideband sensor is a **genuine Bosch LSU 4.9** — aftermarket wideband sensors have documented accuracy issues at WOT and at rich lambda values below 0.75. Tune quality depends on accurate AFR data. Source: `E36_DIY_Build_Checklist.md` Phase 3 Commissioning.
 
 19. Configure MaxxECU oil pressure protection map: set a minimum oil pressure threshold vs RPM (e.g. 10 PSI at idle, 50 PSI above 3,000 RPM). MaxxECU cuts ignition if pressure drops below curve. This is a standard MaxxECU protection feature — critical at 9,000 RPM where a momentary oil starvation event destroys bearings before you can react. Source: `E36_DIY_Build_Checklist.md` Phase 3 Commissioning.
 

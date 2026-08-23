@@ -3,7 +3,7 @@
 **Phase:** 3  
 **System tags:** `[ECU]` `[ENGINE]` `[SAFETY]`  
 **Shop-mandatory:** No (but fire extinguisher and a second person strongly recommended)  
-**Prerequisites:** All Phase 3 subsystems complete — 07K installed (`30-07k-install.md`), intake/boost (`31-air-boost.md`), fuel system (`32-fuel-injection.md`), coolant/turbo (`33-coolant-turbo.md`), ECU harness finalized (`34-ecu-harness-final.md`), DBW throttle calibrated (`35-dbw-throttle.md`); Bosch LSU 4.2 wideband O2 sensor installed with 18mm × 1.5 bung welded (shop)
+**Prerequisites:** All Phase 3 subsystems complete — 07K installed (`30-07k-install.md`), intake/boost (`31-air-boost.md`), fuel system (`32-fuel-injection.md`), coolant/turbo (`33-coolant-turbo.md`), ECU harness finalized (`34-ecu-harness-final.md`), DBW throttle calibrated (`35-dbw-throttle.md`); Bosch LSU 4.9 wideband O2 sensor installed with 18mm × 1.5 bung welded into manifold/downpipe (shop)
 
 ---
 
@@ -37,7 +37,7 @@ The shop dyno tune (MaxxECU 07K map, flex fuel scaling, 8HP shift calibration) i
 | Fuel pressure gauge (0–100 psi) | Inline or schrader port |
 | Timing light | For crank angle offset verification (optional if done in `34-ecu-harness-final.md`) |
 | Laptop with MTune running | MaxxECU ECU connected via USB |
-| Wideband controller (Innovate LC-2 or similar) | Connected to Bosch LSU 4.2 |
+| Laptop with MTune running (wideband) | MaxxECU built-in wideband controller drives the Bosch LSU 4.9 directly — no external wideband controller needed |
 | Feeler gauges | For post-start valve clearance spot-check reference |
 
 ---
@@ -101,8 +101,8 @@ The shop dyno tune (MaxxECU 07K map, flex fuel scaling, 8HP shift calibration) i
 
 ### Step 7 — Wideband O2 Warm-Up
 
-21. The Bosch LSU 4.2 wideband O2 requires ~20 seconds to reach operating temperature. Verify the controller (Innovate LC-2 or equivalent) shows "ready" status before logging AFR. During the first start the sensor will be heating — AFR data in the first ~30 seconds is not reliable.
-    > Verify the wideband sensor is a genuine Bosch LSU 4.2. Aftermarket clones give inaccurate readings at WOT and rich lambda — tune quality depends on accurate AFR data. Source: `E36_DIY_Build_Checklist.md` line 780.
+21. The Bosch LSU 4.9 wideband O2 requires ~20 seconds to reach operating temperature. The MaxxECU built-in wideband controller heats and reads the sensor automatically — monitor lambda readout in MTune. AFR data in the first ~30 seconds is not reliable.
+    > Verify the wideband sensor is a genuine Bosch LSU 4.9 (PN 0 258 017 025 or equivalent). Aftermarket clones give inaccurate readings at WOT and rich lambda — tune quality depends on accurate AFR data. Source: `E36_DIY_Build_Checklist.md` Phase 3 Commissioning.
 
 ### Step 8 — First Start
 

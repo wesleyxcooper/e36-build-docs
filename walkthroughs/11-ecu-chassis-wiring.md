@@ -168,7 +168,7 @@ Purchase C2 connector: MaxxECU store ID 1982, $32.25. C2 is required (not option
 **Weld 18mm×1.5 O2 bung into exhaust — shop step (15 min job).**  
 Install Bosch LSU 4.2 wideband O2 sensor. The MaxxECU M50 terminated harness includes the wideband controller and 6-pin LSU connector — no separate controller needed.
 
-> ⚠️ **Note:** `maxxecu-m52.wv` has an open TODO — the wideband O2 circuit is unmodeled in the M52 harness diagram (no WIDEBAND connector, no cable, no shield flag — unlike `maxxecu-07k.wv` which models it correctly). Author this before Phase 1 harness build: add LSU 4.2 connector, shielded cable, and connections block. Verify LSU 4.2 pinout differs from LSU 4.9 before copying from the 07K diagram.
+> **Note:** The MaxxECU M50 terminated harness pre-wires the LSU 4.2 connector — no DIY sensor connector build required for Phase 1. `maxxecu-m52.wv` documents the WIDEBAND connector, shielded cable, and connections block. LSU 4.2 pinout (pin 1=VS, 2=RCAL, 3=H+, 4=H−, 5=VREF, 6=IP) differs from LSU 4.9 — do not substitute sensors between phases. Source: maxxecu.com/webhelp/wirings-lambda_sensors.html
 
 ### Step 10 — PST-F1 Oil Pressure+Temperature Sensor
 
