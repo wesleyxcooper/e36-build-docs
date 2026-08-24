@@ -75,6 +75,8 @@ The following OEM ME7.1.1 circuits are eliminated and should not be brought thro
 
 ### Crank and cam triggers
 
+> **Crimp tool: Engineer PA-09** — `3B0973703G` housing uses JMT 1.5mm contacts. ⚠️ Label pigtails CAM and CRANK before snapping body on — identical housing, opposite pinouts.
+
 | Signal | ME7.1.1 Connector Pin | MaxxECU | Notes |
 | --- | --- | --- | --- |
 | Crank VR+ (60-2 missing tooth) | Conn B — **pin 82** | CMC H3 — TRIGGER (VR+) | Passive VR, N-1 / 60-2 trigger type. Shielded twisted pair, own sleeve. `3B0973703G` housing — label CRANK. |
@@ -82,6 +84,8 @@ The following OEM ME7.1.1 circuits are eliminated and should not be brought thro
 | Cam Hall signal | **pin 86** | CMC H4 — HOME (cam Hall) | Hall effect, +5V supply type. `3B0973703G` housing — label CAM. +5V from shared sensor rail. |
 
 ### Injectors (5-cylinder — firing order 1-2-4-5-3)
+
+> **Crimp tool: Engineer PA-09** — EV14 USCAR 2-pin contacts (Bosch EV14 pigtail kit).
 
 | Cylinder | ME7.1.1 Pin | MaxxECU CMC |
 | --- | --- | --- |
@@ -95,6 +99,8 @@ Connector: Bosch EV14 2-pin (USCAR). The MaxxECU M50 terminated harness ships wi
 
 ### Ignition coils (5-cylinder — firing order 1-2-4-5-3)
 
+> **Crimp tool: Engineer PA-09** — `4B0973724` VAG 4-pin COP housing, JPT 2.8mm contacts.
+
 | Cylinder | ME7.1.1 Pin | MaxxECU CMC |
 | --- | --- | --- |
 | IGN 1 | **pin 102** | A2 |
@@ -107,6 +113,8 @@ Connector: VAG 4-pin COP (OE# `4B0973724`).
 
 ### Sensors
 
+> **Crimp tool: Engineer PA-09** — MAP/CLT/IAT use JMT 1.5mm contacts (`3B0973703G` and `1J0973702` housings). Knock sensor contacts: `1J0973712` housing, JMT 1.5mm — **not the same body as CLT/IAT**.
+
 | Signal | ME7.1.1 Pin | MaxxECU CMC | Notes |
 | --- | --- | --- | --- |
 | Knock sensor 1 | **pin 106** | K3 (DIN/VR1, CMC pin 39) | Bosch flat 1-pin, M8 bolt mount; GND via bolt. AS79 pin 43. Shielded 22 AWG STP; drain → AS79 pin 45 → CMC H1. |
@@ -117,6 +125,8 @@ Connector: VAG 4-pin COP (OE# `4B0973724`).
 
 ### DBW throttle body (DBW path only — see `25-07k-air.md`)
 
+> **Crimp tool: Engineer PA-09** — TB connector contacts (VDO/Continental 6-pin; confirm housing PN at install). AS79 contacts for the firewall crossing → Daniels AFM8 + K42/K40.
+
 | Signal | ME7.1.1 Pin | MaxxECU | Notes |
 | --- | --- | --- | --- |
 | TB Motor+ | **pin 84** | C2 H4 (MOTOR 1+) | **22 AWG** (size-22D contact accepts 22–26 AWG only; 3A peak, 0.5 m run — 22 AWG adequate). AS79 pin 22 (cabin side only; 07K plug only). Verify polarity at install — swap Motor+/− at TB connector only if TB runs backward in e-throttle wizard. |
@@ -125,6 +135,8 @@ Connector: VAG 4-pin COP (OE# `4B0973724`).
 | TPS2 signal | **pin 118** | CMC J2 / AIN 2 (pin 34) / AS79 pin 56 | — |
 
 ### Accelerator pedal (DBW path — APS 1 + APS 2, cabin-to-cabin via HD30 Connector A)
+
+> **Crimp tool: Deutsch HDT-48-00** (or JRready NEW-DT2) — Maven HD30 size-20 contacts (A14–A19). MaxxECU C2 end → Molex 63811-9200.
 
 | Signal | ME7.1.1 Ref Pin | MaxxECU | HD30 A pin | Notes |
 | --- | --- | --- | --- | --- |
@@ -141,6 +153,8 @@ second short cable runs from the same pins to MaxxECU C2. AS79 pins 72–77 are 
 spare. Source: `harnesses/firewall-bulkhead-dual.wv`, `harnesses/epedal-bmw-e46.wv`.
 
 ### VVT cam actuator solenoid
+
+> **Crimp tool: Engineer PA-09** — VW Micro Timer 1.5mm Sealed 2-pin (`1J0 973 702` body, JMT 1.5mm contacts).
 
 | Signal | ME7.1.1 Pin | MaxxECU | Notes |
 | --- | --- | --- | --- |
@@ -268,9 +282,13 @@ High-current feeds (fuel pump, fan, EWP) are **never** in the ECU signal loom �
 
 1. Cut all wires to measured length
 2. Before crimping any terminal: slide a Brady PermaSleeve label sleeve onto each wire — the sleeve cannot pass through a terminal body after crimping
-3. Crimp AS79 engine-side contact: **Daniels AFM8 + K42 positioner** for pin contacts (size-22, 22–26 AWG) — K40 for socket contacts. Source: m-cal.com AS020-35SN ("Primary Contacts Size: 22 AWG"). NOT K43 (size-20 positioner).
-4. Verify with pull-test before insertion
-5. Insert into AS79 engine-side mating plug body; verify seating click
+3. Crimp by contact type — one tool per family, do not mix:
+   - **AS79 engine-side contacts (size-22):** Daniels AFM8 + K42 positioner (pin contacts) / K40 (socket contacts). NOT K43 (size-20 positioner). NOT HDT-48-00 (DT/DTM/DTP only).
+   - **VAG sensor/injector/coil pigtail contacts (JMT 1.5mm / JPT 2.8mm):** Engineer PA-09.
+   - **Maven HD30 size-20 contacts (APS cabin wiring):** Deutsch HDT-48-00 or JRready NEW-DT2.
+   - **MaxxECU C1/C2 Molex contacts:** Molex 63811-9200 (small) / 63811-8900 (large).
+4. Verify each crimp with pull-test before insertion
+5. Insert into connector body; verify seating click on each contact
 
 > **Label content:** AS79 pin number + signal name on both ends. Example: wire in pin 8 gets label `8 INJ1` at the AS79 end and `8 INJ1` at the loose engine-side end.
 
