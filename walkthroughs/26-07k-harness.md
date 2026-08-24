@@ -282,13 +282,14 @@ High-current feeds (fuel pump, fan, EWP) are **never** in the ECU signal loom �
 
 1. Cut all wires to measured length
 2. Before crimping any terminal: slide a Brady PermaSleeve label sleeve onto each wire — the sleeve cannot pass through a terminal body after crimping
-3. Crimp by contact type — one tool per family, do not mix:
+3. Strip each wire: **Ideal Stripmaster 45-097** + L4994 blades (16–26 AWG fixed-notch) — do not use auto-adjusting or general-purpose strippers on 22 AWG TXL (thin insulation wall, nicks strands)
+4. Crimp by contact type — one tool per family, do not mix:
    - **AS79 engine-side contacts (size-22):** Daniels AFM8 + K42 positioner (pin contacts) / K40 (socket contacts). NOT K43 (size-20 positioner). NOT HDT-48-00 (DT/DTM/DTP only).
    - **VAG sensor/injector/coil pigtail contacts (JMT 1.5mm / JPT 2.8mm):** Engineer PA-09.
    - **Maven HD30 size-20 contacts (APS cabin wiring):** Deutsch HDT-48-00 or JRready NEW-DT2.
    - **MaxxECU C1/C2 Molex contacts:** Molex 63811-9200 (small) / 63811-8900 (large).
-4. Verify each crimp with pull-test before insertion
-5. Insert into connector body; verify seating click on each contact
+5. Verify each crimp with pull-test before insertion
+6. Insert into connector body; verify seating click on each contact
 
 > **Label content:** AS79 pin number + signal name on both ends. Example: wire in pin 8 gets label `8 INJ1` at the AS79 end and `8 INJ1` at the loose engine-side end.
 

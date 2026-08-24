@@ -368,6 +368,28 @@
 
 ---
 
+### Clear Silicone Coolant Hoses — Aesthetic Option  [PLUMBING · AESTHETIC]
+
+> Clear (transparent) silicone coolant hoses are available for the E36 from Mishimoto, HPS, and similar suppliers. Aesthetic appeal is obvious — visible flowing coolant, visible level, matches a clean engine bay. Several real downsides to factor in before committing:
+
+**Downsides:**
+
+1. **Coolant permeation / smell.** Silicone is roughly 400× more gas-permeable than butyl rubber. You will lose a small but measurable amount of coolant through the hose walls over time — not a fast leak, but enough to cause a faint coolant smell in and around the engine bay after hard runs. Antifreeze/water ratio drifts with it. This is not unique to clear hoses (all silicone hoses have this property) but it is worth knowing before assuming silicone = better sealed. Monitor coolant level and concentration more frequently than you would with rubber. ([Source: northamericanmotoring.com](https://www.northamericanmotoring.com/forums/r50-r53-hatch-talk-2002-2006/231898-why-you-shouldn-t-install-silicone-hoses.html) — MINI community, same material behavior; [siliconerubberextrusions.co.uk](https://www.siliconerubberextrusions.co.uk/news/yellowing-of-silicone-rubber-causes-and-solutions/) — permeability data)
+
+2. **Yellowing/hazing over time.** This is the biggest hidden downside for clear specifically. Most automotive clear silicone hoses are peroxide-cured; the peroxide curing byproducts oxidize under sustained heat and UV, causing the hose to turn yellow or hazy — sometimes within one or two seasons of track use. The mechanical properties are unaffected (it's not cracking), but the transparency you paid for degrades. Platinum-cured formulations are significantly more stable but harder to source in E36-specific sizes and cost more. ([Source: medicalsiliconetube.com](https://www.medicalsiliconetube.com/faq-why-does-transparent-silicone-tubing-yellow-and-how-can-it-be-slowed.html))
+
+3. **Spring clamp incompatibility.** BMW uses self-adjusting spring clamps from the factory. These maintain constant clamping pressure across thermal expansion cycles and are genuinely difficult to beat for a hose barb. Silicone hoses (including clear ones) require either worm gear clamps — which don't self-adjust and can loosen across hot/cold cycles — or constant-torque clamps, which do maintain pressure but cost significantly more per clamp. The MINI write-up above documents an actual hose-on-alternator rubbing failure from slightly-off silicone fitment that OEM hoses (with their length and angle markers) would have caught. Check fitment carefully and use constant-torque clamps if going this route.
+
+4. **Shows every impurity in the coolant.** Looks excellent with fresh, correctly concentrated blue or green coolant. Any rust particulate, scale, OAT dye degradation, or flush residue is immediately, permanently visible from the engine bay. Given the M52 system's age, a full flush + fresh coolant fill is non-negotiable before installing clear hoses — don't install them over a system you haven't already verified is clean.
+
+**Build-specific context:**
+
+- **Phase 1 (M52):** A pre-made E36 M3 / 328i silicone hose kit in clear is a drop-in option at this phase. Sources: Mishimoto and HPS both list E36-specific kits. Verify fitment for the convertible — some kits are coupe-spec only.
+- **Phase 3 (07K):** The 07K Phase 3 coolant routing is fully custom (Samco/Vibrant silicone hose, measured and cut at the engine-in-car stage). Clear hose bulk stock works fine for custom-routed runs — source by ID/OD and radius needed rather than as a kit. Applies equally to clear or any other color.
+- **Verdict:** Worth doing if the aesthetic is important to you — the downsides are real but manageable with a clean system, quality constant-torque clamps, and a habit of checking coolant level. The yellowing timeline is the only genuinely non-recoverable issue; avoid budget peroxide-cured clear hose if longevity of the clarity matters.
+
+---
+
 ## Interior  [INTERIOR]
 
 > Beyond the safety gear already spec'd (roll bar, harness), these are comfort and driver-experience upgrades.
