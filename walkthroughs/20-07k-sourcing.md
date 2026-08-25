@@ -19,8 +19,8 @@
 | DomiWorks 07K→8HP adapter kit (if DomiWorks path) | VW 1.8T/1.9T → BMW 8HP N57 Kit SKU 21015002 · [domi-works.com](https://www.domi-works.com/products/vw-1-8t-1-8t-to-bmw-8hp-45-50-70-75-n47-n57-b57-b58-s58-adapter-kit) | ~$1,200–1,397 est. |
 | Chatham CNC 07K→8HP custom kit (if Chatham path) | Quote required · [chathamcnc.com](https://www.chathamcnc.com/contact.html) | Quote only |
 | LPS 07K titanium exhaust stud kit | [lpsfab.com](https://lpsfab.com/products/07k-titanium-exhaust-stud-kit) | TBD |
-| HF 2-Ton Foldable Shop Crane | SKU 58755 · [harborfreight.com](https://www.harborfreight.com/2-ton-capacity-asme-pase-certified-foldable-shop-crane-58755.html) | $369.99 |
-| HF 1000 lb Engine Stand | SKU 59201 · [harborfreight.com](https://www.harborfreight.com/1000-lb-capacity-engine-stand-59201.html) | $109.99 |
+| HF 2-Ton Foldable Shop Crane | SKU 58755 · [harborfreight.com](https://www.harborfreight.com/2-ton-capacity-asme-pase-certified-foldable-shop-crane-58755.html) — **PURCHASED** | $369.99 |
+| HF 1000 lb Engine Stand | SKU 59201 · [harborfreight.com](https://www.harborfreight.com/1000-lb-capacity-engine-stand-59201.html) — **PURCHASED** | $109.99 |
 | S&P Automotive 07K Engine Stand Adapter | [s-pautomotive.com](https://s-pautomotive.com/product/07k-engine-stand-mount/) — **PURCHASED** | $99.00 |
 | Zerust VCI Engine Storage Bag (24"×26"×46") | [Amazon](https://www.amazon.com/Zerust-Engine-Storage-Bag-24/dp/B0CJMMPGF5) | ~$35 |
 | Wisedry 4×500g rechargeable silica gel packs | [Amazon](https://www.amazon.com/wisedry-Silica-Gel-Desiccant-Packs/dp/B0CKYSZ31J) | — |
