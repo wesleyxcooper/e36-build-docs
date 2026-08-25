@@ -9,16 +9,20 @@
 
 ## Parts
 
-### Pigtail connectors (order before harness build kickoff)
+### Connector housings + terminals (direct-terminate — no pigtail)
 
-| Qty | Part | PN / Source | Cost |
+Buy connector **housings and individual terminals only** — do not buy pre-made pigtail assemblies. Direct-terminate by crimping TXL build wire into the terminal and seating it in the housing. This eliminates the pigtail-to-harness splice at every connector; one fewer joint per connection, multiplied across ~17 connectors. The Engineer PA-09 in the tool BOM handles all terminal families listed below. Source: Drive, Revive, Tinker harness build video ([youtube.com/watch?v=G3fSqfpBi1U](https://www.youtube.com/watch?v=G3fSqfpBi1U)) and lessons-learned video ([youtube.com/watch?v=Z3hmNz64Gw8](https://www.youtube.com/watch?v=Z3hmNz64Gw8)) — "minimize joints = minimize failure points."
+
+> ⚠️ **Do not source connector housings or terminals from Amazon.** Listing quality and wire material are unverifiable. Source from ProWire USA, Del City, Waytek, ECS Tuning, or FCP Euro only.
+
+| Qty | Part | Terminal family | Source |
 | --- | --- | --- | --- |
-| 8-pack (5 needed + spares) | EV14 injector connectors | [Amazon B07STLGB7Z](https://www.amazon.com/dp/B07STLGB7Z) | $9.93 |
-| 2× 4-packs (5 needed + spares) | VAG COP coil connectors (4-pin) | OE# `4B0973724` · [Amazon B093HK7PN1](https://www.amazon.com/dp/B093HK7PN1) — buy 2 packs | ~$24 total |
-| 4× individual | 3-pin VAG sensor connectors (cam / crank / MAP) | OE# `3B0973703G` · [Amazon B0DY4CC12Q](https://www.amazon.com/dp/B0DY4CC12Q) | $11.99 ea (~$48) |
-| 3× individual | 2-pin NTC sensor connectors (CLT + IAT) | OE# `1J0973702` · [Amazon B0GLPX5HN5](https://www.amazon.com/dp/B0GLPX5HN5) | $5.99 ea (~$18) |
-| 2× individual | 2-pin flat knock sensor connectors | OE# `1J0973712` · ECS Tuning or FCP Euro | ~$5–10 ea |
-| 1 | Firewall bulkhead mating plug (engine side) | Deutsch Autosport AS 47-way or 79-way flanged jam-nut plug | ~$60–90 |
+| 5 housings + 10 contacts + seals | EV14 / USCAR 2-pin injector connectors | Aptiv/Delphi USCAR 280 | [ProWire USA](https://www.prowireusa.com); [Del City](https://www.delcity.net); Waytek |
+| 5 housings + 20 contacts + seals | VAG 4-pin COP coil connectors | Bosch JPT 2.8mm | OE# `4B0973724` / `1J0973724`; [ProWire USA](https://www.prowireusa.com); ECS Tuning; FCP Euro |
+| 4 housings + 12 contacts + seals | 3-pin VAG sensor connectors (cam / crank / MAP) | Bosch JMT 1.5mm | OE# `3B0973703G`; [ProWire USA](https://www.prowireusa.com); ECS Tuning; FCP Euro |
+| 3 housings + 6 contacts + seals | 2-pin NTC sensor connectors (CLT + IAT) | Bosch JMT 1.5mm | OE# `1J0973702`; [ProWire USA](https://www.prowireusa.com); ECS Tuning; FCP Euro |
+| 2 housings + 4 contacts + seals | 2-pin flat knock sensor connectors | Bosch JMT 1.5mm | OE# `1J0973712`; ECS Tuning; FCP Euro — **not the same body as CLT/IAT** |
+| 1 | Firewall bulkhead mating plug (engine side) | AS size-22 solid barrel | Deutsch AS 47-way or 79-way flanged jam-nut plug; [RaceSpec Online](https://racespeconline.com) |
 
 > ⚠️ **CRITICAL — `3B0973703G` connector body warning:** The VW 07K cam sensor and crank sensor use the **same `3B0973703G` housing** but with **opposite pinouts**. Crank = passive VR (Signal+/Signal−/Shield). Cam = active Hall (+5V/GND/Signal). **Label pigtails clearly at crimp time with CAM and CRANK.** A swapped pigtail produces a no-start with no obvious failure indicator. Source: `maxxecu-07k.wv` header.
 
@@ -34,7 +38,7 @@
 | Techflex F6 expandable braid — 1/4" (sub-looms) | 6mm OD | Injector, coil, sensor, trigger, knock sub-looms — one sleeve per group |
 | DEI Fire Sleeve — 3/8" ID × 36" kit | silicone-over-fiberglass, 500°F continuous / 2000°F intermittent. **p/n 010470, $26.99** — [designengineering.com](https://www.designengineering.com/fire-sleeve-tape-kit-0-375-id-x-36/). Includes 36" sleeve + 16" Fire Tape. | WBO2 cable: first 300 mm from sensor bung. CLT pigtail: first 150 mm from sensor body. 3/8" ID (10 mm) fits both cables. One kit provides 36" — enough for both runs (450 mm needed). Note: DEI makes no 1/2" size. |
 | DEI Reflect-A-Gold — 1-1/2" × 15' roll | Metalized polyimide laminated glass cloth, 800°F continuous (adhesive rated to 325°F). **p/n 010394, $42.99** — [designengineering.com](https://www.designengineering.com/reflect-a-gold-heat-reflective-tape-1-5-x-15/). NOT Reflect-A-Cool (different product). | Knock sensor sub-loom: wrap any section running within 100 mm of exhaust manifold, over the Techflex sleeve. Minimum 1.5" wide (narrowest available). |
-| Raychem SRGB solder sleeves — 22–26 AWG | Small, blue band | Pigtail-to-harness splices. Heat gun only — not iron. Buy a box of 25. |
+| Raychem SRGB solder sleeves — 22–26 AWG | Small, blue band | **Not needed for direct-terminated connectors.** Keep a small pack (~5) for any sensor that ships with an integral moulded pigtail (e.g. E46 APS donor connector sourced from a donor car rather than as a housing+terminal kit). Heat gun only — not iron. |
 | 3:1 adhesive-lined heat-shrink, assorted | 1/4", 3/8", 1/2" | Breakout boot transitions, sub-loom end caps |
 | Engineer PA-09 micro-pin crimper | ~$30–40, Amazon | All VAG pigtail contacts (cam/crank/MAP/CLT/IAT/knock/COP/EV14). Covers Bosch JMT 1.5mm and JPT 2.8mm contacts. *Note: previously listed as Knipex 97 52 68 — that PN does not exist in the Knipex catalog* |
 | Daniels DMC AFM8 crimp tool + positioner K42 (pin) / K40 (socket) | ~$400–550 AFM8 body; ~$60–80 positioners | **AS79 / 8STA size-22 contacts only.** The AFM8 (M22520/2-01 equiv) gives the required 8-impression MIL crimp for 38941-22 / 8599-0702-900 contacts. The HDT-48-00 does NOT support size-22 contacts. Source: [crimptech.com.au/autosport-tooling-guide](https://www.crimptech.com.au/autosport-tooling-guide-for-te-deutsch-connectors/) |
@@ -293,45 +297,47 @@ High-current feeds (fuel pump, fan, EWP) are **never** in the ECU signal loom �
 
 > **Label content:** AS79 pin number + signal name on both ends. Example: wire in pin 8 gets label `8 INJ1` at the AS79 end and `8 INJ1` at the loose engine-side end.
 
-#### B2 — Prep pigtails before splicing
+#### B2 — Crimp sensor-side terminals; label before snapping connector body
 
-For each pigtail (before snapping the connector body on):
-1. Slide a PermaSleeve label sleeve onto the pigtail wire near the connector end
-2. Print and apply the label: signal + cylinder (e.g., `INJ1`, `INJ2`, ... `COL1`, `CAM`, `CRANK`)
-3. Snap the connector body on — the label is now permanently positioned just behind the connector
+For each sensor connector (before snapping the body on):
+1. Slide a PermaSleeve label sleeve onto the harness wire — it cannot pass through the connector body after the terminal is inserted
+2. Print and apply the label: signal + cylinder (e.g., `INJ1`, `INJ2`, `COL1`, `CAM`, `CRANK`)
+3. Crimp the terminal onto the wire (Engineer PA-09), pull-test, then insert until the locking lance clicks
+4. Snap the connector body on — the label is permanently positioned just behind the connector
 
-For identical connectors (6 injectors, 5 coils, 3-pin VAG sensors): this label is what you look at with your hands inside the engine bay to grab the right connector. If you skip it, you will swap them.
+For identical housings (injectors, coils, 3-pin VAG sensors): the label is what you grab by feel with your hands in the engine bay. Skip it and you will swap them.
+
+**No splice step.** With direct termination the harness wire runs end-to-end from AS79 terminal to sensor connector terminal. There is no intermediate joint.
 
 ---
 
-### Phase C — Route, splice, and test
+### Phase C — Route and test
 
 #### C1 — Route the main trunk
 
-Lay the fully-crimped main trunk along the engine with the AS79 mating plug at the firewall position and all wire ends at their branch points. Confirm lengths reach all components with slack. Trim or extend now — not after sleeving.
+Lay the fully-crimped main trunk along the engine with the AS79 mating plug at the firewall position and all wire ends at their branch points. Confirm lengths reach all components with slack. All sensor connector bodies are already populated with terminals (Phase B). Trim or extend now — not after sleeving.
 
-#### C2 — Splice pigtails
+#### C2 — Verify connector positions
 
-At each branch point:
-1. Cut the main harness wire to its final length
-2. Label the cut end (PermaSleeve: signal name within 20mm of the splice point)
-3. Join to pigtail bare end with a **Raychem SRGB solder sleeve** (heat gun, not iron) or non-insulated butt crimp + adhesive heat-shrink
-4. The pigtail connector body snaps onto the component at install time
+At each branch point confirm:
+1. The connector body reaches the sensor with adequate slack and a natural routing line
+2. The connector is not under tension at its mating position
+3. Each connector label is readable with the connector in its installed position
 
-> ⚠️ **Do not solder with an iron.** Iron solder creates a rigid joint at the flex point. Under engine vibration, the wire cracks at the insulation boundary — the break is invisible inside heat-shrink. Raychem sleeves fully encapsulate the joint and the sleeving provides strain relief.
+No splice is needed. Each wire runs end-to-end from the AS79 terminal to the sensor connector terminal.
 
 #### C3 — Bench continuity test — mandatory before sleeving
 
 With the harness fully wired but completely **un-sleeved**, verify against the `.wv` file:
 
-- [ ] Continuity: every signal wire ECU pin → sensor pigtail connector pin
+- [ ] Continuity: every signal wire ECU pin → sensor connector pin
 - [ ] No shorts between adjacent pins (especially power to sensor GND)
 - [ ] Shield drain: terminates at Sensor GND (CMC H1 / AS79 pin 79), not chassis GND
 - [ ] Pull-test: every terminal in the AS79 mating plug survives a firm hand tug
 
 **Do not sleeve until all checks pass.** Techflex expandable braid makes depinning destructive. Fix any fault before sleeving.
 
-Photograph all pigtail connectors against the engine at this stage — before sleeving, every wire is visible and traceable. This photograph is your reference for any future debugging.
+Photograph all sensor connectors against the engine at this stage — before sleeving, every wire is visible and traceable. This photograph is your reference for any future debugging.
 
 ---
 
