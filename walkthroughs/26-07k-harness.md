@@ -13,7 +13,7 @@
 
 Buy connector **housings and individual terminals only** — do not buy pre-made pigtail assemblies. Direct-terminate by crimping TXL build wire into the terminal and seating it in the housing. This eliminates the pigtail-to-harness splice at every connector; one fewer joint per connection, multiplied across ~17 connectors. The Engineer PA-09 in the tool BOM handles all terminal families listed below. Source: Drive, Revive, Tinker harness build video ([youtube.com/watch?v=G3fSqfpBi1U](https://www.youtube.com/watch?v=G3fSqfpBi1U)) and lessons-learned video ([youtube.com/watch?v=Z3hmNz64Gw8](https://www.youtube.com/watch?v=Z3hmNz64Gw8)) — "minimize joints = minimize failure points."
 
-> ⚠️ **Do not source connector housings or terminals from Amazon.** Listing quality and wire material are unverifiable. Source from ProWire USA, Del City, Waytek, ECS Tuning, or FCP Euro only.
+> ⚠️ **Avoid generic or unbranded connector supplies from Amazon.** For OEM part numbers (e.g. `3B0973703G`, `4B0973724`, EV14 USCAR kits), Amazon is acceptable if the listing is clearly an OEM or Delphi/TE/Bosch part with reviews confirming authenticity. The warning is against convenience sourcing of unknown-brand terminals and wire, not against Amazon per se. Where a ProWire USA, Del City, Waytek, ECS Tuning, or FCP Euro listing exists for the same OEM part, prefer it — fitment and material are more reliably documented.
 
 | Qty | Part | Terminal family | Source |
 | --- | --- | --- | --- |
