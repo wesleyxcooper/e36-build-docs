@@ -54,7 +54,9 @@ This location keeps the C1/C2 connections short to the bulkhead, puts the USB po
 
 **Harness grommet:** The OEM E36 engine harness grommet on the left firewall is already large enough for the M50 terminated harness bundle — no new hole required. The MaxxECU M50 harness docs generically say "drill a 54mm hole" but that is for vehicles without a suitable existing grommet. Do not drill; use the OEM grommet. Plan the ECU mounting position so the harness reaches the grommet without excessive slack or strain.
 
-Follow the MaxxECU GEN2 RACE quick-start guide for mounting orientation (connector-face direction, vibration isolation).
+Follow the MaxxECU RACE quick-start guide for mounting orientation (connector-face direction, vibration isolation). Note: the unit is the GEN1 RACE (REV9+ hardware) — not the GEN2 RACE product. Any reference to "GEN2 RACE quick-start guide" in these docs is informal (meaning "current-gen RACE" vs the old V1), not the literal MaxxECU GEN2 RACE product (which uses Superseal connectors, not Molex CMC).
+
+> **Alternative architecture (future-build reference):** Engine-bay ECU mount using the **MaxxECU RACE H2O** (IP67, ~$43 more than equivalent RACE PREMIUM kit per maxxecu.com) would eliminate the AS79 79-pin firewall connector entirely — every engine signal terminates directly at the ECU without crossing the firewall. A small USB feedthrough (14mm hole, rubber grommet, USB Type-B extension cable + Neutrik NAUSB3 flush panel-mount ~$15) through the firewall immediately behind the ECU gives cabin USB access without opening the hood — same result as cabin mount. Only the APS e-pedal and X20 body signals would still need a firewall crossing, requiring a ~10-pin DT connector vs the current 79-pin AS79. The H2O uses the same C1/C2 Molex CMC connectors as the GEN1 RACE (confirmed: maxxecu.co.nz SKU 1895 lists the same 48-pin CMC as RACE H2O) — harness pin assignments are identical. This approach is unsuitable for the current build (unit already purchased, AS79 harness already designed) but is the recommended architecture for any future build.
 
 ### Step 2 — EWS2 Bypass
 
@@ -121,7 +123,7 @@ Route the harness from the ECU mounting point, through the grommet, and into the
 
 ### Step 6 — Ground Straps
 
-Per MaxxECU GEN2 RACE quick-start guide:
+Per MaxxECU RACE quick-start guide (REV9+):
 1. Battery negative → chassis stud
 2. Engine block → chassis via factory M52 bonding strap — keep it, verify it is clean (no paint under lug, star washer, tight nut)
 3. **MaxxECU ENGINE GND pin → cylinder head** — MaxxECU's own mandatory requirement, not optional

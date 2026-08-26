@@ -84,7 +84,7 @@ The following OEM ME7.1.1 circuits are eliminated and should not be brought thro
 | Signal | ME7.1.1 Connector Pin | MaxxECU | Notes |
 | --- | --- | --- | --- |
 | Crank VR+ (60-2 missing tooth) | Conn B — **pin 82** | CMC H3 — TRIGGER (VR+) | Passive VR, N-1 / 60-2 trigger type. Shielded twisted pair, own sleeve. `3B0973703G` housing — label CRANK. |
-| Crank VR− | Conn B — **pin 82** (−) | CMC H2 — Trigger GND (VR−) | Same shielded cable — shield to Sensor GND (CMC H1) |
+| Crank VR− | Conn B — **pin 83** (−) | CMC H2 — Trigger GND (VR−) | Same shielded cable — shield to ECU CMC E3 (GND Shield, pin 19) |
 | Cam Hall signal | **pin 86** | CMC H4 — HOME (cam Hall) | Hall effect, +5V supply type. `3B0973703G` housing — label CAM. +5V from shared sensor rail. |
 
 ### Injectors (5-cylinder — firing order 1-2-4-5-3)
@@ -203,11 +203,11 @@ Two separate connectors. Engine-side AS79 mating plug swaps at M52→07K. Maven 
 | 🔴 | 4, 5, 6, 7 | IGN 1, 2, 3, 4 | 22 | R1 outer ring — 22 AWG max (size-22 contacts; 18 AWG incompatible) |
 | 🔴 | 32, 33 | IGN 5, IGN 6 | 22 | R2; IGN 6 M52 only, cavity-plugged at 07K |
 | 🔴 | 34 | EXP: IGN 7 (07K 5th cyl) | 22 | R2; cavity-plugged on M52 |
-| 🟠 | 8–12 | INJ 1–5 | 20 | R1 outer ring |
-| 🟠 | 13 | INJ 6 | 20 | R1; M52 only, cavity-plugged at 07K |
-| 🟠 | 14 | EXP: INJ 7 (07K 5th cyl) | 20 | R1; cavity-plugged on M52 |
-| 🟠 | 35 | GPO 3 → VVT solenoid (07K) / VANOS (M52) | 20 | R2 |
-| 🟠 | 36, 37 | GPO 4 (ICV-A M52 / SPARE 07K), GPO 5 (ICV-B M52) | 20 | R2 |
+| 🟠 | 8–12 | INJ 1–5 | 22 | R1 outer ring; 22 AWG max for AS79 size-22D contacts |
+| 🟠 | 13 | INJ 6 | 22 | R1; M52 only, cavity-plugged at 07K |
+| 🟠 | 14 | EXP: INJ 7 (07K 5th cyl) | 22 | R1; cavity-plugged on M52 |
+| 🟠 | 35 | GPO 3 → VVT solenoid (07K) / VANOS (M52) | 22 | R2 |
+| 🟠 | 36, 37 | GPO 4 (ICV-A M52 / SPARE 07K), GPO 5 (ICV-B M52) | 22 | R2 |
 | 🟠 | 38, 39 | Starter trigger, Alt D+ | 22 | R2 |
 | 🔵 | 16, 17, 18 | Crank VR+, VR−, shield drain | 22 shld | R1; shielded twisted pair — same pins M52 and 07K, only engine-side connector body changes |
 | 🔵 | 19 | Cam Hall signal | 22 | R1; same pin M52 and 07K — engine-side connector body changes only. 07K cam is Hall +5V supply type. |
