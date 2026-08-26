@@ -185,7 +185,7 @@ See `harnesses/8hp-can.wv` for the full 8HP power sequencing and CAN signal map.
 
    > ⚠️ **Pitfall (crank vs cam):** OE# `3B0973703G` is the same connector body for both crank and cam sensors but with **opposite pinouts**. Swapped pigtails produce no-start with no obvious failure mode. Label pigtails at crimp time. Source: `harnesses/maxxecu-07k.wv` CRANK_VR notes.
 
-9. Wire E46 accelerator pedal (APS) — **cabin-to-cabin, no bulkhead crossing.** Run 6-wire shielded cable from pedal (footwell) directly to MaxxECU C2: APS1 signal → C2 E4 (AIN 6), APS2 signal → C2 F1 (AIN 7). VCC1/VCC2 → CMC G1 (+5V rail). GND1/GND2 → CMC H1 (sensor GND). AS79 pins 72–77 are **not used** for APS. See `harnesses/epedal-bmw-e46.wv` for full connector and cable spec.
+9. Wire E46 accelerator pedal (APS) — **cabin-to-cabin, no bulkhead crossing.** Run 6-wire shielded cable from pedal (footwell) to **Maven HD30 Connector A cabin face pins A14–A19**, then a short stub from HD30 A14–A19 → MaxxECU C2: APS1 signal → C2 E4 (AIN 6), APS2 signal → C2 F1 (AIN 7). VCC1/VCC2 → CMC G1 (+5V rail). GND1/GND2 → CMC H1 (sensor GND). The HD30 junction provides a single disconnect point for the pedal sub-harness during engine or chassis work. AS79 pins 72–77 are **not used** for APS. See `harnesses/epedal-bmw-e46.wv` for full connector and cable spec.
 
 ### MTune — Load 07K Base Map
 

@@ -21,7 +21,7 @@ Buy connector **housings and individual terminals only** — do not buy pre-made
 | 5 housings + 20 contacts + seals | VAG 4-pin COP coil connectors | Bosch JPT 2.8mm | OE# `4B0973724` / `1J0973724`; [ProWire USA](https://www.prowireusa.com); ECS Tuning; FCP Euro |
 | 4 housings + 12 contacts + seals | 3-pin VAG sensor connectors (cam / crank / MAP) | Bosch JMT 1.5mm | OE# `3B0973703G`; [ProWire USA](https://www.prowireusa.com); ECS Tuning; FCP Euro |
 | 3 housings + 6 contacts + seals | 2-pin NTC sensor connectors (CLT + IAT) | Bosch JMT 1.5mm | OE# `1J0973702`; [ProWire USA](https://www.prowireusa.com); ECS Tuning; FCP Euro |
-| 2 housings + 4 contacts + seals | 2-pin flat knock sensor connectors | Bosch JMT 1.5mm | OE# `1J0973712`; ECS Tuning; FCP Euro — **not the same body as CLT/IAT** |
+| 2 housings + 4 contacts + seals | 2-pin flat knock sensor connectors | **Flat-blade contacts** (NOT Bosch JMT 1.5mm round pin — JMT contacts will not seat in `1J0973712` cavities) | OE# `1J0973712`; ECS Tuning; FCP Euro — **not the same body as CLT/IAT**. De-pin donor connectors with Lisle 57750 if reusing. |
 | 1 | Firewall bulkhead mating plug (engine side) | AS size-22 solid barrel | Deutsch AS 47-way or 79-way flanged jam-nut plug; [RaceSpec Online](https://racespeconline.com) |
 
 > ⚠️ **CRITICAL — `3B0973703G` connector body warning:** The VW 07K cam sensor and crank sensor use the **same `3B0973703G` housing** but with **opposite pinouts**. Crank = passive VR (Signal+/Signal−/Shield). Cam = active Hall (+5V/GND/Signal). **Label pigtails clearly at crimp time with CAM and CRANK.** A swapped pigtail produces a no-start with no obvious failure indicator. Source: `maxxecu-07k.wv` header.
@@ -32,7 +32,7 @@ Buy connector **housings and individual terminals only** — do not buy pre-made
 
 | Part | Spec | Notes |
 | --- | --- | --- |
-| TXL 22 AWG wire — 6 colors | Red, Black, White, Grey, Green, Yellow | All wires through AS79 size-22 contacts are 22 AWG. See `wiring-bom.md` Wire Specification section for spool quantities |
+| TXL 22 AWG wire — 10 colors | Red, Black, White, Brown, Blue, Grey, Green, Yellow, Orange, Violet | All wires through AS79 size-22 contacts are 22 AWG. See `wiring-bom.md` Wire Specification section for spool quantities. Blue = IGN 1–5; Brown = sensor GND returns; Orange = DBW Motor+; Violet = DBW Motor− |
 | Shielded twisted pair (crank, cam, knock signal runs) | 22 AWG STP | Noise-sensitive wires — shielded, own sleeve, physically away from injector and coil primaries at all points |
 | Techflex F6 expandable braid — 1/2" (main trunk) | 13mm OD | Main trunk from AS79 to engine mid-point |
 | Techflex F6 expandable braid — 1/4" (sub-looms) | 6mm OD | Injector, coil, sensor, trigger, knock sub-looms — one sleeve per group |
@@ -202,7 +202,7 @@ Two separate connectors. Engine-side AS79 mating plug swaps at M52→07K. Maven 
 | 🔴 | 3, 31, 52 | Engine GND ×3 parallel | 22 | 3×5A = 15A; Option A: bypass separately |
 | 🔴 | 4, 5, 6, 7 | IGN 1, 2, 3, 4 | 22 | R1 outer ring — 22 AWG max (size-22 contacts; 18 AWG incompatible) |
 | 🔴 | 32, 33 | IGN 5, IGN 6 | 22 | R2; IGN 6 M52 only, cavity-plugged at 07K |
-| 🔴 | 34 | EXP: IGN 7 (07K 5th cyl) | 22 | R2; cavity-plugged on M52 |
+| 🔴 | 34 | STUB — cavity-plug both M52 and 07K (07K 5th cyl = IGN 5 at pin 32, not here) | 22 | R2; cavity-plugged on both M52 and 07K |
 | 🟠 | 8–12 | INJ 1–5 | 22 | R1 outer ring; 22 AWG max for AS79 size-22D contacts |
 | 🟠 | 13 | INJ 6 | 22 | R1; M52 only, cavity-plugged at 07K |
 | 🟠 | 14 | EXP: INJ 7 (07K 5th cyl) | 22 | R1; cavity-plugged on M52 |
@@ -249,7 +249,7 @@ Two separate connectors. Engine-side AS79 mating plug swaps at M52→07K. Maven 
 
 #### A1 — Confirm signal mapping and order pigtails first
 
-All pigtail connectors (injector, coil, sensor, knock) must be on-hand before harness build starts. See Parts table above. You cannot complete the harness without them — the sub-loom ends terminate at the splice point; the pigtail bridges to the component.
+All sensor connector housings and terminals (EV14 injector, 4B0973724 COP coil, 3B0973703G 3-pin sensor, 1J0973702 2-pin NTC, 1J0973712 knock) must be on-hand before harness build starts. See Parts table above. You cannot complete the harness without them — each sub-loom wire is direct-terminated at the sensor end with a crimped terminal inserted into the connector housing.
 
 > ⚠️ **CRITICAL — `3B0973703G` cam/crank labeling:** Both sensors use the identical housing with opposite pinouts. Label pigtails `CAM` and `CRANK` on the wire before snapping the connector body on. Swapping them = no-start with no obvious indicator.
 
@@ -332,7 +332,8 @@ With the harness fully wired but completely **un-sleeved**, verify against the `
 
 - [ ] Continuity: every signal wire ECU pin → sensor connector pin
 - [ ] No shorts between adjacent pins (especially power to sensor GND)
-- [ ] Shield drain: terminates at Sensor GND (CMC H1 / AS79 pin 79), not chassis GND
+- [ ] Crank/cam/WBO2 shield drains (YE): terminate at CMC E3 (GND Shield, pin 19) — **not** CMC H1
+- [ ] Knock shield drain (YE, via AS79 pin 45): terminates at CMC H1 (Sensor GND, pin 29) — not chassis GND and not E3
 - [ ] Pull-test: every terminal in the AS79 mating plug survives a firm hand tug
 
 **Do not sleeve until all checks pass.** Techflex expandable braid makes depinning destructive. Fix any fault before sleeving.
