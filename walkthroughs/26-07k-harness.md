@@ -117,14 +117,14 @@ Connector: VAG 4-pin COP (OE# `4B0973724`).
 
 ### Sensors
 
-> **Crimp tool: Engineer PA-09** — MAP/CLT/IAT use JMT 1.5mm contacts (`3B0973703G` and `1J0973702` housings). Knock sensor contacts: `1J0973712` housing, JMT 1.5mm — **not the same body as CLT/IAT**.
+> **Crimp tool: Engineer PA-09** — MAP/CLT/IAT use JMT 1.5mm contacts (`3B0973703G` and `1J0973702` housings). Knock sensor (`1J0973712`): **flat-blade contacts** (NOT JMT 1.5mm round pin — JMT contacts will not seat in `1J0973712` cavities) — **not the same body as CLT/IAT**.
 
 | Signal | ME7.1.1 Pin | MaxxECU CMC | Notes |
 | --- | --- | --- | --- |
 | Knock sensor 1 | **pin 106** | K3 (DIN/VR1, CMC pin 39) | Bosch flat 1-pin, M8 bolt mount; GND via bolt. AS79 pin 43. Shielded 22 AWG STP; drain → AS79 pin 45 → CMC H1. |
 | Knock sensor 2 | **pin 107** | K4 (DIN/VR2, CMC pin 40) | Same. AS79 pin 44; shield drain shared via pin 45. |
 | MAP sensor | **pin 101** | AIN 4 | 3-bar Bosch (GM 12592525). +5V/Signal/GND — `W_MAP` cable. |
-| ECT (coolant temp) | **pin 93** | F1 — CLT (CMC pin 13) | 2-pin NTC (`1J0973702`). Cylinder 1 side, exhaust face. Sleeve first 150 mm from sensor with DEI Fire Sleeve 3/8" ID — adjacent to exhaust manifold. |
+| ECT (coolant temp) | **pin 93** | F1 — CLT (CMC pin 21) | 2-pin NTC (`1J0973702`). Cylinder 1 side, exhaust face. Sleeve first 150 mm from sensor with DEI Fire Sleeve 3/8" ID — adjacent to exhaust manifold. |
 | IAT (intake air temp) | — | F2 — IAT | 2-pin NTC; mount downstream of intercooler in intake pipe. |
 
 ### DBW throttle body (DBW path only — see `25-07k-air.md`)
