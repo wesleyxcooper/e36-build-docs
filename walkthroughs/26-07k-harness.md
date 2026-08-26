@@ -24,7 +24,7 @@ Buy connector **housings and individual terminals only** — do not buy pre-made
 | 2 housings + 4 contacts + seals | 2-pin flat knock sensor connectors | **Flat-blade contacts** (NOT Bosch JMT 1.5mm round pin — JMT contacts will not seat in `1J0973712` cavities) | OE# `1J0973712`; ECS Tuning; FCP Euro — **not the same body as CLT/IAT**. De-pin donor connectors with Lisle 57750 if reusing. |
 | 1 | Firewall bulkhead mating plug (engine side) | AS size-22 solid barrel | Deutsch AS 47-way or 79-way flanged jam-nut plug; [RaceSpec Online](https://racespeconline.com) |
 
-> ⚠️ **CRITICAL — `3B0973703G` connector body warning:** The VW 07K cam sensor and crank sensor use the **same `3B0973703G` housing** but with **opposite pinouts**. Crank = passive VR (Signal+/Signal−/Shield). Cam = active Hall (+5V/GND/Signal). **Label pigtails clearly at crimp time with CAM and CRANK.** A swapped pigtail produces a no-start with no obvious failure indicator. Source: `maxxecu-07k.wv` header.
+> ⚠️ **CRITICAL — `3B0973703G` connector body warning:** The VW 07K cam sensor and crank sensor use the **same `3B0973703G` housing** but with **opposite pinouts**. Both are **Hall effect sensors** (crank: OE# 07K906433B confirmed Hall — Valeo PN 366675 datasheet, the07k.wiki). Crank = +5V/Signal/SensorGND. Cam = +5V/SensorGND/Signal. **Label pigtails clearly at crimp time with CAM and CRANK.** A swapped pigtail produces a no-start with no obvious failure indicator. Source: `maxxecu-07k.wv` CRANK_HALL notes.
 
 > ⚠️ **Knock sensor connectors are NOT the same body as the 2-pin NTC.** `1J0973712` (knock) and `1J0973702` (NTC) look similar — do not substitute. Buy both types separately.
 
@@ -83,8 +83,9 @@ The following OEM ME7.1.1 circuits are eliminated and should not be brought thro
 
 | Signal | ME7.1.1 Connector Pin | MaxxECU | Notes |
 | --- | --- | --- | --- |
-| Crank VR+ (60-2 missing tooth) | Conn B — **pin 82** | CMC H3 — TRIGGER (VR+) | Passive VR, N-1 / 60-2 trigger type. Shielded twisted pair, own sleeve. `3B0973703G` housing — label CRANK. |
-| Crank VR− | Conn B — **pin 83** (−) | CMC H2 — Trigger GND (VR−) | Same shielded cable — shield to ECU CMC E3 (GND Shield, pin 19) |
+| Crank Hall signal (60-2 missing tooth) | Conn B — **pin 82** | CMC H3 — TRIGGER (pin 31) | **Hall effect** (OE# 07K906433B — confirmed). MTune: Trigger = "Digital (Hall, opto)". N-1 / 60-2. `3B0973703G` housing — label CRANK. AS79 pin 16. |
+| Crank +5V supply | Conn B — **pin 84** (supply) | CMC G1 — +5V sensor supply (pin 25) | AS79 pin 17 → CMC G1 (**cabin re-terminate from CMC H2 at 07K swap**). No VR− wire. |
+| Crank Sensor GND | Conn B — **pin 83** (GND) | CMC H1 — Sensor GND (pin 29) | AS79 pin 18 → CMC H1 (**cabin re-terminate from CMC E3 at 07K swap**). |
 | Cam Hall signal | **pin 86** | CMC H4 — HOME (cam Hall) | Hall effect, +5V supply type. `3B0973703G` housing — label CAM. +5V from shared sensor rail. |
 
 ### Injectors (5-cylinder — firing order 1-2-4-5-3)
@@ -121,9 +122,11 @@ Connector: VAG 4-pin COP (OE# `4B0973724`).
 
 | Signal | ME7.1.1 Pin | MaxxECU CMC | Notes |
 | --- | --- | --- | --- |
-| Knock sensor 1 | **pin 106** | K3 (DIN/VR1, CMC pin 39) | Bosch flat 1-pin, M8 bolt mount; GND via bolt. AS79 pin 43. Shielded 22 AWG STP; drain → AS79 pin 45 → CMC H1. |
-| Knock sensor 2 | **pin 107** | K4 (DIN/VR2, CMC pin 40) | Same. AS79 pin 44; shield drain shared via pin 45. |
+| Knock sensor 1 | **pin 106** | K3 (DIN/VR1, CMC pin 39) | Bosch flat 1-pin, M8 bolt mount; GND via bolt. AS79 pin 43. Shielded 22 AWG STP; drain → AS79 pin 45 → CMC H1. ⚠️ See note below. |
+| Knock sensor 2 | **pin 107** | K4 (DIN/VR2, CMC pin 40) | Same. AS79 pin 44; shield drain shared via pin 45. ⚠️ See note below. |
 | MAP sensor | **pin 101** | AIN 4 | 3-bar Bosch (GM 12592525). +5V/Signal/GND — `W_MAP` cable. |
+
+> **⚠️ Knock input routing note:** Knock sensors are currently wired to C1 DIN/VR inputs (K3/K4, CMC pins 39/40). The MaxxECU RACE also has **dedicated knock inputs on C2: E2 (Knock 1), E3 (Knock 2), E1 (Knock GND)**, confirmed in the official REV9+ wiring PDF and live webhelp. The C2 dedicated inputs likely have optimized analog conditioning for piezoelectric knock sensors vs the general-purpose DIN/VR inputs. For a high-power turbocharged build, consider populating C2 E1/E2/E3 for knock instead — C2 is already assembled for motor (H2/H4) and APS (E4/F1), so adding two more wires is straightforward. MTune knock channel assignments must match the physical input. **Current wiring (C1 K3/K4) will function; C2 E2/E3 is preferred if C2 is being populated anyway.** Source: MaxxECU RACE REV9+ wiring PDF; live webhelp `maxxecu.com/webhelp/wirings-maxxecu_pinout.html` C2 pinout (E1=KNOCK GND, E2=Knock 1, E3=Knock 2).
 | ECT (coolant temp) | **pin 93** | F1 — CLT (CMC pin 21) | 2-pin NTC (`1J0973702`). Cylinder 1 side, exhaust face. Sleeve first 150 mm from sensor with DEI Fire Sleeve 3/8" ID — adjacent to exhaust manifold. |
 | IAT (intake air temp) | — | F2 — IAT | 2-pin NTC; mount downstream of intercooler in intake pipe. |
 
@@ -209,7 +212,9 @@ Two separate connectors. Engine-side AS79 mating plug swaps at M52→07K. Maven 
 | 🟠 | 35 | GPO 3 → VVT solenoid (07K) / VANOS (M52) | 22 | R2 |
 | 🟠 | 36, 37 | GPO 4 (ICV-A M52 / SPARE 07K), GPO 5 (ICV-B M52) | 22 | R2 |
 | 🟠 | 38, 39 | Starter trigger, Alt D+ | 22 | R2 |
-| 🔵 | 16, 17, 18 | Crank VR+, VR−, shield drain | 22 shld | R1; shielded twisted pair — same pins M52 and 07K, only engine-side connector body changes |
+| 🔵 | 16 | Crank trigger signal (M52: VR+; 07K: Hall signal) | 22 | R1; same ECU pin (CMC H3) both phases |
+| 🔵 | 17 | M52: Crank VR−→CMC H2; 07K: Crank +5V→CMC G1 | 22 | R1; **cabin pigtail must be re-terminated at 07K swap** |
+| 🔵 | 18 | M52: Crank shield→CMC E3; 07K: Crank SensorGND→CMC H1 | 22 | R1; **cabin pigtail must be re-terminated at 07K swap** |
 | 🔵 | 19 | Cam Hall signal | 22 | R1; same pin M52 and 07K — engine-side connector body changes only. 07K cam is Hall +5V supply type. |
 | 🔵 | 20, 41 | SPARE (07K cam and crank reuse pins 19 and 16/17/18) | — | Cavity-plugged on both M52 and 07K |
 | 🔵 | 43, 44, 45 | Knock 1, Knock 2, Knock shield drain | 22 shld | R2; 07K only, shielded STP; drain both sensors shared via pin 45 → CMC H1 |
@@ -258,7 +263,7 @@ All sensor connector housings and terminals (EV14 injector, 4B0973724 COP coil, 
 With the 07K engine on a stand in its intended longitudinal orientation, route a tape/rope mock-up of the main trunk path from the AS79 firewall position along the engine. Identify sub-loom breakout points for each component group. Measure each wire's required length (AS79 pin → splice point → component). Add 10% slack. Record all measurements.
 
 **M52 sub-loom reuse check (do at this step):** Lay the M52 mating plug harness alongside the 07K engine in position. Check each sub-loom branch:
-- **Can reuse with pigtail swap only** (connector body changes, same routing): crank VR, cam Hall, MAP, Starter, Alt D+, flex fuel, most sensor runs
+- **Can reuse with pigtail swap only** (connector body changes + cabin AS79 pin17/18 re-terminate): crank Hall, cam Hall, MAP, Starter, Alt D+, flex fuel, most sensor runs
 - **Needs extension or reroute**: CLT moves to cylinder-1 side exhaust face on 07K (opposite end of block from M52 front CLT position); knock sensors are new (07K expansion pins 43/44); VVT solenoid is new
 - **Discard**: INJ 6, IGN 6 (6th cylinder positions unused on 5-cyl 07K)
 
@@ -272,7 +277,7 @@ Every signal belongs to exactly one sub-loom. Decide before cutting any wire.
 | --- | --- | --- |
 | `INJECTORS` | INJ 1–5 signal wires + shared +12V Coils/Inj rail stubs | Along injector rail |
 | `COILS` | IGN 1–5 signal wires + shared +12V Coils/Inj rail stubs | Along valve cover rail |
-| `TRIGGER` | Crank VR+, VR−, shield drain; Cam Hall signal — **shielded twisted pair, own sleeve, physically away from all others** | Front of engine to sensor positions |
+| `TRIGGER` | Crank Hall signal (+5V/signal/GND); Cam Hall signal — **shielded, own sleeve, physically away from all others** | Front of engine to sensor positions |
 | `SENSORS` | CLT, IAT, MAP, TPS, +5V sensor, Sensor GND | Around intake manifold |
 | `KNOCK` | KS1, KS2, Knock GND — shielded, 07K only | Below intake manifold |
 

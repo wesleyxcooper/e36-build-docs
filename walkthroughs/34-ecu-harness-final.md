@@ -168,7 +168,7 @@ See `harnesses/8hp-can.wv` for the full 8HP power sequencing and CAN signal map.
 7. Insert the 07K engine-side mating plug (built in Phase 2) into the bulkhead receptacle. Single-connector swap — cabin side is unchanged.
 
 8. Connect the 07K engine harness sensor ends:
-   - **CRANK_VR** → crank sensor (60-2, cylinder 5 end — timing chain compartment cover). OE# `3B0973703G` connector body. **Label crank vs cam pigtails clearly at crimp time — same connector body, different pinouts.** Crank: Signal+/Signal-/Shield (passive VR). Cam: +5V/GND/Signal (active Hall).
+   - **CRANK_HALL** → crank sensor (60-2, cylinder 5 end — timing chain compartment cover). OE# `07K906433B` (Hall effect — confirmed). Connector body `3B0973703G`. **Label crank vs cam pigtails clearly at crimp time — same housing, different pinouts.** Crank: +5V/Signal/SensorGND (Hall). Cam: +5V/SensorGND/Signal (Hall). MTune trigger type: "Digital (Hall, opto)" — NOT VR sensor. AS79 cabin pigtails 17 and 18 must be re-terminated vs M52 (see `firewall-bulkhead.wv` CRANK SENSOR note).
    - **CAM_HALL** → cam Hall sensor (intake side, top of head). +5V supply type (not +12V).
    - **CLT** → coolant temp sensor (cylinder 1 side, exhaust face — in E36: front of engine, exhaust/driver side). **Heat sleeve:** DEI Fire Sleeve 3/8" ID (or silicone-over-fiberglass ≥500°F) for the first 150 mm from the sensor body — pigtail runs adjacent to exhaust manifold.
    - **IAT** → intake air temp (in charge pipe downstream of FMIC)
@@ -179,11 +179,11 @@ See `harnesses/8hp-can.wv` for the full 8HP power sequencing and CAN signal map.
    - **INJ_1–5** → ID1050x EV14 connectors (firing order: 1-2-4-5-3, cylinder 1 at timing chain end)
    - **BOOST_SOL** → Superseal 2-pin on boost solenoid (GPO 1, now physically connected)
    - **FLEX_FUEL** → carry-forward, already inline on fuel feed
-   - **PST_F1** → iABED M10×1.0 port on oil filter housing (4-pin: +5V, GND, pressure, temp)
+   - **PST_F1** → iABED M10×1.0 port on oil filter housing (5-pin Bosch Trapezoid: pin1=NC, pin2=Pressure, pin3=+5V, pin4=GND, pin5=Temp). Mating kit: F02U.B00.751-01.
    - **WIDEBAND** → LSU 4.9 in manifold/downpipe bung. **Heat sleeve:** DEI Fire Sleeve 3/8" ID (p/n 010470, $26.99 — [designengineering.com](https://www.designengineering.com/fire-sleeve-tape-kit-0-375-id-x-36/)) for first 300 mm from sensor body — bung is on the exhaust manifold. Note: DEI makes no 1/2" ID size; 3/8" (10 mm ID) fits the LSU 4.9 cable OD. Transition to Techflex F6 after clearing the manifold/turbo heat zone. Route clear of turbine housing and wastegate (≥100 mm). Tie-strap to block or manifold stud boss to prevent contact under vibration.
    - **VVT solenoid** → 07K intake cam VVT actuator (ME7.1.1 pin 115) via GPO 3 / AS79 pin 35 — see MTune section below. Confirm connector body at engine before ordering pigtail.
 
-   > ⚠️ **Pitfall (crank vs cam):** OE# `3B0973703G` is the same connector body for both crank and cam sensors but with **opposite pinouts**. Swapped pigtails produce no-start with no obvious failure mode. Label pigtails at crimp time. Source: `harnesses/maxxecu-07k.wv` CRANK_VR notes.
+   > ⚠️ **Pitfall (crank vs cam):** OE# `3B0973703G` is the same connector body for both crank and cam sensors but with **opposite pinouts**. Both are Hall effect sensors. Crank: +5V/Signal/SensorGND. Cam: +5V/SensorGND/Signal. Swapped pigtails produce no-start with no obvious failure mode. Label pigtails at crimp time. Source: `harnesses/maxxecu-07k.wv` CRANK_HALL notes.
 
 9. Wire E46 accelerator pedal (APS) — **cabin-to-cabin, no bulkhead crossing.** Run 6-wire shielded cable from pedal (footwell) to **Maven HD30 Connector A cabin face pins A14–A19**, then a short stub from HD30 A14–A19 → MaxxECU C2: APS1 signal → C2 E4 (AIN 6), APS2 signal → C2 F1 (AIN 7). VCC1/VCC2 → CMC G1 (+5V rail). GND1/GND2 → CMC H1 (sensor GND). The HD30 junction provides a single disconnect point for the pedal sub-harness during engine or chassis work. AS79 pins 72–77 are **not used** for APS. See `harnesses/epedal-bmw-e46.wv` for full connector and cable spec.
 
