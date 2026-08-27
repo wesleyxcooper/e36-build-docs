@@ -12,14 +12,18 @@
 | Part | PN / Source | Cost |
 | --- | --- | --- |
 | Radium Engineering Fuel Pump Hanger — BMW E36 | [Radium 20-1170](https://www.radiumauto.com/products/bmw-e36-fuel-pump-hanger) | $549.95 |
-| Walbro F90000267 — 465 LPH E85 (pump only) | [Real Street Performance](https://www.realstreetperformance.com/walbro-universal-450lph-in-tank-fuel-pump-e85-version.html) | $181.12 |
+| **Fuel pump + power wiring — pick ONE option below (A recommended):** | | |
+| Option A: **JDT Racing F90000267 + install kit + rewire kit (BUNDLED)** — includes pump, Walbro 400-1168 install kit, JDT rewire kit (16' 10 AWG blue power cable, 30A inline fuse, 3' 10 AWG black ground, relay, relay pigtail, pass-through grommet, ring terminals, wire loom, cable ties) | [jdtracing.com F90000267 bundle](https://jdtracing.com/products/walbro-ti-f90000267-450lph-fuel-pump-w-install-kit-rewire-kit-e85-compatible) — Manufacturer PN `wal_F90000267_wal_400-1168_jdt_FPRK` | **$193.19** |
+| Option B: Walbro F90000267 pump only (already ordering rewire separately) | [Real Street Performance](https://www.realstreetperformance.com/walbro-universal-450lph-in-tank-fuel-pump-e85-version.html) | $181.12 |
+| Option B rewire kit — **JDT Universal Fuel Pump Rewire Kit** (relay + 30A fuse + 10 AWG wire + terminals + grommet) | [jdtracing.com universal rewire kit](https://jdtracing.com/products/jdt-racing-universal-fuel-pump-rewire-kit-w-10-gauge-power-ground-fuse-relay) | $37.99 |
+| Option C: à la carte — pump + Bosch 40/70A relay + fuse + wire + terminals from Waytek/ProWire | See wiring-bom.md System 4 for parts breakdown | ~$220+ |
 | Radium 20-1000-1010 — 10AN ORB Swivel Banjo to 10AN Male (feed side, ×1) | [Radium Low Profile Swiveling Fittings](https://www.radiumauto.com/products/low-profile-swiveling-banjo-fittings) | $34.95 |
 | Aeromotive 13129 Compact EFI FPR (return-style, 40–75 PSI adjustable) | [Aeromotive 13129](https://aeromotiveinc.com/products/compact-efi-regulators) | $185.95 |
 | Ethanol / flex fuel sensor | [Seems Legit Garage Ethanol Content Sensor](https://www.seemslegitgarage.com/product-page/ethanol-content-sensor) | $80.00 |
 | Bosch 440cc injectors (Green EV1) × 6 | [TRE Performance — 0280155968 set of 6](https://treperformance.com/i-18598170-genuine-bosch-42lb-green-giant-ev1-fuel-injectors-0280155968-6.html) | $399.00 |
-| 12 AWG red wire — pump(+) run, relay R1 pin 87 to hanger stud (Phase 1; at Phase 3 this run re-terminates at PMU16 O4) | Wire supply | — |
-| 12 AWG black wire — pump(−) dedicated GND run | Wire supply | — |
-| Ring terminals, 12 AWG (M4 or M5 stud — confirm at install) | Electrical supply | — |
+| Ring terminals, 12 AWG (M4 or M5 stud — confirm at install) — pump(+) stud + pump(−) stud terminations | Electrical supply (or included in JDT rewire kit) | — |
+
+> **Recommendation: Option A (JDT bundle at $193.19).** Includes everything Phase 1 needs for the pump-power path (pump + relay + fuse + 10 AWG wire + grommet + terminals). Comparable to buying the pump alone ($181.12) + a rewire kit alone ($37.99 = $219.11 across two vendors) or à la carte from Waytek. At Phase 3, the relay + fuse from the kit are removed and PMU16 O4 replaces them — the 10 AWG cabin/tunnel wire stays in place.
 
 ---
 

@@ -5,9 +5,9 @@
 **Shop-mandatory:** No (full DIY — allow multiple days for X20 connector alone)  
 **Prerequisites:** Interior stripped (rear seats, carpet, trunk interior removed). All harness connector positions photographed before touching anything. This section must be complete and M52 running on MaxxECU **before** the 8HP swap begins — see `07-8hp-swap.md`.
 
-> **Staging note:** MaxxECU on M52 first. Install ECU, resolve EWS2 bypass, wire the relay board, connect the M50 harness, wire X20, and get the M52 running on MaxxECU with the Getrag still in place. Tune the M52. Then proceed to 8HP swap. This isolates troubleshooting: ECU issues surface on the stock drivetrain; 8HP issues surface on a known-good ECU.
+> **Staging note:** MaxxECU on M52 first. Install ECU, resolve EWS2 bypass, wire the discrete Phase 1 relay board, connect the M50 pre-terminated harness, wire X20, and get the M52 running on MaxxECU with the Getrag still in place. Tune the M52. Then proceed to 8HP swap. This isolates troubleshooting: ECU issues surface on the stock drivetrain; 8HP issues surface on a known-good ECU.
 
-> **07K-phase wiring deferred:** The Ecumaster PMU16, Deutsch Autosport AS79 firewall connector, and Maven HD30 35-pin accessories connector are all 07K-phase build items. They are not needed to run the M52. See `34-ecu-harness-final.md` for those when the time comes.
+> **07K-phase wiring deferred (Phase 3 arrivals):** The Ecumaster PMU16, Maven HD30 dual 16+16 firewall bulkhead (Connector A = CAN + DCT, Connector B = safety-critical APS), CWA400 electric water pump, electric AC compressor, and E46 APS pedal all arrive at Phase 3 (07K swap moment). None are needed to run the M52. See `34-ecu-harness-final.md` for the Phase 3 install sequence and `e36-wiring/docs/wiring-bom.md` System 8 for the Maven bulkhead spec.
 
 ---
 
@@ -39,24 +39,33 @@
 
 ## Procedure
 
-### Step 1 — MaxxECU Mounting
+### Step 1 — MaxxECU Mounting (RACE H2O, engine bay)
 
-**The MaxxECU Race must be mounted inside the cabin — it is not waterproof.** Per MaxxECU quickstart guide: "STREET/SPORT/RACE units must be mounted inside the vehicle (not waterproofed)." The MINI, RACE H2O, and PRO variants can go in the engine bay; the Race cannot. Source: [MaxxECU Quickstart Guide](https://www.maxxecu.com/files/Documentation/Manuals/MaxxECU%20Quickstart%20Guide%20(MINI-STREET-SPORT-RACE-PRO)-en.pdf).
+**This build uses the MaxxECU RACE H2O** — the IP67 waterproof variant, which mounts in the engine bay. This eliminates the firewall bulkhead connector for engine signals entirely: every engine sensor / IGN / INJ / GPO signal terminates directly at the ECU's C1/C2 Molex CMC connectors on the engine-bay-side of the firewall. See `docs/vendor/maxxecu/MaxxECU_RACE_H2O.md` (in the e36-wiring repo) for the full architectural rationale.
 
-**Do not use the OEM E36 DME compartment.** The OEM DME is in the engine bay — a sealed compartment on the passenger-side firewall accessible from under the rubber pad, not from inside the car. It is not a cabin location. It is also prone to water ingress from the HVAC plenum cowl (BMW service bulletin 41 03 93, July 1994). Mounting a $2,900+ ECU there is not acceptable.
+**Standard RACE vs RACE H2O:** MaxxECU sells both the standard RACE (cabin-mount only, per quickstart guide "STREET/SPORT/RACE units must be mounted inside the vehicle") and the RACE H2O (IP67 waterproof, engine-bay-safe). We use the H2O. Both variants share the identical C1/C2 Molex CMC pinout — harness pin assignments are the same. Source: [MaxxECU Quickstart Guide](https://www.maxxecu.com/files/Documentation/Manuals/MaxxECU%20Quickstart%20Guide%20(MINI-STREET-SPORT-RACE-PRO)-en.pdf); H2O confirmed on maxxecu.co.nz SKU 1895.
 
-**Correct location — RHD build:** Mount on the **left (passenger-side) cabin firewall panel**, in the passenger footwell area. This is the same side as:
-- The OEM engine harness grommet (where the M50 harness exits into the engine bay)
-- The AS79 + Maven HD30 bulkhead connectors installed at Phase 3
-- The intake side of both the M52 and 07K engines
+**Mount location — RHD build:** Mount in the **OEM E36 DME E-box cavity area**, intake side of the RHD car (driver-opposite / passenger side). This is:
+- The pre-existing OEM ECU mount point — pre-drilled for M6 rivnuts, plastic cover for splash protection
+- Adjacent to the intake side of both the M52 and 07K engines
+- Away from the exhaust (driver side)
+- Immediately behind the OEM firewall grommet where the M50 harness exits — the M50 CMC connectors reach the H2O with minimal harness slack
 
-This location keeps the C1/C2 connections short to the bulkhead, puts the USB port accessible for MTune sessions without opening the hood, and keeps C2 (virtual clutch, APS, wideband) within arm's reach of the pedal box.
+**Dimensional note:** The MaxxECU RACE H2O footprint is 155 × 195 × 40 mm (per maxxecu.com/products/race/), which is ~15 mm longer than the OEM Bosch DME (~180 × 110 mm). The H2O will typically extend slightly beyond the OEM E-box cavity in one dimension. Standard solutions used by other aftermarket ECU installs in the E36 E-box:
 
-**Harness grommet:** The OEM E36 engine harness grommet on the left firewall is already large enough for the M50 terminated harness bundle — no new hole required. The MaxxECU M50 harness docs generically say "drill a 54mm hole" but that is for vehicles without a suitable existing grommet. Do not drill; use the OEM grommet. Plan the ECU mounting position so the harness reaches the grommet without excessive slack or strain.
+1. Fabricate a small aluminum extender plate that bolts to the OEM E-box mounting flange and pushes the ECU ~15 mm further from the firewall face
+2. Cut/enlarge the OEM plastic cover to accommodate (loses OEM appearance but simpler)
+3. Mount at a slight angle so the extra dimension falls diagonally within the existing cavity
 
-Follow the MaxxECU RACE quick-start guide for mounting orientation (connector-face direction, vibration isolation). Note: the unit is the GEN1 RACE (REV9+ hardware) — not the GEN2 RACE product. Any reference to "GEN2 RACE quick-start guide" in these docs is informal (meaning "current-gen RACE" vs the old V1), not the literal MaxxECU GEN2 RACE product (which uses Superseal connectors, not Molex CMC).
+Precedents for E36 aftermarket ECU install at this location: [adapt-lab.com — E36 aftermarket ECU mount for ECU Masters EMU Black + Haltech Elite Series](https://adapt-lab.com/2025/07/27/unleash-your-e36s-true-power-why-a-standalone-ecu-is-key-and-how-to-mount-it-right/) uses the OEM factory mount points; [wiringspecialties.com LINK G4X BMW E36 M50](https://www.wiringspecialties.com/link-g4x-bmw-e36-m50-plug-in-ecu-bmwlink-e36x/) fits inside the OEM enclosure (though that's a plug-in adapter, not bare unit).
 
-> **Alternative architecture (future-build reference):** Engine-bay ECU mount using the **MaxxECU RACE H2O** (IP67, ~$43 more than equivalent RACE PREMIUM kit per maxxecu.com) would eliminate the AS79 79-pin firewall connector entirely — every engine signal terminates directly at the ECU without crossing the firewall. A small USB feedthrough (14mm hole, rubber grommet, USB Type-B extension cable + Neutrik NAUSB3 flush panel-mount ~$15) through the firewall immediately behind the ECU gives cabin USB access without opening the hood — same result as cabin mount. Only the APS e-pedal and X20 body signals would still need a firewall crossing, requiring a ~10-pin DT connector vs the current 79-pin AS79. The H2O uses the same C1/C2 Molex CMC connectors as the GEN1 RACE (confirmed: maxxecu.co.nz SKU 1895 lists the same 48-pin CMC as RACE H2O) — harness pin assignments are identical. This approach is unsuitable for the current build (unit already purchased, AS79 harness already designed) but is the recommended architecture for any future build.
+**USB access for MTune sessions:** MaxxECU sells a dedicated 1.5m waterproof USB extension cable (MaxxECU part #1606, included in H2O Premium kits) for the RACE H2O. Route it through a small firewall grommet (14 mm hole, rubber grommet) into the cabin for tuning access without opening the hood. See MaxxECU_RACE_H2O.md §USB Tuning Access.
+
+**Harness grommet (Phase 1):** The OEM E36 engine harness grommet on the intake-side firewall is large enough for the M50 pre-terminated harness bundle — no drilling. Route the M50 harness from the OEM grommet directly to the H2O CMC connectors — the H2O sits immediately behind the grommet.
+
+**Firewall bulkhead (Phase 2/3):** The Maven HD30 Dual 16+16 kit installs at Phase 3 (07K swap moment). It carries ONLY cabin-originated signals: Connector A (CAN + DCT shifter) and Connector B (APS throttle input — designated safety-critical). All engine sensor / IGN / INJ signals stay engine-bay-side (direct-terminate at the H2O CMC). See `34-ecu-harness-final.md` and `e36-wiring/docs/wiring-bom.md` System 8.
+
+Follow the MaxxECU RACE H2O install PDF for mounting orientation (connector-face direction, vibration isolation). Note: the unit is the GEN1 RACE H2O (REV9+ hardware) — not the GEN2 RACE product. Any reference to "GEN2 RACE quick-start guide" in these docs is informal (meaning "current-gen RACE" vs the old V1), not the literal MaxxECU GEN2 RACE product (which uses Superseal connectors, not Molex CMC).
 
 ### Step 2 — EWS2 Bypass
 
@@ -119,7 +128,7 @@ Route the harness from the ECU mounting point, through the grommet, and into the
 - Keep separate: wideband O2 signal — shielded, own run, away from coil primaries.
 - Keep separate: high-current feeds — fuel pump, fan, AC — each on its own dedicated circuit back to the relay block.
 
-**07K-phase note:** When the 07K swap happens, the M50 harness is removed and a fully custom harness with Deutsch Autosport AS79 (engine connector) and Maven HD30 35-pin (accessories) replaces it. See `34-ecu-harness-final.md` and `e36-wiring/docs/harness-build.md`.
+**07K-phase note:** When the 07K swap happens, the M50 pre-terminated harness is removed and a fully custom engine harness replaces it, direct-terminating at the engine-bay H2O CMC (see `harnesses/maxxecu-07k.wv`). Cabin↔engine signals move from the OEM firewall grommet (Phase 1) to the Maven HD30 dual 16+16 bulkhead (Phase 3 install). See `34-ecu-harness-final.md` and `e36-wiring/docs/harness-build.md`.
 
 ### Step 6 — Ground Straps
 
@@ -150,18 +159,21 @@ Wire MaxxECU to the E36 chassis X20 bulkhead connector per `body-x20.wv`. The X2
 
 **Gauge.S CAN wiring (new wires — not through X20):** Route CAN H/L (22 AWG twisted pair) from MaxxECU ECU_16PIN breakout (pins 10/9 — CAN H/L) to the cluster location. For the M5x phase, route this through the OEM firewall grommet alongside the M50 harness, or through a small additional grommet hole adjacent to it. 500 kbps. Add 120Ω terminator at cluster end if bus run exceeds 1 m. Enable in MTune: CAN → CAN 1 → Output → MaxxECU Default 1.3.
 
-### Step 8 — Virtual Clutch Pedal
+### Step 8 — Virtual Clutch (DCT Clutch Simulator Remote)
 
-Wire virtual clutch pedal position sensor to MaxxECU C2 AIN 5 (C2 pin G3).  
-Retain the E36 clutch pedal assembly in the cabin. Disconnect the hydraulic pushrod from the master cylinder and cap the cylinder port — pedal freewheels. Add a return spring to hold pedal at the top of its travel when unloaded. Mount a 0–5V rotary position sensor (Hall effect or potentiometer) at the clutch pedal pivot. All wiring is cabin-side — no firewall crossing required.
+Install the **DCT Clutch Simulator Remote + CPS** ([dctshifter.com/products/dct-clutch-simulator-remote](https://dctshifter.com/products/dct-clutch-simulator-remote), ~4,995 SEK / ~$475 USD). This is a purpose-built engine-bay-mounted hydraulic clutch simulator with an integrated Clutch Pressure Sensor. See `docs/vendor/dctshifter/DCT_Clutch_Simulator.md` (in e36-wiring) and `harnesses/maxxecu-07k.wv` CLUTCH_POS_SENSOR block for full spec.
+
+**Hydraulic install:** Retain the E36 OEM clutch pedal + master cylinder in the cabin. The OEM E36 clutch line (that previously drove the manual-trans slave cylinder near the bellhousing) now drives the Simulator's M10×1.0 inlet in the engine bay. Bleed with brake fluid per [dctshifter.com/pages/installation](https://dctshifter.com/pages/installation) §3.
+
+**Electrical (all engine-bay-to-engine-bay under the H2O arch — no firewall crossing for CPS wiring):**
 
 | Signal | Destination |
 | --- | --- |
-| Signal (0–5V) | C2 pin G3 (AIN 5) |
-| +5V supply | C2 sensor supply rail |
-| GND | C2 sensor GND rail |
+| CPS signal (0.5–4.5V) | MaxxECU C2 pin G3 (AIN 5) |
+| CPS +5V supply | MaxxECU CMC G1 (pin 25, shared sensor rail) |
+| CPS GND | MaxxECU CMC H1 (pin 29, shared SGND) |
 
-Purchase C2 connector: MaxxECU store ID 1982, $32.25. C2 is required (not optional) — C1 AIN 1–4 are fully allocated. Requires Binary5 8HP TCU firmware + MTune 1.157+. MTune: Analog Inputs → AIN 5 → type = 0-5V → function = Clutch Position. Calibrate: 0% = pedal fully up, 100% = pedal fully depressed.
+Purchase C2 connector: MaxxECU store ID 1982, $32.25. C2 is required (not optional) — C1 AIN 1–4 are fully allocated. Requires Binary5 8HP TCU firmware + MTune 1.157+. MTune: Analog Inputs → AIN 5 → type = 0-5V → function = Clutch Position. Vendor calibration note: *"set 0% to at least 0.6V"* (0.5V is the sensor's resting value; leave headroom). Calibrate 100% at fully depressed pedal.
 
 > ⚠️ **Pitfall:** Do not skip clamp calibration after AIN 5 is wired. All virtual clutch ramp features use the clamp start/end values — incorrect values produce wrong clutch pressure at pedal extremes. Verify with a slow pedal sweep while watching AIN 5 % in MTune live data before driving.
 
@@ -192,11 +204,12 @@ switch (X20 pin 23 — already noted in Step 7 above).
 
 MTune: AIN 3 → type = 0–5V, function = Oil pressure. AIN 1 → type = Temperature (enable 2.5k pullup).
 
-> ⚠️ **Phase 3 transition:** At the 07K swap, the PST-F1 moves from the M52 VANOS banjo bolt to the
-> 07K oil housing. The ECU_16PIN path is removed with the M50 harness. The 4 wires now cross the
-> **AS79 firewall bulkhead** — pin 79 (GND), pin 47 (+5V), pin 50 (AIN 3 pressure), pin 51 (AIN 1 temp)
-> — and terminate at MaxxECU CMC J1 (AIN 1) and J3 (AIN 3). See `walkthroughs/34-ecu-harness-final.md`.
-> Source: `harnesses/pst-f1-sensor.wv`, `harnesses/firewall-bulkhead.wv`.
+> ⚠️ **Phase 3 transition:** At the 07K swap, the PST-F1 moves from the M52 VANOS banjo bolt to
+> the 07K oil housing. The M50 harness ECU_16PIN aux breakout is removed with the M50 harness.
+> The 4 wires now direct-terminate at the engine-bay MaxxECU CMC (both endpoints are engine-bay
+> under the H2O arch — no firewall crossing): +5V → CMC G1 (pin 25); SGND → CMC H1 (pin 29);
+> pressure → CMC J3 (AIN 3, pin 37); temp → CMC J1 (AIN 1, pin 33). See
+> `walkthroughs/34-ecu-harness-final.md`. Source: `harnesses/pst-f1-sensor.wv`.
 
 ### Step 11 — GPO Assignments Summary
 
@@ -227,16 +240,18 @@ Load MaxxECU M5x base map.
 
 ---
 
-## Deferred to 07K Phase
+## Deferred to 07K Phase (Phase 3 install)
 
 These items are documented here for reference but are **not built during M5x phase**:
 
 | Item | Where documented |
 | --- | --- |
-| Ecumaster PMU16 power management unit | `34-ecu-harness-final.md` |
-| Deutsch Autosport AS79 firewall engine connector | `34-ecu-harness-final.md` |
-| Maven HD30 35-pin accessories connector | `34-ecu-harness-final.md` |
-| Full custom engine harness (07K) | `e36-wiring/docs/harness-build.md` + `34-ecu-harness-final.md` |
+| Ecumaster PMU16 power management unit | `34-ecu-harness-final.md` + `e36-wiring/harnesses/power-distribution.wv` |
+| Maven HD30 Dual 16+16 firewall bulkhead (Connector A = CAN + DCT, Connector B = safety-critical APS) | `34-ecu-harness-final.md` + `e36-wiring/docs/wiring-bom.md` System 8 |
+| CWA400 electric water pump | `07-8hp-swap.md` + `e36-wiring/harnesses/ewp-controller.wv` |
+| 12V electric AC compressor (belt system removed at 07K swap) | `e36-wiring/harnesses/ac-compressor.wv` |
+| E46 APS accelerator pedal (crosses Maven Connector B) | `35-dbw-throttle.md` + `e36-wiring/docs/dbw-pinouts.md` |
+| Full custom 07K engine harness (direct-terminate at engine-bay H2O CMC) | `e36-wiring/docs/harness-build.md` + `34-ecu-harness-final.md` |
 | 8HP CAN wiring, power sequencing | `34-ecu-harness-final.md` |
 | Post-shutdown EWP control | `34-ecu-harness-final.md` |
 
