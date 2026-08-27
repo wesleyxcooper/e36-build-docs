@@ -77,9 +77,12 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
    - A18 = APS VCC1
    - A19 = APS2 signal
 
-   APS is **cabin-to-cabin only** — MaxxECU is cabin-mounted. The HD30 cabin face acts as a junction
-   block; engine side of A14–A19 is cavity-plugged. AS79 pins 72–77 are not used for APS.
-   Source: `harnesses/firewall-bulkhead-dual.wv`, `harnesses/epedal-bmw-e46.wv`.
+   Under the H2O engine-bay-mount architecture, APS crosses the firewall via
+   **Maven HD30 Connector B (safety-critical, populated Phase 3)** — pins B1–B6.
+   Connector B is isolated from Connector A (CAN + DCT electronics) — any APS
+   fault (open, short, sensor mismatch) triggers MaxxECU e-throttle shutdown.
+   Source: `harnesses/firewall-crossing-maven.wv`, `harnesses/epedal-bmw-e46.wv`,
+   `docs/dbw-pinouts.md` § Firewall Crossing Allocation.
 
 6. Label both ends of each wire with the Brady M210 before looming.
 
@@ -88,12 +91,12 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
 7. The 07K DBW throttle body uses a 6-pin connector. ME7.1.1 reference: Motor+ = pin 84, Motor− = pin 92, TPS1 = pin 117, TPS2 = pin 118.
 
    MaxxECU ETh1 assignment (confirm in MTune E-Throttle wizard before final wiring):
-   - Motor+ → MaxxECU **C2 H4 (MOTOR 1+)** via AS79 pin 22, **22 AWG** (AS79 size-22D contact max — cannot accept 20 AWG)
-   - Motor− → MaxxECU **C2 H2 (MOTOR 1−)** via AS79 pin 23, **22 AWG** (AS79 size-22D contact max — cannot accept 20 AWG)
-   - TPS1 → CMC G2 (pin 26) / AS79 pin **48**, 22 AWG shielded
-   - TPS2 → CMC J2 (pin 34) / AS79 pin **56**, 22 AWG shielded
-   - +5V → shared sensor supply rail (AS79 pin 47)
-   - GND → sensor GND (AS79 pin 79)
+   - Motor+ → MaxxECU **C2 H4 (MOTOR 1+)** direct-terminate at engine-bay ECU, **22 AWG** (adequate for 3A H-bridge peak at 0.5m engine-bay run)
+   - Motor− → MaxxECU **C2 H2 (MOTOR 1−)** direct-terminate at engine-bay ECU, **22 AWG**
+   - TPS1 → CMC G2 (pin 26) direct-terminate, 22 AWG shielded
+   - TPS2 → CMC J2 (AIN 2, pin 34) direct-terminate, 22 AWG shielded
+   - +5V → CMC G1 (pin 25, shared sensor +5V rail) direct-terminate
+   - SGND → CMC H1 (pin 29, shared sensor GND) direct-terminate
 
    > ⚠️ Motor+/− connect to the **dedicated H-bridge outputs (C2 H4/H2)**, NOT GPO 3 or GPO 4.
    > GPO 3 = VVT solenoid; GPO 4 = spare. Using GPO for motor drive would damage the output.

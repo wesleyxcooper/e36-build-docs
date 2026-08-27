@@ -58,7 +58,7 @@ This walkthrough covers installing the 07K injectors and fuel rail, upgrading to
 
 4. The Radium Engineering 20-1170 hanger was installed in Phase 1 and carries forward. The Phase 3 step is **swapping the pump** inside the hanger to the Walbro 450LPH (F90000267) if not already done.
    - Reference: [Radium 20-1170 install instructions (PDF)](https://cdn.shopify.com/s/files/1/0887/4193/7449/files/19-0359.pdf)
-   - Wiring spec: [`fuel-pump-hanger.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/fuel-pump-hanger.wv)
+   - Wiring spec: [`fuel-pump-hanger-phase1.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/fuel-pump-hanger-phase1.wv) (Phase 1 discrete relay + JDT rewire kit) → [`fuel-pump-hanger-phase3.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/fuel-pump-hanger-phase3.wv) (Phase 3 PMU16 O4 direct-drive)
    > ⚠️ **Pitfall:** Depressurize the fuel system before opening the tank. The E36 tank has a locking ring — a large channel-lock or a BMW ring tool (rent). Don't pry it with a screwdriver; you'll crack the plastic retainer. Source: `E36_DIY_Build_Checklist.md` Phase 1 Fuel System.
 
 5. Inside the Radium hanger: swap the old pump for the Walbro F90000267. The F90000267 uses a 39mm/50mm DCSS body that fits the Radium 20-1170 directly (confirmed fitment). Re-use the OEM E36 level sensor — plug it back into the Radium hanger's sender port.
@@ -103,6 +103,6 @@ This walkthrough covers installing the 07K injectors and fuel rail, upgrading to
 - `E36_DIY_Build_Checklist.md` — Phase 3, Fuel System (lines 679–683); Phase 1, Fuel System (lines 245–251)
 - `E36_9000RPM_Project_Plan_Verified.md` — Fuel System table; Turbo Selection injector sizing note
 - `harnesses/maxxecu-07k.wv` — INJ_1 through INJ_5 connectors (EV14 pigtails); FLEX_FUEL connector
-- `harnesses/fuel-pump-hanger.wv` — pump wiring spec
+- `harnesses/fuel-pump-hanger-phase1.wv` / `harnesses/fuel-pump-hanger-phase3.wv` — pump wiring spec (phase-split: Phase 1 discrete relay via JDT rewire kit vs Phase 3 PMU16 O4 direct-drive)
 - [Injector Dynamics ID1050x](https://injectordynamics.com/injectors/id1050-xds/) — dead time and flow tables
 - [Radium 20-1170 install instructions (PDF)](https://cdn.shopify.com/s/files/1/0887/4193/7449/files/19-0359.pdf)
