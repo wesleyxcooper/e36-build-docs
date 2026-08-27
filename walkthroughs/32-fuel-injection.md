@@ -21,7 +21,7 @@ This walkthrough covers installing the 07K injectors and fuel rail, upgrading to
 | --- | --- | --- |
 | Injector Dynamics ID1050x × 5 (EV14, E85-rated) | [injectordynamics.com/injectors/id1050-xds/](https://injectordynamics.com/injectors/id1050-xds/) | Verify at order |
 | BBG longitudinal 07K fuel rail | [boostbrothersgarage.com](https://www.boostbrothersgarage.com) | Included in manifold kit or separate — verify |
-| Walbro 450LPH fuel pump upgrade (Radium E36 hanger kit) | Walbro F90000267 + Radium 20-1170 basket | $203.99 (kit) |
+| ~~Walbro 450LPH fuel pump upgrade~~ | **Carry-forward from Phase 1** — F90000267 already installed in Radium 20-1170 hanger with JDT rewire kit ($193.19 bundle, see `walkthroughs/08-fuel-system.md`). No Phase 3 pump swap. | — |
 | Aeromotive 13129 compact EFI FPR (return-style, 40–75 PSI) | Carry-forward from Phase 1 | — |
 | Flex fuel ethanol sensor | Carry-forward from Phase 1 ([Seems Legit Garage](https://www.seemslegitgarage.com/product-page/ethanol-content-sensor)) | — |
 | -10AN braided fuel feed line | Re-route as needed for Walbro pump and 07K routing | ~$40–80 |

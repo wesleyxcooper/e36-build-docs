@@ -790,7 +790,7 @@ Printed brackets (PLA or PETG) are **fitment verification templates only — not
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
 | **07K Injectors** | **Injector Dynamics ID1050x × 5** | [Full Race ID1050x](https://www.full-race.com/injector-dynamics-id1050x-injectors) - $249/ea × 5 = **$1,245**. 07K is a 5-cylinder. EV14 connector — matches MaxxECU 07K harness. **Replaces Phase 1A 630cc injectors** (630cc can be resold ~$200–250). Do not double-count. |
-| **Fuel Pump Upgrade** | **Walbro 450LPH E85 + Install Kit** | [TF-Works TIA485-2](https://www.tf-works.com/walbro-450lph-e85-in-tank-fuel-pump-with-install-kit/) - $203.99 (verified). **Replaces Phase 1 Walbro 255LPH** — 255 is borderline at 600whp E85. Radium E36 install kit at radiumauto.com/P2087. Do not double-count. |
+| **Fuel Pump Upgrade** | ~~Walbro 450LPH E85 + Install Kit~~ | **Not needed at Phase 3.** Under the current architecture the Walbro F90000267 (450 LPH E85) is installed at Phase 1 with the Radium 20-1170 hanger (see Fuel Pump Hanger and Fuel Pump + Rewire (bundled) rows above — JDT bundle $193.19 covers pump + install kit + rewire kit). This row previously described a Phase 1→Phase 3 pump swap from an interim 255LPH pump; that plan is superseded — E85 pump goes in at Phase 1 and stays through Phase 3. What DOES change at Phase 3: the discrete high-current relay driving the pump is removed and replaced by PMU16 O4 direct-drive (see `fuel-pump-hanger-phase1.wv` → `fuel-pump-hanger-phase3.wv`). Do not double-count. |
 | **07K Fuel Rail** | **BBG Manifold-Compatible Rail** | Custom or billet -6AN, ~$150–300. Confirm with Boost Brothers at intake order time — OEM transverse VW rail will not fit BBG longitudinal manifold. |
 
 #### Coolant System  [COOLANT]
