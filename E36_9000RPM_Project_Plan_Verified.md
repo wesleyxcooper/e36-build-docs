@@ -32,6 +32,36 @@ This also means: the SPA TMW22 exhaust manifold, turbo, and downpipe are all on 
 
 ---
 
+## Build Machines & Software
+
+Machine role assignment across the build. No new hardware to purchase.
+
+| Machine | Specs | Role | Software |
+| :---- | :---- | :---- | :---- |
+| **MacBook Pro 16" (Nov 2024)** (owned) | Apple **M4 Max** · **64 GB** unified · macOS Tahoe 26 | **Primary Pika tether in garage — USB-C, 0.03 mm blue-laser mode, 110 fps.** Exceeds Pika macOS *recommended* spec (M3+ / 32 GB). Scan files transfer to desktop for CAD. | CrealityScan 4 (Apple Silicon build), Revo Scan 6 (fallback), Scaniverse (companion, if scanning without Pika) |
+| **Desktop** (owned) | AMD Ryzen 7 5800X3D · RTX 4070 Ti (12 GB) · 32 GB RAM · Win 10/11 | CAD workstation — Fusion 360, Blender, all bracket design work. Also runs CrealityScan Windows as a backup post-processing environment. Exceeds *recommended* spec for every scanner shortlisted. Familiar Windows environment with the rest of the user's software stack. | Fusion 360, Blender, CrealityScan 4 (Windows, backup) |
+| **Dell XPS 15 9530** (owned, 2013/2014) | i7-4702HQ · GT 750M (2 GB) · 16 GB DDR3 · Win 10 | Tuning laptop — MTune live tuning + datalogging in the garage/car/dyno; ACDP-2 8HP TCU bench flash; BMW factory diagnostics. Too old for 3D scanning software but comfortably above MTune's floor. | MaxxECU MTune + MDash, Yanhua ACDP-2 (Mini ACDP), BMW INPA / NCS Expert |
+| **iPhone 16 Pro** (owned) | A18 Pro · 8 GB RAM · iOS 18 | Scaniverse LiDAR envelope scans (clearance/keep-out volume work). Backup Pika tether over Wi-Fi 6 (mobile mode, 0.08 mm accuracy) if MacBook isn't handy. Exceeds Pika iOS *recommended* spec (A17 / 8 GB). | Scaniverse, CrealityScan (iOS), Mini ACDP (iOS — alternative ACDP-2 host) |
+| **MacBook Neo** (owned, 2026) | Apple A18 Pro · **8 GB** unified · macOS Tahoe 26 | ❌ **Benched for scanning** — Pika macOS requires ≥16 GB RAM; Neo has 8 GB non-upgradeable. Also first Mac with A-series (not M-series) chip, no CrealityScan certification against A18 Pro on macOS. Same silicon runs the Pika iOS app fine on the iPhone 16 Pro because the mobile build has lighter memory requirements. | N/A for this build |
+
+**Scan file flow:** Pika → MacBook Pro (CrealityScan capture + mesh cleanup, all in one machine) → export STL → AirDrop / iCloud / OneDrive / USB-C to desktop → Fusion 360 for bracket design.
+
+**Software confirmed compatible with the XPS 15 9530 on Win 10:**
+
+- **MaxxECU MTune** — official min: 1.5 GHz dual-core, 4 GB RAM, 1920×1080 display, Win 10/11, .NET 4.6.2+. XPS clears every requirement by a wide margin. MaxxECU explicitly notes MTune is designed to run well on old tuning laptops. Ref: [MTune PC installation](https://maxxecu.com/webhelp/mtune-pc_installation.html) · [MTune laptop issues page](https://maxxecu.com/webhelp/mtune-laptop_issues.html).
+- **Yanhua ACDP-2 (PC)** — official support: Win 7 and **Win 10 only**. Win 11 is **not officially supported** — do not upgrade this machine to Win 11. Ref: [acdp2.eu software guide](https://www.acdp2.eu/service/yanhua-acdp2-software-download-guide.html) · [Yanhua downloads](https://www.yanhuaacdp.com/info/download/).
+- **BMW INPA / NCS Expert** — Win 10 + K+DCAN cable is the standard configuration.
+
+**XPS operating pitfalls (all documented, not theoretical):**
+
+- ⚠️ **Never charge the XPS from the car's 12 V system while tethered to the MaxxECU.** Documented failure mode: fried laptop USB port and/or fried MaxxECU USB port. Run on internal battery in-car, or plug into a mains outlet on the bench/dyno. Source: [MaxxECU laptop issues page](https://maxxecu.com/webhelp/mtune-laptop_issues.html).
+- ⚠️ **Stay on Windows 10; do not upgrade to Windows 11.** MTune runs on both, but ACDP-2 is not officially supported on Win 11. Win 10 22H2 with ESU enrollment (free consumer tier via account sync, or ~$30/yr paid) keeps the machine viable indefinitely for this offline-tuning role.
+- ⚠️ **USB 3.0 port only** for the MaxxECU tether if there are two options — the ThinkPad L440 is on MaxxECU's known-issue list specifically because its USB 2.0 ports caused communication problems. The XPS 9530 has USB 3.0; use that port.
+
+**Do not use the XPS for:** 3D scanning software of any kind. Three CPU generations short of Creality Pika's minimum (i7 Gen 7 required); 2 GB VRAM GT 750M well below the 6–8 GB required; fails Revopoint POP 4's / Einstar Vega StarVision's requirements by a larger margin. In-garage scanning runs on the MacBook Pro (or iPhone as backup); CAD runs on the desktop.
+
+---
+
 ## Phase 0: Chassis Sourcing & Admin  [ADMIN]
 
 **Primary Recommendation:** Source the **easiest, cheapest RHD 6-cylinder E36 convertible with a manual gearbox** — typically a **323i or 328i** (alloy M52 block). These are the most common 6-cyl E36 convertibles in RHD markets and the correct platform for the NA M52 build path.
@@ -690,7 +720,17 @@ The 07K was designed for transverse FWD use. In a longitudinal BMW chassis its a
 
 #### Pre-Fabrication: 3D Scanning Workflow  [AIR · DRIVETRAIN · MACHINING]
 
-Use iPhone 16 Pro LiDAR to generate reference geometry for downpipe routing and engine mount bracket design before committing to fabrication. Iterate in CAD and printed plastic at home; send finalized geometry to the fabricator once.
+Two-scanner strategy — each tool used only for what it's actually good at:
+
+| Job | Precision required | Tool | Why |
+| :---- | :---- | :---- | :---- |
+| **Manifold/downpipe clearance envelope** (steering shaft, firewall, subframe, hood, brake booster, master cylinder — what a tube can *fit past*) | ±1–3 cm is fine; it's a *keep-out* volume, not a mating surface | **Scaniverse on iPhone 16 Pro LiDAR** | Free, already-owned, quick. Room-scale LiDAR is the correct regime for this job. |
+| **Engine mount design — Phase 3 07K (primary)** and **Phase 1 M52+8HP mount check (secondary)** — 07K exhaust-side boss geometry, E36 subframe mount pad geometry, block/bracket mating interfaces | Sub-mm on bolt-hole positions and mating faces | **Dedicated structured-light scanner** (see below) | LiDAR does not resolve bolt hole positions reliably. Peer-reviewed and workshop-side testing both agree: iPhone LiDAR is unusable for mechanical mating-feature capture. See references below. |
+| **Manifold flange geometry** | Sub-mm | **No scan needed — already have it** | [Cults3D — 07K 2.5L exhaust manifold flange raw 3D scan](https://cults3d.com/en/3d-model/gadget/volkswagen-07k-2-5l-exhaust-manifold-flange-raw-3d-scan-mesh). Import as reference body in Fusion 360. |
+
+**Why not use LiDAR/Scaniverse for the mount work:** HP Academy directly tested phone photogrammetry on an RX7 engine bay strut brace and a B18C block — phone came in at 0.4–1% error (≈4–10 mm over 1 m), a dedicated structured-light scanner (Einstar Vega) was 0.5–1%, and a $6k Peel 3 was under 0.5% ([hpacademy.com](https://www.hpacademy.com/blog/we-scanned-car-parts-with-a-phone-heres-what-matters/)). All About The Build's iPhone-vs-Revopoint test on BMW E30 engine-bay parts landed the same way: *"LiDAR is not ideal for small detailed parts… phone scans still need manual measuring for accuracy"* ([allaboutthebuild.com](https://www.allaboutthebuild.com/blog/2025/2/iphone-vs-professional-3d-scanner-for-3d-printed-car-parts-the-full-test)). A dedicated structured-light scanner has documented sub-minute captures of a BMW cylinder head + engine block face specifically to derive bolt boss geometry for a custom aluminum bracket ([allaboutthebuild.com POP 4 review](https://www.allaboutthebuild.com/blog/2026/5/revopoint-pop-4-review-car-parts)). That's the same job as this build's 07K mount design.
+
+##### Scaniverse (iPhone 16 Pro) — clearance envelope only
 
 **Recommended app: Scaniverse (Niantic) — free, no subscription required**
 - Exports OBJ, GLB, USDZ, PLY natively without a paid plan
@@ -701,29 +741,53 @@ Use iPhone 16 Pro LiDAR to generate reference geometry for downpipe routing and 
 **Scanning tips:**
 - Move deliberately; maintain high overlap between passes
 - Reflective or polished surfaces scan poorly — mist with aerosol developer chalk (or dry shampoo) before scanning, wipe off after. Makes surfaces temporarily matte
-- iPhone LiDAR accuracy: ~1–3 cm geometric for room-scale captures — sufficient for clearance verification and routing mockup; **not sufficient alone for bolt hole positions** (supplement with direct caliper/tape measurements)
+- iPhone LiDAR accuracy: ~1–3 cm geometric for room-scale captures — sufficient for clearance verification and routing mockup; **not sufficient for bolt hole positions** (use the dedicated scanner below for that, or direct caliper measurements for individual dimensions)
 - Run in-app crop after every scan before exporting
 
-**Workflow A — Downpipe routing (Blender)**
-1. Scaniverse scan of engine bay with 07K + 8HP installed → in-app crop → export OBJ → AirDrop to Mac
+**Workflow — Downpipe routing (Blender)**
+1. Scaniverse scan of engine bay with 07K + 8HP + SPA TMW22 + G25-660 RR + wastegate installed → in-app crop → export OBJ → AirDrop to Mac
 2. Blender: File → Import → Wavefront OBJ
 3. Add Decimate modifier (Un-Subdivide, 2–3 iterations) if the scene is sluggish
 4. Design tube path as a Bezier curve using the scan as a 3D backdrop — curve positions translate directly to bend angles and radii for the fabricator
 5. Export routing geometry or annotated screenshot as fabricator reference
 
-**Workflow B — Engine mount bracket design (Fusion 360)**
-1. Same OBJ → Fusion 360: **Insert Mesh** (Solid toolbar or Mesh workspace)
-2. **Scale manually after import** — OBJ carries no units. Measure a known reference dimension in Scaniverse's in-app ruler before exporting; verify scale in Fusion and correct via Mesh Scale (1000× default error is common)
-3. **Repair → One Touch Fix** to close holes and fix non-manifold edges
-4. Design bracket solid bodies around the reference mesh using Fusion's parametric tools
-5. Export STL for printed fitment templates; DXF or STEP for fabricator
-
 > **Note — Polycam workaround (free tier):** Polycam free → export GLB → import into Blender → File → Export → Wavefront (.obj) → use in Fusion. Mesh data is identical; this just repackages the format. No Polycam subscription needed.
+
+##### Dedicated structured-light scanner — engine mount design
+
+**Purpose:** capture the 07K exhaust-side mount boss geometry, the E36 subframe mount pad geometry, and the block/bracket mating faces at sub-mm accuracy so custom engine mount brackets can be designed in Fusion 360 with real bolt-hole positions rather than by hand-measured guesses. Primary use is **Phase 3 07K mount design**. Secondary use is a **Phase 1 M52+8HP mount check** — the DomiWorks M5x→N63 adapter (row above) adds ~33 mm at the bellhousing face and pushes the drivetrain forward; whether the OEM M52 mount locations still work with that offset is worth verifying with a proper scan rather than assuming (if the OEM pads don't line up, a Phase-1 M52-specific bracket becomes necessary — same tool, same workflow, just earlier).
+
+**Selected: Creality Pika (~$629–699) — MacBook Pro (M4 Max) primary tether, iPhone backup**
+- [Creality Pika 3D Scanner (Creality store)](https://store.creality.com/blogs/buying-guides/creality-pika-review) · [CNX-Software spec breakdown](https://www.cnx-software.com/2026/07/26/creality-pika-review-an-affordable-portable-3d-scanner-with-infrared-and-blue-laser-modes/) · [Pika user manual](https://wiki.creality.com/en/3d-scanner/pika-series/manual) · [CrealityScan 4 download (macOS + Windows)](https://wiki.creality.com/en/software/scan-software)
+- **Blue laser mode:** 0.03 mm accuracy USB-tethered / 0.08 mm Wi-Fi to phone, 0.1 mm resolution, 160–400 mm working distance
+- **NIR structured light mode:** 0.1 mm accuracy, 200–1200 mm working distance, up to 2000 mm max volume with multi-pass — captures the whole engine bay / subframe area, color-mapped
+- Volumetric accuracy: 0.02 mm + 0.05 mm/m. Marker-free in laser mode
+- Exports STL / OBJ / PLY / ASC
+- **Runs on the M4 Max MacBook Pro (64 GB) over USB-C** at full 0.03 mm precision — MacBook is portable to the garage, so full precision available on the E36 subframe mount pads as well as the 07K block on the stand. See Build Machines & Software section for machine role table.
+- **iPhone 16 Pro as backup tether** over Wi-Fi 6 (0.08 mm phone mode) if MacBook isn't available. Also handles all Scaniverse LiDAR envelope work.
+- ⚠️ New product (launched May 2026). CrealityScan software is rougher than Revopoint's per [makers101.com first-look review](https://makers101.com/creality-pika-3d-scanner/) — expect some workflow pain. Painted / oily engine bay surfaces need scanning spray (dry shampoo / developer chalk), same as with any structured-light scanner.
+
+**Scan file flow:** Pika (USB-C) → MacBook Pro CrealityScan 4 (capture + mesh cleanup + STL export) → transfer STL to desktop → Fusion 360 for bracket design. Transfer via AirDrop (to any Mac in the household), iCloud Drive, OneDrive/Google Drive, or USB-C. Desktop is where all the familiar CAD/CAM software already lives; MacBook is scan capture and cleanup only.
+
+**Alternatives at the same price point** (rejected; kept for reference in case Pika software turns out unusable):
+- **Revopoint POP 4** (~$700–900) — documented working on BMW cylinder heads, engine blocks, and intake manifolds specifically for reverse-engineering brackets ([POP 4 car-parts review](https://www.allaboutthebuild.com/blog/2026/5/revopoint-pop-4-review-car-parts)). Steeper Windows-app requirements (13th-gen i7 min).
+- **Creality Ferret Pro** — used in the All About The Build BMW E30 project on smaller parts. Lower accuracy than Pika.
+- **Einstar Vega** (~$1,499–1,799) — the scanner HP Academy tested against a $6k Peel 3 on an RX7 engine bay, 0.5–1% error. **Fully standalone** (6.4" 2K AMOLED, 32 GB LPDDR4, 512 GB SSD, 5000 mAh battery — "no computer required for 3D scanning operation") — cleanest garage workflow, ~$870 more than Pika. Post-processing (StarVision) runs on the desktop.
+- **Revopoint Miraco (base) / Miraco Pro** (~$1,499 / ~$1,999–2,483) — also standalone, tightest accuracy on paper (0.02 mm precision, 0.05 mm accuracy). Miraco Pro has 32 GB onboard RAM + higher frame limits for whole-bay captures.
+
+**Workflow — Engine mount bracket design (Fusion 360)**
+1. Scan with the Pika over Wi-Fi 6 to iPhone in the garage: (a) 07K block exhaust-side mount boss area in laser mode; (b) E36 subframe mount pad crossmember area in laser mode (engine out); (c) whole bay in NIR mode for context. For the block, optionally repeat step (a) later with the block on a cart inside, USB-tethered to the desktop for 0.03 mm accuracy.
+2. Transfer STL/OBJ from iPhone to desktop (iCloud / OneDrive / USB-C)
+3. CrealityScan on desktop: mesh cleanup, hole fill, export STL/OBJ
+4. Fusion 360: **Insert Mesh** (Solid toolbar or Mesh workspace) for the scanned block and subframe geometry
+5. **Repair → One Touch Fix** to close holes and fix non-manifold edges
+6. Design bracket solid bodies around the mesh — bolt hole positions come directly from the scan, not from hand measurement
+7. Export STL for printed fitment templates; DXF or STEP for the fabricator
 
 **3D-printed fitment templates — engine mount brackets**
 Printed brackets (PLA or PETG) are **fitment verification templates only — not structural components**. Use them to confirm bolt hole alignment between the E36 subframe and the 07K exhaust-side bosses before the fabricator cuts steel. The printed part goes in the bin after validation.
 
-**Supplement scan with direct physical measurements for all bolt hole interfaces:**
+**Caliper/tape backups for the dedicated scan** (redundancy at bolt interfaces — cheap insurance against a bad scan):
 
 | Interface | What to measure | Expected spec |
 | :---- | :---- | :---- |
@@ -816,7 +880,7 @@ Printed brackets (PLA or PETG) are **fitment verification templates only — not
 
 ### Phase 3 Technical Notes: RHD & Fabrication
 - **Steering Clearance:** The RHD E36 steering shaft is the primary bottleneck for 07K turbo placement. The **Condor Slim Shaft** (Phase 1) is mandatory. The exhaust manifold MUST be a top-mount design to clear the steering rack and linkage.
-- **Custom Fabrication:** The SPA TMW17 manifold is a catalog part — no custom manifold fab required. The custom scope is the **downpipe only**: it must navigate a narrow window between the block and the steering column in the RHD bay. Recommended workflow: mock engine in bay, 3D-scan chassis geometry, print PLA downpipe routing mockup at home, deliver verified geometry to fab shop. Ceramic coating on manifold + downpipe is not optional — heat soak will destroy the steering rack seals and brake lines.
+- **Custom Fabrication:** The SPA TMW17 manifold is a catalog part — no custom manifold fab required. The custom scope is the **downpipe only**: it must navigate a narrow window between the block and the steering column in the RHD bay. Recommended workflow: mock engine in bay, Scaniverse the engine bay envelope for clearance (LiDAR is the correct tool for a keep-out volume — see 3D Scanning Workflow section), print PLA downpipe routing mockup at home, deliver verified geometry to fab shop. Ceramic coating on manifold + downpipe is not optional — heat soak will destroy the steering rack seals and brake lines. **Engine mount design is a separate scan job on a dedicated structured-light scanner (Creality Pika or equivalent)** — LiDAR does not resolve bolt-hole positions at the tolerance a custom mount requires.
 - **Closest Longitudinal 07K Precedent:** [NineX Engineering 944/968 07K Swap Kit](https://www.ninexengineering.com/07k-swap) — full kit including mounts, intake manifold, specifies SPA TMW17 + G25-660 reverse rotation. Engine mounts designed specifically around TMW17 manifold clearance. Study their routing documentation before finalizing E36 engine position.
 - **Engine + Trans Install Sequence:** Lower the engine and trans as a single pre-assembled unit (bellhousing mated, flexplate on, trans bolted before the assembly enters the car). An engine leveler on the hoist is mandatory — required to control longitudinal pitch during placement and to match the transmission-to-differential line angle. Mock-up sequence: lower unit onto temporary wood blocks or trans jack, dial in fore-aft position (firewall clearance, hood clearance, driveshaft length target), lateral centering, and pitch angle — this is iterative. With drivetrain hanging in final position, tack-weld or clamp temporary stub brackets (flat bar/angle iron) to both the 07K block bosses and the E36 chassis rail simultaneously, holding geometry before any permanent welds. Pull the engine, finish-weld brackets on the bench, reinstall with isolators. **⚠️ All LHD swap guide driver/passenger orientation references — BBG 944, Ur-Quattro, every LS swap guide — are mirrored for this RHD build. Treat all directional references accordingly.**
 - **Engine Mount Isolator Spec — No Hydraulic:** OEM E36 mounts are hydraulic fluid-filled rubber (~55A equivalent per AKG Motorsport) and cannot be reused regardless of the swap — 07K block geometry is incompatible with BMW engine mount bosses. Custom brackets are mandatory. Isolator specification for those brackets: **NBR rubber, 43–68A durometer. No hydraulic, no solid/aluminum pucks.** 43A suits street-biased dual-purpose use; 68A is the ceiling for track/high-power. Source rubber-to-metal bonded sandwich isolators from industrial suppliers (McMaster-Carr, Lord Corporation) sized to the bracket design at fab time. Reference: Morehead Speed Works EEM — their 68A NBR "race" insert is the practical ceiling they arrived at after testing solid and stiff-poly mounts on E36 track and endurance race cars ([moreheadspeedworks.com](https://www.moreheadspeedworks.com/product/msw-enhanced-engine-mounts-e36-e46-e9x-m3/)). The MSW mount itself is OEM-geometry-specific and will not fit custom 07K brackets — the durometer spec is the reference, not the part. BBG ships rubber isolators as standard in the 944 07K mount kit; their solid aluminum pucks are an optional add-on. Apply same hierarchy here.

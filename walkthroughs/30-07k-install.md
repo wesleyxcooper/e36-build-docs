@@ -3,13 +3,13 @@
 **Phase:** 3  
 **System tags:** `[CHASSIS]` `[DRIVETRAIN]` `[OIL]` `[COOLANT]` `[ELECTRICAL]`  
 **Shop-mandatory:** Partial (engine mount welding = shop; crane work = DIY with help)  
-**Prerequisites:** Phase 2 07K longblock complete and sealed; 8HP installed and commissioned on M52; firewall bulkhead connector installed; 07K engine harness built and bench-tested; Chatham CNC adapter plate on order or in hand; 3D scan of engine bay completed before any disassembly
+**Prerequisites:** Phase 2 07K longblock complete and sealed; 8HP installed and commissioned on M52; firewall bulkhead connector installed; 07K engine harness built and bench-tested; Chatham CNC adapter plate on order or in hand; **Scaniverse envelope scan of engine bay completed before disassembly; dedicated structured-light scanner on hand for mount-interface scans** (see `../E36_9000RPM_Project_Plan_Verified.md` → Pre-Fabrication: 3D Scanning Workflow)
 
 ---
 
 ## Overview
 
-This walkthrough covers removing the M52 interim engine and installing the Phase 2 07K longblock with all accessories mounted. The 07K swap is a single-connector engine change at the firewall bulkhead — the cabin harness, 8HP CAN harness, and body integrations are untouched. The critical sequencing constraint is: **3D scan before pulling the M52**. The bay geometry with the M52 in place is what Fusion 360 and the downpipe fabricator need.
+This walkthrough covers removing the M52 interim engine and installing the Phase 2 07K longblock with all accessories mounted. The 07K swap is a single-connector engine change at the firewall bulkhead — the cabin harness, 8HP CAN harness, and body integrations are untouched. The critical sequencing constraint is: **scan before pulling the M52** — a Scaniverse envelope pass with the M52 in place gives Blender the bay clearance context the downpipe fabricator needs later, and a dedicated structured-light scan of the exposed E36 subframe mount pads (once the M52 is out) gives Fusion the mating-feature geometry for the custom 07K mount brackets.
 
 **RHD orientation reminder:** In this RHD E36, the 07K exhaust side (SPA manifold, turbo outlet, downpipe) is on the **driver side** (right side of car looking forward). The intake side (BBG manifold, iABED oil filter housing) is on the **passenger side** (left side of car). All hose routing and clearance checks use exhaust/intake terminology — not left/right.
 
@@ -38,8 +38,9 @@ This walkthrough covers removing the M52 interim engine and installing the Phase
 - Coolant drain pan (5L+)
 - Oil drain pan
 - Standard socket set (M8–M17), torque wrench
-- Scaniverse (free, iPhone 16 Pro) — for 3D scan before disassembly
-- Calipers — measure 07K exhaust-side boss hole spacing and thread spec (M10×1.5 expected)
+- Scaniverse (free, iPhone 16 Pro) — engine bay envelope scan for downpipe clearance work
+- Creality Pika structured-light scanner + M4 Max MacBook Pro USB-C tether in the garage — engine mount mating-feature capture at full 0.03 mm blue-laser precision. CrealityScan 4 macOS handles capture + mesh cleanup on the MacBook; STL exports to the desktop for Fusion 360 bracket design. iPhone 16 Pro is backup tether (Wi-Fi 6, 0.08 mm) and handles Scaniverse envelope scans. See project plan → Pre-Fabrication: 3D Scanning Workflow and Build Machines & Software.
+- Calipers — measure 07K exhaust-side boss hole spacing and thread spec (M10×1.5 expected) as redundancy to the structured-light scan
 - Electrical connector picks (Lisle 57750) for harness disconnect
 - Brady M210 wire label printer — relabel anything disconnected
 
@@ -51,17 +52,19 @@ This walkthrough covers removing the M52 interim engine and installing the Phase
 
 1. **Photograph all hose routing before touching anything** — every coolant line, oil line, vacuum line, and wiring loom in the engine bay. These references are invaluable when building 07K routing six months later. Use the same bay; label connections in photos.
 
-2. **Complete 3D scan of engine bay with M52 in place.**
-   - Use Scaniverse (free, iPhone 16 Pro). Multiple passes from all angles; highest available resolution.
-   - Export as OBJ → Fusion 360 (engine mount adapter bracket solid-body design) + Blender (downpipe routing path as Bezier curve).
-   - Send annotated Blender routing reference to downpipe fabricator before engine comes out.
-   - 3D-printed PLA/PETG bracket templates are **fitment verification only — not structural.** Validate bolt hole alignment between 07K exhaust-side bosses and E36 subframe, then discard.
+2. **Envelope scan of engine bay with M52 in place — Scaniverse (iPhone 16 Pro LiDAR).**
+   - Multiple passes from all angles; highest available resolution. Purpose is *clearance envelope* — steering rack, firewall, subframe, hood inner, brake booster. LiDAR is the correct regime for this (keep-out volume, not a mating surface).
+   - Export as OBJ → Blender (downpipe routing path as Bezier curve, later — after 07K + turbo are actually installed).
    > ⚠️ **Pitfall:** Do the scan with a mostly-stock looking bay — accessories on the engine, not removed. The fabricator needs the real constraints (steering rack, firewall, subframe) relative to the engine position.
 
-3. **Measure and record with calipers before teardown:**
-   - 07K exhaust-side boss hole center-to-center spacing
-   - 07K boss thread spec (expected M10×1.5 — verify with tap at teardown)
-   - E36 subframe mount pad positions and center-to-center spacing (engine out)
+3. **Mating-feature scan of mount interfaces — Creality Pika + M4 Max MacBook Pro USB-C tether.**
+   - Scan the **07K block exhaust-side mount boss area on the engine stand** in blue-laser mode at 0.03 mm accuracy (during Phase 2 or before drop-in below).
+   - Once the M52 is pulled (below), scan the **E36 subframe mount pads and crossmember** in blue-laser mode at 0.03 mm accuracy — MacBook is portable to the garage, so full precision available on the chassis-bound features.
+   - CrealityScan 4 macOS handles capture + mesh cleanup on the MacBook. Export STL → transfer to desktop (AirDrop / iCloud / OneDrive / USB-C) → Fusion 360 (Insert Mesh) → design custom mount brackets around real bolt-hole positions.
+   - iPhone 16 Pro is backup tether (Wi-Fi 6, 0.08 mm) if MacBook is unavailable — still ~4× tighter than the bolt pattern actually requires.
+   - 3D-printed PLA/PETG bracket templates are **fitment verification only — not structural.** Validate bolt hole alignment between 07K exhaust-side bosses and E36 subframe, then discard.
+   - **Caliper backup measurements** (redundancy against a bad scan): 07K exhaust-side boss hole center-to-center spacing; 07K boss thread spec (expected M10×1.5 — verify with tap at teardown); E36 subframe mount pad center-to-center spacing (engine out).
+   > See `../E36_9000RPM_Project_Plan_Verified.md` → Pre-Fabrication: 3D Scanning Workflow and → Build Machines & Software for full workflow.
 
 ### Cooling System Drain
 
@@ -102,7 +105,7 @@ This walkthrough covers removing the M52 interim engine and installing the Phase
 
 ### Engine Mount Fabrication (Shop)
 
-17. With the bay empty, take final measurements for the custom 07K engine mounts. Supply the 3D scan data, caliper measurements, and 07K boss thread spec to Race3 / JNC (or chosen fab shop). Mounts are welded steel — **shop-mandatory**.
+17. With the bay empty, take final measurements for the custom 07K engine mounts. Supply the **dedicated structured-light scan STL data** (block boss geometry + subframe pad geometry — see Pre-Pull step 3), caliper redundancy measurements, and 07K boss thread spec to Race3 / JNC (or chosen fab shop). Mounts are welded steel — **shop-mandatory**.
 
 18. **07K exhaust-side boss spec:** expected M10×1.5 — verify with tap at teardown. Confirm boss center-to-center spacing with calipers before the fab drawing is finalized. A mount built to wrong spacing is scrap.
 

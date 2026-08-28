@@ -712,11 +712,12 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] 🔧 Pull M5x interim engine
   - > Reference: [E36 engine removal (YouTube)](https://www.youtube.com/watch?v=kracqUH216s)
   - > ⚠️ **Pitfall:** Drain coolant and oil before pulling. Disconnect the battery. Label every hose and connector as you remove it — the 07K bay will look different and you will not remember where the M52 AC line went 6 months later.
-- [ ] ⚠️ **Complete 3D scan of engine bay and engine mount bracket design before fabrication**
+- [ ] ⚠️ **Complete 3D scans of engine bay and mount interfaces before fabrication** — two-scanner workflow
   - See 3D Scanning Workflow section in project plan (Phase 3 → Pre-Fabrication)
-  - Use Scaniverse (free, iPhone 16 Pro) → export OBJ → Fusion 360 (bracket solid body design) + Blender (downpipe routing)
+  - **Envelope / clearance (Scaniverse, iPhone 16 Pro):** engine bay in-place → OBJ → Blender for downpipe routing. LiDAR resolution is correct for keep-out volume work only.
+  - **Mount mating features (Creality Pika ~$629–699 + M4 Max MacBook Pro USB-C tether):** 07K exhaust-side mount bosses + E36 subframe mount pads in blue-laser mode at 0.03 mm precision → CrealityScan 4 macOS cleanup on MacBook → export STL → transfer to desktop → Fusion 360 bracket design. iPhone 16 Pro is backup tether (Wi-Fi 6, 0.08 mm). Alternatives if Pika software unusable: Revopoint POP 4, Einstar Vega (standalone). See Project Plan → Build Machines & Software.
   - 3D-printed templates (PLA/PETG) are **fitment verification only — not structural**. Validate bolt hole alignment between 07K exhaust-side bosses and E36 subframe, then bin the prints
-  - **Measure and record before scan-to-CAD step:**
+  - **Caliper/tape backup measurements (redundancy at each bolt interface):**
     - 07K exhaust-side boss hole center-to-center spacing (calipers)
     - 07K boss thread spec (expected M10×1.5 — verify with tap at teardown)
     - E36 subframe mount pad positions and center-to-center spacing (engine out)
@@ -748,8 +749,8 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - > ⚠️ **Pitfall:** Must be reverse rotation — standard rotation directs the compressor outlet into the firewall with the SPA MK5 manifold in longitudinal installation. Full Race G-series RR listings use distinct SKUs from standard rotation — double-check at purchase.
 - [ ] ✅ Install T3-to-V-band adapter — ~$35–50 (connects SPA T3 manifold outlet to G25-660 V-band turbine inlet; adds ~25–35mm to stack height)
 - [ ] ✅ Install Tial 44mm MVR wastegate (V-band direct fit to SPA manifold WG port)
-- [ ] ⚠️ **Complete 3D scan workflow before sending downpipe to fabricator** — see 3D Scanning Workflow section in project plan Phase 3
-  - Scan engine bay with Scaniverse (iPhone 16 Pro, free) after 07K + 8HP are installed → design tube routing path in Blender as Bezier curve → send annotated routing reference to fabricator
+- [ ] ⚠️ **Complete downpipe clearance scan before sending to fabricator** — see 3D Scanning Workflow section in project plan Phase 3
+  - Scan engine bay with Scaniverse (iPhone 16 Pro, free) after 07K + 8HP + SPA manifold + turbo + wastegate are installed → design tube routing path in Blender as Bezier curve → send annotated routing reference to fabricator. LiDAR envelope is the correct tool here (keep-out volume, not a mating surface).
 - [ ] 🏭 Measure downpipe routing and send to fabricator — custom RHD downpipe around [STEERING] rack
 - [ ] ✅ Re-pipe CXRacing FMIC core for G25-660 RR turbo position (all Phase 1A piping unusable)
 - [ ] 🔧 Re-plumb Turbosmart boost solenoid for G25-660 RR + Tial 44mm wastegate setup

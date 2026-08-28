@@ -3,7 +3,7 @@
 **Phase:** 3  
 **System tags:** `[AIR]` `[THERMAL]`  
 **Shop-mandatory:** Partial (downpipe fabrication = shop; all other steps DIY)  
-**Prerequisites:** 07K installed and mounts torqued (`30-07k-install.md`); 3D scan of engine bay completed with engine in place; SPA TMW22 manifold and G25-660 RR on hand; Tial 44mm MVR wastegate on hand; CXRacing FMIC core carried from Phase 1A
+**Prerequisites:** 07K installed and mounts torqued (`30-07k-install.md`); Scaniverse envelope scan of engine bay completed with engine + manifold + turbo + wastegate in place (LiDAR envelope is the correct tool for downpipe clearance work — see project plan Pre-Fabrication: 3D Scanning Workflow); SPA TMW22 manifold and G25-660 RR on hand; Tial 44mm MVR wastegate on hand; CXRacing FMIC core carried from Phase 1A
 
 ---
 
