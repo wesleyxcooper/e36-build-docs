@@ -46,7 +46,7 @@
 
 3. 🔧 Source E36 M3 trailing arms: 1996–1999 US E36 M3 or 1996–2002 Z3M (same arm, more Z3M supply). ~$300–500/pair.
    - OEM part numbers: Left `33322227985` / Right `33322227986` — 1996–1999 E36 M3 and 1996–2002 Z3M. New OEM discontinued; source used only.
-   - M3 arms use larger wheel bearings and M3 hubs — required for Born2Drift halfshaft fitment and hydraulic handbrake bracket bolt pattern. Source: [RealOEM — 1999 E36 M3 rear axle diagram](https://www.realoem.com/bmw/enUS/showparts?diagId=33_1004&id=BG93-USA-05-1999-E36-BMW-M3)
+   - M3 arms use larger wheel bearings and M3 hubs — required for Born2Drift halfshaft fitment, M3 rear caliper/rotor upgrade, and (optional) Kakuma dual-caliper hydro handbrake bracket. Source: [RealOEM — 1999 E36 M3 rear axle diagram](https://www.realoem.com/bmw/enUS/showparts?diagId=33_1004&id=BG93-USA-05-1999-E36-BMW-M3)
 
 4. 🔧 Swap trailing arms while subframe is out.
    > ⚠️ **Pitfall:** Trailing arm swap must happen while subframe is out. Once the subframe is back in, this becomes a major teardown. Do not skip it at Phase 1.

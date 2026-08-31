@@ -3,7 +3,7 @@
 **Phase:** 1  
 **System tags:** `[BRAKES]`  
 **Shop-mandatory:** Yes — caliper machining requires a lathe (12mm off mounting boss for 17" wheel clearance). Not DIY. Brake booster delete requires grinding and drilling the firewall/pedal box; easiest with the engine bay open.  
-**Prerequisites:** M3 trailing arms and M3 spindles installed (03-suspension, 04-front-geometry). Hydraulic handbrake bracket and rear calipers bolt to the M3 trailing arm only — non-M arms will not work.
+**Prerequisites:** M3 trailing arms and M3 spindles installed (03-suspension, 04-front-geometry). M3 rear calipers bolt to the M3 trailing arm only — non-M arms will not work.
 
 ## Parts
 
@@ -17,10 +17,10 @@
 | RallyRoad BBK Front Braided Lines | [rallyroad.net](https://rallyroad.net/collections/brakes/products/e36bigbrakekitfrontlines) | $64.95 |
 | OEM E36 M3 rear calipers, ATE single-piston | Same E36 M3 or Z3M donor as trailing arms | ~$80–150/pair |
 | 312×20mm rear rotors | EBC GD or Zimmermann Sport (matched set to front) | ~$60–100/pair |
-| Kakuma dual-caliper bracket — preferred | [kakumaracingparts.com](https://www.kakumaracingparts.com/product/bmw-e36-dual-caliper-bracket-kit/) | €160 (~$175) |
-| — OR — SLG bracket (alt path) | [drifthq.com](https://drifthq.com/products/slg-bmw-e36-m3-wilwood-dual-caliper-bracket-kit) | $335 |
-| — WITH — Wilwood Dynapro 4-piston (SLG path only) | PN `120-9703` · Wilwood | (source separately) |
-| Hydraulic master cylinder + lever kit | Various | ~$80–200 |
+| Reverse-mount hydro handbrake body + removable handle | Paul's Parts, Chase Bays Reverse Mount, Sikky Reverse, NPParts, etc. | ~$150–380 |
+| Pass-through master cylinder, 5/8" bore | Wilwood `260-3378` (if not included with handbrake body) | ~$90–110 |
+| Chase Bays BMW E46 pass-thru inline line kit — recommended plumbing path | Vividracing PN `CB-E36-OEMC/HB` — pre-cut BMW-specific lines + bulkhead fittings | ~$260 |
+| — OR — à la carte plumbing (AN-3 braided lines, bulkhead fittings, M10×1.0 → AN-3 adapters, DOT4 fluid) | Standard motorsport plumbing parts | ~$130–190 |
 | NES Engineering brake booster delete | [nesengineering.com](https://nesengineering.com/products/brakboster-delete?variant=57108005880191) | $216 |
 
 ## Tools
@@ -57,17 +57,33 @@
 
 7. 🔧 Install 312×20mm rear rotors matched in brand and style to front (EBC GD or Zimmermann Sport make matched front+rear sets). ~$60–100/pair.
 
-### Hydraulic Handbrake 🔧 DIY with specialty tools
+### Hydraulic Handbrake — Inline Reverse-Mount, Removable Handle 🔧 DIY with specialty tools
 
-8. 🔧 Install hydraulic handbrake — **Kakuma dual-caliper bracket (preferred path)**:
-   - [Kakuma bracket](https://www.kakumaracingparts.com/product/bmw-e36-dual-caliper-bracket-kit/) — €160 (~$175) — bolt-on to M3 trailing arm, uses a second OEM E36 M3 rear caliper as the hydro unit. Total Kakuma path: ~$250–400.
-   - Alt: [SLG bracket](https://drifthq.com/products/slg-bmw-e36-m3-wilwood-dual-caliper-bracket-kit) ($335) + Wilwood Dynapro 4-piston PN `120-9703` (⚠️ M3 arm requires Dynapro 4-piston — **NOT Dynalite**). Total SLG path: ~$450–650.
-   - Hydraulic MC + lever kit: ~$80–200.
-   > ⚠️ **Pitfall:** Both bracket options bolt to the factory handbrake mounting point on the M3 trailing arm only — will not fit non-M arms.
+> **Design:** pass-through master cylinder plumbed inline in the rear brake circuit. At rest, fluid flows through unrestricted — pedal operates rears normally. Pulled, an internal seal isolates IN and pressurizes OUT, locking the OEM M3 rear calipers. Uses your existing single rear caliper — no second caliper, no dual-caliper bracket. Reverse-mount body tucks the MC under the dash/console; removable handle pops off for street use.
+>
+> Sustained-competition-drift upgrade path (dual-caliper Kakuma bracket) documented in `E36_Enhancements_SideProjects.md`.
+
+8. 🔧 Source hardware:
+   - Reverse-mount handbrake body with removable handle (Paul's Parts, Chase Bays Reverse Mount, Sikky Reverse, NPParts, MTuning, SWAGIER)
+   - Pass-through MC in 5/8" bore (Wilwood `260-3378`) — required. Reservoir-style MCs will not work inline.
+
+9. 🔧 Mount handbrake body to transmission tunnel or seat crossmember. Verify seat rail + driver hip clearance with handle installed; verify handle-out clearance for stealth mode.
+
+10. 🔧 Route the **IN line:** OUT side of NES booster-delete bias valve → firewall bulkhead fitting → hydro MC IN port.
+
+11. 🔧 Route the **OUT line:** hydro MC OUT port → firewall bulkhead fitting → down the transmission tunnel underside → rear T-fitting → OE braided flex lines to each M3 rear caliper.
+    > **Plumbing shortcut:** Chase Bays sells a BMW E46 pass-thru inline line kit (Vividracing PN `CB-E36-OEMC/HB`, ~$260) with pre-cut BMW-specific lines and bulkhead fittings. E36 variant not explicitly listed — contact Chase Bays to confirm fit or spec adapters.
+
+12. 🔧 Delete the OE rear hardline section between the front-of-cabin MC output and the rear T — replaced by the two AN-3 lines above.
+
+13. 🔧 Bleed rears twice: once with lever at rest (bleeds pedal-MC → hydro-MC → calipers path), once with lever pulled (bleeds MC's internal actuated chamber). Start with the farthest caliper.
+
+14. 🔧 Verify pedal feel unchanged with lever at rest; verify rears lock within 1–2 in of lever travel with pedal at rest.
+    > ⚠️ **Pass-through MC is not optional.** Reservoir-style MCs (single inlet from reservoir, single outlet to caliper) block pedal-side flow at rest and won't isolate a supply line when pulled. If the handbrake body ships without an MC (Paul's Parts, NPParts, MTuning), order a Wilwood `260-3378` or equivalent 5/8" pass-thru separately.
 
 ### Brake Booster Delete 🔧 DIY with specialty tools
 
-9. 🔧 Install NES Engineering brake booster delete ([nesengineering.com](https://nesengineering.com/products/brakboster-delete?variant=57108005880191)) — $216. **Install at Phase 1** — firewall mods are easiest with the engine bay open.
+15. 🔧 Install NES Engineering brake booster delete ([nesengineering.com](https://nesengineering.com/products/brakboster-delete?variant=57108005880191)) — $216. **Install at Phase 1** — firewall mods are easiest with the engine bay open.
    - Changes pedal ratio 3:1 → 6:1 using stock master cylinder.
    - Required mods: grind 2mm off firewall hole + pedal box, drill new hole in brake pedal.
    - **Irreversible — confirm before cutting.**
@@ -81,7 +97,9 @@
 - [RallyRoad BBK Front Lines](https://rallyroad.net/collections/brakes/products/e36bigbrakekitfrontlines)
 - [R3VLimited — E46 330i calipers incompatible with E36 M3 knuckles](https://www.r3vlimited.com/board/forum/e30-technical-forums/suspension-unsprung/brakes-subframe-arms/386832-e46-330i-brakes-with-e36-m3-knuckles)
 - [NA M3 Forums — E36 996 Brembo write-up](https://nam3forum.com/forums/forum/e36-1992-1999/108032-e36-996-brembo-big-brake-conversion)
-- [Kakuma racing parts — E36 dual caliper bracket](https://www.kakumaracingparts.com/product/bmw-e36-dual-caliper-bracket-kit/)
-- [SLG — E36 M3 Wilwood dual caliper bracket](https://drifthq.com/products/slg-bmw-e36-m3-wilwood-dual-caliper-bracket-kit)
+- [Chase Bays Hydro Handbrake — Reverse Mount](https://www.chasebays.com/products/chase-bays-ultra-compact-reverse-mount-hydro-handbrake)
+- [Chase Bays BMW E46 pass-thru inline line kit — Vividracing (PN `CB-E36-OEMC/HB`)](https://www.vividracing.com/chase-bays-pass-thruinline-single-rear-caliper-hydro-handbrake-line-kit-bmw-e46-p-156616092.html)
+- [Paul's Parts — Reverse + Removable Handle](https://paulsparts.ie/product/hydraulic-handbrake-reverse-removable-handle/)
+- [Sikky Reverse Pull-Back Hydraulic Handbrake](https://www.sikky.com/product/reverse-hydraulic-handbrake-kit/)
 - [NES Engineering brake booster delete](https://nesengineering.com/products/brakboster-delete?variant=57108005880191)
 - VAC Motorsports Philadelphia: 2501 Snyder Ave · 215-462-4666

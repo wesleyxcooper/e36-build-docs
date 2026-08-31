@@ -335,6 +335,63 @@
 | **Finishing Lines billet holders** | CNC-machined billet aluminum routing clamps — secure and display braided lines along chassis/firewall | [@finishing_lines on Instagram](https://www.instagram.com/finishing_lines/) — small-batch, DM for pricing. Compatible with any braided SS line including Condor. Purely cosmetic vs. standard plastic clips. |
 | **OEM-style replacement clips** | BMW E36 plastic brake line routing clips | Available from FCP Euro / RealOEM. Cheap and correct — use if existing clips are broken and billet isn’t a priority. |
 
+### Dual-Caliper Hydro Handbrake — Competition Upgrade (Alt. to Phase 1 Inline)  [BRAKES]
+
+> Upgrade path if the car moves toward sustained competition drift use (repeated hard corner entries stacking service-brake heat + hydro pulls in the same run). Adds a second OEM E36 M3 rear caliper per side, dedicated to the handbrake circuit, on a CNC bracket that bolts to the factory handbrake mounting points on the M3 trailing arm. Independent thermal mass and independent hydraulic circuit vs. Phase 1 inline.
+
+#### Bracket options
+
+| Bracket | Caliper | Cost | Source |
+| :--- | :--- | :--- | :--- |
+| **Kakuma dual-caliper bracket** | Second OEM E36 M3 rear caliper (same as service brake — one part number to stock) | €160 (~$175) | [kakumaracingparts.com](https://www.kakumaracingparts.com/product/bmw-e36-dual-caliper-bracket-kit/) |
+| **CNC71** | Second OEM E36 rear caliper | ~€150 | [driftshop.com](https://www.driftshop.com/cnc71-rear-dual-caliper-adapter-kit-bmw-e36.html) |
+| **Big Duck Club** | Wilwood Dynapro 4-piston `120-9703` (⚠️ **NOT** Dynalite — M3 arm requires Dynapro) | ~$300 bracket only | [bigduckclub.com](https://www.bigduckclub.com/product-page/e36-dual-caliper-bracket-for-wilwood) |
+| **Chase Bays E36/E46 dual-rear-caliper kit** | Wilwood 4-piston, brackets + calipers + BP-10 pads + hardware bundled | Contact | [iraceautosports.com](https://www.iraceautosports.com/product/chase-bays-dual-rear-caliper-kit-bmw-e36-e46/) |
+| **Sikky E36 M3 dual-caliper kit** | Wilwood 4-piston, full bundle (bracket + handle + MC) | Contact | [sikky.com](https://www.sikky.com/product/dual-caliper-brake-kit-for-e36-m3/) |
+| **SLG bracket** | Wilwood Dynapro 4-piston `120-9703` | $335 | [drifthq.com](https://drifthq.com/products/slg-bmw-e36-m3-wilwood-dual-caliper-bracket-kit) |
+| **Seems Legit Garage** (patented) | Wilwood 4-piston for M3 (2-piston for non-M) | Contact | [seemslegitgarage.com](https://www.seemslegitgarage.com/product-page/e36-dual-caliper-bracket-kit) |
+
+> **Preferred:** Kakuma. Cheapest full path, uses a second OEM caliper (single part number to stock, competition-proven for hydro duty per Kakuma's own product spec), bolts to factory M3 trailing arm handbrake mounts with OEM hardware. Deletes OEM mechanical handbrake system and ABS sensor at the rear.
+
+#### Additional hardware beyond the bracket
+
+- Second OEM E36 M3 rear caliper per side (Kakuma/CNC71 path) — ~$80–150/pair
+- **Standalone** (non-pass-through) master cylinder, 5/8" bore — the dual-caliper hydro circuit is fully independent from the service brake, so a reservoir-style MC is correct here. Wilwood `260-14242` or similar
+- Handbrake lever body — reverse-mount removable-handle options still available (Paul's Parts sells a **standalone** MC variant; specify at order)
+- Dedicated braided lines from hydro MC → new rear T → each hydro caliper
+- Independent DOT4 reservoir feed for the hydro MC
+
+#### Total cost estimate
+
+| Path | Total |
+| :--- | :--- |
+| Kakuma (OEM second caliper) | **~$430–580** |
+| Big Duck / SLG (Wilwood Dynapro 4-piston) | **~$650–900** |
+| Sikky full bundle | **~$800–1,100** |
+
+#### Tradeoffs vs. Phase 1 inline
+
+| Factor | Phase 1 Inline | Dual-caliper |
+| :--- | :--- | :--- |
+| Total cost | ~$370–670 | ~$430–1,100 depending on caliper choice |
+| Independent thermal capacity | ❌ shared with service brake | ✅ dedicated caliper |
+| Single hydraulic failure risk | ⚠️ hydro MC seal failure affects service brake rear circuit | ✅ isolated |
+| Removable-handle options | ✅ common | ⚠️ most bundled units are forward-mount non-removable — sourceable separately (Paul's Parts standalone-MC variant) |
+| Unsprung + rotating mass | no change | +1 caliper per side |
+| Deletes OEM mechanical handbrake | Optional | ✅ required for bracket install |
+| Best for | Street + occasional lot/track | Sustained competition drift days |
+
+#### References
+
+- [Kakuma dual-caliper bracket](https://www.kakumaracingparts.com/product/bmw-e36-dual-caliper-bracket-kit/)
+- [Kakuma M3-specific dual caliper adaptors](https://www.kakumaracingparts.com/product/bmw-e36-m3-rear-control-arm-dual-caliper-adaptors/)
+- [CNC71 dual caliper adapter kit](https://www.driftshop.com/cnc71-rear-dual-caliper-adapter-kit-bmw-e36.html)
+- [Big Duck Club E36 Wilwood bracket](https://www.bigduckclub.com/product-page/e36-dual-caliper-bracket-for-wilwood)
+- [Chase Bays dual rear caliper kit E36/E46](https://www.iraceautosports.com/product/chase-bays-dual-rear-caliper-kit-bmw-e36-e46/)
+- [SLG Wilwood dual-caliper bracket](https://drifthq.com/products/slg-bmw-e36-m3-wilwood-dual-caliper-bracket-kit)
+- [Sikky E36 M3 dual-caliper full kit](https://www.sikky.com/product/dual-caliper-brake-kit-for-e36-m3/)
+- [Seems Legit Garage dual-caliper bracket](https://www.seemslegitgarage.com/product-page/e36-dual-caliper-bracket-kit)
+
 ---
 
 ## Plumbing Upgrades — AN Quick-Release  [PLUMBING]

@@ -113,7 +113,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] 🔧 **Swap E36 M3 trailing arms** during subframe-out Phase 1 work — subframe is already removed for reinforcement
   - Source from 1996–1999 US E36 M3 or Z3M (same arm, more Z3M supply). ~$300–500/pair (eBay/LKQ/salvage)
   - **OEM part numbers:** Left `33322227985` / Right `33322227986` — 1996–1999 E36 M3 and 1996–2002 Z3M (source: [RealOEM](https://www.realoem.com/bmw/enUS/showparts?diagId=33_1004&id=BG93-USA-05-1999-E36-BMW-M3)). New OEM discontinued; source used only.
-  - M3 arms use larger wheel bearings and M3 hubs — required for Born2Drift halfshaft fitment and hydro handbrake bracket bolt pattern
+  - M3 arms use larger wheel bearings and M3 hubs — required for Born2Drift halfshaft fitment, M3 rear caliper/rotor upgrade, and (optional) Kakuma dual-caliper hydro handbrake bracket
   - > ⚠️ **Pitfall:** Trailing arm swap must happen while subframe is out. Once the subframe is back in, this becomes a major teardown. Do not skip it at Phase 1.
 - [ ] 🔧 **Install VAC Motorsports billet differential cover** during Phase 1 subframe-out window   [DRIVETRAIN · DIFFERENTIAL]
   - Diff is already exposed while trailing arms and halfshafts are out — ~30 min incremental
@@ -167,11 +167,13 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - Source from same E36 M3 or Z3M donor as trailing arms — ~$80–150/pair (calipers)
   - Direct bolt-on to M3 trailing arm. No brackets, no machining.
   - Rotors: 312×20mm matched brand/style to front (EBC GD or Zimmermann Sport make matched front+rear sets)
-- [ ] 🔧 **Install hydraulic handbrake** — Kakuma dual-caliper bracket (preferred path)
-  - [Kakuma bracket](https://www.kakumaracingparts.com/product/bmw-e36-dual-caliper-bracket-kit/) — **€160 (~$175)** — bolt-on to M3 trailing arm, uses a second OEM E36 M3 rear caliper as the hydro unit
-  - Alt: [SLG bracket](https://drifthq.com/products/slg-bmw-e36-m3-wilwood-dual-caliper-bracket-kit) ($335) + Wilwood Dynapro 4-piston PN 120-9703 (⚠️ M3 arm requires Dynapro 4-piston — NOT Dynalite)
-  - Hydraulic MC + lever kit: ~$80–200. Total Kakuma path: ~$250–400
-  - > ⚠️ **Pitfall:** Both bracket options bolt to the factory handbrake mounting point on the M3 trailing arm only — will not fit non-M arms.
+- [ ] 🔧 **Install hydraulic handbrake** — inline reverse-mount, removable handle (full walkthrough: `walkthroughs/05-brakes.md` steps 8–14)
+  - Reverse-mount handbrake body with removable handle (Paul's Parts, Chase Bays Reverse Mount, Sikky Reverse, NPParts, MTuning, SWAGIER) — ~$150–380
+  - Pass-through master cylinder, 5/8" bore (Wilwood `260-3378`) — ~$90–110. ⚠️ Reservoir MCs will not work inline
+  - Plumbing: [Chase Bays BMW E46 pass-thru inline line kit](https://www.vividracing.com/chase-bays-pass-thruinline-single-rear-caliper-hydro-handbrake-line-kit-bmw-e46-p-156616092.html) (Vividracing PN `CB-E36-OEMC/HB`, ~$260), or à la carte AN-3 braided lines + bulkhead fittings + M10×1.0 → AN-3 adapters (~$130–190)
+  - Fluid path (with Phase 1 booster-delete): pedal MC → NES bias valve OUT → firewall bulkhead → hydro MC IN → hydro MC OUT → firewall bulkhead → rear T → L/R OEM M3 calipers
+  - Total inline path: ~$370–670
+  - > **Upgrade path for sustained competition drift:** Kakuma dual-caliper bracket documented in `E36_Enhancements_SideProjects.md` under Brakes. Requires M3 trailing arm (already Phase 1).
 - [ ] ✅ **Replace all factory rubber brake hoses with braided SS lines** — [Condor Speed Shop E36 kit](https://www.condorspeedshop.com/products/e36-stainless-steel-brake-line) — **$154–169**
   - BrakeQuip-made in Florida: PTFE inner core, 4-wire 304SS braid, DOT-compliant (MVSS-1006), burst-tested to 6,000 psi, lifetime warranty
   - Variants: Regular or Extended-length front lines (extended for lock kit/wide-angle kit clearance) + standard 2-piece or single-piece rear lines — all in the same price tier
