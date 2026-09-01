@@ -28,7 +28,7 @@ This walkthrough covers the complete air and boost system: SPA TMW22 top-mount e
 | Intercooler piping — charge side (compressor → FMIC → intake) | Silicone hose + aluminum piping to suit G25-660 RR compressor outlet position | ~$150–300 |
 | Wideband O2 bung (18mm × 1.5) — weld into manifold or downpipe upstream of turbo | Any weld bung | ~$5–10 |
 | Ceramic coating — manifold + downpipe (shop) | Local coating shop | ~$150–300 |
-| LPS titanium exhaust stud kit | [lpsfab.com](https://lpsfab.com/products/07k-titanium-exhaust-stud-kit) | TBD |
+| S&P titanium exhaust stud kit (15× M8×1.25×40mm, Ti nut + Ti washer per stud, 4mm internal hex for install) | [s-pautomotive.com](https://s-pautomotive.com/product/titanium-m8x1-25-exhaust-studs/) — $9.05 ea × 15 = **$135.75** | $136 |
 
 ---
 
@@ -49,7 +49,7 @@ This walkthrough covers the complete air and boost system: SPA TMW22 top-mount e
 
 ### SPA TMW22 Manifold Install
 
-1. Verify LPS Ti exhaust stud kit is installed on the 07K head. Factory VW studs are too short for the SPA manifold — this is not optional. Install with anti-seize; run torque per LPS spec.
+1. Verify S&P Ti exhaust stud kit is installed on the 07K head. Factory VW studs are too short for the SPA manifold — this is not optional. Install with anti-seize (nickel or copper); each stud has a **4mm internal hex** — thread by hand, snug with an Allen key to the shoulder (per S&P and Arcane instructions, standard on quality VW/Audi Ti and ARP stud kits). Do NOT jam-nut and drive — internal hex is the intended method. Torque nuts per S&P/Arcane spec (23–25 Nm cold, per Arcane instruction sheet).
 
 2. Install the SPA TMW22 manifold gasket onto the 07K exhaust ports (exhaust-side of head = driver side). Lower manifold onto studs and run nuts finger-tight.
 

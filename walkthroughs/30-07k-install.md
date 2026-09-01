@@ -22,7 +22,7 @@ This walkthrough covers removing the M52 interim engine and installing the Phase
 | Custom E36 07K engine mounts — welded steel | Race3 / JNC (quote required) | Shop quote |
 | 07K → 8HP N63 adapter plate | Chatham CNC custom (mike@chathamcnc.com / 919-740-9748) | Quote required |
 | VW longitudinal starter | FCP Euro `068911024GX` (Bosch reman, lifetime guarantee) | $349.99 + $50 refundable core |
-| LPS Ti exhaust stud kit | [lpsfab.com](https://lpsfab.com) | TBD (order Phase 2) |
+| S&P Ti exhaust stud kit (15× M8×1.25×40mm Ti stud + Ti nut + Ti washer, 4mm internal hex) | [s-pautomotive.com](https://s-pautomotive.com/product/titanium-m8x1-25-exhaust-studs/) — $9.05 ea × 15 | $135.75 (order Phase 2) |
 | Engine crane (rent) | Local tool rental | ~$80–120/day |
 | Transmission jack (rent) | Local tool rental | ~$40–60/day |
 | Engine stand (own or rent) | — | — |
@@ -111,7 +111,7 @@ This walkthrough covers removing the M52 interim engine and installing the Phase
 
 ### 07K Preparation (Before Drop-In)
 
-19. Install LPS Ti exhaust stud kit on the 07K head (if not done at Phase 2). Factory studs are too short for the SPA TMW22 manifold. Do this on the stand — much easier than in the car.
+19. Install S&P Ti exhaust stud kit on the 07K head (if not done at Phase 2). Factory studs are too short for the SPA TMW22 manifold. Do this on the stand — much easier than in the car. Each stud has a **4mm internal hex** at the head-side tip — thread by hand, snug with an Allen key to the shoulder. Anti-seize (nickel or copper) on threads. Standard install method on all quality VW/Audi stud kits (S&P, ARP, Arcane, 034Motorsport all use the same broached-tip design).
 
 20. Mount all accessories that can go on the stand:
     - iABED longitudinal oil filter housing (already pre-installed at Phase 2 — confirm)
