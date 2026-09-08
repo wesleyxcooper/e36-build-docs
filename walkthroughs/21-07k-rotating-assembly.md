@@ -86,11 +86,10 @@ Check each of the 5 piston crowns for dents, casting flaws, or sloppy machining 
 
 ### 3 — Prepare block for drop-off
 
-- Drop the lower steel sump
-- Inspect and verify the forged crank counterweight parting line (see `20-07k-sourcing.md` — do this before paying teardown labor on a cast-crank block)
-- Pull the oil pump and send to LPS
-- Reinstall pan hand-tight with no RTV — Euromotive drops it again; no sealing yet
-- Confirm all parts in the "Bring at Dropoff" table above are labeled and boxed
+- **Full counterweight inspection sequence** per `20-07k-sourcing.md` Step 2 — drop lower steel sump, slacken oil-pump drive chain tensioner, pull oil pump, drop upper aluminum sump. Do this before paying teardown labor on a potentially cast-crank block (`07K105101F` and later suffixes: forged/cast unconfirmed).
+- Ship the pulled oil pump to LPS for the mod (see `24-07k-oil-system.md`). LPS returns direct to Euromotive.
+- **Do not reassemble** the upper sump / oil pump / lower sump — bag the parts and hand off with the block. Reassembly requires T03005 alignment plate for the oil pump; Euromotive handles this during longblock assembly. Valve timing is untouched throughout — the oil-pump chain is a separate loop from the timing chain via the crank's double-wheel sprocket.
+- Confirm all parts in the "Bring at Dropoff" table above are labeled and boxed.
 
 ### 4 — Drop-off scope discussion with Euromotive
 

@@ -30,7 +30,7 @@ This walkthrough covers two parallel systems: (1) the engine coolant circuit usi
 | 5/16" overflow / vent line (reservoir to head vent port) | — | ~$10 |
 | -4AN fittings for turbo oil feed (M12×1.5 to -4AN or direct -4AN) | To suit iABED turbo feed port spec | ~$20–40 |
 | -4AN braided line (turbo coolant feed, ~300mm) | — | ~$30–50 |
-| 0.9–1.0mm orifice restrictor (inline on turbo oil feed) | Standard journal bearing turbo restrictor | ~$10–20 |
+| 1.0 mm (0.040") orifice restrictor (inline on turbo oil feed) | **Ships with the G25-660** per [Full Race listing](https://www.full-race.com/garrett-g-series-g25-660-turbocharger) — verify at receipt. Required for ball-bearing turbo per [Garrett guidance](https://www.garrettmotion.com/knowledge-center-category/racing-and-performance/turbo-oil-restrictors-oil-supply/). | included / ~$20 fallback |
 | -8AN or -10AN drain fitting + bung (welded in iABED pan or provided port) | Gravity-drain from turbo back to sump | ~$20–40 |
 | -8AN braided line (turbo oil drain, ~600mm) | — | ~$30–50 |
 | High-temp thread sealant (fittings to block/housing) | Loctite 565 or equivalent | ~$10 |
@@ -55,8 +55,9 @@ This walkthrough covers two parallel systems: (1) the engine coolant circuit usi
 
 1. Locate the dedicated turbo oil feed port on the iABED longitudinal oil filter housing (installed at Phase 2). Install the -4AN fitting (M12×1.5 to -4AN adapter or direct -4AN per iABED port spec). Use high-temp thread sealant on threads; do not overtorque aluminum housing.
 
-2. Install 0.9–1.0mm **orifice restrictor** inline on the oil feed line. This is mandatory for journal bearing turbos — the G25-660 RR uses journal bearings. Restrictor prevents over-oiling at idle, which causes seal failure. Confirmed by @wingman703 (same 07K/turbo configuration). Source: `E36_DIY_Build_Checklist.md` Phase 3 Oil System; `E36_9000RPM_Project_Plan_Verified.md` Phase 2 iABED Housing row.
-   > ⚠️ **Pitfall:** Missing orifice restrictor on a journal-bearing turbo = oil seal failure from over-pressure at idle. The G25-660 RR center section oil inlet uses a standard -4AN fitting; restrictor goes between the housing port and the first AN fitting in the feed line, not inside the turbo.
+2. Install the **1.0 mm (0.040") orifice restrictor** inline on the oil feed line. The G25-660 uses a **dual ball bearing CHRA** ([Full Race G25-660](https://www.full-race.com/garrett-g-series-g25-660-turbocharger)); per [Garrett Turbo Oil Restrictors guidance](https://www.garrettmotion.com/knowledge-center-category/racing-and-performance/turbo-oil-restrictors-oil-supply/) ball-bearing turbos require a restrictor targeting 40–45 psi at the turbo inlet at max engine speed. Journal-bearing guidance ("restrictor generally not needed") does NOT apply — do not remove the restrictor. Confirmed setup by @wingman703 (same 07K/turbo family).
+   > ⚠️ **Pitfall:** Missing restrictor on the ball-bearing G25-660 = over-pressure at the CHRA → ball-race brinelling and shaft seal blow-out. Restrictor goes between the housing port and the first AN fitting in the feed line, not inside the turbo.
+   > **Note:** The G25-660 ships with a -4AN + 1.0 mm restrictor fitting per Full Race — verify at receipt before sourcing separately.
 
 3. Route -4AN braided feed line from iABED housing → turbo center section oil inlet (top of center section). Sleeve with DEI Titanium heat-sleeve for any section within 18" of the SPA TMW22 manifold or turbo housing. Connect both ends; snug but do not final-torque until routing is confirmed.
 

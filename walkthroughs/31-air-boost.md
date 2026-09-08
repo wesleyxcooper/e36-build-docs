@@ -68,7 +68,7 @@ This walkthrough covers the complete air and boost system: SPA TMW22 top-mount e
 7. Slide G25-660 RR turbine housing onto the V-band adapter. Orient compressor housing so compressor outlet aims toward the passenger side (intake side) — across the top of the engine toward the FMIC. Snug V-band clamp; do not final-torque until oil and coolant lines are connected.
 
 8. Pre-oil the turbo: pour approximately 30–50 mL of clean engine oil into the oil inlet port on the center housing, rotate the shaft by hand to distribute. This prevents a dry start on first fire.
-   > ⚠️ **Pitfall:** Never fire the engine for the first time with a dry turbo. Pre-oiling takes 30 seconds and prevents immediate journal bearing damage.
+   > ⚠️ **Pitfall:** Never fire the engine for the first time with a dry turbo. Pre-oiling takes 30 seconds and prevents immediate CHRA bearing damage. Ball-bearing CHRAs are oil-fed; dry start damages either bearing type.
 
 9. Torque turbine-side V-band clamp. Torque compressor-housing V-band clamp (if adjusted from factory). Refer to Garrett V-band torque spec.
 

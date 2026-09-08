@@ -129,10 +129,15 @@ These bolt onto the completed sealed longblock at home:
 
 **Before the engine goes to Euromotive**, send the 07K oil pump to Linder Power Systems separately:
 
-- Contact: [linderpowersystems.com](https://linderpowersystems.com) (no storefront — contact directly)
-- Early-style 07K pump only — verify pump version matches before sending
-- Lead time: 4–8 weeks — send early so the modified pump is back before Euromotive finishes the longblock
-- Bring the returned modified pump to Euromotive with the engine so they can install it during assembly
+- Contact: `linderpowersystems@gmail.com` · [lpsfab.com](https://lpsfab.com) · IG [@linder_power_systems_lpsfab](https://www.instagram.com/linder_power_systems_lpsfab/)
+- Pricing per [LPS YouTube video description](https://www.youtube.com/watch?v=nXsUm8ph2Ys): $150 mod on your pump; $420 turnkey.
+- **Mod scope per Justin Linder** (LPS YouTube transcript): user-adjustable PRV, factory-set 80–85 psi cold (SAE30). Stock is 60–65 psi cold.
+- **PN compatibility**: `07K115105Q` LPS-confirmed; F/G/J/P/R/T/AC/AK: DM LPS with a casting-stamp photo before shipping. Casting stamp on pump body shows PN + `AlSi9Cu3` alloy + `MEXICO` (Puebla plant).
+- Cheapest donor pump if needed: [eBay 187826468192](https://www.ebay.com/itm/187826468192) $34 used OEM `07K115105G` (casting-stamp confirmed, includes sprocket). Or search eBay literal `07K115105Q` for the LPS-confirmed PN, $30–90 range.
+- LPS does not modify the drive sprocket or pickup tube (both external). Sprocket attached is preferred; pickup tube not needed (reuse existing motor's with new O-ring).
+- Lead time: 4–8 weeks. Send early so the modified pump is back before Euromotive finishes the longblock.
+- Bring the returned modified pump to Euromotive with the engine so they can install it during assembly.
+- Full detail: <ref_file file="/Users/wesleyc/personal/e36/e36-docs/walkthroughs/24-07k-oil-system.md" /> § 1 + § 1a
 
 ---
 

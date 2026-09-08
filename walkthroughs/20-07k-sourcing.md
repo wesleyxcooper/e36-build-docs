@@ -52,14 +52,85 @@ Target casting codes **BGP**, **CBUA**, or **CEPA** — these are the confirmed 
 
 ### 2 — Verify forged crank at teardown
 
-Drop the lower steel sump pan (Torx T30 bolts). Rotate the crank slowly and inspect the **unmachined flat faces of the counterweights**:
-
-- **Forged:** Wide flat band, 1/8"–1/4" (3–6 mm) across, with visible grind/trim marks where die flash was cut — unambiguous.
-- **Cast:** Thin ~1 mm scribe-line seam, no grind marks.
-
 Only `07K105101E` is community-confirmed forged (per Issam Abed, VWVortex post #31). `07K105101F` is in-production use but forged/cast status is **unconfirmed** — inspect physically. If cast: source a separately confirmed forged crank (`07K105101E`, ~$1,050–1,250 from eBay Germany).
 
+**Counterweight parting-line inspection — on-pallet procedure (~30–60 min):**
+
+The parting line sits on the **outer peripheral face** of each counterweight — radially outward from the crank axis. Axial views from the front cover, spark-plug holes, or oil-filter port do not expose this face. Only viable line-of-sight on the 07K is from below the crank with both sump halves removed. The lower steel sump alone only exposes the pickup and baffle — **not** the counterweight periphery.
+
+Sequence (all on the bare block, pallet-mounted, no valve-timing work required):
+
+1. **Drop lower steel sump** — T30 bolts around the perimeter (~20) + **2 hidden bolts on the bellhousing-side face** ([Vortex "2 hidden bolts" thread](https://www.vwvortex.com/threads/oil-pan-2-hidden-bolts-help.1377803/)). On a pallet with no transmission, the 2 hidden bolts are freely accessible with a 1/4" wobble socket.
+2. **Slacken the oil-pump drive chain tensioner** using locking pin T10115 (~$15 on eBay, or improvise a pin of correct diameter). This is the **lower loop** off the crank double-wheel sprocket — completely independent of the upper timing chain. Valve timing is not touched at any point.
+3. **Remove the oil-pump drive chain sprocket bolt** and pull the chain off the pump sprocket. Chain stays draped on the crank sprocket.
+4. **Unbolt the oil pump** body from the block and drop it out through the pan opening.
+5. **Unbolt the upper aluminum sump** — perimeter bolts + interface bolts to the block. Sump pulls straight down (may need a tap with a plastic mallet at the alignment pins).
+6. **Bar the crank from the pulley end** — 24mm socket on the central pulley bolt (verify size — could be 22mm on some BGP; bring both), normal rotation direction (clockwise viewed from pulley end). Walk each of the 8 counterweights past a bright light.
+7. **Inspect the outer peripheral face** of each counterweight:
+   - **Forged:** Wide flat band, 1/8"–1/4" (3–6 mm) across, with visible grind/trim marks where die flash was cut — unambiguous.
+   - **Cast:** Thin ~1 mm scribe-line seam, no grind marks.
+
+**Reassembly is not required before Euromotive dropoff.** Bag the oil pump, chain, tensioner, and sump halves separately and hand off with the block. Euromotive re-times the oil pump properly during longblock assembly (T03005 alignment plate on the crank snout — T03005/1 shim only applies to post-MY08 toothed-chain, not the roller-chain BGP/BGQ era). Do not attempt to reassemble without T03005 if the engine may run before shop teardown.
+
 > ⚠️ **Pitfall:** The 6-character stamp on the crank rear face (e.g. `GGGBBG`) is the **main bearing journal classification code** (G=Gelb/yellow, B=Blau/blue, per VW color system). This is NOT a material designation and appears on all 07K cranks regardless of construction method. Do not use this to infer forged vs cast.
+
+
+
+### 2b — Post-purchase verification for a separately-sourced forged crank
+
+Skip if the donor-block crank is already confirmed forged. Storage: horizontal on wood blocks, Fluid Film on machined surfaces (see Storage Protocol below).
+
+#### Crack test
+
+Magnaflux (MPI) or Zyglo (dye penetrant) at any performance machine shop. ~$50–100. Do before Euromotive teardown labor.
+
+#### Journal measurement
+
+**Tool:** outside micrometer, 25–50 mm range (both mains and rods on the 07K fall in this span). Not calipers, not a dial bore gauge.
+
+**Per journal — 6 readings:**
+
+| Position | Rotational | Axial |
+| --- | --- | --- |
+| 1 | 0° (12 o'clock) | Front end (~3 mm from shoulder) |
+| 2 | 0° | Rear end |
+| 3 | 120° (4 o'clock) | Front end |
+| 4 | 120° | Rear end |
+| 5 | 240° (8 o'clock) | Front end |
+| 6 | 240° | Rear end |
+
+Repeat for all 6 mains + 5 rods. Technique reference: [Detroit Diesel MBE 900 crankshaft inspection](https://www.detroitmanuals.info/mbe-900/090206.html).
+
+**Derived values per journal:**
+- **Diameter** = average of all 6 readings
+- **Out-of-round** = (max − min) of the 3 rotational readings at one axial position; check both axial positions
+- **Taper** = front-end avg − rear-end avg
+
+#### Tolerances
+
+Get exact 07K BGP numbers from Euromotive at drop-off (Bentley/Elsawin) or the [Passat 2.5L CBTA/CBUA NHTSA-hosted factory service excerpt](https://static.nhtsa.gov/odi/tsbs/2012/MC-10157729-9999.pdf) "Crankshaft Dimensions" table at p.51.
+
+Sanity-check numbers if the exact spec isn't in hand:
+- Main journal Ø: ~53.98–54.04 mm ([2.0 16v Bentley via Vortex](https://www.vwvortex.com/threads/1992-2-0l-16v-crank-specs.1774368/); adjacent VAG NA — 07K in ballpark but not confirmed identical)
+- Rod journal Ø: ~47.76–47.78 mm (same source)
+- Main bearing radial clearance new: 0.01–0.04 mm ([VAG Bentley via Vortex](https://www.vwvortex.com/threads/can-somnebody-post-up-crank-rod-journal-dimensions-and-tolerances.6049303/)); wear limit 0.15 mm
+- Universal VAG NA wear limits: out-of-round ≤ 0.03 mm, taper ≤ 0.03 mm per journal
+
+#### Decision matrix
+
+| Result | Decision |
+| --- | --- |
+| Ø within ±0.05 mm nominal, OOR ≤ 0.03 mm, taper ≤ 0.03 mm | Buy — standard bearings probable |
+| Ø 0.05–0.20 mm below nominal, OOR/taper within spec | Buy — budget +$200–400 regrind to 0.25 mm undersize |
+| OOR or taper > 0.03 mm | Buy only if price accounts for mandatory regrind |
+| Ø > 0.25 mm below nominal | Marginal — verify 0.50 mm undersize bearing availability first |
+| Step/groove felt by fingernail OR crack test positive | Walk |
+
+Numbers are for buy/walk only; Euromotive re-mics at teardown. Bearings ordered per Euromotive's numbers per <ref_snippet file="/Users/wesleyc/personal/e36/e36-docs/walkthroughs/21-07k-rotating-assembly.md" lines="27-27" />.
+
+#### Handoff
+
+Deliver to Euromotive with: crank oiled/padded/PN-labeled, crack test sheet, mic readings notepad. Update the sourcing status block at the top of this doc with PN suffix, source, date, mileage, mic summary.
 
 ### 3 — Adapter plate decision: DomiWorks vs Chatham CNC
 
@@ -87,7 +158,7 @@ These items have known lead times that will delay assembly if ordered late:
 
 - **BBG billet valve cover + timing cover + coolant flange combo** — ~6-week lead time. Order at Phase 2 kickoff, not at assembly time. See [boostbrothersgarage.com](https://www.boostbrothersgarage.com/collections/944-07k-swap/products/07k-billet-valve-cover-upper-timing-cover-and-rear-coolant-flange-combo), $975–$1,075.
 - **Cam adjuster stretch bolts** (`N91042802`, $9.19 ea at FCP Euro) — currently hard to source through VW directly. Order 2. Also available through Porsche Cayenne/Panamera parts channels if backordered. Reference: [07K Hard to Find Parts Wiki](https://the07k.wiki/wiki/Hard_to_Find_Parts).
-- **LPS oil pump mod send-in** — 4–8 week lead time. Drop the pan, pull the pump, send to LPS early so it returns before Euromotive finishes the longblock. See `24-07k-oil-system.md`.
+- **LPS oil pump mod send-in** — 4–8 week lead time. Drop both sump halves (see Step 2 sequence above), pull the pump, DM LPS a casting-stamp photo to confirm compatibility, then send. Per LPS video description, `07K115105Q` is their confirmed default PN; older F/G/J presumed also OK; R/T/AC/AK likely too late. If donor pump is unusable, cheapest verified source: [eBay 187826468192](https://www.ebay.com/itm/187826468192) $34 used OEM `G`. Pricing: $150 mod on your pump / $420 turnkey. Full identification, sourcing, and LPS-scope detail in `24-07k-oil-system.md` § 1 + § 1a.
 
 ### 5 — G25-660 RR hood clearance confirmation
 
