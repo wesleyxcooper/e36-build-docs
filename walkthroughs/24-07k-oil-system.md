@@ -145,6 +145,8 @@ Clean all mating surfaces. Use appropriate sealant per iABED specification. Torq
 
 At Phase 3 (swap), move the Bosch PST-F1 oil temp/pressure sensor from its M52 VANOS banjo adapter location to the iABED housing's **dedicated M10×1.0 port**. Zero wiring changes — same Gauge.S and MaxxECU analog inputs. The M52 VANOS adapter is discarded with the M52.
 
+**Monitoring role:** PST-F1 is the primary block-pressure channel for the LPS-modded pump (§1 targets: 80–85 PSI cold SAE30, ~55–65 PSI hot WOT). Pressure output feeds the Gauge.S dash for glanceable readout AND the MaxxECU AIN, where it drives **Oil Pressure Cut** (Settings → Limits → Oil Pressure Cut) on an RPM-based minimum table — cuts fuel/ignition if block pressure drops below the LPS-adjusted floor. This is the "engine still alive" indicator; turbo-inlet pressure (after the 1.0 mm restrictor) is a separate concern handled per <ref_file file="/Users/wesleyc/personal/e36/e36-docs/E36_9000RPM_Project_Plan_Verified.md" /> → "Turbo Oil Feed Pressure — Verification & Monitoring".
+
 ---
 
 ## References
