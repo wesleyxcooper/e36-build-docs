@@ -133,6 +133,27 @@ Machine role assignment across the build. No new hardware to purchase.
 - The M52 has **no factory oil temp sensor** — the OEM cluster oil gauge is a binary idiot light only. PST-F1 provides actual numbers for both temp and pressure from Phase 0.
 - **Install reference:** [Gauge.S E36 Features & Installation Video](https://www.youtube.com/watch?v=v5P81D6qujs) — skip to **7:00** for installation, **1:12** for features walkthrough, **13:32** for software/setup.
 
+### Data Acquisition & Lap Timing  [ELECTRICAL · INSTRUMENTS]
+**Strategy:** Two-system architecture — Gauge.S handles live in-cabin monitoring (System B), iPhone + RaceChrono Pro + Bluetooth CAN adapter handles session recording + post-session analysis (System A). Both are passive listeners on the MaxxECU CAN 1 bus and coexist without protocol conflicts (CAN bus supports multiple simultaneous listeners; nothing to arbitrate). Same iPhone + app + sunroof mount transfers between this car and the B8 S4 — only the Bluetooth adapter differs per car (raw CAN here, OBD-II on the S4).
+
+| Component | Specification | Cost / Action |
+| :---- | :---- | :---- |
+| **Lap timer app** | **[RaceChrono Pro](https://racechrono.com/)** — iOS/Android, $20 in-app upgrade; free base tier available first for evaluation | $20 |
+| **Bluetooth CAN adapter** | **[Cluster.Fun CAN Interface](https://cluster.fun/)** (~$80–100) or **[RaceChrono DIY CAN-Bus Reader kit](https://racechrono.com/product/racechrono-diy-can-bus-reader)** (~$50 soldered). Reads MaxxECU CAN 1 bus at 500 kbps and streams to iPhone over Bluetooth. Configure channel mapping via published MaxxECU DBC file. Reference: [RaceChrono supported CAN-Bus adapters](https://racechrono.com/canbus-devices). | ~$50–100 |
+| **Phone mount** | **[Delkin Fat Gecko Dual Suction](https://www.amazon.com/dp/B002K8Q0EU)** (~$50) + **[SmallRig Universal Phone Cage 2791B](https://www.amazon.com/dp/B08GK5NYXF)** (~$29) — sunroof suction + screw-tightened phone cage; iPhone 16 Pro compatible. | ~$80 |
+| **Post-session AI analysis** | **[Perfect Apex](https://www.perfect-apex.com/)** or **[Laptura](https://www.laptura.com/)** free tiers for corner-by-corner AI coaching debrief; premium ~$10–15/mo during event weeks | $0 / optional |
+| **Optional cinematic video** | Existing GoPro on separate mount; sync data overlay in post with **[RaceRender 3](https://www.racerender.com/)** Home Edition — G-force spike auto-sync with HERO 8+ built-in accelerometer | $30 |
+
+**Wiring provision (Phase 1 MaxxECU install):** During the Gauge.S CAN H/L run from MaxxECU ECU_16PIN pins 10/9 to the cluster, add a T-tap in the dash area accessible for a future Bluetooth CAN adapter. 22 AWG twisted pair, 500 kbps, 120 Ω terminator at the far end of the bus if run exceeds 1 m. Cluster.Fun (or DIY equivalent) hooks onto the T-tap as a second passive listener; Gauge.S continues to receive the same broadcast unmodified. See `walkthroughs/11-ecu-chassis-wiring.md` Step 7 for the routing detail and `walkthroughs/34-ecu-harness-final.md` for the Phase 3 Maven bulkhead continuity.
+
+**Recording workflow (same across both cars):**
+1. iPhone sunroof-mounted; RaceChrono Pro running.
+2. Bluetooth adapter pairs to iPhone: Cluster.Fun CAN reader on this car (MaxxECU CAN 1), or OBDLink MX+ OBD-II adapter on the B8 S4 (OEM ECU).
+3. RaceChrono logs GPS + accelerometer + full ECU data channels (RPM, TPS, MAP/boost, IAT, CLT, oil temp/pressure, AFR, wheel speeds, gear position, throttle, brake) + video, all time-synced.
+4. Post-session: review in-app in the paddock, or export to Perfect Apex / Laptura for AI corner analysis.
+
+**Live monitoring (System B) is Gauge.S** — no adapter required, no interaction with the recording system. Gauge.S reads the same MaxxECU CAN broadcast the Bluetooth adapter reads, displays oil temp/pressure/coolant/boost/RPM on the cluster natively. Optional Phase 2+ Gauge.S POD 52mm adds a second glanceable screen for a dedicated gauge layout.
+
 ---
 
 ## Phase 1: 8HP Transmission Swap & Foundation  [DRIVETRAIN · CHASSIS · ECU]

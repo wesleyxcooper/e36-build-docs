@@ -116,6 +116,8 @@ Install the Maven HD30 Dual 16+16 bulkhead on the firewall. Reference: `harnesse
 
 > **CAN bus termination note:** Connector A pins 1/2 carry the CAN1 bus that reaches Gauge.S in the cabin. Termination: MaxxECU CAN 1 has a built-in 120Ω terminator (per [maxxecu.com/webhelp/can-information.html](https://maxxecu.com/webhelp/can-information.html)). If Gauge.S is at the far end of a >1 m run, add a 120Ω terminator at the cluster end. PMU16 CAN2 (to 8HP) is a separate bus entirely engine-bay — do not confuse the two.
 
+> **Lap-timer T-tap continuity from Phase 1:** The dash-area T-tap on CAN 1 provisioned at Phase 1 (per `11-ecu-chassis-wiring.md` Step 7) carries through Phase 3 unchanged — same CAN 1 bus, now crossing the firewall via Maven Connector A pins 1/2 instead of the OEM grommet. Bluetooth CAN adapter (Cluster.Fun or RaceChrono DIY) attaches at the same dash T-tap as a second passive listener alongside Gauge.S. Termination and 500 kbps rate unchanged. See `E36_9000RPM_Project_Plan_Verified.md` Data Acquisition & Lap Timing for the recording-system spec.
+
 ### Step 3 — PMU16 Installation and Configuration
 
 Mount PMU16 in the cabin — firewall or inner fender, accessible for USB-CAN setup.

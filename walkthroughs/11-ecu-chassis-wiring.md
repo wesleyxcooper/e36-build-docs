@@ -159,6 +159,8 @@ Wire MaxxECU to the E36 chassis X20 bulkhead connector per `body-x20.wv`. The X2
 
 **Gauge.S CAN wiring (new wires — not through X20):** Route CAN H/L (22 AWG twisted pair) from MaxxECU ECU_16PIN breakout (pins 10/9 — CAN H/L) to the cluster location. For the M5x phase, route this through the OEM firewall grommet alongside the M50 harness, or through a small additional grommet hole adjacent to it. 500 kbps. Add 120Ω terminator at cluster end if bus run exceeds 1 m. Enable in MTune: CAN → CAN 1 → Output → MaxxECU Default 1.3.
 
+**Provision a dash-area T-tap on the same CAN 1 pair for a future Bluetooth CAN lap-timer adapter** (Cluster.Fun or RaceChrono DIY CAN reader — see `E36_9000RPM_Project_Plan_Verified.md` Data Acquisition & Lap Timing section). CAN bus supports multiple passive listeners simultaneously; Gauge.S and the Bluetooth adapter both read the MaxxECU CAN broadcast without arbitration. Locate the T-tap accessible from behind the dash center stack for later installation without opening the harness loom. If added at build time, use a Deutsch DTM in-line splitter or Posi-Tap; if deferred, leave 3–4" of slack in the cluster-side pair near the dash so a splice can be added later.
+
 ### Step 8 — Virtual Clutch (DCT Clutch Simulator Remote)
 
 Install the **DCT Clutch Simulator Remote + CPS** ([dctshifter.com/products/dct-clutch-simulator-remote](https://dctshifter.com/products/dct-clutch-simulator-remote), ~4,995 SEK / ~$475 USD). This is a purpose-built engine-bay-mounted hydraulic clutch simulator with an integrated Clutch Pressure Sensor. See `docs/vendor/dctshifter/DCT_Clutch_Simulator.md` (in e36-wiring) and `harnesses/maxxecu-07k.wv` CLUTCH_POS_SENSOR block for full spec.
