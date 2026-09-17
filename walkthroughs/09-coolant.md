@@ -35,7 +35,7 @@
 
 1. **Drain the M52 cooling system** via the lower radiator hose or drain petcock. Collect coolant for disposal.
 
-2. **Remove the OEM plastic radiator.** Disconnect upper and lower hoses, transmission cooler lines (if applicable to auto donor car — not relevant here), and fan/shroud assembly. Unbolt radiator from mounts.
+2. **Remove the OEM plastic radiator.** Disconnect upper and lower hoses, transmission cooler lines (if applicable to auto donor car — not relevant here), and fan/shroud assembly. Unbolt radiator from mounts. Discard the OEM plastic lower radiator clips (OEM PN 17111723341) — replace with the Garagistic billet aluminum bracket set ($57.75, [garagistic.com](https://www.garagistic.com/products/e36-z3-billet-radiator-bracket-318-325-328-m3-17111723341)) at this step. These OEM clips become brittle with age; doing it now while the radiator is already out avoids pulling it again later.
 
 3. **Install CSF aluminum radiator (3054).** The CSF unit is a direct-fit drop-in for the E36. Torque mounting bolts to spec. Reconnect all hoses. This radiator carries through to the 07K turbo phase without replacement.
 

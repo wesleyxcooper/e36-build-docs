@@ -6,6 +6,17 @@
 
 ---
 
+## Fabrication & Machining Resources
+
+> General-purpose resources for any precision machining or fabrication need across the build — brackets, adapter plates, custom housings, rotor hats, structural fab, etc.
+
+| Resource | Type | Notes |
+| :---- | :---- | :---- |
+| **JLC CNC** | Online CNC machining (remote) | [jlcmc.com](https://jlcmc.com) · `@jlccnc_official` ([IG](https://www.instagram.com/p/DaAO7WoMmf0/)). Upload CAD (STEP/DWG), instant quote, factory-direct pricing. Aluminum, steel, and other materials. Prototypes to small-batch. Primary fallback when no local shop is available or competitive — covers any precision part in the build: adapter plates, custom brackets, rotor hat drilling, billet components, etc. |
+| **Adjustable AN Wrench + TPU Jaw Covers** | Shop tool | The `@bendbrothers` concept ([IG](https://www.instagram.com/p/DcyMSnJtVWz/)): a 3D printed **TPU** adapter that clips over standard adjustable wrench jaws to make them non-marring on anodized AN fittings — soft enough that the fitting's anodizing is safe. **US option (wrench):** [Evil Energy adjustable AN wrench 3AN–20AN](https://www.amazon.com/EVIL-ENERGY-3AN-20AN-Adjustable-Aluminum/dp/B0D9QNVZV6) — $24.99 on Amazon, Diamond Bar CA, 6061-T6 aluminum. Their own Amazon listing notes to wrap jaws in electrical tape to avoid scratching — confirm this before use. **Better approach:** print TPU jaw covers for whatever adjustable wrench you already own — free STLs on Printables (search "adjustable wrench jaw covers TPU"). TPU is softer than aluminum and truly non-marring. |
+
+---
+
 ## Exterior & Aero  [EXTERIOR]
 
 **Note:** All Fitmentlab kits are reinforced FRP (fiberglass). Convertible-specific variants exist. The rear arch line is raised ~20mm, which levels the car and eliminates the exposed-axle rake. Prep and paint required — kits ship raw.
@@ -137,13 +148,29 @@
 
 | Supplier | M3 Spindle | Pre-drilled Rotors | Price | Notes |
 | :---- | :---- | :---- | :---- | :---- |
-| **Island Racewerks** | ✅ M3 + Non-M | ✅ Zimmermann (add-on) | **$675 USD** base set | Full front + rear; optional rear bearings add-on. Best no-drill path. [islandracewerks.com](https://islandracewerks.com/products/e36-wheel-hubs-5x114-3) |
+| **NDI Machine** *(manufacturer)* | ✅ M3 + Non-M | ✅ Zimmermann (add-on) | **$675 USD** base M3 set | Full front + rear; optional rear bearings/hardware (+$125) and pre-drilled Zimmermann rotors (+$325) add-ons. Direct source. [ndimachine.com](https://ndimachine.com/collections/bmw/products/92-99-bmw-3-series-wheel-hubs-5x114-3) |
+| **Island Racewerks** *(NDI Machine reseller)* | ✅ M3 + Non-M | ✅ Zimmermann (add-on) | **$675 USD** base M3 set | Same NDI Machine product — Island Racewerks lists it under the NDI Machine brand. Identical pricing and options. [islandracewerks.com](https://islandracewerks.com/products/e36-wheel-hubs-5x114-3) |
 | **Core4 Motorsports** | ✅ "E36 M3 & E46 330" specific | Contact for rotors | ~$300–400 | ARP stud option (75mm / 90mm); FAG front + FEBI rear bearings. [core4motorsports.com](https://www.core4motorsports.com/product-page/5x114-3-bmw-e36-m3-e46-330-conversion-hubs-threaded-holes-or-press-in-studs) |
 | **GarageTechnik** | ✅ M3 + Non-M | ❌ Laser-cut steel template | TBD (CA) | Dual-drilled 5×120 + 5×114.3 — retains ability to run either pattern. [garagetechnik.ca](https://garagetechnik.ca/product/5x114-3-e36-wheel-hubs/) |
 | **ISR Performance** | ⚠️ PN is non-M — verify | ❌ Template only | TBD | Dual-drill hub. [isrperformance.com](https://www.isrperformance.com/isr-performance-dual-drilled-conversion-front-hub-e36-46-5x114-3-5x120/) |
 | **Villains Drift** | Non-M primarily | ❌ 3D-printable drill jig | ~$250–305/set | [villainsdrift.bigcartel.com](https://villainsdrift.bigcartel.com/product/bmw-5x114-conversion-hubs) |
 
-> **Avoiding rotor drilling:** Island Racewerks and Core4 can supply pre-drilled Zimmermann rotors — no DIY drilling required. Alternative: use a complete native 5×114.3 brake package from a donor car (350Z, STI) with custom caliper brackets — avoids drilling entirely but requires machined caliper brackets to fit the M3 spindle and replaces the full brake package.
+> **Rotor path — 2-piece floating, drill the aluminum hat for 5×114.3:**
+>
+> The wheel bolts pass through both the wheel and the rotor hat, so the hat clearance holes must match the new bolt pattern. The chosen path: buy a 2-piece rotor sized for the BBK (E46 M3 325×28mm — required by the BR0013 bracket), then drill the aluminum hat to 5×114.3. In a 2-piece rotor the hat is a separate 6061-T6 aluminum CNC piece — drilling aluminum takes ~15 minutes at a machine shop and is a far simpler operation than fixturing and drilling cast iron. The floating design also adds: ~3–4 lbs weight reduction per rotor, thermal decoupling (aluminum hat expands at a different rate than the iron ring, eliminating the warping mode that plagues heavy 1-piece cast rotors), and the ring self-centers between the pads.
+>
+> Two confirmed options at the correct **E46 M3 325×28mm** geometry:
+>
+> | Rotor | Type | Price (pair) | Notes |
+> | :---- | :---- | :---- | :---- |
+> | **Zimmermann Formula-Z Semi-Floating** | Semi-floating | **$627** | [Turner Motorsport](https://www.turnermotorsport.com/p-375843-european-semi-floating-front-brake-rotors-pair-325x28/). German OE supplier (Porsche/Mercedes/BMW). Aluminum hat + cross-drilled cast iron ring. Direct E46 M3 325×28mm drop-in — correct geometry for BR0013 bracket. Semi-floating = hat-to-ring bolted (not drive-pin floating). Drill the hat to 5×114.3 at install time. |
+> | **CEIKA 2-Piece 325×28mm** | Semi-floating | **$769** (sale) | [ceika-store.com](https://ceika-store.com/products/28). 6061-T6 aluminum hat, FC30 cast iron ring, materials from JP/TW/UK. Custom hat anodize color. 14 reviews all 5-star, track-tested. Free US shipping. Full-floating only at 330mm+; 325mm is semi-floating. Contact them to spec the hat with 5×114.3 holes from the factory — they do fully custom work. |
+>
+> **⚠️ Girodisc does NOT make 325×28mm** — their E46 M3 product (A1-012) is 345×28mm for ZCP/CSL only. Wrong size for this bracket.
+>
+> **Rear rotors:** NDI pre-drilled Zimmermann rears (312×20mm) are the correct stock E36 M3 rear spec and can be ordered with the hub set — no 2-piece equivalent needed at the rear. Alternatively drill standard 312×20mm cast iron rears using the NDI template (~$50–80/pair machine shop).
+
+
 
 ---
 
@@ -425,6 +452,34 @@
 
 ---
 
+### RaceFlux HS1 Heat Sleeve — AN Hose Protection  [PLUMBING · THERMAL]
+
+**RaceFlux HS1 Silicone Fiberglass Sleeving** — the specific product filling the "DEI Titanium or equivalent heat sleeve" requirement called out in the main plan (Electrical section line re: Painless 70970 loom, Oil Pressure Sensor wiring within 18" of turbo). Sold through [improvedracing.com](https://www.improvedracing.com).
+
+| Part # | ID | Fits AN size | Price (3 ft) | Price (13 ft roll) |
+| :--- | :--- | :--- | :--- | :--- |
+| **HS1-12** | 3/4" | -8AN (loose) / -10AN (snug) | $15.90 | $51.90 |
+| **HS1-14** | 7/8" | -10AN (loose) / -12AN (snug) | $16.90 | — |
+| **HS1-16** | 1" | -12AN / -16AN | $19.90 | $63.90 |
+
+**Rating:** 500°F (260°C) continuous · 3,000°F (1,650°C) short-term · −65°F minimum. Silicone outer transforms to non-flammable SiO₂ on direct flame contact; fiberglass inner insulates from radiant heat. Matte black finish.
+
+**For this build:** Route HS1-12 (3/4") on the -4AN turbo oil feed run from the iABED housing to the G30-770 inlet — covers the section running nearest the exhaust manifold. HS1-14 (7/8") on the -10AN turbo oil drain. Any oil pressure sensor wiring bundle within 18" of the hot side gets sleeved before final routing. Buy by the 3 ft meter for these targeted runs; 13 ft roll if sleeving multiple circuits.
+
+> For zones where hose or wiring contacts the turbo body or exhaust manifold flange directly, 500°F continuous may be marginal — use a physical standoff (P-clamp or Adel clamp to a nearby hard point) to maintain clearance rather than relying solely on the sleeve material rating.
+
+---
+
+### Treadstone Quick-Disconnect Fittings  [PLUMBING]
+
+Treadstone ([treadstoneperformance.com](https://www.treadstoneperformance.com)) makes two categories relevant to this build:
+
+**Existing — Dry Break AN Quick-Disconnect ([catalogue](https://www.treadstoneperformance.com/quick-disconnect/c3365)):** Self-sealing on disconnect (no drip/spill when popped apart). Covers -6AN, -8AN, -10AN, -12AN pairings. Alternative to the Dyme PRO/SPEC E-Type documented above — same application (turbo oil feed/drain, oil cooler lines), different manufacturer. Dyme is the better-characterized option for this build; Treadstone is a secondary source if Dyme is out of stock.
+
+**Coming soon — Charge Pipe Quick-Release Fittings:** The Sep 2026 Instagram post ("Introducing our latest project — Quick Release Fittings") previews a no-wrench connector for charge piping (silicone coupler/boost pipe connections), not AN fittings. This fills a gap the Dyme system doesn't cover — the FMIC-to-intake-manifold charge pipe connections currently use silicone couplers + worm gear clamps. Check back at [treadstoneperformance.com](https://www.treadstoneperformance.com) for the release. Potentially useful at the intercooler outlet and throttle body inlet where quick turbo/charge pipe removal is an advantage at the track.
+
+---
+
 ### Clear Silicone Coolant Hoses — Aesthetic Option  [PLUMBING · AESTHETIC]
 
 > Clear (transparent) silicone coolant hoses are available for the E36 from Mishimoto, HPS, and similar suppliers. Aesthetic appeal is obvious — visible flowing coolant, visible level, matches a clean engine bay. Several real downsides to factor in before committing:
@@ -458,6 +513,35 @@
 | **Sound Deadening** | **Dynamat Xtreme / Second Skin Damplifier** | $200–500 | Floor, firewall, doors. Significant on a convertible — no roof to absorb road noise. Do before door cards and carpet go back in. |
 | **Seats (Additional)** | **Recaro Pole Position / Bride Zeta** | $800–1,500/seat | If upgrading beyond the harness-compatible seats already in the plan. |
 | **Floor Mats** | **Lloyd Ultimat custom fit** | ~$100–150 | Trivial but worth noting — OEM mats are gone if carpet is removed for the build |
+
+---
+
+### Trunk — Spare Tire Well Delete + Battery Relocation
+
+**Reference:** [@ethurtysix](https://www.instagram.com/p/DcpJaBCqjIp/) — E36 spare tire/battery delete reel + comment thread
+
+#### Spare Tire Well Delete
+
+Cut out the pressed spare tire well from the trunk floor and weld in a flat sheet metal patch. The E36 convertible has the well in the trunk floor — removing it creates a flat, usable trunk floor.
+
+1. Cut the well out with an angle grinder + cut-off wheel, leaving a 1–2" flange around the perimeter
+2. Fabricate a flat patch from 18-gauge mild steel matched to the opening — scribe, cut, and test-fit before welding
+3. MIG or TIG weld around the perimeter; hammer and dolly the flange flat before welding if it has deformation from cutting
+4. Seam-seal the underside and coat with underbody chip protection (Raptor Liner or 3M Rubberized Undercoating) before closing up
+
+> **Convertible note:** Soft top hydraulic/mechanical components live in the front of the trunk behind the rear seat — confirm the well cut boundary doesn't conflict with those mounts. The well itself is aft of the soft top hardware.
+
+#### Battery Relocation to Trunk
+
+- **Weight distribution benefit:** ~25–30 lbs moved from front to rear — worthwhile for this build given the front-heavy E36 bias
+- **Battery spec:** Lithium LiFePO4 — smaller and lighter than OEM AGM, can be oriented in any direction. Antigravity ATX20-HD (~$300) or Braille B2317 (~$200) are motorsport-grade options. Do not relocate a standard lead-acid AGM — weight-to-wiring-complexity ratio doesn't justify it; if staying lead-acid, keep it in the engine bay.
+- **Box mounting (apex_187 community method):** Weld or bolt a steel reinforcement plate to the underside of the new flat patch before final install. Battery box sits on top, secured with carriage bolts through floor + reinforcement plate with fender washers underneath. Relocate battery ground to a chassis stud in the trunk area (clean bare metal, star washer — same rules as the main ground strategy in the build plan).
+- **Cable routing:** Size the positive run at 2/0 AWG minimum for the trunk-to-engine-bay run. Fuse within ~12" of the battery positive terminal (150–200A main fuse). Route through an existing grommet — never through a bare drilled hole.
+- **Build plan integration:** The Radlok connectors already spec'd (TTI `RL00801-50BK`/`-50RE`) suit tool-free disconnects at the battery end. The Moroso 74108 4-post battery cutoff switch mounts on the trunk floor or rear bulkhead near the battery.
+
+#### Quick-Release Bumper Brackets
+
+**@petrolworksusa** (US) — CNC aluminum, hidden behind factory trim. [Front](https://petrolworksusa.com/products/e36-front-bumper-brackets) / [Rear](https://petrolworksusa.com/products/e36-rear-bumper-brackets) sold separately. **Currently sold out** — monitor for restock. Requires trimming factory bumper liner; fender liner cannot be retained.
 
 ---
 
@@ -637,3 +721,33 @@ The stock 07K TB is a VDO/Continental unit in the Bosch 0280 750 family (6-pin c
 > **Recommended upgrade path:** VW 3.6 VR6 TB (`03H 133 062`, ~$40–80 used eBay). Direct flange fit candidate on BBG manifold. Confirm flange O-ring compatibility before ordering. Re-calibrate in MTune e-throttle wizard — same procedure as stock TB, just different PID starting values. **Do not upgrade TB before the tune is dialed in** — start with stock 65mm TB, upgrade at or above 550–600 whp if flow modeling shows restriction.
 
 > **BBG manifold note:** The BBG cast aluminum intake manifold may use the same stock 07K TB flange, OR a custom/modified inlet for the longitudinal orientation. Confirm TB flange spec directly with Boost Brothers Garage before ordering an upgraded TB.
+
+---
+
+## RFID Ring — Kill Switch / Immobilizer  [ELECTRICAL]
+
+**Reference:** [@s2kicken9](https://www.instagram.com/p/Dcbvo0vD1IJ/) — RFID kill switch demo (S2000 implementation)
+
+### Why This Matters for This Build
+
+The OEM E36 EWS2 immobilizer is bypassed at Phase 1 (required — MaxxECU has no EWS protocol). That leaves no factory anti-theft once the ECU swap is done. An RFID ring/fob kill switch is the replacement.
+
+RFID keys are passive (no battery). The reader is powered by the car's ignition-switched supply — no reader power = no auth signal, which is part of the security model (a scanner needs the reader active to clone a tag, and the reader only powers up with ignition on). Not easy to clone: requires physical access to the ring, the reader powered on simultaneously, and the exact RFID frequency.
+
+### Integration with MaxxECU
+
+The cleanest implementation for this build uses MaxxECU's native anti-theft digital input:
+
+1. RFID reader → powered from ignition-switched 12V
+2. Reader signal output (normally-open relay) → MaxxECU DIN configured as **Anti-theft / Immobilizer**
+3. **Tag present:** relay closed → DIN sees ground → MaxxECU disarmed → normal operation
+4. **No tag:** relay open → DIN floating/high → MaxxECU armed → fuel delivery cut (engine cranks but will not sustain)
+
+Configure in MTune: `Settings → Inputs → Digital Inputs → [selected DIN] → Function: Anti-theft`. The engine can still crank without the tag to avoid tipping off a thief — it simply won't run.
+
+### Notes
+
+- The S2000 product from the reference post is **plug-and-play for S2000 OEM harness only** — not compatible with this build. Source a universal RFID reader + relay module; the MaxxECU DIN integration above is car-agnostic.
+- RFID ring formats: 125 kHz (EM4100 — common, widely cloneable) or 13.56 MHz (MIFARE/NTAG — much harder to clone). **Use 13.56 MHz** for meaningful anti-theft protection.
+- Reader mounting: inside the cabin, concealed — behind the shift console, under the dash lip, or behind the center armrest. Reader power wire draws from ignition-switched rail (MaxxECU IGN power or PMU16 output).
+- See @s2kicken9 page for RFID key/ring form factor options (rings, fobs, cards).
