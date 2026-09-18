@@ -15,7 +15,7 @@
 | iABED Baffled Longitudinal Oil Pan | PN 462-103-07K-LAB · byiabed.com | — |
 | **07K oil pump donor** (send to LPS) | Any "early style" PN per LPS — LPS explicitly ships `07K115105Q` with their mod. Cheapest confirmed OEM: [ebay 187826468192](https://www.ebay.com/itm/187826468192) $34 (used `07K115105G`, casting stamp verified — see § 1a). Fallback new OEM: [VWPartsGiant `G`](https://www.vwpartsgiant.com/genuine/volkswagen~oil-pump~07k115105g) $246.84 or [Europa Parts `Q`](https://www.europaparts.com/oil-pump-07k115105q.html) $249.95. | $34–250 |
 | LPS 07K Oil Pump Mod (send-in service) | [linderpowersystems.com](https://linderpowersystems.com) — `linderpowersystems@gmail.com` | **$150 mod on your pump** / $420 turnkey new-pump-with-mod (per LPS video description). Shipping extra. |
-| -4AN fitting for turbo oil feed port | M12×1.5 to -4AN adapter (or direct -4AN per iABED port spec) | — |
+| -4AN fitting for turbo oil feed port | **M16×1.5 to -4AN union** — iABED sells this adapter for +$5.65 at order time; add it to the housing order. Port confirmed M16×1.5 ([iABED product page](https://byiabed.com/07K-LONGITUDINAL-Oil-Filter-housing-W-THERMOSTAT_p_156.html)). Alternative: M10 banjo bolt to -4AN for the head galley port (see § 4). | ~$6 (add to iABED order) |
 | Inline orifice restrictor (1.0 mm / 0.040") | **Ships with the G25-660** per [Full Race listing](https://www.full-race.com/garrett-g-series-g25-660-turbocharger) — verify at receipt. Fallback: Turbosmart, Fragola, AN Fittings Store | included / ~$20 fallback |
 | TTRS Oil Squirters (×5) | `06J103154B` (alt: `06J103154AA`) · ECS Tuning / FCP Euro / eBay | — |
 | Bosch PST-F1 oil temp/pressure sensor | [sorek.uk](https://shop.sorek.uk/products/bosch-pst-f-1-vanos-banjo-m14x1-5-to-m10x1-0-sensor-adapter-m50-m52-m54) | ~$65 (incl. adapter — adapter is M52-specific; iABED housing threads PST-F1 directly into its M10×1.0 port, no adapter needed at Phase 3) |
@@ -122,16 +122,20 @@ The housing includes a built-in thermostat for the oil cooler circuit and a **de
 
 ### 4 — Turbo oil feed port setup
 
-The iABED housing has a **dedicated turbo oil feed port** — confirmed by @wingman703. The G25-660 has a **dual ball bearing CHRA** ([Full Race G25-660](https://www.full-race.com/garrett-g-series-g25-660-turbocharger)) and per [Garrett's Turbo Oil Restrictors guidance](https://www.garrettmotion.com/knowledge-center-category/racing-and-performance/turbo-oil-restrictors-oil-supply/) requires a 1.0 mm (0.040") restrictor targeting 40–45 PSI at the turbo inlet. A restrictor is NOT appropriate for journal-bearing turbos — this guidance is specific to the ball-bearing G25.
+The iABED housing has a **dedicated turbo oil feed port** — confirmed by @wingman703 and by the [iABED product page](https://byiabed.com/07K-LONGITUDINAL-Oil-Filter-housing-W-THERMOSTAT_p_156.html). The G25-660 has a **dual ball bearing CHRA** ([Full Race G25-660](https://www.full-race.com/garrett-g-series-g25-660-turbocharger)) and per [Garrett's Turbo Oil Restrictors guidance](https://www.garrettmotion.com/knowledge-center-category/racing-and-performance/turbo-oil-restrictors-oil-supply/) requires a 1.0 mm (0.040") restrictor targeting 40–45 PSI at the turbo inlet. A restrictor is NOT appropriate for journal-bearing turbos — this guidance is specific to the ball-bearing G25.
 
-**Setup:**
-1. Install a **-4AN fitting** at the iABED dedicated turbo feed port (M12×1.5 to -4AN adapter, or direct -4AN per iABED port specification — confirm port thread at install)
-2. Route a -4AN braided steel line from the housing port to the G25-660 RR turbo oil inlet
+**Primary setup — iABED M16×1.5 port:**
+1. The iABED turbo feed port is **M16×1.5** (confirmed: [iABED product page](https://byiabed.com/07K-LONGITUDINAL-Oil-Filter-housing-W-THERMOSTAT_p_156.html) — "M16 x 1.5 cross channel port that can be used for turbocharger oil feed"). iABED sells a **M16 to -4AN union adapter for +$5.65** at order time — add it to the housing order rather than sourcing separately.
+2. Route a -4AN braided steel line from the iABED port to the G25-660 RR turbo oil inlet.
 3. Install the **1.0 mm orifice restrictor** inline on the feed line. Over-pressure on the ball-bearing CHRA = ball-race brinelling and shaft seal blow-out.
-   > **Note:** The G25-660 ships with a -4AN + 1.0 mm restrictor fitting per [Full Race listing](https://www.full-race.com/garrett-g-series-g25-660-turbocharger). Verify in the box at receipt before sourcing separately. Fallback: Turbosmart, Fragola, or AN Fittings Store.
+   > **Note:** The G25-660 ships with a -4AN + 1.0 mm restrictor fitting per Full Race — verify at receipt before sourcing separately. Fallback: Turbosmart, Fragola, or AN Fittings Store.
 
-**Alternative oil feed tap — M16×1.5 cross-channel port:**  
-The 07K block has an M16×1.5 cross-channel port on the oil gallery that can serve as an alternative turbo oil feed source if the iABED housing feed port is not used or cannot be routed to the turbo conveniently. Tap this port with an M16×1.5 NPT→AN adapter. The same 1.0 mm orifice restrictor must be used inline regardless of which port is tapped. Confirm port location at engine install — this is a block-gallery tap and requires proper thread engagement depth to avoid obstructing the gallery.
+**Alternative oil feed tap — 07K cylinder head M10×1 port (community-confirmed):**
+Per Kyle Brixey (The 07K Project Facebook group, All-star contributor): the 07K cylinder head has an **M10×1 oil galley port** that can be used for turbo oil feed. Fitting: **M10 banjo bolt to -4AN line**.
+
+> ⚠️ **CRITICAL — DO NOT use 1/8 NPT in this port.** The head uses **straight metric threads (M10×1)**. NPT is a tapered thread; driving an NPT fitting into a straight-threaded aluminum port will permanently ruin the threads. Some builders have done it without immediate failure, but it is incorrect and risks destroying an irreplaceable casting. Use an M10×1 banjo bolt only.
+
+The same 1.0 mm orifice restrictor applies regardless of which port is used.
 
 **Verify at first fire.** Per Garrett: *"you should always verify the oil pressure entering the turbo after the restrictor."* Full verification procedure (temporary gauge, target 35–50 psi hot WOT, adjustment triggers, optional Turbosmart OPR active regulator) is in <ref_file file="/Users/wesleyc/personal/e36/e36-docs/E36_9000RPM_Project_Plan_Verified.md" /> → "Turbo Oil Feed Pressure — Verification & Monitoring".
 

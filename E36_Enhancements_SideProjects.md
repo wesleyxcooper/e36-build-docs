@@ -464,7 +464,7 @@
 
 **Rating:** 500°F (260°C) continuous · 3,000°F (1,650°C) short-term · −65°F minimum. Silicone outer transforms to non-flammable SiO₂ on direct flame contact; fiberglass inner insulates from radiant heat. Matte black finish.
 
-**For this build:** Route HS1-12 (3/4") on the -4AN turbo oil feed run from the iABED housing to the G30-770 inlet — covers the section running nearest the exhaust manifold. HS1-14 (7/8") on the -10AN turbo oil drain. Any oil pressure sensor wiring bundle within 18" of the hot side gets sleeved before final routing. Buy by the 3 ft meter for these targeted runs; 13 ft roll if sleeving multiple circuits.
+**For this build:** Route HS1-12 (3/4") on the -4AN turbo oil feed run from the iABED housing to the G25-660 inlet — covers the section running nearest the exhaust manifold. HS1-14 (7/8") on the -10AN turbo oil drain. Any oil pressure sensor wiring bundle within 18" of the hot side gets sleeved before final routing. Buy by the 3 ft meter for these targeted runs; 13 ft roll if sleeving multiple circuits.
 
 > For zones where hose or wiring contacts the turbo body or exhaust manifold flange directly, 500°F continuous may be marginal — use a physical standoff (P-clamp or Adel clamp to a nearby hard point) to maintain clearance rather than relying solely on the sleeve material rating.
 
