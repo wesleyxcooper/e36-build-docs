@@ -82,6 +82,8 @@ Ferrea 07K Solid Lifter Shims (set of 20, $46.30) replace the OEM hydraulic lift
 
 Supertech Inconel exhaust valves (~$220 from IE) are a longevity upgrade for sustained high-EGT use. For a few track events per year on E85, stock exhaust valves are defensible. Skipping saves ~$220 and reduces machine shop cost by ~$300–800 (no seat cut required — lap existing valves and deck check only). **Valve springs and retainers are mandatory regardless of this decision.**
 
+On the [IE listing](https://performancebyie.com/products/supertech-valves-vw-audi-20t-fsi-tsi-25l): standard Inconel exhaust head is 28 mm (`VWEVI-1002S`); +1 mm is 29 mm (`VWEVI-1004S`) and needs a seat cut. +1 mm intake is `VWIVN-1004S` (34.85 mm head). IE states intake valves on this listing will not fit 2006 and older 07Ks. This build uses stock-diameter valves. +1 mm on both intake and exhaust, as run on a BGP north of 800 hp at 42 psi (Kyle Brixey, 07K Swap group), is a seat-cut option on a 2007-or-newer head.
+
 Decide at teardown based on existing valve condition.
 
 ### 5 — Head pressure test and machine work

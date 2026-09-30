@@ -34,6 +34,10 @@ VW/Audi/BMW specialist; authorized 034 Motorsports + Integrated Engineering deal
 
 > **King XP bearings — do NOT order until after Euromotive mics the crank journals at teardown.** Order Standard size if journals are within spec; order the specific undersize Euromotive specifies if a regrind is needed. Color code for `07K105101E` forged crank journals: yellow (GLB) rod bearings per OEM ref `07K105701E`/`07K105701F`. Photograph the 6-character bearing code stamp on the crank rear face and provide to Euromotive for shell class selection.
 
+> **SPA rod bolts.** This kit's rods ship with SPA800 3/8 in. bolts, torque **58.8 Nm (43.4 ft-lbs)**, and that fastener is part of the 1,000 hp rod rating ([UroTuning listing of this kit](https://www.urotuning.com/products/forged-piston-and-rings-set-83mm-vw-2-5l-jetta-mk5-07k-vw-144mm-x-20mm-super-a-connecting-rod-set-3-8-bolt-1000hp)). Rod bolts are the first fastener to get right, ahead of main-cap bolts and head studs; the minimum asked for on an 800–900 hp BGP is an I19 bolt, with ARP 625 above that (Vincent Mendez, 07K Swap group). Confirm with SPA that SPA800 covers 9,000 rpm before substituting bolts. The 22 mm vs 23 mm wrist-pin choice in that thread is for IE Tuscan and Pro-Race rods. This kit's pin is 20 mm.
+
+> **ARP-CVB2 thread.** BGP/07K main-cap bolts are M9. DAZA main caps are M10 (Vincent Mendez, 07K Swap group). The CEPA/CZGB ARP main-stud kit `117-4709` is that same M9 thread ([Pro-Race](https://prorace-engineering.co.uk/product/audi-rs3-ttrs-2-5l-tfsi-cepa-czgb-arp-m9-main-stud-kit/)). Order ARP-CVB2 or the CEPA M9 kit. A DAZA M10 kit will not thread into BGP mains without drilling and tapping the block. Factory main caps stay. A street BGP on OEM main bolts, OEM caps, and OEM main bearings is north of 800 hp at 42 psi on a 64 mm turbo (Kyle Brixey, 07K Swap group). ARP-CVB2 stays in this build for 9,000 rpm cap-walk margin, and the align hone after stud install still applies.
+
 ### Parts Euromotive Installs During Longblock (Also Bring)
 
 | Part | PN / Source | Notes |
