@@ -19,6 +19,20 @@
 
 ## Exterior & Aero  [EXTERIOR]
 
+### Name — "Pop Star"
+
+The car's name. Applied as one or more of the following — all are cut vinyl or printed decal, reversible, no permanent modification:
+
+| Format | Location | Notes |
+| :---- | :---- | :---- |
+| **License plate** | Front and/or rear | Custom plate: [licenseplatesinc.com](https://www.licenseplatesinc.com) or any local sign shop. Script lettering in Barbie Medium font. NJ does not allow a custom front plate on a registered car — front plate is cosmetic/show use only. |
+| **Hardtop rear window banner** | Inside or outside of rear glass | Lettered vinyl strip across the lower third of the rear glass. Visible from behind and at angle. Best applied inside to protect from elements. Font: Barbie Medium. Color: white or chrome on the Lila Metallic body. |
+| **Windshield banner** | Top strip of windshield | Narrow strip across the top of the windshield (sun strip style). Keep above driver sightlines — NJ law prohibits obstructing vision. |
+
+Font reference: [Barbie Medium](https://fontmeme.com/fonts/barbie-medium-font/) — the 1991–1999 Barbie logo typeface. File in `rc-fleet/rc-popstar/assets/barbie-medium.ttf`. RC car uses the same name and font.
+
+---
+
 **Note:** All Fitmentlab kits are reinforced FRP (fiberglass). Convertible-specific variants exist. The rear arch line is raised ~20mm, which levels the car and eliminates the exposed-axle rake. Prep and paint required — kits ship raw.
 
 | Component | Specification | Cost / Notes |
@@ -560,7 +574,9 @@ Cut out the pressed spare tire well from the trunk floor and weld in a flat shee
 
 ### Target Color — BMW Individual 0490 Lila Metallic
 
-**Code:** 0490 | **Name:** Lila Metallic | **Type:** BMW Individual (special order, non-catalog) | **Finish:** Metallic
+**Code:** 0490 | **BASF formula:** FE86-403X | **Autocolor cross-ref:** MPE3B | **Name:** Lila Metallic | **Type:** BMW Individual (special order, non-catalog) | **Finish:** Pearl metallic
+
+**Hex value:** No verified digital hex published for this BMW Individual color. It is a pearl-metallic finish whose appearance shifts significantly with viewing angle and lighting — a single hex is an inherent approximation. Visual character: saturated magenta-purple, jewel-tone quality. Rough digital swatch approximation `#A0478A` (use only as reference, not for specification). Sources checked: dreambmw.com, e38registry.org, paintref.com, encycolorpedia.com — none carry a verified hex for this Individual code.
 
 A vivid magenta-purple metallic from the BMW E36 Individual program. Sits in natural light as a jewel-tone between pink and purple — not garish, shifts character depending on sun angle and distance. Applied to at least one documented 1 of 1 1996 E36 M3 3.2L convertible ([@bmw_e36_individual, Instagram](https://www.instagram.com/p/DTTL9uMDVV3/)). Not a standard catalog color — must be mixed to code by the paint supplier (PPG, BASF/Glasurit, or Axalta all carry BMW Individual formulations).
 
