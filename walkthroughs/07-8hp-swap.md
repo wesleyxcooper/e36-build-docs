@@ -20,11 +20,12 @@
 | ZF LifeGuard Fluid 8 (`S671 090 312`) | BMW/ZF dealer or online | ~$15–18/qt × ~9.5 qt |
 | N54 8-bolt automatic flexplate — **BMW 8HP path only** | BMW PN `11227553157` ([ECS Tuning ES#20413](https://www.ecstuning.com/b-genuine-bmw-parts/flexplate/11227553157/)) | ~$80–150 used / ~$810 new |
 | Flexplate bolts — **BMW 8HP path only** | BMW PN `11227522125` | — |
-| George W. Hill M5x Starter Adapter — **BMW 8HP path only** | [Hill Performance](https://www.hillperformance.com/products/starter-adapter) | $160 |
-| N54 starter — **BMW 8HP path only** | BMW PN `12412354701` | — |
+| George W. Hill M5x Starter Adapter — **BMW N57/N63 path only** | [Hill Performance](https://www.hillperformance.com/products/starter-adapter) | $160 |
+| N54 starter — **BMW N57/N63 path only** | BMW PN `12412354701` | — |
+| SLG BMW Starter Adapter + M52 starter (in hand) — **Dodge path** | [SLG](https://www.seemslegitgarage.com/product-page/bmw-starter-adapter) | $100 — positions M52 starter through Dodge bellhousing |
 | Adapter plate — **BMW N63 path** | [DomiWorks M5x→N63](https://www.domi-works.com/collections/8hp-adapter-kits) | $1,353 |
 | Adapter plate — **BMW N57 path** | [PMC Motorsport M5x→N57](https://pmcmotorsport-shop.com/product-eng-2998-Gearbox-Adapter-Plate-BMW-M50-M52-M54-S50-S52-S54-BMW-ZF-8HP-8HP70-8HP50-GS6-53DZ.html) | ~$350 |
-| Adapter plate — **Dodge path** | Custom — Chatham CNC (mike@chathamcnc.com / 919-740-9748) or Guru Autowerks M5x variant (contact Guru) | Quote required — **note: kit quote also covers starter, flexplate, and flywheel selection for the Dodge path; these are not separately listed in this table** |
+| Adapter plate — **Dodge path (current build path)** | [SLG BMW M5X/S5X to Dodge 8HP Adapter Kit](https://www.seemslegitgarage.com/product-page/bmw-m5x-to-dodge-8hp) — Chatham CNC (mike@chathamcnc.com / 919-740-9748) remains a custom alternative | $1,575 — includes billet adapter plate, billet aluminum flywheel with steel ring gear, and all hardware. ⚠️ E36 tunnel clearance unconfirmed: SLG tested on E46 and noted "some banging on the tunnel"; verify E36 fitment at mock-up after TMU delete. Source: [seemslegitgarage.com](https://www.seemslegitgarage.com/product-page/bmw-m5x-to-dodge-8hp) |
 | DomiWorks Dodge 8HP70/75 RAM 1500 AWD→RWD Adapter Kit | [DomiWorks direct](https://www.domi-works.com/products/dodge-8hp70-75-ram-1500-and-ram-ecodiesel-awd-to-rwd-conversion-adapter-kit-1350) (SKU 22005004) | ~$1,069 |
 | Guru Autowerks Adjustable Dodge 8HP Mount (BMW-style) | [SLG "E8X/E9X for Dodge 8HP Ram/Charg..."](https://www.seemslegitgarage.com/product-page/adjustable-universal-dodge-8hp-transmission-mount) or [Guru E9x/E8x direct](https://www.guruautowerks.com/product-page/ls-8hp70-75-upbrkt-bmw-e9x-e8x) | $240–$250 (+$50 Energy Bushing) |
 | SLG E36/Z3 8HP Crossmember | [SLG](https://www.seemslegitgarage.com/product-page/e36-dct-crossmember) or [HPR direct](https://hpr-tuning.com) | $205 |
@@ -107,8 +108,8 @@
 ### Starter Adapter
 
 13. **Install starter adapter — path-dependent:**
-    - **BMW 8HP path (BMW-sourced N57 or N63 unit):** George W. Hill M5x Starter Adapter ([Hill Performance](https://www.hillperformance.com/products/starter-adapter), $160) + N54 starter PN `12412354701`. Reference [adapter demo video](https://youtu.be/bWVo-TpdQCQ).
-    - **Dodge path (unit in hand):** Starter adapter and compatible starter for the Dodge bellhousing must be confirmed with Chatham CNC adapter supplier before ordering. Do not order the Hill Performance adapter for the Dodge path — the Dodge 8HP70 bellhousing geometry differs from BMW N57/N63, and starter fitment is not confirmed for this configuration.
+    - **Dodge path (current build path):** [SLG BMW Starter Adapter](https://www.seemslegitgarage.com/product-page/bmw-starter-adapter) ($100) — positions the M52 starter (in hand) correctly through the Dodge bellhousing. The SLG M5x→Dodge adapter kit billet flywheel includes the steel ring gear; no separate ring gear sourcing needed.
+    - **BMW N57/N63 path:** George W. Hill M5x Starter Adapter ([Hill Performance](https://www.hillperformance.com/products/starter-adapter), $160) + N54 starter PN `12412354701`. Reference [adapter demo video](https://youtu.be/bWVo-TpdQCQ). Do not use the Hill Performance adapter with the Dodge bellhousing — geometry is BMW-specific.
 
 ---
 
@@ -118,11 +119,13 @@
 
     | Path | Adapter | Cost |
     | --- | --- | --- |
-    | **BMW N63** (preferred long-term sourcing) | [DomiWorks M5x→N63](https://www.domi-works.com/collections/8hp-adapter-kits) | $1,353 |
-    | **BMW N57** (off-the-shelf fallback) | [PMC Motorsport M5x→N57](https://pmcmotorsport-shop.com/product-eng-2998-Gearbox-Adapter-Plate-BMW-M50-M52-M54-S50-S52-S54-BMW-ZF-8HP-8HP70-8HP50-GS6-53DZ.html) | ~$350 |
-    | **Dodge (unit in hand)** | Custom — Chatham CNC (mike@chathamcnc.com / 919-740-9748) or Guru Autowerks (M5x/E36 variant — contact Guru directly) | Quote required |
+    | **Dodge (current build path)** | [SLG BMW M5X/S5X to Dodge 8HP Adapter Kit](https://www.seemslegitgarage.com/product-page/bmw-m5x-to-dodge-8hp) | $1,575 — includes billet adapter plate + billet aluminum flywheel with steel ring gear + all hardware. Chatham CNC (mike@chathamcnc.com / 919-740-9748) is a custom alternative. |
+    | **BMW N63** | [DomiWorks M5x→N63](https://www.domi-works.com/collections/8hp-adapter-kits) | $1,353 |
+    | **BMW N57** | [PMC Motorsport M5x→N57](https://pmcmotorsport-shop.com/product-eng-2998-Gearbox-Adapter-Plate-BMW-M50-M52-M54-S50-S52-S54-BMW-ZF-8HP-8HP70-8HP50-GS6-53DZ.html) | ~$350 |
 
-    > ⚠️ **Pitfall:** Do NOT order PMC or DomiWorks M5x adapters for the Dodge unit — those are BMW-bellhousing-specific (N57 and N63 patterns respectively). The Dodge 8HP70 has a different bellhousing face. The Guru GA5 kit (N54/N55/S55→Dodge) is not M5x-compatible — contact Guru to ask specifically about an M5x/E36 variant. Chatham CNC already has the 07K engine-side geometry from the @wingman703 Dodge 8HP build, which reduces engineering scope for a combined Phase 1 + Phase 3 engagement.
+    > ⚠️ **Pitfall:** Do NOT order PMC or DomiWorks M5x adapters for the Dodge unit — those are BMW-bellhousing-specific (N57 and N63 patterns respectively). The Dodge 8HP70 has a different bellhousing face.
+
+    > ⚠️ **Tunnel clearance:** SLG's own testing on a turbo M52 E46 required "some banging on the tunnel." E36 tunnel dimensions are tighter than E46 — verify fitment at mock-up after TMU delete before final trim. Source: [SLG product page](https://www.seemslegitgarage.com/product-page/bmw-m5x-to-dodge-8hp)
 
 ---
 

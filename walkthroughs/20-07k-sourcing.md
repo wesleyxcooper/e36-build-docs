@@ -136,21 +136,28 @@ Deliver to Euromotive with: crank oiled/padded/PN-labeled, crack test sheet, mic
 
 Get quotes from both before committing. This is a non-returnable decision.
 
+**07K bellhousing pattern — confirmed by two sources:**  
+- **VWVortex (Jan 2021):** "The 07k shares the bolt pattern of the 4 cylinder engines, so the 1.8t adapter you mentioned would work." Source: [vwvortex.com/threads/compatible-transmissions-w-07k.9460830](https://www.vwvortex.com/threads/compatible-transmissions-w-07k.9460830/)  
+- **Rennlist 944 swap thread (Feb 2017):** "Yes and no. Pattern is the same, but the 07K has the timing chain housing on the back of the cylinder head that protrudes into the bellhousing space so most simple adapter plates will not work." Source: [rennlist.com — VW/Audi 07K Swap Thread, post #168](https://rennlist.com/forums/944-turbo-and-turbo-s-forum/803341-vw-audi-07k-2-5l-20v-i5-swap-thread-12.html)  
+- **Implication:** The 07K bolt pattern matches the 1.8T. The timing chain housing protrusion means adapter plate thickness is critical — a thin plate (15mm N57, 23mm N63) will not clear the housing. The DomiWorks VW kit's 33mm plate is almost certainly dimensioned to provide this clearance. **Confirm timing chain housing clearance explicitly with DomiWorks before ordering.**
+
 **DomiWorks** ([domi-works.com](https://www.domi-works.com/collections/8hp-adapter-kits)):  
-- 07K shares the VW 1.8T/1.9T flywheel/bellhousing bolt pattern — kit applies directly  
+- 07K shares the VW 1.8T/1.9T flywheel/bellhousing bolt pattern — kit applies directly (see sources above)  
 - SKU 21015002: VW 1.8T/1.9T → BMW 8HP N57 Kit  
-- Includes billet SS2541 flexplate, center guide, hardware; 33 mm anodized aluminum plate  
-- Fits 8HP70/75 N57; verify N63 variant compatibility if running N63 8HP  
+- Includes billet SS2541 flexplate, center guide, hardware; 33 mm anodized aluminum plate (thickness likely provides timing chain housing clearance — verify with DomiWorks)  
+- Fits 8HP70/75 N57 **only** — no VW→N63 or VW→Dodge variant exists in the DomiWorks catalog  
 - **Requires VW longitudinal starter swap** to `068911024GX` (Bosch reman, FCP Euro, $349.99 + $50 core) — NOT the N54 starter used in Phase 1  
 - Estimated ~$1,200–1,397; quote before ordering
 
 **Chatham CNC** ([@chathamcnc](https://www.chathamcnc.com/contact.html) / mike@chathamcnc.com / 919-740-9748):  
 - Custom kit: adapter plate + adapter flexplate + modified torque converter  
 - Quote required — contact directly with 07K block code and 8HP variant  
-- Chatham has 07K engine-side geometry from @wingman703's Dodge 8HP build, which reduces engineering scope  
-- Key question at quote: does the kit reuse the N54 starter or require the VW 068911024GX?
+- Chatham has 07K engine-side geometry from @wingman703's Dodge 8HP build — if running the Dodge 8HP unit from Phase 1, this is essentially a repeat order for Chatham (reduced engineering scope vs. a new design)  
+- Key question at quote: does the kit reuse the M52/VW starter or require the VW 068911024GX?
 
-> ⚠️ **Pitfall:** Confirm your specific 07K block code (BGP/CBUA/CEPA) AND 8HP variant (N57 vs N63 bellhousing pattern) with DomiWorks in writing before ordering — hardware is non-returnable. These are NOT interchangeable.
+> ⚠️ **Pitfall:** Confirm your specific 07K block code (BGP/CBUA/CEPA) AND 8HP variant (N57 vs Dodge bellhousing pattern) with the adapter supplier in writing before ordering — hardware is non-returnable. These are NOT interchangeable.
+
+> ⚠️ **Pitfall (DomiWorks path):** Explicitly confirm timing chain housing clearance with DomiWorks before ordering SKU 21015002. The Rennlist source above documents cracking of the timing chain housing if the adapter plate does not provide adequate clearance. The 33mm plate is the correct indicator but get written confirmation.
 
 ### 4 — Order long-lead parts at Phase 2 kickoff
 
