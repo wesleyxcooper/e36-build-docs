@@ -213,7 +213,11 @@ While the M52 is still in the car, test-position the SPA MK5 manifold + G25-660 
 
 **Pallet → stand (this phase):**
 - **Slings:** 2× HF Web Lifting Sling 2000 lb, SKU 71451 — $9.99 ea. Basket hitch: loop under the block near each end, both sewn loop eyes on the crane hook. Adjust fore/aft to level the load. No knots, no shackles required.
-- **Alternate solo technique (no second person needed):** Use ratchet straps over a ladder straddling the pallet to raise the engine high enough to slide the stand underneath and engage the head tube, then lower onto the stand. Demonstrated on a VW engine (same application class) by Idahomecustomdesign: [youtube.com/watch?v=Y-nCDG5UJmw](https://www.youtube.com/watch?v=Y-nCDG5UJmw).
+- **Alternate solo technique (no second person needed):** Demonstrated on a VW engine (same application class) by Idahomecustomdesign: [youtube.com/watch?v=Y-nCDG5UJmw](https://www.youtube.com/watch?v=Y-nCDG5UJmw).
+  1. Straddle the pallet with a stepladder. Route 2× ratchet straps over the ladder top, hooks down to the block (OEM lift bracket holes or around a cast boss near each end). Ratchet until the block lifts just off the pallet.
+  2. Slide a floor jack under the block and position the pad on a solid casting surface. The floor jack does the actual vertical lift — the straps are now stabilizers preventing the block from tipping off the pad.
+  3. Jack to stand head-tube height. Slide the stand under, engage the adapter, lower the jack.
+  - **Straps:** 2× HAUL-MASTER 1000 lb. 1½ in. × 10 ft. Ratcheting Tie-Down, **SKU 61302** — $6.99 ea ([harborfreight.com](https://www.harborfreight.com/1000-lb-capacity-1-12-in-x-10-ft-ratcheting-tie-down-61302.html)). 10 ft spans the ladder and reaches the block; 1000 lb WLL gives 3:1+ margin on a 350 lb load split between two straps. S-hooks clip through lift bracket holes or around any cast boss. Do not use these straps on the crane hook — cargo tie-downs are not rated for overhead suspension.
 
 **Stand → car (Phase 3 — `30-07k-install.md` Step 22):**
 - Web slings are not suitable — angle is uncontrolled and a load leveler cannot function with them.
