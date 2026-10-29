@@ -213,6 +213,7 @@ While the M52 is still in the car, test-position the SPA MK5 manifold + G25-660 
 
 **Pallet → stand (this phase):**
 - **Slings:** 2× HF Web Lifting Sling 2000 lb, SKU 71451 — $9.99 ea. Basket hitch: loop under the block near each end, both sewn loop eyes on the crane hook. Adjust fore/aft to level the load. No knots, no shackles required.
+- **Alternate solo technique (no second person needed):** Use ratchet straps over a ladder straddling the pallet to raise the engine high enough to slide the stand underneath and engage the head tube, then lower onto the stand. Demonstrated on a VW engine (same application class) by Idahomecustomdesign: [youtube.com/watch?v=Y-nCDG5UJmw](https://www.youtube.com/watch?v=Y-nCDG5UJmw).
 
 **Stand → car (Phase 3 — `30-07k-install.md` Step 22):**
 - Web slings are not suitable — angle is uncontrolled and a load leveler cannot function with them.
@@ -227,5 +228,6 @@ While the M52 is still in the car, test-position the SPA MK5 manifold + G25-660 
 - [Issam Abed (iABED) — VWVortex post #31, forged crank confirmation](https://www.vwvortex.com/threads/has-anybody-ever-seen-a-forged-crank-with-the-updated-chain-from-the-07-12.6141117/)
 - [DomiWorks adapter kits](https://www.domi-works.com/collections/8hp-adapter-kits)
 - [Chatham CNC contact](https://www.chathamcnc.com/contact.html) · mike@chathamcnc.com · 919-740-9748
+- [Idahomecustomdesign — Putting VW engine on stand, one person (ratchet strap + ladder)](https://www.youtube.com/watch?v=Y-nCDG5UJmw)
 - [E36 DIY Build Checklist — Phase 2 Sourcing & Machine Shop](../E36_DIY_Build_Checklist.md)
 - [E36 9000 RPM Project Plan — Phase 2 Rotating Assembly](../E36_9000RPM_Project_Plan_Verified.md)
