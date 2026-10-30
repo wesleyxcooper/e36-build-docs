@@ -92,7 +92,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 > **M52 is the priority engine path** — the terminated M50/M52 harness from MaxxECU supports it directly with one cam sensor adapter. Treat M50 as fallback.
 
 ### Interior Strip & Prep  [INTERIOR · CHASSIS]
-- [ ] ✅ Remove rear seats, carpet, trunk interior, spare tire
+- [ ] ✅ Remove rear seats, carpet, trunk interior, spare tire — spare tire well will be deleted at chassis reinforcement shop visit; do not reinstall anything in the well
 - [ ] ✅ Remove soft top mechanism if in the way (bolted, not welded)
 - [ ] ✅ Photograph all wiring connectors and harness routing before touching anything
 
@@ -103,6 +103,22 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] 🏭 Install RTAB pocket reinforcement plates (BimmerWorld) — **welder required**
   - > ⚠️ **Pitfall:** Rear subframe reinforcement requires removing the rear subframe, exhaust, driveshaft, fuel tank, and rear interior before welding. Don't attempt to weld with the tank in the car. Reference: [Garagistic Complete Chassis Guide](https://www.garagistic.com/pages/e36-complete-chassis-reinforcement-kit-installation-guide) | [YouTube walkthrough](https://www.youtube.com/watch?v=2mYdKzG10R4)
   - > ⚠️ **Pitfall:** Surface prep before welding is the critical step — bare metal welds only. Sand, grind, and clean every contact surface. Weld porosity from paint contamination is invisible and structurally weak.
+
+### Trunk Floor Delete  [CHASSIS] 🏭
+- [ ] 🏭 **Order GSR Motorsports spare tire well delete panel before shop visit** — made to order, check stock ([gsrmotorsports.net/products/e36-sedan-trunk-floor](https://gsrmotorsports.net/products/e36-sedan-trunk-floor), $300)
+- [ ] 🏭 **Weld in trunk floor delete panel** during same chassis reinforcement shop visit — trunk is already stripped and car is on the lift. See `02b-trunk-floor-battery.md` for full procedure.
+  - Cut out pressed spare tire well, prep flange to bare metal, stitch weld GSR panel in, seam seal underside, undercoat
+  - The pressed center post is held by underseal (not welded) — twist and pull before cutting perimeter
+
+### Trunk Battery — LiFePO4 + Build Wiring  [ELECTRICAL · CHASSIS]
+- [ ] 🔧 **Source LiFePO4 battery** — Antigravity ATX20-HD (~$300) or Braille B2317 (~$200). Battery is already in the boot from the factory (right rear, driver's side in RHD) — no relocation needed; task is LiFePO4 upgrade + new wiring. Bentley manual requires vibration-resistant battery for the cabriolet.
+- [ ] 🔧 **Mount battery box** on new flat floor patch, carriage-bolt through steel reinforcement plate welded/bolted underneath
+- [ ] 🔧 **Run new 2/0 AWG OFC positive cable** along right sill (driver's side in RHD, same as factory routing) to engine bay. Fuse with 150–200A ANL within 12" of battery positive terminal. Route through existing floor grommet — never through bare drilled hole.
+- [ ] 🔧 **Install trunk chassis ground stud** (`TRUNK_CHASSIS_GND`) — M8 bolt to clean bare metal at sill/frame area. Battery negative goes here (short local lead). Engine block grounds to engine bay chassis stud (`CHASSIS_GND`) separately — see `power-distribution.wv`.
+- [ ] 🔧 **Install Radlok connectors** at battery end (`RL00801-50BK`/`RL00801-50RE`, TTI) per `power-distribution.wv`
+- [ ] 🔧 **Install Moroso 74108 4-post cutoff switch** on trunk floor or rear bulkhead (required on any alternator-equipped car per `power-distribution.wv`)
+  - Must be 4-post, not 2-post. 2-post leaves alternator feeding the system when switch is open.
+  - Reference: `02b-trunk-floor-battery.md` for full wiring procedure and grounding discipline
 
 ### Suspension  [SUSPENSION]
 - [ ] ✅ Install Fortune Auto 500 Series coilovers (front + rear) — [FA500-E36](https://www.fortuneautosuperstore.com/fortune-auto-500-series-coilovers-for-bmw-3-series-e36/), $1,928

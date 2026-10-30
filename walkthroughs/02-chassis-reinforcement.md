@@ -53,8 +53,17 @@
 
 8. 🏭 Weld front strut tower reinforcement plates (BimmerWorld).
 
+### Trunk Floor Delete 🏭 Shop-mandatory
+
+Do this during the same shop visit. The trunk interior is already stripped and the car is on the lift. See `02b-trunk-floor-battery.md` for the full procedure.
+
+9. 🏭 **Weld in the GSR Motorsports spare tire well delete panel** — order before the shop visit (made to order). Cut out the pressed well, prep flange to bare metal, stitch weld the flat panel in, seam seal underside, undercoat.
+
+> ⚠️ **Order ahead:** GSR panel is made to order. Confirm stock and allow lead time before scheduling the shop visit. [gsrmotorsports.net/products/e36-sedan-trunk-floor](https://gsrmotorsports.net/products/e36-sedan-trunk-floor)
+
 ## References
 
 - [Garagistic Complete Chassis Reinforcement Guide](https://www.garagistic.com/pages/e36-complete-chassis-reinforcement-kit-installation-guide)
 - [YouTube walkthrough](https://www.youtube.com/watch?v=2mYdKzG10R4)
-- VAC Motorsports Philadelphia: 2501 Snyder Ave, Philadelphia PA · (215) 462-4666 (ask for John)
+- VAC Motorsports Philadelphia: 2501 Snyder Ave, Philadelphia PA · (215) 462-4266 (ask for John)
+- `02b-trunk-floor-battery.md` — full trunk floor delete + trunk battery wiring procedure

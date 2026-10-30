@@ -18,7 +18,7 @@ None — this is a strip-down task. No new parts required.
 
 ## Procedure
 
-1. ✅ Remove rear seats, carpet, trunk interior, and spare tire.
+1. ✅ Remove rear seats, carpet, trunk interior, and spare tire. The spare tire well is being deleted at the chassis reinforcement shop visit (`02-chassis-reinforcement`, step 9 / `02b-trunk-floor-battery.md`) — do not reinstall anything in the well.
 
 2. ✅ Remove soft top mechanism if it is in the way — it is **bolted, not welded**, and can be removed cleanly as a unit.
 
@@ -33,3 +33,4 @@ None — this is a strip-down task. No new parts required.
 ## References
 
 - [`e36-wiring`](https://github.com/wesleyxcooper/e36-wiring) — harness schematics and pinouts referenced in later phases
+- `02b-trunk-floor-battery.md` — trunk floor delete and trunk battery wiring (Phase 1, same shop visit as chassis reinforcement)

@@ -530,28 +530,45 @@ Treadstone ([treadstoneperformance.com](https://www.treadstoneperformance.com)) 
 
 ---
 
-### Trunk — Spare Tire Well Delete + Battery Relocation
+### Trunk — Spare Tire Well Delete + Trunk Battery Wiring
 
-**Reference:** [@ethurtysix](https://www.instagram.com/p/DcpJaBCqjIp/) — E36 spare tire/battery delete reel + comment thread
+**Full procedure:** `walkthroughs/02b-trunk-floor-battery.md` — complete step-by-step walkthrough including parts, tools, wiring procedure, and engine weight reference table.
+
+**References:**
+- [@ethurtysix](https://www.instagram.com/p/DcpJaBCqjIp/) — E36 spare tire well delete + battery relocation reel and comment thread (primary visual reference)
+- [GSR Motorsports spare tire well delete panel](https://gsrmotorsports.net/products/e36-sedan-trunk-floor) — $300, steel with X-brace pressed in, stitch-weld in. Made to order. **Product description says "sedan" — no coupe/convertible variant listed. Verify convertible fitment with GSR before ordering; may require custom flat-sheet fabrication instead.**
+- [Driftworks forum — center post removal](https://www.driftworks.com/forum/threads/e36-spare-wheel-well.229713/) — center post is underseal-held, not welded
+- [bmw2002faq — Battery Relocation Wiring](https://www.bmw2002faq.com/forums/topic/222060-battery-relocation-wiring-with-help-from-an-e36-and-e46/) — E36 junction box location, grounding discipline, OFC cable sizing
+- [bmw2002faq — Cable gauge thread](https://www.bmw2002faq.com/forums/topic/256401-sanity-check-on-battery-relocation-cable-4ga-or-2ga/) — 2/0 AWG minimum confirmed
 
 #### Spare Tire Well Delete
 
-Cut out the pressed spare tire well from the trunk floor and weld in a flat sheet metal patch. The E36 convertible has the well in the trunk floor — removing it creates a flat, usable trunk floor.
+Cut out the pressed spare tire well from the trunk floor and weld in a flat sheet metal patch. Done at the chassis reinforcement shop visit — the trunk is already stripped and the car is on the lift. The GSR Motorsports panel ($300) is steel with an X-brace pressed in for rigidity — stitch-weld in per GSR spec.
 
-1. Cut the well out with an angle grinder + cut-off wheel, leaving a 1–2" flange around the perimeter
-2. Fabricate a flat patch from 18-gauge mild steel matched to the opening — scribe, cut, and test-fit before welding
-3. MIG or TIG weld around the perimeter; hammer and dolly the flange flat before welding if it has deformation from cutting
-4. Seam-seal the underside and coat with underbody chip protection (Raptor Liner or 3M Rubberized Undercoating) before closing up
+The Turtle Lab fill-in ($115) slides into the existing well without cutting — do not use it. It leaves the pressed well structure in place, which defeats the purpose.
 
 > **Convertible note:** Soft top hydraulic/mechanical components live in the front of the trunk behind the rear seat — confirm the well cut boundary doesn't conflict with those mounts. The well itself is aft of the soft top hardware.
 
-#### Battery Relocation to Trunk
+#### Trunk Battery — LiFePO4 Upgrade + Build Wiring
 
-- **Weight distribution benefit:** ~25–30 lbs moved from front to rear — worthwhile for this build given the front-heavy E36 bias
-- **Battery spec:** Lithium LiFePO4 — smaller and lighter than OEM AGM, can be oriented in any direction. Antigravity ATX20-HD (~$300) or Braille B2317 (~$200) are motorsport-grade options. Do not relocate a standard lead-acid AGM — weight-to-wiring-complexity ratio doesn't justify it; if staying lead-acid, keep it in the engine bay.
-- **Box mounting (apex_187 community method):** Weld or bolt a steel reinforcement plate to the underside of the new flat patch before final install. Battery box sits on top, secured with carriage bolts through floor + reinforcement plate with fender washers underneath. Relocate battery ground to a chassis stud in the trunk area (clean bare metal, star washer — same rules as the main ground strategy in the build plan).
-- **Cable routing:** Size the positive run at 2/0 AWG minimum for the trunk-to-engine-bay run. Fuse within ~12" of the battery positive terminal (150–200A main fuse). Route through an existing grommet — never through a bare drilled hole.
+- **Factory position:** The E36 convertible has the battery in the right rear of the boot from the factory — driver's side in this RHD car. No relocation is needed. Sources: MotorsForum UK, 1994 E36 320i SE RHD ([motorsforum.com](https://www.motorsforum.com/bmw/e36-battery-dilemma-15589-.htm)); BimmerForums UK, 1996 E36 convertible RHD ([bimmerforums.co.uk](https://www.bimmerforums.co.uk/threads/1996-e36-convert-ecu.29057/page-2)).
+- **Battery spec:** LiFePO4 — Antigravity ATX20-HD (~$300) or Braille B2317 (~$200). Bentley manual (section 020-12) requires a vibration-resistant battery for the cabriolet due to body scuttle in the trunk area. LiFePO4 satisfies this and is lighter than OEM AGM. Can be mounted in any orientation. Source: [BMWFanatics E36 Cabriolet thread](https://www.bmwfanatics.co.za/threads/e36-cabriolet-battery-concerns.29064/).
+- **Box mounting (apex_187 community method):** Weld or bolt a steel reinforcement plate to the underside of the new flat patch before final install. Battery box sits on top, secured with carriage bolts through floor + reinforcement plate with fender washers underneath. Ground stud in the trunk area — clean bare metal, star washer, per the build ground strategy.
+- **Cable routing:** New 2/0 AWG OFC positive run along the right sill (factory routing path, driver's side in RHD) to the engine bay. The factory cable is undersized for this build's current demands. 150–200A ANL fuse within 12" of battery positive. Route through existing grommet — never a bare drilled hole. Source: [bmw2002faq community consensus on gauge](https://www.bmw2002faq.com/forums/topic/256401-sanity-check-on-battery-relocation-cable-4ga-or-2ga/); W8JI uses 2/0 welding cable for his 15-ft trunk build ([w8ji.com](http://www.w8ji.com/battery_wiring.htm)).
 - **Build plan integration:** The Radlok connectors already spec'd (TTI `RL00801-50BK`/`-50RE`) suit tool-free disconnects at the battery end. The Moroso 74108 4-post battery cutoff switch mounts on the trunk floor or rear bulkhead near the battery.
+
+#### Engine Weight — M52 vs 07K
+
+| Engine | Weight | Measurement | Source |
+| --- | --- | --- | --- |
+| M52B25 single VANOS | 166 kg / 366 lbs | BMW official, dressed | [Estonian BMW Club, citing usautoparts.net BMW figures](https://foorum.bmwclub.ee/viewtopic.php?t=154362) |
+| M52TUB25 double VANOS | 177 kg / 390 lbs | BMW official, dressed | Same source |
+| M52B28 single VANOS | 170 kg / 374 lbs | BMW official, dressed | Same source |
+| M52B28 double VANOS | 180 kg / 396 lbs | BMW official, dressed | Same source |
+| 07K longblock (bare) | 124.7 kg / 274.9 lbs | VW factory spec | [VWPartsGiant 07K100031M](https://www.vwpartsgiant.com/genuine/volkswagen~engine~07k100031m) |
+| 07K fully dressed (accessories, mounts — no turbo) | ~158 kg / 349 lbs | Community scale measurement | [TheProjectPad — Hank's build thread](https://theprojectpad.com/viewtopic.php?start=25&t=244) |
+
+The 07K dressed (~349 lbs) is lighter than the M52B25 dressed (366–390 lbs depending on variant) despite being an iron block — one fewer cylinder more than offsets the block material difference. The swap does not add nose weight.
 
 #### Quick-Release Bumper Brackets
 
