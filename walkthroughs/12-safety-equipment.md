@@ -89,26 +89,73 @@ Before attending any HPDE or drift event with an open-top car, the roll bar will
 | --- | --- | --- |
 | Recaro Pole Position ABE (GFRP shell, driver) | [Competition Motorsport](https://competitionmotorsport.com/products/recaro-pole-position-abe-racing-seat) or [System Motorsports](https://www.systemmotorsports.com/) (both authorized US Recaro dealers) | ~$1,875 |
 | Recaro Pole Position ABE (GFRP shell, passenger — matching) | Same seat, same vendors — order two | ~$1,875 |
-| Brey Krause R-9240 (driver, direct-to-E36-floor) | [Northstar Motorsports ~$253](https://northstarmotorsports.com/products/brey-krause-r-9240-driver-seats-between-440mm-to-427mm-wide-at-mount-point) · [OG Racing ~$236](https://www.ogracing.com/products/brey-krause-r-9240-driver-seat-side-mount-adapter-bmw-e36-large-width) | ~$236–253 |
-| Brey Krause R-9241 (passenger, direct-to-E36-floor) | [Northstar Motorsports ~$253](https://northstarmotorsports.com/products/brey-krause-r-9240-driver-seats-between-440mm-to-427mm-wide-at-mount-point-copy) · [OG Racing ~$236](https://www.ogracing.com/products/brey-krause-r-9241-passenger-seat-side-mount-adapter-bmw-e36-large-width) · [Driven NASA ~$253](https://store.drivenasa.com/products/brey-krause-r-9241-passenger-seat-side-mount-adapter-bmw-e36-large-width) | ~$236–253 |
-| BK R-9240/R-9241 install instructions | [bkauto.com/v/vspfiles/instructions/R9240.pdf](https://bkauto.com/v/vspfiles/instructions/R9240.pdf) | — |
+| **Mounts — see Option A/B/C below.** Call VAC (215) 462-4666 first to confirm PP ABE + convertible fitment before ordering. | See options below | ~$472–1,700 |
 
-**Mounting — Brey Krause R-9240 (driver) + R-9241 (passenger):**
+**Mounting options — fixed vs. sliding**
 
-R-9240 and R-9241 are the E36-specific Brey Krause floor mounts for the Recaro Pole Position — driver and passenger sides respectively. Confirmed fit for both: *"Fits all BMW E36 3-Series models, including M3… Recaro Pole Position [and] Recaro Profi XL."* ([store.drivenasa.com R-9241](https://store.drivenasa.com/products/brey-krause-r-9241-passenger-seat-side-mount-adapter-bmw-e36-large-width)) Both bolt directly to OEM E36 floor points — no slider, no intermediate adapter. Include OEM 3-point belt buckle mounting point AND snap-in harness lap-belt hooks. DOT and SAE J385 certified. Because Sparco seats sit high with the R-924X series while Recaro seats mount low, tall drivers can generally run without spacers.
+Two paths for this build:
 
-Seat height without sliders is the lowest possible configuration in the E36. After install, verify the rollover envelope with the seat in final position: driver's helmet top must be below the main hoop top with the driver seated. Measure before welding the bar is final — the bar height is set to the seat+driver envelope, not an arbitrary height.
+| Option | Fore/aft adjust | Seat height | Convertible confirmed | Cost (pair) |
+| --- | --- | --- | --- | --- |
+| **A** — VAC floor adapters + slider + Recaro side mounts | ~3–4" | Low (above R-924X) | Yes — no E36 convertible exclusion | ~$750–900 est. |
+| **B** — BK R-9240/R-9241 (fixed, direct-to-floor) | None | Lowest possible | "All E36 3-Series" — likely yes | ~$472–506 |
+| **C** — EuroConnex JP Spec (E36 M3 kit) | Full slider travel | Lowest with sliders per vendor | ⚠️ Unverified — labeled E36 M3 (coupe) | $1,700 |
+| — BK R-9222/R-9223 + OEM sliders | Full slider travel | Higher than R-924X | Unverified | ~$506 + E46 sliders |
 
-Documented E36 usage: bimmerforums.com thread on race seats in E36 confirms Pole Position + floor-mount brackets in E36/2 chassis; German bmw-syndikat.de forum confirms PP ABE in E36 sedan with custom console. No convertible-specific documented install found as of Oct 2026 — floor mount points are the same for E36 convertible and coupe, so the R-9240 geometry applies.
+**⚠️ Convertible floor note:** Multiple bracket vendors distinguish between E36 body styles for seat fitment. The Macht Schnell E36 adapter explicitly says *"except convertibles."* ([turnermotorsport.com](https://www.turnermotorsport.com/p-300563-seat-floor-adapters-e36-e46-e85-macht-schnell/)) The BK R-9240/R-9241 claims "all E36 3-Series models" without exclusions. VAC floor adapters carry no E36 convertible exclusion in their fitment notes — the only convertible callout in their catalog is for the E46, which needs a separate version. ([kdmtuners.com](https://kdmtuners.com/product/vac-motorsports-race-seat-installation-kit-bmw-e36-e46/)) RS-Ultimate and DriftShop explicitly list E36 convertible as a supported body style. ([dalauta.com](https://www.dalauta.com/en/seat-belts-accesories/124690-fia-sports-bucket-seat-mounting-bmw-e36-driver-s-and-passenger-s-side-fluo-kit.html), [driftshop.com](https://www.driftshop.com/bucket-seat-mount-frames-bmw-e36-e46-html.html)) The EuroConnex JP Spec kit is labeled for "E36 M3" (coupe) with no convertible callout — **contact EuroConnex before ordering** if running their slider kit.
 
-**Install procedure:**
+---
+
+**Option A — VAC floor adapters + slider + Recaro side mounts (fore/aft adjustment, convertible-confirmed):**
+
+VAC Motorsports floor adapters ([store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-race-seat-installation-kit-bmw-e36-e46-p1605.aspx)) are CNC-machined 6061-T6 billet aluminum, bolt to factory E36 floor points, and are explicitly compatible with seat sliders. Fitment: "BMW E36 3 Series and M3 (1992–1999)" — no convertible exclusion. VAC lists Recaro as compatible and specifically excludes the Recaro SPG XL from their side mount brackets — the PP ABE is a different seat and is not excluded. However, the PP ABE mounting point width is 427–440mm and VAC does not publish a slot width range on the product page. **Specific PP ABE + VAC compatibility is not documented in any found source.** A 6'1" E36 driver confirmed VAC floor adapters + Sparco slider in the bimmerforums E36/2 thread, but that was a Sparco EVO 2 install, not a PP ABE. VAC is local — call before ordering to confirm PP ABE fitment and slider recommendation: 2501 Snyder Ave, Philadelphia, PA — (215) 462-4666.
+
+Complete VAC kit (floor adapters + side mount brackets + lap belt mounts + anti-sub bar): [store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-complete-race-seat--harness-installation-kit--bmw-e36--e46-p5906.aspx). Also sold individually via [Turner Motorsport](https://www.turnermotorsport.com/c-955-bmw-racing-seat-mounts/m-1601-vac) (~$288/side for floor adapters).
+
+---
+
+**Option B — BK R-9240/R-9241 (fixed, no fore/aft adjustment):**
+
+R-9240 and R-9241 are the E36-specific Brey Krause fixed floor mounts for the Recaro Pole Position — driver and passenger sides respectively. Confirmed fit: *"Fits all BMW E36 3-Series models, including M3… Recaro Pole Position [and] Recaro Profi XL."* ([store.drivenasa.com R-9241](https://store.drivenasa.com/products/brey-krause-r-9241-passenger-seat-side-mount-adapter-bmw-e36-large-width)) Both bolt directly to OEM E36 floor points — no slider, no intermediate adapter. Include OEM 3-point belt buckle mounting point AND snap-in harness lap-belt hooks. DOT and SAE J385 certified. Recaro seats mount low with these brackets; Sparco seats sit higher. Lowest possible seat position in the E36 — best headroom clearance for the broomstick test with a tall driver.
+
+Trade-off: position is set once. No fore/aft adjustment for a two-driver setup.
+
+---
+
+**Option C — EuroConnex Recaro JP Spec E36 M3 ($1,700/pair, fore/aft adjustment):**
+
+Complete kit built from authentic Recaro Japanese-market components: E36-specific floor brackets, Recaro JP-spec sliders and handles, Recaro steel side mounts for PP/SPG, and all hardware. Vendor claims lowest seat position of any sliding mount solution tested. ([euroconnex.co](https://euroconnex.co/collections/pole-position-mounts/products/recaro-jp-spec-mounting-solution-e36-m3)) Labeled "E36 M3" — the M3 was a coupe. **Convertible fitment not stated. Contact EuroConnex to confirm before ordering** — multiple E36 bracket vendors distinguish coupe from convertible floor geometry, and a Macht Schnell adapter explicitly excludes convertibles. EuroConnex can be contacted via Instagram (linked on their site).
+
+---
+
+**Install procedure — Option A (VAC floor adapters + slider + Recaro side mounts):**
+
+> ⚠️ Call VAC (215) 462-4666 before purchasing to confirm PP ABE mounting width (427–440mm) fits their side mount brackets and to get their slider recommendation for this seat.
 
 1. Remove both OEM seats — 4 bolts each (2 front / 2 rear, slide seat to access), disconnect yellow bulkhead airbag connectors, remove seats. Cap airbag connectors or terminate per airbag delete plan.
-2. Bolt R-9240 to driver-side floor using OEM bolt locations; R-9241 to passenger-side floor. Use red threadlocker on all floor bolts. Note from BK install instructions: mounts are not symmetrical — keep driver and passenger mounts separate until installed in the car, as they are mirrored.
-3. Attach Recaro side mounts to each PP ABE shell using supplied hardware. BK note: tighten the inboard (center console side) mount bolt fully, leave outboard loose until seated in the car.
-4. Lower each PP ABE onto its BK mounts and bolt through the side mount slots. Set height and tilt outside the car first — rear hole sets height, front holes set tilt. Seat tilt adjustment: BK recommends keeping the front higher than the rear at the car's actual floor angle; measure outside the car before install. See [install PDF](https://bkauto.com/v/vspfiles/instructions/R9240.pdf) step 3 for the full adjustment sequence.
-5. **OEM belt (street):** Route OEM 3-point shoulder belt through the PP ABE shoulder belt passage on both sides. Verify belt sits across the shoulder — not the neck — with driver and passenger seated at normal ride height. If geometry is wrong, adjust seat tilt before driving on the street. This is the critical street-safety check.
-6. **Harness (track):** Route lap belts through BK snap-in lap-belt hooks, route sub strap through shell's crotch slot, route shoulder belts over shoulders to harness bar. Torque all harness attachment hardware to harness manufacturer spec.
+2. Bolt VAC billet floor mount adapters to OEM E36 floor points — driver and passenger sides. Keep hardware loose for final positioning. Carpet/insulation can compress under the adapter without issue; use a washer under each mount point if preferred.
+3. Attach Recaro steel side mounts to each PP ABE shell. Position the seat assembly on the VAC floor adapters (or on the slider if using a slider between adapter and side mount).
+4. Adjust fore/aft position for both drivers before final torque. Seat height is set by the adapter stack height; lateral centering is set via the side-to-side slotted adjustability in the VAC side mount brackets.
+5. Torque all floor bolts with red threadlocker. Verify the seat does not contact the B-pillar or center console at any fore/aft position in the slider travel.
+6. **Roll bar height check:** With both seats installed at final height, have the 6' driver sit fully helmeted in their normal driving position. Measure helmet top height. Set roll bar ≥2" above this before welding. The bar height is determined by the seat-at-highest-slider-position envelope, not an arbitrary dimension — weld after seat install, not before.
+7. **OEM belt (street):** Route OEM 3-point shoulder belt through the PP ABE shoulder belt passage. Verify belt sits across the shoulder — not the neck — with driver and passenger seated. Adjust seat tilt if geometry is wrong before driving on the street.
+8. **Harness (track):** Route lap belts through side mount attachment points, sub strap through shell's crotch slot, shoulder belts over shoulders to harness bar. Torque all harness hardware to harness manufacturer spec.
+
+---
+
+**Install procedure — Option B (BK R-9240/R-9241 fixed mounts):**
+
+> Fixed mount reference parts: R-9240 driver — [OG Racing ~$236](https://www.ogracing.com/products/brey-krause-r-9240-driver-seat-side-mount-adapter-bmw-e36-large-width) · R-9241 passenger — [OG Racing ~$236](https://www.ogracing.com/products/brey-krause-r-9241-passenger-seat-side-mount-adapter-bmw-e36-large-width) · [Install PDF](https://bkauto.com/v/vspfiles/instructions/R9240.pdf)
+
+Both mounts bolt directly to OEM E36 floor points — no slider, no adapter. Seat height is the lowest possible configuration, set once at install with no fore/aft travel. Confirmed PP ABE fitment: *"Fits all BMW E36 3-Series models, including M3… Recaro Pole Position."* ([store.drivenasa.com](https://store.drivenasa.com/products/brey-krause-r-9241-passenger-seat-side-mount-adapter-bmw-e36-large-width))
+
+1. Remove both OEM seats (same as Option A step 1).
+2. Bolt R-9240 to driver-side floor; R-9241 to passenger-side. Use red threadlocker. Note from BK install PDF: mounts are not symmetrical — keep driver and passenger mounts separate until installed.
+3. Attach Recaro side mounts to each PP ABE shell. BK note: tighten the inboard (console side) bolt fully; leave outboard loose until in the car.
+4. Lower each PP ABE onto its BK mounts. Set height and tilt outside the car first — rear hole sets height, front holes set tilt. See [install PDF](https://bkauto.com/v/vspfiles/instructions/R9240.pdf) step 3 for the full tilt adjustment sequence.
+5. **Roll bar height check:** Same as Option A step 6. Because this is the lowest mount, the 6' driver has the most broomstick clearance of any option — set bar after seat install.
+6. **OEM belt (street):** Same as Option A step 7.
+7. **Harness (track):** Route lap belts through BK snap-in lap-belt hooks, sub strap through crotch slot, shoulder belts to harness bar. Torque to harness manufacturer spec.
 
 ---
 
@@ -138,8 +185,12 @@ The biomechanical case: a 5/6-point harness fixes the torso; the head can still 
 - [Garagistic Complete Chassis Reinforcement Guide](https://www.garagistic.com/pages/e36-complete-chassis-reinforcement-kit-installation-guide) — covers chassis weld-in context and shop logistics for E36 work
 - VAC Motorsports Philadelphia — 2501 Snyder Ave, Philadelphia PA · (215) 462-4666 · ask for John (confirmed local with E36 experience and in-house welder)
 - [Recaro Pole Position ABE — US product page](https://www.recaro-automotive.com/us/dynamic/recaro-pole-position-abe) · [Competition Motorsport listing](https://competitionmotorsport.com/products/recaro-pole-position-abe-racing-seat) ($1,875 GFRP)
-- [Brey Krause R-9240 E36 driver floor mount — Northstar Motorsports](https://northstarmotorsports.com/products/brey-krause-r-9240-driver-seats-between-440mm-to-427mm-wide-at-mount-point) ($253)
+- [Recaro PP ABE hotsheet PDF](https://www.recaro-automotive.com/fileadmin/01-products/documents/hotsheets/recaro-hotsheet-pole-position-abe.pdf) — specs, belt slot types, side mount accessories
 - [ABE vs FIA Pole Position comparison — gsmperformance.co.uk](https://gsmperformance.co.uk/recaro-pole-position-abe-vs-pole-position-fia/)
+- [Recaro side mount compatibility guide — sportseats4u.co.uk](https://www.sportseats4u.co.uk/a-definitive-guide-to-recaro-side-mounts-and-compatibility/) — PP ABE uses standard 405mm Recaro pattern; Podium uses its own separate bracket series
+- [VAC Motorsports E36/E46 Race Seat Installation Kit](https://store.vacmotorsports.com/vac-motorsports-race-seat-installation-kit-bmw-e36-e46-p1605.aspx) · [Complete kit with harness mounts](https://store.vacmotorsports.com/vac-motorsports-complete-race-seat--harness-installation-kit--bmw-e36--e46-p5906.aspx) · [Turner Motorsport VAC mounts](https://www.turnermotorsport.com/c-955-bmw-racing-seat-mounts/m-1601-vac)
+- [EuroConnex Recaro JP Spec Mounting Solution (E36 M3)](https://euroconnex.co/collections/pole-position-mounts/products/recaro-jp-spec-mounting-solution-e36-m3) — $850/side PP/SPG config; confirm convertible fitment before ordering
+- [Brey Krause R-9240 E36 driver floor mount — Northstar Motorsports](https://northstarmotorsports.com/products/brey-krause-r-9240-driver-seats-between-440mm-to-427mm-wide-at-mount-point) ($253) · [BK install PDF](https://bkauto.com/v/vspfiles/instructions/R9240.pdf)
 - MoE HPDE tech rules: [moehpde.com/faq](https://moehpde.com/faq) · [MotorsportReg listing](https://www.motorsportreg.com/events/moe-hpde-njmp-thunderbolt-motorsports-enthusiasts-325043)
 - Drift Evergreen rulebook: [driftevergreen.com/the-rulebook](https://www.driftevergreen.com/the-rulebook)
 - EMRA harness/HANS rule §3.4: [EMRA Full Rules PDF](https://www.emraracing.org/wp-content/uploads/2022/03/EMRA-Rules-v3.29.22.1.pdf)

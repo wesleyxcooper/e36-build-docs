@@ -420,9 +420,12 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] 🏭 Weld in Autopower U-Weld roll bar + harness bar (shop — safety-critical)
   - > ⚠️ **Pitfall:** HPDE venues will tech-inspect your roll bar. The bar must be welded, not bolted, and must be within the rollover envelope. A fabricator with cage experience is not optional here — a poorly placed hoop is worse than none in a rollover.
 - [ ] ✅ Mount Kidde Halotron 2.5lb fire extinguisher within driver reach
-- [ ] ✅ Source and install Recaro Pole Position ABE seat (driver side) — see `walkthroughs/12-safety-equipment.md` Seats & Restraints section
-  - Seat: ~$1,875 GFRP from Competition Motorsport or System Motorsports (both authorized US Recaro dealers)
-  - Mounts: [Brey Krause R-9240](https://northstarmotorsports.com/products/brey-krause-r-9240-driver-seats-between-440mm-to-427mm-wide-at-mount-point) direct-to-E36-floor (driver) ~$253 · [R-9241](https://www.ogracing.com/products/brey-krause-r-9241-passenger-seat-side-mount-adapter-bmw-e36-large-width) (passenger) ~$236 · [install PDF](https://bkauto.com/v/vspfiles/instructions/R9240.pdf)
+- [ ] ✅ Source and install Recaro Pole Position ABE seat (driver + passenger, matching pair) — see `walkthroughs/12-safety-equipment.md` Seats & Restraints section
+  - Seat: ~$1,875 GFRP/each from Competition Motorsport or System Motorsports (both authorized US Recaro dealers)
+  - Mounts — **call VAC first (215) 462-4666 to confirm PP ABE + E36 convertible fitment:**
+    - Option A (preferred — sliding, fore/aft adjust, convertible-confirmed): [VAC E36/E46 Race Seat Kit](https://store.vacmotorsports.com/vac-motorsports-race-seat-installation-kit-bmw-e36-e46-p1605.aspx) + slider + Recaro side mounts ~$750–900/pair
+    - Option B (fixed, lowest seat, no fore/aft): [BK R-9240](https://www.ogracing.com/products/brey-krause-r-9240-driver-seat-side-mount-adapter-bmw-e36-large-width) (driver ~$236) + [R-9241](https://www.ogracing.com/products/brey-krause-r-9241-passenger-seat-side-mount-adapter-bmw-e36-large-width) (passenger ~$236) · [install PDF](https://bkauto.com/v/vspfiles/instructions/R9240.pdf)
+    - Option C (premium sliding — confirm convertible fitment with EuroConnex before ordering): [EuroConnex JP Spec E36 M3 kit](https://euroconnex.co/collections/pole-position-mounts/products/recaro-jp-spec-mounting-solution-e36-m3) $1,700/pair
 - [ ] ✅ Source 5- or 6-point harness (FIA-tagged, not expired) — see `walkthroughs/12-safety-equipment.md`
 - [ ] ✅ Source Bell K1 Sport SA2025 (already owned: SA2020 K1 Sport — valid through 2030) + HANS device
   - K1 Sport SA2020 has M6 anchor posts — HANS-compatible out of the box
