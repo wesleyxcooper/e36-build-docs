@@ -420,6 +420,13 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] 🏭 Weld in Autopower U-Weld roll bar + harness bar (shop — safety-critical)
   - > ⚠️ **Pitfall:** HPDE venues will tech-inspect your roll bar. The bar must be welded, not bolted, and must be within the rollover envelope. A fabricator with cage experience is not optional here — a poorly placed hoop is worse than none in a rollover.
 - [ ] ✅ Mount Kidde Halotron 2.5lb fire extinguisher within driver reach
+- [ ] ✅ Source and install Recaro Pole Position ABE seat (driver side) — see `walkthroughs/12-safety-equipment.md` Seats & Restraints section
+  - Seat: ~$1,875 GFRP from Competition Motorsport or System Motorsports (both authorized US Recaro dealers)
+  - Mounts: [Brey Krause R-9240](https://northstarmotorsports.com/products/brey-krause-r-9240-driver-seats-between-440mm-to-427mm-wide-at-mount-point) direct-to-E36-floor (driver) ~$253 · [R-9241](https://www.ogracing.com/products/brey-krause-r-9241-passenger-seat-side-mount-adapter-bmw-e36-large-width) (passenger) ~$236 · [install PDF](https://bkauto.com/v/vspfiles/instructions/R9240.pdf)
+- [ ] ✅ Source 5- or 6-point harness (FIA-tagged, not expired) — see `walkthroughs/12-safety-equipment.md`
+- [ ] ✅ Source Bell K1 Sport SA2025 (already owned: SA2020 K1 Sport — valid through 2030) + HANS device
+  - K1 Sport SA2020 has M6 anchor posts — HANS-compatible out of the box
+  - HANS required at EMRA (Pocono) and NJMP own events when running harness; not required at MoE or Drift Evergreen
 
 ---
 
