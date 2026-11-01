@@ -415,41 +415,55 @@ KPI (King Pin Inclination / Steering Axis Inclination) is the inward tilt of the
 | **Best For** | Maximum power, turbo experience. | Response, weight (52 lbs lighter), high-rev NA. |
 | **Power Goal** | 450 - 600 HP | 250 - 280 HP (7800 RPM reliable) |
 | **Block** | Iron (Indestructible) | Alloy (Nikasil - safe with modern fuel) |
-| **Key Upgrades** | K64 Manifold, Rods, ATI Damper. | Schrick Cams, Solid Shims, M50 Manifold. |
+| **Key Upgrades** | Iron block + 5150 Stroker Kit (billet crank, 9,500 RPM-rated rods) + K64 Stage 2 kit (RHD priority) + Turner baffle + ATI Damper. Flex fuel mandatory. | Schrick Cams, Solid Shims, M50 Manifold. |
 
-### Option A: Turbo M50
+### Option A: Turbo M50 (Iron Block)
+
+> **Walkthroughs:** [15-m5x-turbo-sourcing.md](walkthroughs/15-m5x-turbo-sourcing.md) · [16-m5x-rotating-assembly.md](walkthroughs/16-m5x-rotating-assembly.md) · [17-m5x-head-valvetrain.md](walkthroughs/17-m5x-head-valvetrain.md) · [18-m5x-timing-oil-pump.md](walkthroughs/18-m5x-timing-oil-pump.md) · [19-m5x-oil-system.md](walkthroughs/19-m5x-oil-system.md) · [19b-m5x-turbo.md](walkthroughs/19b-m5x-turbo.md)
+
+#### Block Sourcing  [ADMIN]
+The UK-spec M52 in the car is an aluminum block — not suitable for boost. Phase 1A requires sourcing a separate iron block. See `15-m5x-turbo-sourcing.md` for the decision tree and sourcing checklist.
+
+| Option | Engine | Recommended Donor | Pricing |
+| :---- | :---- | :---- | :---- |
+| **Recommended** | M50B25TU iron (1992–1995, single VANOS) | E34 525i / E36 325i | ~$400–600 bare / ~$1,350–1,600 running |
+| Good | M50B25 NV iron (1990–1992, no VANOS) | E34 520i/525i pre-VANOS | Similar — less common in UK |
+| Good | US-spec M52B28 iron (1996–1998) | E36 328i US market | Confirm iron at purchase — EU/UK M52 is aluminum |
 
 #### Head & Valvetrain  [HEAD/VALVETRAIN · MACHINING]
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Head Gasket** | **Athena Cut-Ring** | [Athena Cut-Ring Gasket (5150)](https://5150autosport.com/products/athena-cut-ring-head-gasket-bmw-m50-m52-s50-s52) - $149.00 (verified) |
-| **Head Studs** | **ARP Kit** | [ARP 2000 Head Studs](https://store.vacmotorsports.com/arp-head-stud-kit-bmw-m50s50m52s52-p1.aspx) - $236.74 (verified) |
+| **Head Gasket** | **Athena Cut-Ring** (recommended for >16 psi) | [5150autosport.com](https://5150autosport.com/products/athena-cut-ring-head-gasket-bmw-m50-m52-s50-s52) — ~$149–200. Included in 5150 kit. |
+| **Head Studs** | **ARP 2000 Kit** | [VAC Motorsports](https://store.vacmotorsports.com/arp-head-stud-kit-bmw-m50s50m52s52-p1.aspx) — $170–237. Included in 5150 kit. |
 
-#### Rotating Assembly  [ROTATING-ASSEMBLY]
+#### Rotating Assembly  [ROTATING-ASSEMBLY · MACHINING]
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Connecting Rods** | **Maxpeeding H-Beam** | [Maxpeeding Forge Rods (135mm)](https://www.maxpeedingrods.com/product/connecting-rods-for-bmw-m50-b25-tu-m50-b25-m52-b28-m52-b25-25l-28l-135mm-arp-2000-bolts.html) - $350 - $550 |
-| **Connecting Rods (Premium)** | **FCP X-Beam** | [FCP Engineering Forged Rods](https://www.ebay.com/itm/123936285625) - ~$930 (verified) |
-| **Harmonic Damper** | **VAC ATI Damper** | [VAC ATI Super Damper](https://store.vacmotorsports.com/vac-motorsports-harmonic-damper-by-ati-bmw-m50m52s50s52m52tum54-p756.aspx) - $1,049.95 (verified) - **Critical for vibration control.** |
+| **5150 Stroker Kit (Recommended)** | 5150 4340 billet crank + CP-Carrillo Pro-Xtreme rods (rated 2,000HP / **9,500 RPM**) + CP-Carrillo forged pistons + ARP hardware + bearings. Complete balanced rotating assembly, 3.3–3.5L. Replaces Level 1 Turbo Build Kit (no crank included in Level 1). | [5150autosport.com](https://5150autosport.com/products/bmw-m50-m52-s50-s52-stroker-kit) — **$7,499.99.** Specify CP-Carrillo Pro-Xtreme rod upgrade at order for 9,500 RPM rating. |
+| **Connecting Rods (alt, à la carte)** | ZRP 4340 forged + ARP 2000 bolts | [nsbconcept.com](https://www.nsbconcept.com/en/3750-parts-engine-forge-for-bmw-series-5-e34) — ~€280. ⚠️ Specify c-c for block variant: 135mm (NV) or 140mm (TU). |
+| **Harmonic Damper** | **VAC ATI Super Damper** | [store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-harmonic-damper-by-ati-bmw-m50m52s50s52m52tum54-p756.aspx) — **$1,049.95.** Required for 7,000+ RPM. Owner-installed after longblock delivery. |
 
 #### Oil System  [OIL]
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Oil Pump** | **VAC Upgrade Kit** | [VAC M50 Oil Pump Kit](https://store.vacmotorsports.com/vac-motorsports-oil-pump-upgrade-kit-bmw-m50m52s50s52-p1041.aspx) - $224.95 (verified) |
+| **Oil Pan Baffle** | **Turner TEN-36-31-B36** — weld-in baffles + non-return flaps for M50/M52 in E36 | [turnermotorsport.com](https://www.turnermotorsport.com) — ~$150–200. Professional welding required. Weld turbo drain bung in same session. See `19-m5x-oil-system.md`. |
+| **Oil Pump Upgrade** | **VAC M50/M52 Oil Pump Kit** | [store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-oil-pump-upgrade-kit-bmw-m50m52s50s52-p1041.aspx) — $224.95 |
+| **Turbo Oil Feed** | -4AN braided + 0.040" inline restrictor (M10×1.0 or M12×1.5 oil port adapter) | AN Fittings Store / Summit Racing — ~$60–100 total. See `19-m5x-oil-system.md`. |
+| **Turbo Oil Drain** | -10AN braided gravity drain to welded sump bung | Summit Racing — ~$50–80. See `19-m5x-oil-system.md`. |
 
 #### Fuel System  [FUEL]
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Injector Upgrade** | **Siemens Deka 630cc EV1 × 6** | [SouthBay Fuel Injectors](https://www.southbayfuelinjectors.com/60lb-630cc-bmw-siemen-deka-ev1-fuel-injectors-set-of-6.html) - $325.00 (verified). **Replaces Phase 1 Bosch 440cc set** — 440cc insufficient for 450–600hp on E85. Same EV1 connector as OEM M5x injectors — fits stock fuel rail. Phase 1 440cc can be resold (~$150). |
+| **Injector Upgrade** | **Siemens Deka 630cc EV1 × 6** | [SouthBay Fuel Injectors](https://www.southbayfuelinjectors.com/60lb-630cc-bmw-siemen-deka-ev1-fuel-injectors-set-of-6.html) — $325.00. **Replaces Phase 1 Bosch 440cc set** — 440cc insufficient for 450–600hp on E85. Same EV1 connector as OEM M5x injectors — fits stock fuel rail. Phase 1 440cc can be resold (~$150). |
 
 #### Air & Boost  [AIR]
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Turbo Manifold** | **K64 AC+ RHD** | [K64 RHD AC+ Turbo Manifold](https://k64performance.com/exhaust-manifold/1655-rhd-uk-e36-e46-ac-turbo-kolektor-bmw-m50-m52-m54.html) - $839.72 (verified) - **Retains AC.** |
-| **Downpipe** | **K64 RHD Downpipe** | [K64 RHD E36 Downpipe](https://k64performance.com/exhaust-manifold/4635-downpipe-rhd-uk-turbo-bmw-e36-e46.html) - $448.00 (verified) |
-| **FMIC** | **CXRacing E36 FMIC Kit** | [CXRacing KIT-BMW-E36-IC0029-25](https://www.cxracing.com/KIT-BMW-E36-IC0029-25) - $610.00 (verified). Full kit: 27×11.75×3" bar-and-plate core + aluminum piping + silicon hoses + BOV + brackets. **Intercooler core carries to 07K phase** — piping will need re-routing for 07K turbo position. |
-| **Boost Solenoid** | **Turbosmart 2-Port PWM Solenoid** | [Turbosmart Solenoids](https://www.turbosmart.com/product-category/boost-controllers/solenoids/) - ~$65–80. MaxxECU drives via GPO PWM. Budget alt: Bosch N75 PN 0280142431 ~$40. Carries to 07K phase. |
-
+| **Turbo Kit (RHD Priority)** | **K64 Stage 2 Full Kit** — RHD AC+ manifold + GT35.30 turbo + 44mm Tial WG + 630cc injectors + BOV + RHD downpipe. Order without ECU option (MaxxECU is the chosen ECU). Re-spec turbo to G30-660/770 for 700whp E85. | [k64performance.com](https://k64performance.com/turbo-kit/771-turbo-kit-stage2-m50-m52-e30-e36-e34-bmw.html) — **$5,656.** See `19b-m5x-turbo.md`. |
+| | **Manifold only (turbo sourced separately)** | **K64 AC+ RHD** — T3/T4, RHD-specific, AC-compatible | [K64 Performance](https://k64performance.com/exhaust-manifold/1655-rhd-uk-e36-e46-ac-turbo-kolektor-bmw-m50-m52-m54.html) — $839.72 + [RHD Downpipe](https://k64performance.com/exhaust-manifold/4635-downpipe-rhd-uk-turbo-bmw-e36-e46.html) $448.00 |
+| | **RSI T4/T3 Top-Mount (High Power alt)** | 900hp+ capable, AC-friendly, RHD confirmed, 2-yr warranty | [rennauto.co](https://rennauto.co/product/bmw-m50-m52-s50-s52-m54-top-mount-turbo-manifold-for-e36-e46-e39-z3/) — **$959.95** |
+| | **SPA TMB01 Bottom-Mount (LHD/General)** | T3/T4, AC-compatible, 600whp+ proven | [spaturbousa.com](https://spaturbousa.com/collections/best-selling-products/bmw) — **$479.90** |
+| **Boost Solenoid** | **Turbosmart 2-Port PWM Solenoid** | [Turbosmart](https://www.turbosmart.com/product-category/boost-controllers/solenoids/) — ~$65–80. MaxxECU drives via GPO PWM. Budget alt: Bosch N75 PN 0280142431 ~$40. Carries to 07K phase. |
 ### Option B: NA M52
 
 #### Head & Valvetrain  [HEAD/VALVETRAIN]
