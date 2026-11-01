@@ -5,7 +5,7 @@
 **Shop-mandatory:** No  
 **Prerequisites:** Phase 1 foundation underway; car running on M52 (or at minimum MaxxECU + 8HP commissioned). 8HP variant decision locked before ordering any adapter plate.
 
-> **Status (current):** Block sourced and in hand. One open item: **forged vs. cast crank not yet confirmed** — requires pulling the lower sump pan and physically inspecting the counterweight parting line (see Step 2). All other sourcing decisions complete.
+> **Status (current):** Block sourced and in hand. Crank inspected — **confirmed cast** (counterweight parting line checked through a window in the bottom of the upper oil pan, near the oil pump, after dropping the lower steel sump). Open item: **source confirmed forged crank before block goes to Euromotive.** Target PN: `07K105101E` (~$1,050–1,250 eBay Germany), community-confirmed forged per Issam Abed VWVortex post #31. TTRS cranks (07K105101P / H) are also confirmed forged but more expensive. Do not send block to shop until forged crank is in hand.
 
 ---
 
@@ -52,13 +52,26 @@ Target casting codes **BGP**, **CBUA**, or **CEPA** — these are the confirmed 
 
 ### 2 — Verify forged crank at teardown
 
-Only `07K105101E` is community-confirmed forged (per Issam Abed, VWVortex post #31). `07K105101F` is in-production use but forged/cast status is **unconfirmed** — inspect physically. If cast: source a separately confirmed forged crank (`07K105101E`, ~$1,050–1,250 from eBay Germany).
+Only `07K105101E` is community-confirmed forged (per Issam Abed, VWVortex post #31). `07K105101F` — confirmed cast on this build (physically inspected). Other suffix variants: inspect physically; do not rely on PN alone.
 
-**Counterweight parting-line inspection — on-pallet procedure (~30–60 min):**
+**If cast: source a confirmed `07K105101E`.** Current availability (Oct 2026):
+- eBay UK (Poland seller, new OEM): £943 (~$1,190 USD) · item [385346328141](https://www.ebay.co.uk/itm/385346328141) — 2 available
+- oemwolf.com (ships from Germany): $1,174 new OEM · [oemwolf.com/oem-parts/07k105101e.html](https://oemwolf.com/oem-parts/07k105101e.html)
+- athousakis.gr (Greece, used, journals STD, damage noted in photos): €175 · [athousakis.gr](https://www.athousakis.gr/en/strofalos/crankshaft-07k105101l-07ke-for-vw-12.html) — inspect listing photos before ordering
 
-The parting line sits on the **outer peripheral face** of each counterweight — radially outward from the crank axis. Axial views from the front cover, spark-plug holes, or oil-filter port do not expose this face. Only viable line-of-sight on the 07K is from below the crank with both sump halves removed. The lower steel sump alone only exposes the pickup and baffle — **not** the counterweight periphery.
+**TTRS cranks (`07K105101P` / `07K105101H`) — confirmed forged, but non-trivial to use in a BGP build:**
+- **8-bolt flywheel hub** — TTRS crank uses an 8-bolt flywheel pattern vs 6-bolt on the VW 2.5. The DomiWorks billet flexplate (SKU 21015002) is spec'd for a specific hub bolt count; confirm with DomiWorks whether their kit supports the 8-bolt hub before ordering if going TTRS crank.
+- **Timing chain update required on early blocks** — per motorgeek 07K build thread ([motorgeek.com](https://www.motorgeek.com/threads/1990-cq-07k-build-and-1991-cq-restoration.204234/)): *"If you've got an early engine, you'd also have to update the timing setup to use the later TTRS crank."* BGP is an early block. This adds parts and complexity beyond the crank swap.
+- **Price**: `07K105101P` ~$2,157–2,531 new (audipartsstore, shopdap, wwspares); `07K105101H` discontinued Feb 2026 per wwspares — ~€2,200 while supplies last
+- **Community consensus for 500–550whp**: forged 6-bolt E-suffix with ARP fasteners is sufficient; TTRS crank is not necessary at that power level ([VWVortex turbo 07K thread](https://www.vwvortex.com/threads/turbo-07k-crankshaft-advice.9547943/), motorgeek post #4)
 
-Sequence (all on the bare block, pallet-mounted, no valve-timing work required):
+**Counterweight parting-line inspection — on-pallet procedure:**
+
+The parting line sits on the **outer peripheral face** of each counterweight — radially outward from the crank axis. Axial views from the front cover, spark-plug holes, or oil-filter port do not expose this face. The dipstick port may provide line-of-sight if the crank is rotated to exactly the right orientation, but is not a reliable inspection method.
+
+**Shortcut path confirmed in practice (~15–30 min):** Drop only the lower steel sump. There is a window in the bottom of the upper aluminum oil pan, near the oil pump, that provides direct line-of-sight to the crank counterweights. This is enough to read the parting line and confirm cast vs. forged without pulling the oil pump or upper pan. Bar the crank from the pulley end to walk counterweights through the window. If the result is unambiguous (cast seam clearly visible), stop here.
+
+**Full procedure (required for Euromotive handoff or if window view is inconclusive):**
 
 1. **Drop lower steel sump** — T30 bolts around the perimeter (~20) + **2 hidden bolts on the bellhousing-side face** ([Vortex "2 hidden bolts" thread](https://www.vwvortex.com/threads/oil-pan-2-hidden-bolts-help.1377803/)). On a pallet with no transmission, the 2 hidden bolts are freely accessible with a 1/4" wobble socket.
 2. **Slacken the oil-pump drive chain tensioner** using locking pin T10115 (~$15 on eBay, or improvise a pin of correct diameter). This is the **lower loop** off the crank double-wheel sprocket — completely independent of the upper timing chain. Valve timing is not touched at any point.
