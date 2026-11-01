@@ -54,10 +54,12 @@ Target casting codes **BGP**, **CBUA**, or **CEPA** — these are the confirmed 
 
 Only `07K105101E` is community-confirmed forged (per Issam Abed, VWVortex post #31). `07K105101F` — confirmed cast on this build (physically inspected). Other suffix variants: inspect physically; do not rely on PN alone.
 
-**If cast: source a confirmed `07K105101E`.** Current availability (Oct 2026):
-- eBay UK (Poland seller, new OEM): £943 (~$1,190 USD) · item [385346328141](https://www.ebay.co.uk/itm/385346328141) — 2 available
-- oemwolf.com (ships from Germany): $1,174 new OEM · [oemwolf.com/oem-parts/07k105101e.html](https://oemwolf.com/oem-parts/07k105101e.html)
-- athousakis.gr (Greece, used, journals STD, damage noted in photos): €175 · [athousakis.gr](https://www.athousakis.gr/en/strofalos/crankshaft-07k105101l-07ke-for-vw-12.html) — inspect listing photos before ordering
+**If cast: source a confirmed `07K105101E`.** Inventory is thin — this part is discontinued and sourcing requires active monitoring. Current availability (Nov 2026):
+- eBay UK — AutoPartsHub.ltd (used, from VW): £1,123 + £27 shipping · [ebay.co.uk/p/1617005596](https://www.ebay.co.uk/p/1617005596) — **physically verify forged parting line before buying any used crank regardless of listed PN**
+- athousakis.gr (Greece, used, journals STD, damage noted in listing photos): €175 · [athousakis.gr](https://www.athousakis.gr/en/strofalos/crankshaft-07k105101l-07ke-for-vw-12.html) — verify photos before ordering; verify still in stock
+- eBay.com US: no real inventory found (Nov 2026 live check)
+- oemwolf.com lists $1,174 "from Germany" but the checkout link resolves to a parked Russian domain — **not purchasable, ignore**
+- Prior listing (dwparts-teile, eBay UK, £943, 2 new OEM available): no longer active as of Nov 2026
 
 **TTRS cranks (`07K105101P` / `07K105101H`) — confirmed forged, but non-trivial to use in a BGP build:**
 - **8-bolt flywheel hub** — TTRS crank uses an 8-bolt flywheel pattern vs 6-bolt on the VW 2.5. The DomiWorks billet flexplate (SKU 21015002) is spec'd for a specific hub bolt count; confirm with DomiWorks whether their kit supports the 8-bolt hub before ordering if going TTRS crank.
