@@ -97,16 +97,16 @@ Two paths for this build:
 
 | Option | Fore/aft adjust | Seat height | Convertible confirmed | Cost (pair) |
 | --- | --- | --- | --- | --- |
-| **A** — VAC floor adapters + slider + Recaro side mounts | ~3–4" | Low (above R-924X) | Yes — no E36 convertible exclusion | ~$750–900 est. |
+| **A** — VAC floor adapters + slider + Recaro side mounts | ~3–4" | Low (above R-924X) | Yes — no E36 convertible exclusion in fitment notes | ~$750–900 est. (slider additional); call VAC to confirm PP ABE fit |
 | **B** — BK R-9240/R-9241 (fixed, direct-to-floor) | None | Lowest possible | "All E36 3-Series" — likely yes | ~$472–506 |
-| **C** — EuroConnex JP Spec (E36 M3 kit) | Full slider travel | Lowest with sliders per vendor | ⚠️ Unverified — labeled E36 M3 (coupe) | $1,700 |
+| **C** — EuroConnex JP Spec (E36 M3 kit) | Full slider travel | Lowest with sliders per vendor | ⚠️ Unverified — labeled E36 M3 (coupe); DM EuroConnex before ordering | $1,700 confirmed |
 | — BK R-9222/R-9223 + OEM sliders | Full slider travel | Higher than R-924X | Unverified | ~$506 + E46 sliders |
 
 **⚠️ Convertible floor note:** Multiple bracket vendors distinguish between E36 body styles for seat fitment. The Macht Schnell E36 adapter explicitly says *"except convertibles."* ([turnermotorsport.com](https://www.turnermotorsport.com/p-300563-seat-floor-adapters-e36-e46-e85-macht-schnell/)) The BK R-9240/R-9241 claims "all E36 3-Series models" without exclusions. VAC floor adapters carry no E36 convertible exclusion in their fitment notes — the only convertible callout in their catalog is for the E46, which needs a separate version. ([kdmtuners.com](https://kdmtuners.com/product/vac-motorsports-race-seat-installation-kit-bmw-e36-e46/)) RS-Ultimate and DriftShop explicitly list E36 convertible as a supported body style. ([dalauta.com](https://www.dalauta.com/en/seat-belts-accesories/124690-fia-sports-bucket-seat-mounting-bmw-e36-driver-s-and-passenger-s-side-fluo-kit.html), [driftshop.com](https://www.driftshop.com/bucket-seat-mount-frames-bmw-e36-e46-html.html)) The EuroConnex JP Spec kit is labeled for "E36 M3" (coupe) with no convertible callout — **contact EuroConnex before ordering** if running their slider kit.
 
 ---
 
-**Option A — VAC floor adapters + slider + Recaro side mounts (fore/aft adjustment, convertible-confirmed):**
+**Option A — VAC floor adapters + slider + Recaro side mounts (fore/aft adjustment, convertible-confirmed; call VAC to confirm PP ABE fitment):**
 
 VAC Motorsports floor adapters ([store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-race-seat-installation-kit-bmw-e36-e46-p1605.aspx)) are CNC-machined 6061-T6 billet aluminum, bolt to factory E36 floor points, and are explicitly compatible with seat sliders. Fitment: "BMW E36 3 Series and M3 (1992–1999)" — no convertible exclusion. VAC lists Recaro as compatible and specifically excludes the Recaro SPG XL from their side mount brackets — the PP ABE is a different seat and is not excluded. However, the PP ABE mounting point width is 427–440mm and VAC does not publish a slot width range on the product page. **Specific PP ABE + VAC compatibility is not documented in any found source.** A 6'1" E36 driver confirmed VAC floor adapters + Sparco slider in the bimmerforums E36/2 thread, but that was a Sparco EVO 2 install, not a PP ABE. VAC is local — call before ordering to confirm PP ABE fitment and slider recommendation: 2501 Snyder Ave, Philadelphia, PA — (215) 462-4666.
 
@@ -122,7 +122,7 @@ Trade-off: position is set once. No fore/aft adjustment for a two-driver setup.
 
 ---
 
-**Option C — EuroConnex Recaro JP Spec E36 M3 ($1,700/pair, fore/aft adjustment):**
+**Option C — EuroConnex Recaro JP Spec E36 M3 ($1,700/pair confirmed, fore/aft adjustment; DM EuroConnex to confirm convertible fitment):**
 
 Complete kit built from authentic Recaro Japanese-market components: E36-specific floor brackets, Recaro JP-spec sliders and handles, Recaro steel side mounts for PP/SPG, and all hardware. Vendor claims lowest seat position of any sliding mount solution tested. ([euroconnex.co](https://euroconnex.co/collections/pole-position-mounts/products/recaro-jp-spec-mounting-solution-e36-m3)) Labeled "E36 M3" — the M3 was a coupe. **Convertible fitment not stated. Contact EuroConnex to confirm before ordering** — multiple E36 bracket vendors distinguish coupe from convertible floor geometry, and a Macht Schnell adapter explicitly excludes convertibles. EuroConnex can be contacted via Instagram (linked on their site).
 
@@ -189,7 +189,7 @@ The biomechanical case: a 5/6-point harness fixes the torso; the head can still 
 - [ABE vs FIA Pole Position comparison — gsmperformance.co.uk](https://gsmperformance.co.uk/recaro-pole-position-abe-vs-pole-position-fia/)
 - [Recaro side mount compatibility guide — sportseats4u.co.uk](https://www.sportseats4u.co.uk/a-definitive-guide-to-recaro-side-mounts-and-compatibility/) — PP ABE uses standard 405mm Recaro pattern; Podium uses its own separate bracket series
 - [VAC Motorsports E36/E46 Race Seat Installation Kit](https://store.vacmotorsports.com/vac-motorsports-race-seat-installation-kit-bmw-e36-e46-p1605.aspx) · [Complete kit with harness mounts](https://store.vacmotorsports.com/vac-motorsports-complete-race-seat--harness-installation-kit--bmw-e36--e46-p5906.aspx) · [Turner Motorsport VAC mounts](https://www.turnermotorsport.com/c-955-bmw-racing-seat-mounts/m-1601-vac)
-- [EuroConnex Recaro JP Spec Mounting Solution (E36 M3)](https://euroconnex.co/collections/pole-position-mounts/products/recaro-jp-spec-mounting-solution-e36-m3) — $850/side PP/SPG config; confirm convertible fitment before ordering
+- [EuroConnex Recaro JP Spec Mounting Solution (E36 M3)](https://euroconnex.co/collections/pole-position-mounts/products/recaro-jp-spec-mounting-solution-e36-m3) — $1,700/pair (PP/SPG, Both config confirmed); DM EuroConnex to confirm convertible fitment before ordering
 - [Brey Krause R-9240 E36 driver floor mount — Northstar Motorsports](https://northstarmotorsports.com/products/brey-krause-r-9240-driver-seats-between-440mm-to-427mm-wide-at-mount-point) ($253) · [BK install PDF](https://bkauto.com/v/vspfiles/instructions/R9240.pdf)
 - MoE HPDE tech rules: [moehpde.com/faq](https://moehpde.com/faq) · [MotorsportReg listing](https://www.motorsportreg.com/events/moe-hpde-njmp-thunderbolt-motorsports-enthusiasts-325043)
 - Drift Evergreen rulebook: [driftevergreen.com/the-rulebook](https://www.driftevergreen.com/the-rulebook)
