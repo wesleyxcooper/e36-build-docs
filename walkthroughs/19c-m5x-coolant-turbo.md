@@ -17,11 +17,9 @@ What this adds for the turbo build:
 2. **Turbo water jacket feed and return lines** — -4AN braided lines from block coolant port to turbo center section; passive during normal running
 3. **Post-shutdown turbo coolant circulation** — small auxiliary pump on a timer relay to prevent turbo bearing coking after shutdown (the mechanical pump stops when the engine does)
 
-**On AC and high RPM:** The AC compressor has an electromagnetic clutch that physically disconnects the compressor from the belt. However, the compressor pulley ratio typically drives the compressor **faster** than engine speed — on the E36 M52, the compressor shaft can approach or exceed its rated limit above approximately 7,000 engine RPM. Running the AC engaged during a full-throttle pull risks exceeding the compressor's rated max shaft speed.
+**On AC:** The OEM M52 belt-driven AC compressor comes off at turbo install — K64 manifold routing and turbo placement make the OEM compressor location untenable, and the belt path is simplified by removing it. The replacement is the **12V electric scroll compressor** (PD2-18012AJA) already fully specced in `37-ac.md`. No RPM limit concern, no belt involvement, controlled via PMU16 O7. `37-ac.md` is documented as Phase 3 but applies identically to Phase 1A — pull it forward alongside the PMU16.
 
-**Solution — MaxxECU AC RPM cutoff:** Configure the MaxxECU AC compressor relay GPO with an RPM cutoff at ~6,500 RPM. The ECU automatically disengages the AC clutch above that threshold and re-enables it below. This gives you full AC function for defogging at normal cruise and cornering speed, cuts it out automatically on the power band, and re-engages once you lift. In MTune: Outputs → AC compressor relay → enable "AC cutoff above RPM" → set 6,500 RPM. Hysteresis of ~300 RPM prevents rapid clutch cycling near the threshold.
-
-Replace the accessory belt and tensioner at longblock install — a stretched or glazed belt at high RPM is the other real risk.
+Replace the accessory belt and tensioner at longblock install. Confirm the correct shorter belt part number after removing both the PS pump (EPS conversion) and the OEM AC compressor from the belt path — see `15-m5x-turbo-sourcing.md` on belt routing.
 
 ---
 
@@ -51,7 +49,7 @@ VAC replaces the water pump as part of the longblock build. The M50/M52 mechanic
 
 Specify at the VAC drop-off scope discussion: **replace the water pump with an OEM-spec unit.** It is inaccessible once the timing cover and accessory belt are reassembled — doing it now saves a future timing cover R&R.
 
-> ⚠️ **High-RPM note:** At 8,000–9,000 RPM, the mechanical pump impeller spins proportionally fast. The main risk is cavitation if coolant degasses or the coolant mix is wrong — not flow rate itself. Mitigate by maintaining a proper 50/50 OAT coolant/distilled water ratio. **Redline Water Wetter** (~$10) reduces water surface tension to improve heat transfer from metal to coolant; it is not specifically validated for M50/M52 in any BMW or Redline published spec, but is community-standard practice in E36/E46 track builds across all engine families — treat it as a low-cost belt-and-suspenders addition rather than a spec requirement.
+> ⚠️ **High-RPM note:** At 8,000–9,000 RPM, the mechanical pump impeller spins proportionally fast. The main risk is cavitation if coolant degasses or the coolant mix is wrong — not flow rate itself. Mitigate by maintaining a proper 50/50 OAT coolant/distilled water ratio and correct system pressure (appropriate pressure cap). **Redline Water Wetter** (~$10) directly addresses this: Redline's own product page states it "reduces or eliminates bubbles or vapor barrier that form on hot metal surfaces" and "reduces cavitation" by reducing surface tension so vapor micro-bubbles on hot metal break up faster rather than sustaining the cavitation cycle. Not M50/M52-specific — applicable to all metal cooling systems. ([redlineoil.com/waterwetter](https://www.redlineoil.com/waterwetter))
 
 ---
 
@@ -132,13 +130,13 @@ T-fitting (upper hose)
 
 ---
 
-### AC System at High RPM
+### AC — Electric Compressor
 
-**Configure a MaxxECU AC RPM cutoff.** The AC compressor pulley ratio drives the compressor faster than engine speed — the compressor shaft approaches or exceeds its rated limit above approximately 7,000 engine RPM. Running AC at full throttle risks exceeding that limit; the fix is an automatic ECU-managed cutoff, not turning off AC entirely.
+The OEM M52 belt-driven AC compressor is removed at turbo install. The replacement is the 12V electric scroll compressor (PD2-18012AJA) documented in full in `37-ac.md`. That walkthrough covers mounting, wiring (PMU16 O7, MaxxECU DIN enable, idle-up config), oil flush to POE 68, line fabrication, and commissioning.
 
-In MTune: Outputs → Output config → AC compressor relay GPO → enable AC cutoff above RPM → set **6,500 RPM**, hysteresis 300 RPM. The ECU automatically disengages the AC clutch above the threshold and re-enables it below. This lets you run AC normally for defogging at street/cornering speed; the clutch cuts out automatically on the power band.
+`37-ac.md` is marked Phase 3 but has no 07K dependency — install it at Phase 1A alongside the turbo. PMU16 is already being pulled forward (see Step 3), so the O7 output and CAN control path are in place.
 
-**Belt:** Replace the accessory belt and tensioner at longblock install. A stretched or glazed belt at high RPM risks walk or slip. Confirm the correct shorter belt part number after EPS conversion removes the PS pump from the drive path — see `15-m5x-turbo-sourcing.md` on belt routing without PS pulley.
+**Belt:** With OEM AC compressor removed and EPS already deleting the PS pump, confirm the correct shorter belt part number for the remaining accessory drive (alternator + mechanical water pump only). See `15-m5x-turbo-sourcing.md` on belt routing without PS pulley; apply the same logic with AC pulley also absent.
 
 ---
 
