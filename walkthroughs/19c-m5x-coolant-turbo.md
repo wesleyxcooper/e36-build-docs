@@ -1,0 +1,153 @@
+# Phase 1A: M5x Turbo Coolant System
+
+**Phase:** 1A  
+**System tags:** `[COOLANT]` `[THERMAL]` `[ELECTRICAL]`  
+**Shop-mandatory:** No — all owner-performed  
+**Prerequisites:** M5x turbo longblock installed; K64 turbo installed (`19b-m5x-turbo.md`); Phase 1 coolant baseline in place — CSF aluminum radiator, SPAL fan, Mishimoto expansion tank (`09-coolant.md`)
+
+---
+
+## Overview
+
+The M5x turbo coolant system differs from the Phase 3 07K path in one key way: **the mechanical water pump is retained.** No CWA400 EWP. The M50/M52 belt-driven pump handles the main engine circuit at all RPM.
+
+What this adds for the turbo build:
+
+1. **Water pump quality check and replacement** — done at longblock teardown by VAC
+2. **Turbo water jacket feed and return lines** — -4AN braided lines from block coolant port to turbo center section; passive during normal running
+3. **Post-shutdown turbo coolant circulation** — small auxiliary pump on a timer relay to prevent turbo bearing coking after shutdown (the mechanical pump stops when the engine does)
+
+**On AC and high RPM:** The AC compressor has an electromagnetic clutch that physically disconnects the compressor from the belt. However, the compressor pulley ratio typically drives the compressor **faster** than engine speed — on the E36 M52, the compressor shaft can approach or exceed its rated limit above approximately 7,000 engine RPM. Running the AC engaged during a full-throttle pull risks exceeding the compressor's rated max shaft speed.
+
+**Solution — MaxxECU AC RPM cutoff:** Configure the MaxxECU AC compressor relay GPO with an RPM cutoff at ~6,500 RPM. The ECU automatically disengages the AC clutch above that threshold and re-enables it below. This gives you full AC function for defogging at normal cruise and cornering speed, cuts it out automatically on the power band, and re-engages once you lift. In MTune: Outputs → AC compressor relay → enable "AC cutoff above RPM" → set 6,500 RPM. Hysteresis of ~300 RPM prevents rapid clutch cycling near the threshold.
+
+Replace the accessory belt and tensioner at longblock install — a stretched or glazed belt at high RPM is the other real risk.
+
+---
+
+## Parts
+
+| Part | PN / Source | Cost |
+| :---- | :---- | :---- |
+| **OEM-spec water pump** — replace at VAC teardown regardless of condition | FCP Euro or ECS Tuning — search "M50 water pump" for correct E34/E36 fitment. Hepu or Swag OEM-quality. | ~$80–120 |
+| **Turbo coolant feed line** — -4AN braided SS, ~300–400mm | Summit Racing or AN Fittings Store — measure in-car | ~$40–60 |
+| **Turbo coolant return line** — -4AN braided SS, ~400–600mm | Summit Racing | ~$40–60 |
+| **T-fitting for coolant feed** — 3/4" barb or AN T, to tap the upper hose post-thermostat | Fragola / Earl's / Summit — confirm hose ID at install | ~$15–25 |
+| **M50/M52 coolant port adapter** (alt feed point) — M14×1.5 or M16×1.5 to -4AN male adapter | AN Fittings Store or Summit — confirm block port thread at teardown | ~$15–25 |
+| **-4AN inline check valve** | Fragola 672204 or equivalent spring-loaded -4AN check valve — prevents backflow through CWA50 when engine is running at full mechanical pump pressure | ~$25–40 |
+| **Post-run auxiliary pump (CWA50 or equivalent)** — 12V, ~50W, compact. Sources: Bosch 0 392 023 004 (used in BMW N54 charge cooler circuit — available used from N54 donor car or FCP Euro ~$140 new); BMW auxiliary pump 64 11 6 917 727 (heater circulation pump, used OEM ~$40–80). Confirm fitment at sourcing. | FCP Euro / eBay OEM pull | **~$40–150** |
+| **Timer relay module** — adjustable 12V, 3–10 min range, triggers from key-off signal falling edge | Adjustable relay timer (Amazon/eBay ~$20); or use MaxxECU post-run GPO if MaxxECU is configured for post-run output | ~$20 |
+| **Inline -4AN orifice restrictor** (turbo oil feed — if not already installed per `19-m5x-oil-system.md`) | See `19-m5x-oil-system.md` — do not double-install | — |
+| High-temp thread sealant | Loctite 565 or equivalent | ~$10 |
+| DEI Titanium heat-sleeve (for any AN line within 18" of turbo housing or exhaust manifold) | DEI 010424 | ~$20–30 |
+
+---
+
+## Procedure
+
+### Step 1 — Water Pump Replacement at VAC
+
+VAC replaces the water pump as part of the longblock build. The M50/M52 mechanical pump lives at the front of the block driven by the accessory belt. Even if the existing pump appears functional, a used pump of unknown history should not go back in.
+
+Specify at the VAC drop-off scope discussion: **replace the water pump with an OEM-spec unit.** It is inaccessible once the timing cover and accessory belt are reassembled — doing it now saves a future timing cover R&R.
+
+> ⚠️ **High-RPM note:** At 8,000–9,000 RPM, the mechanical pump impeller spins proportionally fast. The main risk is cavitation if coolant degasses or the coolant mix is wrong — not flow rate itself. Mitigate by maintaining a proper 50/50 OAT coolant/distilled water ratio. **Redline Water Wetter** (~$10) reduces water surface tension to improve heat transfer from metal to coolant; it is not specifically validated for M50/M52 in any BMW or Redline published spec, but is community-standard practice in E36/E46 track builds across all engine families — treat it as a low-cost belt-and-suspenders addition rather than a spec requirement.
+
+---
+
+### Step 2 — Turbo Coolant Feed Line
+
+The K64 Stage 2 turbo's center section has coolant ports for water-cooling the bearing housing. These **must** be connected — without coolant flow, heat soaks the center section after shutdown and cokes the oil in the bearing gallery (coking = solid carbon deposits that block the oil passage and destroy the turbo on the next startup).
+
+**Feed routing:**
+
+The preferred feed point is the **upper radiator hose on the engine side** (post-thermostat, before the radiator). This is a hot coolant point — exactly what the turbo water jacket needs during normal running.
+
+1. Install a 3/4" barb T-fitting into the upper hose at a straight section. Clamp both sides with stainless hose clamps. Confirm T barb ID matches the -4AN hose or use a barb-to-AN adapter.
+
+2. Route -4AN braided line from the T-fitting → turbo center section coolant **inlet** (check inlet vs. outlet marking on the center section — often labeled on Garrett turbos). Typically the inlet is the upper port.
+
+3. Route -4AN braided return line from the turbo center section coolant **outlet** → back to the expansion tank lower fitting (or a T into the lower hose, which is the cold/return side). The return must allow gravity drainage — no uphill sections on the return run.
+
+4. Sleeve any braided line section within 18" of the turbo housing or exhaust manifold with DEI Titanium heat-sleeve. Tie off the rest away from moving belt components.
+
+> ⚠️ **Do not use the heater core circuit as a tap point.** The heater core circuit has a 4-port valve that may restrict or stop flow. Tap the main cooling circuit directly.
+
+---
+
+### Step 3 — Post-Shutdown Auxiliary Pump (CWA50 Circuit)
+
+**The problem:** When the engine stops, the mechanical pump stops. The turbo center section retains significant heat from the exhaust housing side. Without coolant flow, the residual heat bakes the oil in the bearing gallery — **coking.** Coked oil passages are the single most common cause of premature turbo failure on turbocharged street/track cars that skip post-run cooling.
+
+**The solution:** A small auxiliary pump runs coolant through the turbo water jacket circuit for 3–5 minutes after shutdown. The main engine coolant doesn't need to circulate — just the turbo water jacket.
+
+**Install the CWA50 (or equivalent auxiliary pump) inline on the turbo coolant feed side:**
+
+```
+T-fitting (upper hose)
+       │
+       ├── normal running: mechanical pump pressure drives flow forward through
+       │   check valve (open in forward direction) → turbo inlet → turbo outlet
+       │   → expansion tank (gravity return)
+       │
+       └── CWA50 auxiliary pump inlet
+               │
+               ▼
+          CWA50 outlet
+               │
+               ▼
+       Check valve (prevents backflow into CWA50 during normal engine operation)
+               │
+               ▼
+       T back into main turbo feed line → turbo inlet
+```
+
+**Wiring:**
+
+| Method | Setup |
+| :---- | :---- |
+| **PMU16 (best — if installed)** | PMU16 can hold a CWA50 output active post-key-off based on a MaxxECU CAN CLT message — the pump runs until CLT drops below 70°C rather than a fixed timer. Temperature-based cutoff is cleaner than a timed relay. Assign CWA50 to a PMU16 output channel; configure post-run hold via PMU16 software with CLT CAN source from MaxxECU. See PMU16 note below. |
+| **MaxxECU post-run GPO** | In MTune: Outputs → Output config → spare GPO → Function: Post-run timer. Set duration: 300 seconds (5 min). MaxxECU holds the GPO active for the set duration after ignition-off. Wire GPO → relay coil → CWA50 +12V from a fused BATT line (not ignition-switched). |
+| **Standalone timer relay (fallback)** | Adjustable 12V timer relay module (~$20). Trigger from ignition-switched +12V falling edge (key-off). Holds CWA50 relay closed for the set duration (3–5 min). Power CWA50 from fused BATT+ through the relay. |
+
+> **PMU16 on the M5x turbo build:** The PMU16 (Ecumaster) was originally deferred to Phase 3 in the wiring plan, but the turbo build makes it worthwhile at Phase 1A. It cleanly replaces the relay board, handles the CWA50 post-run circuit with temperature-based cutoff (better than a dumb timer), provides per-output current logging for the fuel pump and fan, and is already in the plan for eventual Phase 3 anyway. If budget allows, install it with the M5x turbo rather than waiting. See `11-ecu-chassis-wiring.md` for the existing relay board spec that it replaces.
+
+**Relay coil flyback diode:** 1N4007, cathode (banded end) to relay coil pin 86 (+12V), anode to pin 85 (GPO / timer output). Prevents voltage spike back into ECU output when coil de-energizes.
+
+**CWA50 power:** Feed from a dedicated 15A fused BATT+ circuit. The pump draws ~4–7A at full load — a 15A fuse is adequate. GND to chassis GND stud.
+
+**Check valve orientation:** Install the -4AN inline check valve on the **return** leg from the turbo coolant outlet back to the expansion tank. This prevents hot coolant from being pushed backward by the mechanical pump during normal running. Confirm flow direction arrow on the check valve body matches the intended return flow direction.
+
+---
+
+### Step 4 — System Fill, Bleed, and Leak Check
+
+5. **Fill coolant via Mishimoto expansion tank.** 50/50 OAT coolant + distilled water (BMW-compatible, silicate-free). Do not use tap water.
+
+6. **Start engine and run to thermostat open.** The thermostat on M50/M52 opens at ~88°C. Run until fully open, then squeeze the upper hose periodically to push air bubbles toward the expansion tank. Top off and cap.
+
+7. **Post-run test:** After a heat cycle, shut down the engine and verify the CWA50 activates within ~5 seconds of shutdown. Confirm coolant flows through the turbo water jacket by gently touching the return line — it should be warm and you may feel slight flow vibration. Time the pump running: should run for the configured duration (3–5 min), then cut.
+
+8. **Inspect after first heat cycle:** Check all hose clamps and AN fittings for seepage. Turbo coolant return confirmed gravity-downward at all points.
+
+---
+
+### AC System at High RPM
+
+**Configure a MaxxECU AC RPM cutoff.** The AC compressor pulley ratio drives the compressor faster than engine speed — the compressor shaft approaches or exceeds its rated limit above approximately 7,000 engine RPM. Running AC at full throttle risks exceeding that limit; the fix is an automatic ECU-managed cutoff, not turning off AC entirely.
+
+In MTune: Outputs → Output config → AC compressor relay GPO → enable AC cutoff above RPM → set **6,500 RPM**, hysteresis 300 RPM. The ECU automatically disengages the AC clutch above the threshold and re-enables it below. This lets you run AC normally for defogging at street/cornering speed; the clutch cuts out automatically on the power band.
+
+**Belt:** Replace the accessory belt and tensioner at longblock install. A stretched or glazed belt at high RPM risks walk or slip. Confirm the correct shorter belt part number after EPS conversion removes the PS pump from the drive path — see `15-m5x-turbo-sourcing.md` on belt routing without PS pulley.
+
+---
+
+## References
+
+- `19-m5x-oil-system.md` — turbo oil feed/drain and pan baffle
+- `19b-m5x-turbo.md` — turbo install, K64 Stage 2 kit
+- `09-coolant.md` — Phase 1 coolant baseline (CSF radiator, SPAL fan, Mishimoto tank)
+- `15-m5x-turbo-sourcing.md` — auxiliary water pump and belt routing notes
+- [Garrett Turbo Oil Restrictors guidance](https://www.garrettmotion.com/knowledge-center-category/racing-and-performance/turbo-oil-restrictors-oil-supply/)
+- [Overrun Tuning E36 M5x Turbo Guide — coolant routing](https://www.overruntuning.com/e36-turbo-guide)
+- [FCP Euro M50 water pump](https://www.fcpeuro.com/)
