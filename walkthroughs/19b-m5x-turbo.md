@@ -28,7 +28,7 @@ The M5x turbo system closely parallels the 07K Phase 3 air/boost system (`31-air
 - Manifold: K64 AC+ RHD stainless — RHD-specific pattern, hood closes, AC compressor clears ($839.72 standalone)
 - Turbo: GT35.30 T3 journal bearing — **rated 300–500hp.** See Turbo Selection below for upgrade to 700whp E85 spec.
 - Wastegate: 44mm Tial — included
-- Injectors: Siemens Deka 630cc × 6 — included (adequate for 700whp E85)
+- Injectors: Siemens Deka 630cc × 6 — included. **Replace with Injector Dynamics ID725 (725cc/min, USCAR connector) before first tune.** 630cc units cap at ~395–445whp on E85 at 80–90% duty cycle — the K64 claim of "adequate for 700whp E85" is incorrect. ID725 covers GT35.30 + pump 93 at ~52% duty and GT35.30 + E85 at ~82% duty (~480–500whp). If pursuing G30-770 + 600whp E85, step up to ID850 instead. Injector duty cycle calculations are thermodynamic estimates (fuel mass flow = air mass flow / AFR, at 8,500 RPM, VE = 0.80).
 - BOV: included
 - Downpipe: K64 RHD-specific ($448 standalone) — confirm clearance with RHD steering rack before finalizing. Custom fab at Fabie Boys Motorsports if needed.
 - **Do not order ECUMASTER DET3 option** — MaxxECU RACE is the chosen ECU. Piggyback will conflict. Order kit without ECU or request no ECU.

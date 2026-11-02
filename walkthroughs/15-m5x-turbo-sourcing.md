@@ -15,7 +15,7 @@ The build has three valid engine paths. The adapter plate (M5x→8HP, already so
 
 | Path | Engine | Power target | RPM character | Status |
 | --- | --- | --- | --- | --- |
-| **1A** | Iron M50B25(TU) turbo | 400–600whp at 6,000–7,000 RPM | Wide torque band from boost, moderate peak RPM | This document — not yet started |
+| **1A** | Iron M52B28 turbo (M52B25 or M50B25TU acceptable if B28 unavailable) | Power is incidental to the spec; 400–500whp pump / up to ~700whp E85 | **8,200–8,500 RPM primary design point** — RPM-first, GT-R analog (RB26DETT redline 8,000 / fuel cut 8,200); 9,000 RPM structural margin | This document — not yet started |
 | **1B** | M52 NA (existing block) | 250–280whp at 7,800 RPM | High-revving, peaky, no boost | `10-m52-engine-prep.md` |
 | **3 (Phase 3)** | 07K 2.5L inline-5 turbo | 500–600whp at 9,000 RPM | Boost + high RPM | `20-07k-sourcing.md` onward |
 
@@ -60,7 +60,7 @@ Phase 1A and Phase 3 are competing paths — you do not do both. Phase 1A is the
 - 84mm bore × 84mm stroke, 2.8L — more displacement = more torque at lower boost, less lag
 - Single VANOS (intake only) — same MaxxECU support as M50TU
 - Stock rotating assembly (cast crank, M52/S52-spec rods) safe to approximately 450–500whp with forged internals + head studs + Cometic/Athena gasket ([bmwtuning.co](https://bmwtuning.co/bmw-e36-turbo-kit-guide/))
-- M52B28 crank is cast — plan on upgraded rotating assembly for any real boost target
+- M52B28 crank is **forged steel** — confirmed in the BMW M52 factory service manual ([landy.ee](http://www.landy.ee/manuals/engine/BMW_M52_engine.pdf)) and [Australian Car.Reviews](https://www.australiancar.reviews/bmw-m52-engine-1994-01/): *"the M52B28 engine had a forged steel crankshaft"*; the M52B20 and M52B25 have cast iron cranks — the forged crank is B28-specific. Stock 84mm stroke = **23.8 m/s mean piston speed at 8,500 RPM** — correct for an RPM-first build. Stock crank stays; VAC balances it to the rod/piston combination at build time
 - Available from US E36 328i donors — the most common source if you want iron M52 and avoid sourcing an M50TU separately
 
 **Caveat:** The 328i donor engine may already be at significant mileage. Inspect bore wear before boring to oversize.
@@ -82,14 +82,34 @@ Phase 1A and Phase 3 are competing paths — you do not do both. Phase 1A is the
 
 ## Recommended Path
 
-**Source a M50B25TU (Option B) iron block from an E34 525i or E36 325i donor.** Reasons:
+**Source an iron M52B28 from a 1996–1998 US-spec E36 328i, 1997–1998 E39 528i, or 1996–1998 E38 728i.** The M52B28 specifically — not the M52B25 (E36 323i). The B28 is the only M52 variant with a **forged steel crankshaft**, confirmed in the BMW M52 factory service manual ([landy.ee](http://www.landy.ee/manuals/engine/BMW_M52_engine.pdf)) and [Australian Car.Reviews](https://www.australiancar.reviews/bmw-m52-engine-1994-01/): *"the M52B28 engine had a forged steel crankshaft and graphite-coated pistons to reduce friction; M52B20 and M52B25 had cast iron crankshafts."* The forged crank is the primary reason this specific variant is correct.
 
-1. Iron block — confirmed capable well past 600whp with forged internals
-2. VANOS — reduces turbo lag, already wired in the MaxxECU M50 harness
-3. Most available of the iron options in both UK and US markets
-4. E34 525i donors plentiful in UK; E36 325i common at US salvage yards within driving distance
+**Build philosophy: RPM-first.** This build targets 8,200–8,500 RPM as the primary design point — the same operating range as a GT-R RB26DETT (8,000 RPM redline, 8,200–8,500 fuel cut). Power is a byproduct of the spec. At stock stroke (2.793L), achieving a given power number requires ~18% more boost than a 3.3L stroker would — so the turbo sizing choice drives the ceiling. Power estimates are thermodynamic calculations (air mass flow × fuel energy × brake thermal efficiency at 8,500 RPM, VE = 0.80, BTE 30% pump / 33% E85): ~400–500whp on pump 93 at 12–18psi; ~550–650whp on E85 at 20–25psi is the realistic street ceiling. 700whp+ on E85 is achievable but requires a large-frame turbo at 25–30psi — aggressive for a street car. The stock M52B28 forged crank at 84mm stroke produces **23.8 m/s mean piston speed at 8,500 RPM** — well within safe territory. **Do not replace it with a stroker crank.** Longer stroke increases piston speed at the RPM ceiling without structural benefit:
 
-If an M50B25 NV surfaces at a good price and the VANOS simplicity matters: take it. The power potential is identical; the wiring is simpler.
+| Crank | Stroke | m/s at 8,500 RPM |
+| :--- | :--- | :--- |
+| **M52B28 stock (forged steel)** | **84mm** | **23.8 m/s — correct choice** |
+| S52 (forged steel) | 89.6mm | 25.4 m/s — longer, no advantage for RPM |
+| 5150 billet stroker | ~97mm | 27.5 m/s — worst piston speed for this goal |
+
+The stock crank is professionally balanced to the rod and piston combination at VAC during the build. ATI Super Damper is mandatory regardless — see `18-m5x-timing-oil-pump.md`.
+
+**Sourcing options:**
+
+1. **Local / FB Marketplace (preferred when available):** Search "328i engine," "M52 engine," "BMW 328 motor." Confirm iron block via VIN decoder before the pickup drive. Common leaks (valve cover, VANOS seals, oil pan) are not a concern for a rebuild core. "Pulled for swap" or accident cars (side/rear impact only) are fine.
+2. **eBay / car-part.com:** Verified active listings in Parts table below.
+3. **VAC sources the core on request:** Per VAC's engine rebuilds page ([vacmotorsports.com/engine-rebuilds](https://vacmotorsports.com/engine-rebuilds/)): *"We can build your engine from a core you supply, or source a suitable core on request."* Call 215-462-4666 and specify iron-block M52B28 — not M52TU aluminum, not M52B25.
+
+**What to avoid:**
+- M52B25 (E36 323i) — cast iron crank, not the correct variant for this build
+- M52TU (E46, late E39 or Z3, 1998+) — aluminum block; iron block is magnetic, aluminum is not
+- E46 328i (2000+) — M52TU or M54, neither is the right block
+
+**Do not hold the build waiting for an M50TU.** The M50 NV's advantage is solid shim cam followers from factory — saves the $150 Alien Engineering kit. Not worth waiting or paying a premium.
+
+> ⚠️ **M52 block variant warning:** Only **1996–1998 US-spec E36** M52 engines are iron block. The M52TU (E46 and late E39, 1998+) switched to an aluminum block — not suitable for this power level. Verify "US-spec E36" and year before committing. Iron block is magnetic and significantly heavier than aluminum.
+
+**S52 (US E36 M3) — not the right engine for this build.** The S52 has a forged crank, but so does the M52B28, and the M52B28 crank is shorter stroke (84mm vs 89.6mm) — better for the RPM ceiling. S52 donors cost $3,000–3,500 shipped for a usable example vs ~$800–1,500 for a tested M52B28. Thinner walls (86.4mm bore) are a concern at sustained high boost on E85. No scenario exists where the S52 improves on the M52B28 for an RPM-first build.
 
 ---
 
@@ -97,7 +117,11 @@ If an M50B25 NV surfaces at a good price and the VANOS simplicity matters: take 
 
 | Part | PN / Source | Cost |
 | --- | --- | --- |
-| M50B25TU iron donor block (bare or with accessories) | E34 525i / E36 325i breakers; car-part.com; eBay | ~$400–600 bare / ~$1,350–1,600 running |
+| **Iron M52B28 donor (primary)** — E36 328i, 1996–1998 US-spec, iron block | car-part.com; local salvage; eBay. Verified active listings: [E36 328i M52 137k tested — germanonly, $887+$450 ship](https://www.ebay.com/itm/128064345424) · [E36 328ic M52 complete — germanonly, $911+$450 ship](https://www.ebay.com/itm/298508817920). Germanonly (99.7%, 19.6K transactions) is a reliable high-volume OEM parts seller. | **~$800–1,500 complete shipped** |
+| **Iron M52B25 donor** — E36 323i, 1996–1998 US-spec; same iron block but **cast iron crank** — requires crank replacement for 8,500 RPM target; not the preferred donor | car-part.com; local salvage | ~$400–800 complete |
+| **M50B25TU donor** (opportunistic only) — E34 525i or E36 325i pre-1996; **cast iron crank** — same limitation as M52B25 for this build's RPM target; don't hold the build or pay more than M52B28 prices | E34 525i breakers; car-part.com | ~$800–1,200 running |
+| **M52B28 forged crank (standalone)** — if running an M52B25 or M50TU block, source a standalone M52B28 forged crank instead of hunting a full B28 donor. Pair with 135mm c-c rods (M52B28 spec) and pistons matched to 84mm bore + 84mm stroke; confirm full spec with VAC at drop-off. Active used market confirmed ([BimmerFest thread 962402](https://www.bimmerfest.com/threads/bmw-e36-e39-328-528-m52-b28-forged-crankshaft-no-longer-available.962402/)) | Used: eBay "BMW M52B28 crankshaft"; local BMW wreckers | ~$100–200 used |
+| **Bosch 140A alternator (AL0739X)** — upgrade at teardown, mandatory with PD2-18012AJA electric AC | BMW PN `12311744567` · [BimmerWorld AL0739X](https://www.bimmerworld.com/Engine/Alternators/Alternator-140-Amp-12-31-1-744-567.html) $374.99 + $70 core · [Turner Motorsport AL0739X](https://www.turnermotorsport.com/p-371693-oem-bosch-remanufactured-alternator-140amp-e36-e34/) $415.99 + $100 core · Confirmed fit: E36 323i/325i/328i/M3, E34 525i, M50/M52/S50/S52 · Note: requires 55mm alternator pulley — reuse existing if already 55mm | ~$375–416 + core |
 | HF 2-Ton Shop Crane | SKU 58755 — **already purchased** | — |
 | HF 1000 lb Engine Stand | SKU 59201 — **already purchased** | — |
 | Generic BMW inline-6 engine stand adapter | eBay ~$40–60 (4-bolt pattern M50/M52/S50 engine mount boss) | ~$50 |
@@ -145,7 +169,14 @@ This section documents what changes or stays the same on the M5x turbo build vs 
 - **Top-mount turbo manifold (RSI T4/T3 or SPA TMB04 top mount):** Turbo sits above the exhaust manifold on the driver's side — alternator is on the opposite (intake/passenger) side. No direct conflict. Verify intercooler pipe routing clears the alternator.
 - **Bottom-mount manifold (SPA TMB01):** Turbo sits low on the exhaust/driver side. Even less alternator conflict. The charge pipe routes to the FMIC and back — runs across the front of the engine bay, not near the alternator.
 
-**Alternator output:** OEM M50/M52 alternator is typically 90–120A. With the additional electrical load from the MaxxECU, PMU16, SPAL electric fan, and any future e-boost or data logger, an alternator upgrade to 140A (Bosch reman for E34/E36 with upgraded stator) is worth specifying at teardown. Upgrade rather than replace bracket — uses the same mounting points.
+**Alternator output:** OEM M50/M52 alternator is typically 90–120A. With the PD2-18012AJA electric AC compressor drawing ~50A, plus MaxxECU, PMU16, SPAL fan, and CWA50 auxiliary pump, the OEM alternator is insufficient — upgrade to 140A is **mandatory**, not optional.
+
+**Spec:** Bosch AL0739X, 140A, BMW PN `12311744567`. Confirmed fit: M50, M52, S50, S52, all E36 6-cyl, E34 525i. Drop-in replacement on the same bracket and mounting points — no fabrication. Note: requires 55mm alternator pulley; reuse existing if already 55mm, or source a 55mm pulley separately.
+
+| Source | Price | Core charge |
+| :--- | :--- | :--- |
+| [BimmerWorld AL0739X](https://www.bimmerworld.com/Engine/Alternators/Alternator-140-Amp-12-31-1-744-567.html) | $374.99 | $70 |
+| [Turner Motorsport AL0739X](https://www.turnermotorsport.com/p-371693-oem-bosch-remanufactured-alternator-140amp-e36-e34/) | $415.99 | $100 |
 
 ### PMU16
 
@@ -157,7 +188,7 @@ This section documents what changes or stays the same on the M5x turbo build vs 
 
 **07K path:** No stock accessory drive in longitudinal E36 orientation; Fluidampr 551211 replaces OEM damper. Power steering pump, AC compressor, and alternator all require separate provisions.
 
-**M5x turbo path:** Stock accessory belt drive retained as-is (alternator + AC compressor + mechanical water pump). EPS conversion removes PS pump from belt path — re-route belt to skip the PS pulley or fit an idler in its place. Most E36/E34 PS delete builds use a shorter belt with an idler from a junkyard donor. Confirm belt part number after PS removal: the appropriate belt without the PS pump is a shorter run and a different part number. Confirm with VAC or Turner Motorsport for your specific M50 accessory arrangement.
+**M5x turbo path:** OEM belt drive retained for alternator and mechanical water pump. OEM AC compressor removed at turbo install and replaced with the PD2-18012AJA electric compressor (see `37-ac.md`) — the OEM compressor is not in the belt path. EPS conversion (Phase 1) also removes the PS pump. Remaining belt drive: alternator + mechanical water pump only. Confirm correct shorter belt part number with no PS pump and no AC compressor pulley — measure after teardown or call Turner Motorsport/VAC with the specific M52 application.
 
 ---
 

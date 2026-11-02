@@ -11,16 +11,16 @@
 
 The parts kit you order depends on this number. Every other decision branches from it.
 
-**This build targets:** ~400–500whp on pump gas / up to 700whp on E85. Flex fuel provisions mandatory. Engine must be able to rev to 8,000–9,000 RPM safely — this sets the floor for forged internals and ATI damper regardless of where peak power lands.
+**This build targets:** 8,200–8,500 RPM as the primary design point — power is a byproduct of the spec. 9,000 RPM is the structural safety margin. Flex fuel mandatory. Power estimates are thermodynamic calculations (air mass flow × fuel energy × brake thermal efficiency at 8,500 RPM, VE = 0.80): ~400–500whp on pump 93 at 12–18psi; ~550–650whp on E85 is the realistic street ceiling at 20–25psi. 700whp+ on E85 is achievable but requires a large-frame turbo at 25–30psi — aggressive for a street car.
 
 | Target | What you need | Rotating assembly path |
 | --- | --- | --- |
-| ≤400whp (street/occasional track) | Head studs + Athena gasket only — no teardown | Stock M50TU used as-is — but NOT safe at 8k+ RPM |
-| 400–500whp pump / 700whp E85 + 8k–9k RPM ceiling | **5150 Stroker Kit (billet crank + CP-Carrillo Pro-Xtreme rods rated 9,500 RPM) + ATI damper + oil chain tensioner** | **This build path** |
-| 700–1,000whp | CP-Carrillo rods + pistons + ARP 625+ head + main studs | 5150 Level 2 |
-| 1,000whp+ | Billet crank + CP-Carrillo + full assembly | Stroker kit territory |
+| ≤400whp (street/occasional track) | Head studs + Athena gasket only — no teardown | Stock M52 used as-is — NOT safe at 8k+ RPM |
+| **8,200–8,500 RPM + 400–700whp E85** | **Stock M52B28 forged crank (balanced) + CP-Carrillo rods + forged pistons + ATI damper + solid shim conversion** | **This build path — VAC complete kit** |
+| 700–1,000whp | Same rotating assembly — more boost, fuel, and head work | Same path, higher tune |
+| 1,000whp+ | CP-Carrillo Xtreme pistons + additional head work | Call VAC |
 
-**Recommended for this build: 5150 Stroker Kit with CP-Carrillo Pro-Xtreme rod upgrade.** Billet crank + 9,500 RPM-rated rods in one balanced package. The Level 1 Turbo Build Kit does not include a crank and should not be ordered for this build.
+**Primary recommendation: VAC Complete E34/E36 Engine Build Kit ($9,699.99) + stock M52B28 crank balance.** CP-Carrillo rods and pistons plus full head components in one SKU. The stock M52B28 forged crank stays and is balanced to the rod/piston spec at VAC. SKU: VAC-EBK-E34E36, specify M52 + Turbo. ([store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-bmw-e34e36-engine-build-kit--m50m52s50s52-p5900.aspx))
 
 ---
 
@@ -35,40 +35,53 @@ BMW specialist; in-house engine builds, machining, and assembly. E36/E46/M5x/S5x
 
 ## Parts
 
-### Option A — 5150 AutoSport Pro-Series Turbo Build Kit (bundled, recommended)
+### Option A — VAC Complete E34/E36 Engine Build Kit (primary, recommended)
 
-The 5150 kit covers all rotating assembly internals plus head gasket and studs in a single SKU. More convenient than sourcing each component separately and avoids compatibility mismatches between bearing sets, pistons, and rods.
+The VAC complete kit covers rotating assembly and head components in one SKU with a pre-build consultation on piston spec, compression ratio, and operating conditions.
 
-| Level | Contents | HP Rating | Price |
-| --- | --- | --- | --- |
-| **Level 1** | Arias forged pistons + Manley rods + ARP 2000 rod bolts + ARP 2000 head studs + Athena-SCE cut-ring gasket + 5150 rod + main bearings + ARP main stud kit | 700hp | **$3,499.99** |
-| Level 2 | CP-Carrillo pistons + Manley rods + ARP 625+ head studs + Athena-SCE cut-ring gasket + 5150 bearings + ARP main studs | 1,000hp | $3,499.99 (same base; verify current price) |
+| SKU | Contents | Price |
+| --- | --- | --- |
+| **VAC-EBK-E34E36** (M52, Turbo) | CP-Carrillo x VAC Pro Series forged pistons · CP-Carrillo forged connecting rods · VAC/Calico coated HP rod bearings · High-performance valve spring kit · High-performance intake + exhaust valves · Titanium retainers + HD valve locks · Performance camshafts (VAC profile options) · ARP 625+ custom age head stud kit · VAC MLS or cut-ring head gasket | **$9,699.99** |
 
-Source: [5150autosport.com](https://5150autosport.com/products/5150-autosport-pro-series-turbo-build-kit-bmw-m50-m52-s50-s52)
+Source: [store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-bmw-e34e36-engine-build-kit--m50m52s50s52-p5900.aspx)
 
-**Specify at order time:** bore diameter (84mm stock or intended overbore), compression ratio (8.8:1 for high boost / E85; 9.5:1 for modest boost), block code (M50B25TU or M50B25NV — rod length differs: 140mm c-c TU vs 135mm c-c NV).
+**Specify at the pre-build consultation:**
+- **Engine variant:** M52B28 — rod c-c length is 135mm (confirmed: [discount-autosport.com](https://www.discount-autosport.com/en/produit/kit-6-forged-135mm-connecting-rods-bmw-m50b25-m52b28-h-beam-4340-screws-arp2000-800hp-9000rpm/))
+- **Bore target:** 84mm (stock) or 84.5mm minimum cleanup — bore to minimum needed, pistons are built to match the measured bore after honing
+- **Compression ratio:** 8.5:1 for high boost / E85; 9:1 for moderate boost pump-gas tuning
+- **Solid shim conversion:** confirm VAC includes this in head build scope — mandatory for 8,200+ RPM operation (see `17-m5x-head-valvetrain.md`)
+- **RPM target:** 8,200–8,500 RPM operating ceiling, 9,000 RPM structural margin
 
-> ⚠️ **Rod length is block-specific.** M50B25 NV uses 135mm c-c rods. M50B25TU uses 140mm c-c rods. These are NOT interchangeable. If ordering ZRP forged rods separately (NSB Concept at ~€280/set), specify the correct block variant. The 5150 kit builder will ask — confirm before placing the order. ([nsbconcept.com](https://www.nsbconcept.com/en/3750-parts-engine-forge-for-bmw-series-5-e34))
+**Rod length by block — confirm before drop-off:**
 
-### Crank — Billet Required, Stroker Kit Is the Path
+| Block | Rod c-c length | Source |
+| :--- | :--- | :--- |
+| M50B25 NV | 135mm | [discount-autosport.com](https://www.discount-autosport.com/en/produit/kit-6-forged-135mm-connecting-rods-bmw-m50b25-m52b28-h-beam-4340-screws-arp2000-800hp-9000rpm/) |
+| M50B25TU | 140mm | [discount-autosport.com](https://www.discount-autosport.com/en/produit/kit-6-forged-135mm-connecting-rods-bmw-m50b25-m52b28-h-beam-4340-screws-arp2000-800hp-9000rpm/) |
+| M52B25 | 140mm | [enginedna.com](https://www.enginedna.com/bmw-m52b25-m52tub25-engine/) |
+| M52B28 | 135mm | [discount-autosport.com](https://www.discount-autosport.com/en/produit/kit-6-forged-135mm-connecting-rods-bmw-m50b25-m52b28-h-beam-4340-screws-arp2000-800hp-9000rpm/) |
 
-**The 5150 Level 1 Turbo Build Kit does not include a crankshaft.** For 8,000–9,000 RPM, a billet crank is required — the stock M50B25 cast crank is not suitable. **There is no off-the-shelf forged or billet M50 crank at stock 75mm stroke.** Every available billet crank option is a stroker. This is fine: going to 3.3–3.4L adds displacement for torque and spoolup. The rotating assembly choice switches from the Level 1 Turbo Build Kit to a complete stroker kit.
+> ⚠️ Rod length is block-specific. Confirm your block code (M52B28) with VAC before the kit is assembled.
 
-**The longer stroke does increase piston speed at peak RPM — but the 5150 CP-Carrillo Pro-Xtreme rods in their stroker kit are rated to 9,500 RPM specifically for this reason.** ([5150autosport.com](https://5150autosport.com/products/bmw-m50-m52-s50-s52-stroker-kit))
+**Kit does not include:** crank (stock M52B28 forged crank stays — see Crank section below), ARP main studs (~$200 — confirm with VAC whether included), Alien Engineering solid shim conversion (~$150 — confirm inclusion with VAC).
 
-| Option | Crank | Rods | Pistons | RPM Rating | Price |
-| --- | --- | --- | --- | --- | --- |
-| **5150 Stroker Kit (recommended)** | 5150 4340 billet (various stroke, 3.3–3.5L depending on bore) | Manley (1,000hp / 8,500 RPM) OR upgrade to CP-Carrillo Pro-Xtreme (2,000hp / **9,500 RPM**) | CP-Carrillo forged — custom bore/CR | 8,500–9,500 RPM depending on rod selection | **$7,499.99** (CP-Carrillo upgrade option TBD — call 5150) |
-| **BC5799 + separate rods + pistons** | BrianCrower 4340 billet, 95.6mm stroke | BC6788 ProH625+ (5.315" c-c) + new pistons to match | Custom CP pistons — order with BC or separately | Call BC | Crank **$3,375–4,734** + rods ~$985 + pistons ~$800–1,200 |
-| **VAC Billet 97mm** | VAC 4340 billet, 97mm stroke | VAC-spec — confirm with VAC | Custom | Call VAC | **$3,899.95** crank only |
+### Crank — Stock M52B28 Forged Crank Is Correct for This Build
 
-**Recommended: 5150 Stroker Kit with CP-Carrillo Pro-Xtreme rod upgrade.** Single vendor, all components balanced and shipped together, CP-Carrillo rods explicitly rated to 9,500 RPM. 5150 has run this kit in their own E36 drift car. ([5150autosport.com](https://5150autosport.com/products/bmw-m50-m52-s50-s52-stroker-kit))
+The M52B28 has a **forged steel crankshaft from factory** — confirmed in the BMW M52 factory service manual ([landy.ee](http://www.landy.ee/manuals/engine/BMW_M52_engine.pdf)) and [Australian Car.Reviews](https://www.australiancar.reviews/bmw-m52-engine-1994-01/): *"the M52B28 engine had a forged steel crankshaft and graphite-coated pistons to reduce friction"* (M52B20 and M52B25 have cast iron cranks — the forged crank is B28-specific). The stock crank is the correct crank for this build.
 
-> ⚠️ **Replaces the Level 1 Turbo Build Kit** — do not order both. The stroker kit is the complete bottom-end solution including bearings and piston rings.
+**Do not replace the crank with a stroker.** This build is RPM-first: 8,200–8,500 RPM operating range, 9,000 RPM structural safety margin. Stroke directly governs piston speed at the RPM ceiling — shorter is better:
 
-> ⚠️ **New rod spec** — the stroker kit rods (BC: 5.315" c-c; 5150: varies) are NOT the same c-c as the stock M50NV (135mm) or TU (140mm) rods. All rod specs are defined by the kit — do not mix components between the stroker kit and the Level 1 Turbo Build Kit.
+| Crank | Stroke | m/s at 8,500 RPM |
+| :--- | :--- | :--- |
+| **M52B28 stock (forged steel)** | **84mm** | **23.8 m/s — correct choice** |
+| S52 (forged steel) | 89.6mm | 25.4 m/s — longer, no benefit |
+| 5150 billet stroker | ~97mm | 27.5 m/s — longest, worst for RPM ceiling |
 
-> ⚠️ **VAC or machine shop must inspect crank journal and counterweight condition** on any used M50 block at teardown before building.
+VAC balances the stock crank to the specific rod and piston combination during the build. **ATI Super Damper is mandatory regardless** — see `18-m5x-timing-oil-pump.md`.
+
+**Crank inspection at teardown:** VAC mics all main and rod journals. If any journal is below spec, regrind and undersize bearings. In most cases a used M52B28 crank from a non-abused donor will be within spec and requires only cleaning and dynamic balance.
+
+> ⚠️ **VAC must inspect crank journal and counterweight condition** at teardown before balancing — do not skip.
 
 ### Option B — À La Carte (if building to a custom spec)
 
@@ -115,17 +128,17 @@ Source: [5150autosport.com](https://5150autosport.com/products/5150-autosport-pr
 
 ### 1 — Lock bore size before ordering pistons
 
-The pistons are machined to a specific bore. VAC must bore the block to the piston spec. If you order 84mm pistons, VAC bores to 84mm plus the piston-to-wall clearance spec (typically 0.05–0.08mm for a turbocharged aluminum piston). If you want an overbore (84.5mm), order 84.5mm pistons. Do not change your mind after the pistons arrive.
+The pistons are machined to a specific bore. VAC must bore the block to the piston spec. If you specify 84mm, VAC bores to 84mm plus the piston-to-wall clearance spec (typically 0.05–0.08mm for a turbocharged aluminum piston). Do not change bore spec after pistons are ordered.
 
-Typical bore progression: 84mm (stock), 84.5mm (0.5mm OS), 85mm (1.0mm OS). Wall thickness on M50 iron block permits oversizing to at least 85mm reliably. ([overruntuning.com](https://www.overruntuning.com/e36-turbo-guide))
+For the M52B28: stock bore is 84mm. Minimum cleanup cut is typically 84.5mm. Keep the bore as small as possible — more wall material is better. Bore to minimum needed for a clean cylinder, then have VAC communicate the actual measured bore to the kit supplier for pistons. ([overruntuning.com](https://www.overruntuning.com/e36-turbo-guide))
 
 ### 2 — Verify rods match block variant before drop-off
 
-Confirm with 5150 or your rod supplier that the rod c-to-c length matches your block: **140mm for M50B25TU; 135mm for M50B25 NV.** Delivering wrong-length rods to the machine shop causes an expensive delay.
+Confirm the rod c-to-c length matches the M52B28: **135mm**. Delivering wrong-length rods to the machine shop causes an expensive delay.
 
 ### 3 — Inspect kit on receipt before shop drop-off
 
-Check pistons for crown defects, ring groove machining quality, and consistent weight across all six. Check rod big-end bore finish and wrist pin holes. Contact 5150 immediately with any defective unit — the machine shop bores to your pistons; a defective piston found after boring is an expensive problem.
+Check pistons for crown defects, ring groove machining quality, and consistent weight across all six. Check rod big-end bore finish and wrist pin holes. Contact VAC immediately with any defective unit — the machine shop bores to your pistons; a defective piston found after boring is an expensive problem.
 
 ### 4 — Drop-off scope discussion with VAC
 
@@ -179,9 +192,10 @@ VAC shop rate ~$110–150/hr. Call to confirm current rate and availability befo
 
 ## References
 
-- [5150 AutoSport M50/M52/S50/S52 Pro-Series Turbo Build Kit — $3,499.99](https://5150autosport.com/products/5150-autosport-pro-series-turbo-build-kit-bmw-m50-m52-s50-s52)
+- [VAC Complete E34/E36 Engine Build Kit — $9,699.99](https://store.vacmotorsports.com/vac-motorsports-bmw-e34e36-engine-build-kit--m50m52s50s52-p5900.aspx)
+- [VAC Motorsports Philadelphia](https://www.vacmotorsports.com/) · 2501 Snyder Ave, Philadelphia PA · (215) 462-4666 · ask for John
+- [BMW M52 factory service manual — forged steel crankshaft confirmation](http://www.landy.ee/manuals/engine/BMW_M52_engine.pdf)
+- [Australian Car.Reviews — M52B28 forged crank vs M52B20/B25 cast](https://www.australiancar.reviews/bmw-m52-engine-1994-01/)
 - [NSB Concept M50 forged rod and piston catalog](https://www.nsbconcept.com/en/3750-parts-engine-forge-for-bmw-series-5-e34)
-- [Athena-SCE / Cometic head gasket + ARP stud kit — 5150autosport.com](https://5150autosport.com/products/5150-autosport-head-gasket-head-stud-kit-bmw-m50-m52-s50-s52)
 - [Overrun Tuning rotating assembly safe limits](https://www.overruntuning.com/e36-turbo-guide)
 - [bmwtuning.co M50/M52 boost limits and gasket guide](https://bmwtuning.co/bmw-e36-turbo-kit-guide/)
-- [VAC Motorsports Philadelphia](https://www.vacmotorsports.com/) · 2501 Snyder Ave, Philadelphia PA · (215) 462-4666 · ask for John

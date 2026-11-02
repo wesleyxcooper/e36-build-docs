@@ -77,7 +77,11 @@ The preferred feed point is the **upper radiator hose on the engine side** (post
 
 **The problem:** When the engine stops, the mechanical pump stops. The turbo center section retains significant heat from the exhaust housing side. Without coolant flow, the residual heat bakes the oil in the bearing gallery — **coking.** Coked oil passages are the single most common cause of premature turbo failure on turbocharged street/track cars that skip post-run cooling.
 
+This is not a DIY concern — it is BMW's documented factory concern. BMW's own Technical Training documentation for the N54/N55/B48 states: "By operating an electric coolant pump even after the engine has been switched off it is possible to dissipate the residual heat from the turbochargers and thus prevent the oil in the bearing housing from overheating." ([BMW ST055 Turbocharging Technology](https://ia800902.us.archive.org/26/items/BMWTechnicalTrainingDocuments/ST055%20Engine%20Electronics/08_Turbocharging%20Technology.pdf)) Every modern BMW turbocharged engine has this circuit from the factory.
+
 **The solution:** A small auxiliary pump runs coolant through the turbo water jacket circuit for 3–5 minutes after shutdown. The main engine coolant doesn't need to circulate — just the turbo water jacket.
+
+> **Optional for pure street use:** If you always idle the car for 2–3 minutes before shutdown after any boost use, coking risk is minimal — the mechanical pump continues circulating and the turbo cools passively. The CWA50 circuit is **mandatory for track use** (where you shut down in the paddock immediately after hot laps) and strongly recommended for any street car that will see sustained boost. If you skip it initially, you can add it later — all the plumbing taps are in the upper hose and expansion tank.
 
 **Install the CWA50 (or equivalent auxiliary pump) inline on the turbo coolant feed side:**
 
