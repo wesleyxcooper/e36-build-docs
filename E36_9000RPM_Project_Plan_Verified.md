@@ -408,7 +408,7 @@ KPI (King Pin Inclination / Steering Axis Inclination) is the inward tilt of the
 
 ## Phase 1A: Turbo M52B28 Build (Final Engine Option A, Built Offline)  [HEAD/VALVETRAIN · ROTATING-ASSEMBLY · OIL · FUEL · AIR · ECU]
 
-**Structure:** The car arrives with a UK-spec alloy M52 (Phase 1B below). The turbo M52B28 longblock is built **offline** at VAC while the alloy M52 runs the car. When the Phase 1A build is complete, the alloy M52 comes out and the turbo M52B28 goes in. Phase 1A (turbo M52B28) and Phase 3 (07K) are competing final engine paths — not yet decided. The car runs on Phase 1B while that decision is made and the offline build completes.
+**Structure:** The car arrives with a UK-spec alloy M52 (Phase 1B below). All chassis work — reinforcements, suspension, EPS, brakes, cooling, safety equipment (cage, seats, harness), gauges, MaxxECU install, and 8HP swap — gets done during Phase 1B while the alloy M52 is in the car. The turbo M52B28 longblock is built **offline** at VAC in parallel. When Phase 1B is complete, the chassis is fully sorted; when Phase 1A is complete, the alloy M52 comes out and the turbo M52B28 drops into a finished car. Phase 1A (turbo M52B28) and Phase 3 (07K) are competing final engine paths — not yet decided.
 
 **Build philosophy:** RPM-first. 8,200–8,500 RPM primary design point (GT-R RB26DETT analog); power is a byproduct of the spec. ~400–500whp pump 93 / ~550–650whp E85 at the operating range (thermodynamic estimates; see `15-m5x-turbo-sourcing.md`). Flex fuel mandatory.
 
@@ -463,7 +463,19 @@ The UK-spec M52 in the car is an aluminum block — not suitable for boost. Phas
 
 ## Phase 1B: NA Alloy M52 (Car As-Imported — Runs While Phase 1A Is Built)
 
-**Role:** The UK-spec alloy M52 in the car is not suitable for boost (aluminum block). It stays in while the turbo M52B28 longblock is built offline at VAC. Gets mild bolt-ons, possible head work to rev a bit higher, MaxxECU, and 8HP swap — this is the driving and development platform, not a power build. No forged internals, no turbo. Alloy M52 comes out when Phase 1A longblock is ready.
+**Role:** The UK-spec alloy M52 stays in the car while the final engine (Phase 1A or Phase 3) is built offline. This phase is about getting the chassis completely sorted — not about power. All of the following happen while the alloy M52 is running the car:
+
+- All chassis reinforcement (subframe, strut towers, control arm pockets)
+- Suspension (coilovers, control arms, bushings, alignment)
+- EPS conversion
+- Brakes (BBK)
+- Cooling system (radiator, hoses, thermostat)
+- Safety equipment (cage, seats, harness)
+- Gauges and instruments
+- MaxxECU install and baseline tune on the alloy M52
+- 8HP swap with appropriate harness
+
+The alloy M52 may get mild head work to rev slightly higher and make the car more enjoyable to drive in this phase, but it is not being built for power. No forged internals, no turbo. By end of Phase 1B the car has a MaxxECU-controlled 8HP, a fully reinforced and sorted chassis, and is ready to receive whichever final engine is chosen. Alloy M52 comes out at that point.
 
 #### Head & Valvetrain  [HEAD/VALVETRAIN]
 | Component | Specification | Cost / Action |
