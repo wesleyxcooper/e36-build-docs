@@ -56,11 +56,23 @@ Do this at VAC during shortblock assembly — it requires the oil pan to be off,
 
 ### Parts (oil pump chain tensioner)
 
-The specific part number and vendor for a bolt-on oil pump chain tensioner for M50/M52 should be confirmed directly with VAC or sourced from the M5x community (R3VLimited, E36 M3 forums). This is a less cataloged item than the upper timing chain. Options:
-- OEM BMW tensioner from an early M50B25NV block (if the early blocks had it from factory — use as donor)
-- Aftermarket billet tensioner from E36-specific vendors — confirm availability and PN with VAC Motorsports Philadelphia (215) 462-4666 or Turner Motorsport
+Three confirmed kit options — all use a drilling jig to add threaded bosses to the block (drill/tap M5×0.8 and M6×1.0) and install the OEM S50/S54 or equivalent tensioner:
 
-> ⚠️ **Research required:** A specific confirmed PN for the oil pump chain tensioner kit has not been located. Confirm with VAC at drop-off scope discussion — this is exactly the kind of spec they know cold. Ask: "Do you recommend installing an oil pump chain tensioner on this block given the target RPM?" and let them spec the part.
+| Kit | Source | Price | Notes |
+| --- | --- | --- | --- |
+| **Hack Engineering HE-M5XOCTK** | [hackengineering.co.uk](https://www.hackengineering.co.uk/product/hack-engineering-m5x-oil-pump-chain-tensioner-upgrade-kit-m50-m52-m54/) | £65 | Includes 3D-printed drilling jig + genuine BMW S50/S54 tensioner + M5 and M6 hardened guide pins. Single-use jig. Machine shop installation recommended for parallelism. |
+| **Boost Monkey kit** | [boostmonkey.com](https://boostmonkey.com/products/e34-e36-m50-m52-s50-s52-oil-pump-chain-tensioner-kit) | $114.99 | Includes drill bit + tap + tensioner + racing spec oil pump chain + shoulder bolts. Requires engine out, head off, timing cover off — plan at longblock assembly. |
+| **Seems Legit Garage kit** | [seemslegitgarage.com](https://www.seemslegitgarage.com/product-page/upgraded-m50-m52-oil-pump-tensioner) | ~$75–90 | Polymer chain tensioner + drill/tap template. Single hole only. Addresses chain slack as root cause of nut backing off. |
+
+**Install at VAC during shortblock assembly** — block is already stripped at this point. This cannot be installed with the engine in the car. Confirm kit selection and installation with VAC at drop-off.
+
+### Oil pump drive nut and pump upgrade
+
+The chain tensioner is the fix for the nut backing off — it eliminates the chain slack that causes the nut to vibrate loose at high RPM. With the tensioner installed, the nut is no longer under the oscillating load that backs it off.
+
+**VAC M50/M52 Oil Pump Upgrade Kit** — [store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-oil-pump-upgrade-kit-bmw-m50m52s50s52-p1041.aspx) — $224.95. This is a pump capacity and flow upgrade — not a fix for the chain slack issue. The chain tensioner and the VAC pump kit address separate things: chain tension (root cause of nut failure) vs. pump output (oil supply margin at high RPM). Both are worth doing on this build; they're complementary, not redundant.
+
+Welding the sprocket nut is a zero-cost insurance step at assembly time — if VAC is willing to do it while the pan is already off, it adds nothing to the job. It is not required if the chain tensioner is properly installed, but there is no downside to doing it.
 
 ---
 

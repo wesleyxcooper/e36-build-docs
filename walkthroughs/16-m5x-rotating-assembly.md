@@ -150,8 +150,21 @@ Talk through the following before leaving the engine:
 4. **Head pressure test** — confirm head holds before assembly. M50 heads are generally robust but cracks from prior overheating are common in used examples.
 5. **Crank journal measurement** — mic all 6 main and 6 rod journals. **Do not order bearings until VAC calls with measurements.** Standard size if journals are within spec.
 6. **Rod bolt torque confirmation** — verify with the rod manufacturer's spec. ARP 2000 rod bolts: 45 ft-lbs with ARP Ultra-Torque. Do not substitute assembly lube for Ultra-Torque on ARP studs.
-7. **Water pump** — new pump installed during assembly; VAC handles torque to spec. Bring the replacement pump with the block.
-8. **VANOS seals** — if running M50TU: confirm VAC replaces the VANOS unit seals and o-rings at teardown. Do not reassemble with old rubber on a rebuilt engine.
+7. **Rod spec — confirm CP-Carrillo Pro-Xtreme, not standard H-beam.** The VAC kit lists "CP-Carrillo forged connecting rods" without specifying grade. Pro-Xtreme rods carry an explicit 9,500 RPM rating; standard CP-Carrillo H-beam rods do not. Tell VAC explicitly at drop-off: *"I need CP-Carrillo Pro-Xtreme rods for this application — the 9,500 RPM-rated variant."*
+
+   **Backup rod options if VAC cannot source Pro-Xtreme for M52B28 (135mm c-c):**
+
+   | Option | PN | Source | Price | Notes |
+   | :--- | :--- | :--- | :--- | :--- |
+   | Brian Crower ProH2K | **BC6789** | [store.briancrower.com](https://store.briancrower.com/collections/m50-n54-b48/connecting-rods) · [nlpperformance.com](https://nlpperformance.com/products/brian-crower-connecting-rods-bmw-m50-m52-s52-5-315-heavy-duty-proh2k-w-arp2000-fasteners) | ~$861–986/set | ProH2K = ARP2000 bolts (220k psi), 4340 chromoly H-beam, 5.315" (135mm) c-c. Explicitly covers E36 M52B28 in fitment guide. Upgrade to ProH625+ (ARP Custom Age 625+ bolts, 280k psi) at extra cost if available for this rod — ask BC directly. |
+   | Eagle H-beam 135mm | **CRS-5313B63D** | [alien-engineering.com](https://www.alien-engineering.com/product-page/eagle-connecting-rods-bmw-m50-m52-s50-s52-135mm) | $649/set | 135mm, 3/8" ARP2000 bolts, 540g each. H-beam, 4340 steel. Covers M50/M52/S50us/S52. |
+   | ZRP 4340 forged | varies | [nsbconcept.com](https://www.nsbconcept.com/en/3750-parts-engine-forge-for-bmw-series-5-e34) | ~€280/set | Specify 135mm (M52B28) at order. ARP2000 bolts. Budget option; well-documented in European M5x builds. |
+
+   Do not accept standard (non-Pro-Xtreme) CP-Carrillo H-beam as a substitute without confirming the RPM ceiling with CP-Carrillo directly.
+8. **Water pump** — new pump installed during assembly; VAC handles torque to spec. Bring the replacement pump with the block.
+9. **VANOS seals and unit rebuild** — confirm VAC replaces all VANOS seals, o-rings, and inspect the VANOS piston, actuator, and solenoid. Do not reassemble with old rubber on a rebuilt engine going to 8,500 RPM. This is covered in `17-m5x-head-valvetrain.md` but must be called out explicitly at drop-off scope.
+10. **Oil pump chain tensioner** — confirm VAC installs the oil pump chain tensioner kit (Hack Engineering HE-M5XOCTK or Boost Monkey equivalent — see `18-m5x-timing-oil-pump.md`). Required for 7,200+ RPM; this build targets 8,500 RPM. Also confirm the oil pump sprocket nut is welded or staked.
+11. **VAC oil pump upgrade kit** — confirm the VAC M50/M52 Oil Pump Upgrade Kit ($224.95) is installed. Belt-and-suspenders alongside the chain tensioner; handles pump capacity independent of chain condition.
 
 ### 5 — Bearing clearance verification
 
