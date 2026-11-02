@@ -406,18 +406,13 @@ KPI (King Pin Inclination / Steering Axis Inclination) is the inward tilt of the
 
 ---
 
-## Phase 1A/B: Interim Engine Choice  [HEAD/VALVETRAIN · ROTATING-ASSEMBLY · OIL · FUEL · AIR · ECU]
+## Phase 1A: Turbo M52B28 Build (Final Engine Option A, Built Offline)  [HEAD/VALVETRAIN · ROTATING-ASSEMBLY · OIL · FUEL · AIR · ECU]
 
-**Strategy:** Choose an interim engine to enjoy the car while building the final 07K offline. Both paths leverage the Phase 1 foundation (8HP + MaxxECU).
+**Structure:** The car arrives with a UK-spec alloy M52 (Phase 1B below). The turbo M52B28 longblock is built **offline** at VAC while the alloy M52 runs the car. When the Phase 1A build is complete, the alloy M52 comes out and the turbo M52B28 goes in. Phase 1A (turbo M52B28) and Phase 3 (07K) are competing final engine paths — not yet decided. The car runs on Phase 1B while that decision is made and the offline build completes.
 
-| Feature | Option A: Turbo M50 | Option B: NA M52 |
-| :---- | :---- | :---- |
-| **Best For** | Maximum power, turbo experience. | Response, weight (52 lbs lighter), high-rev NA. |
-| **Power Goal** | 450 - 600 HP | 250 - 280 HP (7800 RPM reliable) |
-| **Block** | Iron (Indestructible) | Alloy (Nikasil - safe with modern fuel) |
-| **Key Upgrades** | Iron block + 5150 Stroker Kit (billet crank, 9,500 RPM-rated rods) + K64 Stage 2 kit (RHD priority) + Turner baffle + ATI Damper. Flex fuel mandatory. | Schrick Cams, Solid Shims, M50 Manifold. |
+**Build philosophy:** RPM-first. 8,200–8,500 RPM primary design point (GT-R RB26DETT analog); power is a byproduct of the spec. ~400–500whp pump 93 / ~550–650whp E85 at the operating range (thermodynamic estimates; see `15-m5x-turbo-sourcing.md`). Flex fuel mandatory.
 
-### Option A: Turbo M50 (Iron Block)
+### Phase 1A: Turbo M52B28 (Iron Block)
 
 > **Walkthroughs:** [15-m5x-turbo-sourcing.md](walkthroughs/15-m5x-turbo-sourcing.md) · [16-m5x-rotating-assembly.md](walkthroughs/16-m5x-rotating-assembly.md) · [17-m5x-head-valvetrain.md](walkthroughs/17-m5x-head-valvetrain.md) · [18-m5x-timing-oil-pump.md](walkthroughs/18-m5x-timing-oil-pump.md) · [19-m5x-oil-system.md](walkthroughs/19-m5x-oil-system.md) · [19b-m5x-turbo.md](walkthroughs/19b-m5x-turbo.md)
 
@@ -426,20 +421,20 @@ The UK-spec M52 in the car is an aluminum block — not suitable for boost. Phas
 
 | Option | Engine | Recommended Donor | Pricing |
 | :---- | :---- | :---- | :---- |
-| **Recommended** | M50B25TU iron (1992–1995, single VANOS) | E34 525i / E36 325i | ~$400–600 bare / ~$1,350–1,600 running |
-| Good | M50B25 NV iron (1990–1992, no VANOS) | E34 520i/525i pre-VANOS | Similar — less common in UK |
-| Good | US-spec M52B28 iron (1996–1998) | E36 328i US market | Confirm iron at purchase — EU/UK M52 is aluminum |
+| **Recommended** | **US-spec M52B28 iron (1996–1998)** — forged steel crank (BMW M52 factory service manual; [Australian Car.Reviews](https://www.australiancar.reviews/bmw-m52-engine-1994-01/)). M52B20/B25 have cast cranks; B28 is the only M52 variant with forged. | E36 328i / E39 528i US market only — EU/UK M52 is aluminum | ~$800–1,500 complete shipped; ~$100–200 for standalone forged crank if running M52B25/M50 block |
+| Secondary | M50B25TU iron (1992–1995, single VANOS) — **cast iron crank**; requires standalone M52B28 forged crank swap for 8,500 RPM target | E34 525i / E36 325i | ~$400–600 bare / ~$1,350–1,600 running |
+| Secondary | M50B25 NV iron (1990–1992, no VANOS) — **cast iron crank**; same limitation as B25TU for RPM target | E34 520i/525i pre-VANOS | Similar — less common in UK |
 
 #### Head & Valvetrain  [HEAD/VALVETRAIN · MACHINING]
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Head Gasket** | **Athena Cut-Ring** (recommended for >16 psi) | [5150autosport.com](https://5150autosport.com/products/athena-cut-ring-head-gasket-bmw-m50-m52-s50-s52) — ~$149–200. Included in 5150 kit. |
-| **Head Studs** | **ARP 2000 Kit** | [VAC Motorsports](https://store.vacmotorsports.com/arp-head-stud-kit-bmw-m50s50m52s52-p1.aspx) — $170–237. Included in 5150 kit. |
+| **Head Gasket** | **Athena Cut-Ring** (recommended for >16 psi) | Included in VAC Complete E34/E36 Engine Build Kit. Standalone: [VAC Motorsports](https://store.vacmotorsports.com/arp-head-stud-kit-bmw-m50s50m52s52-p1.aspx) — ~$149–200. |
+| **Head Studs** | **ARP 625+ Kit** (included in VAC complete kit) | Included in VAC Complete E34/E36 Engine Build Kit. Standalone: [VAC Motorsports](https://store.vacmotorsports.com/arp-head-stud-kit-bmw-m50s50m52s52-p1.aspx) — $170–237. |
 
 #### Rotating Assembly  [ROTATING-ASSEMBLY · MACHINING]
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **5150 Stroker Kit (Recommended)** | 5150 4340 billet crank + CP-Carrillo Pro-Xtreme rods (rated 2,000HP / **9,500 RPM**) + CP-Carrillo forged pistons + ARP hardware + bearings. Complete balanced rotating assembly, 3.3–3.5L. Replaces Level 1 Turbo Build Kit (no crank included in Level 1). | [5150autosport.com](https://5150autosport.com/products/bmw-m50-m52-s50-s52-stroker-kit) — **$7,499.99.** Specify CP-Carrillo Pro-Xtreme rod upgrade at order for 9,500 RPM rating. |
+| **VAC Complete E34/E36 Engine Build Kit (Recommended)** | CP-Carrillo rods + forged pistons + Calico coated rod bearings + dual valve spring kit + intake/exhaust valves + Ti retainers + ARP 625+ head studs + VAC MLS or cut-ring head gasket + performance cams (VAC profile options). Stock M52B28 forged crank stays and is professionally balanced to the rod/piston spec at VAC — **do not replace with a stroker crank** (longer stroke increases piston speed at the 8,500 RPM ceiling without structural benefit; see 16-m5x-rotating-assembly.md). SKU VAC-EBK-E34E36. Specify: M52B28, Turbo, 8,200–8,500 RPM ceiling, 9,000 RPM structural margin, include solid shim conversion. | [store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-bmw-e34e36-engine-build-kit--m50m52s50s52-p5900.aspx) — **$9,699.99** (verified live) |
 | **Connecting Rods (alt, à la carte)** | ZRP 4340 forged + ARP 2000 bolts | [nsbconcept.com](https://www.nsbconcept.com/en/3750-parts-engine-forge-for-bmw-series-5-e34) — ~€280. ⚠️ Specify c-c for block variant: 135mm (NV) or 140mm (TU). |
 | **Harmonic Damper** | **VAC ATI Super Damper** | [store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-harmonic-damper-by-ati-bmw-m50m52s50s52m52tum54-p756.aspx) — **$1,049.95.** Required for 7,000+ RPM. Owner-installed after longblock delivery. |
 
@@ -454,17 +449,21 @@ The UK-spec M52 in the car is an aluminum block — not suitable for boost. Phas
 #### Fuel System  [FUEL]
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Injector Upgrade** | **Siemens Deka 630cc EV1 × 6** | [SouthBay Fuel Injectors](https://www.southbayfuelinjectors.com/60lb-630cc-bmw-siemen-deka-ev1-fuel-injectors-set-of-6.html) — $325.00. **Replaces Phase 1 Bosch 440cc set** — 440cc insufficient for 450–600hp on E85. Same EV1 connector as OEM M5x injectors — fits stock fuel rail. Phase 1 440cc can be resold (~$150). |
+| **Injector Upgrade** | **Injector Dynamics ID725 × 6** (replaces K64-included Siemens Deka 630cc set) — 725cc/min, USCAR body, 14mm top adapter (purple), set of 6. K64 included 630cc units cap at ~395–445whp on E85 at 80–90% duty; ID725 covers GT35.30 + pump 93 at ~52% duty and GT35.30 + E85 at ~82% duty (~480–500whp). If upgrading to G30-770 for 600whp E85, use ID850 instead. See `19b-m5x-turbo.md` for duty cycle analysis. | **PN 725.60.14.14.6** — [nolimitmotorsport.com/injector-dynamics/id725.html](https://www.nolimitmotorsport.com/injector-dynamics/id725.html) (verified live, BMW 328 96-98 fitment confirmed) — ~$720–756 for set of 6. Standalone 630cc set can be resold ($200–250). |
 
 #### Air & Boost  [AIR]
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Turbo Kit (RHD Priority)** | **K64 Stage 2 Full Kit** — RHD AC+ manifold + GT35.30 turbo + 44mm Tial WG + 630cc injectors + BOV + RHD downpipe. Order without ECU option (MaxxECU is the chosen ECU). Re-spec turbo to G30-660/770 for 700whp E85. | [k64performance.com](https://k64performance.com/turbo-kit/771-turbo-kit-stage2-m50-m52-e30-e36-e34-bmw.html) — **$5,656.** See `19b-m5x-turbo.md`. |
+| **Turbo Kit (RHD Priority)** | **K64 Stage 2 Full Kit** — RHD AC+ manifold + GT35.30 turbo (rated 300–500hp, journal bearing) + 44mm Tial WG + 630cc injectors + BOV + RHD downpipe. Order without ECU option (MaxxECU is the chosen ECU). **Replace 630cc injectors with ID725 before first tune** (see Fuel System above). Upgrade to G30-770 (.83 AR, ball bearing) when targeting 550–650whp E85. | [k64performance.com](https://k64performance.com/turbo-kit/771-turbo-kit-stage2-m50-m52-e30-e36-e34-bmw.html) — **$5,656.** See `19b-m5x-turbo.md`. |
 | | **Manifold only (turbo sourced separately)** | **K64 AC+ RHD** — T3/T4, RHD-specific, AC-compatible | [K64 Performance](https://k64performance.com/exhaust-manifold/1655-rhd-uk-e36-e46-ac-turbo-kolektor-bmw-m50-m52-m54.html) — $839.72 + [RHD Downpipe](https://k64performance.com/exhaust-manifold/4635-downpipe-rhd-uk-turbo-bmw-e36-e46.html) $448.00 |
 | | **RSI T4/T3 Top-Mount (High Power alt)** | 900hp+ capable, AC-friendly, RHD confirmed, 2-yr warranty | [rennauto.co](https://rennauto.co/product/bmw-m50-m52-s50-s52-m54-top-mount-turbo-manifold-for-e36-e46-e39-z3/) — **$959.95** |
 | | **SPA TMB01 Bottom-Mount (LHD/General)** | T3/T4, AC-compatible, 600whp+ proven | [spaturbousa.com](https://spaturbousa.com/collections/best-selling-products/bmw) — **$479.90** |
-| **Boost Solenoid** | **Turbosmart 2-Port PWM Solenoid** | [Turbosmart](https://www.turbosmart.com/product-category/boost-controllers/solenoids/) — ~$65–80. MaxxECU drives via GPO PWM. Budget alt: Bosch N75 PN 0280142431 ~$40. Carries to 07K phase. |
-### Option B: NA M52
+| **Boost Solenoid** | **Turbosmart 2-Port PWM Solenoid** | [Turbosmart](https://www.turbosmart.com/product-category/boost-controllers/solenoids/) — ~$65–80. MaxxECU drives via GPO PWM. Budget alt: Bosch N75 PN 0280142431 ~$40. |
+---
+
+## Phase 1B: NA Alloy M52 (Car As-Imported — Runs While Phase 1A Is Built)
+
+**Role:** The UK-spec alloy M52 in the car is not suitable for boost (aluminum block). It stays in while the turbo M52B28 longblock is built offline at VAC. Gets mild bolt-ons, possible head work to rev a bit higher, MaxxECU, and 8HP swap — this is the driving and development platform, not a power build. No forged internals, no turbo. Alloy M52 comes out when Phase 1A longblock is ready.
 
 #### Head & Valvetrain  [HEAD/VALVETRAIN]
 | Component | Specification | Cost / Action |

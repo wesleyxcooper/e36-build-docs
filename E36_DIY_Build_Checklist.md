@@ -479,9 +479,9 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 
 ---
 
-## Phase 1A — Turbo M50 (Option A Path)
+## Phase 1A — Turbo M52B28 (Final Engine Option A, Built Offline)
 
-> Complete all Phase 1 Foundation steps first. These steps assume the M50 iron block is the starting engine.
+> Complete all Phase 1 Foundation steps first. The turbo M52B28 longblock is built offline at VAC while the alloy M52 (Phase 1B) runs the car. When complete, the alloy M52 comes out and the turbo M52B28 goes in. Phase 1A (turbo M52B28) and Phase 3 (07K) are competing final engine paths — pick one; the car runs on Phase 1B while that decision is made and the offline build completes.
 
 ### Head & Valvetrain  [HEAD/VALVETRAIN · MACHINING]
 - [ ] 🔧 Install ARP 2000 head studs (head off — machine shop for surface check first)
@@ -498,7 +498,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] 🔧 Install VAC M50 oil pump upgrade kit
 
 ### Fuel System  [FUEL]
-- [ ] ✅ Upgrade injectors to Siemens Deka 630cc EV1 × 6 (swap into stock fuel rail)
+- [ ] ✅ Replace K64-included Siemens Deka 630cc injectors with **Injector Dynamics ID725 × 6** (PN 725.60.14.14.6, ~$720–756) — see `19b-m5x-turbo.md`. 630cc units cap at ~395–445whp on E85; ID725 covers pump 93 and GT35.30 + E85 to ~480–500whp. Do before first tune.
 
 ### Air & Boost  [AIR]
 - [ ] ✅ Install K64 RHD AC+ turbo manifold ([K64 Performance](https://k64performance.com/))
@@ -513,9 +513,9 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 
 ---
 
-## Phase 1B — NA M52 (Option B Path)
+## Phase 1B — NA Alloy M52 (Car As-Imported — Runs While Phase 1A Is Built)
 
-> Complete all Phase 1 Foundation steps first.
+> Complete all Phase 1 Foundation steps first. The alloy M52 is not turbocharged and not being built for power — it gets mild bolt-ons, possible head work to rev higher, MaxxECU, and 8HP. It runs the car while the turbo M52B28 longblock is built offline at VAC.
 
 ### Head & Valvetrain  [HEAD/VALVETRAIN]
 - [ ] ✅ Confirm alloy M52 block (not iron — check casting, VIN decode)
