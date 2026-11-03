@@ -1,11 +1,11 @@
 # ECU Harness Final Connection & GPO Reassignments
 
-**Phase:** 3  
+**Phase:** 3b
 **System tags:** `[ECU]` `[ELECTRICAL]`  
 **Shop-mandatory:** No  
-**Prerequisites:** 07K installed (`30-07k-install.md`); 07K engine harness built and bench-tested in Phase 2 (`e36-wiring/docs/harness-build.md`); all engine sensors accessible and connector locations confirmed at Phase 2 harness build
+**Prerequisites:** 07K installed (`30-07k-install.md`); 07K engine harness built and bench-tested in Phase 2b (`e36-wiring/docs/harness-build.md`); all engine sensors accessible and connector locations confirmed at Phase 2b harness build
 
-> **Infrastructure arriving at Phase 3:** The Ecumaster PMU16, Maven HD30 Dual 16+16 firewall bulkhead (Connector A = CAN + DCT, Connector B = safety-critical APS), CWA400 electric water pump, 12V electric AC compressor, and E46 APS pedal all install for the first time at Phase 3. Build these at the start (Steps 1–4 below) before connecting the 07K engine harness. The M5x phase used the MaxxECU M50 pre-terminated harness through the OEM grommet with a discrete relay board (see `harnesses/fuel-pump-hanger-phase1.wv` and `harnesses/8hp-body-integrations-phase1.wv`) — all of that is now removed and replaced by the PMU16-driven full custom harness architecture.
+> **Infrastructure arriving at Phase 3b:** The Ecumaster PMU16, Maven HD30 Dual 16+16 firewall bulkhead (Connector A = CAN + DCT, Connector B = safety-critical APS), CWA400 electric water pump, 12V electric AC compressor, and E46 APS pedal all install for the first time at Phase 3b. Build these at the start (Steps 1–4 below) before connecting the 07K engine harness. The M5x phase used the MaxxECU M50 pre-terminated harness through the OEM grommet with a discrete relay board (see `harnesses/fuel-pump-hanger-phase1.wv` and `harnesses/8hp-body-integrations-phase1.wv`) — all of that is now removed and replaced by the PMU16-driven full custom harness architecture.
 
 > **Under the H2O engine-bay-mount architecture** (see `docs/vendor/maxxecu/MaxxECU_RACE_H2O.md`), the MaxxECU stays where it was installed at Phase 1 (engine bay, OEM DME E-box cavity, intake side). Engine sensors and IGN/INJ signals direct-terminate at the MaxxECU C1/C2 CMC connectors — NO firewall bulkhead in the engine-side path. The Maven HD30 dual bulkhead carries ONLY cabin-originated signals (CAN, DCT shifter paddle inputs, APS pedal).
 
@@ -13,18 +13,18 @@
 
 ## Overview
 
-This walkthrough covers connecting the Phase 2 07K engine harness to the MaxxECU via the firewall bulkhead connector, completing all Phase 3 GPO reassignments in MTune, and loading the 07K base map. All GPO reassignments are **MTune-only** — no rewiring. The wiring pre-run in Phase 1 accommodates these changes by design. The MaxxECU hardware is unchanged; only the engine harness mating plug and the tune file change.
+This walkthrough covers connecting the Phase 2b 07K engine harness to the MaxxECU via the firewall bulkhead connector, completing all Phase 3b GPO reassignments in MTune, and loading the 07K base map. All GPO reassignments are **MTune-only** — no rewiring. The wiring pre-run in Phase 1 accommodates these changes by design. The MaxxECU hardware is unchanged; only the engine harness mating plug and the tune file change.
 
-**GPO assignments in Phase 3 (MTune only — no rewiring needed):**
+**GPO assignments in Phase 3b (MTune only — no rewiring needed):**
 
-| GPO | Phase 1/2 Function | Phase 3 Function | Action |
+| GPO | Phase 1/2 Function | Phase 3b Function | Action |
 | --- | --- | --- | --- |
 | GPO 1 (CMC B4 / pin 8) | Reverse lights (boost solenoid connector unpopulated NA) | **Boost solenoid** (now physically connected) | Connect BOOST_SOL Superseal 2-pin; MTune verify function = boost solenoid |
 | GPO 3 (CMC D4 / pin 16) | VANOS solenoid (M52) | **07K intake cam VVT actuator** (freed from VANOS — immediately reused) | MTune: disable VANOS function; assign PWM solenoid output for closed-loop cam timing (ME7.1.1 pin 115) |
 | GPO 4 (CMC E4 / pin 20) | ICV coil A (M52) | **Freed — SPARE** | MTune: disable ICV A; leave unassigned (ETh motor uses C2 H4/H2, not GPO 4) |
 | GPO 5 (CMC A1 / pin 1) | ICV coil B (M52) | **Reverse light relay** | MTune: disable ICV B; reassign to "Transmission Reverse" function |
 
-> ⚠️ **Critical:** GPO 3 in Phase 3 = **VVT actuator, NOT reverse lights.** GPO 3 is freed from VANOS but immediately reused for the 07K intake cam VVT actuator (cam actuator ME7.1.1 pin 115 — MaxxECU PWM solenoid output, closed-loop cam timing). Reverse lights migrate from the Phase 1 discrete GPO+relay setup to PMU16 direct-drive at Phase 3. See `harnesses/8hp-body-integrations-phase3.wv` for the PMU16-direct-drive design.
+> ⚠️ **Critical:** GPO 3 in Phase 3b = **VVT actuator, NOT reverse lights.** GPO 3 is freed from VANOS but immediately reused for the 07K intake cam VVT actuator (cam actuator ME7.1.1 pin 115 — MaxxECU PWM solenoid output, closed-loop cam timing). Reverse lights migrate from the Phase 1 discrete GPO+relay setup to PMU16 direct-drive at Phase 3b. See `harnesses/8hp-body-integrations-phase3.wv` for the PMU16-direct-drive design.
 
 **VVT note:** The 07K with TTRS/CEPA intake cam **has active intake cam VVT** (variable valve timing). VVT is mapped via MaxxECU PWM solenoid output on GPO 3 — closed-loop cam timing across the RPM range. Do not disable or discard the VVT system. It provides tractable low-end torque critical for street and drift use. Source: `E36_9000RPM_Project_Plan_Verified.md` Camshafts row.
 
@@ -65,7 +65,7 @@ Remove the three-relay board and the MaxxECU M50 terminated harness installed du
 
 Several loads were wired to the Phase 1 relay board and M50 harness. Each must be transitioned to the new architecture before the car can run.
 
-| Component | Phase 1 wiring (now removed) | Phase 3 replacement (direct-terminate at engine-bay ECU or PMU16) | Wire gauge |
+| Component | Phase 1 wiring (now removed) | Phase 3b replacement (direct-terminate at engine-bay ECU or PMU16) | Wire gauge |
 | --- | --- | --- | --- |
 | Radiator fan +12V | Discrete relay pin 87 → fan(+) stud | **PMU16 O3** (25A) → fan(+) stud — same stud, new wire | 12 AWG |
 | Fuel pump +12V | JDT-kit relay pin 87 → pump(+) stud (see `fuel-pump-hanger-phase1.wv`) | **PMU16 O4** (25A) → pump(+) stud — same stud, new wire (see `fuel-pump-hanger-phase3.wv`) | 12 AWG |
@@ -80,7 +80,7 @@ Several loads were wired to the Phase 1 relay board and M50 harness. Each must b
 
 > ⚠️ The fan and fuel pump ground studs (pump(−) and fan(−)) are unchanged — the GND runs installed in Phase 1 stay. Only the +12V supply side changes (Phase 1 discrete relay pin 87 → PMU16 output).
 
-> ⚠️ No MTune changes are required for the AIN/DIN inputs (PST-F1, flex fuel) — same inputs, same configuration. GPO 2 (Phase 1 fuel pump signal) and GPO 6 (Phase 1 fan signal) are re-mapped to MaxxECU CAN broadcasts that PMU16 subscribes to in Phase 3 MTune — see GPO reassignments below.
+> ⚠️ No MTune changes are required for the AIN/DIN inputs (PST-F1, flex fuel) — same inputs, same configuration. GPO 2 (Phase 1 fuel pump signal) and GPO 6 (Phase 1 fan signal) are re-mapped to MaxxECU CAN broadcasts that PMU16 subscribes to in Phase 3b MTune — see GPO reassignments below.
 
 ### Step 2 — Firewall Bulkhead Installation (Maven HD30 Dual 16+16)
 
@@ -88,7 +88,7 @@ Install the Maven HD30 Dual 16+16 bulkhead on the firewall. Reference: `harnesse
 
 **Mounting position:** intake side of firewall (RHD passenger / driver-opposite side) — same side as OEM harness grommet and the engine-bay MaxxECU RACE H2O. The Maven kit ships with a CNC billet aluminum plate (2.6" × 5.25") pre-drilled for both connectors + a paper installation template for locating the plate on the firewall. Use rivnuts in the firewall for the plate mounting bolts.
 
-**Kit contents (already purchased at Phase 2 harness build):**
+**Kit contents (already purchased at Phase 2b harness build):**
 - CNC billet aluminum plate, black anodized, pre-drilled
 - 2× Deutsch HD30 shell-24 16-way connectors (both sides — flange receptacle + jam-nut plug for each)
 - All size-16 solid contacts (32 total across both connectors, plus a few spares)
@@ -96,7 +96,7 @@ Install the Maven HD30 Dual 16+16 bulkhead on the firewall. Reference: `harnesse
 - Source: [mavenspeed.com — Dual Connector Bulkhead](https://mavenspeed.com/collections/b2t-engineering/products/dual-connector-bulkhead), $274 USD
 
 **Connector A vs Connector B — role assignment:**
-- **Connector A (cabin electronics interface)**: CAN H/L/shield to Gauge.S cluster (pins 1/2/3) + DCT shifter paddle UP/DOWN/GND (pins 4/5/6). Populated in Phase 2 harness build; installed at Phase 3.
+- **Connector A (cabin electronics interface)**: CAN H/L/shield to Gauge.S cluster (pins 1/2/3) + DCT shifter paddle UP/DOWN/GND (pins 4/5/6). Populated in Phase 2b harness build; installed at Phase 3b.
 - **Connector B (safety-critical APS throttle input)**: E46 APS pedal 6 wires (pins 1–6): ch1 SGND / +5V / signal, ch2 SGND / +5V / signal. Reserved exclusively for APS — any fault must trigger MaxxECU e-throttle shutdown. See `docs/dbw-pinouts.md` § Firewall Crossing Allocation for the safety-critical labeling rationale.
 
 **Cabin-side wiring:** Both connector cabin faces are permanent. Wire per `harnesses/firewall-crossing-maven.wv` — the .wv file is the source of truth for both connectors' pin assignments.
@@ -116,7 +116,7 @@ Install the Maven HD30 Dual 16+16 bulkhead on the firewall. Reference: `harnesse
 
 > **CAN bus termination note:** Connector A pins 1/2 carry the CAN1 bus that reaches Gauge.S in the cabin. Termination: MaxxECU CAN 1 has a built-in 120Ω terminator (per [maxxecu.com/webhelp/can-information.html](https://maxxecu.com/webhelp/can-information.html)). If Gauge.S is at the far end of a >1 m run, add a 120Ω terminator at the cluster end. PMU16 CAN2 (to 8HP) is a separate bus entirely engine-bay — do not confuse the two.
 
-> **Lap-timer T-tap continuity from Phase 1:** The dash-area T-tap on CAN 1 provisioned at Phase 1 (per `11-ecu-chassis-wiring.md` Step 7) carries through Phase 3 unchanged — same CAN 1 bus, now crossing the firewall via Maven Connector A pins 1/2 instead of the OEM grommet. Bluetooth CAN adapter (Cluster.Fun or RaceChrono DIY) attaches at the same dash T-tap as a second passive listener alongside Gauge.S. Termination and 500 kbps rate unchanged. See `E36_9000RPM_Project_Plan_Verified.md` Data Acquisition & Lap Timing for the recording-system spec.
+> **Lap-timer T-tap continuity from Phase 1:** The dash-area T-tap on CAN 1 provisioned at Phase 1 (per `11-ecu-chassis-wiring.md` Step 7) carries through Phase 3b unchanged — same CAN 1 bus, now crossing the firewall via Maven Connector A pins 1/2 instead of the OEM grommet. Bluetooth CAN adapter (Cluster.Fun or RaceChrono DIY) attaches at the same dash T-tap as a second passive listener alongside Gauge.S. Termination and 500 kbps rate unchanged. See `E36_9000RPM_Project_Plan_Verified.md` Data Acquisition & Lap Timing for the recording-system spec.
 
 ### Step 3 — PMU16 Installation and Configuration
 
@@ -128,7 +128,7 @@ Mount PMU16 in the cabin — firewall or inner fender, accessible for USB-CAN se
 - GND: PMU16 GND lug → chassis GND stud (M8, engine bay)
 - CAN2: PMU16 CAN2 H/L → MaxxECU CAN1 H/L (twisted pair, 22 AWG) — engine-bay-direct run (both PMU16 and MaxxECU H2O are engine-bay)
 
-**Phase 3 output channel assignments:**
+**Phase 3b output channel assignments:**
 
 | PMU16 Output | Function | Notes |
 | --- | --- | --- |
@@ -160,7 +160,7 @@ See `harnesses/8hp-can.wv` for the full 8HP power sequencing and CAN signal map.
 
 6. Unplug the M52 engine-side mating plug from the firewall bulkhead. Set aside with M52 engine.
 
-7. Insert the 07K engine-side mating plug (built in Phase 2) into the bulkhead receptacle. Single-connector swap — cabin side is unchanged.
+7. Insert the 07K engine-side mating plug (built in Phase 2b) into the bulkhead receptacle. Single-connector swap — cabin side is unchanged.
 
 8. Connect the 07K engine harness sensor ends:
    - **CRANK_HALL** → crank sensor (60-2, cylinder 5 end — timing chain compartment cover). OE# `07K906433B` (Hall effect — confirmed). Connector body `3B0973703G`. **Label crank vs cam pigtails clearly at crimp time — same housing, different pinouts.** Crank: +5V/Signal/SensorGND (Hall). Cam: +5V/SensorGND/Signal (Hall). MTune trigger type: "Digital (Hall, opto)" — NOT VR sensor. Direct-terminate at engine-bay MaxxECU CMC: signal → H3 (pin 31, TRIGGER); +5V → G1 (pin 25); SGND → H1 (pin 29).
@@ -198,7 +198,7 @@ See `harnesses/8hp-can.wv` for the full 8HP power sequencing and CAN signal map.
    - Cam → **Hall / HOME input**, +5V supply type (not +12V)
    - Both sensors use the same `3B0973703G` connector body — confirm correct pigtail with a multimeter on the engine before plugging into MaxxECU
    - Crank angle offset: **must be calibrated** before the first start. This is a software setting (Trigger Setup → Crank angle offset); incorrect offset = no-start or very rough running. Procedure: crank with timing light on #1 coil wire against a timing tape or degree wheel on the crank pulley — adjust offset until timing light reads 0° when MaxxECU thinks it's firing at 0°.
-   > ⚠️ **Pitfall:** MTune trigger setup — verify before first crank. Crank = VR input (passive differential, no supply), N-1 / 60-2 pattern → H3/H2. Cam = Hall / HOME input (+5V supply type, not +12V) → H4. Both sensors use the same 3B0973703G connector body but opposite pinouts: crank pin 1 = VR+, pin 2 = VR−; cam pin 1 = +5V, pin 2 = GND, pin 3 = signal. A swapped sensor connector will produce no-start with no obvious failure mode. Sources: `E36_DIY_Build_Checklist.md` Phase 3 ECU & Engine Harness; `maxxecu-07k.wv` CRANK_VR and CAM_HALL connectors; MaxxECU REV9+ wiring diagram PDF (`e36-wiring/docs/vendor/maxxecu/MaxxECU_RACE_REV9plus_Wiring.pdf`) — Connector 1 page: "Crank sensor TRIGGER (black) → H3, VR GND → H2; Opto/hall (digital) → H4 HOME/CAM; Wiring alternative for crank/home signal: shield → E3 SHIELD GND."
+   > ⚠️ **Pitfall:** MTune trigger setup — verify before first crank. Crank = VR input (passive differential, no supply), N-1 / 60-2 pattern → H3/H2. Cam = Hall / HOME input (+5V supply type, not +12V) → H4. Both sensors use the same 3B0973703G connector body but opposite pinouts: crank pin 1 = VR+, pin 2 = VR−; cam pin 1 = +5V, pin 2 = GND, pin 3 = signal. A swapped sensor connector will produce no-start with no obvious failure mode. Sources: `E36_DIY_Build_Checklist.md` Phase 3b ECU & Engine Harness; `maxxecu-07k.wv` CRANK_VR and CAM_HALL connectors; MaxxECU REV9+ wiring diagram PDF (`e36-wiring/docs/vendor/maxxecu/MaxxECU_RACE_REV9plus_Wiring.pdf`) — Connector 1 page: "Crank sensor TRIGGER (black) → H3, VR GND → H2; Opto/hall (digital) → H4 HOME/CAM; Wiring alternative for crank/home signal: shield → E3 SHIELD GND."
 
 ### MTune — GPO Reassignments (MTune Only — No Rewiring)
 
@@ -235,9 +235,9 @@ See `harnesses/8hp-can.wv` for the full 8HP power sequencing and CAN signal map.
 
 ### MTune — Wideband & Oil Pressure Protection
 
-18. Set MTune wideband input to LSU 4.9. Note: the M52 phase uses LSU 4.2 (different sensor, different pinout); Phase 3 switches to LSU 4.9 — do not swap sensors between phases. The ECU-side CMC channel assignments are the same across both phases, but the sensor connector pinout differs. Source: maxxecu.com/webhelp/wirings-lambda_sensors.html. Verify the wideband sensor is a **genuine Bosch LSU 4.9** — aftermarket wideband sensors have documented accuracy issues at WOT and at rich lambda values below 0.75. Tune quality depends on accurate AFR data. Source: `E36_DIY_Build_Checklist.md` Phase 3 Commissioning.
+18. Set MTune wideband input to LSU 4.9. Note: the M52 phase uses LSU 4.2 (different sensor, different pinout); Phase 3b switches to LSU 4.9 — do not swap sensors between phases. The ECU-side CMC channel assignments are the same across both phases, but the sensor connector pinout differs. Source: maxxecu.com/webhelp/wirings-lambda_sensors.html. Verify the wideband sensor is a **genuine Bosch LSU 4.9** — aftermarket wideband sensors have documented accuracy issues at WOT and at rich lambda values below 0.75. Tune quality depends on accurate AFR data. Source: `E36_DIY_Build_Checklist.md` Phase 3b Commissioning.
 
-19. Configure MaxxECU oil pressure protection map: set a minimum oil pressure threshold vs RPM (e.g. 10 PSI at idle, 50 PSI above 3,000 RPM). MaxxECU cuts ignition if pressure drops below curve. This is a standard MaxxECU protection feature — critical at 9,000 RPM where a momentary oil starvation event destroys bearings before you can react. Source: `E36_DIY_Build_Checklist.md` Phase 3 Commissioning.
+19. Configure MaxxECU oil pressure protection map: set a minimum oil pressure threshold vs RPM (e.g. 10 PSI at idle, 50 PSI above 3,000 RPM). MaxxECU cuts ignition if pressure drops below curve. This is a standard MaxxECU protection feature — critical at 9,000 RPM where a momentary oil starvation event destroys bearings before you can react. Source: `E36_DIY_Build_Checklist.md` Phase 3b Commissioning.
 
 ### MTune — 8HP Settings Confirm
 
@@ -250,10 +250,10 @@ See `harnesses/8hp-can.wv` for the full 8HP power sequencing and CAN signal map.
 ## References
 
 - `harnesses/maxxecu-07k.wv` — full 07K harness pinout, GPO assignments, CMC connector labels
-- `harnesses/8hp-body-integrations-phase1.wv` / `harnesses/8hp-body-integrations-phase3.wv` — reverse light circuit Phase 1 (M50 harness + discrete relay) vs Phase 3 (PMU16 direct-drive)
-- `harnesses/fuel-pump-hanger-phase1.wv` / `harnesses/fuel-pump-hanger-phase3.wv` — Phase 1 (discrete relay via JDT rewire kit) vs Phase 3 (PMU16 O4 direct)
+- `harnesses/8hp-body-integrations-phase1.wv` / `harnesses/8hp-body-integrations-phase3.wv` — reverse light circuit Phase 1 (M50 harness + discrete relay) vs Phase 3b (PMU16 direct-drive)
+- `harnesses/fuel-pump-hanger-phase1.wv` / `harnesses/fuel-pump-hanger-phase3.wv` — Phase 1 (discrete relay via JDT rewire kit) vs Phase 3b (PMU16 O4 direct)
 - `harnesses/firewall-crossing-maven.wv` — Maven HD30 dual bulkhead pin assignments
-- `E36_DIY_Build_Checklist.md` — Phase 3, ECU & Engine Harness (lines 653–663)
+- `E36_DIY_Build_Checklist.md` — Phase 3b, ECU & Engine Harness (lines 653–663)
 - `E36_9000RPM_Project_Plan_Verified.md` — ECU M5x→07K Harness Transition table (lines 574–598)
 - ME7.1.1 Pinout PDF: [Google Drive](https://drive.google.com/file/d/15RPWyYPLHGEMMQZIlUgpoo77T-CxjyMP/view)
 - [MaxxECU M50 harness docs](https://www.maxxecu.com/webhelp/wirings-terminated_engine_harness-bmw_m50.html)

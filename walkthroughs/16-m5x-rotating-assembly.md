@@ -1,6 +1,6 @@
-# Phase 1A: M5x Turbo Bottom End Build — VAC Motorsports Handoff
+# Phase 2a: M5x Turbo Bottom End Build — VAC Motorsports Handoff
 
-**Phase:** 1A  
+**Phase:** 2a
 **System tags:** `[ROTATING-ASSEMBLY]` `[MACHINING]`  
 **Shop-mandatory:** Yes — VAC Motorsports Philadelphia handles all longblock assembly and machine work  
 **Prerequisites:** Iron block sourced and physically inspected (`15-m5x-turbo-sourcing.md`); power and RPM target locked; all parts from the "Bring at Dropoff" list on hand before scheduling

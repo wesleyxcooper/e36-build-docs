@@ -1,6 +1,6 @@
-# Phase 2: 07K Oil System
+# Phase 2b: 07K Oil System
 
-**Phase:** 2  
+**Phase:** 2b
 **System tags:** `[OIL]`  
 **Shop-mandatory:** LPS oil pump mod is a send-in service (no storefront). All other items are owner-installed.  
 **Prerequisites:** Longblock returned from Euromotive (sealed); LPS-modified pump already installed during Euromotive build (if coordinated correctly); iABED housing and pan on hand
@@ -18,7 +18,7 @@
 | -4AN fitting for turbo oil feed port | **M16×1.5 to -4AN union** — iABED sells this adapter for +$5.65 at order time; add it to the housing order. Port confirmed M16×1.5 ([iABED product page](https://byiabed.com/07K-LONGITUDINAL-Oil-Filter-housing-W-THERMOSTAT_p_156.html)). Alternative: M10 banjo bolt to -4AN for the head galley port (see § 4). | ~$6 (add to iABED order) |
 | Inline orifice restrictor (1.0 mm / 0.040") | **Ships with the G25-660** per [Full Race listing](https://www.full-race.com/garrett-g-series-g25-660-turbocharger) — verify at receipt. Fallback: Turbosmart, Fragola, AN Fittings Store | included / ~$20 fallback |
 | TTRS Oil Squirters (×5) | `06J103154B` (alt: `06J103154AA`) · ECS Tuning / FCP Euro / eBay | — |
-| Bosch PST-F1 oil temp/pressure sensor | [sorek.uk](https://shop.sorek.uk/products/bosch-pst-f-1-vanos-banjo-m14x1-5-to-m10x1-0-sensor-adapter-m50-m52-m54) | ~$65 (incl. adapter — adapter is M52-specific; iABED housing threads PST-F1 directly into its M10×1.0 port, no adapter needed at Phase 3) |
+| Bosch PST-F1 oil temp/pressure sensor | [sorek.uk](https://shop.sorek.uk/products/bosch-pst-f-1-vanos-banjo-m14x1-5-to-m10x1-0-sensor-adapter-m50-m52-m54) | ~$65 (incl. adapter — adapter is M52-specific; iABED housing threads PST-F1 directly into its M10×1.0 port, no adapter needed at Phase 3b) |
 
 ---
 
@@ -38,7 +38,7 @@
 
 - Contact LPS directly: [linderpowersystems.com](https://linderpowersystems.com) — no storefront, contact-only. Also DM [@linder_power_systems_lpsfab](https://www.instagram.com/linder_power_systems_lpsfab/).
 - **Early-style 07K pump only** — verify your pump version matches before sending; later pumps use a different design (see § 1a below for PN identification and sourcing)
-- **Lead time: 4–8 weeks** — send early in Phase 2 so the modified pump returns before Euromotive finishes the longblock
+- **Lead time: 4–8 weeks** — send early in Phase 2b so the modified pump returns before Euromotive finishes the longblock
 - Coordinate with LPS to **ship the modified pump directly to Euromotive** — eliminates a second shipment leg and ensures Euromotive has it in hand for assembly
 
 **Why the mod is mandatory:** The stock 07K oil pump cavitates above ~8,000 RPM under limiter-bashing, starving the bearings. At 9,000 RPM in drift use, this is a bearing-killing failure mode. The LPS mod raises the cold relief pressure to 80–85 PSI (SAE30 ref) with a hot WOT target of ~55–65 PSI at the block.
@@ -62,7 +62,7 @@ And per the [LPS video description](https://www.youtube.com/watch?v=nXsUm8ph2Ys)
 
 **Ask LPS at send-in:** whether they want the pump with sprocket attached, and confirm your specific PN is compatible (see § 1a).
 
-> ⚠️ **Pitfall:** LPS lead time can be 4–8 weeks. A pump that hasn't returned delays the entire longblock assembly. Send the pump early, before any other Phase 2 assembly work is scheduled with Euromotive.
+> ⚠️ **Pitfall:** LPS lead time can be 4–8 weeks. A pump that hasn't returned delays the entire longblock assembly. Send the pump early, before any other Phase 2b assembly work is scheduled with Euromotive.
 
 Reference: [LPS oil pump mod — YouTube](https://www.youtube.com/watch?v=nXsUm8ph2Ys) · [07K turbo build reference](https://www.youtube.com/watch?v=V2OxGOoeDmI)
 
@@ -118,7 +118,7 @@ Install the **iABED Longitudinal Oil Filter Housing with Thermostat** (PN 462-63
 - Contact iABED directly: **+1 510-275-4775**
 - Or locate build threads in the **07K Swap Facebook group**, specifically **@wingman703's longitudinal build** — the primary confirmed longitudinal reference for this swap
 
-The housing includes a built-in thermostat for the oil cooler circuit and a **dedicated M10×1.0 port** for the Bosch PST-F1 oil temp/pressure sensor (move from M52 VANOS banjo adapter to this port at Phase 3 — zero wiring changes).
+The housing includes a built-in thermostat for the oil cooler circuit and a **dedicated M10×1.0 port** for the Bosch PST-F1 oil temp/pressure sensor (move from M52 VANOS banjo adapter to this port at Phase 3b — zero wiring changes).
 
 ### 4 — Turbo oil feed port setup
 
@@ -145,9 +145,9 @@ Install the **iABED Baffled Longitudinal Oil Pan** (PN 462-103-07K-LAB, byiabed.
 
 Clean all mating surfaces. Use appropriate sealant per iABED specification. Torque pan bolts in pattern to spec.
 
-### 6 — PST-F1 relocation at Phase 3
+### 6 — PST-F1 relocation at Phase 3b
 
-At Phase 3 (swap), move the Bosch PST-F1 oil temp/pressure sensor from its M52 VANOS banjo adapter location to the iABED housing's **dedicated M10×1.0 port**. Zero wiring changes — same Gauge.S and MaxxECU analog inputs. The M52 VANOS adapter is discarded with the M52.
+At Phase 3b (swap), move the Bosch PST-F1 oil temp/pressure sensor from its M52 VANOS banjo adapter location to the iABED housing's **dedicated M10×1.0 port**. Zero wiring changes — same Gauge.S and MaxxECU analog inputs. The M52 VANOS adapter is discarded with the M52.
 
 **Monitoring role:** PST-F1 is the primary block-pressure channel for the LPS-modded pump (§1 targets: 80–85 PSI cold SAE30, ~55–65 PSI hot WOT). Pressure output feeds the Gauge.S dash for glanceable readout AND the MaxxECU AIN, where it drives **Oil Pressure Cut** (Settings → Limits → Oil Pressure Cut) on an RPM-based minimum table — cuts fuel/ignition if block pressure drops below the LPS-adjusted floor. This is the "engine still alive" indicator; turbo-inlet pressure (after the 1.0 mm restrictor) is a separate concern handled per <ref_file file="/Users/wesleyc/personal/e36/e36-docs/E36_9000RPM_Project_Plan_Verified.md" /> → "Turbo Oil Feed Pressure — Verification & Monitoring".
 
@@ -159,5 +159,5 @@ At Phase 3 (swap), move the Bosch PST-F1 oil temp/pressure sensor from its M52 V
 - [LPS oil pump mod — linderpowersystems.com](https://linderpowersystems.com)
 - [LPS oil pump mod — YouTube](https://www.youtube.com/watch?v=nXsUm8ph2Ys)
 - [07K Swap Facebook Group — @wingman703 longitudinal build thread](https://www.facebook.com/groups/07kswap)
-- [E36 DIY Build Checklist — Phase 2 Oil System](../E36_DIY_Build_Checklist.md)
-- [E36 9000 RPM Project Plan — Phase 2 Oil System](../E36_9000RPM_Project_Plan_Verified.md)
+- [E36 DIY Build Checklist — Phase 2b Oil System](../E36_DIY_Build_Checklist.md)
+- [E36 9000 RPM Project Plan — Phase 2b Oil System](../E36_9000RPM_Project_Plan_Verified.md)

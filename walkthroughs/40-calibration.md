@@ -1,6 +1,6 @@
-# Post-Dyno Calibration & Break-In Milestones
+# Phase 4b — 07K Dyno Tune & Break-In
 
-**Phase:** 4  
+**Phase:** 4b  
 **System tags:** `[ECU]` `[ENGINE]` `[DRIVETRAIN]`  
 **Shop-mandatory:** Partial (dyno tune = shop; all other steps = DIY)  
 **Prerequisites:** Commissioning complete (`38-commissioning.md`); dyno tune complete (MaxxECU 07K map, flex fuel scaling, 8HP shift calibration — $600–1,200 budget); 07K break-in period in progress
@@ -9,9 +9,20 @@
 
 ## Overview
 
-Phase 4 covers the sequence of post-dyno calibration steps, break-in milestones, and software-side calibrations that happen in the first ~1,000 miles of street operation. These are not optional polish items — the 07K break-in protocol is engine-life-critical, the oil sample is the only objective data on internal wear rates, and the flex fuel map validation closes out the fueling system.
+Phase 4b covers the sequence of post-dyno calibration steps, break-in milestones, and software-side calibrations that happen in the first ~1,000 miles of 07K operation. These are not optional polish items — the 07K break-in protocol is engine-life-critical, the oil sample is the only objective data on internal wear rates, and the flex fuel map validation closes out the fueling system.
 
-**Phase 4 is also the first time the full system operates together under real driving conditions.** Many integration issues (8HP clutch model feel, EPS assist level at speed, AC idle interaction) only manifest in real use — expect iteration.
+**Phase 4b is also the first time the complete final-form system operates together under real driving conditions.** Many integration issues (8HP clutch model feel, EPS assist level at speed, AC idle interaction) only manifest in real use — expect iteration.
+
+For the turbo M52B28 calibration that precedes this (Phase 4a), see `19d-m5x-turbo-calibration.md`.
+
+---
+
+## Recommended Tuner
+
+**Mead Motorsports Tuning** — [meadmotorsportstuning.com](https://meadmotorsportstuning.com) · (501) 605-4113  
+Remote MaxxECU specialist. Bring the car to any local chassis dyno; Mead tunes remotely over a live data session. Explicitly listed as a MaxxECU tuner; documented for 944 turbo builds on MaxxECU (same community as the 07K swap — identical ECU platform and similar engine configuration). Source: [Rennlist MaxxECU tuning thread](https://rennlist.com/forums/944-turbo-and-turbo-s-forum/1410776-maxxecu-tuning-options.html).
+
+**Note on RevMap Performance** (revmapperformance.com): RevMap is the community standard for 07K OEM ECU calibration on the factory Bosch ME7.1.1. This build uses MaxxECU — RevMap does not apply. Source: [the07k.wiki/wiki/OEM_Calibration_Tuning](https://the07k.wiki/wiki/OEM_Calibration_Tuning).
 
 ---
 
@@ -137,7 +148,7 @@ Source: `E36_DIY_Build_Checklist.md` line 788.
 
 ## References
 
-- `E36_DIY_Build_Checklist.md` — Phase 4, Calibration & Ongoing Maintenance (lines 786–803)
+- `E36_DIY_Build_Checklist.md` — Phase 3b Calibration & Ongoing Maintenance (lines 786–803)
 - `38-commissioning.md` — first-start procedure (prerequisite to this walkthrough)
 - `30-07k-install.md` — valve clearance specs and shim sourcing
 - `13-eps.md` — EPS calibration notes

@@ -8,7 +8,7 @@
 
 - **Must be:** RHD convertible. **Based in USA — import required.** RHD E36 convertibles were never sold new in the US; source from UK, AU, ZA, or JP.  
     
-- **Why 323i/328i:** Lower purchase price than 325i, more available with manuals, alloy M52 block is the right base for Phase 1A/B.  
+- **Why 323i/328i:** Lower purchase price than 325i, more available with manuals, alloy M52B28 is the right base for the Phase 1 mild NA build.  
     
 - **Diff Check — Ratio vs. LSD (these are independent specs):** Ratio and LSD status are separate — every ratio is available as either open or LSD. Manual 328i ships with a **3.46** final drive as standard. A 3.15 is preferable for the 8HP's wide ratio spread (better highway cruising RPM) but 3.46 is fully workable. The 3.91 ratio is automatic-only and not a concern for a manual car.
 
@@ -57,7 +57,7 @@
 
 **Insurance:** Standard auto policies will NOT cover an RHD import with engine swaps. Obtain a specialty agreed-value policy through **Hagerty**, **Grundy**, or **American Collectors** before the car leaves the port. Annual premium \~$600–1,500/yr for this build profile.
 
-**Secondary Option:** If a low-mileage iron-block **325i with `M50B25TU`** comes up at a good price, it opens the Turbo M50 path (Phase 1A). Do not hold out for this — take the best deal available on a clean convertible.
+**Secondary Option:** If a low-mileage iron-block **325i with `M50B25TU`** comes up at a good price, it opens the Turbo M50 path (Phase 2a). Do not hold out for this — take the best deal available on a clean convertible.
 
 ### Digital Instrumentation  \[INSTRUMENTS · OIL · ELECTRICAL\]
 
@@ -154,13 +154,13 @@
 
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Suspension** | **BC Racing Coilovers** | [BC Racing BR Series](https://coiloverdepot.com/products/bc-racing-br-series-coilovers-92-97-bmw-3-series-e36) \- $1,030.00 (verified) |
+| **Suspension** | **Fortune Auto 500 Series Coilovers** | [Fortune Auto 500 Series FA500-E36](https://www.fortuneautosuperstore.com/fortune-auto-500-series-coilovers-for-bmw-3-series-e36/) \- $1,928.00 (verified) |
 
 ### Brakes  \[BRAKES\]
 
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Brakes** | **E46 330i Upgrade** | [Used E46 330i Front Calipers/Carriers](https://www.ebay.com/itm/275801176019) \- $150 \- $250 |
+| **Brakes** | **Porsche 996 Brembo 4-Piston BBK** | Porsche 996 (non-turbo) / Boxster-S / Cayman-S front calipers · PN `996.351.425` (Left) / `996.351.426` (Right) · ~$200–300/pair used + [RallyRoad E36 M3 BBK Adapter Brackets](https://rallyroad.net/products/bmwe36m3frontbbkadapterbrackets) $224.95. Requires 12mm machined off caliper mounting boss (lathe — not DIY; RallyRoad offers this as an add-on service, or VAC in-house). E46 M3 325×28mm rotors (`34112282445`/`34112282446`). **Note: E46 330i calipers are confirmed incompatible with E36 M3 knuckles** — [R3VLimited thread](https://www.r3vlimited.com/board/forum/e30-technical-forums/suspension-unsprung/brakes-subframe-arms/386832-e46-330i-brakes-with-e36-m3-knuckles). |
 | **Brake Booster Delete** | **NES Engineering 6:1 Pedal Ratio Kit** | [NES Engineering Booster Delete](https://nesengineering.com/products/brakboster-delete?variant=57108005880191) \- $216. Removes vacuum booster, changes pedal ratio 3:1 → 6:1 using stock master cylinder. **Install at Phase 1** — firewall grinding is far easier with the engine bay open early. Eliminates vacuum dependency critical for 07K turbo (no manifold vacuum under boost). Benefits: direct pedal feel, removes booster failure mode, no vacuum pump needed in Phase 3\. Tradeoff: higher pedal effort and more travel vs OEM boosted. Optional upgrade: Wilwood/Tilton 19mm master cylinder (\~$150–200) if pedal effort is too high after install. Requires: grinding 2mm off firewall hole \+ pedal box, drilling new hole in brake pedal. Track-only rated. |
 
 ### Drivetrain — Differential  \[DRIVETRAIN\]
@@ -181,18 +181,21 @@
 
 ---
 
-## Phase 1A/B: Interim Engine Choice  \[HEAD/VALVETRAIN · ROTATING-ASSEMBLY · OIL · FUEL · AIR · ECU\]
+## Phase 1 Completion: NA M52B28 Tune  \[HEAD/VALVETRAIN · OIL · AIR · ECU\]
 
-**Strategy:** Choose an interim engine to enjoy the car while building the final 07K offline. Both paths leverage the Phase 1 foundation (8HP \+ MaxxECU).
+**Strategy:** The imported RHD 328i M52B28 (alloy block, UK/EU spec) completes Phase 1 on MaxxECU with the 8HP as a mild high-rev NA build. Flex fuel (E85/pump blend) is available via the Phase 1 ethanol sensor. The car is driveable and trackable in this state while Phase 2a or Phase 2b build the final engines offline.
 
-| Feature | Option A: Turbo M50 | Option B: NA M52 |
-| :---- | :---- | :---- |
-| **Best For** | Maximum power, turbo experience. | Response, weight (52 lbs lighter), high-rev NA. |
-| **Power Goal** | 450 \- 600 HP | 250 \- 280 HP (7800 RPM reliable) |
-| **Block** | Iron (Indestructible) | Alloy (Nikasil \- safe with modern fuel) |
-| **Key Upgrades** | K64 Manifold, Rods, ATI Damper. | Schrick Cams, Solid Shims, M50 Manifold. |
+**Power target:** ~250–280 HP (7,800 RPM reliable). See Phase 1 Completion content below.
 
-### Option A: Turbo M50
+---
+
+## Phase 2a: M52B28 Turbo Build — Offline (VAC)  \[HEAD/VALVETRAIN · ROTATING-ASSEMBLY · OIL · FUEL · AIR · ECU\]
+
+**Strategy:** Source a **USA/Canada-spec M52B28 iron-block donor** (E36 328i or E39 528i — USA/Canada market retained the M50's cast iron block; UK/EU spec is alloy Nikasil). Build offline at VAC Motorsports while the alloy M52B28 runs the car. **Do not use a Z3 M52B28 — that is an alloy block even in the USA.** Build completed longblock, then Phase 3a installs it in the car.
+
+**Power goal:** 450–600 HP
+
+### Phase 2a: Turbo M52B28 (Iron Block)
 
 #### Head & Valvetrain  \[HEAD/VALVETRAIN · MACHINING\]
 
@@ -219,7 +222,7 @@
 
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Injector Upgrade** | **Siemens Deka 630cc EV1 × 6** | [SouthBay Fuel Injectors](https://www.southbayfuelinjectors.com/60lb-630cc-bmw-siemen-deka-ev1-fuel-injectors-set-of-6.html) \- $325.00 (verified). **Replaces Phase 1 Bosch 440cc set** — 440cc insufficient for 450–600hp on E85. Same EV1 connector as OEM M5x injectors — fits stock fuel rail. Phase 1 440cc can be resold (\~$150). |
+| **Injector Upgrade** | **Injector Dynamics ID850 × 6 (EV6/USCAR)** | [ID850 (850.60.14.14.6)](https://www.injectordynamics.com/injector-dynamics/id850/) \- ~$750–792 (set of 6). **Replaces Phase 1 Bosch 440cc set** — 440cc insufficient for 450–600hp on E85. ID publishes MaxxECU characterization data. **EV1 adapter required for MaxxECU M50 terminated harness (Bosch JPT sockets):** Injector Dynamics PN 90.1 USCAR→EV1 adapter, $11.55 each × 6 (~$69) — [kseriesparts.com](https://www.kseriesparts.com/IJD-90-1.html). Adapters not needed if building a custom harness with USCAR injector sockets. Phase 1 440cc can be resold (~$150). |
 
 #### Air & Boost  \[AIR\]
 
@@ -230,7 +233,7 @@
 | **FMIC** | **CXRacing E36 FMIC Kit** | [CXRacing KIT-BMW-E36-IC0029-25](https://www.cxracing.com/KIT-BMW-E36-IC0029-25) \- $610.00 (verified). Full kit: 27×11.75×3" bar-and-plate core \+ aluminum piping \+ silicon hoses \+ BOV \+ brackets. **Intercooler core carries to 07K phase** — piping will need re-routing for 07K turbo position. |
 | **Boost Solenoid** | **Turbosmart 2-Port PWM Solenoid** | [Turbosmart Solenoids](https://www.turbosmart.com/product-category/boost-controllers/solenoids/) \- \~$65–80. MaxxECU drives via GPO PWM. Budget alt: Bosch N75 PN 0280142431 \~$40. Carries to 07K phase. |
 
-### Option B: NA M52
+### Phase 1 Completion: NA M52B28
 
 #### Head & Valvetrain  \[HEAD/VALVETRAIN\]
 
@@ -255,16 +258,16 @@
 
 - **Oil Pump:** VAC M52TU Upgrade Kit is mandatory for high-RPM oil pressure stability.  
 - **Valvetrain:** Alien Engineering solid shims eliminate hydraulic lifter "pump-up" above 7000 RPM.  
-- **Harmonic Control:** While the VAC ATI damper is listed in Phase 1A, it is highly recommended for any M5x build exceeding 7500 RPM to protect the oil pump and crank snout.  
+- **Harmonic Control:** The VAC ATI Super Damper is highly recommended for any M5x build exceeding 7500 RPM to protect the oil pump and crank snout.  
 - **Bottom End:** Stock M52 rotating assembly is generally reliable to 7800 RPM if oiling and harmonics are addressed.
 
-#### Flex Fuel on M52 (Both Paths)
+#### Flex Fuel on M52
 
-MaxxECU supports flex fuel natively on the M52. The ethanol content sensor already in Phase 1 ($80, Seems Legit Garage) feeds a single digital input. MaxxECU automatically blends boost, timing, and fueling targets between the 91/93 pump calibration and the E85 calibration based on measured ethanol %. No separate tune file needed — one map covers the full range. On the M52 NA (Option B), E85 provides a meaningful octane safety margin at high RPM; on the Turbo M50 (Option A), E85 enables a significant boost increase.
+MaxxECU supports flex fuel natively on the M52. The ethanol content sensor already in Phase 1 ($80, Seems Legit Garage) feeds a single digital input. MaxxECU automatically blends boost, timing, and fueling targets between the 91/93 pump calibration and the E85 calibration based on measured ethanol %. No separate tune file needed — one map covers the full range. On the Phase 1 NA M52B28, E85 provides a meaningful octane safety margin at high RPM; on the Phase 2a/3a Turbo M52B28, E85 enables a significant boost increase.
 
-#### MaxxECU Engine Harness — M5x Phase
+#### MaxxECU Engine Harness — M5x (Phase 1 and Phase 2a/3a)
 
-MaxxECU sells a **pre-terminated M50 engine harness** that covers both M50 and M52 (with VANOS). This is the recommended harness for Phase 1A/B.
+MaxxECU sells a **pre-terminated M50 engine harness** that covers both M50 and M52 (with VANOS). This is the recommended harness for both the Phase 1 NA M52B28 and the Phase 2a/3a Turbo M52B28 builds. **Injector connectors are Bosch JPT (EV1)** — use ID PN 90.1 adapter if running ID850 (EV6/USCAR) injectors.
 
 | Item | Detail | Cost |
 | :---- | :---- | :---- |
@@ -282,8 +285,8 @@ MaxxECU sells a **pre-terminated M50 engine harness** that covers both M50 and M
 
 **Early Phase 2 Actions — do these before placing any component orders:**
 
-1. **Contact DomiWorks** — confirm your 07K block code (BGP/CBUA/CEPA) and 8HP variant (70Z N57) are compatible with their adapter kit. Get written confirmation. Non-returnable hardware. ([domi-works.com](https://www.domi-works.com/collections/8hp-adapter-kits))  
-2. **Measure G30-770 hood clearance** — with the M5x still in the car, test-position the SPA MK5 manifold and measure vertical clearance to the hood line. The G30-770 is large-frame; E36 top-mount clearance is tight. If marginal: (a) vented/bubble hood, (b) step down to G25-660 RR (\~$2,000), (c) Precision Turbo RR T3-inlet (eliminates adapter height). Resolve before ordering.  
+1. **Contact DomiWorks** — confirm your 07K block code (BGP/CBUA/CEPA) and your actual 8HP unit (Dodge RAM 1500, N57, or N63 — TBD based on what you source) are compatible with their adapter kit. Get written confirmation. Non-returnable hardware. ([domi-works.com](https://www.domi-works.com/collections/8hp-adapter-kits))  
+2. **G25-660 RR confirmed for 07K path** — G30-770 ruled out on hood clearance grounds. Order G25-660 RR once ready. No hood clearance measurement needed for G25-660; decision is locked.  
 3. **Order BBG billet valve cover \+ timing cover \+ coolant flange combo immediately** — \~6-week lead time. Order at Phase 2 kickoff.  
 4. **Send 07K oil pump to LPS** for oil pump mod early — 4–8 week lead time. Needs to return before final engine assembly.
 
@@ -337,7 +340,7 @@ Verify early forged crankshaft (pre-2007 production date) before ordering any bl
 
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Adapter Plate \+ Flexplate** | **DomiWorks VW 1.8T/1.9T → BMW 8HP N57 Kit (SKU 21015002\)** | [DomiWorks 1.8T/1.9T to 8HP 45/50/70/75 N57 Adapter Kit](https://www.domi-works.com/products/vw-1-8t-1-8t-to-bmw-8hp-45-50-70-75-n47-n57-b57-b58-s58-adapter-kit) \- \~$1,200 est. (order Phase 2 / install Phase 3 — **see Phase 3 for verified $1,397 install cost; do not double-count**). 07K shares flywheel/bellhousing bolt pattern with VW 1.8T/1.9T; kit applies directly. Includes billet SS2541 flexplate, center guide, hardware. 33mm anodized aluminum plate. Fits 8HP70/75 N57. **Verify 07K compatibility with DomiWorks before ordering.** |
+| **Adapter Plate \+ Flexplate** | **TBD — depends on 8HP unit sourced** | 07K shares flywheel/bellhousing bolt pattern with VW 1.8T/1.9T. Three viable paths: **(1) N57 unit:** [DomiWorks SKU 21015002](https://www.domi-works.com/products/vw-1-8t-1-8t-to-bmw-8hp-45-50-70-75-n47-n57-b57-b58-s58-adapter-kit) \- ~$1,397 (N57 bellhousing only — does NOT fit N63 or Dodge pattern). **(2) N63 unit:** Chatham CNC custom adapter — contact for quote. **(3) Keep Dodge RAM 1500 unit:** different bellhousing; requires confirming adapter vendor. **Decision flows from 8HP unit selection — do not order the adapter plate until the 8HP unit is in hand.** Confirm 07K block compatibility with whichever vendor in writing before ordering. |
 
 ### Turbo Selection  \[AIR\]
 
@@ -345,7 +348,7 @@ Verify early forged crankshaft (pre-2007 production date) before ordering any bl
 
 | Component | Specification | Notes |
 | :---- | :---- | :---- |
-| **Turbo** | **Garrett G30-770 Reverse Rotation** | V-band inlet (.83 A/R) — $2,731 verified ([Full Race](https://www.full-race.com/garrett-g-series-g30-770-reverse-rotation-turbo)). **Reverse rotation required** to correctly orient the compressor outlet when using the SPA MK5 manifold in a longitudinal installation — confirmed approach by the Rennlist 944 07K community. \~$89 premium over standard rotation. |
+| **Turbo** | **Garrett G25-660 Reverse Rotation** | V-band inlet — ~$1,800–2,000 est. ([Full Race G-series](https://www.full-race.com/collections/garrett-g-series)). **Confirmed selection for 07K + SPA TMW22 in this E36 — G30-770 ruled out on hood clearance.** Reverse rotation required to correctly orient the compressor outlet with the SPA MK5 manifold in a longitudinal installation — confirmed by Rennlist 944 07K community (NineX Engineering). |
 | **Wastegate** | **Tial 44mm MVR** (V-band) | External, V-band, $435 verified. Direct fit to SPA MK5 manifold V-band WG provision. 44mm required for boost control above \~500whp on E85. |
 | **Manifold** | **SPA Turbo MK5 T3 Twin Scroll (TMW22)** | $459.90 verified ([SPA Turbo USA](https://spaturbousa.com/products/vw-5-cyl-2-5l-20v-fsi-t3-top-mount-twin-scroll-turbo-manifold-wastegate-v-band)). Usable in longitudinal orientation **with reverse rotation turbo** (944 community confirmed). T3 turbo flange → T3-to-V-band adapter (\~$40) for G30-770. V-band 44mm WG port. RHD clearance is a **downpipe** issue, not a manifold issue — see below. |
 | **Downpipe** | **Custom RHD Downpipe** | Custom fab, \~$400–600. Routes turbo outlet around/under the RHD steering rack to 3-inch exhaust. **Far cheaper than a custom manifold** ($400–600 vs $1,200–1,800). Must be ceramic coated (see Heat Control row). |
@@ -448,7 +451,7 @@ The 07K was designed for transverse FWD use. In a longitudinal BMW chassis its a
 
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Adapter Plate \+ Flexplate** | **DomiWorks VW 1.8T/1.9T → BMW 8HP N57 Kit (SKU 21015002\)** | [DomiWorks 1.8T/1.9T to 8HP 45/50/70/75 N57 Adapter Kit](https://www.domi-works.com/products/vw-1-8t-1-8t-to-bmw-8hp-45-50-70-75-n47-n57-b57-b58-s58-adapter-kit) \- $1,397 (verified) — **Required for Phase 3 engine swap.** 07K shares flywheel bolt pattern with VW 1.8T. Kit includes billet SS2541 flexplate \+ center guide \+ hardware. 33mm anodized aluminum adapter. Verify 07K compatibility with DomiWorks before ordering. |
+| **Adapter Plate \+ Flexplate** | **TBD — confirm after 8HP unit is sourced** | 07K shares flywheel bolt pattern with VW 1.8T/1.9T. Adapter choice depends on 8HP unit: **(N57)** [DomiWorks SKU 21015002](https://www.domi-works.com/products/vw-1-8t-1-8t-to-bmw-8hp-45-50-70-75-n47-n57-b57-b58-s58-adapter-kit) \- $1,397 (N57 bellhousing only); **(N63)** Chatham CNC custom; **(Dodge RAM 1500)** separate vendor TBD. All include SS2541 flexplate \+ center guide. 33mm plate — get written DomiWorks confirmation that plate clears 07K timing chain housing before ordering (non-returnable). |
 | **Starter** | **VW Longitudinal Starter `068911024GX`** | [FCP Euro \- Bosch 068911024GX (reman)](https://www.fcpeuro.com/products/volkswagen-starter-motor-passat-sr0423x) \- **$349.99 \+ $50 refundable core** (verified, FCP Euro lifetime guarantee). **Required by DomiWorks kit.** 068911024GX (Bosch reman) \= 068911024H (Bosch new) \= same 9T CW 12V bellhousing nose. **NOT** the BMW N54 starter from Phase 1\. |
 
 #### Air & Boost  \[AIR\]
@@ -460,9 +463,9 @@ The 07K was designed for transverse FWD use. In a longitudinal BMW chassis its a
 | **Turbo Manifold** | **SPA Turbo MK5 T3 Twin Scroll (TMW22)** | [SPA Turbo USA TMW22](https://spaturbousa.com/products/vw-5-cyl-2-5l-20v-fsi-t3-top-mount-twin-scroll-turbo-manifold-wastegate-v-band) \- $459.90 (verified). T3 flange, V-band 44mm WG port. Usable longitudinally with reverse rotation turbo — confirmed by 944 community. |
 | **Turbocharger** | **Garrett G30-770 REVERSE ROTATION** | [Full Race G30-770 RR](https://www.full-race.com/garrett-g-series-g30-770-reverse-rotation-turbo) \- $2,731.20 (verified). **Reverse rotation required** with SPA MK5 manifold in longitudinal orientation. T3-to-V-band adapter \~$40 adds \~25–35mm to stack height. **Verify hood clearance before ordering** — G30-770 is a large-frame turbo and E36 hood clearance on a top-mount is tight; some builds require a vented/bubble hood. If clearance is marginal, options: (a) bubble/raised hood, (b) smaller turbo (G25-660 RR), (c) reverse rotation T3-inlet turbo (Precision Turbo custom — eliminates adapter height penalty but must be special-ordered). |
 | **Downpipe** | **Custom RHD Downpipe** | Custom fab \~$400–600. Routes G30-770 outlet around RHD steering rack to 3-inch exhaust. **Far cheaper than a custom manifold.** Must be ceramic coated. |
-| **FMIC Charge Piping** | **Custom Mandrel-Bent Aluminum** | \~$200–400 fab. CXRacing FMIC **core** carries from Phase 1A, but all piping is turbo-position specific. G30-770 RR \+ SPA MK5 exits opposite side from K64/M5x. All Phase 1A CXRacing pipes are unusable — budget for full re-pipe. |
+| **FMIC Charge Piping** | **Custom Mandrel-Bent Aluminum** | \~$200–400 fab. CXRacing FMIC **core** carries from Phase 3a, but all piping is turbo-position specific. G30-770 RR \+ SPA MK5 exits opposite side from K64/M5x. All Phase 3a CXRacing pipes are unusable — budget for full re-pipe. |
 | **T3-to-V-Band Adapter** | **T3 Flange to V-Band Turbo Adapter** | \~$35–50. Connects SPA TMW22 T3 outlet to G30-770 V-band turbine inlet. Adds \~25–35mm to stack height. Verify T3 bolt pattern and V-band diameter match at purchase. |
-| **Boost Solenoid Re-plumb** | **Re-route Turbosmart solenoid for G30-770 \+ Tial 44mm setup** | Phase 1A solenoid carries over but all plumbing is turbo-position specific. Re-route: compressor outlet reference → solenoid inlet; solenoid outlet → Tial 44mm actuator port. All Phase 1A K64 boost lines are unusable. |
+| **Boost Solenoid Re-plumb** | **Re-route Turbosmart solenoid for G30-770 \+ Tial 44mm setup** | Phase 3a solenoid carries over but all plumbing is turbo-position specific. Re-route: compressor outlet reference → solenoid inlet; solenoid outlet → Tial 44mm actuator port. All Phase 3a K64 boost lines are unusable. |
 
 #### Thermal Management  \[THERMAL\]
 
@@ -474,7 +477,7 @@ The 07K was designed for transverse FWD use. In a longitudinal BMW chassis its a
 
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **07K Injectors** | **Injector Dynamics ID1050x × 5** | [Full Race ID1050x](https://www.full-race.com/injector-dynamics-id1050x-injectors) \- $249/ea × 5 \= **$1,245**. 07K is a 5-cylinder. EV14 connector — matches MaxxECU 07K harness. **Replaces Phase 1A 630cc injectors** (630cc can be resold \~$200–250). Do not double-count. |
+| **07K Injectors** | **Injector Dynamics ID1050x × 5** | [Full Race ID1050x](https://www.full-race.com/injector-dynamics-id1050x-injectors) \- $249/ea × 5 \= **$1,245**. 07K is a 5-cylinder. EV14 connector — matches MaxxECU 07K harness. **Replaces Phase 3a ID850 injectors** (ID850 ×6 can be resold \~$300–400). Do not double-count. |
 | **Fuel Pump Upgrade** | **Walbro 450LPH E85 \+ Install Kit** | [TF-Works TIA485-2](https://www.tf-works.com/walbro-450lph-e85-in-tank-fuel-pump-with-install-kit/) \- $203.99 (verified). **Replaces Phase 1 Walbro 255LPH** — 255 is borderline at 600whp E85. Radium E36 install kit at radiumauto.com/P2087. Do not double-count. |
 | **07K Fuel Rail** | **BBG Manifold-Compatible Rail** | Custom or billet \-6AN, \~$150–300. Confirm with Boost Brothers at intake order time — OEM transverse VW rail will not fit BBG longitudinal manifold. |
 
@@ -557,16 +560,17 @@ With MaxxECU Race controlling the 8HP natively, engine and transmission manageme
 | :---- | :---- | :---- |
 | **Phase 0: Sourcing** | $6,000 \- $15,500 | Chassis \+ shipping \+ PPI \+ soft top \+ insurance setup. |
 | **Phase 1: Foundation** | $14,500 \- $16,500 | ZF 8HP swap \+ shifter, MaxxECU, fuel system base, cooling, roll bar, chassis reinforcement. |
-| **Phase 1A/B: Interim** | $4,000 \- $6,500 | Turbo M50 (with injector/solenoid upgrades) or NA M52 (with ATI damper) interim engine. |
-| **Phase 2: 07K Build** | $11,000 \- $14,000 | Complete 9,000 RPM 07K buildup \+ full longblock build labor (disassembly through sealed longblock at Euromotive) \+ head machine work \+ adapter plate order \+ LPS oil pump mod (offline). |
-| **Phase 3: Final Swap** | $10,000 \- $14,000 | 07K integration, G30-770 RR, DomiWorks install, fuel system upgrade, charge piping, coolant routing, custom hot-side. |
+| **Phase 2a: M52 Turbo Build** | $4,000 \- $7,000 | Iron-block M52B28 donor \+ VAC build labor \+ K64 RHD AC+ manifold \+ GTX3076R (ball bearing) \+ FMIC \+ ID850 injectors. |
+| **Phase 2b: 07K Build** | $11,000 \- $14,000 | Complete 9,000 RPM 07K buildup \+ full longblock build labor (disassembly through sealed longblock at Euromotive) \+ head machine work \+ LPS oil pump mod (offline). |
+| **Phase 3a: M52 Turbo Install** | $1,500 \- $3,000 | Drop iron-block turbo M52 into car, oil/coolant routing, charge piping, tune. |
+| **Phase 3b: 07K Final Swap** | $10,000 \- $14,000 | 07K integration, G25-660 RR, adapter plate install (TBD by 8HP unit), fuel system upgrade, charge piping, coolant routing, custom hot-side. |
 | **Total Project** | **$45,500 \- $66,000** | **The Ultimate 9,000 RPM E36 Restomod.** |
 
 ### Key Strategic Decisions
 
 1. **The Foundation First:** By doing the 8HP and MaxxECU in Phase 1, you eliminate the biggest swap hurdles before the 07K ever touches the car.  
 2. **Offline 07K Build:** Eliminates vehicle downtime and allows for precise measurements of custom components (like the RHD manifold).  
-3. **Interim Fun:** The Phase 1A/B options ensure the car is fast and fun to drive for 12-24 months while the ultimate engine is built.  
+3. **Interim Fun:** Phase 1 (NA M52B28) and Phase 3a (turbo M52B28) ensure the car is fast and fun to drive for 12–24 months while the 07K build progresses offline.  
 4. **Resale Value:** All Phase 1 interim parts (Turbo M50 kit, M52 cams, etc.) have high resale value in the E36 community, recouping costs for the final swap.
 
 ---

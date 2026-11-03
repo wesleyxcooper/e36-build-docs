@@ -113,7 +113,7 @@
     - Reads OEM NTC coolant sensor at the block via existing harness — no extra wiring for coolant temp.
     - Reads Bosch PST-F1 oil sensors via the analog input wires (0–5V, up to 7 channels).
     - Data logging to microSD card; WiFi SD access from phone.
-    - **Phase 3 upgrade:** In MaxxECU phase, switch from raw sensor mode to **MaxxECU CAN bus feed** — richer data, no sensor wiring changes needed.
+    - **Phase 3b upgrade:** In MaxxECU phase, switch from raw sensor mode to **MaxxECU CAN bus feed** — richer data, no sensor wiring changes needed.
 
 ### PST-F1 Sensor Installation 🔧 DIY with specialty tools
 
@@ -129,7 +129,7 @@
     - MaxxECU can also read PST-F1 outputs in parallel via its own analog inputs — wire once, two consumers.
     > ⚠️ **Pitfall:** A1/A2 are 5V-tolerant; A3/A4 are 3.3V-tolerant with NTC pullup. **Do not swap them** — pressure signal on A3/A4 will read incorrectly; NTC temp on A1/A2 will not read at all without the pullup.
 
-15. **Phase 3 note:** The iABED 07K longitudinal oil filter housing (required for the engine swap) has a dedicated M10×1.0 port. At the 07K swap, unbolt PST-F1 from the VANOS adapter and thread into the new housing port. Zero wiring changes.
+15. **Phase 3b note:** The iABED 07K longitudinal oil filter housing (required for the engine swap) has a dedicated M10×1.0 port. At the 07K swap, unbolt PST-F1 from the VANOS adapter and thread into the new housing port. Zero wiring changes.
 
 16. **Coolant fan tap note (if running standalone SPAL FAN-PWM-V3 controller):** The OEM coolant NTC sensor signal wire can be tapped in parallel — Gauge.S, the ECU, and the FAN-PWM-V3 all read the same sensor simultaneously with no interference. At the same temp threshold set in the FAN-PWM-V3, the matching number will display on the Gauge.S cluster in real time.
 

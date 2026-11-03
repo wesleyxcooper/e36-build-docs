@@ -1,27 +1,27 @@
-# Phase 1A: M5x Turbo Block Sourcing & Aux System Overview
+# Phase 2a: M5x Turbo Block Sourcing & Aux System Overview
 
-**Phase:** 1A  
+**Phase:** 2a  
 **System tags:** `[ADMIN]` `[MACHINING]`  
 **Shop-mandatory:** No  
-**Prerequisites:** Phase 1 foundation underway (8HP + EPS + MaxxECU M50 bundle in progress). Block sourcing decision must be locked before any rotating assembly parts are ordered.
+**Prerequisites:** Phase 1 complete (car running on alloy M52B28 NA). Block sourcing decision must be locked before any rotating assembly parts are ordered.
 
 > **Status (current):** Path not yet committed. Decision tree in Step 1. Read before spending anything.
 
 ---
 
-## Phase 1A vs 1B vs 07K — Decision Context
+## Phase 2a — Build Context
 
-The build has three valid engine paths. The adapter plate (M5x→8HP, already sourced) works identically for all three M5x variants — it is not a path-limiting factor.
+This is the Phase 2a iron-block M52B28 turbo build, done offline at VAC Motorsports while the alloy M52B28 runs the car at Phase 1 power. The completed longblock returns to the car at Phase 3a.
 
-| Path | Engine | Power target | RPM character | Status |
-| --- | --- | --- | --- | --- |
-| **1A** | Iron M52B28 turbo (M52B25 or M50B25TU acceptable if B28 unavailable) | Power is incidental to the spec; 400–500whp pump / up to ~700whp E85 | **8,200–8,500 RPM primary design point** — RPM-first, GT-R analog (RB26DETT redline 8,000 / fuel cut 8,200); 9,000 RPM structural margin | This document — not yet started |
-| **1B** | M52 NA (existing block) | 250–280whp at 7,800 RPM | High-revving, peaky, no boost | `10-m52-engine-prep.md` |
-| **3 (Phase 3)** | 07K 2.5L inline-5 turbo | 500–600whp at 9,000 RPM | Boost + high RPM | `20-07k-sourcing.md` onward |
+|| Path | Engine | Power target | RPM character | Status |
+|| --- | --- | --- | --- | --- |
+|| **Phase 1** | M52B28 alloy (UK/EU RHD import) NA tune | 250–280whp at 7,800 RPM | High-rev NA + flex fuel | `10-m52-engine-prep.md` |
+|| **Phase 2a** | Iron M52B28 turbo (USA/Canada spec — this document) | 400–500whp pump / up to ~700whp E85 | **8,200–8,500 RPM design point** | This document |
+|| **Phase 2b** | 07K 2.5L inline-5 turbo (parallel, offline) | 500–600whp at 9,000 RPM | Boost + high RPM | `20-07k-sourcing.md` onward |
 
-Phase 1A and Phase 3 are competing paths — you do not do both. Phase 1A is the fallback if the 07K donor crank sourcing stalls indefinitely and you want a running turbo car before Phase 3 is feasible. It can also be the permanent path.
+Phase 2a and Phase 2b build in parallel offline. Phase 3a swaps in the M52 turbo; Phase 3b swaps in the 07K.
 
-> ⚠️ **UK M52 block caveat:** The E36 imported from the UK runs a UK-spec M52. UK and EU market M52 engines are aluminum block with Nikasil-coated liners — not iron. The safe boost limit on an aluminum M52 is approximately 350hp before block and thread integrity become serious concerns. ([qualitec.eu](https://www.qualitec.eu/bmw-m50-m52-m54-tuning-guide), [overruntuning.com](https://www.overruntuning.com/e36-turbo-guide)) **Do not build the existing UK M52 for boost.** Phase 1A requires sourcing a separate iron block.
+> ⚠️ **UK M52 block caveat:** The E36 imported from the UK runs a UK-spec M52. UK and EU market M52 engines are aluminum block with Nikasil-coated liners — not iron. The safe boost limit on an aluminum M52 is approximately 350hp before block and thread integrity become serious concerns. ([qualitec.eu](https://www.qualitec.eu/bmw-m50-m52-m54-tuning-guide), [overruntuning.com](https://www.overruntuning.com/e36-turbo-guide)) **Do not build the existing UK M52 for boost.** Phase 2a requires sourcing a separate iron block.
 
 ---
 
@@ -137,7 +137,7 @@ This section documents what changes or stays the same on the M5x turbo build vs 
 
 **07K path:** OEM water pump impeller removed; housing left as passive coolant manifold; Pierburg CWA400 electric pump handles all circulation (see `21-07k-rotating-assembly.md` step 10 and `33-coolant-turbo.md`).
 
-**M5x turbo path:** The M50/M52 uses a mechanical belt-driven coolant pump, retained in the existing accessory belt drive. **No change required for Phase 1A.** The mechanical pump is adequate for a boosted M5x at street/track duty cycles. Replace the OEM pump with a quality unit at teardown — FCP Euro or ECS Tuning OEM-specification pump, ~$80–120. Electric conversion (Davies Craig EWP115 or EWP150) is an option if you want post-shutdown coolant circulation to prevent heat soak, but it is not required and adds routing complexity. If keeping the mechanical pump: install a coolant post-circulation timer circuit (relay + 12V from ECU post-run output) to run a separate small bleed pump on the turbo water jacket for 3–5 minutes after shutdown — prevents turbo bearing coking. The Pierburg CWA50 is a compact option for this secondary circuit (~$120 used BMW OEM).
+**M5x turbo path:** The M50/M52 uses a mechanical belt-driven coolant pump, retained in the existing accessory belt drive. **No change required for Phase 2a.** The mechanical pump is adequate for a boosted M5x at street/track duty cycles. Replace the OEM pump with a quality unit at teardown — FCP Euro or ECS Tuning OEM-specification pump, ~$80–120. Electric conversion (Davies Craig EWP115 or EWP150) is an option if you want post-shutdown coolant circulation to prevent heat soak, but it is not required and adds routing complexity. If keeping the mechanical pump: install a coolant post-circulation timer circuit (relay + 12V from ECU post-run output) to run a separate small bleed pump on the turbo water jacket for 3–5 minutes after shutdown — prevents turbo bearing coking. The Pierburg CWA50 is a compact option for this secondary circuit (~$120 used BMW OEM).
 
 ### Air Conditioning — Top-Mount Manifold Routing
 
@@ -152,7 +152,7 @@ This section documents what changes or stays the same on the M5x turbo build vs 
 4. Determine if the AC lines need re-routing around the downpipe, or if minor line bending clears the path
 5. If re-routing required: R134a system must be discharged first — this is an EPA 608 regulated task. Have a shop evacuate and re-fill. Fabie Boys or VAC can handle this in-house.
 
-**Electric AC conversion (optional):** A Denso or Sanden electric compressor (sourced from a hybrid/EV donor) removes the belt-driven compressor entirely, eliminating the routing conflict and the PS pump delete's empty belt path at the same time. The electric compressor mounts remotely, runs independently of engine state, and can cool the cabin post-shutdown. Adds ~$1,000–2,500 for the compressor and control wiring. Not required for Phase 1A; revisit if line rerouting proves difficult.
+**Electric AC conversion (optional):** A Denso or Sanden electric compressor (sourced from a hybrid/EV donor) removes the belt-driven compressor entirely, eliminating the routing conflict and the PS pump delete's empty belt path at the same time. The electric compressor mounts remotely, runs independently of engine state, and can cool the cabin post-shutdown. Adds ~$1,000–2,500 for the compressor and control wiring. Not required for Phase 2a; revisit if line rerouting proves difficult.
 
 ### Power steering pump
 
@@ -162,9 +162,9 @@ This section documents what changes or stays the same on the M5x turbo build vs 
 
 ### Alternator
 
-**07K path:** 07K has no accessory belt drive in longitudinal orientation (it's purpose-built for transverse use); the E36 alternator must be relocated or a dedicated alternator support fabricated for Phase 3. See `30-07k-install.md` for the planned approach.
+**07K path:** 07K has no accessory belt drive in longitudinal orientation (it's purpose-built for transverse use); the E36 alternator must be relocated or a dedicated alternator support fabricated for Phase 3b. See `30-07k-install.md` for the planned approach.
 
-**M5x turbo path:** The M50/M52 alternator is a standard Bosch unit that mounts on the factory bracket on the intake side (left side in RHD orientation) of the engine. It remains in factory position for Phase 1A. Clearance considerations:
+**M5x turbo path:** The M50/M52 alternator is a standard Bosch unit that mounts on the factory bracket on the intake side (left side in RHD orientation) of the engine. It remains in factory position for Phase 2a. Clearance considerations:
 
 - **Top-mount turbo manifold (RSI T4/T3 or SPA TMB04 top mount):** Turbo sits above the exhaust manifold on the driver's side — alternator is on the opposite (intake/passenger) side. No direct conflict. Verify intercooler pipe routing clears the alternator.
 - **Bottom-mount manifold (SPA TMB01):** Turbo sits low on the exhaust/driver side. Even less alternator conflict. The charge pipe routes to the FMIC and back — runs across the front of the engine bay, not near the alternator.
@@ -180,9 +180,9 @@ This section documents what changes or stays the same on the M5x turbo build vs 
 
 ### PMU16
 
-**07K path:** PMU16 (Bren Tronics / Littelfuse) is installed in Phase 3 at the 07K swap. Phase 1 and Phase 1A use discrete relays for the fuel pump and fans until PMU16 install.
+**07K path:** PMU16 (Bren Tronics / Littelfuse) is installed in Phase 3b at the 07K swap. Phase 1 and Phase 2a use discrete relays for the fuel pump and fans until PMU16 install.
 
-**M5x turbo path:** Same. PMU16 install timing is identical — it goes in with the final wiring cleanup, not at engine teardown. The Phase 1A M5x turbo does not change PMU16 scope or timing.
+**M5x turbo path:** Same. PMU16 install timing is identical — it goes in with the final wiring cleanup, not at engine teardown. The Phase 2a M5x turbo does not change PMU16 scope or timing.
 
 ### Accessory belt drive
 
@@ -205,4 +205,4 @@ Same as 07K storage protocol (see `20-07k-sourcing.md` Storage Protocol section)
 - [bmwtuning.co E36 Turbo Kit Guide](https://bmwtuning.co/bmw-e36-turbo-kit-guide/)
 - [Gardner Auto — M50B25TU / M52 block pricing](https://www.gardnerautorepair.com/prq5800e74523191/e36-engine/)
 - [NSB Concept M50 parts — ZRP rods, Wiseco pistons, ARP hardware](https://www.nsbconcept.com/en/3750-parts-engine-forge-for-bmw-series-5-e34)
-- [Euromotive Autohaus — machine shop](https://www.eurohauspa.com/) · 1306 W Chester Pike, West Chester, PA · (610) 416-5702
+- [VAC Motorsports — M5x engine build shop](https://vacmotorsports.com/engine-rebuilds/) · 215-462-4666 (Philadelphia, PA)

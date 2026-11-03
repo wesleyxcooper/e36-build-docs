@@ -64,7 +64,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - Reads OEM NTC coolant sensor at the block via existing harness (no extra wiring for coolant temp)
   - Reads Bosch PST-F1 oil sensors via the analog input wires (0–5V, up to 7 channels)
   - Data logging to microSD card; WiFi SD access from phone
-  - **Phase 3 upgrade:** In MaxxECU phase, switch from raw sensor mode to **MaxxECU CAN bus feed** — richer data, no sensor wiring changes needed
+  - **Phase 3b upgrade:** In MaxxECU phase, switch from raw sensor mode to **MaxxECU CAN bus feed** — richer data, no sensor wiring changes needed
   - > ⚠️ **Pitfall:** Read the wiki at [wiki.sorek.uk](https://wiki.sorek.uk) before installing — definition files need to match your ECU type (MS41.x for OBD2 E36; MaxxECU CAN profile from Phase 1 onward). Wrong definition = missing or wrong readings.
   - > ⚠️ **Pitfall:** Do NOT buy the OBD2 adapter ($68) for the PNP cluster — it is redundant. The OEM cluster harness already provides everything the unit needs.
 - [ ] 🔧 Install Bosch PST-F1 dual oil temp/pressure sensor at M52 VANOS banjo bolt location — wiring: [`pst-f1-sensor.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/pst-f1-sensor.wv) ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/pst-f1-sensor.html))
@@ -77,7 +77,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - Displays actual oil temp °C and oil pressure bar/psi as live numbers (M52 has no factory oil temp sensor — OEM gauge is a binary idiot light only)
   - MaxxECU can also read PST-F1 outputs in parallel via its own analog inputs — wire once, two consumers
   - > ⚠️ **Pitfall:** A1/A2 are 5V-tolerant; A3/A4 are 3.3V-tolerant with NTC pullup. **Do not swap them** — pressure signal on A3/A4 will read incorrectly; NTC temp on A1/A2 will not read at all without the pullup.
-  - **Phase 3 relocation (07K):** The 07K longitudinal oil filter housing (S-PAU or iABED — required for the swap) has a dedicated M10×1.0 port. Unbolt PST-F1 from VANOS adapter, thread into new housing port. Zero wiring changes.
+  - **Phase 3b relocation (07K):** The 07K longitudinal oil filter housing (S-PAU or iABED — required for the swap) has a dedicated M10×1.0 port. Unbolt PST-F1 from VANOS adapter, thread into new housing port. Zero wiring changes.
 - [ ] ✅ **Sensor tap note for SPAL FAN-PWM-V3 (if running standalone PWM controller):**
   - The OEM coolant NTC sensor signal wire can be tapped in parallel — Gauge.S, the ECU, and the FAN-PWM-V3 all read the same sensor simultaneously with no interference
   - At the same temp threshold you set in the FAN-PWM-V3, you'll see the matching number on the Gauge.S cluster in real time
@@ -199,7 +199,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] 🔧 Install NES Engineering brake booster delete ([nesengineering.com](https://nesengineering.com/products/brakboster-delete?variant=57108005880191)) — $216
   - Changes pedal ratio 3:1 → 6:1 using stock master cylinder. **Do this at Phase 1** — firewall mods are easiest with the engine bay open.
   - Required mods: grind 2mm off firewall hole + pedal box, drill new hole in brake pedal. Irreversible — confirm before cutting.
-  - **Phase 3 rationale:** 07K turbo produces no usable manifold vacuum under boost; deleting the booster eliminates the need for a vacuum pump entirely.   → vacuum dependency also affects [AIR] system planning
+  - **Phase 3b rationale:** 07K turbo produces no usable manifold vacuum under boost; deleting the booster eliminates the need for a vacuum pump entirely.   → vacuum dependency also affects [AIR] system planning
   - Optional: if pedal effort feels too high after adjustment, upgrade to Wilwood or Tilton 19mm master cylinder (~$150–200) — smaller bore raises line pressure per unit of pedal force.
   - > ⚠️ **Pitfall:** The pedal feel change is significant. Budget at least one track session to re-calibrate brake pressure before pushing hard. Threshold braking requires meaningfully more leg effort than OEM boosted.
 
@@ -209,7 +209,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - **EPS compatible:** EPS motor acts on the column above the firewall; this shaft operates below the firewall to the rack — no interference between the two systems.
   - Keep both U-joint angles below ~15° at install — steep angles create torque oscillation that can feed through an EPS controller as noise.
   - Confirm column lower output spline size matches Condor shaft upper U-joint if running KPower/EPowerSteering column-core EPS (spline should be unchanged, but verify at order time).
-  - > ⚠️ **Pitfall:** Mandatory before Phase 3 turbo work — do it now while the engine bay is accessible. The stock RHD rubber coupler will conflict with any top-mount manifold. Do not skip.
+  - > ⚠️ **Pitfall:** Mandatory before Phase 3b turbo work — do it now while the engine bay is accessible. The stock RHD rubber coupler will conflict with any top-mount manifold. Do not skip.
 
 ### Steering — EPS  [STEERING]
 
@@ -226,7 +226,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] ⚠️ Install column-assist EPS unit (under dash) — see `walkthroughs/13-eps.md`
   - > ⚠️ **Pitfall:** The assist knob is set once before driving. The EPowerSteering.com KIT-33 Basic EPS Controller has **no VSS or external signal input of any kind** — assist level is fixed via the dashboard potentiometer only. There is no port to wire MaxxECU into. Set the knob to a level that works acceptably at both parking and highway speeds. Source: `harnesses/eps-column.wv`; `E36_9000RPM_Project_Plan_Verified.md` Power Steering row (speed-sensitive assist recommendation explicitly removed).   → [ECU]
   - > ⚠️ **Pitfall — EPS calibration at ~900°:** Start with lighter assist than you expect to need. At ~900° the steering is already substantially quicker than the stock 1,260° rack — heavy EPS assist amplifies small inputs and makes the car feel twitchy at highway speeds. Dial in: full parking assist → reduce until highway feels settled → confirm feel in a drive session. If Z3 rack is added later (drops to ~720–800°), re-calibrate assist lighter again.
-  - > **Phase 3 provision:** At PMU16 installation (07K swap), move the EPS Controller IGN wire from the Phase 1 relay board rail → **PMU16 O8** (15A output, O6–O11 range; ~10A expected EPS load). One wire re-termination; no other EPS changes at Phase 3. Source: `harnesses/eps-column.wv` lines 58–63; `harnesses/power-distribution.wv` O8.
+  - > **Phase 3b provision:** At PMU16 installation (07K swap), move the EPS Controller IGN wire from the Phase 1 relay board rail → **PMU16 O8** (15A output, O6–O11 range; ~10A expected EPS load). One wire re-termination; no other EPS changes at Phase 3b. Source: `harnesses/eps-column.wv` lines 58–63; `harnesses/power-distribution.wv` O8.
 
 ### Drivetrain — 8HP Swap  [DRIVETRAIN] ⚠️
 > **Prerequisite:** MaxxECU should already be installed, EWS2 bypassed, and M52 running on MaxxECU before starting this section. See ECU & Chassis Wiring below.
@@ -294,13 +294,13 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - **Purchase options (pick ONE — A recommended):**
     - **Option A (bundled — $193.19):** [JDT Racing F90000267 + Walbro 400-1168 install kit + JDT rewire kit](https://jdtracing.com/products/walbro-ti-f90000267-450lph-fuel-pump-w-install-kit-rewire-kit-e85-compatible) — Manufacturer PN `wal_F90000267_wal_400-1168_jdt_FPRK`. Includes pump, install kit, 16' 10 AWG power cable, 30A inline fuse, 3' 10 AWG ground, relay, relay pigtail, pass-through grommet, ring terminals, wire loom, cable ties. **One SKU, one shipping charge.**
     - **Option B (à la carte):** [Walbro F90000267 alone from Real Street Performance](https://www.realstreetperformance.com/walbro-universal-450lph-in-tank-fuel-pump-e85-version.html) ($181.12) + [JDT Universal Rewire Kit](https://jdtracing.com/products/jdt-racing-universal-fuel-pump-rewire-kit-w-10-gauge-power-ground-fuse-relay) ($37.99) = $219.11 across two vendors.
-  - **Reference:** [Radium 20-1170 install instructions (PDF)](https://cdn.shopify.com/s/files/1/0887/4193/7449/files/19-0359.pdf) | [WireViz Phase 1](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/fuel-pump-hanger-phase1.wv) | [WireViz Phase 3](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/fuel-pump-hanger-phase3.wv) | [Circuit schematic](https://github.com/wesleyxcooper/e36-wiring/blob/main/schematics/fuel-pump-pwm.py)
+  - **Reference:** [Radium 20-1170 install instructions (PDF)](https://cdn.shopify.com/s/files/1/0887/4193/7449/files/19-0359.pdf) | [WireViz Phase 1](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/fuel-pump-hanger-phase1.wv) | [WireViz Phase 3b](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/fuel-pump-hanger-phase3.wv) | [Circuit schematic](https://github.com/wesleyxcooper/e36-wiring/blob/main/schematics/fuel-pump-pwm.py)
   - > ⚠️ **Pitfall:** Depressurize the fuel system before opening the tank. The E36 tank has a locking ring — a large channel-lock or a BMW ring tool (rent). Don't pry it with a screwdriver; you'll crack the plastic retainer.
   - > ⚠️ **Pitfall (hanger terminals):** Stainless stud terminals are live in a fuel-saturated environment. Clean contact surfaces before install. Use ring terminals + provided acorn nuts — anti-rotation feature prevents stud from spinning during tightening.
   - > ⚠️ **Swivel fittings:** Thread 20-1000-1010 (10AN ORB swivel) into pump-out port hand-tight first, then attach -10AN braided line before final torque — lets fitting rotate to correct routing angle before locking.
-  - > ⚠️ **Wiring — Phase 1 uses a discrete high-current relay (PMU16 is NOT installed until Phase 3):** MaxxECU GPO 2 (M50 pre-terminated harness 12-pin extra connector pin 3) → discrete 40/70A relay coil (JDT-supplied) → relay contact → 30A inline fuse → 10 AWG through cabin/tunnel → Radium hanger pump(+) stud. Pump(−) stud → dedicated chassis GND bolt (do NOT share with ECU sensor grounds). Vendor citation for the discrete-relay approach: [JDT Racing rewire kit description](https://jdtracing.com/products/walbro-ti-f90000267-450lph-fuel-pump-w-install-kit-rewire-kit-e85-compatible) — *"When installing a much larger than factory fuel pump you need to upgrade the wiring, fuse and relay setup."*
-  - > ⚠️ **Phase 3 transition:** At the 07K swap, PMU16 arrives. Remove the Phase 1 discrete relay + 30A fuse (both from JDT kit). Land PMU16 O4 output on the SAME 10 AWG cabin/tunnel wire that previously came off the relay contact — no re-routing to the tank. The pump(+) stud connection at the hanger is unchanged. See `fuel-pump-hanger-phase3.wv`.
-  - **MTune (Phase 1):** Outputs → Output config → GPO 2 → Function: **Fuel pump relay** (binary on/off; pump runs 100% duty when engine on). **MTune (Phase 3):** reassign to a CAN-broadcast function that PMU16 subscribes to → PWM fuel pump control, frequency 100–500 Hz, duty table 65% idle / 80% cruise / 100% WOT/boost.
+  - > ⚠️ **Wiring — Phase 1 uses a discrete high-current relay (PMU16 is NOT installed until Phase 3b):** MaxxECU GPO 2 (M50 pre-terminated harness 12-pin extra connector pin 3) → discrete 40/70A relay coil (JDT-supplied) → relay contact → 30A inline fuse → 10 AWG through cabin/tunnel → Radium hanger pump(+) stud. Pump(−) stud → dedicated chassis GND bolt (do NOT share with ECU sensor grounds). Vendor citation for the discrete-relay approach: [JDT Racing rewire kit description](https://jdtracing.com/products/walbro-ti-f90000267-450lph-fuel-pump-w-install-kit-rewire-kit-e85-compatible) — *"When installing a much larger than factory fuel pump you need to upgrade the wiring, fuse and relay setup."*
+  - > ⚠️ **Phase 3b transition:** At the 07K swap, PMU16 arrives. Remove the Phase 1 discrete relay + 30A fuse (both from JDT kit). Land PMU16 O4 output on the SAME 10 AWG cabin/tunnel wire that previously came off the relay contact — no re-routing to the tank. The pump(+) stud connection at the hanger is unchanged. See `fuel-pump-hanger-phase3.wv`.
+  - **MTune (Phase 1):** Outputs → Output config → GPO 2 → Function: **Fuel pump relay** (binary on/off; pump runs 100% duty when engine on). **MTune (Phase 3b):** reassign to a CAN-broadcast function that PMU16 subscribes to → PWM fuel pump control, frequency 100–500 Hz, duty table 65% idle / 80% cruise / 100% WOT/boost.
 - [ ] ✅ Install ethanol content sensor inline on fuel feed line ([Seems Legit Garage](https://www.seemslegitgarage.com/product-page/ethanol-content-sensor))   → digital input to MaxxECU [ECU]
 - [ ] ✅ Install Bosch 440cc injectors (Phase 1 baseline)
 
@@ -389,7 +389,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
     - **Full shielding reference:** see [`e36-wiring/docs/wiring-bom.md`](https://github.com/wesleyxcooper/e36-wiring/blob/main/docs/wiring-bom.md) "Shielded runs" section for the complete, consolidated list across every system (required vs. recommended vs. explicitly-not-shielded) — this repo doc is authoritative per its own README convention; don't re-derive shielding decisions from scattered notes in this checklist.
     - **Keep apart — high-current feeds:** Walbro pump, SPAL fan, 12V AC compressor — each runs its own dedicated circuit back to the fuse/relay block. Never bundle high-current power feeds alongside ECU signal wires, even in the same loom.
     - **CAN bus (8HP):** CAN H / CAN L must be twisted pair inside their sleeve at all times. Treat the MaxxECU 8HP GEN1 CAN harness as a sealed sub-loom — MaxxECU CAN port → 8HP connector, nothing else shares that sleeve. Do not untwist.
-    - **Ground strategy (per MaxxECU GEN2 RACE quick-start guide):** (1) Battery negative → chassis stud. (2) Engine block → chassis via factory M52 bonding strap — keep it, verify it is clean (no paint under lug, star washer). (3) MaxxECU ENGINE GND pin → cylinder head — MaxxECU's own mandatory requirement. ECU sensor GND pins are NOT chassis or engine ground; they connect only to sensors returning signals to the ECU. Optional: dedicated battery negative → engine block direct cable (belt-and-suspenders; not required while factory straps are clean). **Radlok option:** Install Amphenol Radlok 8mm M8×1.25 Male studs ([Racing History Co.](https://www.racinghistorycompany.com/product/radlok-8mm-stud-m8x1-25-male/), ~$15 CAD ea) at each GND strap bolt point (head + block). Tool-free press-lock disconnect makes engine swap GND disconnects instant — no wrench needed. **Also need the mating cable-side connector** — Racing History Co. only sells the stud adapter; the crimp connector that terminates the GND strap and locks onto that stud is genuine Amphenol `RL00801-35BK` (black, 35mm²/~2AWG), sourced from [TTI](https://www.tti.com/content/ttiinc/en/manufacturers/amphenol/products/amphenol-industrial-radlok-series.html) (~$7.40–11.56/ea) — see Phase 3 ECU & Engine Harness section of the Project Plan for full detail. Secure cable clamp within 3 cm of each Radlok; inspect annually on a street car.
+    - **Ground strategy (per MaxxECU GEN2 RACE quick-start guide):** (1) Battery negative → chassis stud. (2) Engine block → chassis via factory M52 bonding strap — keep it, verify it is clean (no paint under lug, star washer). (3) MaxxECU ENGINE GND pin → cylinder head — MaxxECU's own mandatory requirement. ECU sensor GND pins are NOT chassis or engine ground; they connect only to sensors returning signals to the ECU. Optional: dedicated battery negative → engine block direct cable (belt-and-suspenders; not required while factory straps are clean). **Radlok option:** Install Amphenol Radlok 8mm M8×1.25 Male studs ([Racing History Co.](https://www.racinghistorycompany.com/product/radlok-8mm-stud-m8x1-25-male/), ~$15 CAD ea) at each GND strap bolt point (head + block). Tool-free press-lock disconnect makes engine swap GND disconnects instant — no wrench needed. **Also need the mating cable-side connector** — Racing History Co. only sells the stud adapter; the crimp connector that terminates the GND strap and locks onto that stud is genuine Amphenol `RL00801-35BK` (black, 35mm²/~2AWG), sourced from [TTI](https://www.tti.com/content/ttiinc/en/manufacturers/amphenol/products/amphenol-industrial-radlok-series.html) (~$7.40–11.56/ea) — see Phase 3b ECU & Engine Harness section of the Project Plan for full detail. Secure cable clamp within 3 cm of each Radlok; inspect annually on a street car.
     - **X20 planning:** Decide which signals cross the X20 bulkhead connector before building anything. MaxxECU outputs that drive the OEM cluster (RPM, coolant temp, oil pressure) get their own dedicated X20 pins — do not share pins with other circuits.
 - [ ] ⚠️ Wire MaxxECU to E36 chassis: ignition switch trigger, X20 bulkhead connector for cluster outputs (RPM, coolant temp, oil pressure)   → X20 is the chassis harness interface [ELECTRICAL]
   - > Reference: [BMW E36 X20 Pinout (Scribd)](https://www.scribd.com/document/649295040/bmw-e36-x20-pinout)
@@ -410,7 +410,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - **MTune config:** Advanced → 8HP → 8HP clutch control → `Enabled, Virtual clutch`. Analog Inputs → AIN 5 → type = `0-5V`, function = `Clutch Position`. Calibrate: 0% = pedal fully up, 100% = pedal fully depressed.
   - Set clutch **clamp start** and **clamp end** values carefully — these control the pressure ramp end-points. A 5% slack is applied at both ends by the firmware; the 0–100% position value interpolates between clamp start and end.
   - > ⚠️ **Pitfall:** Do not skip clamp calibration. All ramp features (including virtual clutch) use the clamp start/end values. Incorrect values = wrong clutch pressure at pedal extremes. Verify with a slow pedal sweep while watching AIN 5 % in MTune live data before driving.
-  - **Phase carry-through:** This circuit is cabin-side and engine-agnostic. At the 07K Phase 3 swap, no re-work is required — same pedal, same sensor, same AIN 5 assignment.
+  - **Phase carry-through:** This circuit is cabin-side and engine-agnostic. At the 07K Phase 3b swap, no re-work is required — same pedal, same sensor, same AIN 5 assignment.
 - [ ] 🏭 Weld 18mm × 1.5 O2 bung into exhaust (shop — 15 min job)
 - [ ] ✅ Install Bosch LSU 4.2 wideband O2 sensor
 - [ ] ⚠️ Load MaxxECU M5x base map — first start commissioning
@@ -433,9 +433,9 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 
 ---
 
-## Phase 2 — 07K Engine Harness Build (Offline, Before Swap Day)
+## Phase 2b — 07K Engine Harness Build (Offline, Before Swap Day)
 
-> Build and bench-test the 07K engine harness before swap day. This harness is built offline on the engine stand — it does not go in the car until Phase 3 install.
+> Build and bench-test the 07K engine harness before swap day. This harness is built offline on the engine stand — it does not go in the car until Phase 3b install.
 > Full procedure: [`walkthroughs/26-07k-harness.md`](walkthroughs/26-07k-harness.md) · Build methodology: [`e36-wiring/docs/harness-build.md`](https://github.com/wesleyxcooper/e36-wiring/blob/main/docs/harness-build.md)
 
 ### Prep  [ELECTRICAL · TOOLING]
@@ -475,13 +475,13 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 - [ ] 🔧 Apply sub-loom PermaSleeve breakout labels (M21-375-C-342) at each breakout point before Techflex goes on — `INJECTORS`, `COILS`, `SENSORS`, `TRIGGER`, `KNOCK`
 - [ ] 🔧 Sleeve sub-looms with 1/4" Techflex F6; sleeve main trunk with 1/2" Techflex F6; secure breakout transitions with 3:1 adhesive heat-shrink boots
 - [ ] 🔧 Apply main trunk PermaSleeve label (M21-500-C-342) at MaxxECU CMC entry: `ENGINE 07K PH3`
-- [ ] ✅ Store completed harness with MaxxECU CMC plugs (C1 + C2) capped — install at Phase 3 swap day when the engine-bay MaxxECU RACE H2O is exposed for the M50 harness removal
+- [ ] ✅ Store completed harness with MaxxECU CMC plugs (C1 + C2) capped — install at Phase 3b swap day when the engine-bay MaxxECU RACE H2O is exposed for the M50 harness removal
 
 ---
 
-## Phase 1A — Turbo M52B28 (Final Engine Option A, Built Offline)
+## Phase 2a — Turbo M52B28 (Final Engine Option A, Built Offline)
 
-> Complete all Phase 1 Foundation steps first. The turbo M52B28 longblock is built offline at VAC while the alloy M52 (Phase 1B) runs the car. When complete, the alloy M52 comes out and the turbo M52B28 goes in. Phase 1A (turbo M52B28) and Phase 3 (07K) are competing final engine paths — pick one; the car runs on Phase 1B while that decision is made and the offline build completes.
+> Complete all Phase 1 Foundation steps first. The turbo M52B28 longblock is built offline at VAC while the alloy M52 (Phase 1) runs the car. When complete, the alloy M52 comes out and the turbo M52B28 goes in. Phase 2a (turbo M52B28) and Phase 3b (07K) are competing final engine paths — pick one; the car runs on Phase 1 while that decision is made and the offline build completes.
 
 ### Head & Valvetrain  [HEAD/VALVETRAIN · MACHINING]
 - [ ] 🔧 Install ARP 2000 head studs (head off — machine shop for surface check first)
@@ -513,7 +513,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 
 ---
 
-## Phase 1B — NA Alloy M52 (Car As-Imported — Runs While Phase 1A Is Built)
+## Phase 1 — NA Alloy M52 (Car As-Imported — Runs While Phase 2a Is Built)
 
 > Complete all Phase 1 Foundation steps first. The alloy M52 is not turbocharged and not being built for power — it gets mild bolt-ons, possible head work to rev higher, MaxxECU, and 8HP. It runs the car while the turbo M52B28 longblock is built offline at VAC.
 
@@ -544,9 +544,9 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 
 ---
 
-## Phase 2 — 07K Engine Build (Offline)
+## Phase 2b — 07K Engine Build (Offline)
 
-> Build this while Phase 1A or 1B is running. The car stays on the road.
+> Build this while Phase 2a or Phase 1 is running. The car stays on the road.
 
 ### Sourcing & Machine Shop  [ADMIN · MACHINING]
 - [ ] ✅ Source 07K donor block (iron: BGP/CBUA/CEPA — confirm casting codes)
@@ -556,17 +556,17 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - **Chatham CNC** (@chathamcnc / mike@chathamcnc.com / 919-740-9748 / [chathamcnc.com](https://www.chathamcnc.com/contact.html)) — custom kit: adapter plate + adapter flex plate + modified TC. Quote required. Confirm whether N54 starter is reused or a VW starter is needed.
 - [ ] ⚠️ **Confirm G25-660 RR hood clearance** — while the engine bay is still open with the M5x in place
   - Turbo is now G25-660 RR (decided — smaller frame than G30-770, hood clearance concern was a primary driver). Test-fit SPA MK5 manifold position + G25-660 mock-up (or actual turbo) and verify clearance to hood line. This is a **confirmation step**, not a decision point — clearance issues at this stage resolve with a bubble/vented hood, not a turbo change.
-- [ ] ✅ Place BBG billet valve cover + timing cover + coolant flange combo order early (~6-week lead time — order at Phase 2 kickoff, not at assembly time)
+- [ ] ✅ Place BBG billet valve cover + timing cover + coolant flange combo order early (~6-week lead time — order at Phase 2b kickoff, not at assembly time)
 - [ ] ✅ Order intake cam adjuster stretch bolts early — **currently hard to source through VW directly**
   - Cross-ref: **N91042802** (DAZA/Audi/Porsche spec — M12x1.25x60x30, slightly longer, confirmed working by 07K community) — [$9.19/ea at FCP Euro](https://www.fcpeuro.com/products/audi-camshaft-sprocket-bolt-genuine-audi-n91042802). Order 2.
   - Alt: **N91050202** (OES Timing Sprocket Bolt) — available at ECS Tuning
   - Also sourced through Porsche Cayenne/Panamera parts channels if VW is backordered
   - Reference: [07K Hard to Find Parts Wiki](https://the07k.wiki/wiki/Hard_to_Find_Parts)
 - [ ] ✅ Order S&P titanium exhaust stud kit — **factory 07K studs are too short for any aftermarket manifold with a thicker flange**   [AIR · EXHAUST]
-  - [S&P Automotive Titanium m8x1.25 exhaust studs](https://s-pautomotive.com/product/titanium-m8x1-25-exhaust-studs/) — **$9.05 ea × 15 = $135.75**. Titanium stud + Ti nut + Ti washer per unit. Won't seize or corrode under sustained heat cycles; higher tensile than steel; doesn't gall like stainless. Total length 40mm (13mm head-side thread + 8mm shoulder + 19mm nut-side thread). **4mm internal hex at head-side tip for installation** — thread by hand, snug with Allen key, then torque the nut. Standard install method on all quality VW/Audi stud kits (S&P, ARP, Arcane, 034Motorsport all use the broached-tip design). Order Phase 2, install at manifold fitment during Phase 3.
+  - [S&P Automotive Titanium m8x1.25 exhaust studs](https://s-pautomotive.com/product/titanium-m8x1-25-exhaust-studs/) — **$9.05 ea × 15 = $135.75**. Titanium stud + Ti nut + Ti washer per unit. Won't seize or corrode under sustained heat cycles; higher tensile than steel; doesn't gall like stainless. Total length 40mm (13mm head-side thread + 8mm shoulder + 19mm nut-side thread). **4mm internal hex at head-side tip for installation** — thread by hand, snug with Allen key, then torque the nut. Standard install method on all quality VW/Audi stud kits (S&P, ARP, Arcane, 034Motorsport all use the broached-tip design). Order Phase 2b, install at manifold fitment during Phase 3b.
   - > **Why S&P over LPS/ARP:** LPS Ti stud kit is discontinued (lpsfab.com returns 404 as of Aug 2026). ARP stainless equivalent (Pro-Race UK, £187 ≈ $236 shipped) costs more, is stainless not Ti, ships from UK. Arcane Motorsport Ti kit (Australia, $199 AUD) ships from AU with international shipping. S&P Ti at $135.75 US-shipped is cheapest AND titanium AND same vendor as your engine stand adapter plate.
   - > **Ti vs ARP stainless for this application:** Ti benefits are weight (~40% lighter, negligible here), reusability (Ti won't seize into head — modest advantage over ARP), non-galling with SS nuts, corrosion immunity. ARP stainless is functionally comparable for a non-show build. Ti wins at this specific price point because S&P priced their kit below the ARP equivalent.
-- [ ] ✅ Order MaxxECU 8HP GEN1 cable harness #2287 and DCTShifter — **order before Phase 1 8HP install, not at Phase 2**   [ECU · DRIVETRAIN]
+- [ ] ✅ Order MaxxECU 8HP GEN1 cable harness #2287 and DCTShifter — **order before Phase 1 8HP install, not at Phase 2b**   [ECU · DRIVETRAIN]
   - [#2287 from LPS](https://lpsfab.com/products/maxxecu-8hp-gen1-cable-harness-bmw-8hp-shifter) ~$366–382 — consolidate order with oil pump mod send-in
   - [DCTShifter](https://dctshifter.com) — 270GT Aluminum / 290GTE Carbon / 390GT Aluminum (all wire identically). Active inventory, ships internationally.
 - [ ] ✅ Inspect SPA pistons on receipt before sending to machine shop — **known QC variance in the community**
@@ -610,7 +610,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - > ⚠️ **Pitfall:** Do not start assembling until machine shop results come back. A bore out of spec or a head that won't hold pressure is a rebuild before the engine ever runs.
 - [ ] 🏭 **Bring donor motor to Euromotive — full longblock build: disassembly → machine work → longblock assembly** — budget **~$1,050–1,900 labor** (+ head machine work)   [ROTATING-ASSEMBLY · HEAD/VALVETRAIN · MACHINING]
   - > ⚠️ **Oil pump note:** Pan will have been dropped pre-dropoff (crank inspection + LPS pump removal). Pan is reinstalled hand-tight, no RTV — Euromotive drops it again. Oil pump arrives separately from LPS (coordinate timing — LPS ships direct to Euromotive). Euromotive installs modified pump during longblock assembly.
-  - Scope: disassembly + inspection (~$150–300) + bore/hone/deck (~$300–600) + short block assembly (~$400–600) + head assembly — springs/retainers/shims/lifters install (~$200–400). You take delivery of a **complete sealed longblock**. Do all bolted-on work (timing cover, oil system, intake, turbo, harness) yourself. **Hand to shop at dropoff:** King XP rod bearings, ARP-CVB1 head studs — shop installs these in the correct sequence during longblock build. **✅ Bring OEM water pump `07K121011B` — instruct Euromotive to remove impeller and install housing only.** Housing stays mounted and plumbed as coolant manifold; EWP handles pumping at Phase 3 install.
+  - Scope: disassembly + inspection (~$150–300) + bore/hone/deck (~$300–600) + short block assembly (~$400–600) + head assembly — springs/retainers/shims/lifters install (~$200–400). You take delivery of a **complete sealed longblock**. Do all bolted-on work (timing cover, oil system, intake, turbo, harness) yourself. **Hand to shop at dropoff:** King XP rod bearings, ARP-CVB1 head studs — shop installs these in the correct sequence during longblock build. **✅ Bring OEM water pump `07K121011B` — instruct Euromotive to remove impeller and install housing only.** Housing stays mounted and plumbed as coolant manifold; EWP handles pumping at Phase 3b install.
   - If donor motor has a cast crank, supply a separately sourced `07K105101E` forged crank — shop swaps it in, block and head are still fully usable from the donor.
   - Verify forged crank (drop lower steel sump, inspect counterweight parting line) **before** it goes in their door. Do not pay teardown labor on a cast-crank motor you didn't plan to replace.
   - [Euromotive Autohaus](https://www.eurohauspa.com/) — West Chester, PA · **(610) 416-5702** · VW/Audi/BMW specialist, engine rebuilds & swaps, authorized 034 Motorsports + Integrated Engineering dealer. Appointment-based.
@@ -723,13 +723,13 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - **Sourcing (ranked):** (1) local donor pump alongside forged crank, $30–100; (2) [eBay 187826468192](https://www.ebay.com/itm/187826468192) $34 used OEM `G` (casting-stamp verified, includes sprocket); (3) eBay literal `07K115105Q` $30–90 used; (4) [VWPartsGiant `G`](https://www.vwpartsgiant.com/genuine/volkswagen~oil-pump~07k115105g) $246.84 or [Europa Parts `Q`](https://www.europaparts.com/oil-pump-07k115105q.html) $249.95 new OEM; (5) LPS turnkey $420. OEM only — do not buy sub-$50 aftermarket.
   - Mandatory for drifting/9k RPM use — stock 60–65 psi cold is inadequate for boost + upgraded valvetrain (VVT starves).
   - Full detail: <ref_file file="/Users/wesleyc/personal/e36/e36-docs/walkthroughs/24-07k-oil-system.md" /> § 1 + § 1a
-  - > ⚠️ **Pitfall:** LPS lead time can be 4–8 weeks. Send early in Phase 2 so it's back before assembly is complete.
+  - > ⚠️ **Pitfall:** LPS lead time can be 4–8 weeks. Send early in Phase 2b so it's back before assembly is complete.
 
 ### Air / Intake  [AIR]
 - [ ] ✅ Install LPS phenolic intake gasket between head and manifold — limits IAT heat soak into the charge   [AIR]
   - [LPS 07K Phenolic Intake Gasket](https://lpsfab.com/products/lps-07k-phenolic-intake-gasket) — 1/8" thick phenolic. Fits between cylinder head and any aftermarket aluminum manifold (BBG or LPS). Install before manifold bolts go in.
 - [ ] ✅ Install BBG longitudinal intake manifold
-- [ ] ⚠️ **Decide throttle path — DBW or cable TB** (see Phase 3 Air/Throttle for full tradeoff comparison)
+- [ ] ⚠️ **Decide throttle path — DBW or cable TB** (see Phase 3b Air/Throttle for full tradeoff comparison)
   - **Option A — DBW (stock 07K TB, MaxxECU e-throttle):** Retain factory 07K TB. Wire TB connector (Motor+, Motor−, TPS1, TPS2, 5V, GND) into offline 07K engine harness targeting MaxxECU e-throttle H-bridge outputs. Enables throttle blip, traction control, launch control, flat shift. ME7.1.1 TB pins: 84, 92, 117, 118.
   - **Option B — Cable (VR6 TB + Lokar cable):** Install VR6 OBD2 throttle body `021133064A` on BBG longitudinal manifold. Do NOT wire any DBW TB connector — TB is purely cable-driven. Simpler setup; stock E36 floor pedal is retained (no E46 pedal module needed), but stock E36 cable cannot be reused — Lokar LOK-TC-1000LS148 required (VR6 drum uses different cable end than M52). MaxxECU still receives TPS signal passively but does not control throttle position — no e-throttle features.
 
@@ -740,21 +740,21 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - > Route the completed harness dry against the installed 07K before final sleeving — confirm connector reach, correct lengths, and clearance from exhaust headers and moving parts. Sleeve only after the routing is confirmed.
   - > ⚠️ **Throttle wiring depends on path chosen above:**
     - **DBW (Option A):** Wire TB (Motor+, Motor−, TPS1, TPS2, 5V, GND) direct-terminate at engine-bay MaxxECU C1/C2 (Motor+/− → C2 H4/H2 MOTOR 1+/1−, NOT GPO 3/4; TPS1 → C1 G2, TPS2 → C1 J2 AIN 2). TB is engine-bay-to-engine-bay — no bulkhead in the TB path. The BMW E46 accelerator pedal is a separate 6-wire cabin run to the Maven HD30 **Connector B (safety-critical)** cabin face pins 1-6 → engine-side plug → MaxxECU. Both pedal and TB use dual-track sensors; wire both tracks to separate MaxxECU analog inputs. ME7.1.1 pinout: DBW TB pins 84/92/117/118; APS1+2 pins 35/72 and 34/73. Source: `harnesses/firewall-crossing-maven.wv`, `docs/dbw-pinouts.md`.
-    - **Cable (Option B):** No DBW wiring needed. Include TPS1/TPS2 signal wires to MaxxECU so ECU can read throttle position. Pedal and cable install happens at Phase 3; no harness action needed now.
+    - **Cable (Option B):** No DBW wiring needed. Include TPS1/TPS2 signal wires to MaxxECU so ECU can read throttle position. Pedal and cable install happens at Phase 3b; no harness action needed now.
   - > **Alternator — confirmed 140A (partslink24 VIN `WVWAR71K17W082055`, PR T59):** OEM part `07K 903 023 A` (Bosch, 12V, 140A, CW rotation). Reman: `06F 903 023 FX` → superseded by `07K 903 023 AX`. Decoupler pulley: `07K 903 119`. **140A provides sufficient headroom for the electric AC compressor (25–40A draw) — no alternator upgrade needed.** Reuse the OEM donor unit; aftermarket replacement if needed ~$80–120 on Amazon cross-referencing `07K 903 023 A`.
   - > **Alternator excite wire:** Plan a dedicated wire from the body harness to the alternator D+ (excite) terminal. Without it the alternator may not begin charging below ~1,500 RPM. It will self-excite above that threshold via the voltage regulator, but correct wiring ensures reliable cold-start charging from the first start.
 - [ ] ✅ Document all sensor connector pinouts, oil line fittings, and coolant port locations before engine leaves the stand
 
 ---
 
-## Phase 3 — 07K Final Swap & Integration
+## Phase 3b — 07K Final Swap & Integration
 
 ### Chassis — Engine Install  [CHASSIS]
 - [ ] 🔧 Pull M5x interim engine
   - > Reference: [E36 engine removal (YouTube)](https://www.youtube.com/watch?v=kracqUH216s)
   - > ⚠️ **Pitfall:** Drain coolant and oil before pulling. Disconnect the battery. Label every hose and connector as you remove it — the 07K bay will look different and you will not remember where the M52 AC line went 6 months later.
 - [ ] ⚠️ **Complete 3D scans of engine bay and mount interfaces before fabrication** — two-scanner workflow
-  - See 3D Scanning Workflow section in project plan (Phase 3 → Pre-Fabrication)
+  - See 3D Scanning Workflow section in project plan (Phase 3b → Pre-Fabrication)
   - **Envelope / clearance (Scaniverse, iPhone 16 Pro):** engine bay in-place → OBJ → Blender for downpipe routing. LiDAR resolution is correct for keep-out volume work only.
   - **Mount mating features (Creality Pika ~$629–699 + M4 Max MacBook Pro USB-C tether):** 07K exhaust-side mount bosses + E36 subframe mount pads in blue-laser mode at 0.03 mm precision → CrealityScan 4 macOS cleanup on MacBook → export STL → transfer to desktop → Fusion 360 bracket design. iPhone 16 Pro is backup tether (Wi-Fi 6, 0.08 mm). Alternatives if Pika software unusable: Revopoint POP 4, Einstar Vega (standalone). See Project Plan → Build Machines & Software.
   - 3D-printed templates (PLA/PETG) are **fitment verification only — not structural**. Validate bolt hole alignment between 07K exhaust-side bosses and E36 subframe, then bin the prints
@@ -767,19 +767,19 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - > ⚠️ **Pitfall:** Do not torque engine mount bolts until the engine is hanging freely at the correct height and the 8HP adapter plate is loosely mated. Torquing mounts before final positioning locks you into a misaligned drivetrain.
 
 ### Drivetrain  [DRIVETRAIN]
-- [ ] ✅ Swap to 07K→8HP adapter kit (DomiWorks or Chatham CNC — whichever was quoted/ordered at Phase 2)
+- [ ] ✅ Swap to 07K→8HP adapter kit (DomiWorks or Chatham CNC — whichever was quoted/ordered at Phase 2b)
 - [ ] ✅ Swap starter to VW longitudinal 068911024GX (Bosch reman, FCP Euro) — $349.99 + $50 refundable core
   - 068911024GX (reman, FCP Euro lifetime guarantee) = 068911024H (Bosch new) = same nose, fully interchangeable. NOT the N54 starter from Phase 1.
 
 ### ECU & Engine Harness  [ECU]
-- [ ] ✅ Order 07K harness pigtail connectors — buy before Phase 2 harness build kickoff:
+- [ ] ✅ Order 07K harness pigtail connectors — buy before Phase 2b harness build kickoff:
   - **EV14 injector connectors:** [8-pack $9.93 — Amazon B07STLGB7Z](https://www.amazon.com/dp/B07STLGB7Z) — 5 needed for 07K I5 injectors + 3 spares (Amazon's Choice)
   - **VAG COP coil connectors (4-pin OE# 4B0973724):** [4-pack $11.99 — Amazon B093HK7PN1](https://www.amazon.com/dp/B093HK7PN1) — buy **2 packs** (~$24 total): 5 needed per 07K I5 COP + 3 spares
   - **3-pin VAG sensor connectors (cam / crank / MAP), OE# 3B0973703G:** [$11.99 each — Amazon B0DY4CC12Q](https://www.amazon.com/dp/B0DY4CC12Q) — buy **4** (~$48): cam×1 + crank×1 + MAP×1 + spare. ⚠️ Same connector body for cam and crank but **different pinouts** — label pigtails clearly at crimp time
   - **2-pin NTC sensor connectors (CLT + IAT), OE# 1J0973702:** [$5.99 each — Amazon B0GLPX5HN5](https://www.amazon.com/dp/B0GLPX5HN5) — buy **3** (~$18): CLT×1 + IAT×1 + spare
   - **2-pin flat knock sensor connector, OE# 1J0973712:** source from ECS Tuning or FCP Euro (~$5–10 each) — buy **2**. ⚠️ Different connector body from 2-pin NTC above — do NOT substitute
 - [ ] 🔧 Connect MaxxECU 07K harness (plug in pre-built harness, load 07K base map)
-  - > Confirm accelerator pedal connector variant (MK4 vs MK5/MK6) matches the harness built in Phase 2 before plugging in.
+  - > Confirm accelerator pedal connector variant (MK4 vs MK5/MK6) matches the harness built in Phase 2b before plugging in.
   - > ⚠️ **MTune trigger setup — verify before first crank:** Crank = **VR input, N-1 / 60-2 pattern** (same type as M52 — MaxxECU "VR" label is correct). Cam = **Hall / HOME input, +5V supply type** (not +12V). Both sensors use the same 3B0973703G connector body but opposite pinouts — a swapped pigtail will produce no-start with no obvious failure mode.
   - > ⚠️ **Wideband sensor:** Use a **genuine Bosch** wideband sensor for the primary lambda input to MaxxECU. Aftermarket wideband sensors have documented accuracy issues at WOT and at rich lambda values below 0.75. Tune quality depends entirely on accurate AFR data — do not substitute.
 
@@ -790,16 +790,16 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - > ⚠️ **Pitfall:** Must be reverse rotation — standard rotation directs the compressor outlet into the firewall with the SPA MK5 manifold in longitudinal installation. Full Race G-series RR listings use distinct SKUs from standard rotation — double-check at purchase.
 - [ ] ✅ Install T3-to-V-band adapter — ~$35–50 (connects SPA T3 manifold outlet to G25-660 V-band turbine inlet; adds ~25–35mm to stack height)
 - [ ] ✅ Install Tial 44mm MVR wastegate (V-band direct fit to SPA manifold WG port)
-- [ ] ⚠️ **Complete downpipe clearance scan before sending to fabricator** — see 3D Scanning Workflow section in project plan Phase 3
+- [ ] ⚠️ **Complete downpipe clearance scan before sending to fabricator** — see 3D Scanning Workflow section in project plan Phase 3b
   - Scan engine bay with Scaniverse (iPhone 16 Pro, free) after 07K + 8HP + SPA manifold + turbo + wastegate are installed → design tube routing path in Blender as Bezier curve → send annotated routing reference to fabricator. LiDAR envelope is the correct tool here (keep-out volume, not a mating surface).
 - [ ] 🏭 Measure downpipe routing and send to fabricator — custom RHD downpipe around [STEERING] rack
-- [ ] ✅ Re-pipe CXRacing FMIC core for G25-660 RR turbo position (all Phase 1A piping unusable)
+- [ ] ✅ Re-pipe CXRacing FMIC core for G25-660 RR turbo position (all Phase 2a piping unusable)
 - [ ] 🔧 Re-plumb Turbosmart boost solenoid for G25-660 RR + Tial 44mm wastegate setup
-  - Solenoid from Phase 1A carries over; all boost control plumbing is turbo-position specific. Re-route: compressor outlet reference line → solenoid inlet; solenoid outlet → Tial 44mm actuator port.
+  - Solenoid from Phase 2a carries over; all boost control plumbing is turbo-position specific. Re-route: compressor outlet reference line → solenoid inlet; solenoid outlet → Tial 44mm actuator port.
 
 ### Fuel System  [FUEL]
 - [ ] ✅ Install ID1050x × 5 injectors into BBG fuel rail
-  - > ⚠️ **Verify at dry-fit — cam sensor clearance flagged, not confirmed:** community input says the ID1050x's taller body can interfere with the stock 07K cam sensor, and that a TTRS/RS3 cam sensor (`07L905163C`, different part family from the OEM 07K `07K907601A`) fixes it via a 90° connector. **Could not independently confirm** the specific clearance conflict or that the RS3 sensor is a drop-in electrical/mechanical match (same Hall-effect signal, same probe depth, same bore) — likely originates in the private 07K Swap Facebook group already cited elsewhere in this build's docs, not web-indexed. **Do this instead of assuming:** dry-fit the injectors against the stock cam sensor location before ordering anything; if there's real interference, confirm `07L905163C` fitment with someone who's actually run it before cutting it into the harness — a mismatched cam sensor here is a no-start, not a cosmetic issue. See Project Plan Phase 3 ME7.1.1 Pinout Reference note for full detail.
+  - > ⚠️ **Verify at dry-fit — cam sensor clearance flagged, not confirmed:** community input says the ID1050x's taller body can interfere with the stock 07K cam sensor, and that a TTRS/RS3 cam sensor (`07L905163C`, different part family from the OEM 07K `07K907601A`) fixes it via a 90° connector. **Could not independently confirm** the specific clearance conflict or that the RS3 sensor is a drop-in electrical/mechanical match (same Hall-effect signal, same probe depth, same bore) — likely originates in the private 07K Swap Facebook group already cited elsewhere in this build's docs, not web-indexed. **Do this instead of assuming:** dry-fit the injectors against the stock cam sensor location before ordering anything; if there's real interference, confirm `07L905163C` fitment with someone who's actually run it before cutting it into the harness — a mismatched cam sensor here is a no-start, not a cosmetic issue. See Project Plan Phase 3b ME7.1.1 Pinout Reference note for full detail.
 - [ ] 🔧 Swap Walbro 450LPH fuel pump (Radium E36 basket kit) — $203.99
   - > ⚠️ **Flex fuel sensor:** The ethanol content sensor is installed inline in the fuel feed from Phase 1. When re-plumbing for the 450LPH pump and new lines, confirm the inline sensor position is preserved in the new fuel feed routing. No wiring changes needed — the MaxxECU digital input is already configured.
 
@@ -811,10 +811,10 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - > ⚠️ **Pitfall:** Specific hose part numbers from 944 builds (Dayco 72193/72365, Gates 22503/20416) are 944-chassis-specific — measure E36 routing with engine in car before ordering. Use those as diameter/type reference only, not direct part numbers.
 
 ### Oil System  [OIL]
-- [ ] ✅ iABED baffled oil pan — pre-installed during Phase 2 engine build; no Phase 3 action required
+- [ ] ✅ iABED baffled oil pan — pre-installed during Phase 2b engine build; no Phase 3b action required
 - [ ] ✅ Re-plumb existing Setrab/Mocal 10-row oil cooler core to iABED -AN ports
-  - The iABED longitudinal oil filter housing (Phase 2) has built-in thermostatic -AN ports — no sandwich plate needed. The MMOCF-BMW fitting kit stays with the pulled M52 engine.
-  - > ⚠️ **Note:** If stock oil housing was used in Phase 2 instead of iABED, install the Mishimoto MMOP-SPT thermostatic sandwich plate ($170.95) between the filter and housing + run -10AN lines to the Setrab/Mocal core.
+  - The iABED longitudinal oil filter housing (Phase 2b) has built-in thermostatic -AN ports — no sandwich plate needed. The MMOCF-BMW fitting kit stays with the pulled M52 engine.
+  - > ⚠️ **Note:** If stock oil housing was used in Phase 2b instead of iABED, install the Mishimoto MMOP-SPT thermostatic sandwich plate ($170.95) between the filter and housing + run -10AN lines to the Setrab/Mocal core.
 
 ### Air / Throttle  [AIR · ECU]
 
@@ -824,7 +824,7 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 
 **Option A — DBW (stock 07K TB + MaxxECU e-throttle):**
 > **TB sizing:** Stock 07K TB is ~65mm bore — adequate for ~500 whp at 25 psi per Rennlist 07K community airflow calcs. For 600–750+ whp, plan to upgrade to **VW 3.6 VR6 TB `03H 133 062`** (~74mm, same VAG flange, ~$40–80 used, direct fit candidate on BBG manifold). Do not upgrade before tune is dialed in. Full TB pinout: see Enhancements doc → DBW Wiring Pinouts.
-- [ ] ✅ Confirm stock 07K DBW throttle body is retained from Phase 2 engine build
+- [ ] ✅ Confirm stock 07K DBW throttle body is retained from Phase 2b engine build
 - [ ] ✅ Install BMW E46 accelerator pedal module (`35426786282`) in E36 cabin via adapter bracket
   - > **[Strom Motorsports E36 Adapter for E46 DBW Throttle Pedal](https://strommotorsports.com/products/e36-dbw-e46-accelerator-pedal-adapter)** — CNC 6061 Al, no cutting/welding/drilling. Explicitly lists PN `35426786282` (manual) and `35426786281` (auto). Also: [Garagistic](https://www.garagistic.com/products/e46-gas-pedal-for-e36-adapter-bracket) | [Boost Monkey](https://boostmonkey.com/products/e36-electronic-drive-by-wire-gas-pedal-adapter-brackey) | [Drift HQ](https://drifthq.com/products/e46-gas-pedal-for-e36-adapter-bracket). E46 pedal module eBay used: **$80–120 all-in** (see listings below). Bracket: ~$40–60.
   - > **eBay sourcing — E46 pedal `35426786282`** · [Saved search](https://www.ebay.com/sch/i.html?_nkw=bmw+35426786282&_svsrch=1)

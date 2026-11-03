@@ -1,6 +1,6 @@
-# Phase 1A: M5x Turbo Head & Valvetrain
+# Phase 2a: M5x Turbo Head & Valvetrain
 
-**Phase:** 1A  
+**Phase:** 2a
 **System tags:** `[ENGINE]` `[VALVETRAIN]`  
 **Shop-mandatory:** Valve seat work, pressure test, head surface check — VAC. Valve spring swap can be owner-performed on a bare head with the correct tools.  
 **Prerequisites:** Block sourced (`15-m5x-turbo-sourcing.md`); head gasket and head stud decision locked (from `16-m5x-rotating-assembly.md`)
@@ -18,7 +18,7 @@ All M50, M50TU, M52, S50US, and S52 engines share the same basic head casting. T
 4. VANOS seals replaced if M50TU or M52
 5. **SPA 264°/256° cams — primary cam choice** for this turbo build targeting 8,000-9,000 RPM ceiling
 
-Aggressive NA cam timing (Phase 1B scope: Schrick 264/248) is specifically a NA optimization and does not carry to the turbo build without re-evaluation. See cams section below.
+Aggressive NA cam timing (Phase 1 scope: Schrick 264/248) is specifically a NA optimization and does not carry to the turbo build without re-evaluation. See cams section below.
 
 ---
 
@@ -55,9 +55,9 @@ SPA Turbo USA sells 264°/256° cams for M50/M52/S50/S52 (single VANOS) at **$1,
 
 Stock M50/M52 cams are adequate for boost at moderate power and RPM targets. VANOS control via MaxxECU covers variable timing. Acceptable for 6,000–7,000 RPM builds. For this build's 8,000-9,000 RPM ceiling goal, stock cams are a compromise.
 
-### The Schrick 264/248 from Phase 1B does NOT carry over
+### The Schrick 264/248 from Phase 1 does NOT carry over
 
-The Phase 1B (`10-m52-engine-prep.md`) Schrick 264/248 cam spec is ground for NA use — high overlap designed to maximize volumetric efficiency at peak NA RPM. Under boost, this creates excessive overlap that allows boost to blow back into the intake manifold before the intake valve closes. It can be used with boost but requires careful tuning and will produce a less efficient boost curve vs. a cam ground for turbo use. If you've already purchased Schrick cams for Phase 1B, consult with a MaxxECU tuner before running them on the turbo build.
+The Phase 1 (`10-m52-engine-prep.md`) Schrick 264/248 cam spec is ground for NA use — high overlap designed to maximize volumetric efficiency at peak NA RPM. Under boost, this creates excessive overlap that allows boost to blow back into the intake manifold before the intake valve closes. It can be used with boost but requires careful tuning and will produce a less efficient boost curve vs. a cam ground for turbo use. If you've already purchased Schrick cams for Phase 1, consult with a MaxxECU tuner before running them on the turbo build.
 
 ---
 
@@ -76,7 +76,7 @@ Standard steps that VAC performs:
 
 The M50 NV block has solid shim cam followers from the factory. The M50TU and M52 (recommended block for this build) use **hydraulic bucket tappets**, which pump down at ~6,500 RPM and cannot maintain contact with the cam lobe above that RPM — a hard ceiling that valvetrain shimming alone doesn't fix.
 
-**Install Alien Engineering solid lifter conversion shims** before this build targets 8,000–9,000 RPM. These drop-in shims replace the hydraulic function with a solid surface, eliminating the RPM ceiling from the hydraulic follower system. Same part specified in the Phase 1B NA M52 path (`10-m52-engine-prep.md`). ([alien-engineering.com](https://www.alien-engineering.com/product-page/alien-engineering-bmw-m50-m52-m54-s50-s52-solid-lifter-conversion-shims) — ~$150)
+**Install Alien Engineering solid lifter conversion shims** before this build targets 8,000–9,000 RPM. These drop-in shims replace the hydraulic function with a solid surface, eliminating the RPM ceiling from the hydraulic follower system. Same part specified in the Phase 1 NA M52 path (`10-m52-engine-prep.md`). ([alien-engineering.com](https://www.alien-engineering.com/product-page/alien-engineering-bmw-m50-m52-m54-s50-s52-solid-lifter-conversion-shims) — ~$150)
 
 VAC installs these during head assembly. Bring the kit in the labeled bag with the parts drop-off.
 

@@ -1,6 +1,6 @@
-# Phase 2: 07K Block Sourcing
+# Phase 2b: 07K Block Sourcing
 
-**Phase:** 2  
+**Phase:** 2b
 **System tags:** `[ADMIN]` `[MACHINING]`  
 **Shop-mandatory:** No  
 **Prerequisites:** Phase 1 foundation underway; car running on M52 (or at minimum MaxxECU + 8HP commissioned). 8HP variant decision locked before ordering any adapter plate.
@@ -174,11 +174,11 @@ Get quotes from both before committing. This is a non-returnable decision.
 
 > ⚠️ **Pitfall (DomiWorks path):** Explicitly confirm timing chain housing clearance with DomiWorks before ordering SKU 21015002. The Rennlist source above documents cracking of the timing chain housing if the adapter plate does not provide adequate clearance. The 33mm plate is the correct indicator but get written confirmation.
 
-### 4 — Order long-lead parts at Phase 2 kickoff
+### 4 — Order long-lead parts at Phase 2b kickoff
 
 These items have known lead times that will delay assembly if ordered late:
 
-- **BBG billet valve cover + timing cover + coolant flange combo** — ~6-week lead time. Order at Phase 2 kickoff, not at assembly time. See [boostbrothersgarage.com](https://www.boostbrothersgarage.com/collections/944-07k-swap/products/07k-billet-valve-cover-upper-timing-cover-and-rear-coolant-flange-combo), $975–$1,075. Budget standalone VC alt: [Metal Geometry 07K Billet Valve Cover](https://www.metalgeomtry.com/product/07k-billet-valve-cover/) — $398, 6061 CNC, M18x1.5-AN10 crankcase port, no lead time, ships from China (DDP). No timing cover or coolant flange — standalone VC only.
+- **BBG billet valve cover + timing cover + coolant flange combo** — ~6-week lead time. Order at Phase 2b kickoff, not at assembly time. See [boostbrothersgarage.com](https://www.boostbrothersgarage.com/collections/944-07k-swap/products/07k-billet-valve-cover-upper-timing-cover-and-rear-coolant-flange-combo), $975–$1,075. Budget standalone VC alt: [Metal Geometry 07K Billet Valve Cover](https://www.metalgeomtry.com/product/07k-billet-valve-cover/) — $398, 6061 CNC, M18x1.5-AN10 crankcase port, no lead time, ships from China (DDP). No timing cover or coolant flange — standalone VC only.
 - **Cam adjuster stretch bolts** (`N91042802`, $9.19 ea at FCP Euro) — currently hard to source through VW directly. Order 2. Also available through Porsche Cayenne/Panamera parts channels if backordered. Reference: [07K Hard to Find Parts Wiki](https://the07k.wiki/wiki/Hard_to_Find_Parts).
 - **LPS oil pump mod send-in** — 4–8 week lead time. Drop both sump halves (see Step 2 sequence above), pull the pump, DM LPS a casting-stamp photo to confirm compatibility, then send. Per LPS video description, `07K115105Q` is their confirmed default PN; older F/G/J presumed also OK; R/T/AC/AK likely too late. If donor pump is unusable, cheapest verified source: [eBay 187826468192](https://www.ebay.com/itm/187826468192) $34 used OEM `G`. Pricing: $150 mod on your pump / $420 turnkey. Full identification, sourcing, and LPS-scope detail in `24-07k-oil-system.md` § 1 + § 1a.
 
@@ -234,7 +234,7 @@ While the M52 is still in the car, test-position the SPA MK5 manifold + G25-660 
   3. Jack to stand head-tube height. Slide the stand under, engage the adapter, lower the jack.
   - **Straps:** 2× HAUL-MASTER 1000 lb. 1½ in. × 10 ft. Ratcheting Tie-Down, **SKU 61302** — $6.99 ea ([harborfreight.com](https://www.harborfreight.com/1000-lb-capacity-1-12-in-x-10-ft-ratcheting-tie-down-61302.html)). 10 ft spans the ladder and reaches the block; 1000 lb WLL gives 3:1+ margin on a 350 lb load split between two straps. S-hooks clip through lift bracket holes or around any cast boss. Do not use these straps on the crane hook — cargo tie-downs are not rated for overhead suspension.
 
-**Stand → car (Phase 3 — `30-07k-install.md` Step 22):**
+**Stand → car (Phase 3b — `30-07k-install.md` Step 22):**
 - Web slings are not suitable — angle is uncontrolled and a load leveler cannot function with them.
 - Use **HF Load Leveler SKU 96497** + **M10×1.5 DIN 580 shoulder eyebolts** (McMaster `3100T12`) threaded into the T03001 holes at the gearbox/timing-chain-end face and the intake-side motor mount boss at the belt-pulley end. Test-hang 50–75 mm before committing to the bay drop.
 
@@ -248,5 +248,5 @@ While the M52 is still in the car, test-position the SPA MK5 manifold + G25-660 
 - [DomiWorks adapter kits](https://www.domi-works.com/collections/8hp-adapter-kits)
 - [Chatham CNC contact](https://www.chathamcnc.com/contact.html) · mike@chathamcnc.com · 919-740-9748
 - [Idahomecustomdesign — Putting VW engine on stand, one person (ratchet strap + ladder)](https://www.youtube.com/watch?v=Y-nCDG5UJmw)
-- [E36 DIY Build Checklist — Phase 2 Sourcing & Machine Shop](../E36_DIY_Build_Checklist.md)
-- [E36 9000 RPM Project Plan — Phase 2 Rotating Assembly](../E36_9000RPM_Project_Plan_Verified.md)
+- [E36 DIY Build Checklist — Phase 2b Sourcing & Machine Shop](../E36_DIY_Build_Checklist.md)
+- [E36 9000 RPM Project Plan — Phase 2b Rotating Assembly](../E36_9000RPM_Project_Plan_Verified.md)

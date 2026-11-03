@@ -16,11 +16,10 @@ Planning documents and bill-of-materials CSVs for the E36 restomod build.
 |------|-------------|
 | [E36_Phase0_Chassis.csv](E36_CSVs/E36_Phase0_Chassis.csv) | Phase 0 — Chassis |
 | [E36_Phase1_Foundation.csv](E36_CSVs/E36_Phase1_Foundation.csv) | Phase 1 — 8HP, ECU, fuel, suspension |
-| [E36_Phase1A_TurboM50.csv](E36_CSVs/E36_Phase1A_TurboM50.csv) | Phase 1A — Turbo M50 path |
-| [E36_Phase1B_NAM52.csv](E36_CSVs/E36_Phase1B_NAM52.csv) | Phase 1B — NA M52 path |
-| [E36_Phase2_07KBuild.csv](E36_CSVs/E36_Phase2_07KBuild.csv) | Phase 2 — 07K engine build |
-| [E36_Phase3_FinalSwap.csv](E36_CSVs/E36_Phase3_FinalSwap.csv) | Phase 3 — Final swap + turbo |
-| [E36_Phase4_Calibration.csv](E36_CSVs/E36_Phase4_Calibration.csv) | Phase 4 — Tune and calibration |
+| [E36_Phase1_Combined.csv](E36_CSVs/E36_Phase1_Combined.csv) | Phase 2a + Phase 1 — M5x turbo build + NA M52 completion |
+| [E36_Phase2b_07KBuild.csv](E36_CSVs/E36_Phase2b_07KBuild.csv) | Phase 2b — 07K engine build |
+| [E36_Phase3b_FinalSwap.csv](E36_CSVs/E36_Phase3b_FinalSwap.csv) | Phase 3b — Final swap + turbo |
+| [E36_Phase4_Calibration.csv](E36_CSVs/E36_Phase4_Calibration.csv) | Phase 1 Cal / Phase 4a / Phase 4b — tune, break-in, flex fuel validation |
 
 ## Technical Diagrams
 

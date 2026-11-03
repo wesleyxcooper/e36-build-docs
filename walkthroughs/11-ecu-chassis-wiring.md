@@ -7,7 +7,7 @@
 
 > **Staging note:** MaxxECU on M52 first. Install ECU, resolve EWS2 bypass, wire the discrete Phase 1 relay board, connect the M50 pre-terminated harness, wire X20, and get the M52 running on MaxxECU with the Getrag still in place. Tune the M52. Then proceed to 8HP swap. This isolates troubleshooting: ECU issues surface on the stock drivetrain; 8HP issues surface on a known-good ECU.
 
-> **07K-phase wiring deferred (Phase 3 arrivals):** The Ecumaster PMU16, Maven HD30 dual 16+16 firewall bulkhead (Connector A = CAN + DCT, Connector B = safety-critical APS), CWA400 electric water pump, electric AC compressor, and E46 APS pedal all arrive at Phase 3 (07K swap moment). None are needed to run the M52. See `34-ecu-harness-final.md` for the Phase 3 install sequence and `e36-wiring/docs/wiring-bom.md` System 8 for the Maven bulkhead spec.
+> **07K-phase wiring deferred (Phase 3b arrivals):** The Ecumaster PMU16, Maven HD30 dual 16+16 firewall bulkhead (Connector A = CAN + DCT, Connector B = safety-critical APS), CWA400 electric water pump, electric AC compressor, and E46 APS pedal all arrive at Phase 3b (07K swap moment). None are needed to run the M52. See `34-ecu-harness-final.md` for the Phase 3b install sequence and `e36-wiring/docs/wiring-bom.md` System 8 for the Maven bulkhead spec.
 
 ---
 
@@ -63,7 +63,7 @@ Precedents for E36 aftermarket ECU install at this location: [adapt-lab.com — 
 
 **Harness grommet (Phase 1):** The OEM E36 engine harness grommet on the intake-side firewall is large enough for the M50 pre-terminated harness bundle — no drilling. Route the M50 harness from the OEM grommet directly to the H2O CMC connectors — the H2O sits immediately behind the grommet.
 
-**Firewall bulkhead (Phase 2/3):** The Maven HD30 Dual 16+16 kit installs at Phase 3 (07K swap moment). It carries ONLY cabin-originated signals: Connector A (CAN + DCT shifter) and Connector B (APS throttle input — designated safety-critical). All engine sensor / IGN / INJ signals stay engine-bay-side (direct-terminate at the H2O CMC). See `34-ecu-harness-final.md` and `e36-wiring/docs/wiring-bom.md` System 8.
+**Firewall bulkhead (Phase 2b/3):** The Maven HD30 Dual 16+16 kit installs at Phase 3b (07K swap moment). It carries ONLY cabin-originated signals: Connector A (CAN + DCT shifter) and Connector B (APS throttle input — designated safety-critical). All engine sensor / IGN / INJ signals stay engine-bay-side (direct-terminate at the H2O CMC). See `34-ecu-harness-final.md` and `e36-wiring/docs/wiring-bom.md` System 8.
 
 Follow the MaxxECU RACE H2O install PDF for mounting orientation (connector-face direction, vibration isolation). Note: the unit is the GEN1 RACE H2O (REV9+ hardware) — not the GEN2 RACE product. Any reference to "GEN2 RACE quick-start guide" in these docs is informal (meaning "current-gen RACE" vs the old V1), not the literal MaxxECU GEN2 RACE product (which uses Superseal connectors, not Molex CMC).
 
@@ -128,7 +128,7 @@ Route the harness from the ECU mounting point, through the grommet, and into the
 - Keep separate: wideband O2 signal — shielded, own run, away from coil primaries.
 - Keep separate: high-current feeds — fuel pump, fan, AC — each on its own dedicated circuit back to the relay block.
 
-**07K-phase note:** When the 07K swap happens, the M50 pre-terminated harness is removed and a fully custom engine harness replaces it, direct-terminating at the engine-bay H2O CMC (see `harnesses/maxxecu-07k.wv`). Cabin↔engine signals move from the OEM firewall grommet (Phase 1) to the Maven HD30 dual 16+16 bulkhead (Phase 3 install). See `34-ecu-harness-final.md` and `e36-wiring/docs/harness-build.md`.
+**07K-phase note:** When the 07K swap happens, the M50 pre-terminated harness is removed and a fully custom engine harness replaces it, direct-terminating at the engine-bay H2O CMC (see `harnesses/maxxecu-07k.wv`). Cabin↔engine signals move from the OEM firewall grommet (Phase 1) to the Maven HD30 dual 16+16 bulkhead (Phase 3b install). See `34-ecu-harness-final.md` and `e36-wiring/docs/harness-build.md`.
 
 ### Step 6 — Ground Straps
 
@@ -206,7 +206,7 @@ switch (X20 pin 23 — already noted in Step 7 above).
 
 MTune: AIN 3 → type = 0–5V, function = Oil pressure. AIN 1 → type = Temperature (enable 2.5k pullup).
 
-> ⚠️ **Phase 3 transition:** At the 07K swap, the PST-F1 moves from the M52 VANOS banjo bolt to
+> ⚠️ **Phase 3b transition:** At the 07K swap, the PST-F1 moves from the M52 VANOS banjo bolt to
 > the 07K oil housing. The M50 harness ECU_16PIN aux breakout is removed with the M50 harness.
 > The 4 wires now direct-terminate at the engine-bay MaxxECU CMC (both endpoints are engine-bay
 > under the H2O arch — no firewall crossing): +5V → CMC G1 (pin 25); SGND → CMC H1 (pin 29);
@@ -217,7 +217,7 @@ MTune: AIN 3 → type = 0–5V, function = Oil pressure. AIN 1 → type = Temper
 
 | GPO | Function | CMC pin | Access point |
 | --- | --- | --- | --- |
-| GPO 1 | Reverse light relay (Phase 1) / Boost solenoid (07K Phase 3) | CMC B4 (pin 8) | M50 harness **BOOST_SOL connector stub** (Superseal 2-way, repurposed as rev light relay low-side in Ph1; `8hp-body-integrations.wv`) |
+| GPO 1 | Reverse light relay (Phase 1) / Boost solenoid (07K Phase 3b) | CMC B4 (pin 8) | M50 harness **BOOST_SOL connector stub** (Superseal 2-way, repurposed as rev light relay low-side in Ph1; `8hp-body-integrations.wv`) |
 | GPO 2 | Fuel pump relay (low-side) | CMC C4 (pin 12) | ECU_12PIN pin 3 |
 | GPO 3 | VANOS solenoid (PWM) | CMC D4 (pin 16) | Within M50 harness — VANOS connector |
 | GPO 4 | ICV coil A | CMC E4 (pin 20) | Within M50 harness — ICV connector |
@@ -242,7 +242,7 @@ Load MaxxECU M5x base map.
 
 ---
 
-## Deferred to 07K Phase (Phase 3 install)
+## Deferred to 07K Phase (Phase 3b install)
 
 These items are documented here for reference but are **not built during M5x phase**:
 

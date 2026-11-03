@@ -1,9 +1,9 @@
 # First Start — Commissioning Procedure
 
-**Phase:** 3  
+**Phase:** 3b
 **System tags:** `[ECU]` `[ENGINE]` `[SAFETY]`  
 **Shop-mandatory:** No (but fire extinguisher and a second person strongly recommended)  
-**Prerequisites:** All Phase 3 subsystems complete — 07K installed (`30-07k-install.md`), intake/boost (`31-air-boost.md`), fuel system (`32-fuel-injection.md`), coolant/turbo (`33-coolant-turbo.md`), ECU harness finalized (`34-ecu-harness-final.md`), DBW throttle calibrated (`35-dbw-throttle.md`); Bosch LSU 4.9 wideband O2 sensor installed with 18mm × 1.5 bung welded into manifold/downpipe (shop)
+**Prerequisites:** All Phase 3b subsystems complete — 07K installed (`30-07k-install.md`), intake/boost (`31-air-boost.md`), fuel system (`32-fuel-injection.md`), coolant/turbo (`33-coolant-turbo.md`), ECU harness finalized (`34-ecu-harness-final.md`), DBW throttle calibrated (`35-dbw-throttle.md`); Bosch LSU 4.9 wideband O2 sensor installed with 18mm × 1.5 bung welded into manifold/downpipe (shop)
 
 ---
 
@@ -102,7 +102,7 @@ The shop dyno tune (MaxxECU 07K map, flex fuel scaling, 8HP shift calibration) i
 ### Step 7 — Wideband O2 Warm-Up
 
 21. The Bosch LSU 4.9 wideband O2 requires ~20 seconds to reach operating temperature. The MaxxECU built-in wideband controller heats and reads the sensor automatically — monitor lambda readout in MTune. AFR data in the first ~30 seconds is not reliable.
-    > Verify the wideband sensor is a genuine Bosch LSU 4.9 (PN 0 258 017 025 or equivalent). Aftermarket clones give inaccurate readings at WOT and rich lambda — tune quality depends on accurate AFR data. Source: `E36_DIY_Build_Checklist.md` Phase 3 Commissioning.
+    > Verify the wideband sensor is a genuine Bosch LSU 4.9 (PN 0 258 017 025 or equivalent). Aftermarket clones give inaccurate readings at WOT and rich lambda — tune quality depends on accurate AFR data. Source: `E36_DIY_Build_Checklist.md` Phase 3b Commissioning.
 
 ### Step 8 — First Start
 
@@ -154,7 +154,7 @@ The shop dyno tune (MaxxECU 07K map, flex fuel scaling, 8HP shift calibration) i
 
 ## References
 
-- `E36_DIY_Build_Checklist.md` — Phase 3 Commissioning section (lines 772–782)
+- `E36_DIY_Build_Checklist.md` — Phase 3b Commissioning section (lines 772–782)
 - `34-ecu-harness-final.md` — trigger setup, GPO assignments
 - `33-coolant-turbo.md` — CWA400 / EWP configuration
 - `35-dbw-throttle.md` — throttle body calibration (must be complete before first start)

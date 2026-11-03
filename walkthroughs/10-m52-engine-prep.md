@@ -1,4 +1,4 @@
-# M52 Engine Prep — NA M52 Path (Phase 1B)
+# M52 Engine Prep — NA M52 Path (Phase 1)
 
 **Phase:** 1B (Option B: NA M52)  
 **System tags:** `[HEAD/VALVETRAIN]` `[TIMING]` `[OIL]` `[AIR]` `[ECU]`  

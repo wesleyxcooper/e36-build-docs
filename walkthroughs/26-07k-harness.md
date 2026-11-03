@@ -1,9 +1,9 @@
-# Phase 2: 07K Engine Harness Build
+# Phase 2b: 07K Engine Harness Build
 
-**Phase:** 2  
+**Phase:** 2b
 **System tags:** `[ECU]` `[ELECTRICAL]`  
-**Shop-mandatory:** No — owner-built offline, bench-tested before Phase 3 swap day  
-**Prerequisites:** Throttle path decision locked (`25-07k-air.md`); all sensor pigtail connectors ordered (see Parts table); `maxxecu-07k.wv` harness file reviewed. Under the H2O engine-bay-mount architecture, the 07K engine harness direct-terminates at the engine-bay MaxxECU C1/C2 CMC connectors — there is no firewall bulkhead in the engine-side path. The Maven HD30 dual 16+16 bulkhead (installed at Phase 3 per `34-ecu-harness-final.md` Step 2) carries only cabin-originated signals (CAN + DCT + APS). This bench build terminates at the MaxxECU CMC end + all engine-side connectors.
+**Shop-mandatory:** No — owner-built offline, bench-tested before Phase 3b swap day  
+**Prerequisites:** Throttle path decision locked (`25-07k-air.md`); all sensor pigtail connectors ordered (see Parts table); `maxxecu-07k.wv` harness file reviewed. Under the H2O engine-bay-mount architecture, the 07K engine harness direct-terminates at the engine-bay MaxxECU C1/C2 CMC connectors — there is no firewall bulkhead in the engine-side path. The Maven HD30 dual 16+16 bulkhead (installed at Phase 3b per `34-ecu-harness-final.md` Step 2) carries only cabin-originated signals (CAN + DCT + APS). This bench build terminates at the MaxxECU CMC end + all engine-side connectors.
 
 ---
 
@@ -22,7 +22,7 @@ Buy connector **housings and individual terminals only** — do not buy pre-made
 | 4 housings + 12 contacts + seals | 3-pin VAG sensor connectors (cam / crank / MAP) | Bosch JMT 1.5mm | OE# `3B0973703G`; [ProWire USA](https://www.prowireusa.com); ECS Tuning; FCP Euro |
 | 3 housings + 6 contacts + seals | 2-pin NTC sensor connectors (CLT + IAT) | Bosch JMT 1.5mm | OE# `1J0973702`; [ProWire USA](https://www.prowireusa.com); ECS Tuning; FCP Euro |
 | 2 housings + 4 contacts + seals | 2-pin flat knock sensor connectors | **Flat-blade contacts** (NOT Bosch JMT 1.5mm round pin — JMT contacts will not seat in `1J0973712` cavities) | OE# `1J0973712`; ECS Tuning; FCP Euro — **not the same body as CLT/IAT**. De-pin donor connectors with Lisle 57750 if reusing. |
-| 1 kit | Maven HD30 Dual 16+16 firewall bulkhead (all sides + contacts + template) | Deutsch HD30 shell-24 size-16 solid barrel | Full kit purchased under `wiring-bom.md` System 8 for Phase 3 install; engine-side plugs (2× 16-way jam-nut) are what this Phase 2 harness build terminates into. [mavenspeed.com — Dual Connector Bulkhead](https://mavenspeed.com/collections/b2t-engineering/products/dual-connector-bulkhead) — $274 |
+| 1 kit | Maven HD30 Dual 16+16 firewall bulkhead (all sides + contacts + template) | Deutsch HD30 shell-24 size-16 solid barrel | Full kit purchased under `wiring-bom.md` System 8 for Phase 3b install; engine-side plugs (2× 16-way jam-nut) are what this Phase 2b harness build terminates into. [mavenspeed.com — Dual Connector Bulkhead](https://mavenspeed.com/collections/b2t-engineering/products/dual-connector-bulkhead) — $274 |
 
 > ⚠️ **CRITICAL — `3B0973703G` connector body warning:** The VW 07K cam sensor and crank sensor use the **same `3B0973703G` housing** but with **opposite pinouts**. Both are **Hall effect sensors** (crank: OE# 07K906433B confirmed Hall — Valeo PN 366675 datasheet, the07k.wiki). Crank = +5V/Signal/SensorGND. Cam = +5V/SensorGND/Signal. **Label pigtails clearly at crimp time with CAM and CRANK.** A swapped pigtail produces a no-start with no obvious failure indicator. Source: `maxxecu-07k.wv` CRANK_HALL notes.
 
@@ -42,7 +42,7 @@ Buy connector **housings and individual terminals only** — do not buy pre-made
 | 3:1 adhesive-lined heat-shrink, assorted | 1/4", 3/8", 1/2" | Breakout boot transitions, sub-loom end caps |
 | Engineer PA-09 micro-pin crimper | ~$30–40, Amazon | All VAG pigtail contacts (cam/crank/MAP/CLT/IAT/knock/COP/EV14). Covers Bosch JMT 1.5mm and JPT 2.8mm contacts. *Note: previously listed as Knipex 97 52 68 — that PN does not exist in the Knipex catalog* |
 | Molex 63811-9200 / 63811-8900 / 63811-9000 | MaxxECU CMC C1/C2 Molex contacts | Small (63811-9200) for 22 AWG signal contacts; Big (8900/9000) for 18-16 AWG larger-gauge pins. All ECU-end wires terminate at CMC via these tools under the H2O direct-terminate arch. |
-| Deutsch HDT-48-00 | $197 (Maven import equivalent) or $350-465 (genuine TE) | **Covers ALL Deutsch solid contacts across DT/DTM/DTP/DTHD/HD30 series** per deutschconnector.com selection guide. One tool for the Maven HD30 dual bulkhead (Phase 3 install) + any DT 2-pin bypasses + PST-F1 pigtail. Sources: [mavenspeed.com — HDT-48-00](https://mavenspeed.com/collections/b2t-engineering/products/deutsch-crimp-tool-solid-contacts); [deutschconnector.com selection guide](https://www.deutschconnector.com/technical/deutsch_connector_crimp_guide/) |
+| Deutsch HDT-48-00 | $197 (Maven import equivalent) or $350-465 (genuine TE) | **Covers ALL Deutsch solid contacts across DT/DTM/DTP/DTHD/HD30 series** per deutschconnector.com selection guide. One tool for the Maven HD30 dual bulkhead (Phase 3b install) + any DT 2-pin bypasses + PST-F1 pigtail. Sources: [mavenspeed.com — HDT-48-00](https://mavenspeed.com/collections/b2t-engineering/products/deutsch-crimp-tool-solid-contacts); [deutschconnector.com selection guide](https://www.deutschconnector.com/technical/deutsch_connector_crimp_guide/) |
 | Brady M210 + PermaSleeve M21-125-C-342 | Wire labels — 22–16 AWG | Print wire designators (CMC pin location + signal name) on both ends of every wire before looming |
 | Brady M210 + PermaSleeve M21-375-C-342 | Sub-loom breakout labels | Slide over 1/4" sub-loom at each breakout before Techflex goes on. Print: `INJECTORS`, `COILS`, `SENSORS`, `TRIGGER`, `KNOCK` |
 | Brady M210 + PermaSleeve M21-500-C-342 | Main trunk label | Slide over main trunk at MaxxECU CMC entry. Print: `ENGINE M52 PH1` or `ENGINE 07K PH3` |
@@ -68,7 +68,7 @@ The following OEM ME7.1.1 circuits are eliminated and should not be brought thro
 | --- | --- |
 | MAF (mass airflow sensor) | MaxxECU uses MAP + IAT for load; MAF not used |
 | OEM narrowband O2 sensors (both) | Replaced by Bosch LSU 4.9 wideband; OEM lambda circuit discarded |
-| SAI (secondary air injection) | S&P billet SAI plugs installed (Phase 2 EGR/SAI delete); circuit not needed |
+| SAI (secondary air injection) | S&P billet SAI plugs installed (Phase 2b EGR/SAI delete); circuit not needed |
 | EVAP (evaporative emissions) | Not needed on track/standalone build |
 | Cruise control | Not used in this build |
 | K-Line (OBD diagnostic bus) | OBD communication handled by MaxxECU USB/CAN; OEM K-Line not needed |
@@ -170,16 +170,16 @@ Connector B is designated **safety-critical** and reserved exclusively for APS w
 
 Under the H2O engine-bay-mount architecture, the 07K engine harness terminates directly at the engine-bay MaxxECU RACE H2O C1/C2 Molex CMC connectors. **There is no firewall bulkhead in the engine sensor / IGN / INJ / GPO signal path.** All engine-side wiring stays engine-bay.
 
-The Maven HD30 Dual 16+16 bulkhead (installed at Phase 3 per `34-ecu-harness-final.md` Step 2) carries only cabin-originated signals — CAN + DCT shifter paddle inputs on Connector A, APS pedal on safety-critical Connector B. This Phase 2 harness build produces:
+The Maven HD30 Dual 16+16 bulkhead (installed at Phase 3b per `34-ecu-harness-final.md` Step 2) carries only cabin-originated signals — CAN + DCT shifter paddle inputs on Connector A, APS pedal on safety-critical Connector B. This Phase 2b harness build produces:
 
-1. The **ECU-end trunk** — every 07K signal terminated with a Molex CMC contact, ready to insert into C1 (48-pin) or C2 (32-pin). Insertion happens at Phase 3 swap moment.
+1. The **ECU-end trunk** — every 07K signal terminated with a Molex CMC contact, ready to insert into C1 (48-pin) or C2 (32-pin). Insertion happens at Phase 3b swap moment.
 2. The **engine-side connectors** — INJ, IGN, sensor, DBW TB, crank/cam Hall connectors already terminated on the far end of the trunk.
 
 **Signal → CMC pin destinations** (source: `harnesses/maxxecu-07k.wv` "07K signal → MaxxECU pin destinations" block):
 
 | Group | Signals | CMC pin destinations | Notes |
 | --- | --- | --- | --- |
-| Power / GND | +12V Coils/Inj (from PMU16 O2), Engine GND | PMU16-side + engine-bay chassis GND star | 12 AWG, PMU16-driven (Phase 3 arrival). Not on the CMC — routed separately. |
+| Power / GND | +12V Coils/Inj (from PMU16 O2), Engine GND | PMU16-side + engine-bay chassis GND star | 12 AWG, PMU16-driven (Phase 3b arrival). Not on the CMC — routed separately. |
 | Ignition (07K 5-cyl) | IGN 1–5 | A2 (pin 2), A3 (3), B2 (6), B3 (7), C2 (10) | IGN 6/7 CMC positions unused on 07K |
 | Injection (07K 5-cyl) | INJ 1–5 | K1 (45), K2 (46), M1 (49), M2 (50), M3 (51) | INJ 6/7 CMC positions unused on 07K |
 | Crank trigger (Hall) | Signal / +5V / SGND | H3 (31, TRIGGER), G1 (25, +5V), H1 (29, SGND) | Direct-terminate; MTune Trigger = Digital (Hall) |
@@ -246,7 +246,7 @@ High-current feeds (fuel pump, fan, EWP) are **never** in the ECU signal loom �
 4. Crimp by contact type — one tool per family, do not mix:
    - **MaxxECU C1/C2 Molex CMC contacts (ECU end — every wire terminates here):** Molex 63811-9200 (small, 22-24 AWG) / 63811-8900 (large, 18-16 AWG).
    - **VAG sensor/injector/coil pigtail contacts (JMT 1.5mm / JPT 2.8mm):** Engineer PA-09.
-   - **Maven HD30 size-16 contacts (Phase 3 cabin bulkhead — Connector A CAN+DCT, Connector B safety-critical APS):** Deutsch HDT-48-00.
+   - **Maven HD30 size-16 contacts (Phase 3b cabin bulkhead — Connector A CAN+DCT, Connector B safety-critical APS):** Deutsch HDT-48-00.
 5. Verify each crimp with pull-test before insertion
 6. Insert into connector body; verify seating click on each contact
 
@@ -323,18 +323,18 @@ Plan a dedicated wire from the body harness to the 07K alternator D+ (excite) te
 ### Phase E — Throttle wiring (DBW path only)
 
 > ⚠️ **Throttle wiring depends on path chosen in `25-07k-air.md`:**
-> - **DBW path:** Wire TB Motor+/−/TPS1/TPS2 direct-terminate to MaxxECU C1/C2 e-throttle H-bridge pins (engine-bay-side; no bulkhead in the TB path). The E46 APS pedal runs separately through the Maven HD30 Dual bulkhead **Connector B** (pins 1-6, safety-critical, populated at Phase 3 install). Both pedal and TB use dual-track sensors — wire both tracks to separate MaxxECU analog inputs.
+> - **DBW path:** Wire TB Motor+/−/TPS1/TPS2 direct-terminate to MaxxECU C1/C2 e-throttle H-bridge pins (engine-bay-side; no bulkhead in the TB path). The E46 APS pedal runs separately through the Maven HD30 Dual bulkhead **Connector B** (pins 1-6, safety-critical, populated at Phase 3b install). Both pedal and TB use dual-track sensors — wire both tracks to separate MaxxECU analog inputs.
 > - **Cable path:** No DBW motor wiring needed. Include TPS1/TPS2 signal wires for MaxxECU throttle position reading. No APS pedal harness needed.
 
 ---
 
 ## References
 
-- [`maxxecu-07k.wv`](../../e36-wiring/harnesses/maxxecu-07k.wv) — authoritative harness spec for the 07K Phase 3 engine harness; all connector bodies, wire colors, pinouts, and cable lengths
+- [`maxxecu-07k.wv`](../../e36-wiring/harnesses/maxxecu-07k.wv) — authoritative harness spec for the 07K Phase 3b engine harness; all connector bodies, wire colors, pinouts, and cable lengths
 - [ME7.1.1 pinout — Google Drive PDF](https://drive.google.com/file/d/15RPWyYPLHGEMMQZIlUgpoo77T-CxjyMP/)
 - [MaxxECU Race pinout](https://maxxecu.com/webhelp/wirings-maxxecu_pinout.html)
 - [MaxxECU E-Throttle Docs](https://maxxecu.se/webhelp/settings-ethrottle.html)
 - [Harness build conventions and tool matrix](../../e36-wiring/docs/harness-build.md)
 - [Shielded run reference](../../e36-wiring/docs/wiring-bom.md) — "Shielded runs" section (required vs recommended vs not-shielded)
-- [E36 DIY Build Checklist — Phase 2 ECU Offline Harness Build](../E36_DIY_Build_Checklist.md)
-- [E36 9000 RPM Project Plan — Phase 2 ECU & Engine Management](../E36_9000RPM_Project_Plan_Verified.md)
+- [E36 DIY Build Checklist — Phase 2b ECU Offline Harness Build](../E36_DIY_Build_Checklist.md)
+- [E36 9000 RPM Project Plan — Phase 2b ECU & Engine Management](../E36_9000RPM_Project_Plan_Verified.md)

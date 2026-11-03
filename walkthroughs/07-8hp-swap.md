@@ -208,7 +208,7 @@
 
     **Power sequencing is critical:** KL30 main power (TCU pin 13) must be live **10–15 seconds before** KL15 wakeup (TCU pin 9) is asserted. Use a powerhold relay: main 12V runs constant from first key-on; wakeup is key-on only. If both are on the same ignition-switched fuse, the TCU partially fails to initialize and SEQ mode will not function.  
     CAN bus: 500 kbps. MaxxECU CAN 1 has a built-in 120Ω terminator (cabin end). The MaxxECU GEN1 harness kit includes a 120Ω terminator at the TCU end (engine end).  
-    > ⚠️ **Pitfall:** This harness is engine-agnostic and stays untouched at the 07K swap. It connects MaxxECU → 8HP TCU via CAN — the same MaxxECU and the same gearbox remain through all phases. Only the engine harness changes at Phase 3.
+    > ⚠️ **Pitfall:** This harness is engine-agnostic and stays untouched at the 07K swap. It connects MaxxECU → 8HP TCU via CAN — the same MaxxECU and the same gearbox remain through all phases. Only the engine harness changes at Phase 3b.
 
 ---
 

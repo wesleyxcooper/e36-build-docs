@@ -1,6 +1,6 @@
-# Phase 1A: M5x Turbo Coolant System
+# Phase 3a: M5x Turbo Coolant System
 
-**Phase:** 1A  
+**Phase:** 3a
 **System tags:** `[COOLANT]` `[THERMAL]` `[ELECTRICAL]`  
 **Shop-mandatory:** No — all owner-performed  
 **Prerequisites:** M5x turbo longblock installed; K64 turbo installed (`19b-m5x-turbo.md`); Phase 1 coolant baseline in place — CSF aluminum radiator, SPAL fan, Mishimoto expansion tank (`09-coolant.md`)
@@ -9,7 +9,7 @@
 
 ## Overview
 
-The M5x turbo coolant system differs from the Phase 3 07K path in one key way: **the mechanical water pump is retained.** No CWA400 EWP. The M50/M52 belt-driven pump handles the main engine circuit at all RPM.
+The M5x turbo coolant system differs from the Phase 3b 07K path in one key way: **the mechanical water pump is retained.** No CWA400 EWP. The M50/M52 belt-driven pump handles the main engine circuit at all RPM.
 
 What this adds for the turbo build:
 
@@ -17,7 +17,7 @@ What this adds for the turbo build:
 2. **Turbo water jacket feed and return lines** — -4AN braided lines from block coolant port to turbo center section; passive during normal running
 3. **Post-shutdown turbo coolant circulation** — small auxiliary pump on a timer relay to prevent turbo bearing coking after shutdown (the mechanical pump stops when the engine does)
 
-**On AC:** The OEM M52 belt-driven AC compressor comes off at turbo install — K64 manifold routing and turbo placement make the OEM compressor location untenable, and the belt path is simplified by removing it. The replacement is the **12V electric scroll compressor** (PD2-18012AJA) already fully specced in `37-ac.md`. No RPM limit concern, no belt involvement, controlled via PMU16 O7. `37-ac.md` is documented as Phase 3 but applies identically to Phase 1A — pull it forward alongside the PMU16.
+**On AC:** The OEM M52 belt-driven AC compressor comes off at turbo install — K64 manifold routing and turbo placement make the OEM compressor location untenable, and the belt path is simplified by removing it. The replacement is the **12V electric scroll compressor** (PD2-18012AJA) already fully specced in `37-ac.md`. No RPM limit concern, no belt involvement, controlled via PMU16 O7. `37-ac.md` is documented as Phase 3b but applies identically to Phase 3a — pull it forward alongside the PMU16.
 
 Replace the accessory belt and tensioner at longblock install. Confirm the correct shorter belt part number after removing both the PS pump (EPS conversion) and the OEM AC compressor from the belt path — see `15-m5x-turbo-sourcing.md` on belt routing.
 
@@ -112,7 +112,7 @@ T-fitting (upper hose)
 | **MaxxECU post-run GPO** | In MTune: Outputs → Output config → spare GPO → Function: Post-run timer. Set duration: 300 seconds (5 min). MaxxECU holds the GPO active for the set duration after ignition-off. Wire GPO → relay coil → CWA50 +12V from a fused BATT line (not ignition-switched). |
 | **Standalone timer relay (fallback)** | Adjustable 12V timer relay module (~$20). Trigger from ignition-switched +12V falling edge (key-off). Holds CWA50 relay closed for the set duration (3–5 min). Power CWA50 from fused BATT+ through the relay. |
 
-> **PMU16 on the M5x turbo build:** The PMU16 (Ecumaster) was originally deferred to Phase 3 in the wiring plan, but the turbo build makes it worthwhile at Phase 1A. It cleanly replaces the relay board, handles the CWA50 post-run circuit with temperature-based cutoff (better than a dumb timer), provides per-output current logging for the fuel pump and fan, and is already in the plan for eventual Phase 3 anyway. If budget allows, install it with the M5x turbo rather than waiting. See `11-ecu-chassis-wiring.md` for the existing relay board spec that it replaces.
+> **PMU16 on the M5x turbo build:** The PMU16 (Ecumaster) was originally deferred to Phase 3b in the wiring plan, but the turbo build makes it worthwhile at Phase 3a. It cleanly replaces the relay board, handles the CWA50 post-run circuit with temperature-based cutoff (better than a dumb timer), provides per-output current logging for the fuel pump and fan, and is already in the plan for eventual Phase 3b anyway. If budget allows, install it with the M5x turbo rather than waiting. See `11-ecu-chassis-wiring.md` for the existing relay board spec that it replaces.
 
 **Relay coil flyback diode:** 1N4007, cathode (banded end) to relay coil pin 86 (+12V), anode to pin 85 (GPO / timer output). Prevents voltage spike back into ECU output when coil de-energizes.
 
@@ -138,7 +138,7 @@ T-fitting (upper hose)
 
 The OEM M52 belt-driven AC compressor is removed at turbo install. The replacement is the 12V electric scroll compressor (PD2-18012AJA) documented in full in `37-ac.md`. That walkthrough covers mounting, wiring (PMU16 O7, MaxxECU DIN enable, idle-up config), oil flush to POE 68, line fabrication, and commissioning.
 
-`37-ac.md` is marked Phase 3 but has no 07K dependency — install it at Phase 1A alongside the turbo. PMU16 is already being pulled forward (see Step 3), so the O7 output and CAN control path are in place.
+`37-ac.md` is marked Phase 3b but has no 07K dependency — install it at Phase 3a alongside the turbo. PMU16 is already being pulled forward (see Step 3), so the O7 output and CAN control path are in place.
 
 **Belt:** With OEM AC compressor removed and EPS already deleting the PS pump, confirm the correct shorter belt part number for the remaining accessory drive (alternator + mechanical water pump only). See `15-m5x-turbo-sourcing.md` on belt routing without PS pulley; apply the same logic with AC pulley also absent.
 

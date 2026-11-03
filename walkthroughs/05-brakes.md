@@ -87,7 +87,7 @@
    - Changes pedal ratio 3:1 → 6:1 using stock master cylinder.
    - Required mods: grind 2mm off firewall hole + pedal box, drill new hole in brake pedal.
    - **Irreversible — confirm before cutting.**
-   - Phase 3 rationale: 07K turbo produces no usable manifold vacuum under boost; deleting the booster eliminates the need for a vacuum pump entirely. Also affects `[AIR]` system planning.
+   - Phase 3b rationale: 07K turbo produces no usable manifold vacuum under boost; deleting the booster eliminates the need for a vacuum pump entirely. Also affects `[AIR]` system planning.
    - Optional: if pedal effort feels too high after adjustment, upgrade to Wilwood or Tilton 19mm master cylinder (~$150–200) — smaller bore raises line pressure per unit of pedal force.
    > ⚠️ **Pitfall:** The pedal feel change is significant. Budget at least one track session to re-calibrate brake pressure before pushing hard. Threshold braking requires meaningfully more leg effort than OEM boosted.
 

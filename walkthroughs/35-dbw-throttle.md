@@ -1,6 +1,6 @@
 # Drive-By-Wire Throttle Body Installation & Calibration
 
-**Phase:** 3  
+**Phase:** 3b
 **System tags:** `[AIR]` `[ECU]`  
 **Shop-mandatory:** No  
 **Prerequisites:** 07K installed with BBG longitudinal intake manifold (`30-07k-install.md`); MaxxECU 07K harness connected (`34-ecu-harness-final.md`); E46 accelerator pedal module sourced; Strom Motorsports E36 adapter bracket on hand
@@ -17,7 +17,7 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
 
 > ⚠️ GPO 3 = VVT solenoid; GPO 4 = spare (freed from ICV A). Using any GPO for e-throttle motor drive will damage the output stage. Assign ETh motor in MTune E-Throttle wizard as "Motor 1" (C2 outputs), not as a GPO.
 
-> Note: The VR6 74mm cable TB (Option B) is an alternative if DBW is not desired. See `E36_DIY_Build_Checklist.md` Phase 3 Air/Throttle Option B for that path. This walkthrough covers Option A (DBW only).
+> Note: The VR6 74mm cable TB (Option B) is an alternative if DBW is not desired. See `E36_DIY_Build_Checklist.md` Phase 3b Air/Throttle Option B for that path. This walkthrough covers Option A (DBW only).
 
 ---
 
@@ -27,7 +27,7 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
 | --- | --- | --- |
 | BMW E46 accelerator pedal module (manual) | PN `35426786282` — used, eBay / UK sellers | ~$80–120 |
 | Strom Motorsports E36 adapter for E46 DBW pedal | [strommotorsports.com/products/e36-dbw-e46-accelerator-pedal-adapter](https://strommotorsports.com/products/e36-dbw-e46-accelerator-pedal-adapter) | ~$40–60 |
-| 07K factory DBW throttle body | Carry-forward from Phase 2 engine build — ~65mm bore | — |
+| 07K factory DBW throttle body | Carry-forward from Phase 2b engine build — ~65mm bore | — |
 | 6-pin shielded cable (pedal → bulkhead, 24 AWG, ~2.5m) | — | ~$15–25 |
 | Hella 6PV010946-141 (RHD fallback pedal if E46 bracket fitment fails) | Universal floor-mount, no OEM pedal box dependency | ~$80–120 new |
 
@@ -51,13 +51,13 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
 1. **Source PN `35426786282`** (manual, works in any market RHD car — the LHD/RHD split is manual vs auto, not market). Avoid PN `35426786281` (automatic). Confirmed eBay UK listings: [176400301948](https://www.ebay.com/itm/176400301948), [176400305397](https://www.ebay.com/itm/176400305397), [176400302753](https://www.ebay.com/itm/176400302753) — each ~£59. Do not buy [176400306849](https://www.ebay.com/itm/176400306849) — this is an E39/E38/X5 pedal with wrong connector and pinout.
 
 2. Install the Strom Motorsports E36 adapter bracket at the OEM E36 pedal box location. Bracket is CNC 6061 Al — no cutting, welding, or drilling. Also available from Garagistic and Drift HQ.
-   > ⚠️ **Pitfall (RHD fitment):** No vendor explicitly confirms RHD E36 pedal box compatibility for the bracket. Community finding: LHD brackets often misalign in RHD — typically resolved by trimming carpet/sound deadening at the transmission tunnel edge. Try the Strom/Garagistic bracket first. If RHD pedal box geometry prevents fitment, use the **Hella 6PV010946-141** instead — standalone floor-mount, no OEM pedal box dependency, fabricate mounting position as needed. Source: `E36_DIY_Build_Checklist.md` Phase 3 Air/Throttle.
+   > ⚠️ **Pitfall (RHD fitment):** No vendor explicitly confirms RHD E36 pedal box compatibility for the bracket. Community finding: LHD brackets often misalign in RHD — typically resolved by trimming carpet/sound deadening at the transmission tunnel edge. Try the Strom/Garagistic bracket first. If RHD pedal box geometry prevents fitment, use the **Hella 6PV010946-141** instead — standalone floor-mount, no OEM pedal box dependency, fabricate mounting position as needed. Source: `E36_DIY_Build_Checklist.md` Phase 3b Air/Throttle.
 
 3. Mount E46 pedal module to bracket. Confirm the pedal swings freely without fouling the brake pedal or tunnel trim.
 
 ### APS Wiring (Pedal → MaxxECU)
 
-4. The E46 pedal connector carries 6 wires. Bench-verified pin order (source: `E36_DIY_Build_Checklist.md` Phase 3 Air/Throttle):
+4. The E46 pedal connector carries 6 wires. Bench-verified pin order (source: `E36_DIY_Build_Checklist.md` Phase 3b Air/Throttle):
    - Pin 1 = GND1
    - Pin 2 = GND2
    - Pin 3 = VCC2 (+5V)
@@ -66,10 +66,10 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
    - Pin 6 = Output2 / APS2 (0.36V idle → 2.2V WOT)
    - Total draw ~20mA; 24 AWG sufficient
 
-   ME7.1.1 APS reference pins (for harness documentation): APS1 signal at pins 35/72; APS2 signal at pins 34/73. Source: `E36_DIY_Build_Checklist.md` Phase 3 Air/Throttle and Phase 2 ECU section.
+   ME7.1.1 APS reference pins (for harness documentation): APS1 signal at pins 35/72; APS2 signal at pins 34/73. Source: `E36_DIY_Build_Checklist.md` Phase 3b Air/Throttle and Phase 2b ECU section.
 
 5. Run 6-wire shielded cable from pedal connector → **Maven HD30 Connector A cabin face, pins A14–A19**
-   (cavity-plugged at Phase 3 bulkhead install until DBW commissioning):
+   (cavity-plugged at Phase 3b bulkhead install until DBW commissioning):
    - A14 = APS GND 1
    - A15 = APS GND 2
    - A16 = APS VCC2
@@ -78,7 +78,7 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
    - A19 = APS2 signal
 
    Under the H2O engine-bay-mount architecture, APS crosses the firewall via
-   **Maven HD30 Connector B (safety-critical, populated Phase 3)** — pins B1–B6.
+   **Maven HD30 Connector B (safety-critical, populated Phase 3b)** — pins B1–B6.
    Connector B is isolated from Connector A (CAN + DCT electronics) — any APS
    fault (open, short, sensor mismatch) triggers MaxxECU e-throttle shutdown.
    Source: `harnesses/firewall-crossing-maven.wv`, `harnesses/epedal-bmw-e46.wv`,
@@ -107,7 +107,7 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
 ### MTune — E-Throttle Calibration
 
 8. **Disconnect the TB motor wires** (Motor+ and Motor−) before enabling e-throttle in MTune for the first time. Leave all sensor wires (TPS1, TPS2, APS1, APS2, +5V, GND) connected. Prevents throttle runaway on first output enable.
-   > ⚠️ **Pitfall:** Disconnect the TB motor wires before enabling e-throttle in MTune for the first time. Leave sensor wires connected — verify APS/TPS voltages read correctly before activating motor drive. Prevents runaway on first output enable. Source: `E36_DIY_Build_Checklist.md` Phase 3 Air/Throttle.
+   > ⚠️ **Pitfall:** Disconnect the TB motor wires before enabling e-throttle in MTune for the first time. Leave sensor wires connected — verify APS/TPS voltages read correctly before activating motor drive. Prevents runaway on first output enable. Source: `E36_DIY_Build_Checklist.md` Phase 3b Air/Throttle.
 
 9. **Sequence — do not skip steps:**
    1. Enable e-throttle in MTune → assign APS1/APS2 to their AIN pins; assign TPS1/TPS2 and motor output (Motor 1 — C2 H4/H2 H-bridge, not GPO)
@@ -129,7 +129,7 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
     - TPS ratio check (TPS1 vs TPS2 must stay within defined ratio)
     - APS vs TPS agreement check (pedal position vs throttle position correlation)
     - When any check faults, MaxxECU cuts motor output and the return spring closes the plate — that is the correct behavior. Diagnose root cause (wiring fault, bad sensor, swapped wires) instead of widening tolerances.
-    > ⚠️ **Pitfall:** Never disable APS ratio, TPS ratio, or APS-vs-TPS agreement safety checks. When any check faults, MaxxECU cuts motor output and the return spring closes the plate — that is the correct behavior. Source: `E36_DIY_Build_Checklist.md` Phase 3 Air/Throttle.
+    > ⚠️ **Pitfall:** Never disable APS ratio, TPS ratio, or APS-vs-TPS agreement safety checks. When any check faults, MaxxECU cuts motor output and the return spring closes the plate — that is the correct behavior. Source: `E36_DIY_Build_Checklist.md` Phase 3b Air/Throttle.
 
 ### MTune — Idle Control Mode
 
@@ -138,13 +138,13 @@ The 07K has a factory DBW (drive-by-wire) throttle body. This walkthrough covers
     - The DBW idle control uses a small percentage of throttle opening at idle rather than a stepper motor bypass passage
     - Base idle target: 800–900 RPM; MaxxECU adjusts TB opening to maintain target against CLT and load
 
-13. **If upgrading TB later** (stock 65mm to VR6 `03H133062` 74mm for 600+ whp): re-run TB calibration wizard and PID auto-tune after swap. Pedal calibration is TB-agnostic and does not need to be redone. Source: `E36_DIY_Build_Checklist.md` Phase 3 Air/Throttle.
+13. **If upgrading TB later** (stock 65mm to VR6 `03H133062` 74mm for 600+ whp): re-run TB calibration wizard and PID auto-tune after swap. Pedal calibration is TB-agnostic and does not need to be redone. Source: `E36_DIY_Build_Checklist.md` Phase 3b Air/Throttle.
 
 ---
 
 ## References
 
-- `E36_DIY_Build_Checklist.md` — Phase 3, Air/Throttle Options A + B (lines 698–738)
+- `E36_DIY_Build_Checklist.md` — Phase 3b, Air/Throttle Options A + B (lines 698–738)
 - `harnesses/maxxecu-07k.wv` — DBW_TB connector pinout (lines 361–379)
 - ME7.1.1 APS pinout: pins 35/72 (APS1) and 34/73 (APS2) — [ME7.1.1 Pinout PDF](https://drive.google.com/file/d/15RPWyYPLHGEMMQZIlUgpoo77T-CxjyMP/view)
 - [MaxxECU E-Throttle settings](https://maxxecu.se/webhelp/settings-ethrottle.html)

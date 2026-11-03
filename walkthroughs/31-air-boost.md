@@ -1,15 +1,15 @@
 # Air & Boost — Turbo Installation
 
-**Phase:** 3  
+**Phase:** 3b
 **System tags:** `[AIR]` `[THERMAL]`  
 **Shop-mandatory:** Partial (downpipe fabrication = shop; all other steps DIY)  
-**Prerequisites:** 07K installed and mounts torqued (`30-07k-install.md`); Scaniverse envelope scan of engine bay completed with engine + manifold + turbo + wastegate in place (LiDAR envelope is the correct tool for downpipe clearance work — see project plan Pre-Fabrication: 3D Scanning Workflow); SPA TMW22 manifold and G25-660 RR on hand; Tial 44mm MVR wastegate on hand; CXRacing FMIC core carried from Phase 1A
+**Prerequisites:** 07K installed and mounts torqued (`30-07k-install.md`); Scaniverse envelope scan of engine bay completed with engine + manifold + turbo + wastegate in place (LiDAR envelope is the correct tool for downpipe clearance work — see project plan Pre-Fabrication: 3D Scanning Workflow); SPA TMW22 manifold and G25-660 RR on hand; Tial 44mm MVR wastegate on hand; CXRacing FMIC core carried from Phase 3a
 
 ---
 
 ## Overview
 
-This walkthrough covers the complete air and boost system: SPA TMW22 top-mount exhaust manifold, Garrett G25-660 RR turbocharger, Tial 44mm MVR external wastegate, front-mount intercooler re-pipe, and boost solenoid plumbing. The downpipe is custom-fabricated — you provide the tube routing reference from a 3D scan; the fabricator bends it. GPO 1 (boost solenoid) becomes active for the first time in Phase 3.
+This walkthrough covers the complete air and boost system: SPA TMW22 top-mount exhaust manifold, Garrett G25-660 RR turbocharger, Tial 44mm MVR external wastegate, front-mount intercooler re-pipe, and boost solenoid plumbing. The downpipe is custom-fabricated — you provide the tube routing reference from a 3D scan; the fabricator bends it. GPO 1 (boost solenoid) becomes active for the first time in Phase 3b.
 
 **RHD orientation:** The 07K exhaust side faces the **driver side** (right side of car looking forward). The SPA TMW22 manifold, G25-660 RR turbo, wastegate, and downpipe are all on the driver side. The compressor outlet faces toward the passenger/intake side — this is why **reverse rotation** is mandatory: standard rotation would direct the compressor outlet into the firewall in this longitudinal installation.
 
@@ -24,7 +24,7 @@ This walkthrough covers the complete air and boost system: SPA TMW22 top-mount e
 | T3-to-V-band adapter (connects SPA T3 outlet to G25-660 V-band inlet) | Various (generic T3/V-band) | ~$35–50 |
 | Tial 44mm MVR wastegate (V-band) | [turbosmart.com](https://www.turbosmart.com) or Tial vendor | $435 |
 | Turbosmart 2-port PWM boost solenoid | [turbosmart.com](https://www.turbosmart.com/product-category/boost-controllers/solenoids/) | ~$65–80 |
-| CXRacing FMIC core | Carry-forward from Phase 1A — core reused, all piping replaced | — |
+| CXRacing FMIC core | Carry-forward from Phase 3a — core reused, all piping replaced | — |
 | Intercooler piping — charge side (compressor → FMIC → intake) | Silicone hose + aluminum piping to suit G25-660 RR compressor outlet position | ~$150–300 |
 | Wideband O2 bung (18mm × 1.5) — weld into manifold or downpipe upstream of turbo | Any weld bung | ~$5–10 |
 | Ceramic coating — manifold + downpipe (shop) | Local coating shop | ~$150–300 |
@@ -61,7 +61,7 @@ This walkthrough covers the complete air and boost system: SPA TMW22 top-mount e
 ### G25-660 RR Turbocharger
 
 5. **Verify reverse rotation** at purchase. Standard rotation directs the compressor outlet into the firewall in this longitudinal position with the SPA MK5 manifold. The G25-660 RR uses distinct SKUs from standard rotation — double-check the part number before ordering.
-   > ⚠️ **Pitfall:** Must be reverse rotation — standard rotation directs the compressor outlet into the firewall with the SPA MK5 manifold in longitudinal installation. Full Race G-series RR listings use distinct SKUs from standard rotation — double-check at purchase. Source: `E36_DIY_Build_Checklist.md` Phase 3 Air & Boost.
+   > ⚠️ **Pitfall:** Must be reverse rotation — standard rotation directs the compressor outlet into the firewall with the SPA MK5 manifold in longitudinal installation. Full Race G-series RR listings use distinct SKUs from standard rotation — double-check at purchase. Source: `E36_DIY_Build_Checklist.md` Phase 3b Air & Boost.
 
 6. Install T3-to-V-band adapter on the SPA manifold T3 outlet (~$35–50). This adapter bridges the SPA T3 flange to the G25-660 V-band turbine inlet and adds ~25–35mm to the total stack height — account for this in hood clearance check.
 
@@ -80,26 +80,26 @@ This walkthrough covers the complete air and boost system: SPA TMW22 top-mount e
 
 ### Boost Solenoid Plumbing
 
-12. The Turbosmart 2-port PWM solenoid carries from Phase 1A. **Re-route for 07K / G25-660 RR position:**
+12. The Turbosmart 2-port PWM solenoid carries from Phase 3a. **Re-route for 07K / G25-660 RR position:**
     - Compressor outlet reference line → solenoid inlet port
     - Solenoid outlet → Tial 44mm MVR actuator port (replacing wastegate atmospheric reference)
     - This allows MaxxECU GPO 1 PWM duty to bleed actuator pressure and control boost. Higher duty = more bleed = wastegate opens later = more boost.
 
-13. **GPO 1 is now active for the first time.** In Phase 1/2 the boost solenoid connector was unpopulated (NA M52 = no turbo). In Phase 3 the solenoid is physically plumbed and the Superseal 2-pin BOOST_SOL connector (pre-wired on harness) plugs in. No wiring change — connect the pre-run connector. Confirm in MTune that GPO 1 function = boost solenoid / open-loop boost control.
-    > ⚠️ **Pitfall:** The boost solenoid flyback diode (1N4007, cathode to +12V pin, anode to GPO 1 pin) must be installed at the connector. This should have been done when the BOOST_SOL connector was built in Phase 2 — verify before connecting. Missing diode = GPO output damage at de-energization.
+13. **GPO 1 is now active for the first time.** In Phase 1/2 the boost solenoid connector was unpopulated (NA M52 = no turbo). In Phase 3b the solenoid is physically plumbed and the Superseal 2-pin BOOST_SOL connector (pre-wired on harness) plugs in. No wiring change — connect the pre-run connector. Confirm in MTune that GPO 1 function = boost solenoid / open-loop boost control.
+    > ⚠️ **Pitfall:** The boost solenoid flyback diode (1N4007, cathode to +12V pin, anode to GPO 1 pin) must be installed at the connector. This should have been done when the BOOST_SOL connector was built in Phase 2b — verify before connecting. Missing diode = GPO output damage at de-energization.
 
 ### 3D Scan → Downpipe Routing
 
 14. With engine, manifold, turbo, and wastegate all installed, perform a second Scaniverse scan of the driver-side engine bay. This is the definitive scan the fabricator needs.
 
 15. In Blender: import the OBJ, model the downpipe tube centerline as a Bezier curve from the G25-660 turbine outlet V-band, routing around/under the RHD steering rack to a 3-inch exhaust exit. The steering rack is on the driver side in RHD — the downpipe must route around it. Annotate the curve with bends, diameters, and clearance constraints.
-    > ⚠️ **Pitfall:** Complete 3D scan workflow before sending downpipe to fabricator. Fabricating blind results in fitment conflicts with the RHD steering rack. The routing is unique to this car — no off-shelf RHD downpipe exists for this combination. Source: `E36_DIY_Build_Checklist.md` Phase 3 Air & Boost.
+    > ⚠️ **Pitfall:** Complete 3D scan workflow before sending downpipe to fabricator. Fabricating blind results in fitment conflicts with the RHD steering rack. The routing is unique to this car — no off-shelf RHD downpipe exists for this combination. Source: `E36_DIY_Build_Checklist.md` Phase 3b Air & Boost.
 
 16. Send annotated Blender routing reference + scan to downpipe fabricator. Budget ~$400–600 custom fab. Request ceramic coating on manifold and downpipe simultaneously (one shop trip; ~$150–300 for both).
 
 ### FMIC Re-Pipe
 
-17. The CXRacing FMIC core carries forward. **All Phase 1A aluminum piping is unusable** — the G25-660 RR compressor outlet position is different from the Phase 1A turbo location (if Phase 1A was run). Fabricate new charge piping:
+17. The CXRacing FMIC core carries forward. **All Phase 3a aluminum piping is unusable** — the G25-660 RR compressor outlet position is different from the Phase 3a turbo location (if Phase 3a was run). Fabricate new charge piping:
     - Compressor outlet (driver side, passenger-facing) → FMIC inlet (front of car)
     - FMIC outlet → intake pipe → BOV/BPV → BBG intake manifold
     - Use silicone couplers + aluminum piping; route away from exhaust heat.
@@ -120,8 +120,8 @@ This walkthrough covers the complete air and boost system: SPA TMW22 top-mount e
 
 ## References
 
-- `E36_DIY_Build_Checklist.md` — Phase 3, Air & Boost (lines 665–677)
-- `E36_9000RPM_Project_Plan_Verified.md` — Turbo Selection; Phase 3 3D Scan Workflow
+- `E36_DIY_Build_Checklist.md` — Phase 3b, Air & Boost (lines 665–677)
+- `E36_9000RPM_Project_Plan_Verified.md` — Turbo Selection; Phase 3b 3D Scan Workflow
 - `harnesses/maxxecu-07k.wv` — BOOST_SOL connector, GPO 1 assignment (CMC B4/pin 8)
 - [SPA Turbo TMW22 product page](https://spaturbousa.com/products/vw-5-cyl-2-5l-20v-fsi-t3-top-mount-twin-scroll-turbo-manifold-wastegate-v-band)
 - [Full Race Garrett G-series](https://www.full-race.com/collections/garrett-g-series)

@@ -1,6 +1,6 @@
-# Phase 1A: M5x Turbo — Manifold, Turbo Selection & Boost System
+# Phase 3a: M5x Turbo — Manifold, Turbo Selection & Boost System
 
-**Phase:** 1A  
+**Phase:** 3a
 **System tags:** `[ENGINE]` `[BOOST]` `[AIR]`  
 **Shop-mandatory:** No — all owner-installed  
 **Prerequisites:** Longblock returned from VAC and installed; oil and coolant systems plumbed (`19-m5x-oil-system.md`, `09-coolant.md`); FMIC core mounted; charge piping mocked up
@@ -9,12 +9,12 @@
 
 ## Overview
 
-The M5x turbo system closely parallels the 07K Phase 3 air/boost system (`31-air-boost.md`) in architecture: top-mount or bottom-mount exhaust manifold → turbo → FMIC → throttle body → engine. The primary differences vs 07K:
+The M5x turbo system closely parallels the 07K Phase 3b air/boost system (`31-air-boost.md`) in architecture: top-mount or bottom-mount exhaust manifold → turbo → FMIC → throttle body → engine. The primary differences vs 07K:
 
 - **Manifold geometry:** M5x manifold is a purpose-built 6-cylinder header; 07K uses a custom 5-cyl manifold. The M5x has a larger exhaust collector due to the extra cylinder — this actually improves turbo response for a given turbo size.
 - **Turbo size:** The M50/M52 at 2.5L (or 2.8L M52B28) is a smaller displacement than the 07K at 2.5L but with 6 cylinders vs 5. The extra displacement of the M52B28 improves spoolup and midrange over a 2.5L base.
 - **Boost target:** ~400–500whp on pump gas / up to 700whp on E85 (flex fuel mandatory). At 700whp E85, a mid-to-large frame turbo is required — the GT35.30 included in the K64 kit is rated to 300–500hp and is undersized for 700whp E85. See Turbo Selection below for upgrade path.
-- **FMIC and charge piping:** The CXRacing FMIC core from Phase 1A (`31-air-boost.md` Phase 1A carryover row) is appropriate for the M5x target. Charge piping routing depends on manifold and turbo position — mock up before fabricating.
+- **FMIC and charge piping:** The CXRacing FMIC core from Phase 3a (`31-air-boost.md` Phase 3a carryover row) is appropriate for the M5x target. Charge piping routing depends on manifold and turbo position — mock up before fabricating.
 
 ---
 
@@ -39,7 +39,7 @@ The M5x turbo system closely parallels the 07K Phase 3 air/boost system (`31-air
 | **Garrett GTX3076R Gen II** | **856801-5026S** | [genx-performance.com](https://genx-performance.com/garrett-gtx3076r-gen-ii-turbocharger-t3-v-band-0-82-a-r/) · [bulletproofautomotive.com](https://bulletproofautomotive.com/product/garrett-gtx3076r-gen-ii-assembly-kit-0-82-ar-t3-inlet-856801-5026s/) | **~$1,995–2,378** | T3 inlet (drops onto K64/Overrun manifold), V-Band turbine outlet (V-band downpipe option from Overrun), .82 A/R, ball bearing, billet compressor wheel, 400–750hp. Overrun Tuning explicitly recommends GTX3076R for 2.8–3.2L. |
 | **Turbosmart Gen V ProGate50 50mm WG** | **TS-0554-1002** (7 psi spring) | [turbosmart.com](https://turbosmart.com/products/wg50-gen-v-progate50-7psi-black_2) · [xlr8.com](https://xlr8.com/turbosmart-wg50-gen-v-pro-gate-50-7psi-black/) | **~$572–636** | 50mm matches Overrun manifold's 50mm wastegate port. 7 psi spring — MaxxECU solenoid holds gate closed to run above spring pressure. V-Band fitment. |
 | **HKS SSQV4** | **71008-AK001** | [3sx.com](https://www.3sx.com/hks-ssqv-bov-universal-series-v4-genuine-hks-71008-ak001) · [frsport.com](https://frsport.com/products/hks-71008-ak001-super-sequential-blow-off-valve-4-kit-ssqv4-universal) | **$319.95** | Universal. Requires weld-on mount flange on charge pipe — fabricator job at Fabie Boys or VAC at downpipe mock-up. HKS steel weld flange: PN **71002-AK011**, $31.95. |
-| **Injector Dynamics ID850 × 6** | **850.60.14.14.6** (USCAR, 14mm) | [comotorsports.ca](https://comotorsports.ca/injector-dynamics-id850-850-60-14-14-4-comotors.html) · [andysautosport.com](https://www.andysautosport.com/products/injector_dynamics__850.28.04.60.14.6-PNP.html) | **~$750–792** | 850cc/min, USCAR connector (EV6), 14mm top adapter. Confirmed BMW 328 96-98 (M52B28) fitment via ID application guide (upg-shop.com). MaxxECU characterization data published by ID: [help.injectordynamics.com](https://help.injectordynamics.com/support/solutions/articles/4000198369-maxxecu). Covers E85 at GT35.30 ceiling (~500whp) at ~71% duty; pump 93 at ~54% duty, no driveability concern. |
+| **Injector Dynamics ID850 × 6** | **850.60.14.14.6** (USCAR/EV6, 14mm) | [comotorsports.ca](https://comotorsports.ca/injector-dynamics-id850-850-60-14-14-4-comotors.html) · [andysautosport.com](https://www.andysautosport.com/products/injector_dynamics__850.28.04.60.14.6-PNP.html) | **~$750–792** | 850cc/min, USCAR/EV6 connector, 14mm top adapter. Confirmed BMW 328 96-98 (M52B28) fitment via ID application guide. MaxxECU characterization data: [help.injectordynamics.com](https://help.injectordynamics.com/support/solutions/articles/4000198369-maxxecu). Covers E85 at ~500whp at ~71% duty; pump 93 at ~54% duty. **If using MaxxECU M50 terminated harness (Bosch JPT/EV1 injector sockets):** add ID PN 90.1 USCAR→EV1 adapter × 6 (~$11.55 each, ~$69 total) — [kseriesparts.com](https://www.kseriesparts.com/IJD-90-1.html). Not needed if wiring a custom harness with USCAR injector sockets. These same injectors transfer to the turbo iron-block engine at Phase 3a. |
 
 ---
 
@@ -121,7 +121,7 @@ External wastegate is required with both manifolds (neither has an internal wast
 
 ## Intercooler and Charge Piping
 
-The CXRacing FMIC kit referenced in Phase 3 (`31-air-boost.md`) is appropriate for the M5x build as well. The core and end tanks mount in the same E36 front position. Charge piping routing will differ from the 07K path because the turbo position (TMB01 bottom-mount driver side vs SPA MK5 for 07K) exits the hot side at a different angle.
+The CXRacing FMIC kit referenced in Phase 3b (`31-air-boost.md`) is appropriate for the M5x build as well. The core and end tanks mount in the same E36 front position. Charge piping routing will differ from the 07K path because the turbo position (TMB01 bottom-mount driver side vs SPA MK5 for 07K) exits the hot side at a different angle.
 
 **TMB01 charge piping path (typical E36 M5x turbo):**
 - Compressor outlet → front-crossing aluminum pipe → FMIC inlet (passenger side or center)
@@ -134,7 +134,7 @@ All charge piping for the M5x must be fabricated or adapted from universal bends
 
 ## Boost Control
 
-Same approach as 07K Phase 3 (`31-air-boost.md`): MaxxECU controls boost via a PWM boost control solenoid on the wastegate actuator. MaxxECU supports open/closed-loop boost control natively. Use a Turbosmart or Synapse solenoid.
+Same approach as 07K Phase 3b (`31-air-boost.md`): MaxxECU controls boost via a PWM boost control solenoid on the wastegate actuator. MaxxECU supports open/closed-loop boost control natively. Use a Turbosmart or Synapse solenoid.
 
 ---
 

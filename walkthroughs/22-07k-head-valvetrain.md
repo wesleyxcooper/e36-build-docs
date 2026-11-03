@@ -1,6 +1,6 @@
-# Phase 2: 07K Head Build & Valvetrain
+# Phase 2b: 07K Head Build & Valvetrain
 
-**Phase:** 2  
+**Phase:** 2b
 **System tags:** `[HEAD/VALVETRAIN]` `[MACHINING]`  
 **Shop-mandatory:** Yes — head assembly (springs, retainers, shims, lifters, valve lash) is performed by Euromotive during longblock build  
 **Prerequisites:** 07K donor block at Euromotive (`21-07k-rotating-assembly.md`); cam decision locked; intake cam sourced; spring kit and shims on hand at dropoff
@@ -44,7 +44,7 @@ Key properties:
 - Jim Green (ProjectPad/Audizine), confirmed at 630 whp on a turbo 07K: *"I have no problems with my stock cams at 630 whp. It is fast."* — TTRS cam + Supertech dual springs + Ti retainers is the mechanically correct and street-friendly combination at this power level.
 - NA ceiling ~7,500 RPM per TheProjectPad — **irrelevant for a boosted build.** At 18–28 psi, the turbo provides mass airflow well past what cam profile would NA-limit. The VVT delivers tractable low-end torque for street use.
 
-**VVT note:** The TTRS/CEPA intake cam has VVT. In Phase 3, GPO 3 (freed from M52 VANOS duty when the M52 is removed) is assigned to the VVT solenoid output at MaxxECU. The ME7.1.1 OEM harness reference for the cam actuator solenoid is **pin 115**. Confirm the final GPO assignment in MTune before harness build — see `maxxecu-07k.wv` for current GPO allocation notes, as the ETh path also uses freed GPO outputs.
+**VVT note:** The TTRS/CEPA intake cam has VVT. In Phase 3b, GPO 3 (freed from M52 VANOS duty when the M52 is removed) is assigned to the VVT solenoid output at MaxxECU. The ME7.1.1 OEM harness reference for the cam actuator solenoid is **pin 115**. Confirm the final GPO assignment in MTune before harness build — see `maxxecu-07k.wv` for current GPO allocation notes, as the ETh path also uses freed GPO outputs.
 
 **Alternative: CAT Cams 7604002** — *only warranted if the 9,000 RPM NA-breathing ceiling is a hard design target, which it is not on a boosted build.*
 
@@ -117,6 +117,6 @@ Victor Reinz TTRS CEPA head gasket kit ($200.00). Torque head to VW Erwin spec w
 - [CAT Cams 7604002 — SBPartsDirect](https://www.sbpartsdirect.com/product_p/cat-7604002.htm)
 - [07K Hard to Find Parts Wiki — cam adjuster bolts](https://the07k.wiki/wiki/Hard_to_Find_Parts)
 - [How To Time a VW 07K — YouTube](https://www.youtube.com/watch?v=wdONdrRi9WU&t=203s)
-- [E36 DIY Build Checklist — Phase 2 Head & Valvetrain](../E36_DIY_Build_Checklist.md)
-- [E36 9000 RPM Project Plan — Phase 2 Head & Valvetrain](../E36_9000RPM_Project_Plan_Verified.md)
+- [E36 DIY Build Checklist — Phase 2b Head & Valvetrain](../E36_DIY_Build_Checklist.md)
+- [E36 9000 RPM Project Plan — Phase 2b Head & Valvetrain](../E36_9000RPM_Project_Plan_Verified.md)
 - [`maxxecu-07k.wv`](../../e36-wiring/harnesses/maxxecu-07k.wv) — GPO allocation and VVT solenoid output notes

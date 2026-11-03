@@ -3,7 +3,7 @@
 **Phase:** 1  
 **System tags:** `[STEERING]`  
 **Shop-mandatory:** No  
-**Prerequisites:** Interior strip complete (01-interior-prep). Do this before Phase 3 turbo work — the stock RHD rubber coupler will conflict with any top-mount manifold.
+**Prerequisites:** Interior strip complete (01-interior-prep). Do this before Phase 3a turbo work — the stock RHD rubber coupler will conflict with any top-mount manifold.
 
 ## Parts
 
@@ -27,7 +27,7 @@
 3. ✅ Install Condor Speed Shop Slim RHD Steering Shaft ($308.99). Replaces the stock rubber coupler with a chromoly dual U-joint shaft.
 
 4. ✅ After install, verify both U-joint angles are **below ~15°**. Steep angles create torque oscillation that can feed through an EPS controller as noise.
-   > ⚠️ **Pitfall:** Mandatory before Phase 3 turbo work — do it now while the engine bay is accessible. The stock RHD rubber coupler will conflict with any top-mount manifold. Do not skip.
+   > ⚠️ **Pitfall:** Mandatory before Phase 3a turbo work — do it now while the engine bay is accessible. The stock RHD rubber coupler will conflict with any top-mount manifold. Do not skip.
 
 ## References
 

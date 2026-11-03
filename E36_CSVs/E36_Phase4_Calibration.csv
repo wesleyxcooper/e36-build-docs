@@ -1,16 +1,27 @@
 Phase,Category,Item,Detail,Price Low,Price High,Interval / Action,Notes
-Phase 4,CAN-Bus,Engine RPM / TPS,MaxxECU native 8HP CAN output,,,No separate TCU — MaxxECU sends RPM and TPS directly to 8HP via CAN. Essential for shift logic and line pressure scaling.,
-Phase 4,CAN-Bus,Torque Request,8HP → MaxxECU CAN input,,,Triggers ignition cut/retard during shifts to protect 8HP internals,
-Phase 4,CAN-Bus,Gear Position,8HP → MaxxECU CAN input,,,Allows gear-dependent boost control and digital dash display,
-Phase 4,CAN-Bus,Trans Temp,8HP → MaxxECU CAN input,,,Safety limiter - triggers limp mode if fluid exceeds 120°C,
-Phase 4,Tuning,M5x Base Tune,Initial MaxxECU map — M52 pump gas + flex fuel,800,1200,,Full standalone tune: VE table
-Phase 4,Tuning,Engine Break-In,Run mineral-based oil - limit to 4000 RPM,60,80,,First 500 miles. Cheap mineral oil only — do not run synthetic during break-in.
-Phase 4,Tuning,Transmission Calibration,MaxxECU 8HP shift pressure and solenoid timing,0,0,,Included in MaxxECU 8HP CAN control. No separate TCU calibration cost.
-Phase 4,Tuning,07K Base Tune,MaxxECU remap for 07K — pump gas + flex fuel + boost,1200,1800,,Full retune on 07K: new VE/ignition tables
-Phase 4,Tuning,High-RPM Validation,Verify 07K valvetrain stability to 9000 RPM on dyno,0,0,,Included in 07K tune session. Separate session only if issues arise.
-Phase 4,Tuning,Flex Fuel Mapping,Included in both M5x and 07K tune sessions,0,0,,MaxxECU single-map flex fuel — no separate tune file needed. Calibrate ethanol sensor + blend tables during primary tune session.
-Phase 4,Maintenance,Engine Oil (07K),Motul 300V 15W50 (High Zinc),80,95,,3000 miles street / 3 track days
-Phase 4,Maintenance,Oil Analysis,Blackstone Labs — check for bearing wear,35,35,https://www.blackstone-labs.com/,Every 2nd oil change
-Phase 4,Maintenance,8HP Fluid,ZF Lifeguard 8 ONLY,80,120,,30000 miles / Annual (track use)
-Phase 4,Maintenance,Valvetrain Audit,Check solid shim clearances,0,0,,Every 10000 miles — labor only
-Phase 4,Maintenance,Timing Chains,Inspect guide wear,0,0,,Every 50000 miles — labor only
+Phase 1 Calibration,CAN-Bus,8HP CAN Setup,MaxxECU native 8HP CAN output — RPM / TPS / torque request / gear position / trans temp,0,0,,No separate TCU — MaxxECU sends RPM and TPS directly to 8HP via CAN. Essential for shift logic and line pressure scaling. Configured in MTune at Phase 1 install.
+Phase 1 Calibration,Tuning,NA M52B28 Base Tune,MaxxECU NA M52 base map + road tune — pump gas + flex fuel blend,0,400,,Off-the-shelf MaxxECU NA M52B28 base map + light tuner session for idle/AFR/timing dial-in. Full custom dyno session not required. See 14-m52-na-calibration.md.
+Phase 1 Calibration,Tuning,8HP Shift Calibration,MTune clamp start/end values + shift pressure table — DIY in MTune,0,0,,No separate cost. Refined over first 200–500 miles of real driving. See 14-m52-na-calibration.md Section 2.
+Phase 1 Calibration,Tuning,Flex Fuel Sensor Validation,Continental GM 13577429 — verify E0/blend/E85 sensor readings and AFR scaling,0,0,,Staged validation: pump 93 → 50/50 blend → E85. Included in tuner session cost. See 14-m52-na-calibration.md Section 3.
+Phase 1 Calibration,Maintenance,Engine Oil (M52B28 NA),Full synthetic 5W30 or 5W40 — first fill after break-in complete,60,80,,3000 miles or 6 months. No specific oil break-in protocol needed for the unbuilt NA alloy M52.
+Phase 4a,Tuning,Recommended Tuner,"VAC Motorsports — vacmotorsports.com · (215) 462-4666. Philadelphia PA. In-person Mustang Dyno/Dynopack. Same shop building the Phase 2a engine. Standard platforms: OEM ECU/KMS/MoTeC — MaxxECU approved case by case; call ahead to confirm. FI standalone ECU starting $1199. Source: vacmotorsports.com/bmw-dyno-tuning-philadelphia. Note: BE Racing Tuning (beracingtuning.com) tunes OEM MS41/42/43 only — not MaxxECU.",0,0,,
+Phase 4a,Tuning,Turbo M52B28 Dyno Tune,Full MaxxECU tune — pump gas + E85 + boost + flex fuel blend scaling,1000,1500,,Custom dyno session required. VE/ignition tables + boost control table (open-loop wastegate duty cycle) + flex fuel scalar. Rev limit set at 8200 RPM. See 19d-m5x-turbo-calibration.md.
+Phase 4a,Tuning,Engine Break-In (M52B28 Turbo),Mineral-based oil — 5500 RPM limit — 8 psi boost max,60,80,,First 500 miles. Castrol GTX 5W30 or equivalent conventional oil only. No synthetic during break-in.
+Phase 4a,Tuning,First Oil Change + Blackstone Sample,Drain 500-mile break-in oil; send to Blackstone Labs; refill Motul 300V 15W50,95,130,500 miles,Blackstone kit ~$30. Motul 300V 15W50 thereafter — permanent oil spec for this build.
+Phase 4a,Tuning,Flex Fuel Map Validation (Boost),Staged E0/blend/E85 validation under boost; confirm AFR scaling at 8 psi,0,0,,Included in dyno tune cost. Validate on the road after dyno — log AFR at all blend points and a low-boost pull.
+Phase 4a,Tuning,Valvetrain Audit (1000 Miles),Check all 24 M52B28 solid shim valve clearances (intake 0.25–0.30mm / exhaust 0.30–0.35mm),0,0,1000 miles,Critical on boosted build — tight exhaust shim causes valve burn. See 19d-m5x-turbo-calibration.md Section 5.
+Phase 4a,Maintenance,Engine Oil (M52B28 Turbo),Motul 300V 15W50 (High Zinc),80,95,,3000 miles street / 3 track days after break-in complete
+Phase 4a,Maintenance,Oil Analysis,Blackstone Labs — baseline at 500 miles; every 2nd change thereafter,35,35,https://www.blackstone-labs.com/,First sample establishes baseline for this engine — all future samples compared against it
+Phase 4b,CAN-Bus,8HP CAN (07K),MaxxECU native 8HP CAN — same harness as Phase 1; engine harness changes but CAN harness untouched,0,0,,No rewiring at 07K swap. CAN H/L/shield pass through Maven HD30 Connector A unchanged. See 34-ecu-harness-final.md.
+Phase 4b,Tuning,Recommended Tuner,"Mead Motorsports Tuning — meadmotorsportstuning.com · (501) 605-4113. Remote MaxxECU specialist; documented for 944 turbo builds on MaxxECU (same community as 07K swap). Note: RevMap Performance (revmapperformance.com) is the community standard for OEM ME7.1.1 07K ECU calibration — does NOT apply to MaxxECU builds. Source: the07k.wiki/wiki/OEM_Calibration_Tuning.",0,0,,
+Phase 4b,Tuning,07K Base Tune,MaxxECU full remap for 07K — pump gas + flex fuel + boost,1200,1800,,New VE/ignition/boost tables for the 07K 2.5L inline-5 configuration. Load 07K base map; full custom dyno session. See 40-calibration.md.
+Phase 4b,Tuning,High-RPM Validation,Verify 07K valvetrain stability to 9000 RPM on dyno,0,0,,Included in 07K tune session. Separate pull only if issues arise.
+Phase 4b,Tuning,Engine Break-In (07K),Mineral-based oil — 4000 RPM limit — no boost,60,80,,First 500 miles. Same protocol as M52B28 turbo but stricter RPM limit for the fresh 07K bore.
+Phase 4b,Tuning,First Oil Change + Blackstone Sample,Drain 500-mile break-in oil; send to Blackstone Labs; refill Motul 300V 15W50,95,130,500 miles,Establish 07K baseline. Iron/copper/aluminum targets specific to 07K alloy block. See 40-calibration.md.
+Phase 4b,Tuning,Flex Fuel Map Validation,Staged E0/blend/E85 validation under 07K boost,0,0,,Included in 07K dyno tune cost. See 40-calibration.md Section 3.
+Phase 4b,Tuning,Valvetrain Audit (1000 Miles),Check all 20 07K solid shim valve clearances (intake 0.15–0.20mm / exhaust 0.20–0.30mm),0,0,1000 miles,07K exhaust valves run hot under boost — critical check. See 40-calibration.md Section 4.
+Phase 4b,Maintenance,Engine Oil (07K),Motul 300V 15W50 (High Zinc),80,95,,3000 miles street / 3 track days
+Phase 4b,Maintenance,Oil Analysis,Blackstone Labs,35,35,https://www.blackstone-labs.com/,Every 2nd oil change
+Phase 4b,Maintenance,8HP Fluid,ZF Lifeguard 8 ONLY,80,120,,30000 miles / Annual (track use)
+Phase 4b,Maintenance,Valvetrain Audit (Ongoing),Check 07K solid shim clearances,0,0,,Every 10000 miles — labor only
+Phase 4b,Maintenance,Timing Chains (Ongoing),Inspect 07K timing chain guide wear,0,0,,Every 50000 miles — labor only

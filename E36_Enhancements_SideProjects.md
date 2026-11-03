@@ -225,7 +225,7 @@ Font reference: [Barbie Medium](https://fontmeme.com/fonts/barbie-medium-font/) 
 
 > ⚠️ **Output flange note:** The 210mm diff uses **larger output flanges than the E36 188mm diff** — they are not interchangeable. When sourcing a bare housing, confirm output flanges are included (they often separate and sell separately on eBay). The diff output flanges are removable/swappable components ([bimmerboard](http://www.bimmerboard.com/forums/posts/793511): *"The side flanges pop out and are an easy swap"*), but **whether E36-compatible output flanges can be fitted to the 210mm housing to retain stock E36 half-shafts is unconfirmed in available sources** — the [RallyRoad product page](https://rallyroad.net/products/e36bullet-proofdifferentialconversion) (the definitive install reference) makes no mention of half-shaft compatibility. **Verify with RallyRoad directly before assuming stock axles carry over.**
 
-> ⚠️ **Half-shaft (axle) strength at 600 whp:** Regardless of diff choice, stock E36 non-M rear half-shafts are undersized for sustained 600 whp drift use — the 8HP's torque multiplication in lower gears under repeated drift launches will stress or fracture them. The Driveshaft Shop (DSS) makes custom half-shafts for high-power applications; no retail E36 rear half-shaft kit is listed in their catalog — custom quote required: [driveshaftshop.com/custom](https://driveshaftshop.com/custom-driveshafts/). Budget **~$500–800/pair** for custom chromoly half-shafts. This is a required line item for Phase 3 at this power level regardless of which diff path is chosen.
+> ⚠️ **Half-shaft (axle) strength at 600 whp:** Regardless of diff choice, stock E36 non-M rear half-shafts are undersized for sustained 600 whp drift use — the 8HP's torque multiplication in lower gears under repeated drift launches will stress or fracture them. The Driveshaft Shop (DSS) makes custom half-shafts for high-power applications; no retail E36 rear half-shaft kit is listed in their catalog — custom quote required: [driveshaftshop.com/custom](https://driveshaftshop.com/custom-driveshafts/). Budget **~$500–800/pair** for custom chromoly half-shafts. This is a required line item for Phase 3b at this power level regardless of which diff path is chosen.
 
 > ⚠️ **Subframe note:** The RallyRoad bracket requires removing the stock front diff mount and welding the new bracket to the subframe. Do this while the subframe is already out during Phase 1 chassis work — zero additional teardown cost.
 
@@ -242,7 +242,7 @@ Font reference: [Barbie Medium](https://fontmeme.com/fonts/barbie-medium-font/) 
 
 ## Cat-Back Exhaust  [EXHAUST]
 
-> **Build-specific note:** The turbo build (Phase 1A/3) routes exhaust from a downpipe → 3" cat → cat-back. All systems below connect at the cat/mid-pipe junction. Choose a system with a 3" inlet if retaining the turbo downpipe. Most E36 cat-backs are 2.5"–3" — verify inlet size at purchase.
+> **Build-specific note:** The turbo build (Phase 2a/3a and Phase 3b) routes exhaust from a downpipe → 3" cat → cat-back. All systems below connect at the cat/mid-pipe junction. Choose a system with a 3" inlet if retaining the turbo downpipe. Most E36 cat-backs are 2.5"–3" — verify inlet size at purchase.
 
 | Option | Specification | Cost | Link |
 | :---- | :---- | :---- | :---- |
@@ -267,7 +267,7 @@ Font reference: [Barbie Medium](https://fontmeme.com/fonts/barbie-medium-font/) 
 | **Coilovers (Premium)** | **Öhlins Road & Track** | ~$2,500–3,000 | [ohlins.com](https://www.ohlins.com) |
 | **Camber Plates** | **Ground Control E36 camber plates** | ~$200–350/pair | [Ground Control](https://www.ground-control-store.com) — required for aggressive negative camber with widebody fitment |
 | **Rear Subframe Bushings** | **Solid / poly** | ~$50–100 | Essential before any suspension tune — OEM rubber deflects under torque |
-| **Z3 Steering Rack** *(low priority — see note)* | **BMW Z3 rack (direct E36 bolt-in)** | ~$150–250 used | 2.75 turns LTL vs ~3.5 turns OEM E36. Direct bolt-in to E36 subframe. **Do not combine with the SLR Mini Kit if targeting ~900° LTL:** OEM rack + SLR ~28–30% quickening = ~2.45–2.52 turns / ~880–907° — on target. Z3 rack + SLR = ~1.93–1.98 turns / ~695–713° — too aggressive for street. Z3 rack is only viable as a standalone upgrade on an unmodified rack with no angle kit. Cap hydraulic lines if also running EPS (Phase 3). Source from Z3 donor or eBay. |
+| **Z3 Steering Rack** *(low priority — see note)* | **BMW Z3 rack (direct E36 bolt-in)** | ~$150–250 used | 2.75 turns LTL vs ~3.5 turns OEM E36. Direct bolt-in to E36 subframe. **Do not combine with the SLR Mini Kit if targeting ~900° LTL:** OEM rack + SLR ~28–30% quickening = ~2.45–2.52 turns / ~880–907° — on target. Z3 rack + SLR = ~1.93–1.98 turns / ~695–713° — too aggressive for street. Z3 rack is only viable as a standalone upgrade on an unmodified rack with no angle kit. Cap hydraulic lines if also running EPS (Phase 3b). Source from Z3 donor or eBay. |
 | **Alignment** | **Corner balance + 4-wheel alignment at coilover install** | ~$150–300 shop rate | Set camber to -2.0° to -3.0° front / -1.5° to -2.5° rear for track use with widebody |
 
 ---
@@ -460,9 +460,9 @@ Font reference: [Barbie Medium](https://fontmeme.com/fonts/barbie-medium-font/) 
 
 **Where this could apply on this build:**
 - **CSF radiator (Phase 1)** — convert its factory hose-barb inlet/outlet to AN. Only worth doing at Phase 1 install, while the radiator is out of the car anyway; retrofitting later means pulling it again.
-- **07K thermostat housing outlet (Phase 3)** — avoids welding onto a cast/machined housing you'd rather not modify.
+- **07K thermostat housing outlet (Phase 3b)** — avoids welding onto a cast/machined housing you'd rather not modify.
 
-**Reality check — not currently recommended over what's already in the main plan:** the Phase 3 coolant routing already specs a proven approach (Samco/Vibrant silicone hose + Dorman barb adapters) sourced directly from the 944 07K-swap community reference build (alliedcam1/Rennlist p138) for this exact swap. None of those reference builds use AN for coolant — it's a low-pressure circuit (~15–20 psi cap) where clamps are the accepted standard, and AN adds cost + rigid routing (worse for first-time custom-fit hose runs) without a functional gain. Revisit this only if the "measure at engine-in-car stage" tool-free-service angle becomes genuinely appealing once the car is track-active — not as a default.
+**Reality check — not currently recommended over what's already in the main plan:** the Phase 3b coolant routing already specs a proven approach (Samco/Vibrant silicone hose + Dorman barb adapters) sourced directly from the 944 07K-swap community reference build (alliedcam1/Rennlist p138) for this exact swap. None of those reference builds use AN for coolant — it's a low-pressure circuit (~15–20 psi cap) where clamps are the accepted standard, and AN adds cost + rigid routing (worse for first-time custom-fit hose runs) without a functional gain. Revisit this only if the "measure at engine-in-car stage" tool-free-service angle becomes genuinely appealing once the car is track-active — not as a default.
 
 ---
 
@@ -511,7 +511,7 @@ Treadstone ([treadstoneperformance.com](https://www.treadstoneperformance.com)) 
 **Build-specific context:**
 
 - **Phase 1 (M52):** A pre-made E36 M3 / 328i silicone hose kit in clear is a drop-in option at this phase. Sources: Mishimoto and HPS both list E36-specific kits. Verify fitment for the convertible — some kits are coupe-spec only.
-- **Phase 3 (07K):** The 07K Phase 3 coolant routing is fully custom (Samco/Vibrant silicone hose, measured and cut at the engine-in-car stage). Clear hose bulk stock works fine for custom-routed runs — source by ID/OD and radius needed rather than as a kit. Applies equally to clear or any other color.
+- **Phase 3b (07K):** The 07K Phase 3b coolant routing is fully custom (Samco/Vibrant silicone hose, measured and cut at the engine-in-car stage). Clear hose bulk stock works fine for custom-routed runs — source by ID/OD and radius needed rather than as a kit. Applies equally to clear or any other color.
 - **Verdict:** Worth doing if the aesthetic is important to you — the downsides are real but manageable with a clean system, quality constant-torque clamps, and a habit of checking coolant level. The yellowing timeline is the only genuinely non-recoverable issue; avoid budget peroxide-cured clear hose if longevity of the clarity matters.
 
 ---
@@ -626,7 +626,7 @@ A vivid magenta-purple metallic from the BMW E36 Individual program. Sits in nat
 
 > **Inspired by:** Evoluto F355 restomod (MoTeC M150 + Deutsch AS circular connector engine harness). The core concept: the entire engine harness terminates at a single circular connector mounted on the firewall. Cabin side stays permanently wired; engine side unplugs as one unit with the motor.
 >
-> **Build relevance:** This is particularly compelling for a two-swap build (M52 → 8HP, then M52 → 07K). A single firewall bulkhead connector means the 07K harness (built offline in Phase 2) plugs directly into the same cabin-side socket as the M52 harness, with zero cabin wiring touched at swap time.
+> **Build relevance:** This is particularly compelling for a two-swap build (M52 → 8HP, then M52 → 07K). A single firewall bulkhead connector means the 07K harness (built offline in Phase 2b) plugs directly into the same cabin-side socket as the M52 harness, with zero cabin wiring touched at swap time.
 
 ### Connector Options
 
@@ -654,7 +654,7 @@ A **47-way** connector comfortably handles the full M52 or 07K engine harness si
 - Mount a **flanged bulkhead 47- or 79-way Deutsch AS (or Souriau 8STA)** at the firewall during Phase 1 chassis prep, while the firewall is accessible
 - Wire cabin side (ECU CMC connector, fuse block, power relay board) to the bulkhead — this side is permanent
 - Build M52 engine harness to terminate at a mating plug — use this through the entire M52 phase
-- Build 07K harness offline (Phase 2) using same pinout → same bulkhead → drop-in swap at Phase 3
+- Build 07K harness offline (Phase 2b) using same pinout → same bulkhead → drop-in swap at Phase 3b
 
 ### Cost Estimate
 | Item | Qty | Est. Cost |

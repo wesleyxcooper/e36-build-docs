@@ -1,9 +1,9 @@
-# Phase 2: 07K Timing Chain Kit Installation
+# Phase 2b: 07K Timing Chain Kit Installation
 
-**Phase:** 2  
+**Phase:** 2b
 **System tags:** `[TIMING]`  
 **Shop-mandatory:** Partially — chain/sprocket installation and internal timing setup are performed by Euromotive during longblock build. BBG billet upper timing cover and cam sensor wiring are owner-installed after longblock delivery.  
-**Prerequisites:** Longblock returned from Euromotive (sealed); BBG billet valve cover + timing cover combo ordered at Phase 2 kickoff (~6-week lead time); cam adjuster stretch bolts on hand (TTY — 2 minimum)
+**Prerequisites:** Longblock returned from Euromotive (sealed); BBG billet valve cover + timing cover combo ordered at Phase 2b kickoff (~6-week lead time); cam adjuster stretch bolts on hand (TTY — 2 minimum)
 
 ---
 
@@ -15,7 +15,7 @@
 | 07K Upper Timing Chain | `07K109231A` · FCP Euro / ECS Tuning / OEM | — |
 | Timing chain sprockets | OEM or matched to chain kit | — |
 | VVT cam actuator (cam phaser) | Sourced with TTRS/CEPA intake cam from CEPA/CFSA/RS3/TTRS donor | Included with cam |
-| BBG billet upper timing cover | [Boost Brothers Garage combo](https://www.boostbrothersgarage.com/collections/944-07k-swap/products/07k-billet-valve-cover-upper-timing-cover-and-rear-coolant-flange-combo) — combo with valve cover + coolant flange | $975–$1,075 combo (6-wk lead — order at Phase 2 kickoff) |
+| BBG billet upper timing cover | [Boost Brothers Garage combo](https://www.boostbrothersgarage.com/collections/944-07k-swap/products/07k-billet-valve-cover-upper-timing-cover-and-rear-coolant-flange-combo) — combo with valve cover + coolant flange | $975–$1,075 combo (6-wk lead — order at Phase 2b kickoff) |
 | Cam adjuster stretch bolts (2×) | `N91042802` · [FCP Euro](https://www.fcpeuro.com/products/audi-camshaft-sprocket-bolt-genuine-audi-n91042802) | $9.19/ea |
 | Alt cam adjuster bolt | `N91050202` · ECS Tuning | — |
 | 07K cam sensor (VW Hall type) | OEM `07K907601A` or verify at engine — 3-pin Hall effect | — |
@@ -60,7 +60,7 @@ The 07K cam sensor is a **VW Hall-effect type with +5V supply**, using the VW 3-
 - Pin 2: Sensor GND
 - Pin 3: Signal → MaxxECU HOME input
 
-**M52 cam sensor:** Different OEM BMW connector; different pinout. The MaxxECU M50 terminated harness ships with an M50/VANOS connector. At Phase 3, that connector is **discarded** and a new VW-type pigtail is crimped for the 07K cam sensor.
+**M52 cam sensor:** Different OEM BMW connector; different pinout. The MaxxECU M50 terminated harness ships with an M50/VANOS connector. At Phase 3b, that connector is **discarded** and a new VW-type pigtail is crimped for the 07K cam sensor.
 
 **ME7.1.1 harness reference:** Cam Hall sensor at **pin 86** in the OEM ME7.1.1 engine connector.
 
@@ -68,7 +68,7 @@ The 07K cam sensor is a **VW Hall-effect type with +5V supply**, using the VW 3-
 
 ### 4 — BBG billet upper timing cover (owner install — after longblock delivery)
 
-The BBG billet upper timing cover arrives with the valve cover + coolant flange combo (order at Phase 2 kickoff, ~6-week lead time). Install after the longblock is returned:
+The BBG billet upper timing cover arrives with the valve cover + coolant flange combo (order at Phase 2b kickoff, ~6-week lead time). Install after the longblock is returned:
 
 1. Confirm OEM stock timing cover is off (Euromotive may have left it on — swap at this step)
 2. Install BBG cover per their instructions; torque fasteners to spec
@@ -81,5 +81,5 @@ The BBG billet upper timing cover arrives with the valve cover + coolant flange 
 - [How to Time a VW 07K — YouTube](https://www.youtube.com/watch?v=wdONdrRi9WU&t=203s)
 - [ME7.1.1 pinout — Google Drive PDF](https://drive.google.com/file/d/15RPWyYPLHGEMMQZIlUgpoo77T-CxjyMP/) (cam Hall at pin 86; VVT solenoid at pin 115)
 - [`maxxecu-07k.wv`](../../e36-wiring/harnesses/maxxecu-07k.wv) — cam Hall sensor connector notes; crank VR connector notes; GPO allocation
-- [E36 DIY Build Checklist — Phase 2 Timing](../E36_DIY_Build_Checklist.md)
-- [E36 9000 RPM Project Plan — Phase 2 Head & Valvetrain](../E36_9000RPM_Project_Plan_Verified.md)
+- [E36 DIY Build Checklist — Phase 2b Timing](../E36_DIY_Build_Checklist.md)
+- [E36 9000 RPM Project Plan — Phase 2b Head & Valvetrain](../E36_9000RPM_Project_Plan_Verified.md)

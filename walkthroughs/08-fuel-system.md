@@ -3,7 +3,7 @@
 **Phase:** 1  
 **System tags:** `[FUEL]` `[ELECTRICAL]`  
 **Shop-mandatory:** No  
-**Prerequisites:** Rear subframe out (subframe reinforcement window) gives easiest access to the fuel tank. Relay block wired per `11-ecu-chassis-wiring.md` (GPO 2 low-side relay R1 is the pump power source in Phase 1 — PMU16 is not installed until Phase 3). MaxxECU installed with MTune access for fuel pump relay config.
+**Prerequisites:** Rear subframe out (subframe reinforcement window) gives easiest access to the fuel tank. Relay block wired per `11-ecu-chassis-wiring.md` (GPO 2 low-side relay R1 is the pump power source in Phase 1 — PMU16 is not installed until Phase 3b). MaxxECU installed with MTune access for fuel pump relay config.
 
 ---
 
@@ -23,7 +23,7 @@
 | Bosch 440cc injectors (Green EV1) × 6 | [TRE Performance — 0280155968 set of 6](https://treperformance.com/i-18598170-genuine-bosch-42lb-green-giant-ev1-fuel-injectors-0280155968-6.html) | $399.00 |
 | Ring terminals, 12 AWG (M4 or M5 stud — confirm at install) — pump(+) stud + pump(−) stud terminations | Electrical supply (or included in JDT rewire kit) | — |
 
-> **Recommendation: Option A (JDT bundle at $193.19).** Includes everything Phase 1 needs for the pump-power path (pump + relay + fuse + 10 AWG wire + grommet + terminals). Comparable to buying the pump alone ($181.12) + a rewire kit alone ($37.99 = $219.11 across two vendors) or à la carte from Waytek. At Phase 3, the relay + fuse from the kit are removed and PMU16 O4 replaces them — the 10 AWG cabin/tunnel wire stays in place.
+> **Recommendation: Option A (JDT bundle at $193.19).** Includes everything Phase 1 needs for the pump-power path (pump + relay + fuse + 10 AWG wire + grommet + terminals). Comparable to buying the pump alone ($181.12) + a rewire kit alone ($37.99 = $219.11 across two vendors) or à la carte from Waytek. At Phase 3b, the relay + fuse from the kit are removed and PMU16 O4 replaces them — the 10 AWG cabin/tunnel wire stays in place.
 
 ---
 
@@ -76,14 +76,14 @@ Phase 1 has no PMU16. The pump is switched by relay R1 on the relay block wired 
    Wire: 12 AWG minimum, red, from the relay block (engine bay or inner fender) through the transmission tunnel to the fuel tank hanger pump(+) stud. Estimated run: 3.5–4 m — measure on the car and add 20% slack before cutting. Loom in expandable braid for the full tunnel run. Keep away from exhaust-side tunnel routing.  
    Relay R1 coil: GPO 2 low-side (ECU_12PIN pin 3) → relay pin 85. +12V IGN → relay pin 86. Source: `11-ecu-chassis-wiring.md` Step 4 relay block.
 
-   > ⚠️ **Phase 3 note:** At the 07K swap, relay R1 is removed. PMU16 O4 (25A, PWM-capable) replaces it — wire directly from PMU16 O4 to the same pump(+) stud using the same 12 AWG run. The pump stud connection does not change. See `fuel-pump-hanger-reference.md` Phase 3 section.
+   > ⚠️ **Phase 3b note:** At the 07K swap, relay R1 is removed. PMU16 O4 (25A, PWM-capable) replaces it — wire directly from PMU16 O4 to the same pump(+) stud using the same 12 AWG run. The pump stud connection does not change. See `fuel-pump-hanger-reference.md` Phase 3b section.
 
 10. **Run pump(−) stud → dedicated chassis GND bolt.**  
     Wire: 12 AWG minimum, black. Ring terminal at both ends. The pump ground must be a dedicated stud bolted to body metal — **do not share with ECU sensor grounds or other signal-ground star points.**
 
 11. **MTune fuel pump config (Phase 1):**  
     Outputs → Output config → GPO 2 → Function: **Fuel pump relay** (on/off, not PWM). Pump runs at 100% whenever the ECU is running — no duty cycle control in Phase 1.  
-    > ⚠️ **Phase 3 note:** At the 07K swap, reconfigure GPO 2 (or the MaxxECU CAN output to PMU16) as **PWM fuel pump control** → frequency 100–500 Hz. Duty table by MAP/RPM: ~75% at idle / 100% at WOT. PMU16 O4 frequency is set in PMU software (4–400 Hz range).
+    > ⚠️ **Phase 3b note:** At the 07K swap, reconfigure GPO 2 (or the MaxxECU CAN output to PMU16) as **PWM fuel pump control** → frequency 100–500 Hz. Duty table by MAP/RPM: ~75% at idle / 100% at WOT. PMU16 O4 frequency is set in PMU software (4–400 Hz range).
 
 ### Flex Fuel Sensor Installation
 
@@ -98,7 +98,7 @@ Phase 1 has no PMU16. The pump is switched by relay R1 on the relay block wired 
     The signal wire is open-collector; MaxxECU provides an internal 5V pull-up on the DIN input. A single wire encodes two channels: frequency (50–150 Hz) = ethanol content %; pulse width = fuel temperature. MaxxECU reads both natively on DIN 3.  
     **MTune:** Inputs → Digital inputs → DIN 3 → Function: **Flex fuel sensor**. Enable flex fuel map: Advanced → Flex fuel → set base (0% E) and E85 (85% E) maps.
 
-    > ⚠️ **Phase 3 transition:** At the 07K swap, the M50 harness and ECU_16PIN breakout are removed. The flex fuel signal wire must be extended to cross the AS79 firewall bulkhead on **pin 64** (engine side) → **pin 64** (cabin side) → MaxxECU CMC DIN 3 (same input, new path). +12V supply transitions from the Phase 1 relay rail to the Phase 3 harness +12V supply. GND remains chassis GND. No MTune change required — DIN 3 assignment stays. Source: `harnesses/firewall-bulkhead.wv` pin 64; `walkthroughs/26-07k-harness.md`.
+    > ⚠️ **Phase 3b transition:** At the 07K swap, the M50 harness and ECU_16PIN breakout are removed. The flex fuel signal wire must be extended to cross the AS79 firewall bulkhead on **pin 64** (engine side) → **pin 64** (cabin side) → MaxxECU CMC DIN 3 (same input, new path). +12V supply transitions from the Phase 1 relay rail to the Phase 3b harness +12V supply. GND remains chassis GND. No MTune change required — DIN 3 assignment stays. Source: `harnesses/firewall-bulkhead.wv` pin 64; `walkthroughs/26-07k-harness.md`.
 
 ### FPR Installation
 

@@ -3,7 +3,7 @@
 **Phase:** 1  
 **System tags:** `[COOLANT]` `[ELECTRICAL]`  
 **Shop-mandatory:** No  
-**Prerequisites:** Engine bay accessible (M52 in car). **Stage 1 fan install has no ECU or PMU16 dependency** — thermostat switch and relay only. Stage 2 fan control (PWM SPAL motor, MaxxECU-driven) requires MaxxECU installed. PMU16 O3 is the pre-assigned Phase 3 channel that replaces the relay at the 07K swap — it plays no role in Phase 1 fan control.
+**Prerequisites:** Engine bay accessible (M52 in car). **Stage 1 fan install has no ECU or PMU16 dependency** — thermostat switch and relay only. Stage 2 fan control (PWM SPAL motor, MaxxECU-driven) requires MaxxECU installed. PMU16 O3 is the pre-assigned Phase 3b channel that replaces the relay at the 07K swap — it plays no role in Phase 1 fan control.
 
 ---
 
@@ -16,7 +16,7 @@
 | SPAL 30102049 PWM fan motor (Stage 2 upgrade at MaxxECU install — same bracket, same pin locations) | Aftermarket / SPAL dealer | ~$180–220 |
 | Mishimoto Aluminum E36 Expansion Tank | [Mishimoto MMRT-E36](https://www.mishimoto.com/bmw-e36-ai-coolant-expansion-tank-1992-1999.html) | $190.95 |
 
-**Phase 3 EWP (not Phase 1):** The electric water pump for this build is the Pierburg CWA400 (PWM version), to be installed at the 07K Phase 3 swap. Phase 1 retains the OEM M52 belt-driven water pump. See `ewp-controller.wv` for the full Phase 3 CWA400 wiring spec.
+**Phase 3b EWP (not Phase 1):** The electric water pump for this build is the Pierburg CWA400 (PWM version), to be installed at the 07K Phase 3b swap. Phase 1 retains the OEM M52 belt-driven water pump. See `ewp-controller.wv` for the full Phase 3b CWA400 wiring spec.
 
 ---
 
@@ -77,9 +77,9 @@
 
 ---
 
-## Phase 3 EWP Note
+## Phase 3b EWP Note
 
-The Pierburg CWA400 (PWM version) electric water pump is the planned EWP for this build at Phase 3 (07K engine swap). It is **not a Phase 1 item** — Phase 1 retains the OEM M52 belt-driven water pump. PMU16 outputs O5+O14 are pre-assigned in the channel plan for the CWA400 (50A combined), but are not populated during Phase 1. Full CWA400 wiring specification, duty-cycle map, post-shutdown cooling logic, and PMU16 configuration are documented in `ewp-controller.wv`.
+The Pierburg CWA400 (PWM version) electric water pump is the planned EWP for this build at Phase 3b (07K engine swap). It is **not a Phase 1 item** — Phase 1 retains the OEM M52 belt-driven water pump. PMU16 outputs O5+O14 are pre-assigned in the channel plan for the CWA400 (50A combined), but are not populated during Phase 1. Full CWA400 wiring specification, duty-cycle map, post-shutdown cooling logic, and PMU16 configuration are documented in `ewp-controller.wv`.
 
 **Version warning:** CWA400 PWM version PN: Pierburg `7.07223.10.0` / BMW `11515A05704` / `11517563659` / `11517568594`. Do NOT accept Pierburg `7.03665.66.0` or BMW `11517604027` (LIN bus version — not directly PWM-controllable by MaxxECU).
 
@@ -88,7 +88,7 @@ The Pierburg CWA400 (PWM version) electric water pump is the planned EWP for thi
 ## References
 
 - `maxxecu-m52.wv` — GPO 6 fan relay wiring, ECU_16PIN pinout ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/maxxecu-m52.html))
-- `ewp-controller.wv` — Phase 3 Pierburg CWA400 EWP wiring spec ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/ewp-controller.html))
+- `ewp-controller.wv` — Phase 3b Pierburg CWA400 EWP wiring spec ([diagram](https://htmlpreview.github.io/?https://github.com/wesleyxcooper/e36-wiring/blob/main/output/ewp-controller.html))
 - [CSF E36 Radiator — BimmerWorld](https://www.bimmerworld.com/Cooling/Radiators/CSF-E36-Aluminum-Radiator.html)
 - [BimmerWorld SPAL E36 Fan Kit](https://www.bimmerworld.com/Cooling/Cooling_Kits/E36-Electric-Fan-Conversion-Kit-OBD2-328i-328is-323is-M3-1996-1997-1998-1999.html)
 - [Mishimoto E36 Expansion Tank](https://www.mishimoto.com/bmw-e36-ai-coolant-expansion-tank-1992-1999.html)

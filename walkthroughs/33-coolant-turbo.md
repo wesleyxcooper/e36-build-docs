@@ -1,9 +1,9 @@
 # Coolant & Turbo Oil Lines
 
-**Phase:** 3  
+**Phase:** 3b
 **System tags:** `[COOLANT]` `[OIL]` `[THERMAL]`  
 **Shop-mandatory:** No  
-**Prerequisites:** 07K installed (`30-07k-install.md`); turbo installed (`31-air-boost.md`); iABED longitudinal oil filter housing pre-installed at Phase 2; Pierburg CWA400 (PWM version) on hand; custom 07K coolant hoses measured in-car
+**Prerequisites:** 07K installed (`30-07k-install.md`); turbo installed (`31-air-boost.md`); iABED longitudinal oil filter housing pre-installed at Phase 2b; Pierburg CWA400 (PWM version) on hand; custom 07K coolant hoses measured in-car
 
 ---
 
@@ -11,7 +11,7 @@
 
 This walkthrough covers two parallel systems: (1) the engine coolant circuit using the Pierburg CWA400 electric water pump and custom 07K hoses, and (2) the turbo oil feed and drain lines from the iABED oil filter housing to the G25-660 RR center section. Both must be complete and leak-checked before any start attempt.
 
-**EWP critical version note:** The CWA400 must be the **PWM version** (Pierburg `7.07223.10.0` / BMW `11515A05704` / `11517563659` / `11517568594`). Post-March 2024 production is LIN bus only (Pierburg `7.03665.66.0` / BMW `11517604027`) and cannot be controlled by MaxxECU PWM. Verify part number before installing. Source: `E36_9000RPM_Project_Plan_Verified.md` Phase 2 EWP row.
+**EWP critical version note:** The CWA400 must be the **PWM version** (Pierburg `7.07223.10.0` / BMW `11515A05704` / `11517563659` / `11517568594`). Post-March 2024 production is LIN bus only (Pierburg `7.03665.66.0` / BMW `11517604027`) and cannot be controlled by MaxxECU PWM. Verify part number before installing. Source: `E36_9000RPM_Project_Plan_Verified.md` Phase 2b EWP row.
 
 ---
 
@@ -22,7 +22,7 @@ This walkthrough covers two parallel systems: (1) the engine coolant circuit usi
 | Pierburg CWA400 (PWM version) | Pierburg `7.07223.10.0` / BMW `11515A05704` · [Dedicated Motorsports](https://dedicatedmotorsports.com/products/pierburg-cwa400-intercooler-pump-pwm-version.html) new ~$720; eBay OEM pull $50–150 used | ~$50–720 |
 | Kostal 2+2 connector + terminals (CWA400 connector) | SLK 2.8 ELA terminals (PN 22124499560) for pins 1–2; SLK 5.8 ELA terminals (PN 22124544900) for pins 3–4 | ~$20–30 |
 | 10 AWG wire, min 1m per leg (CWA400 power + GND) | 2× runs, one per PMU16 output — O5 and O14 each get a separate 10 AWG feed to the hanger stud | — |
-| GM 12380318 4-port inline heater valve | Carry-forward from Phase 1A coolant routing (or source on Amazon) | ~$20–40 |
+| GM 12380318 4-port inline heater valve | Carry-forward from Phase 3a coolant routing (or source on Amazon) | ~$20–40 |
 | 5/8" and 3/4" silicone coolant hose (bulk) | Measure in-car; various lengths | ~$60–100 |
 | 90° and 180° silicone elbows | HPS HTSEC180-075-BLK (3/4" 180° elbow) + various 90° units | ~$30–60 |
 | Dorman 56152 heater fittings (firewall barb adapters) | Dorman 56152 | ~$10–20 |
@@ -53,7 +53,7 @@ This walkthrough covers two parallel systems: (1) the engine coolant circuit usi
 
 ### Turbo Oil Feed Line
 
-1. Locate the dedicated turbo oil feed port on the iABED longitudinal oil filter housing (installed at Phase 2). The port is **M16×1.5** ([iABED product page](https://byiabed.com/07K-LONGITUDINAL-Oil-Filter-housing-W-THERMOSTAT_p_156.html)). Use the **M16 to -4AN union adapter** — available from iABED at order time (+$5.65); otherwise source an M16×1.5 to -4AN adapter separately. Use high-temp thread sealant; do not overtorque the aluminum housing.
+1. Locate the dedicated turbo oil feed port on the iABED longitudinal oil filter housing (installed at Phase 2b). The port is **M16×1.5** ([iABED product page](https://byiabed.com/07K-LONGITUDINAL-Oil-Filter-housing-W-THERMOSTAT_p_156.html)). Use the **M16 to -4AN union adapter** — available from iABED at order time (+$5.65); otherwise source an M16×1.5 to -4AN adapter separately. Use high-temp thread sealant; do not overtorque the aluminum housing.
    > **Alternative source:** The 07K cylinder head has a secondary **M10×1 oil galley port** usable for turbo feed with an M10 banjo bolt to -4AN fitting (confirmed by Kyle Brixey, The 07K Project). ⚠️ DO NOT use 1/8 NPT in this port — head threads are straight metric (M10×1); NPT is tapered and will permanently destroy the threads.
 
 2. Install the **1.0 mm (0.040") orifice restrictor** inline on the oil feed line. The G25-660 uses a **dual ball bearing CHRA** ([Full Race G25-660](https://www.full-race.com/garrett-g-series-g25-660-turbocharger)); per [Garrett Turbo Oil Restrictors guidance](https://www.garrettmotion.com/knowledge-center-category/racing-and-performance/turbo-oil-restrictors-oil-supply/) ball-bearing turbos require a restrictor targeting 40–45 psi at the turbo inlet at max engine speed. Journal-bearing guidance ("restrictor generally not needed") does NOT apply — do not remove the restrictor. Confirmed setup by @wingman703 (same 07K/turbo family).
@@ -78,7 +78,7 @@ This walkthrough covers two parallel systems: (1) the engine coolant circuit usi
 ### 07K Engine Coolant Hoses
 
 9. **Measure in-car before ordering.** With the 07K installed, measure each coolant run with a flexible tape or hose. The specific routing for the longitudinal E36 installation differs from all transverse 07K swap references. Use the [alliedcam1 07K Coolant Line Overview (YouTube)](https://www.youtube.com/watch?v=sCYZoCULSXo) as the best available reference for longitudinal routing logic.
-   > ⚠️ **Pitfall:** Specific hose part numbers from 944 07K builds (Dayco 72193/72365, Gates 22503/20416) are 944-chassis-specific — measure E36 routing with engine in car before ordering. Use those as diameter/type reference only, not direct part numbers. Source: `E36_DIY_Build_Checklist.md` Phase 3 Coolant System.
+   > ⚠️ **Pitfall:** Specific hose part numbers from 944 07K builds (Dayco 72193/72365, Gates 22503/20416) are 944-chassis-specific — measure E36 routing with engine in car before ordering. Use those as diameter/type reference only, not direct part numbers. Source: `E36_DIY_Build_Checklist.md` Phase 3b Coolant System.
 
 10. Build the coolant circuit:
     - Engine block outlet → upper hose → top of CSF radiator
@@ -137,7 +137,7 @@ This walkthrough covers two parallel systems: (1) the engine coolant circuit usi
 
 ## References
 
-- `E36_DIY_Build_Checklist.md` — Phase 3, Coolant System (lines 685–690); Phase 3, Oil System (lines 692–696)
+- `E36_DIY_Build_Checklist.md` — Phase 3b, Coolant System (lines 685–690); Phase 3b, Oil System (lines 692–696)
 - `E36_9000RPM_Project_Plan_Verified.md` — EWP / CWA400 row; iABED housing row; Drifting Reliability table
 - `harnesses/ewp-controller.wv` — full CWA400 power, PWM, and GND wiring spec
 - [alliedcam1 — 07K Coolant Line Overview (YouTube)](https://www.youtube.com/watch?v=sCYZoCULSXo)

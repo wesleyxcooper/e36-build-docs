@@ -1,9 +1,9 @@
-# Phase 1A: M5x Turbo Oil System
+# Phase 3a: M5x Turbo Oil System
 
-**Phase:** 1A  
+**Phase:** 3a
 **System tags:** `[OIL]`  
 **Shop-mandatory:** Oil pan baffle welding — professional welder (Turner kit requires welding). Turbo oil lines — owner-installed.  
-**Prerequisites:** Longblock returned from Euromotive; turbo manifold and turbo on hand (`19b-m5x-turbo.md`); oil pan off the car
+**Prerequisites:** Longblock returned from VAC Motorsports; turbo manifold and turbo on hand (`19b-m5x-turbo.md`); oil pan off the car
 
 ---
 
@@ -15,7 +15,7 @@ The M50/M52 wet sump oil system has two known failure modes that require address
 
 2. **Turbo oil feed and drain routing** — the turbo requires a pressurized oil feed (with inline restrictor) and a gravity drain back to the sump. These are not present on the stock engine and must be added.
 
-The dry sump system (ARE, Peterson, etc.) is the best solution for sustained high-angle drifting — but the cost (~$3,000–5,000 for a full dry sump setup) is appropriate for later phases. For Phase 1A, address starvation with the Turner baffle kit and run an accumulator if needed.
+The dry sump system (ARE, Peterson, etc.) is the best solution for sustained high-angle drifting — but the cost (~$3,000–5,000 for a full dry sump setup) is appropriate for later phases. For Phase 3a, address starvation with the Turner baffle kit and run an accumulator if needed.
 
 ---
 
@@ -75,13 +75,13 @@ Route the drain line to the welded bung in the sump. For a top-mount manifold, t
 
 ### 4 — Oil Cooler (Phase 1 carryover)
 
-The Mishimoto MMOCF-BMW oil cooler kit from Phase 1 (`09-coolant.md`) carries over to Phase 1A without modification. The M50/M52 oil filter housing location is the same. Under boost, oil temperatures run higher — do not skip the oil cooler.
+The Mishimoto MMOCF-BMW oil cooler kit from Phase 1 (`09-coolant.md`) carries over to Phase 3a without modification. The M50/M52 oil filter housing location is the same. Under boost, oil temperatures run higher — do not skip the oil cooler.
 
 ---
 
 ## Future: Dry Sump
 
-For high-angle sustained drifting beyond the Turner baffle kit's capability, a full dry sump system is the next step. ARE (Automotive Racing Equipment) makes E36-specific dry sump pans. Budget ~$3,000–5,000 for a complete dry sump installation (pan, pump, tank, lines, drive). Document this in `E36_Enhancements_SideProjects.md` as a Phase 1A follow-on, not a build requirement for Phase 1A completion.
+For high-angle sustained drifting beyond the Turner baffle kit's capability, a full dry sump system is the next step. ARE (Automotive Racing Equipment) makes E36-specific dry sump pans. Budget ~$3,000–5,000 for a complete dry sump installation (pan, pump, tank, lines, drive). Document this in `E36_Enhancements_SideProjects.md` as a Phase 3a follow-on, not a build requirement for Phase 3a completion.
 
 ---
 

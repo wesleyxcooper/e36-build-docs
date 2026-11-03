@@ -1,6 +1,6 @@
-# Phase 2: 07K Bottom End Build — Euromotive Handoff
+# Phase 2b: 07K Bottom End Build — Euromotive Handoff
 
-**Phase:** 2  
+**Phase:** 2b
 **System tags:** `[ROTATING-ASSEMBLY]` `[MACHINING]`  
 **Shop-mandatory:** Yes — Euromotive Autohaus handles all longblock assembly and machine work  
 **Prerequisites:** 07K donor block sourced and physically inspected (`20-07k-sourcing.md`); LPS oil pump send-in initiated before drop-off; all parts from the "Bring at Dropoff" list ordered and on hand
@@ -58,7 +58,7 @@ These bolt onto the completed sealed longblock at home — Euromotive does not h
 - Boost Brothers longitudinal intake manifold — see `25-07k-air.md`
 - LPS phenolic intake gasket — see `25-07k-air.md`
 - Fluidampr 551211 harmonic damper (install after longblock is on stand at home)
-- LPS 07K titanium exhaust stud kit (install at Phase 3 manifold fitment)
+- LPS 07K titanium exhaust stud kit (install at Phase 3b manifold fitment)
 - MaxxECU 07K engine harness (owner-built — see `26-07k-harness.md`)
 
 ---
@@ -108,7 +108,7 @@ Talk through the following with the tech before leaving the engine:
 7. **Crank Journal Measurement** — mic all 5 main and 5 rod journals before King XP bearings are ordered. Call with measurements; bring bearings to a follow-up or leave a card for shop to order.
 8. **TTRS Oil Squirter Install** — 5× squirters (`06J103154B`) brought with engine. Thread-in replacement; torque to **27 ft-lbs** per VW Erwin. Install during short block assembly.
 9. **LPS-modified oil pump** — Euromotive installs during longblock assembly when pump arrives from LPS (shipped directly to shop).
-10. **OEM water pump impeller removal** — bring `07K121011B`. Remove impeller only; leave housing mounted as passive coolant manifold. Pierburg CWA400 handles pumping at Phase 3. Housing pulley freewheels in belt path.
+10. **OEM water pump impeller removal** — bring `07K121011B`. Remove impeller only; leave housing mounted as passive coolant manifold. Pierburg CWA400 handles pumping at Phase 3b. Housing pulley freewheels in belt path.
 11. **iABED baffled oil pan** and **BBG billet upper timing cover** — offer these to the shop at dropoff. If Euromotive can fit them on their stand/workflow, they install with correct torque and sealing. If not (e.g. stand conflict), owner installs after delivery.
 
 ### 5 — Bearing clearance verification (before final assembly)
@@ -171,5 +171,5 @@ Shop rate confirmed ~$150–165/hr (based on prior Euromotive service receipts).
 - [King XP main bearings — SBPartsDirect](https://www.sbpartsdirect.com/product_p/king_main_bearing_07k.htm)
 - [King XP rod bearings — SBPartsDirect](https://www.sbpartsdirect.com/category_s/305.htm)
 - [ARP-CVB2 main stud kit — Four Season Tuning](https://www.fourseasontuning.com/arp-cvb2-arp-main-stud-kit-for-mk5mk6-25l-5-cylinder-engines)
-- [E36 DIY Build Checklist — Phase 2 Rotating Assembly](../E36_DIY_Build_Checklist.md)
-- [E36 9000 RPM Project Plan — Phase 2 Rotating Assembly](../E36_9000RPM_Project_Plan_Verified.md)
+- [E36 DIY Build Checklist — Phase 2b Rotating Assembly](../E36_DIY_Build_Checklist.md)
+- [E36 9000 RPM Project Plan — Phase 2b Rotating Assembly](../E36_9000RPM_Project_Plan_Verified.md)
