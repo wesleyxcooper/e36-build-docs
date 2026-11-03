@@ -77,7 +77,63 @@ Before attending any HPDE or drift event with an open-top car, the roll bar will
 
 ## Seats & Restraints
 
-### Seat — Recaro Pole Position ABE
+### Seat Option 1A — Sabelt GT3
+
+Fixed one-piece fiberglass shell (GRP, no recliner), dual-use — OEM 3-point seatbelt on the street, 5/6-point harness at the track. FIA 8855-1999 homologated. 5 harness slots: compatible with 3, 4, 5, and 6-point harnesses. ([fastracer.com](https://www.fastracer.com/products/sabelt-gt3-fiberglass-racing-seat), [sportseats4u.co.uk](https://www.sportseats4u.co.uk/product/sabelt-gt3-motorsport-seat/)) Confirmed in Mr Amaris' E36 M52 turbo build: OEM E36 convertible 3-point seatbelt in use with the GT3 installed.
+
+**$884** (Rogue Engineering, Upper Saddle River NJ) · **$929.95** (OG Racing, Sterling VA). FIA 8855-1999 tagged — meets certification for orgs that require it.
+
+**Carbon fiber upgrade — Sabelt Titan Carbon:** The GT3 shell is fiberglass only; no carbon GT-3 variant exists in the Sabelt lineup. ([sabelt.co.uk seats page](https://www.sabelt.co.uk/index.php/products-home/car-outfitting/seats)) The **Titan Carbon** (Sabelt's "TITAN MAX CARBON") is the carbon shell seat in this class: autoclave carbon fiber, bare weave visible from the back, same side-mount architecture (VAC stack identical), FIA 8855-1999 approved, black velour + 3D spacer fabric + red center stripe. ([sabelt.co.uk](https://www.sabelt.co.uk/index.php/products-home/car-outfitting/seats/titan-carbon-detail), [sportseats4u.co.uk showcase Aug 2022](https://www.sportseats4u.co.uk/sabelt-titan-carbon-large-fia-seat-showcase/)) Not stocked by US vendors found. Best path: call **Rogue Engineering** (Upper Saddle River NJ, (201) 783-8600) — BMW specialty shop ~1hr from Philly, carries full Sabelt range, can order. **OG Racing** (Sterling VA) as secondary — authorized Sabelt dealer with in-person seat fitting service if you want to try the shell before committing to the carbon. Fiberglass Titan Max is $989 at Competition Motorsport as a reference; carbon premium expected +$200–400. VAC mounting stack is identical — drop-in upgrade if carbon shell is the priority.
+
+**OEM seatbelt + sliding rail compatibility:** Compatible with any sliding rail. The OEM E36 convertible shoulder belt anchor is at the B-pillar (fixed to body), not the seat. Sliding changes belt reach only — same behavior as OEM factory seats that also slide. The GT3's 5-slot shell routes the 3-point belt over the shoulder at any slider position. Mr Amaris' E36 build confirms OEM belt works with the GT3.
+
+> ⚠️ **MoE rule:** "Race seats must have harnesses." OEM belt alone fails MoE tech with any racing seat installed.
+
+**Parts — full VAC stack (confirmed compatible, one vendor):**
+
+| Part | PN | Source | Cost |
+| --- | --- | --- | --- |
+| Sabelt GT3 (fiberglass, per seat) | RFSEGT3N / SAB-GT3 | **[Rogue Engineering](https://www.rogueengineering.com/Sabelt-GT3_p_248.html)** — 19 Industrial Ave, Upper Saddle River, NJ 07458; (201) 783-8600; BMW specialty shop, ~1hr Philly; [ogracing.com](https://www.ogracing.com/products/sabelt-gt3-fiberglass-racing-seat) (Sterling VA, showroom + free seat fitting) as alt | **$884** (Rogue) · **$929.95** (OG Racing) — verify stock before ordering |
+| Sabelt Titan Carbon (carbon shell upgrade, per seat) | RFSETITANMAXN† | Not stocked by US vendors found. Call Rogue Engineering (201) 783-8600 or OG Racing — both authorized Sabelt dealers, can order. | "Call for price" — fiberglass Titan Max $989 as reference; carbon premium typically +$200–400 |
+| Sabelt steel side brackets (for GT3 or Titan Carbon) | Z200087 | [rogueengineering.com](https://www.rogueengineering.com/Sabelt-Seat-Mount-Steel_p_216.html) — Sabelt Seat Mount Steel | **$90** at Rogue Engineering |
+| VAC Race Seat Install Kit (E36 floor adapters + side mounts + hardware) | VAC-RSIK-E46-B | [store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-race-seat-installation-kit-bmw-e36e46-p1605.aspx) | **$379.95/side** — "BMW E36 3 Series and M3 (1992–1999)"; no convertible exclusion |
+| VAC Universal Seat Slider (add-on) | VAC-SLIDER | [store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-seat-sliders-for-sportrace-seats-p1725.aspx) | **$109.95/side** — double locking, ~9" travel (~229mm), Made in Europe |
+
+† Sabelt's carbon shell seat in this class — "TITAN MAX CARBON" per Sabelt's own product description ([sabelt.co.uk](https://www.sabelt.co.uk/index.php/products-home/car-outfitting/seats/titan-carbon-detail)). VAC does not stock Sabelt seats; Competition Motorsport is the confirmed authorized US Sabelt dealer. VAC's mounting hardware (RSIK + VAC-SLIDER) is compatible with both the GT3 and Titan Carbon — same side-mount architecture.
+
+**Confirmed compatibility (from VAC product pages, navigated via Playwright):**
+
+- VAC-SLIDER product page explicitly names **Sabelt** as a compatible seat brand: *"high quality dual-locking sliders to install along with most Momo, Sparco, RaceTech, Recaro, Status, Cobra, Bride, Corbeau, **Sabelt** and many other sport and race seats."* ([store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-seat-sliders-for-sportrace-seats-p1725.aspx))
+- VAC-SLIDER is designed to pair with VAC floor adapters: sold as a direct add-on checkbox on the RSIK product page.
+- VAC side mounts are designed for the RSIK + slider stack: *"They allow for fast and easy installation of nearly all popular seats."*
+
+**100% off-the-shelf, no drilling, no custom fabrication required.** Everything from VAC as a single vendor.
+
+**Mounting stack (floor up):**
+
+| Layer | Part |
+| --- | --- |
+| **1 — floor** | VAC billet floor adapters (from RSIK kit) |
+| **2 — slider** | VAC-SLIDER (~9" travel, double-locking) |
+| **3 — side mounts** | VAC universal side mount brackets (from RSIK kit) |
+| **4 — seat** | GT3 shell flanges hang between side mount brackets |
+
+The seat, brackets, and slider top all move as one unit when you push the lever. Fixed option: skip the slider — mount side brackets directly to VAC floor adapters for the lowest possible seat height, no fore/aft adjustment.
+
+**Install:**
+
+1. Remove OEM seats — 4 bolts each, disconnect airbag connectors, cap or terminate.
+2. Bolt VAC floor adapters to OEM E36 floor points. Keep hardware loose for positioning.
+3. Mount VAC-SLIDER onto floor adapters (if using slider). Skip if fixed mount.
+4. Bolt VAC universal side mount brackets to slider or floor adapter. Hang GT3 shell between brackets at its side flanges.
+5. Set fore/aft position for both drivers, torque with red threadlocker. Verify seat clears B-pillar and console through full slider travel.
+6. **Roll bar height check:** Seat installed first. Driver fully helmeted, measure helmet top. Set bar ≥2" above — weld bar after seat install, not before.
+7. **OEM belt (street):** Route OEM 3-point shoulder belt through GT3 shoulder slot. Belt sits over the shoulder at any slider position — no additional accommodation needed. Verify geometry seat-in-car.
+8. **Harness (track):** Lap belts through side mount points, sub strap through crotch slot, shoulder belts to harness bar. Torque to harness manufacturer spec.
+
+---
+
+### Seat Option 1B — Recaro Pole Position ABE
 
 **Why this seat:** Fixed one-piece GFRP shell (no recliner mechanism), dual-use design — runs with the OEM 3-point seatbelt on the street and a 5/6-point harness at the track. The ABE version has a dedicated shoulder belt passage that routes the OEM belt correctly regardless of seat height. Not FIA 8855-1999 homologated (FIA and ABE are separate Recaro products), but no local HPDE or drift org in this build's target region (MoE, Drift Evergreen, Club Loose, Pocono RSD) requires FIA seat certification — only valid harness tags are checked.
 

@@ -20,22 +20,37 @@ The M5x turbo system closely parallels the 07K Phase 3 air/boost system (`31-air
 
 ## Manifold Options
 
-### Option A — K64 AC+ RHD Complete Kit (RHD Priority)
+### Option A — Standalone Parts (Primary Path)
 
-**Priority path for RHD E36.** The K64 kit is RHD-specific, clears the AC compressor, and comes with everything in one package — manifold, downpipe, turbo, wastegate, injectors, BOV, and an ECU base map. ([k64performance.com](https://k64performance.com/turbo-kit/771-turbo-kit-stage2-m50-m52-e30-e36-e34-bmw.html))
+**Why standalone over the full K64 kit:** The K64 Stage 2 kit includes a journal bearing GT35.30, a base ECU map (MaxxECU handles this), VictorReinz head gaskets (covered by the VAC build), and ARP M10 studs (covered by the ARP 625+ kit already specced). Buying standalone avoids paying for duplicated and conflicting components, and allows specifying a ball bearing turbo directly. Estimated standalone build: ~$4,100–4,600 for manifold/downpipe + turbo + wastegate + BOV + injectors.
 
-**K64 Stage 2 Full Kit — $5,656:**
-- Manifold: K64 AC+ RHD stainless — RHD-specific pattern, hood closes, AC compressor clears ($839.72 standalone)
-- Turbo: GT35.30 T3 journal bearing — **rated 300–500hp.** See Turbo Selection below for upgrade to 700whp E85 spec.
-- Wastegate: 44mm Tial — included
-- Injectors: Siemens Deka 630cc × 6 — included. **Replace with Injector Dynamics ID725 (725cc/min, USCAR connector) before first tune.** 630cc units cap at ~395–445whp on E85 at 80–90% duty cycle — the K64 claim of "adequate for 700whp E85" is incorrect. ID725 covers GT35.30 + pump 93 at ~52% duty and GT35.30 + E85 at ~82% duty (~480–500whp). If pursuing G30-770 + 600whp E85, step up to ID850 instead. Injector duty cycle calculations are thermodynamic estimates (fuel mass flow = air mass flow / AFR, at 8,500 RPM, VE = 0.80).
-- BOV: included
-- Downpipe: K64 RHD-specific ($448 standalone) — confirm clearance with RHD steering rack before finalizing. Custom fab at Fabie Boys Motorsports if needed.
-- **Do not order ECUMASTER DET3 option** — MaxxECU RACE is the chosen ECU. Piggyback will conflict. Order kit without ECU or request no ECU.
+#### Manifold & Downpipe
 
-**Manifold + downpipe only (sourcing turbo separately):**
-- K64 AC+ RHD Manifold: **$839.72** ([k64performance.com](https://k64performance.com/exhaust-manifold/1655-rhd-uk-e36-e46-ac-turbo-kolektor-bmw-m50-m52-m54.html)) — T3 or T4 flange option
+**Overrun Tuning RHD Kit (preferred):** Overrun Tuning worked directly with K64 Performance to produce a confirmed RHD E36 manifold + downpipe with AC retention via custom refrigerant lines. ([overruntuning.com/e36-turbo-guide](https://www.overruntuning.com/e36-turbo-guide)) Contact for pricing. Flange options: T3 / T4 / V-Band manifold; Garrett 4-bolt / 5-bolt / V-Band downpipe; 50mm wastegate port.
+
+**K64 standalone (if ordering direct from K64):**
+- K64 AC+ RHD Manifold: **$839.72** ([k64performance.com](https://k64performance.com/exhaust-manifold/1655-rhd-uk-e36-e46-ac-turbo-kolektor-bmw-m50-m52-m54.html)) — T3 or T4 flange, RHD AC-compatible
 - K64 RHD Downpipe: **$448.00** ([k64performance.com](https://k64performance.com/exhaust-manifold/4635-downpipe-rhd-uk-turbo-bmw-e36-e46.html))
+
+#### Turbo, Wastegate, BOV, Injectors
+
+| Component | PN | Source | Price | Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| **Garrett GTX3076R Gen II** | **856801-5026S** | [genx-performance.com](https://genx-performance.com/garrett-gtx3076r-gen-ii-turbocharger-t3-v-band-0-82-a-r/) · [bulletproofautomotive.com](https://bulletproofautomotive.com/product/garrett-gtx3076r-gen-ii-assembly-kit-0-82-ar-t3-inlet-856801-5026s/) | **~$1,995–2,378** | T3 inlet (drops onto K64/Overrun manifold), V-Band turbine outlet (V-band downpipe option from Overrun), .82 A/R, ball bearing, billet compressor wheel, 400–750hp. Overrun Tuning explicitly recommends GTX3076R for 2.8–3.2L. |
+| **Turbosmart Gen V ProGate50 50mm WG** | **TS-0554-1002** (7 psi spring) | [turbosmart.com](https://turbosmart.com/products/wg50-gen-v-progate50-7psi-black_2) · [xlr8.com](https://xlr8.com/turbosmart-wg50-gen-v-pro-gate-50-7psi-black/) | **~$572–636** | 50mm matches Overrun manifold's 50mm wastegate port. 7 psi spring — MaxxECU solenoid holds gate closed to run above spring pressure. V-Band fitment. |
+| **HKS SSQV4** | **71008-AK001** | [3sx.com](https://www.3sx.com/hks-ssqv-bov-universal-series-v4-genuine-hks-71008-ak001) · [frsport.com](https://frsport.com/products/hks-71008-ak001-super-sequential-blow-off-valve-4-kit-ssqv4-universal) | **$319.95** | Universal. Requires weld-on mount flange on charge pipe — fabricator job at Fabie Boys or VAC at downpipe mock-up. HKS steel weld flange: PN **71002-AK011**, $31.95. |
+| **Injector Dynamics ID850 × 6** | **850.60.14.14.6** (USCAR, 14mm) | [comotorsports.ca](https://comotorsports.ca/injector-dynamics-id850-850-60-14-14-4-comotors.html) · [andysautosport.com](https://www.andysautosport.com/products/injector_dynamics__850.28.04.60.14.6-PNP.html) | **~$750–792** | 850cc/min, USCAR connector (EV6), 14mm top adapter. Confirmed BMW 328 96-98 (M52B28) fitment via ID application guide (upg-shop.com). MaxxECU characterization data published by ID: [help.injectordynamics.com](https://help.injectordynamics.com/support/solutions/articles/4000198369-maxxecu). Covers E85 at GT35.30 ceiling (~500whp) at ~71% duty; pump 93 at ~54% duty, no driveability concern. |
+
+---
+
+### Backup: K64 Stage 2 Full Kit
+
+**Use only if standalone sourcing fails** (e.g., ball bearing turbo lead time is prohibitive and the project needs to move). The K64 full kit is $5,656 and includes a journal bearing GT35.30 — if using this path, swap the injectors to ID850 before the first tune and plan to replace the turbo with a ball bearing unit at the next service.
+
+**K64 Stage 2 Full Kit — $5,656** ([k64performance.com](https://k64performance.com/turbo-kit/771-turbo-kit-stage2-m50-m52-e30-e36-e34-bmw.html)):
+Manifold, GT35.30 journal bearing, 44mm Tial WG, Siemens Deka 630cc injectors, BOV, RHD downpipe, base ECU map, VictorReinz head gaskets, ARP M10 studs, NGK plugs.
+
+> Replace Siemens Deka 630cc with **ID850** before first tune. Do not order ECUMASTER DET3 option — MaxxECU RACE is the ECU.
 
 > **AC routing — top-mount manifolds (K64 and RSI):** Both the K64 and RSI manifolds clear the AC compressor. The downpipe for a top-mount setup routes between engine and firewall on the driver side, where the AC refrigerant lines (high and low pressure) also run. **Mock up the downpipe path before finalizing AC line routing** — the lines may need minor re-routing around the downpipe. Fabricator job (Fabie Boys or VAC). **Electric AC conversion** (Denso/Sanden electric compressor from a hybrid donor) eliminates the belt-driven compressor and removes the routing conflict entirely — adds ~$1,000–2,500 for the compressor and control wiring, cleaner engine bay, and allows AC post-shutdown. Revisit if line rerouting proves difficult.
 
@@ -79,18 +94,22 @@ RHD E36 turbo M52 build experience confirmed. Custom exhaust and downpipe fabric
 
 ## Turbo Selection
 
-**K64 included GT35.30 — adequate for 300–500hp on pump gas.** If this is the target power range and the build is temporary (moving to 07K in Phase 3), the included turbo is fine. **For 700whp on E85**, the GT35.30 runs out of flow. Upgrade options:
+**Build goal: RPM-first, throttle response at NJMP, ~400–550whp ceiling on pump 93.** Overrun Tuning's guide explicitly recommends ball bearing Garrett G35-series for 2.8-3.2L ([overruntuning.com/e36-turbo-guide](https://www.overruntuning.com/e36-turbo-guide)). The K64 GT35.30 is journal bearing — the ball bearing CHRA upgrade is the single highest-impact response improvement available for a fixed-geometry turbo (Garrett quotes 15% faster spool vs journal bearing).
 
-| Turbo | HP rating | Spool | Notes |
-| --- | --- | --- | --- |
-| K64-included GT35.30 (T3 .63 AR) | 300–500hp | Fast | Good for Phase 1A at pump gas power; re-spec if targeting 700whp E85 |
-| Garrett G25-660 (T3 .61 AR) | 500–660whp | Medium | Same turbo planned for 07K Phase 3 — one purchase covers both phases |
-| Garrett G30-770 (T3 .83 AR) | 600–770whp | Slower | Better for 700whp E85 sustained; compatible with K64/SPA T3 flanges |
-| GT3576R (T3 .82 AR) | 500–650whp | Medium-fast | Budget alternative to Garrett; well-proven on M50/M52 builds |
+**Preferred path: source the manifold/downpipe separately and choose a ball bearing turbo.**
 
-**Recommendation for 700whp E85 target:** Upgrade to Garrett G30-660 or G30-770 at turbo order time. The K64 kit allows you to specify turbo — call K64 to request a G30-series substitution, or order the manifold standalone and source the turbo separately.
+| Turbo | HP rating | Bearing | Turbine inlet | Notes |
+| --- | --- | --- | --- | --- |
+| **Garrett GTX3076R** (T3 .82 AR) | 500–525hp | Ball bearing | T3 | Fastest spool in this range; T3 matches K64/Overrun manifold directly. Confirmed 530whp on M5x with SPA manifold. |
+| **Garrett G35-900** | 550–900hp | Ball bearing | V-Band | Overrun Tuning recommendation for 2.8-3.2L; covers full build including upgrade phase. Requires V-Band manifold from Overrun/K64. |
+| **Garrett G35-1050** | 700–1050hp | Ball bearing | V-Band | Overrun Tuning recommendation; 68mm compressor (same inducer as K64 GT35.30 but ball bearing). Overkill for current target, appropriate if 700+whp E85 is the end goal. |
+| K64-included GT35.30 (T3 .63 AR) | 300–500hp | **Journal bearing** | T3 | Adequate on pump 93 at current power targets. Do not use if replacing with ball bearing turbo. |
 
-**For the 8,000–9,000 RPM target:** Hotside AR matters at high RPM — a .82–.83 AR hotside maintains boost longer into the RPM range vs a .63 AR. Use T3 .82 AR if available for the chosen turbo.
+**Recommended: Garrett GTX3076R with T3 .82 A/R hotside.** Ball bearing, T3 flange drops directly onto K64/Overrun manifold, 525hp ceiling comfortably covers GT35.30-phase power target, ball bearing spool improvement shows up in lap times. The .82 A/R hotside sustains boost higher into the RPM range than the GT35.30's .63 A/R — better match for the 8,000+ RPM target.
+
+**For the G35-series (V-Band):** Order Overrun Tuning or K64 manifold with V-Band flange. G35-900 covers the full build arc including any future power target without swapping turbos.
+
+**Hotside A/R and RPM:** At 8,000–8,500 RPM a .82–.83 A/R hotside maintains boost longer into the RPM range vs a .63 A/R — the smaller .63 A/R causes the turbo to become the restriction above ~6,500–7,000 RPM on a well-built 2.8L.
 
 ---
 
@@ -129,11 +148,63 @@ The MaxxECU M50 terminated harness covers all M50/M52 engine sensors. For the tu
 | Charge air temp sensor (IAT2, post-FMIC) | 2-pin NTC — JMT 1.5mm `1J0973702` | MaxxECU AIN — add to charge pipe before throttle body |
 | WBO2 sensor (if relocating for turbo routing) | Bosch LSU 4.2 6-pin — already in harness | Weld new bung in turbo downpipe |
 | Boost solenoid (PWM) | 2-pin generic spade | MaxxECU GPO (any available GPO configured for boost control PWM) |
+| Ethanol content sensor (flex fuel) | 3-pin Metri-Pack 150 female (GM standard) | MaxxECU DIN configured as "Ethanol sensor" — reads frequency (ethanol %) and pulse width (fuel temp) from Continental SE1004S / GM 13577429 |
+
+---
+
+---
+
+## Flex Fuel System
+
+**Goal:** Flex fuel capable on the street (pump 93 primary; E85 available at the fill-up). Track events use pump 93. E85 is a street/home scenario.
+
+**E85 near tracks:**
+
+| Track | E85 Available? | Nearest confirmed E85 |
+| :--- | :--- | :--- |
+| **NJMP Thunderbolt** (Millville NJ) | No | Wawa #8110, 12004 E Roosevelt Blvd, Philadelphia PA 19116 — ~80 mi north. NJ has no E85 within 20 mi of Millville per [NJMP BMW CCA fuel guide](https://njbmwcca.org/ofesthelp/njmp/fuel/) and [AFDC locator](https://afdc.energy.gov/stations). Fill up on the way to/from, not at the track. |
+| **Old Bridge Raceway** (Englishtown NJ) | No | No E85 confirmed in Englishtown, Freehold, or Manalapan from GasBuddy search. Same NJ coverage gap. |
+| **Pocono Raceway** (Long Pond PA) | ~10-15 mi away | **Sheetz #610, 2008 Route 611, Swiftwater PA** — E85 confirmed ([GasBuddy](https://www.gasbuddy.com/station/204277), GasBuddy user: "beside being the only station near my home to carry it"). Listed as one of six closest gas stations to Pocono by Pocono Record. 24 hrs. |
+
+**Injector sizing:** E85 is the primary street fuel; pump 93 is the track fuel (no E85 within 20 miles of NJMP). Size for the harder case: E85 at GT35.30's ceiling.
+
+- E85 at ~500whp → ~590 BHP → BSFC 0.62 → ~61 lb/hr per cylinder
+- **ID725** (72 lb/hr): 85% duty at 500whp E85 — at the limit, tuner will flag it
+- **ID850** (86 lb/hr): 71% duty at 500whp E85 — comfortable margin
+
+**Use ID850 (850cc/min, USCAR connector).** On pump 93 at NJMP (~450whp), ID850 runs ~54% duty — MaxxECU characterizes it cleanly with no idle or driveability issues. The driveability concern only applies at 1,000cc+ on small engines with basic ECUs that can't handle short pulse widths. ID850 also eliminates any injector swap when the G35-series upgrade happens at moderate E85 targets.
+
+### Parts
+
+| Component | Part Number | Source | Price | Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| **Ethanol content sensor** | Continental GM 13577429 (Continental SE1004S) | [xtramotorsport.com](https://xtramotorsport.com/product/ethanol-content-flex-fuel-sensor/) | ~$112 | Genuine Continental OEM sensor. 3/8" GM quick-connect ports. Outputs 50–150 Hz frequency (0–100% ethanol) + fuel temperature on single wire to MaxxECU digital input. Fake/unbranded copies read 20–30% ethanol in plain petrol — buy genuine only. |
+| **Ethanol sensor (MaxxECU branded)** | — | [maxxecu.com](https://www.maxxecu.com/store/sensors/fuel-and-lambda/ethanol-sensor-for-fuel-temperature-and-ethanol-content) | $184.31 | MaxxECU's own sensor; confirmed supported, mounts on return line. AN6/AN8 connections not included. |
+| **Fuel pump** | **DeatschWerks DW200, PN 9-201-1031** | [deatschwerks.com](https://deatschwerks.com/products/9-201-1031) | $109 | 255 lph, drop-in install kit for E36 328i (M52B28). Explicitly ethanol-compatible. Limited lifetime warranty. Replaces stock in-tank pump — required for E85 (~40% more fuel volume vs pump 93). |
+| Fuel pump alt | Walbro GSS342 E36 kit | [group-d.ie](https://group-d.ie/products/walbro-255lph-in-tank-pump-kit-bmw-e36) | ~€95 | Same 255 lph class, E36-specific kit. Gold standard alternative if DW200 unavailable. |
+
+### Fuel Lines (E85 compatibility)
+
+OEM E36 rubber fuel lines are 30+ years old and not rated for sustained E85 use. Replace with PTFE-lined stainless-braided AN line for ethanol immunity, low permeation, and heat/pressure resistance.
+
+| Component | PN | Source | Price | Notes |
+| :--- | :--- | :--- | :--- | :--- |
+| **DeatschWerks PTFE plumbing kit** | **6-629** | [turnermotorsport.com](https://www.turnermotorsport.com/p-53891647-ptfe-stainless-plumbing-kit/) · [ecstuning.com](https://www.ecstuning.com/b-deatschwerks-parts/deatschwerks-1992-2006-bmw-3-series-e36-e46-8an-ptfe-stainless-plumbing-kit/6-629~dcw/) | **$949** | E36/E46-specific (1992–2006). -8AN PTFE stainless, includes chassis-specific adapters, designed to integrate with E36 fuel tank OEM points. "Absolute immunity against the aggressive chemical wear caused by E85." Designed for dual-pump hanger — note for single DW200 setup: some adapters in the kit won't be used, but the E36-specific routing adapters and fittings are the value. |
+| Bulk PTFE AN-6 hose (alt) | — | Summit Racing, Earls, Russell | ~$8-12/ft | -6AN is adequate flow for single 255lph pump. Cut to length at build time. Requires matching AN-6 fittings per termination (~$5-15/fitting). Sourced and run by the turbo shop during fuel system plumb. |
+
+> Run inspection and replacement at the same time as the turbo fuel system plumb — the shop will have the car on a lift and access to all the lines anyway.
+
+### Ethanol sensor wiring (MaxxECU)
+
+The sensor requires three wires: 12V switched, GND, and signal. Signal wire → MaxxECU digital input (any DIN configured as "Ethanol sensor"). MaxxECU reads both ethanol content (from frequency) and fuel temperature (from pulse width) natively from the Continental sensor. No additional hardware required beyond the sensor and mating connector.
+
+Mating connector for GM 13577429: 3-pin Metri-Pack 150 female (same family used in other GM fuel system sensors). Source from any GM parts counter or Waytek Wire.
 
 ---
 
 ## References
 
+- [Overrun Tuning E36 Turbo Guide — RHD manifold/downpipe kit, AC retention, turbo recommendations](https://www.overruntuning.com/e36-turbo-guide)
 - [K64 Stage 2 Full Kit — $5,656 (RHD priority)](https://k64performance.com/turbo-kit/771-turbo-kit-stage2-m50-m52-e30-e36-e34-bmw.html)
 - [K64 AC+ RHD Manifold standalone — $839.72](https://k64performance.com/exhaust-manifold/1655-rhd-uk-e36-e46-ac-turbo-kolektor-bmw-m50-m52-m54.html)
 - [K64 RHD Downpipe standalone — $448.00](https://k64performance.com/exhaust-manifold/4635-downpipe-rhd-uk-turbo-bmw-e36-e46.html)
@@ -142,4 +213,7 @@ The MaxxECU M50 terminated harness covers all M50/M52 engine sensors. For the tu
 - [Rennauto RSI T4/T3 top-mount manifold — $959.95 (C)](https://rennauto.co/product/bmw-m50-m52-s50-s52-m54-top-mount-turbo-manifold-for-e36-e46-e39-z3/)
 - [Fabie Boys Motorsports — RHD E36 custom downpipe fabrication](https://fabieboysautorepair.com) · 1599 Columbia Ave, Lancaster PA · (717) 470-8613
 - [bmwtuning.co — valve cover heat and top-mount turbo considerations](https://bmwtuning.co/bmw-e36-turbo-kit-guide/)
+- [Continental SE1004S flex fuel sensor — xtramotorsport.com](https://xtramotorsport.com/product/ethanol-content-flex-fuel-sensor/)
+- [MaxxECU branded ethanol sensor — $184.31](https://www.maxxecu.com/store/sensors/fuel-and-lambda/ethanol-sensor-for-fuel-temperature-and-ethanol-content)
+- [DeatschWerks DW200 E36 fuel pump PN 9-201-1031 — $109](https://deatschwerks.com/products/9-201-1031)
 - [31-air-boost.md — G25-660 RR turbo selection and boost control](./31-air-boost.md)
