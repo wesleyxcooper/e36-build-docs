@@ -81,9 +81,17 @@
 
 ---
 
-### Oil Pump Upgrade
+### Oil Pump Nut — Safety Wire
 
-11. **Install VAC Motorsports M52 oil pump upgrade kit** ($224.95). Follow VAC Motorsports installation instructions. The M52 oil pump is accessible with the front timing cover removed. This upgrade is a direct swap — the oil pump location and plumbing is unchanged.
+11. **Install BimmerWorld drilled oil pump nut + safety wire** ($12.99, includes wire).  
+    **In-car via oil pan — engine stays in.**
+    - Drain oil. Drop oil pan (see pitfall below — two hidden bolts).
+    - Remove oil pump sprocket nut (left-hand thread — turns CW to loosen).
+    - Install drilled nut, torque to **17 ft-lb** (reverse thread). Source: [bimmerworld.com](https://www.bimmerworld.com/Engine/Engine-Performance/M50-Drilled-Oil-Pump-Nut_2.html).
+    - Thread safety wire through drilled hole and around sprocket spokes. Wire tension must resist the loosening direction (CW) — pull the wire CCW. Source: Tech-53 — *"left-hand threads, they have to go lefty loosey on the tension."* ([tech-53.com](https://tech-53.com/products/bmw-e36-e46-drilled-oil-pump-nut))
+    - Reinstall oil pan with fresh gasket. Torque oil pan bolts to spec.
+    > ⚠️ **Pitfall:** E36 oil pan has two hidden bolts at the rear of the pan that thread into the transmission bellhousing. Easy to miss — pan will not drop if these are skipped. Access them through the two holes in the front face of the bellhousing. Source: [bimmerboard.com](http://www.bimmerboard.com/forums/posts/1077597).
+    > ⚠️ **Limitation:** The safety wire nut mod prevents the nut backing off (failure mode 1). It does **not** address oil pump shaft shear (failure mode 2 — sprocket shears off shaft while nut stays on). Both failure modes cause total oil pressure loss. Source: [vacmotorsports.com](https://vacmotorsports.com/bmw-oil-systems-lubricants/). The VAC OPUK addresses both — it is specified for the Phase 2a iron block build.
 
 ---
 

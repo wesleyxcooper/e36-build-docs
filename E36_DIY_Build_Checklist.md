@@ -534,7 +534,14 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
   - > ⚠️ **Pitfall:** The M52TU VANOS uses a different cam sensor connector than the non-VANOS M50. Verify the MaxxECU harness has the correct connector for your specific head before buttoning everything up.
 
 ### Oil System  [OIL]
-- [ ] 🔧 Install VAC M52TU oil pump upgrade kit
+- [ ] 🔧 Install BimmerWorld drilled oil pump nut + safety wire ($12.99)
+  - Sub-steps:
+    - [ ] Drain oil
+    - [ ] Drop oil pan — remember 2 hidden bolts at pan rear into bellhousing
+    - [ ] Remove sprocket nut (left-hand thread — CW to loosen)
+    - [ ] Install drilled nut, torque to 17 ft-lb
+    - [ ] Safety wire through drilled hole and around sprocket spokes — CCW tension
+    - [ ] Reinstall oil pan with fresh gasket
 
 ### Air  [AIR]
 - [ ] ✅ Swap M50 intake manifold

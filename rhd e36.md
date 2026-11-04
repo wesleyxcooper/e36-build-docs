@@ -246,7 +246,7 @@
 
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Oil Pump** | **VAC Upgrade Kit** | [VAC M52TU Oil Pump Kit](https://store.vacmotorsports.com/vac-motorsports-oil-pump-upgrade-kit-bmw-m52tum54-p1077.aspx) \- $224.95 (verified) |
+| **Oil Pump Nut** | **BimmerWorld Drilled Nut + Safety Wire** — left-hand thread, 17 ft-lb. In-car via oil pan removal. | [BimmerWorld](https://www.bimmerworld.com/Engine/Engine-Performance/M50-Drilled-Oil-Pump-Nut_2.html) — $12.99 |
 
 #### Air / Intake  \[AIR\]
 
