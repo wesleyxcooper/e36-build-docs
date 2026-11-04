@@ -784,3 +784,43 @@ Configure in MTune: `Settings → Inputs → Digital Inputs → [selected DIN] �
 - RFID ring formats: 125 kHz (EM4100 — common, widely cloneable) or 13.56 MHz (MIFARE/NTAG — much harder to clone). **Use 13.56 MHz** for meaningful anti-theft protection.
 - Reader mounting: inside the cabin, concealed — behind the shift console, under the dash lip, or behind the center armrest. Reader power wire draws from ignition-switched rail (MaxxECU IGN power or PMU16 output).
 - See @s2kicken9 page for RFID key/ring form factor options (rings, fobs, cards).
+
+---
+
+## Engine Bay Presentation — Clean Bay  [ELECTRICAL] [EXTERIOR]
+
+**Goal:** Unobstructed sight lines from above, clean wheel arch areas, wiring hidden in looms rather than draped across components. Not a full wire tuck — no firewall re-routing or manifold-through wiring. The build architecture provides most of the wins automatically.
+
+### What You Get for Free from the Build Architecture
+
+| What | Why it's clean |
+| :---- | :---- |
+| MaxxECU H2O + PMU16, intake-side engine bay | Both mount engine-bay on the intake side. Exact mounting location and bracket TBD at Phase 1 — H2O footprint is larger than OEM DME, a fabricated plate will likely be needed. PMU16 location alongside H2O, also TBD. Once in, nothing is visible from above. See `docs/vendor/maxxecu/MaxxECU_RACE_H2O.md` §7–8 for fit check. |
+| Trunk battery | Factory configuration on this import — no OEM battery, tray, or clamp hardware in the engine bay from day one. |
+| PMU16 handles fuel pump, fan, ECU power, EPS | No relay board on the inner fender. No discrete relay sockets, no inline fuse holders in the bay — PMU16 per-channel MOSFETs with internal fusing replace all of it. |
+| OEM front power distribution box simplification | The E36 OEM relay box (exhaust side inner fender) can be gutted — most relays it contains are replaced by PMU16. Retained fuses (body electrics: windows, lights, etc.) fit inside the OEM housing with relay sockets pulled out or relocated under the battery tray cover. Source: E36 ETM section 0670.0 ("POWER DISTRIBUTION CHART FRONT POWER DISTRIBUTION BOX") — relay-to-PMU16 mapping in `e36-wiring/harnesses/power-distribution.wv`. |
+
+### Harness Routing Discipline
+
+The M50 pre-terminated harness naturally divides into three physical zones. Route each one before looming:
+
+| Zone | Route | Notes |
+| :---- | :---- | :---- |
+| Main trunk | Along the firewall face, low — below the cam cover height. Zip-tie to OEM clip points that exist on the firewall. Invisible from above. | Techflex over the full run. |
+| Injector sub-loom | From main trunk, route through the gap between the block and the underside of the intake runners. Invisible from any normal viewing angle. | Already a separate Techflex sleeve per `maxxecu-m52.wv`. |
+| Coil sub-loom | Along one edge of the cam cover, not across the top. Route down the near edge, out of the sightline from above. | Same sleeve-separation discipline as injectors — keep away from crank/cam trigger wires. |
+| Supplemental runs (CAN, PST-F1, AIN) | Bundle alongside the main trunk through the OEM firewall grommet. Keep in own sleeves — do not co-loom with injector or coil wires. | |
+
+### Vacuum System Cleanup
+
+| Item | Action | Notes |
+| :---- | :---- | :---- |
+| Brake booster vacuum line | **Deleted at Phase 1** — NES Engineering booster delete removes the booster and the large vacuum hose entirely. No vacuum pump needed. | Already in the Phase 1 plan. |
+| MAP sensor vacuum hose | **Keep** — single small hose from intake manifold port to MAP sensor in the M50 harness bundle. Short, runs along the firewall. | Pre-installed in M50 harness. Invisible once trunk routed. |
+| Crankcase ventilation (CCV) | **Replace OEM PCV with catch can.** OEM PCV valve on the valve cover runs a hose to the intake manifold. A baffled catch can replaces the OEM PCV valve with an AN fitting — much cleaner than the OEM rubber hose. Mandatory for the turbo build anyway (boost back-feed prevention) so doing it at Phase 1 is not wasted effort. | Radium competition catch can (20-0772 or 20-0771) — documented in `rhd e36.md`. |
+| Fuel pressure regulator vacuum reference | **Keep** — one small hose from intake manifold to Aeromotive 13129 FPR vacuum/boost port. | |
+| EVAP charcoal canister | **Delete.** Located on the exhaust side inner fender. Remove canister, bracket, and all associated hoses (3–4 runs to intake manifold and fuel tank). Cap the intake manifold port with a vacuum cap. Removes a significant amount of hose clutter from the exhaust side corner. | Standard delete on modified E36s. No emissions equipment required for track/modified use. |
+
+### Result
+
+After the above, the visible vacuum system is three small hoses (MAP sensor, CCV-to-catch-can, FPR reference) plus the catch can itself. The exhaust side inner fender is clear. The intake side is covered by the OEM DME plastic cover. Main harness trunk is invisible at firewall level. Injectors and coils are wired but not visible from above.

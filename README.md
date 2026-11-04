@@ -2,6 +2,10 @@
 
 Planning documents and bill-of-materials CSVs for the E36 restomod build.
 
+> **Bay orientation convention — all docs:** Use **intake side** and **exhaust side** as the primary references. These are fixed to the engine geometry regardless of steering configuration. "Driver" and "passenger" are avoided because this is a RHD build.
+> - **Intake side** = RHD passenger side = same side as the M52/07K intake manifold and throttle body.
+> - **Exhaust side** = RHD driver side = same side as exhaust manifold, downpipe, and OEM front power distribution box.
+
 ## Planning Docs
 - [Project Plan](E36_9000RPM_Project_Plan_Verified.md)
 - [DIY Checklist](E36_DIY_Build_Checklist.md)

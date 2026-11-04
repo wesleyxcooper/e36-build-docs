@@ -7,7 +7,7 @@
 
 > **Infrastructure arriving at Phase 3b:** Maven HD30 Dual 16+16 firewall bulkhead (Connector A = CAN + DCT, Connector B = safety-critical APS), CWA400 electric water pump, E46 APS pedal, and 12V electric AC compressor (if not already installed at Phase 1). The PMU16 was installed at Phase 1 — at Phase 3b, add O5 (EWP) and O2 (DBW TB power) to the existing PMU16 config. Build the Maven bulkhead and EWP at the start (Steps 1–4 below) before connecting the 07K engine harness. The M5x phase used the MaxxECU M50 pre-terminated harness through the OEM grommet — that harness is now removed and replaced by the custom 07K harness.
 
-> **Under the H2O engine-bay-mount architecture** (see `docs/vendor/maxxecu/MaxxECU_RACE_H2O.md`), the MaxxECU stays where it was installed at Phase 1 (engine bay, OEM DME E-box cavity, intake side). Engine sensors and IGN/INJ signals direct-terminate at the MaxxECU C1/C2 CMC connectors — NO firewall bulkhead in the engine-side path. The Maven HD30 dual bulkhead carries ONLY cabin-originated signals (CAN, DCT shifter paddle inputs, APS pedal).
+> **Under the H2O engine-bay-mount architecture** (see `docs/vendor/maxxecu/MaxxECU_RACE_H2O.md`), the MaxxECU stays where it was installed at Phase 1 (engine bay, OEM DME mounting location, intake side). Engine sensors and IGN/INJ signals direct-terminate at the MaxxECU C1/C2 CMC connectors — NO firewall bulkhead in the engine-side path. The Maven HD30 dual bulkhead carries ONLY cabin-originated signals (CAN, DCT shifter paddle inputs, APS pedal).
 
 ---
 

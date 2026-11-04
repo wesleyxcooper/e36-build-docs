@@ -47,19 +47,21 @@
 
 **Standard RACE vs RACE H2O:** MaxxECU sells both the standard RACE (cabin-mount only, per quickstart guide "STREET/SPORT/RACE units must be mounted inside the vehicle") and the RACE H2O (IP67 waterproof, engine-bay-safe). We use the H2O. Both variants share the identical C1/C2 Molex CMC pinout — harness pin assignments are the same. Source: [MaxxECU Quickstart Guide](https://www.maxxecu.com/files/Documentation/Manuals/MaxxECU%20Quickstart%20Guide%20(MINI-STREET-SPORT-RACE-PRO)-en.pdf); H2O confirmed on maxxecu.co.nz SKU 1895.
 
-**Mount location — RHD build:** Mount in the **OEM E36 DME E-box cavity area**, intake side of the RHD car (driver-opposite / passenger side). This is:
+**Mount location — RHD build:** Mount in the **OEM DME mounting location**, intake side of the RHD car (passenger side). This is:
 - The pre-existing OEM ECU mount point — pre-drilled for M6 rivnuts, plastic cover for splash protection
 - Adjacent to the intake side of both the M52 and 07K engines
 - Away from the exhaust (driver side)
 - Immediately behind the OEM firewall grommet where the M50 harness exits — the M50 CMC connectors reach the H2O with minimal harness slack
 
-**Dimensional note:** The MaxxECU RACE H2O footprint is 155 × 195 × 40 mm (per maxxecu.com/products/race/), which is ~15 mm longer than the OEM Bosch DME (~180 × 110 mm). The H2O will typically extend slightly beyond the OEM E-box cavity in one dimension. Standard solutions used by other aftermarket ECU installs in the E36 E-box:
+**RHD DME location sources:** The E36 OEM DME sits behind the fuse box, inside the bulkhead behind a plastic panel, on the passenger side — same side in both LHD and RHD (the interior mirrors between variants so "passenger side" maps to opposite physical sides of the car). Sources: (1) [bimmerforums.co.uk — E36 tds ECU location thread](https://www.bimmerforums.co.uk/threads/e36-tds-ecu-location.334033/) post by "TheEnd" (10,501 posts): *"It's behind the fusebox on RHD cars in the bulkhead behind a plastic panel. LHD cars have it on the opposite site to the fusebox, but still inside the bulkhead behind a panel."* (2) [bimmerforums.co.uk — 1997 E36 328i thread](https://www.bimmerforums.co.uk/threads/1997-e36-328i-can-you-help-identify-these.30638/) post #6: *"Ecu is hidden in a compartment behind the bulkhead on the passenger side, where it can be accessed by removing the soundproofing stuff then a metal cover."*
 
-1. Fabricate a small aluminum extender plate that bolts to the OEM E-box mounting flange and pushes the ECU ~15 mm further from the firewall face
+**Dimensional note:** The MaxxECU RACE H2O footprint is 155 × 195 × 40 mm (per maxxecu.com/products/race/), which is ~15 mm longer than the OEM Bosch DME (~180 × 110 mm). The H2O will typically extend slightly beyond the OEM DME mounting area in one dimension. Standard solutions used by other aftermarket ECU installs in the E36 intake-side mount:
+
+1. Fabricate a custom aluminum adapter plate that bolts to the OEM DME mounting provisions and accommodates the H2O footprint. Source for the approach: [Adapt-Lab E36 EMU Black / Haltech Elite ECU Bracket](https://adapt-lab.com/product/e36-emu-black-haltech-elite-ecu-bracket) ($119.95, 304 stainless) — "utilizes the factory retention mechanism for a seamless OEM installation... bolt your ECU to the adapter plate and slide it back in for an OEM fit." Strom Motorsports [E36 MoTeC M122/M130 Mounting Kit](https://strommotorsports.com/products/e36-m122-mounting-kit) ($89) also uses the OEM DME mounting provisions with a custom base plate and explicitly states "no drilling necessary." Neither bracket fits the H2O directly (the H2O footprint is 155×195mm vs the OEM DME ~180×110mm) — a custom plate is needed. Use JLC CNC (see `E36_Enhancements_SideProjects.md` Fabrication section) with STEP file from the H2O mounting hole pattern.
 2. Cut/enlarge the OEM plastic cover to accommodate (loses OEM appearance but simpler)
-3. Mount at a slight angle so the extra dimension falls diagonally within the existing cavity
+3. Mount at a slight angle so the extra dimension falls diagonally within the OEM mounting area
 
-Precedents for E36 aftermarket ECU install at this location: [adapt-lab.com — E36 aftermarket ECU mount for ECU Masters EMU Black + Haltech Elite Series](https://adapt-lab.com/2025/07/27/unleash-your-e36s-true-power-why-a-standalone-ecu-is-key-and-how-to-mount-it-right/) uses the OEM factory mount points; [wiringspecialties.com LINK G4X BMW E36 M50](https://www.wiringspecialties.com/link-g4x-bmw-e36-m50-plug-in-ecu-bmwlink-e36x/) fits inside the OEM enclosure (though that's a plug-in adapter, not bare unit).
+Precedents for E36 aftermarket ECU install at this location: [adapt-lab.com — E36 aftermarket ECU mount for ECU Masters EMU Black + Haltech Elite Series](https://adapt-lab.com/2025/07/27/unleash-your-e36s-true-power-why-a-standalone-ecu-is-key-and-how-to-mount-it-right/) uses the OEM factory mount points; [wiringspecialties.com LINK G4X BMW E36 M50](https://www.wiringspecialties.com/link-g4x-bmw-e36-m50-plug-in-ecu-bmwlink-e36x/) fits inside the OEM enclosure (plug-in adapter, not bare unit — different approach but confirms the mounting location is used by other ECUs).
 
 **USB access for MTune sessions:** MaxxECU sells a dedicated 1.5m waterproof USB extension cable (MaxxECU part #1606, included in H2O Premium kits) for the RACE H2O. Route it through a small firewall grommet (14 mm hole, rubber grommet) into the cabin for tuning access without opening the hood. See MaxxECU_RACE_H2O.md §USB Tuning Access.
 
@@ -93,7 +95,7 @@ Without this: no cam/home signal → MaxxECU cannot resolve firing order → no-
 
 ### Step 4 — PMU16 Commissioning
 
-PMU16 mounts engine-bay alongside the MaxxECU H2O in the OEM DME E-box cavity (intake side, RHD passenger side). CAN link connects to MaxxECU CAN 2. See `e36-wiring/harnesses/power-distribution.wv` for channel allocation and wire gauges.
+PMU16 mounts engine-bay alongside the MaxxECU H2O in the OEM DME mounting location (intake side, RHD passenger side). CAN link connects to MaxxECU CAN 2. See `e36-wiring/harnesses/power-distribution.wv` for channel allocation and wire gauges.
 
 **Commissioning sequence:**
 
