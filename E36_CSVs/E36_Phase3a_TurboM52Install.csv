@@ -1,0 +1,12 @@
+Phase,Category,Component,Specification,Price Low,Price High,Link,Notes
+Phase 3a,Engine Swap,Alloy M52 removal,Remove alloy M52 from car — retain for sale/storage,,,,Engine out step
+Phase 3a,Engine Swap,Turbo M52 installation,Install iron-block turbo M52B28 longblock from Phase 2a,,,,Engine in step
+Phase 3a,Turbo Install,Downpipe,See Phase 2a turbo manifold kit — downpipe installs at swap event,,,https://www.overruntuning.com/e36-turbo-guide,TBD
+Phase 3a,Turbo Install,Intercooler,TBD — front-mount or side-mount. Specify with turbo selection.,,,,TBD
+Phase 3a,Turbo Install,Charge piping,TBD — compressor outlet to intercooler to throttle body,,,,TBD
+Phase 3a,Turbo Install,BOV,TBD — recirculating preferred for flex fuel tuning,,,,TBD
+Phase 3a,Oil Lines,Turbo oil feed line,TBD — from oil filter housing banjo to turbo inlet,,,,TBD
+Phase 3a,Oil Lines,Turbo oil drain line,TBD — from turbo drain to oil pan return bung,,,,TBD
+Phase 3a,Coolant Lines,Turbo coolant feed/return,TBD — water-cooled center section lines,,,,TBD
+Phase 3a,Wiring,Boost pressure sensor,TBD — MAP sensor to MaxxECU for boost control,,,,TBD
+Phase 3a,Wiring,Wideband O2,"TBD — relocated to downpipe bung, same MaxxECU input",,,,TBD
