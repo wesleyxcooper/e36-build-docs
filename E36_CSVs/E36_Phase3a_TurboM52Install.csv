@@ -1,12 +1,10 @@
 Phase,Category,Component,Specification,Price Low,Price High,Link,Notes
-Phase 3a,Engine Swap,Alloy M52 removal,Remove alloy M52 from car — retain for sale/storage,,,,Engine out step
-Phase 3a,Engine Swap,Turbo M52 installation,Install iron-block turbo M52B28 longblock from Phase 2a,,,,Engine in step
-Phase 3a,Turbo Install,Downpipe,See Phase 2a turbo manifold kit — downpipe installs at swap event,,,https://www.overruntuning.com/e36-turbo-guide,TBD
-Phase 3a,Turbo Install,Intercooler,TBD — front-mount or side-mount. Specify with turbo selection.,,,,TBD
-Phase 3a,Turbo Install,Charge piping,TBD — compressor outlet to intercooler to throttle body,,,,TBD
-Phase 3a,Turbo Install,BOV,TBD — recirculating preferred for flex fuel tuning,,,,TBD
-Phase 3a,Oil Lines,Turbo oil feed line,TBD — from oil filter housing banjo to turbo inlet,,,,TBD
-Phase 3a,Oil Lines,Turbo oil drain line,TBD — from turbo drain to oil pan return bung,,,,TBD
-Phase 3a,Coolant Lines,Turbo coolant feed/return,TBD — water-cooled center section lines,,,,TBD
-Phase 3a,Wiring,Boost pressure sensor,TBD — MAP sensor to MaxxECU for boost control,,,,TBD
-Phase 3a,Wiring,Wideband O2,"TBD — relocated to downpipe bung, same MaxxECU input",,,,TBD
+Phase 3a,Engine Swap,Alloy M52 removal,Remove alloy M52 from car — retain for sale/storage,,,,DIY — engine hoist in hand
+Phase 3a,Engine Swap,Turbo M52 installation,Install iron-block turbo M52B28 longblock from Phase 2a,,,,DIY — engine hoist in hand
+Phase 3a,Turbo Install,Charge piping,"Custom mandrel-bent aluminum 2.5""-3"" piping — compressor outlet to FMIC inlet; FMIC outlet to throttle body. Silicone couplers + clamps.",200,400,https://www.summitracing.com,"Budget for universal elbow kit + silicone couplers or custom fab. Routing depends on TMB01 bottom-mount exit angle — mock up before cutting. Source: 19b-m5x-turbo.md."
+Phase 3a,Coolant Lines,Turbo coolant feed line,-4AN stainless braided ~300-400mm — upper radiator hose T-fitting to turbo center section coolant inlet,40,60,https://www.summitracing.com,"Feed taps post-thermostat (hot side). Source: 19c-m5x-coolant-turbo.md."
+Phase 3a,Coolant Lines,Turbo coolant return line,-4AN stainless braided ~400-600mm — turbo center section coolant outlet to expansion tank lower fitting,40,60,https://www.summitracing.com,"Return to cold side. Must be continuous downhill run. Source: 19c-m5x-coolant-turbo.md."
+Phase 3a,Coolant Lines,Coolant check valve,-4AN inline spring-loaded check valve (Fragola 672204 or equiv) — prevents backflow through CWA50 during normal operation,25,40,https://www.fragola.com,"Inline on coolant feed between T-fitting and CWA50. Source: 19c-m5x-coolant-turbo.md."
+Phase 3a,Coolant Lines,Post-run auxiliary pump (CWA50),"Bosch 0 392 023 004 (N54 charge cooler pump — used OEM pull) or BMW 64 11 6 917 727 heater circ pump. 12V ~50W. PMU16 holds active post-key-off until CLT < 70C.",40,150,https://www.fcpeuro.com,"Mandatory for track use — prevents turbo bearing coking after shutdown. PMU16 controls via CLT CAN threshold. Source: 19c-m5x-coolant-turbo.md."
+Phase 3a,Wiring,Boost pressure sensor (MAP),"3-pin Bosch MAP — JMT 1.5mm housing 3B0973703G. Connector in M50 harness. OEM M52 1-bar sensor not suitable for boost — replace with 3-bar unit.",25,50,https://www.fcpeuro.com,"Verify at Phase 1 ECU install whether 3-bar MAP is already sourced. If not: source separate 3-bar Bosch-compatible sensor, same connector. Source: 19b-m5x-turbo.md."
+Phase 3a,Wiring,Wideband O2,"Bosch LSU 4.2 — same sensor as Phase 1. Relocate 18mm x 1.5 bung to downpipe at swap.",0,0,https://modernracing.net/products/wb-o2-sensor,"Purchased in Phase 1. Bung relocation only — no new sensor cost. Source: E36_Phase1_Foundation.csv."
