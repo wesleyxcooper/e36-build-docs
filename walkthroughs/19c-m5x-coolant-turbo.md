@@ -112,7 +112,7 @@ T-fitting (upper hose)
 | **MaxxECU post-run GPO** | In MTune: Outputs → Output config → spare GPO → Function: Post-run timer. Set duration: 300 seconds (5 min). MaxxECU holds the GPO active for the set duration after ignition-off. Wire GPO → relay coil → CWA50 +12V from a fused BATT line (not ignition-switched). |
 | **Standalone timer relay (fallback)** | Adjustable 12V timer relay module (~$20). Trigger from ignition-switched +12V falling edge (key-off). Holds CWA50 relay closed for the set duration (3–5 min). Power CWA50 from fused BATT+ through the relay. |
 
-> **PMU16 on the M5x turbo build:** The PMU16 (Ecumaster) was originally deferred to Phase 3b in the wiring plan, but the turbo build makes it worthwhile at Phase 3a. It cleanly replaces the relay board, handles the CWA50 post-run circuit with temperature-based cutoff (better than a dumb timer), provides per-output current logging for the fuel pump and fan, and is already in the plan for eventual Phase 3b anyway. If budget allows, install it with the M5x turbo rather than waiting. See `11-ecu-chassis-wiring.md` for the existing relay board spec that it replaces.
+> **PMU16 on the M5x turbo build:** PMU16 is already installed from Phase 1 (see `11-ecu-chassis-wiring.md` Step 4). At Phase 3a, the existing Phase 1 channel configuration carries over unchanged. CWA50 post-run cooling can be handled via PMU16 with a temperature-based cutoff (better than a dumb timer) — assign a spare PMU16 output and configure the duty cycle / cutoff threshold in Ecumaster PMU software.
 
 **Relay coil flyback diode:** 1N4007, cathode (banded end) to relay coil pin 86 (+12V), anode to pin 85 (GPO / timer output). Prevents voltage spike back into ECU output when coil de-energizes.
 

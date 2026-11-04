@@ -5,7 +5,7 @@
 **Shop-mandatory:** No  
 **Prerequisites:** 07K installed (`30-07k-install.md`); 07K engine harness built and bench-tested in Phase 2b (`e36-wiring/docs/harness-build.md`); all engine sensors accessible and connector locations confirmed at Phase 2b harness build
 
-> **Infrastructure arriving at Phase 3b:** The Ecumaster PMU16, Maven HD30 Dual 16+16 firewall bulkhead (Connector A = CAN + DCT, Connector B = safety-critical APS), CWA400 electric water pump, 12V electric AC compressor, and E46 APS pedal all install for the first time at Phase 3b. Build these at the start (Steps 1–4 below) before connecting the 07K engine harness. The M5x phase used the MaxxECU M50 pre-terminated harness through the OEM grommet with a discrete relay board (see `harnesses/fuel-pump-hanger-phase1.wv` and `harnesses/8hp-body-integrations-phase1.wv`) — all of that is now removed and replaced by the PMU16-driven full custom harness architecture.
+> **Infrastructure arriving at Phase 3b:** Maven HD30 Dual 16+16 firewall bulkhead (Connector A = CAN + DCT, Connector B = safety-critical APS), CWA400 electric water pump, E46 APS pedal, and 12V electric AC compressor (if not already installed at Phase 1). The PMU16 was installed at Phase 1 — at Phase 3b, add O5 (EWP) and O2 (DBW TB power) to the existing PMU16 config. Build the Maven bulkhead and EWP at the start (Steps 1–4 below) before connecting the 07K engine harness. The M5x phase used the MaxxECU M50 pre-terminated harness through the OEM grommet — that harness is now removed and replaced by the custom 07K harness.
 
 > **Under the H2O engine-bay-mount architecture** (see `docs/vendor/maxxecu/MaxxECU_RACE_H2O.md`), the MaxxECU stays where it was installed at Phase 1 (engine bay, OEM DME E-box cavity, intake side). Engine sensors and IGN/INJ signals direct-terminate at the MaxxECU C1/C2 CMC connectors — NO firewall bulkhead in the engine-side path. The Maven HD30 dual bulkhead carries ONLY cabin-originated signals (CAN, DCT shifter paddle inputs, APS pedal).
 
@@ -250,8 +250,8 @@ See `harnesses/8hp-can.wv` for the full 8HP power sequencing and CAN signal map.
 ## References
 
 - `harnesses/maxxecu-07k.wv` — full 07K harness pinout, GPO assignments, CMC connector labels
-- `harnesses/8hp-body-integrations-phase1.wv` / `harnesses/8hp-body-integrations-phase3.wv` — reverse light circuit Phase 1 (M50 harness + discrete relay) vs Phase 3b (PMU16 direct-drive)
-- `harnesses/fuel-pump-hanger-phase1.wv` / `harnesses/fuel-pump-hanger-phase3.wv` — Phase 1 (discrete relay via JDT rewire kit) vs Phase 3b (PMU16 O4 direct)
+- `harnesses/8hp-body-integrations-phase3.wv` — reverse light relay, PMU16 direct-drive (active from Phase 1; phase1 file is superseded reference only)
+- `harnesses/fuel-pump-hanger-phase3.wv` — fuel pump, PMU16 O4 direct-drive (active from Phase 1; phase1 file is superseded reference only)
 - `harnesses/firewall-crossing-maven.wv` — Maven HD30 dual bulkhead pin assignments
 - `E36_DIY_Build_Checklist.md` — Phase 3b, ECU & Engine Harness (lines 653–663)
 - `E36_9000RPM_Project_Plan_Verified.md` — ECU M5x→07K Harness Transition table (lines 574–598)

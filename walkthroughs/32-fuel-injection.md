@@ -58,7 +58,7 @@ This walkthrough covers installing the 07K injectors and fuel rail, upgrading to
 
 4. The Radium Engineering 20-1170 hanger was installed in Phase 1 and carries forward. The Phase 3b step is **swapping the pump** inside the hanger to the Walbro 450LPH (F90000267) if not already done.
    - Reference: [Radium 20-1170 install instructions (PDF)](https://cdn.shopify.com/s/files/1/0887/4193/7449/files/19-0359.pdf)
-   - Wiring spec: [`fuel-pump-hanger-phase1.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/fuel-pump-hanger-phase1.wv) (Phase 1 discrete relay + JDT rewire kit) → [`fuel-pump-hanger-phase3.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/fuel-pump-hanger-phase3.wv) (Phase 3b PMU16 O4 direct-drive)
+   - Wiring spec: [`fuel-pump-hanger-phase3.wv`](https://github.com/wesleyxcooper/e36-wiring/blob/main/harnesses/fuel-pump-hanger-phase3.wv) — PMU16 O4 direct-drive, applies from Phase 1 through Phase 3b unchanged
    > ⚠️ **Pitfall:** Depressurize the fuel system before opening the tank. The E36 tank has a locking ring — a large channel-lock or a BMW ring tool (rent). Don't pry it with a screwdriver; you'll crack the plastic retainer. Source: `E36_DIY_Build_Checklist.md` Phase 1 Fuel System.
 
 5. Inside the Radium hanger: swap the old pump for the Walbro F90000267. The F90000267 uses a 39mm/50mm DCSS body that fits the Radium 20-1170 directly (confirmed fitment). Re-use the OEM E36 level sensor — plug it back into the Radium hanger's sender port.

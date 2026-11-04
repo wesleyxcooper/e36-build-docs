@@ -3,7 +3,7 @@
 **Phase:** 1  
 **System tags:** `[COOLANT]` `[ELECTRICAL]`  
 **Shop-mandatory:** No  
-**Prerequisites:** Engine bay accessible (M52 in car). **Stage 1 fan install has no ECU or PMU16 dependency** — thermostat switch and relay only. Stage 2 fan control (PWM SPAL motor, MaxxECU-driven) requires MaxxECU installed. PMU16 O3 is the pre-assigned Phase 3b channel that replaces the relay at the 07K swap — it plays no role in Phase 1 fan control.
+**Prerequisites:** Engine bay accessible (M52 in car). MaxxECU and PMU16 installed (`11-ecu-chassis-wiring.md`). **Stage 1 fan install** (thermostat switch + relay) has no ECU or PMU16 dependency. **Stage 2 fan control** (PWM SPAL motor) is handled by PMU16 O3 — MaxxECU sends fan control commands via CAN, PMU16 O3 drives the SPAL motor at the commanded duty cycle.
 
 ---
 

@@ -7,11 +7,9 @@
 
 > **Staging note:** MaxxECU on M52 first. Install ECU, resolve EWS2 bypass, connect the M50 pre-terminated harness, wire X20, and get the M52 running on MaxxECU with the Getrag still in place. Tune the M52. Then proceed to 8HP swap. This isolates troubleshooting: ECU issues surface on the stock drivetrain; 8HP issues surface on a known-good ECU.
 
-> **PMU16 install timing — two valid options:**
-> - **Option A (recommended):** Install PMU16 at Phase 1 alongside the MaxxECU H2O. Channels O1 (ECU power), O3 (fan), O4 (fuel pump), O8 (EPS) cover all Phase 1 loads. Skip the discrete relay board and `fuel-pump-hanger-phase1.wv` relay section. No relay board to remove at Phase 3b. At Phase 3b, add O5 (EWP) and O2 (DBW TB). See `e36-wiring/harnesses/power-distribution.wv` for channel allocation.
-> - **Option B (original default):** Defer PMU16 to Phase 3b. Wire a discrete relay board for Phase 1 (fuel pump relay, fan relay — see relay board section below and `11-ecu-chassis-wiring.md` relay board parts). Replace at Phase 3b.
+> **PMU16 installs at Phase 1** alongside the MaxxECU H2O, before the 8HP swap. Channels O1 (ECU power, auto-on), O3 (fan), O4 (fuel pump), O8 (EPS) cover all Phase 1 loads. No discrete relay board. At Phase 3b, add O5 (EWP) and O2 (DBW TB). See `e36-wiring/harnesses/power-distribution.wv` for channel allocation and commissioning sequence.
 
-> **Strictly Phase 3b (07K-specific — not needed for M52 at all):** Maven HD30 dual 16+16 firewall bulkhead, CWA400 electric water pump, E46 APS pedal. Electric AC compressor is engine-agnostic — can be installed at Phase 1 if PMU16 is also at Phase 1 (O7), or deferred to Phase 3b. See `34-ecu-harness-final.md` for the Phase 3b install sequence.
+> **Strictly Phase 3b (07K-specific):** Maven HD30 dual 16+16 firewall bulkhead, CWA400 electric water pump, E46 APS pedal. Electric AC compressor (PMU16 O7) is engine-agnostic — can install at Phase 1 if wanted, otherwise deferred to Phase 3b. See `34-ecu-harness-final.md` for the Phase 3b install sequence.
 
 ---
 
@@ -23,9 +21,9 @@
 | EWS2 bypass / delete emulator module | BMW ECU tuning vendors — confirm current preferred method with MaxxECU community before ordering | — |
 | M52 cam sensor — BMW PN `12141726590` (non-VANOS type, plug-and-play with M50 harness) | BMW dealer / FCP Euro | — |
 | Bosch LSU 4.2 Wideband O2 Sensor | [Modern Racing LSU 4.2](https://modernracing.net/products/wb-o2-sensor) | $69.00 |
-| ISO mini relay × 3 (fuel pump, fan, AC — see relay board section) | Bosch `0 332 209 150` or equivalent | ~$5 ea |
-| Relay fuse/socket block (3–4 relay positions with integrated fusing) | WAGO, Narva, or Bussmann — choose a block with ATC blade fuse slots per relay | ~$20–40 |
-| 1N4007 flyback diodes (×5 min: VANOS, ICV A, ICV B, fuel pump relay, fan relay) | Electronics supply | ~$2 |
+| Ecumaster PMU16 power management unit | [ecumasterusa.com PMU16](https://ecumasterusa.com/products/ecumaster-pmu16-power-management-unit) | ~$500 |
+| Ecumaster USB-CAN adapter (required for PMU16 configuration) | ecumasterusa.com | ~$85 |
+| 1N4007 flyback diodes (×3 min: VANOS, ICV A, ICV B — fuel pump and fan now on PMU16 MOSFET) | Electronics supply | ~$2 |
 | 18mm×1.5 O2 bung (for exhaust — weld-in, shop step) | Exhaust supply | — |
 | Brady M210 printer + M21-125-C-342 PermaSleeve cartridge (22–16 AWG signals) | [Amazon starter bundle](https://a.co/d/3qZ8sAa) | ~$130 |
 
@@ -93,30 +91,29 @@ The MaxxECU M50 terminated harness is built for the non-VANOS M50 cam sensor con
 
 Without this: no cam/home signal → MaxxECU cannot resolve firing order → no-start. Confirm before first start attempt.
 
-### Step 4 — Simple Relay Board
+### Step 4 — PMU16 Commissioning
 
-The M5x phase uses three ISO mini relays on a small fused relay block. No PMU16 needed here — that's a 07K-phase item (see `34-ecu-harness-final.md`).
+PMU16 mounts engine-bay alongside the MaxxECU H2O in the OEM DME E-box cavity (intake side, RHD passenger side). CAN link connects to MaxxECU CAN 2. See `e36-wiring/harnesses/power-distribution.wv` for channel allocation and wire gauges.
 
-**Relay block layout:**
+**Commissioning sequence:**
 
-| Relay | Function | Coil − (pin 85) | Coil + (pin 86) | Load (pin 87) |
-| --- | --- | --- | --- | --- |
-| R1 | Fuel pump | MaxxECU GPO 2 — CMC pin C4 (pin 12), via ECU_12PIN breakout pin 3 | +12V IGN from OEM body harness IGN relay — pre-existing, unchanged | → Fuel pump, 12 AWG |
-| R2 | Radiator fan | MaxxECU GPO 6 — CMC pin B1 (pin 5), via ECU_16PIN breakout pin 6 | +12V IGN — same as above | → SPAL fan, 12 AWG |
-| R3 | AC (if keeping belt-driven compressor) | MaxxECU GPO output — assign as needed | +12V IGN | → AC compressor clutch relay coil |
+1. Wire PMU16 power in (BATT+ from trunk battery via main fuse, chassis GND stud). Do not remove K6300 OEM DME relay yet.
+2. Connect PMU16 CAN to MaxxECU CAN 2 (or CAN 1 if 8HP uses CAN 2 — confirm bus assignments in MTune before wiring).
+3. Load the MaxxECU.canx template in Ecumaster PMU software via USB-CAN adapter. Configure O1 as **auto-on at startup** (ECU +12V must fire before MaxxECU sends any CAN commands — prevents chicken-and-egg on first power-up). Source: `docs/vendor/ecumaster/PMU16_Manual_v101.pdf`.
+4. Configure remaining Phase 1 channels in MTune → PMU16 output map:
 
-All relay coil pin 86 feeds (+12V IGN) can tap the OEM ignition relay output that already exists in the E36 body harness — no new wiring to the ignition switch. The MaxxECU GPO pins only switch the low side (pin 85 to GND when active).
+| Output | Function | Load |
+| --- | --- | --- |
+| O1 | MaxxECU ECU +12V (auto-on) | Replaces OEM K6300 relay |
+| O3 | Radiator fan PWM | SPAL fan, 12 AWG |
+| O4 | Fuel pump 25A PWM | Walbro F90000267 via JDT kit wire, 10 AWG |
+| O8 | EPS IGN-switched 10A | EPowerSteering.com E36 controller |
+| O7 | AC compressor 100A relay coil *(optional)* | Only wire if electric AC installed at Phase 1 |
 
-**Flyback diode on every relay coil:** 1N4007, cathode (banded end) to pin 86 (+12V), anode to pin 85 (GPO output). Prevents voltage spike back into the ECU output when the coil de-energizes. Also required on VANOS and ICV coils — see M50 harness notes.
+5. Power up. Confirm O1 fires immediately (MaxxECU boots). Confirm O3/O4/O8 fire on MTune command.
+6. Remove OEM K6300 relay from the Front Power Distribution Box once O1 is verified working as sole ECU power source. Leave K21/K22 fan relays in place until O3 is confirmed.
 
-**Fan relay additional wiring:** Wire the OEM E36 thermostat switch (already on the engine) in parallel with GPO 6 on pin 85. This gives Stage 1 (thermostat-only) fan control as a fallback if the ECU output fails, and means the fan works even before MaxxECU is fully mapped.
-
-> ⚠️ **Do not use the GPO output to drive high-current loads directly.** GPO pins are low-side switches, rated ~1–2A for relay coils only. Fan, fuel pump, and AC compressor power all route through the relay load contacts (pin 87 → component), never through the ECU.
-
-**Mounting:** Mount the relay block near the fuse box in the engine bay or on the inner fender. Keep relay coil wiring (thin, ECU signal side) physically separate from relay load wiring (thick, fuel pump / fan power side) — no bundling together.
-
-**Optional — EWP:**  
-If replacing the mechanical water pump with a Davies Craig EWP at this stage, use the Davies Craig standalone digital controller (EWP Digital Controller Kit). It reads CLT and operates the pump autonomously — no ECU integration required for M5x phase. No additional relay or PMU16 needed. EWP power (10–12A) runs on its own fused circuit from the battery.
+> ⚠️ **GPO 2 (fuel pump) and GPO 6 (fan) on the M50 harness are now unused.** PMU16 CAN commands replace them. Do not leave these GPO outputs mapped to relay-drive functions in MTune — reconfigure to unused or reassign.
 
 ### Step 5 — M50 Harness Installation
 
@@ -252,7 +249,6 @@ These items are documented here for reference but are **not built during M5x pha
 
 | Item | Where documented |
 | --- | --- |
-| Ecumaster PMU16 power management unit | `34-ecu-harness-final.md` + `e36-wiring/harnesses/power-distribution.wv` |
 | Maven HD30 Dual 16+16 firewall bulkhead (Connector A = CAN + DCT, Connector B = safety-critical APS) | `34-ecu-harness-final.md` + `e36-wiring/docs/wiring-bom.md` System 8 |
 | CWA400 electric water pump | `07-8hp-swap.md` + `e36-wiring/harnesses/ewp-controller.wv` |
 | 12V electric AC compressor (belt system removed at 07K swap) | `e36-wiring/harnesses/ac-compressor.wv` |

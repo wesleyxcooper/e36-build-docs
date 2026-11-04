@@ -50,7 +50,7 @@ Vendor explicitly calls out the column tube OD (1.87" or 1.75") as a common mism
 | 10 AWG wire, ~3m (Steering ECU battery + GND) | — | ~$10–15 |
 | 18 AWG wire, ~2m (EPS Controller IGN + GND) | — | ~$5 |
 | 22 AWG wire, ~2m (Adjustment Knob) | — | ~$5 |
-| PMU16 spare output O8 (Phase 3b only — IGN-switched 15A output, O6–O11 range; ~10A expected EPS load) | Wired at Phase 3b PMU16 install; not needed for Phase 1 | — |
+| PMU16 O8 — IGN-switched 15A output for EPS controller power (~10A expected load) | Wired at Phase 1 PMU16 install alongside MaxxECU (`power-distribution.wv`) | — |
 
 ---
 
@@ -82,11 +82,9 @@ Vendor explicitly calls out the column tube OD (1.87" or 1.75") as a common mism
    - Source: `harnesses/eps-column.wv` STEERING_ECU and CABLE_ECU_PWR_POS notes
 
 5. **EPS Controller IGN power — Phase 1:**
-   - Tap the relay board IGN-switched +12V rail (same switched +12V feed used for fan/pump relay coil pin 86 in `11-ecu-chassis-wiring.md`) → 10A Mini ATM fuse (kit-supplied) → EPS Controller red wire
+   - PMU16 O8 (IGN-switched 15A, installed at Phase 1) → EPS Controller red wire. PMU16 per-channel fusing covers the ~10A EPS load; no separate inline fuse needed.
    - EPS Controller black wire → nearest chassis ground
-   - Source: `harnesses/eps-column.wv` IGN_12V_TAP notes
-
-   > **Phase 3b transition:** At PMU16 installation, move this one wire end from the relay board IGN rail to **PMU16 O8** (15A output, O6–O11 range; ~10A expected EPS load — `harnesses/power-distribution.wv`). PMU16 per-channel fusing replaces the discrete 10A Mini ATM fuse at that point; remove the fuse from the inline holder. No other EPS wiring changes at Phase 3b. Source: `harnesses/eps-column.wv` lines 58–63.
+   - Source: `harnesses/eps-column.wv` + `harnesses/power-distribution.wv` O8 channel allocation
 
 6. **Adjustment Knob:**
    - Route 22 AWG yellow + gray pair from planned dash-mount location → EPS Controller box location

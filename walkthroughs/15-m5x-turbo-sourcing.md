@@ -180,9 +180,7 @@ This section documents what changes or stays the same on the M5x turbo build vs 
 
 ### PMU16
 
-**07K path:** PMU16 (Bren Tronics / Littelfuse) is installed in Phase 3b at the 07K swap. Phase 1 and Phase 2a use discrete relays for the fuel pump and fans until PMU16 install.
-
-**M5x turbo path:** Same. PMU16 install timing is identical — it goes in with the final wiring cleanup, not at engine teardown. The Phase 2a M5x turbo does not change PMU16 scope or timing.
+**All paths:** PMU16 installs at Phase 1 alongside the MaxxECU H2O, before the 8HP swap, regardless of which engine path follows. No discrete relay board is built. At Phase 3b, O5 (EWP) and O2 (DBW TB power) are added; the rest of the channel allocation is unchanged from Phase 1. See `11-ecu-chassis-wiring.md` Step 4 and `e36-wiring/harnesses/power-distribution.wv`.
 
 ### Accessory belt drive
 
