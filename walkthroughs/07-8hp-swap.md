@@ -7,6 +7,26 @@
 
 ---
 
+## Controller Selection — Decision Deferred to Build Start (May 2027)
+
+Three architectures exist for controlling the ZF 8HP from an aftermarket ECU. All three support GEN1 8HP45/70/90.
+
+| Approach | Product | Architecture | Status |
+| --- | --- | --- | --- |
+| **MaxxECU native (current plan)** | MaxxECU RACE / RACE H2O | Reflashes OEM TCU via ACDP-2; CAN control from MaxxECU. No separate TCU hardware. | Available — beta since May 2024. GEN1 8HP45/70/90 only. |
+| **TurboLamik** | TurboLamik TCU 2.0 | Replaces OEM TCM PCB entirely; direct solenoid control; works with any ECU. | Available since 2014. GEN2 (8HP50/75) support available. |
+| **Haltech Ti8HP** | Ti8HP + Nexus R3 | Same philosophy as MaxxECU (reflashes OEM TCU + CAN); built into Haltech ecosystem — no ACDP-2 needed. Pre-terminated harness included. | Q1 2027 — SEMA 2026 preview only. GEN1 at launch, GEN2 later. |
+
+**MaxxECU path (current plan):** ACDP-2 rental ($138) is the one extra step — bench flash only, no car required. Full feature set including shift points 1,500–9,000 RPM, virtual clutch, rev-match. Single ECU for engine and transmission. Ref: [MaxxECU GEN1 8HP feature page](https://www.maxxecu.com/features/8hp_gearbox).
+
+**TurboLamik:** Physically replaces the OEM TCM PCB (solder work required inside mechatronics). Full direct solenoid control — no OEM firmware limits, no CAN dependency for shift logic. Works with MaxxECU, Haltech, or any ECU. TurboLamik is mandatory if the final transmission unit is GEN2 (8HP50/75). Ref: [Latimer Technologies — TurboLamik vs MaxxECU vs CANTCU comparison](https://latimerxtech.com/blog/turbolamik-vs-maxxecu-vs-cantcu-8hp-controller-comparison/) · [8HPtheWorld — GEN1/GEN2 decision table](https://www.8hptheworld.com/maxxecu-vs-haltech-turbolamik-8hp-canada).
+
+**Haltech Ti8HP:** Previewed at SEMA 2026, targeting Q1 2027. Requires Haltech Nexus R3 ECU ($2,585). No ACDP-2 needed — OEM TCU reflash happens through Haltech's system. Pre-terminated harness plugs directly into Haltech terminated harnesses. Launch features: torque table, shift load correction, upshift torque reduction, downshift throttle opening. Transbrake, clutch control, and custom shift points are roadmap items (not at launch). M50/M52 terminated engine harness for Nexus R3 available via Tuned by Shawn (~$1,662.50, 60-day lead). Total Haltech path ~$4,500 vs ~$3,360 MaxxECU RACE path. **For 07K path: MaxxECU only** — no documented Haltech 07K builds exist in the community. Ref: [Haltech Ti8HP press release](https://www.haltech.com/news-events/haltech-is-previewing-the-ti8hp-at-sema-2026/) · [Tuned by Shawn M50/M52 harness for Nexus R3](https://www.tunedbyshawn.com/product-page/haltech-bmw-e36-obd1-harness-conversion).
+
+**Key deciding factors (May 2027):** Which 8HP unit is in hand (GEN1 → MaxxECU or Haltech; GEN2 → TurboLamik); whether Ti8HP is shipping and reviews are positive; whether MaxxECU GEN2 SPORT has a terminated M50 harness (see `11-ecu-chassis-wiring.md`).
+
+---
+
 ## Parts
 
 | Part | PN / Source | Cost |
