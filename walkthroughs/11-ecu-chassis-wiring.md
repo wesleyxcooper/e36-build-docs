@@ -5,9 +5,13 @@
 **Shop-mandatory:** No (full DIY — allow multiple days for X20 connector alone)  
 **Prerequisites:** Interior stripped (rear seats, carpet, trunk interior removed). All harness connector positions photographed before touching anything. This section must be complete and M52 running on MaxxECU **before** the 8HP swap begins — see `07-8hp-swap.md`.
 
-> **Staging note:** MaxxECU on M52 first. Install ECU, resolve EWS2 bypass, wire the discrete Phase 1 relay board, connect the M50 pre-terminated harness, wire X20, and get the M52 running on MaxxECU with the Getrag still in place. Tune the M52. Then proceed to 8HP swap. This isolates troubleshooting: ECU issues surface on the stock drivetrain; 8HP issues surface on a known-good ECU.
+> **Staging note:** MaxxECU on M52 first. Install ECU, resolve EWS2 bypass, connect the M50 pre-terminated harness, wire X20, and get the M52 running on MaxxECU with the Getrag still in place. Tune the M52. Then proceed to 8HP swap. This isolates troubleshooting: ECU issues surface on the stock drivetrain; 8HP issues surface on a known-good ECU.
 
-> **07K-phase wiring deferred (Phase 3b arrivals):** The Ecumaster PMU16, Maven HD30 dual 16+16 firewall bulkhead (Connector A = CAN + DCT, Connector B = safety-critical APS), CWA400 electric water pump, electric AC compressor, and E46 APS pedal all arrive at Phase 3b (07K swap moment). None are needed to run the M52. See `34-ecu-harness-final.md` for the Phase 3b install sequence and `e36-wiring/docs/wiring-bom.md` System 8 for the Maven bulkhead spec.
+> **PMU16 install timing — two valid options:**
+> - **Option A (recommended):** Install PMU16 at Phase 1 alongside the MaxxECU H2O. Channels O1 (ECU power), O3 (fan), O4 (fuel pump), O8 (EPS) cover all Phase 1 loads. Skip the discrete relay board and `fuel-pump-hanger-phase1.wv` relay section. No relay board to remove at Phase 3b. At Phase 3b, add O5 (EWP) and O2 (DBW TB). See `e36-wiring/harnesses/power-distribution.wv` for channel allocation.
+> - **Option B (original default):** Defer PMU16 to Phase 3b. Wire a discrete relay board for Phase 1 (fuel pump relay, fan relay — see relay board section below and `11-ecu-chassis-wiring.md` relay board parts). Replace at Phase 3b.
+
+> **Strictly Phase 3b (07K-specific — not needed for M52 at all):** Maven HD30 dual 16+16 firewall bulkhead, CWA400 electric water pump, E46 APS pedal. Electric AC compressor is engine-agnostic — can be installed at Phase 1 if PMU16 is also at Phase 1 (O7), or deferred to Phase 3b. See `34-ecu-harness-final.md` for the Phase 3b install sequence.
 
 ---
 

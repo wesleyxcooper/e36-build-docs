@@ -3,7 +3,7 @@
 **Phase:** 1  
 **System tags:** `[FUEL]` `[ELECTRICAL]`  
 **Shop-mandatory:** No  
-**Prerequisites:** Rear subframe out (subframe reinforcement window) gives easiest access to the fuel tank. Relay block wired per `11-ecu-chassis-wiring.md` (GPO 2 low-side relay R1 is the pump power source in Phase 1 — PMU16 is not installed until Phase 3b). MaxxECU installed with MTune access for fuel pump relay config.
+**Prerequisites:** Rear subframe out (subframe reinforcement window) gives easiest access to the fuel tank. MaxxECU installed with MTune access for fuel pump config. Fuel pump power source depends on PMU16 timing: if PMU16 at Phase 1 (Option A), O4 drives the pump directly — skip the discrete relay in this walkthrough and use `harnesses/fuel-pump-hanger-phase3.wv` instead. If PMU16 deferred to Phase 3b (Option B), wire the discrete relay per the relay board section in `11-ecu-chassis-wiring.md` (GPO 2 drives relay coil). See `e36-wiring/harnesses/power-distribution.wv` §PHASE 1 CHANNEL ALLOCATION for the Option A channel map.
 
 ---
 
