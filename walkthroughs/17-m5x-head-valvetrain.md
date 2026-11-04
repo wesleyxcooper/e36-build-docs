@@ -18,7 +18,7 @@ All M50, M50TU, M52, S50US, and S52 engines share the same basic head casting. T
 4. VANOS seals replaced if M50TU or M52
 5. **SPA 264°/256° cams — primary cam choice** for this turbo build targeting 8,000-9,000 RPM ceiling
 
-Aggressive NA cam timing (Phase 1 scope: Schrick 264/248) is specifically a NA optimization and does not carry to the turbo build without re-evaluation. See cams section below.
+Aggressive NA cam timing is specifically a NA optimization and does not carry to the turbo build. The alloy M52 runs stock in Phase 1 — all cam and valvetrain work happens here on the iron-block engine. See cams section below.
 
 ---
 

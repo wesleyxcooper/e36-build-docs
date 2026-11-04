@@ -85,10 +85,10 @@ Welding the sprocket nut is a zero-cost insurance step at assembly time — if V
 
 **VAC ATI Super Damper for M50/M52/S50/S52/M52TU/M54:**
 
-- Part: VAC Motorsports ATI Super Damper (same PN as Phase 1 spec, `10-m52-engine-prep.md`)
+- Part: VAC Motorsports ATI Super Damper
 - Price: **$1,049.95** ([store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-harmonic-damper-by-ati-bmw-m50m52s50s52m52tum54-p756.aspx))
 - Install: Owner-performed; replaces the OEM damper on the crank snout. Requires the correct ATI installation tool (borrow or rent — do not hammer it on). Torque to BMW crank bolt spec.
-- This is the same part in both Phase 1 (NA M52) and Phase 2a (Turbo M50) — one purchase covers both if path changes.
+- Phase 2a purchase only — alloy M52 runs stock in Phase 1 and does not require the ATI damper.
 
 **Install the ATI damper after longblock delivery, before first start.** It ships separately from the longblock; plan to have it on hand for the assembly day.
 

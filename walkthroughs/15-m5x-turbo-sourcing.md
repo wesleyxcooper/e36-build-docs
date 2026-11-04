@@ -15,7 +15,7 @@ This is the Phase 2a iron-block M52B28 turbo build, done offline at VAC Motorspo
 
 || Path | Engine | Power target | RPM character | Status |
 || --- | --- | --- | --- | --- |
-|| **Phase 1** | M52B28 alloy (UK/EU RHD import) NA tune | 250–280whp at 7,800 RPM | High-rev NA + flex fuel | `10-m52-engine-prep.md` |
+|| **Phase 1** | M52B28 alloy (UK/EU RHD import) — stock, no head work | Baseline — chassis and system validation | Stock alloy M52 runs car while iron-block engine is built offline |
 || **Phase 2a** | Iron M52B28 turbo (USA/Canada spec — this document) | 400–500whp pump / up to ~700whp E85 | **8,200–8,500 RPM design point** | This document |
 || **Phase 2b** | 07K 2.5L inline-5 turbo (parallel, offline) | 500–600whp at 9,000 RPM | Boost + high RPM | `20-07k-sourcing.md` onward |
 

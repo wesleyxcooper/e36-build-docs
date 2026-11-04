@@ -239,8 +239,8 @@
 
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Cams** | **Schrick 264/248** | [Schrick Camshaft Set](https://www.bimmerworld.com/Engine/Camshafts/Schrick-264-248-Camshaft-Set-E46-325i-330i-E39-525i-530i-Z3-25-30.html) \- $1,779.99 (verified) |
-| **Valvetrain** | **Solid Shims** | [Alien Engineering Shims](https://www.alien-engineering.com/product-page/alien-engineering-bmw-m50-m52-m54-s50-s52-solid-lifter-conversion-shims) \- $150.00 (verified) |
+| **Cams** | **S52 OEM (PN 11311405051)** — 252° / 244°, 10.2mm / 9.5mm lift. Direct drop-in, no machine work, no spring upgrade required at ≤7,500 RPM. Used OEM. | [eBay (search PN 11311405051)](https://www.ebay.com/sch/i.html?_nkw=11311405051+camshaft) / [Prussian Motors](https://prussianmotors.com/products/bmw-s52b32-3-2l-6cyl-camshaft-pair-intake-exhaust-m3-z3-m-oem-1996-2000-note) — $700–1,700 used |
+| **Valvetrain** | **Alien Engineering Solid Shim Kit** — eliminates hydraulic lifter pump-up above ~7,000 RPM | [Alien Engineering](https://www.alien-engineering.com/product-page/alien-engineering-bmw-m50-m52-m54-s50-s52-solid-lifter-conversion-shims) — $150–200 |
 
 #### Oil System  \[OIL\]
 

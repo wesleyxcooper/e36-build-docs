@@ -515,18 +515,18 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
 
 ## Phase 1 — NA Alloy M52 (Car As-Imported — Runs While Phase 2a Is Built)
 
-> Complete all Phase 1 Foundation steps first. The alloy M52 is not turbocharged and not being built for power — it gets mild bolt-ons, possible head work to rev higher, MaxxECU, and 8HP. It runs the car while the turbo M52B28 longblock is built offline at VAC.
+> Complete all Phase 1 Foundation steps first. The alloy M52 gets mild head work (S52 cams + solid shims — no machine work) to push the rev ceiling to ~7,500 RPM. No forged internals, no turbo. It runs the car while the turbo M52B28 longblock is built offline at VAC.
 
 ### Head & Valvetrain  [HEAD/VALVETRAIN]
 - [ ] ✅ Confirm alloy M52 block (not iron — check casting, VIN decode)
-- [ ] ⚠️ Install Schrick 264/248 camshafts + Alien Engineering solid shims
+- [ ] ⚠️ Install S52 cams (OEM, used) + Alien Engineering solid shims
   - Sub-steps:
     - [ ] Remove VANOS unit (retain all hardware — it goes back on)
     - [ ] Remove existing cam carriers and cams
     - [ ] Measure existing valve clearances with feeler gauge (record all 24)
     - [ ] Calculate required shim thickness per valve (target: 0.15–0.20mm cold clearance)
     - [ ] Install Alien Engineering solid shims into factory hydraulic lifter bodies
-    - [ ] Install Schrick cams and cam carriers
+    - [ ] Install S52 252°/244° cams and cam carriers
     - [ ] Re-verify all 24 valve clearances — must be within spec before proceeding
     - [ ] Reinstall VANOS unit
   - > Reference: [Alien Engineering solid shim video (YouTube)](https://www.youtube.com/watch?v=KtvxWkbvINI) | [E36 cam/lifter removal (YouTube)](https://www.youtube.com/watch?v=wRnqy-7dT28)
