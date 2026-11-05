@@ -261,6 +261,36 @@ Machine role assignment across the build. No new hardware to purchase.
 > | C26518 | 2016 F06 650i | 54,475 | **$400 pickup** | 87 mi | Capital Auto Salvage, Ridgewood NY · 718-386-3032 | Now priced (was off databases). 6-month warranty. 2016 donor — N63TU or N63TU2; verify TCU ID with ACDP-2 before flash. |
 > | OJ2026 | 2015 F06 650i N63TU | 45,000 | **$Call** | 87 mi | Capital Auto Salvage / PNP Automotive, Ridgewood NY · 718-386-3032 / 718-381-1000 | **New. 45K mi — lowest mileage local option found.** Call for price. 6-month warranty. |
 > | 1940 | 2014 F10 550i N63TU | 59,000 | **$Call** | 92 mi | Apple Scrap Inc., Bronx NY · 718-842-2500 | New. 2014 550i, 59K mi. Call for price. |
+>
+> **Photo review + TC / flexplate / liftgate / delivered pricing — Nov 5 2026:**
+>
+> **APS1 LM0394 + APS2 IP0260 — photo review complete (all 10 photos each):**
+> - All 10 photos on BOTH listings are donor vehicle exterior shots (salvage auction + yard staging) — **no photos of the pulled transmission unit on either listing.**
+> - APS1 LM0394: Donor is a 2014 F06 650i. Auction window has **"STUCK"** written on it — salvage auction marker indicating the drivetrain was stuck/seized at time of auction. No STUECKL sticker visible, no mechatronic connector view.
+> - APS2 IP0260: Donor badge reads **750Li (F02 LWB)**, not standard F01 — same 8HP70Z trans ✅. Front-end crash damage (bumper removed), rear and body otherwise intact. No STUECKL sticker, no mechatronic connector view.
+> - **Conclusion for both APS units:** Cannot pre-screen condition or TC inclusion visually. Grade A + 6-month warranty + PRP liftgate are the only risk mitigators. Call A&C Auto (800-545-6842) before ordering and ask: **(1) Is torque converter included?  (2) Can you read the STUECKL number off the sticker?**
+>
+> **TC + flexplate — what comes with a pulled 8HP70Z:**
+> - **Torque converter (TC):** Sits on the transmission input shaft — it stays with the trans when pulled from the donor car unless the yard actively removed it. For BMW donors, TC should be included in the assembly. MUST verbally confirm with each yard before ordering — some yards pull the TC separately for reuse/resale. For N63 path: the TC has a C-shaped housing, 110mm flange — different from Dodge TC. If pulled and re-used, it's the correct TC for the N63 adapter path.
+> - **Flexplate (driveplate):** Bolts to the engine crankshaft on the engine side — **NOT part of the transmission.** When you buy a used trans, the flexplate stays in the donor car with the engine. For the swap you need a flexplate that matches your engine crank bolt pattern AND the TC pilot diameter. Source separately; do not expect it to come with the trans.
+> - **Other hardware typically NOT included:** trans crossmember, driveshaft flex disc, shift cable, TCU/wiring harness (TCU is integral to the mechatronic unit inside the valve body — it comes with the trans, cannot be separated), oil cooler lines from donor.
+>
+> **Car-part.com yards — liftgate + delivered pricing (all data from live Nov 5 2026 search):**
+>
+> | Stock | Yard / Contact | Mi | Part | Liftgate | Est. delivered to 19151 | Car-part desc | Call to confirm |
+> | :---- | :------------- | --: | ---: | :------- | :---------------------- | :------------- | :-------------- |
+> | C26J58 | Chuck's Auto Parts Solutions, Douglasville PA · **484-925-0904** · stevekchucks@gmail.com | 94K | **$410** | **PRP Freight ✅** | **~$450–470** (PRP rate from 32mi est.) | "94K RWD" | TC included? STUECKL readable? Can you send photos of unit + mechatronic connector? |
+> | OJ2026 | PNP Automotive, Ridgewood NY · **718-381-1000** / 800-449-3886 (also listed by Capital Auto at 718-386-3032 — same physical unit) | 45K | **$Call** | Unknown | $Call + ~$150–200 freight | "RWD,45K-6-MONTHS WRTY." | Price? TC included? Residential liftgate freight to 19151 — quote? |
+> | C26518 | Capital Auto Salvage, Ridgewood NY · **718-386-3032** (also listed by PNP at 718-381-1000) | 54K | **$400** | Unknown | ~$550–600 est. | "6 MONTH WARRANTY, 8SPD, RWD" | TC included? Residential liftgate freight to 19151 — quote? |
+> | 1940 | Apple Scrap Inc., Bronx NY · **718-842-2500** · alexautopartsinc@yahoo.com | 59K | **$Call** | Unknown | $Call + ~$150–200 freight | "AT, (8 speed), RWD" | Price? TC included? Ships residential liftgate to 19151? |
+> | 280140 | Bucks County Used Auto Parts, Pipersville PA · **215-766-7700** · ColinHenry510@gmail.com | 102K | **$Call** | Unknown | $Call + ~$60–100 freight | (no description on listing) | Price? TC included? Ships to 19151 — liftgate available? |
+>
+> **Freight notes:**
+> - **Capital Auto / PNP (Ridgewood NY):** Capital Auto website explicitly states "Shipping nationwide." No PRP membership. For 87–92mi to 19151, residential LTL with liftgate typically runs $150–200 on top of part price. Confirm carrier and liftgate capability when calling — they may use their own freight account.
+> - **Apple Scrap (Bronx NY):** Small independent yard, no shipping program confirmed. Same freight estimate as Capital/PNP (~$150–200 for ~92mi residential liftgate). Ask if they ship or if pickup only.
+> - **Bucks County (Pipersville PA):** Small independent yard, 32mi from 19151. If they ship, freight would be in the $60–100 range. At 32mi, U-Haul cargo van pickup is also viable (~$60 RT rental + gas).
+> - **OJ2026 and C26518 cross-listing:** PNP Automotive (1931 Flushing Ave) and Capital Auto Salvage (4600 Metropolitan Ave) are both Ridgewood NY 11385 — different addresses, likely sister operations or co-owned. Both list the same stock numbers. Call either; PNP has the online quote link.
+> - **Delivered price comparison:** APS units at $395–400 all-in delivered (PRP, 400mi from Cleveland) beat Chuck's ~$450–470 on pure delivered cost. Chuck's advantage: 32mi away = option to inspect in person or negotiate. Capital/PNP C26518 at $400 + freight will likely land at $550–600, more expensive than APS.
 
 > **In-person verification checklist — confirm before paying:**
 >
