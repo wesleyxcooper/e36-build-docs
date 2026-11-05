@@ -38,13 +38,13 @@ Machine role assignment across the build. No new hardware to purchase.
 
 | Machine | Specs | Role | Software |
 | :---- | :---- | :---- | :---- |
-| **MacBook Pro 16" (Nov 2024)** (owned) | Apple **M4 Max** · **64 GB** unified · macOS Tahoe 26 | **Primary Pika tether in garage — USB-C, 0.03 mm blue-laser mode, 110 fps.** Exceeds Pika macOS *recommended* spec (M3+ / 32 GB). Scan files transfer to desktop for CAD. | CrealityScan 4 (Apple Silicon build), Revo Scan 6 (fallback), Scaniverse (companion, if scanning without Pika) |
-| **Desktop** (owned) | AMD Ryzen 7 5800X3D · RTX 4070 Ti (12 GB) · 32 GB RAM · Win 10/11 | CAD workstation — Fusion 360, Blender, all bracket design work. Also runs CrealityScan Windows as a backup post-processing environment. Exceeds *recommended* spec for every scanner shortlisted. Familiar Windows environment with the rest of the user's software stack. | Fusion 360, Blender, CrealityScan 4 (Windows, backup) |
+| **MacBook Pro 16" (Nov 2024)** (work machine) | Apple **M4 Max** · **64 GB** unified · macOS Tahoe 26 | Work machine — not used for personal build tasks. | — |
+| **Desktop** (owned) | AMD Ryzen 7 5800X3D · RTX 4070 Ti (12 GB) · 32 GB RAM · Win 10/11 | CAD workstation — Fusion 360, Blender, all bracket design work. **Primary M1 Ultra scan host** — ElegooScan runs on Windows; M1 Ultra streams over Wi-Fi 6 from garage via mesh network. Exceeds M1 Ultra Windows *recommended* spec (RTX 4060+ 8 GB VRAM, 32 GB RAM). | Fusion 360, Blender, ElegooScan (Windows) |
 | **Dell XPS 15 9530** (owned, 2013/2014) | i7-4702HQ · GT 750M (2 GB) · 16 GB DDR3 · Win 10 | Tuning laptop — MTune live tuning + datalogging in the garage/car/dyno; ACDP-2 8HP TCU bench flash; BMW factory diagnostics. Too old for 3D scanning software but comfortably above MTune's floor. | MaxxECU MTune + MDash, Yanhua ACDP-2 (Mini ACDP), BMW INPA / NCS Expert |
-| **iPhone 16 Pro** (owned) | A18 Pro · 8 GB RAM · iOS 18 | Scaniverse LiDAR envelope scans (clearance/keep-out volume work). Backup Pika tether over Wi-Fi 6 (mobile mode, 0.08 mm accuracy) if MacBook isn't handy. Exceeds Pika iOS *recommended* spec (A17 / 8 GB). | Scaniverse, CrealityScan (iOS), Mini ACDP (iOS — alternative ACDP-2 host) |
-| **MacBook Neo** (owned, 2026) | Apple A18 Pro · **8 GB** unified · macOS Tahoe 26 | ❌ **Benched for scanning** — Pika macOS requires ≥16 GB RAM; Neo has 8 GB non-upgradeable. Also first Mac with A-series (not M-series) chip, no CrealityScan certification against A18 Pro on macOS. Same silicon runs the Pika iOS app fine on the iPhone 16 Pro because the mobile build has lighter memory requirements. | N/A for this build |
+| **iPhone 16 Pro** (owned) | A18 Pro · 8 GB RAM · iOS 18 | Scaniverse LiDAR envelope scans (clearance/keep-out volume work). ElegooScan iOS app as backup M1 Ultra tether if desktop is unavailable. | Scaniverse, ElegooScan (iOS), Mini ACDP (iOS — alternative ACDP-2 host) |
+| **MacBook Neo** (owned, 2026) | Apple A18 Pro · **8 GB** unified · macOS Tahoe 26 | ❌ **Benched for scanning** — ElegooScan minimum is 16 GB RAM; Neo has 8 GB non-upgradeable. Scan host role goes to the desktop. | N/A for scanning |
 
-**Scan file flow:** Pika → MacBook Pro (CrealityScan capture + mesh cleanup, all in one machine) → export STL → AirDrop / iCloud / OneDrive / USB-C to desktop → Fusion 360 for bracket design.
+**Scan file flow:** M1 Ultra (garage, Wi-Fi 6) → Desktop ElegooScan (capture + mesh cleanup, streaming over local mesh network) → export STL/OBJ → Fusion 360 for bracket design.
 
 **Software confirmed compatible with the XPS 15 9530 on Win 10:**
 
@@ -58,7 +58,7 @@ Machine role assignment across the build. No new hardware to purchase.
 - ⚠️ **Stay on Windows 10; do not upgrade to Windows 11.** MTune runs on both, but ACDP-2 is not officially supported on Win 11. Win 10 22H2 with ESU enrollment (free consumer tier via account sync, or ~$30/yr paid) keeps the machine viable indefinitely for this offline-tuning role.
 - ⚠️ **USB 3.0 port only** for the MaxxECU tether if there are two options — the ThinkPad L440 is on MaxxECU's known-issue list specifically because its USB 2.0 ports caused communication problems. The XPS 9530 has USB 3.0; use that port.
 
-**Do not use the XPS for:** 3D scanning software of any kind. Three CPU generations short of Creality Pika's minimum (i7 Gen 7 required); 2 GB VRAM GT 750M well below the 6–8 GB required; fails Revopoint POP 4's / Einstar Vega StarVision's requirements by a larger margin. In-garage scanning runs on the MacBook Pro (or iPhone as backup); CAD runs on the desktop.
+**Do not use the XPS for:** 3D scanning software of any kind. Three CPU generations short of ElegooScan's minimum (i7 Gen 7 required); 2 GB VRAM GT 750M well below the 6 GB VRAM minimum. Scanning runs on the desktop (Wi-Fi streaming from garage); CAD runs on the desktop.
 
 ---
 
@@ -807,31 +807,33 @@ Two-scanner strategy — each tool used only for what it's actually good at:
 
 **Purpose:** capture the 07K exhaust-side mount boss geometry, the E36 subframe mount pad geometry, and the block/bracket mating faces at sub-mm accuracy so custom engine mount brackets can be designed in Fusion 360 with real bolt-hole positions rather than by hand-measured guesses. Primary use is **Phase 3b 07K mount design**. Secondary use is a **Phase 1 M52+8HP mount check** — the DomiWorks M5x→N63 adapter (row above) adds ~33 mm at the bellhousing face and pushes the drivetrain forward; whether the OEM M52 mount locations still work with that offset is worth verifying with a proper scan rather than assuming (if the OEM pads don't line up, a Phase-1 M52-specific bracket becomes necessary — same tool, same workflow, just earlier).
 
-**Selected: Creality Pika (~$629–699) — MacBook Pro (M4 Max) primary tether, iPhone backup**
-- [Creality Pika 3D Scanner (Creality store)](https://store.creality.com/blogs/buying-guides/creality-pika-review) · [CNX-Software spec breakdown](https://www.cnx-software.com/2026/07/26/creality-pika-review-an-affordable-portable-3d-scanner-with-infrared-and-blue-laser-modes/) · [Pika user manual](https://wiki.creality.com/en/3d-scanner/pika-series/manual) · [CrealityScan 4 download (macOS + Windows)](https://wiki.creality.com/en/software/scan-software)
-- **Blue laser mode:** 0.03 mm accuracy USB-tethered / 0.08 mm Wi-Fi to phone, 0.1 mm resolution, 160–400 mm working distance
-- **NIR structured light mode:** 0.1 mm accuracy, 200–1200 mm working distance, up to 2000 mm max volume with multi-pass — captures the whole engine bay / subframe area, color-mapped
-- Volumetric accuracy: 0.02 mm + 0.05 mm/m. Marker-free in laser mode
-- Exports STL / OBJ / PLY / ASC
-- **Runs on the M4 Max MacBook Pro (64 GB) over USB-C** at full 0.03 mm precision — MacBook is portable to the garage, so full precision available on the E36 subframe mount pads as well as the 07K block on the stand. See Build Machines & Software section for machine role table.
-- **iPhone 16 Pro as backup tether** over Wi-Fi 6 (0.08 mm phone mode) if MacBook isn't available. Also handles all Scaniverse LiDAR envelope work.
-- ⚠️ New product (launched May 2026). CrealityScan software is rougher than Revopoint's per [makers101.com first-look review](https://makers101.com/creality-pika-3d-scanner/) — expect some workflow pain. Painted / oily engine bay surfaces need scanning spray (dry shampoo / developer chalk), same as with any structured-light scanner.
+**Selected: Elegoo M1 Ultra (~$1,599) — Desktop (Windows) over Wi-Fi 6, garage streaming**
+- [Elegoo M1 Ultra product page](https://us.elegoo.com/products/elegoo-m1-ultra-3d-scanner) · [User manual](https://download.elegoo.com/m1-ultra/user-manual/) · [TechRadar review](https://www.techradar.com/pro/elegoo-m1-ultra-3d-scanner-review) · [ElegooScan software](https://www.elegoo.com/pages/elegoo-m1-ultra-3d-scanner)
+- **5 scanning modes:** 34-line crossed blue laser (fast, medium-large), 7-line parallel blue laser (detail, small-medium), single-line blue laser (deep holes/narrow gaps), NIR markerless (body panels, large volumes), markerless blue laser
+- **Blue laser accuracy:** 0.02 mm · Volumetric: 0.02 mm + 0.06 mm/m · Resolution: 0.05–2 mm · Working distance: 160–600 mm
+- **NIR mode accuracy:** 0.05 mm · Working distance: 170–1200 mm · Single frame: up to 1121 × 960 mm at 1200 mm
+- **Wireless workflow:** M1 Ultra connects to desktop over Wi-Fi 6 via home mesh network — desktop hardwired, scanner in garage, ElegooScan streams at up to 60 fps. No PC physically in garage required. Source: [M1 Ultra user manual](https://download.elegoo.com/m1-ultra/user-manual/) — requires PC running ElegooScan on same network. Desktop exceeds ElegooScan Windows *recommended* spec (RTX 4060 8 GB VRAM, 32 GB RAM, 7th-gen i7+). Source: [user manual PC requirements](https://download.elegoo.com/m1-ultra/user-manual/)
+- **Battery:** 4,800 mAh removable, ~1.5 hr per charge (backup battery included)
+- Exports STL, OBJ, PLY, ASC
+- ⚠️ Shipped Nov 15 2026. New product — community scan library limited vs Revopoint. Painted/oily engine bay surfaces need scanning spray (dry shampoo / developer chalk), same as any structured-light scanner.
 
-**Scan file flow:** Pika (USB-C) → MacBook Pro CrealityScan 4 (capture + mesh cleanup + STL export) → transfer STL to desktop → Fusion 360 for bracket design. Transfer via AirDrop (to any Mac in the household), iCloud Drive, OneDrive/Google Drive, or USB-C. Desktop is where all the familiar CAD/CAM software already lives; MacBook is scan capture and cleanup only.
+**Scan file flow:** M1 Ultra (garage, Wi-Fi 6) → Desktop ElegooScan (capture + mesh cleanup, streaming over local mesh) → export STL/OBJ → Fusion 360 for bracket design.
 
-**Alternatives at the same price point** (rejected; kept for reference in case Pika software turns out unusable):
-- **Revopoint POP 4** (~$700–900) — documented working on BMW cylinder heads, engine blocks, and intake manifolds specifically for reverse-engineering brackets ([POP 4 car-parts review](https://www.allaboutthebuild.com/blog/2026/5/revopoint-pop-4-review-car-parts)). Steeper Windows-app requirements (13th-gen i7 min).
-- **Creality Ferret Pro** — used in the All About The Build BMW E30 project on smaller parts. Lower accuracy than Pika.
-- **Einstar Vega** (~$1,499–1,799) — the scanner HP Academy tested against a $6k Peel 3 on an RX7 engine bay, 0.5–1% error. **Fully standalone** (6.4" 2K AMOLED, 32 GB LPDDR4, 512 GB SSD, 5000 mAh battery — "no computer required for 3D scanning operation") — cleanest garage workflow, ~$870 more than Pika. Post-processing (StarVision) runs on the desktop.
-- **Revopoint Miraco (base) / Miraco Pro** (~$1,499 / ~$1,999–2,483) — also standalone, tightest accuracy on paper (0.02 mm precision, 0.05 mm accuracy). Miraco Pro has 32 GB onboard RAM + higher frame limits for whole-bay captures.
+**Why M1 Ultra over alternatives:**
+- **vs Creality Pika (~$629–699):** Better accuracy (0.02 vs 0.03 mm), 5 modes vs 2, single-line deep-hole mode for engine recesses, no work MacBook required in garage. 2.3× the price but correctly specified for the actual use cases.
+- **vs Einstar Vega (~$1,499–1,799):** Similar price. Einstar is truly standalone (32 GB LPDDR4, 512 GB SSD, no PC required) which is better for grab-and-go. But HP Academy real-world test on car parts measured **0.5–1% error** ([hpacademy.com](https://www.hpacademy.com/blog/we-scanned-car-parts-with-a-phone-heres-what-matters/)) — that is 0.5–1 mm on a 100 mm part, inadequate for bolt-hole positions. M1 Ultra 0.02 mm is not in the same accuracy class.
+- **vs Revopoint Miraco Pro (~$1,999–2,483):** Comparable 0.02 mm accuracy, truly standalone (32 GB onboard RAM, no PC during scan). Costs 25–55% more. Standalone capability is the only advantage; mesh network Wi-Fi streaming solves the garage scenario at lower cost.
+- **vs Revopoint RANGE 3 (~$779):** RANGE optimized for large-object 0.1 mm single-frame precision. Inadequate for mating face / bolt-hole reverse engineering; correct tool for the wrong job.
+
+**Budget structured-light option** (below M1 Ultra — individual small part scanning only):
+- **3DMakerpro Fox** (~$212–249) — NIR only, 0.07 mm accuracy, 0.10 mm resolution, 200×100 mm single capture range, 10 fps. ([3DMakerpro store](https://store.3dmakerpro.com/products/fox)). For isolated bracket flange or mount boss work where M1 Ultra is not yet purchased. Not suitable for engine bay sweeps or full engine block capture.
 
 **Budget structured-light option** (below Pika price point — individual part scanning):
 - **3DMakerpro Fox** (~$212–249) — NIR only, 0.07 mm accuracy, 0.10 mm resolution, 200×100 mm single capture range, 10 fps, 210 g, no marker needed (AI SLAM), macOS 12/13 + Windows 10/11, USB 2.0. ([3DMakerpro store](https://store.3dmakerpro.com/products/fox) · [@official3dmakerpro Instagram](https://www.instagram.com/p/DcjSTeXM5kR/)). **Where it fits vs the two-scanner strategy:** sits between iPhone Scaniverse (coarse/free) and the Pika (~$629). For isolated part work — an engine mount boss, a bracket flange, an exhaust port — 0.07 mm is usable. **Limitations relative to Pika:** no blue laser mode (Pika 0.03 mm laser vs Fox 0.07 mm NIR — more than 2× worse precision); 11× slower frame rate (10 fps vs 110 fps); smaller single capture (200×100 mm vs Pika's larger NIR field) meaning more passes per part; USB 2.0 only. For engine bay sweeps and bolt-hole-position work, the Pika blue laser mode is the right tool. The Fox is relevant if the Pika is not purchased and a budget structured-light scanner is needed for individual parts.
 
 **Workflow — Engine mount bracket design (Fusion 360)**
-1. Scan with the Pika over Wi-Fi 6 to iPhone in the garage: (a) 07K block exhaust-side mount boss area in laser mode; (b) E36 subframe mount pad crossmember area in laser mode (engine out); (c) whole bay in NIR mode for context. For the block, optionally repeat step (a) later with the block on a cart inside, USB-tethered to the desktop for 0.03 mm accuracy.
-2. Transfer STL/OBJ from iPhone to desktop (iCloud / OneDrive / USB-C)
-3. CrealityScan on desktop: mesh cleanup, hole fill, export STL/OBJ
+1. Open ElegooScan on desktop. M1 Ultra in garage connects over Wi-Fi 6 (same mesh network). Scan: (a) 07K block exhaust-side mount boss area in 7-line detail mode; (b) E36 subframe mount pad crossmember in 7-line detail mode (engine out); (c) whole bay in NIR mode for context envelope. For isolated block work, optionally move block inside and tether via USB-C for maximum 0.02 mm precision.
+2. ElegooScan on desktop: mesh cleanup, hole fill, export STL/OBJ — no file transfer needed, already on the desktop.
 4. Fusion 360: **Insert Mesh** (Solid toolbar or Mesh workspace) for the scanned block and subframe geometry
 5. **Repair → One Touch Fix** to close holes and fix non-manifold edges
 6. Design bracket solid bodies around the mesh — bolt hole positions come directly from the scan, not from hand measurement
