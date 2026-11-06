@@ -28,6 +28,8 @@ The M5x turbo system closely parallels the 07K Phase 3b air/boost system (`31-ai
 
 **Overrun Tuning RHD Kit (preferred):** Overrun Tuning worked directly with K64 Performance to produce a confirmed RHD E36 manifold + downpipe with AC retention via custom refrigerant lines. ([overruntuning.com/e36-turbo-guide](https://www.overruntuning.com/e36-turbo-guide)) Contact for pricing. Flange options: T3 / T4 / V-Band manifold; Garrett 4-bolt / 5-bolt / V-Band downpipe; 50mm wastegate port.
 
+> **Note — Overrun is Australia-based:** Overrun Tuning is in Melbourne, Australia (Overrun Tuning Pty Ltd, Moorabbin VIC). Contact-to-quote only; no online checkout. Factor in international shipping and potential import/customs costs for a US delivery. If Overrun's lead time or shipping cost is prohibitive, **K64 ships the AC+ RHD manifold directly to the US** — standard online checkout, PayPal accepted, USD pricing ex-VAT, international parcels subject to US customs duty on import (confirmed from product page). Confirm wastegate port size with K64 at order time (not listed on the product page).
+
 **K64 standalone (if ordering direct from K64):**
 - K64 AC+ RHD Manifold: **$839.72** ([k64performance.com](https://k64performance.com/exhaust-manifold/1655-rhd-uk-e36-e46-ac-turbo-kolektor-bmw-m50-m52-m54.html)) — T3 or T4 flange, RHD AC-compatible
 - K64 RHD Downpipe: **$448.00** ([k64performance.com](https://k64performance.com/exhaust-manifold/4635-downpipe-rhd-uk-turbo-bmw-e36-e46.html))
