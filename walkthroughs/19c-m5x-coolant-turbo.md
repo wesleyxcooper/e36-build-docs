@@ -3,7 +3,7 @@
 **Phase:** 3a
 **System tags:** `[COOLANT]` `[THERMAL]` `[ELECTRICAL]`  
 **Shop-mandatory:** No — all owner-performed  
-**Prerequisites:** M5x turbo longblock installed; K64 turbo installed (`19b-m5x-turbo.md`); Phase 1 coolant baseline in place — CSF aluminum radiator, SPAL fan, Mishimoto expansion tank (`09-coolant.md`)
+**Prerequisites:** M5x turbo longblock installed; GTX3076R turbo installed (`19b-m5x-turbo.md`); Phase 1 coolant baseline in place — CSF aluminum radiator, SPAL fan, Mishimoto expansion tank (`09-coolant.md`)
 
 ---
 
@@ -55,7 +55,7 @@ Specify at the VAC drop-off scope discussion: **replace the water pump with an O
 
 ### Step 2 — Turbo Coolant Feed Line
 
-The K64 Stage 2 turbo's center section has coolant ports for water-cooling the bearing housing. These **must** be connected — without coolant flow, heat soaks the center section after shutdown and cokes the oil in the bearing gallery (coking = solid carbon deposits that block the oil passage and destroy the turbo on the next startup).
+The GTX3076R's center section has coolant ports for water-cooling the bearing housing (all Garrett turbos use the same center-section coolant port layout — these steps apply regardless of which Garrett unit is installed). These **must** be connected — without coolant flow, heat soaks the center section after shutdown and cokes the oil in the bearing gallery (coking = solid carbon deposits that block the oil passage and destroy the turbo on the next startup).
 
 **Feed routing:**
 

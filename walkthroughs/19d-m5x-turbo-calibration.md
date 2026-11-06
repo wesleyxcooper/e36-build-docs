@@ -67,10 +67,11 @@ Philadelphia PA. In-person Mustang Dyno and Dynopack at their facility. Same sho
 - Flex fuel scalar: continuous blend scaling from E0 → E85 on a single map — no map switching
 - 8HP shift pressure refinement under boost (upshift behavior at WOT — shift pressure must increase proportionally)
 - Rev limit: set at 8,200 RPM (the 8,500 RPM ceiling is structural margin; leave 300 RPM buffer for the first tune)
+- **8HP downshift RPM inhibit:** configure a maximum engine RPM below which downshifts are permitted. Set conservatively at 7,000 RPM for the initial tune — the 8HP will not execute a downshift command if the resulting engine RPM would exceed this limit. This prevents timing chain slack events under hard engine braking at high RPM. See `18-m5x-timing-oil-pump.md` for the mechanical context. Revisit after break-in if the limit feels restrictive on the track.
 
 **Tuner briefing points:**
 - Iron-block M52B28, forged internal VAC build (CP-Carrillo rods, VAC pistons, solid shim conversion)
-- SPA cams (264°/256° — ground for turbo use, not NA overlap)
+- 5150 AutoSport Street/Drift Turbo Cams (turbo-specific profile — bring cam card to dyno session; tuner sets timing to cam card spec, not factory)
 - Target: 400–500whp pump 93 / 550–650whp E85 at 8,000–8,200 RPM ceiling
 - 8HP shift: MaxxECU GEN1 CAN harness, virtual clutch enabled — tuner adjusts clamp start/end under load
 - Flex fuel sensor: Continental GM 13577429 on DIN 3, characterization data already in MTune

@@ -94,8 +94,21 @@ Welding the sprocket nut is a zero-cost insurance step at assembly time — if V
 
 ---
 
+## Timing Chain Slack — Engine Braking Operational Note
+
+The M5x upper timing chain runs on a hydraulic tensioner that maintains tension under acceleration loads. Under sudden high-RPM deceleration — specifically a downshift that puts the engine into engine braking at or above redline — the drive side of the timing chain momentarily goes slack before the tensioner can react. At 7,500+ RPM this slack can cause the chain to jump a tooth or contact the guide with enough force to cause damage. This failure mode is documented at R3VLimited by Markert Motor Works, whose personal track/drift car dropped a valve after a moneyshift at ~7,500 RPM. ([r3vlimited.com](https://www.r3vlimited.com/board/forum/e30-technical-forums/24v-engine-swaps/m50-52-s50-52/332247-how-to-make-a-24v-safely-rev-and-make-power-to-8000rpms))
+
+**Hardware mitigation:** None beyond the chain tensioner already specified. The oil pump chain tensioner addresses the lower chain; no aftermarket tensioner exists specifically for upper chain slack during deceleration.
+
+**Software mitigation — MaxxECU 8HP downshift RPM limit:** MaxxECU's 8HP integration supports a configurable downshift RPM inhibit. This prevents the TCU from commanding a downshift that would put the engine into engine braking at an RPM where timing chain slack is a risk. Set this during the dyno tune session — see `19d-m5x-turbo-calibration.md` for the configuration note. Combined with the hard rev limiter (fuel/ignition cut at 8,200 RPM), the downshift inhibit means the transmission cannot force the engine into a chain-damaging deceleration event under normal operation.
+
+**Operational rule regardless of software settings:** Do not moneyshift. Upshift through the gears as intended; never use a downshift to slow the car from high RPM. The 8HP's sequential manual mode respects the downshift RPM inhibit electronically, but a manual paddle input can still create the conditions for chain slack if the inhibit is not configured or is overridden.
+
+---
+
 ## References
 
 - [Overrun Tuning — oil pump chain tensioner recommendation at 7200+ RPM](https://www.overruntuning.com/e36-turbo-guide)
+- [R3VLimited — timing chain slack and moneyshift failure mode at high RPM](https://www.r3vlimited.com/board/forum/e30-technical-forums/24v-engine-swaps/m50-52-s50-52/332247-how-to-make-a-24v-safely-rev-and-make-power-to-8000rpms)
 - [VAC ATI Super Damper for M50/M52/S50/S52 — $1,049.95](https://store.vacmotorsports.com/vac-motorsports-harmonic-damper-by-ati-bmw-m50m52s50s52m52tum54-p756.aspx)
 - [VAC Motorsports Philadelphia](https://www.vacmotorsports.com/) · 2501 Snyder Ave, Philadelphia PA · (215) 462-4666 · ask for John

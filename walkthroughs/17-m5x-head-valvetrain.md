@@ -16,7 +16,7 @@ All M50, M50TU, M52, S50US, and S52 engines share the same basic head casting. T
 2. ARP head studs
 3. **Valve spring upgrade — required for this build** (target RPM ceiling is 8,000–9,000 RPM)
 4. VANOS seals replaced if M50TU or M52
-5. **SPA 264°/256° cams — primary cam choice** for this turbo build targeting 8,000-9,000 RPM ceiling
+5. **5150 AutoSport Street/Drift Turbo Cams — primary cam choice** for this turbo build targeting 8,000-9,000 RPM ceiling
 
 Aggressive NA cam timing is specifically a NA optimization and does not carry to the turbo build. The alloy M52 runs stock in Phase 1 — all cam and valvetrain work happens here on the iron-block engine. See cams section below.
 
@@ -29,7 +29,9 @@ Aggressive NA cam timing is specifically a NA optimization and does not carry to
 | Athena-SCE Cut-Ring Head Gasket | [5150autosport.com](https://5150autosport.com/products/5150-autosport-head-gasket-head-stud-kit-bmw-m50-m52-s50-s52) | ~$200 |
 | OR Cometic MLS Head Gasket (84mm or 84.5mm bore, .070" or .080" thick) | [achillesmotorsports.com](https://www.achillesmotorsports.com/Cometic-M-L-S-Type-Cylinder-Head-Gaskets-BMW-M50-p/11-com-mlshg-m50.htm) | ~$270 |
 | ARP 2000 Head Stud Kit (M50/M52/S50/S52 — included in 5150 kit) | [5150autosport.com](https://5150autosport.com/products/5150-autosport-head-gasket-head-stud-kit-bmw-m50-m52-s50-s52) | ~$170–200 standalone |
-| Supertech valve springs (dual) — set of 12 (6 cyl × 2 springs/valve × 2 valves... actually 6×4=24) | Supertech SPR-T021 or equivalent for M50/M52 | ~$200–300 set |
+| **5150 AutoSport Street/Drift Turbo Cam Set (M50/M52/S50/S52) — primary** | [5150autosport.com](https://5150autosport.com/products/bmw-m50-m52-s50-s52-turbo-camshaft-set) — email `sales@5150autosport.com` before ordering with M52B28, 8,200 RPM primary / 9,000 RPM structural margin, solid shim conversion included | **$1,499.99** |
+| OR SPA Performance 264°/256° Cams (M50/M52/S50/S52 single VANOS) — backup if 5150 unavailable | [spaturbousa.com](https://spaturbousa.com/collections/best-selling-products/bmw) | $1,049.90 |
+| Supertech dual valve springs — set of 24 (M50/M52/S50/S52) | **SPR-H1005D-24** — confirmed fit M50/M52/S50/S52 ([supertechperformance.com](https://www.supertechperformance.com/automotive/valve-spring/dual-valve-spring/bmw-m54/p339133-dual-valve-springs-sku-spr-h1005d)); ~$346–375 at [throtl.com](https://www.throtl.com/products/supertech-bmw-m50-m52-s50-s52-dual-valve-spring-set-of-24-spr-h1005d-24/) or [jsdmachineworks.com](https://jsdmachineworks.com/supertech-bmw-m50-m52-s50-s52-dual-valve-spring-set-of-24/). Full kit with retainers: SPRK-H1005D-BM (~$944). Note: VAC build kit may already include valve springs — confirm at drop-off. | ~$346–375 |
 | **Solid shim/tappet conversion (M50TU/M52 only)** | **Alien Engineering M50/M52/M54 Solid Lifter Conversion Shims** — required on any M50TU/M52 build targeting 7,000+ RPM, boosted or NA | **~$150** · [alien-engineering.com](https://www.alien-engineering.com/product-page/alien-engineering-bmw-m50-m52-m54-s50-s52-solid-lifter-conversion-shims) |
 | VANOS seals + o-ring kit (M50TU/M52 only) | ECS Tuning / FCP Euro OE BMW | ~$30–60 |
 | Camshaft bearings — replace at teardown | OE BMW via FCP Euro | ~$60–100 |
@@ -39,25 +41,28 @@ Aggressive NA cam timing is specifically a NA optimization and does not carry to
 
 ## Camshafts — Primary Choice for This Build
 
-### SPA Performance 264°/256° Cams — Primary Path
+### 5150 AutoSport Street/Drift Turbo Cams — Primary Path
 
-SPA Turbo USA sells 264°/256° cams for M50/M52/S50/S52 (single VANOS) at **$1,049.90**. ([spaturbousa.com](https://spaturbousa.com/collections/best-selling-products/bmw)) These are the primary choice for this build. Reasons:
+5150 AutoSport turbo camshaft set for M50/M52/S50/S52 at **$1,499.99**. ([5150autosport.com](https://5150autosport.com/products/bmw-m50-m52-s50-s52-turbo-camshaft-set)) Primary choice for this build. Reasons:
 
-- **Designed for turbo M5x use** — 264° intake / 256° exhaust. Spec is moderate enough to work with boost at low-mid RPM without excessive blowback, while extending the top-end power band to the 8,000 RPM ceiling this build targets.
-- SPA sells these specifically for their own turbo kit customers — the cam timing works with boost.
-- SPA is the same vendor as the TMB01 manifold, so the system is tuned together.
+- **Designed specifically for turbo M50/M52/S50/S52 at 450–800HP** — the Street/Drift profile optimizes for quick spooling and throttle response both ON and OFF throttle. This is the target power range for this build.
+- 15+ year track record on boosted M5x builds, including 5150’s own vehicles.
+- For 8,500–9,500 RPM: solid lifter conversion is required (Alien Engineering shims already specified — see Parts above). With solid lifters installed, the cam supports this build’s 8,200 RPM primary / 9,000 RPM structural target.
+- Cam specs (duration/lift) are not published publicly — **email `sales@5150autosport.com` before ordering.** Provide: M52B28 iron block, turbo, 8,200 RPM primary operating ceiling, 9,000 RPM structural margin, solid shim conversion installed, Supertech dual valve springs. 5150 offers free engine build advising and will confirm spec compatibility.
 
-**Do not order before confirming current availability** — SPA periodically runs on backorder. Call or email before placing the order.
+**Install:** Professional engine builder required per 5150’s instructions. The builder must verify PTV clearance and set timing to the cam card spec, not factory settings. VAC installs during longblock build — bring cam card to the drop-off.
 
-**Install:** Owner-performed on a bare head with the correct cam locking tool (BMW special tool 11-3-240 or equivalent aftermarket). VAC can install at the longblock build if preferred.
+### SPA Performance 264°/256° Cams — Backup if 5150 is unavailable
 
-### Stock cams: acceptable fallback if SPA is unavailable
+SPA Turbo USA sells 264°/256° cams for M50/M52/S50/S52 (single VANOS) at **$1,049.90**. ([spaturbousa.com](https://spaturbousa.com/collections/best-selling-products/bmw)) Fallback if 5150 cams are on backorder or unavailable. Designed for turbo use — 264° intake / 256° exhaust. More conservative than 5150’s profile; extends the power band for a turbo build but is less likely to support the full 9,000 RPM ceiling.
 
-Stock M50/M52 cams are adequate for boost at moderate power and RPM targets. VANOS control via MaxxECU covers variable timing. Acceptable for 6,000–7,000 RPM builds. For this build's 8,000-9,000 RPM ceiling goal, stock cams are a compromise.
+### Stock cams: acceptable fallback at moderate RPM targets only
 
-### The Schrick 264/248 from Phase 1 does NOT carry over
+Stock M50/M52 cams are adequate for boost at moderate power and RPM targets. VANOS control via MaxxECU covers variable timing. Acceptable for 6,000–7,000 RPM builds. For this build’s 8,000–9,000 RPM ceiling goal, stock cams are a significant compromise.
 
-The Phase 1 (`10-m52-engine-prep.md`) Schrick 264/248 cam spec is ground for NA use — high overlap designed to maximize volumetric efficiency at peak NA RPM. Under boost, this creates excessive overlap that allows boost to blow back into the intake manifold before the intake valve closes. It can be used with boost but requires careful tuning and will produce a less efficient boost curve vs. a cam ground for turbo use. If you've already purchased Schrick cams for Phase 1, consult with a MaxxECU tuner before running them on the turbo build.
+### Phase 1 NA cams (S52 252°/244°) do NOT carry over to the turbo build
+
+Phase 1 (`10-m52-engine-prep.md`) specifies **S52 OEM cams (252°/244°)** for the NA alloy M52B28. These are ground for NA use — moderate overlap designed to maximize volumetric efficiency at the Phase 1 RPM target. Under boost, the overlap window allows intake charge pressure to blow back through the intake valve before it closes, reducing boost efficiency. The S52 cams can be used with boost but require careful tuning and will produce a less efficient boost curve vs. a cam ground specifically for FI use. Do not carry Phase 1 cams over to the Phase 2a iron-block turbo build — the 5150 AutoSport turbo cam is specified for a reason.
 
 ---
 
@@ -88,7 +93,7 @@ VAC installs these during head assembly. Bring the kit in the labeled bag with t
 
 Stock M50/M52 valve springs are adequate to approximately 6,500 RPM. This build targets an 8,000–9,000 RPM ceiling — **dual valve springs are required.**
 
-**Upgrade to Supertech SPR-T021 dual valve springs** (or equivalent M50/M52 dual spring kit). VAC installs these during head assembly at longblock build. Do not leave stock springs in a head targeting 8,000+ RPM — valve float at high RPM causes valve-to-piston contact.
+**Upgrade to Supertech SPR-H1005D-24 dual valve springs** (M50/M52/S50/S52 — confirmed fit: [supertechperformance.com](https://www.supertechperformance.com/automotive/valve-spring/dual-valve-spring/bmw-m54/p339133-dual-valve-springs-sku-spr-h1005d)). VAC installs these during head assembly at longblock build. Do not leave stock springs in a head targeting 8,000+ RPM — valve float at high RPM causes valve-to-piston contact.
 
 ### 4 — VANOS seals (M50TU and M52 only)
 
@@ -108,6 +113,7 @@ VAC handles this during longblock assembly. Provide the stud kit in a labeled ba
 
 - [5150 AutoSport Head Gasket + Head Stud Kit for M50/M52/S50/S52](https://5150autosport.com/products/5150-autosport-head-gasket-head-stud-kit-bmw-m50-m52-s50-s52)
 - [Cometic MLS Head Gasket M50 — Achilles Motorsports](https://www.achillesmotorsports.com/Cometic-M-L-S-Type-Cylinder-Head-Gaskets-BMW-M50-p/11-com-mlshg-m50.htm)
-- [SPA 264/256° cams for M50/M52 single VANOS — spaturbousa.com](https://spaturbousa.com/collections/best-selling-products/bmw)
+- [5150 AutoSport Street/Drift Turbo Cam Set M50/M52/S50/S52 — 5150autosport.com](https://5150autosport.com/products/bmw-m50-m52-s50-s52-turbo-camshaft-set)
+- [SPA 264/256° cams for M50/M52 single VANOS — backup — spaturbousa.com](https://spaturbousa.com/collections/best-selling-products/bmw)
 - [bmwtuning.co — head gasket and valve cover guidance for M50/M52 turbo](https://bmwtuning.co/bmw-e36-turbo-kit-guide/)
 - [VAC Motorsports Philadelphia](https://www.vacmotorsports.com/) · 2501 Snyder Ave, Philadelphia PA · (215) 462-4666 · ask for John

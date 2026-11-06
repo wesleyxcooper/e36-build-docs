@@ -115,7 +115,13 @@ RHD E36 turbo M52 build experience confirmed. Custom exhaust and downpipe fabric
 
 ## Wastegate
 
-External wastegate is required with both manifolds (neither has an internal wastegate provision). 44mm Tial MV-S or equivalent. Budget ~$200–350 for a quality unit. Tial MV-S 44mm: [tialsport.com](https://www.tialsport.com) or via Turner Motorsport (~$300).
+External wastegate is required (neither manifold has an internal wastegate provision).
+
+**Primary path (Overrun manifold): Turbosmart ProGate50 50mm — TS-0554-1002.** The Overrun RHD manifold has a confirmed 50mm wastegate port ([overruntuning.com/e36-turbo-guide](https://www.overruntuning.com/e36-turbo-guide) — "Wastegate Port: 50mm"). Already listed in the Parts table above. The standalone K64 AC+ RHD manifold does not list a wastegate port size on the product page — confirm before ordering.
+
+**Why 50mm for this application:** The M52B28 is a 2.8L straight-6. At the target RPM range (8,000–8,500 RPM) with moderate boost, the turbo must bypass a large proportion of exhaust flow to prevent boost creep — exactly the condition requiring a 50mm gate. Sources: [NZ Performance wastegate sizing guide](https://nzperformance.co.nz/blogs/tech-guides/external-wastegate-size-guide) — "Go to 50mm when the engine is a big six"; [Hopwood Motorsport M50/M52 turbo kit](https://hopwoodmotorsport.com/shop/m50turbokit) specifies 50mm Turbosmart for the same 2.8L M52B28 application.
+
+**Backup path (K64 Stage 2 full kit): 44mm Tial WG included.** The K64 Stage 2 kit ships with its own manifold and a matching 44mm Tial WG — these are designed together. If using the backup kit path, use the included 44mm WG with the kit’s manifold, not the 50mm Turbosmart.
 
 ---
 

@@ -164,12 +164,14 @@ This section documents what changes or stays the same on the M5x turbo build vs 
 
 **07K path:** 07K has no accessory belt drive in longitudinal orientation (it's purpose-built for transverse use); the E36 alternator must be relocated or a dedicated alternator support fabricated for Phase 3b. See `30-07k-install.md` for the planned approach.
 
-**M5x turbo path:** The M50/M52 alternator is a standard Bosch unit that mounts on the factory bracket on the intake side (left side in RHD orientation) of the engine. It remains in factory position for Phase 2a. Clearance considerations:
+**M5x turbo path:** The M50/M52 alternator mounts on the factory bracket on the **intake side** — the turbo manifold is on the exhaust side. No manifold choice creates an alternator clearance issue. For a top-mount manifold (RSI T4/T3), verify intercooler charge pipe routing clears the alternator bracket during engine mock-up.
 
-- **Top-mount turbo manifold (RSI T4/T3 or SPA TMB04 top mount):** Turbo sits above the exhaust manifold on the driver's side — alternator is on the opposite (intake/passenger) side. No direct conflict. Verify intercooler pipe routing clears the alternator.
-- **Bottom-mount manifold (SPA TMB01):** Turbo sits low on the exhaust/driver side. Even less alternator conflict. The charge pipe routes to the FMIC and back — runs across the front of the engine bay, not near the alternator.
+**140A alternator upgrade is mandatory.** The OEM M50/M52 alternator is 90–120A. This build adds two high-current loads the OEM alternator cannot support:
 
-**Alternator output:** OEM M50/M52 alternator is typically 90–120A. With the PD2-18012AJA electric AC compressor drawing ~50A, plus MaxxECU, PMU16, SPAL fan, and CWA50 auxiliary pump, the OEM alternator is insufficient — upgrade to 140A is **mandatory**, not optional.
+- **PD2-18012AJA electric AC compressor: ~50A** (`37-ac.md` lines 14 and 92)
+- **EPS controller (KIT-33): ~10A** (`13-eps.md` line 53)
+
+Combined: ~60A for AC + EPS alone, before MaxxECU, PMU16, SPAL fan, and CWA50 auxiliary pump. A 90–120A OEM alternator cannot supply the full load at idle. The Bosch AL0739X (140A) is the drop-in upgrade — same bracket, same mounting points, no fabrication.
 
 **Spec:** Bosch AL0739X, 140A, BMW PN `12311744567`. Confirmed fit: M50, M52, S50, S52, all E36 6-cyl, E34 525i. Drop-in replacement on the same bracket and mounting points — no fabrication. Note: requires 55mm alternator pulley; reuse existing if already 55mm, or source a 55mm pulley separately.
 
