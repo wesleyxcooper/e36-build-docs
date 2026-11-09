@@ -52,6 +52,7 @@ Three architectures exist for controlling the ZF 8HP from an aftermarket ECU. Al
 | SLG Custom 1-Piece Aluminum Driveshaft | [Seems Legit Garage](https://www.seemslegitgarage.com/product-page/single-piece-driveshaft) | $1,350 |
 | SPICER #3-2-119 yoke — **Dodge AWD + DomiWorks path (this build)** | Included with DomiWorks SKU 22005004 output flange | Included |
 | ~~OEM Dodge output flange — **Dodge 2WD "Truck" path only**~~ | ~~PN `68417910AA`~~ | ~~—~~ **NOT APPLICABLE — this build uses the 4WD DomiWorks kit (SKU 22005004) which includes the SPICER #3-2-119 yoke; the 2WD OEM flange is not needed** |
+| SLG 8HP Park-Lock Kit — manual park release without engine/hydraulic power | **Dodge unit (in hand):** [SLG Dodge 8HP Park-Lock Kit](https://www.seemslegitgarage.com/product-page/dodge-8hp-park-release-kit) — Standard or GT handle, from $200. **BMW unit (if switching to N63):** [SLG BMW 8HP Park-Lock Kit](https://www.seemslegitgarage.com/product-page/bmw-park-lock-kit) — GT handle sold out as of Oct 2026; Standard may be available; check back-in-stock. GT variant adds a locking arm that positively holds the release position (useful for trailer loading, alignment, tow-off-track without an assistant holding the handle). Both kits: 6061 aluminum transmission-side components, black anodized; steel zinc-coated cable stay. | From $200 (Dodge) |
 | DCT Shifter E36 *(order at 8HP commissioning — not needed before swap)* | [dctshifter.com](https://dctshifter.com/) — 270GT Aluminum / 290GTE Carbon / 390GT | $454 |
 | MaxxECU 8HP GEN1 CAN harness #2287 | [MaxxECU store](https://www.maxxecu.com/store/gearbox/8hp/maxxecu-8hp-gen1-cable-harness) / [LPS](https://lpsfab.com/products/maxxecu-8hp-gen1-cable-harness-bmw-8hp-shifter) | ~$368.61 |
 | ISO mini relay (reverse light) | Bosch `0 332 209 150` or equivalent — 12V coil, ≥10A contact | — |
@@ -213,6 +214,20 @@ Three architectures exist for controlling the ZF 8HP from an aftermarket ECU. Al
 
 ---
 
+### Park-Lock Kit — Cabin Cable Routing
+
+> **TODO:** Find a primary source (forum thread, build log, or SLG install video) showing how builders route the cable and mount the handle specifically in an E36. SLG's install videos cover their DCT kit in a generic swap context — E36-specific tunnel access points and cable routing path are not yet confirmed from a primary source.
+
+The transmission-side bracket bolts to the 8HP case at the parking pawl actuator point. A Bowden cable runs from there through the tunnel to the cabin-side handle. How that cable gets from the transmission tunnel into the cabin is not obvious:
+
+- The E36 has a narrow center tunnel with limited penetration points between the transmission area and the cabin. The handbrake cable runs through the same general zone — that routing path is the natural reference for where this cable should follow.
+- SLG states: *"Most customers mount the handle under the seat or along the transmission tunnel for quick access."* Under-seat (along the sill) or along the tunnel wall (above the carpet line) are both consistent with how the handbrake cable enters the cabin on the E36.
+- The GT kit includes a zinc-coated steel cable stay with a threaded adjustment section — this mounts to the chassis or body to fix the cable's position near the handle end. The stay needs a solid body panel attachment point; the tunnel wall or the seat rail area are the logical candidates.
+- **Standard handle:** any accessible pull point within reach from the driver seat works. No stay required — just a fixed bracket for the handle itself.
+- **GT handle:** the locking arm needs to be reachable but not in the way of the seat or harness. SLG's DCT install shows the handle mounted low along the tunnel forward of the seat — same approach applies here.
+
+---
+
 ### MaxxECU CAN Harness #2287
 
 22. **Install MaxxECU 8HP GEN1 CAN harness #2287** (~$368.61 from [MaxxECU store](https://www.maxxecu.com/store/gearbox/8hp/maxxecu-8hp-gen1-cable-harness) or [LPS Fab](https://lpsfab.com/products/maxxecu-8hp-gen1-cable-harness-bmw-8hp-shifter)).  
@@ -242,6 +257,16 @@ Three architectures exist for controlling the ZF 8HP from an aftermarket ECU. Al
     - Assign DIN 1 = Transmission DOWN shift; DIN 2 = Transmission UP shift
     - Set shift points (configurable 1,500–9,000 RPM)
     - **Virtual clutch (Binary5 required):** Advanced → 8HP → 8HP clutch control → `Enabled, Virtual clutch`. Set clamp start and clamp end. Calibrate AIN 5 = 0% pedal up, 100% pedal fully depressed. Do not skip clamp calibration — incorrect values produce wrong clutch pressure at pedal extremes.
+
+      **Physical input — two options for the AIN 5 signal:**
+
+      | Option | Method | Notes |
+      |---|---|---|
+      | A — standalone potentiometer | Separate hall-effect or wiper-type pedal position sensor wired to AIN 5 | Requires mounting a pedal or sensor bracket; wiper types wear over time |
+      | **B — OEM E36 clutch pedal + pressure sensor (preferred)** | OEM E36 clutch pedal box retained; hydraulic pressure sensor tapped into existing clutch MC outlet port; sensor output → AIN 5 | Clutch pedal becomes dead mechanical linkage after 8HP swap — this reuses it. Pressure sensor has no moving contacts, more durable than potentiometer. Retains factory pedal feel and spring return. Map min/max pressure to 0–100% in MTune. |
+
+      Option B confirmed in E36 8HP builds ([instagram.com/p/Dd-AFmfgqkB](https://www.instagram.com/p/Dd-AFmfgqkB/) — see build notes). Specific pressure sensor part number TBD — requires research for thread size matching OEM E36 clutch MC outlet port.
+
     - Transbrake: configure hold time on UP input
     - Reference: [MaxxECU 8HP Installation & Wiring](https://www.maxxecu.com/webhelp/advanced-8hp-installation_and_wiring.html) · [MaxxECU Virtual Clutch](https://www.maxxecu.com/webhelp/advanced-8hp-virtual_clutch.html)
 
