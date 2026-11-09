@@ -133,7 +133,7 @@ The seat, brackets, and slider top all move as one unit when you push the lever.
 
 ---
 
-### Seat Option 1B — Recaro Pole Position ABE
+### Seat Option 1C — Recaro Pole Position ABE
 
 **Why this seat:** Fixed one-piece GFRP shell (no recliner mechanism), dual-use design — runs with the OEM 3-point seatbelt on the street and a 5/6-point harness at the track. The ABE version has a dedicated shoulder belt passage that routes the OEM belt correctly regardless of seat height. Not FIA 8855-1999 homologated (FIA and ABE are separate Recaro products), but no local HPDE or drift org in this build's target region (MoE, Drift Evergreen, Club Loose, Pocono RSD) requires FIA seat certification — only valid harness tags are checked.
 
@@ -212,6 +212,40 @@ Both mounts bolt directly to OEM E36 floor points — no slider, no adapter. Sea
 5. **Roll bar height check:** Same as Option A step 6. Because this is the lowest mount, the 6' driver has the most broomstick clearance of any option — set bar after seat install.
 6. **OEM belt (street):** Same as Option A step 7.
 7. **Harness (track):** Route lap belts through BK snap-in lap-belt hooks, sub strap through crotch slot, shoulder belts to harness bar. Torque to harness manufacturer spec.
+
+---
+
+### Seat Option 1B — Bride Zeta IV
+
+**Local sourcing:** No authorized Bride dealer with retail stock confirmed in the NY/NJ/PA/DE region. Crown Auto Center (133-38 32nd Ave, Flushing NY — official Bride distributor per [brideseats.com](https://brideseats.com/en/distributor/north-america/united-states/na08-crown-auto-center.html), (718) 539-6127) does not carry Bride seats in their online store. Order from [brideseats.us](https://brideseats.us), [Evasive Motorsports](https://www.evasivemotorsports.com), or [Andy's Auto Sport](https://www.andysautosport.com/products/bride__HA1ASF.html). This is the only practical disadvantage vs Option 1A.
+
+Fixed one-piece full bucket (no recliner), FIA 8855-1999 homologated. The Zeta IV meets all three requirements for this build — OEM seatbelt, 5/6-point harness, and sliding adjustment for two drivers — entirely with off-the-shelf retail products. No fabrication, no custom brackets, no universal adapter shimming.
+
+**Why this option is worth documenting:** The Sabelt GT3 and Recaro PP ABE ecosystems both require multiple bracket layers (VAC floor adapters, side mounts, separate slider) sourced across different vendors. The Bride system collapses this into a chassis-matched rail that is the floor mount and the slider in one piece — it bolts directly to the OEM E36 floor anchor points and the seat drops onto it. OEM seatbelt routing is solved by a retail accessory (K26 guide) that snaps into the shoulder slot. Every part in this stack is a catalogued retail product with a part number.
+
+**OEM seatbelt (street):** Bride K26 Seat Belt Guide (K26BPO red / K26APO black) snaps into the Zeta IV's shoulder holes and routes the OEM 3-point belt webbing without chafe or improper geometry. The guide is explicitly listed as compatible with the Zeta IV. ([RHDJapan K26BPO](https://www.rhdjapan.com/bride-bucket-seat-and-reclining-seat-optional-parts-seat-belt-guide-red.html)) ~$20/seat.
+
+**Harness (track):** Standard full bucket shoulder and lap slots — 5- or 6-point harness routes normally. No modification.
+
+**Sliding rails — bolt-in, slider integral:** Bride Type-FO E36 rail bolts to OEM E36 floor points (driver and passenger sides), slider mechanism is built into the rail. No floor adapters, no side mount brackets, no separate slider purchase. E36 coupe and convertible chassis codes confirmed in the rail listing. Two-driver fore/aft adjustment is native to the rail system.
+
+Rail left/right is determined by floor geometry — where the OEM mounting holes sit and which side the transmission tunnel is on inboard. Steering wheel and pedal position determine which physical side of the car is the driver position, which then determines which rail goes there. For this RHD car, driver is on the right:
+
+- **Type-FO Right (RHD driver)** — G073FO — [RHDJapan](https://www.rhdjapan.com/bride-super-seat-rail-subframe-type-fo-right-bmw-3-series-e36.html) — **~$165** (¥24,729) — 320i Convertible listed in chassis codes
+- **Type-FO Left (RHD passenger)** — G074FO — [Evasive Motorsports](https://www.evasivemotorsports.com/store/product/bride-type-fo-seat-rail-bmw-e36-us-driver/) — **$340** (Evasive labels this "US Driver" = LHD left = RHD passenger)
+
+For LHD cars these assignments swap. Per sportseats4u Bride fitment guide: *"For a right-hand-drive car, driver is normally the right side and passenger the left. Each selection has its own BRIDE MPN."* ([sportseats4u.co.uk](https://www.sportseats4u.co.uk/bride-bucket-seat-rail-compatibility-guide/))
+
+**LOWMAX system included:** The Zeta IV incorporates Bride's patented LOWMAX geometry in the shell design, reducing the hip point vs a conventional bucket. This provides headroom benefit for the E36 convertible broomstick check without requiring a separate LF-type rail (no E36 LF rail exists in the Bride catalog as of this writing).
+
+| Part | PN | Source | Price |
+| --- | --- | --- | --- |
+| Bride Zeta IV (per seat, FRP shell) | HA1ASF | [andysautosport.com](https://www.andysautosport.com/products/bride__HA1ASF.html) · [jenspeedsolutions.com](https://jenspeedsolutions.com/products/bride-zeta-iv) | **$1,130–$1,380** |
+| Type-FO Right rail (RHD driver) | G073FO | [RHDJapan](https://www.rhdjapan.com/bride-super-seat-rail-subframe-type-fo-right-bmw-3-series-e36.html) | **~$165** |
+| Type-FO Left rail (RHD passenger) | G074FO | [Evasive Motorsports](https://www.evasivemotorsports.com/store/product/bride-type-fo-seat-rail-bmw-e36-us-driver/) | **$340** |
+| K26 Seat Belt Guide (per seat) | K26BPO (red) / K26APO (black) | [RHDJapan](https://www.rhdjapan.com/bride-bucket-seat-and-reclining-seat-optional-parts-seat-belt-guide-red.html) · [FFP Performance](https://ffperformance.co/product/bride-seat-belt-guide-k26bpo-red/) | **~$20** |
+
+**Total per seat (seat + rails + K26):** ~$1,655–$1,905 — more than the Sabelt GT3 seat alone but the rails replace the entire VAC floor adapter + side mount + slider stack (~$490–600/side).
 
 ---
 
