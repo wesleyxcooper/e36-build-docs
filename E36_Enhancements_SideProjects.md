@@ -154,6 +154,14 @@ Font reference: [Barbie Medium](https://fontmeme.com/fonts/barbie-medium-font/) 
 
 ---
 
+### Tire Options
+
+| Tire | Category | Available E36 Sizes | Notes |
+| :---- | :---- | :---- | :---- |
+| **Hankook Ventus RS4 (Z232)** | Semi-slick, DOT-legal | 225/45R17, 235/45R17, 245/40R17, 255/40R17 (and 18") | Track/HPDE tire. Exceptional thermal stability and longevity — documented surviving a 12-hour endurance race on one set (Tyre Reviews). Lower peak grip than a true R-compound but outlasts them significantly. Good for learning/endurance. No widebody 18" sizes needed unless running 18" wheels. Source: [hankooktire.com RS4 spec page](https://www.hankooktire.com/us/en/tire/ventus/z232-z232.html) |
+
+---
+
 ### Bolt Pattern Conversion — 5×114.3
 
 > **Context:** Converting to 5×114.3 opens the entire JDM wheel market (Rays, Work, Enkei, SSR, Volk, Advan) at significantly lower cost than equivalent 5×120 options. The 5×114.3 pattern is drilled and tapped M12×1.5 — same thread as OEM. Hubs retain the BMW 72.6mm center bore. The rotor hat clearance holes must also be re-drilled or replaced with pre-drilled units because the lug bolts pass through both the wheel and the rotor hat.
