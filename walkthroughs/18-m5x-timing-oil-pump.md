@@ -56,23 +56,28 @@ Do this at VAC during shortblock assembly — it requires the oil pan to be off,
 
 ### Parts (oil pump chain tensioner)
 
-Three confirmed kit options — all use a drilling jig to add threaded bosses to the block (drill/tap M5×0.8 and M6×1.0) and install the OEM S50/S54 or equivalent tensioner:
+Three confirmed kits use a drilling jig to add threaded bosses to the block (drill/tap M5×0.8 and M6×1.0) and install the OEM S50/S54 or equivalent tensioner. A fourth bolt-on option from Tech53 is in production validation and eliminates the drill/tap requirement entirely — monitor for release.
 
 | Kit | Source | Price | Notes |
 | --- | --- | --- | --- |
 | **Hack Engineering HE-M5XOCTK** | [hackengineering.co.uk](https://www.hackengineering.co.uk/product/hack-engineering-m5x-oil-pump-chain-tensioner-upgrade-kit-m50-m52-m54/) | £65 | Includes 3D-printed drilling jig + genuine BMW S50/S54 tensioner + M5 and M6 hardened guide pins. Single-use jig. Machine shop installation recommended for parallelism. |
 | **Boost Monkey kit** | [boostmonkey.com](https://boostmonkey.com/products/e34-e36-m50-m52-s50-s52-oil-pump-chain-tensioner-kit) | $114.99 | Includes drill bit + tap + tensioner + racing spec oil pump chain + shoulder bolts. Requires engine out, head off, timing cover off — plan at longblock assembly. |
 | **Seems Legit Garage kit** | [seemslegitgarage.com](https://www.seemslegitgarage.com/product-page/upgraded-m50-m52-oil-pump-tensioner) | ~$75–90 | Polymer chain tensioner + drill/tap template. Single hole only. Addresses chain slack as root cause of nut backing off. |
+| **⚠️ Tech53 bolt-on tensioner** *(not yet released)* | [@tech53](https://www.instagram.com/p/DfX-JtHncgk/) — DM for prototype tester list | TBD | **100% bolt-on — no drilling, no tapping, no front cover removal.** Oil pan off only. Production material validated as of Nov 2026; prototype testers being recruited. If available before longblock assembly at VAC, this is the preferred option — eliminates the drill/tap risk and shortens the job scope. Monitor tech53.com / Instagram for release. |
 
-**Install at VAC during shortblock assembly** — block is already stripped at this point. This cannot be installed with the engine in the car. Confirm kit selection and installation with VAC at drop-off.
+**Install at VAC during shortblock assembly** — block is already stripped at this point for the drill/tap kits. The Tech53 bolt-on (if released) can be installed with oil pan removal only and does not require engine-out. Confirm kit selection with VAC at drop-off.
 
 ### Oil pump drive nut and pump upgrade
 
 The chain tensioner is the fix for the nut backing off — it eliminates the chain slack that causes the nut to vibrate loose at high RPM. With the tensioner installed, the nut is no longer under the oscillating load that backs it off.
 
+**Belt-and-suspenders nut retention:** **Tech-53 Drilled Oil Pump Nut** — [tech-53.com](https://tech-53.com/products/bmw-e36-e46-drilled-oil-pump-nut) — **$14.99**. Pre-drilled M50/M52/M54/S50/S52 oil pump nut + safety wire. The nut is drilled through so a stainless safety wire can be looped around the sprocket, physically preventing rotation. Reversible (wire can be cut for future service). Complementary to the chain tensioner — the tensioner removes the oscillating load; the drilled nut is the last line of defense if any chain slack ever returns.
+
 **VAC M50/M52 Oil Pump Upgrade Kit** — [store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-oil-pump-upgrade-kit-bmw-m50m52s50s52-p1041.aspx) — $224.95. This is a pump capacity and flow upgrade — not a fix for the chain slack issue. The chain tensioner and the VAC pump kit address separate things: chain tension (root cause of nut failure) vs. pump output (oil supply margin at high RPM). Both are worth doing on this build; they're complementary, not redundant.
 
 Welding the sprocket nut is a zero-cost insurance step at assembly time — if VAC is willing to do it while the pan is already off, it adds nothing to the job. It is not required if the chain tensioner is properly installed, but there is no downside to doing it.
+
+> **TODO:** Monitor [@tech53](https://www.instagram.com/tech53/) for release of the bolt-on oil pump chain tensioner (production validation confirmed Nov 2026, prototype testers being recruited). If available before longblock drop-off at VAC, replace the drill/tap kit selection with this — oil pan removal only, no block modification required. Check [tech-53.com/collections/all](https://tech-53.com/collections/all) and Instagram before ordering any drill/tap kit.
 
 ---
 
