@@ -370,6 +370,7 @@ Machine role assignment across the build. No new hardware to purchase.
 | :---- | :---- | :---- |
 | **Roll Bar** | **Autopower U-Weld (E36 Convertible)** | [Autopower E36 Conv. Kit](https://www.ioportracing.com/318i-323i-325i-328i-m3-convertible-93-99-e36-body/autopower-u-weld-roll-bar-kit-bmw-318i-323i-325i-328i-m3-convertible-1993-1999) - ~$450–550. **Required for HPDE/drift in an open-top car.** Full hoop + rear braces + diagonal + harness bar. U-weld kit requires local fab shop weld-in (~$150–200 labor). Must be done before first track day. |
 | **Fire Extinguisher** | **Kidde Halotron 2.5lb + Mount** | ~$65–80. Required at virtually all HPDE and drift events. Halotron clean-agent — no corrosion vs dry chemical. Mount within driver reach. |
+| **Floor Pan (non-caged)** | **Elian Motorsport E36 Floor Pan + Dead Pedal Kit** | [elianmotorsport.com](https://elianmotorsport.com/products/bmw-e36-floor-pan-dead-pedal-kit) — **$199.95** (floor only). Required once front carpet is removed. HPDE events require removal of anything not bolted in. OEM carpet adds ~1.5" floor height; without it pedals sit at wrong ergonomic angle for heel-toe. Non-caged version — roll bar only build, no door bars. Driver footwell, LHD. Dimpled/ribbed aluminum with grip tape. ~4 lbs. Made in USA. |
 
 ### Suspension  [SUSPENSION]
 | Component | Specification | Cost / Action |

@@ -14,6 +14,7 @@
 | Autopower U-Weld Roll Bar + Harness Bar (E36 Convertible, 1993–1999) | [IPort Racing — Autopower E36 Convertible Kit](https://www.ioportracing.com/318i-323i-325i-328i-m3-convertible-93-99-e36-body/autopower-u-weld-roll-bar-kit-bmw-318i-323i-325i-328i-m3-convertible-1993-1999) | ~$450–550 |
 | Roll bar weld-in labor (professional fabricator) | Local fabricator with cage experience — VAC Motorsports Philly (215-462-4666) is the confirmed local option with E36 experience | ~$150–200 est. |
 | Kidde Halotron 2.5lb clean-agent fire extinguisher + mounting bracket | Local safety/automotive supply | ~$65–80 |
+| **Elian Motorsport E36 Floor Pan + Dead Pedal Kit (non-caged)** | [elianmotorsport.com](https://elianmotorsport.com/products/bmw-e36-floor-pan-dead-pedal-kit) | **$199.95** (floor only) |
 
 ---
 
@@ -32,7 +33,7 @@
 
 1. **Confirm the kit is the correct variant for E36 convertible body style (1993–1999).** The U-Weld kit includes: full main hoop, rear braces, diagonal brace, and harness bar. Verify all pieces are present against the Autopower kit contents list before the car goes to the shop.
 
-2. **Strip rear interior completely.** Remove rear seats, carpet, door cards, and all rear quarter trim. The welder needs unobstructed access to the floor and package shelf mounting points. Weld spatter damages trim that stays in the car — protect everything forward of the B-pillar with welding blankets.
+2. **Strip rear interior completely.** Remove rear seats, carpet, door cards, and all rear quarter trim. The welder needs unobstructed access to the floor and package shelf mounting points. Weld spatter damages trim that stays in the car — protect everything forward of the B-pillar with welding blankets. Front carpet also comes out permanently — HPDE events require removal of anything not bolted in. Once carpet is out, install the **Elian Motorsport non-caged floor pan** (see Parts above) — the OEM carpet adds ~1.5" of floor height; without it the pedals sit at the wrong ergonomic angle and heel-toe becomes awkward. The Elian pan returns the floor to the correct height and adds grip tape for wet conditions.
 
 3. **Bring the car to a fabricator with roll cage experience.** Contact VAC Motorsports Philadelphia (2501 Snyder Ave, Philadelphia PA · 215-462-4666 · ask for John) — they are the confirmed local shop with E36 chassis experience and an in-house welder. Appointment-based.
 
