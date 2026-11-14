@@ -560,7 +560,7 @@ The alloy M52 gets mild bolt-on head work in Phase 1 — S52 cams + solid shim c
 #### Air / Intake  [AIR]
 | Component | Specification | Cost / Action |
 | :---- | :---- | :---- |
-| **Intake** | **M50 Manifold** | [M50 Intake Manifold Swap](https://bmwtuning.co/bmw-m52-engine-guide/) - ~$150 - $250. **Phase 1 stock alloy engine only — the Phase 2a turbo M52's intake is specced in Air & Boost above (ITB leading option; this manifold is the fallback and carries if used).** |
+| **Intake** | **M50 Manifold** | [M50 Intake Manifold Swap](https://bmwtuning.co/bmw-m52-engine-guide/) - ~$150 - $250. **Phase 1 stock alloy engine only — the Phase 2a turbo M52's intake is specced in Air & Boost above (ITB leading option; this manifold is the fallback and carries if used).** **Timing option:** if the ITB path proceeds, the kit can be bought in Phase 1 instead — it bolts to the stock engine and runs NA with its shipped carbon airbox (the kit's native config; no plenum work needed until boost), carries to the built motor unchanged, and makes this swap unnecessary. |
 
 #### M52 High-Rev Reliability (7800 RPM Target)
 - **Oil Pump:** VAC M52TU Upgrade Kit is mandatory for high-RPM oil pressure stability.
