@@ -175,6 +175,7 @@ The kit ships with a carbon airbox designed for NA duty — thin layup, dust/wea
 
 ### Install notes
 
+- **Bundle with exhaust fab if applicable:** if catalog manifold/downpipe sourcing fails and a fabricator (Fabie Boys, PMS, or VAC) is engaged for custom exhaust anyway, the plenum belongs in the same scope — sheet-aluminum box work is easier than a turbo header, and a single in-car mockup session resolves the interacting package (downpipe path, AC reroute, charge-pipe routing, plenum inlet) coherently. The Scaniverse + Blender workflow documented for the downpipe transfers directly to the plenum buck.
 - **Who fabricates the plenum:** this is a fab-shop job, not a home project — TIG'd thin aluminum, a flat sealable perimeter flange, and an O-ring groove (or carefully surfaced flat flange for a composite gasket) are the skill/equipment barrier. The DIY-scoped work is the template: cardboard or 3D-printed buck off the kit airbox, fit under the hood with the engine in, mark inlet position + MAP/FPR/idle ports, hand the fitted buck to the fabricator. Leak-test the finished part on the bench (soapy water or smoke at low pressure). Bar-lowering design choices if DIY is attempted anyway: flat-gasket seam instead of O-ring groove, purchased weld-on V-band inlet flange instead of machined, two-piece box + bolt-on lid.
 - **Throttle sync:** six bodies need balancing — carb sync tool (listed in the kit's install docs)
 - **Tuning:** alpha-N + MAP blend fueling in MaxxECU (supported natively) — more setup than single-TB speed-density
