@@ -9,7 +9,7 @@
 
 ## Overview
 
-The M5x turbo system closely parallels the 07K Phase 3b air/boost system (`31-air-boost.md`) in architecture: top-mount or bottom-mount exhaust manifold → turbo → FMIC → throttle body → engine. The primary differences vs 07K:
+The M5x turbo system closely parallels the 07K Phase 3b air/boost system (`31-air-boost.md`) in architecture: top-mount or bottom-mount exhaust manifold → turbo → FMIC → intake manifold → engine. The primary differences vs 07K:
 
 - **Manifold geometry:** M5x manifold is a purpose-built 6-cylinder header; 07K uses a custom 5-cyl manifold. The M5x has a larger exhaust collector due to the extra cylinder — this actually improves turbo response for a given turbo size.
 - **Turbo size:** The M50/M52 at 2.5L (or 2.8L M52B28) is a smaller displacement than the 07K at 2.5L but with 6 cylinders vs 5. The extra displacement of the M52B28 improves spoolup and midrange over a 2.5L base.
@@ -137,6 +137,49 @@ The CXRacing FMIC kit referenced in Phase 3b (`31-air-boost.md`) is appropriate 
 - Blow-off / bypass valve on the FMIC outlet or compressor-outlet pipe before the FMIC
 
 All charge piping for the M5x must be fabricated or adapted from universal bends — no off-the-shelf kit is directly confirmed for the E36 + SPA TMB01 + 8HP combination. Budget for custom mandrel-bent aluminum piping (2.5"–3" diameter) or a universal elbow kit + silicone couplers (~$200–400).
+
+---
+
+## Intake Manifold — ITB (Leading Option)
+
+**Leading option: RHD Engineering M50/M52 45mm ITB kit + custom sealed plenum.** Baseline/fallback: stock M50 manifold carried from Phase 1 — it holds boost fine and costs nothing extra.
+
+### Decision rationale
+
+Six individual throttle bodies on a billet manifold with a single plenum covering all six inlet faces — the same intake architecture as the RB26 (plenum over the throttle bank, bodies + runners visible below it). This is a character/response decision, not a power one:
+
+- **Off-boost and part-throttle response** — each cylinder throttles at its own port; no shared manifold volume between a single blade and the intake valves
+- **Induction character** — per-cylinder intake events produce the high-frequency rasp/bark associated with GT-R and S54 intake sound; a sealed plenum attenuates it vs open trumpets but the character remains
+- **Not power** — a single ~90mm TB flows what ~600whp needs; the GTX3076R's spool governs on-boost response either way
+
+The kit retains the M50 cable attachment — the M52B28 is cable-throttle natively, so no e-throttle hardware or pedal changes. Documented for both LHD and RHD chassis. Includes fuel rail, linkage, and idle-control fittings.
+
+### Parts
+
+| Part | Spec | Link | Price | Notes |
+| --- | --- | --- | --- | --- |
+| **RHD Engineering M50/M52 ITB Kit** | 45mm × 6, billet manifold | [devil.design](https://devil.design/product/bmw-m50-m52-individual-throttle-body-kit/) · [reduxracing.com](https://reduxracing.com/products/individual-throttle-body-kit-itb-intake-for-bmw-e36-m50-m52) · [Jenvey via VAC](https://store.vacmotorsports.com/jenvey-itbs-bmw-m50m52-us-p3024.aspx) · [nordicrtec.com](https://www.nordicrtec.com/product/1158/bmw-m50m52-itb-kit) | **$2,200–3,600** | Devil $2,449 · Redux $2,414 · Jenvey via VAC $2,200 · Nordic R-Tec €1,346 |
+| **Sealed plenum (custom fab)** | TIG'd 3mm aluminum | — | **~$800–2,200** | Replaces the kit's NA carbon airbox — see below |
+
+### The plenum is a pressure vessel, not an airbox
+
+The kit ships with a carbon airbox designed for NA duty — thin layup, dust/weather edge seal. Under boost the box becomes the pressure boundary and must be fabricated accordingly:
+
+- **Material:** TIG'd 3mm aluminum, same footprint and perimeter seam as the kit airbox (use it as the shape template)
+- **Seam:** real gasket or O-ring groove at the perimeter — the stock edge seal is a weather strip
+- **Inlet:** ~90mm port for the charge pipe
+- **Ports:** MAP, FPR vacuum reference, idle-air feed (the kit's vacuum balance block can serve MAP/reference instead of a plenum port)
+- **Volume:** ≈ stock airbox or slightly larger. Larger plenum volume improves cylinder-to-cylinder charge distribution under boost — the RB26 lesson (OEM 3.4L collector ran cyl #6 leanest; the Nismo fix enlarged it to 4.1L). Do not shrink below airbox volume chasing response — the turbo's own lag swamps any transient gain.
+
+**Carbon options:** engineered carbon pressure vessels exist and are rated well past this build's boost — [Artec dry-carbon RB26 manifold, 40 psi, $3,250](https://artecperformance.com/products/nissan-rb26-dry-carbon-air-intake-manifold). A one-off carbon plenum prices ≈2.5–4× aluminum (~$2,500–6,000) — the cost is tooling and labor, not material. **Bling-per-dollar path: aluminum vessel + cosmetic carbon skin (~$300–800).** Reference geometry: [Plazmaman RB26 ITB plenum](https://plazmaman.com/product/nissan-rb26-6-throttle-body-billet-inlet-manifold/) (billet base plate + 3mm TIG'd dome, ~$1,550 USD production part).
+
+### Install notes
+
+- **Who fabricates the plenum:** this is a fab-shop job, not a home project — TIG'd thin aluminum, a flat sealable perimeter flange, and an O-ring groove (or carefully surfaced flat flange for a composite gasket) are the skill/equipment barrier. The DIY-scoped work is the template: cardboard or 3D-printed buck off the kit airbox, fit under the hood with the engine in, mark inlet position + MAP/FPR/idle ports, hand the fitted buck to the fabricator. Leak-test the finished part on the bench (soapy water or smoke at low pressure). Bar-lowering design choices if DIY is attempted anyway: flat-gasket seam instead of O-ring groove, purchased weld-on V-band inlet flange instead of machined, two-piece box + bolt-on lid.
+- **Throttle sync:** six bodies need balancing — carb sync tool (listed in the kit's install docs)
+- **Tuning:** alpha-N + MAP blend fueling in MaxxECU (supported natively) — more setup than single-TB speed-density
+- **MAP placement:** anywhere in the plenum reads the same average — avoid a port directly facing a runner mouth; the runner balance line is the cleaner source
+- **Mock-up checks:** hood clearance over the throttle bank + box (E36 bay is tight on the intake side); stock cable reach to the kit's cable wheel (worst case: ~$50 Lokar cut-to-fit)
 
 ---
 
