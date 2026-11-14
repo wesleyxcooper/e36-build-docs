@@ -68,6 +68,7 @@ Philadelphia PA. In-person Mustang Dyno and Dynopack at their facility. Same sho
 - 8HP shift pressure refinement under boost (upshift behavior at WOT — shift pressure must increase proportionally)
 - Rev limit: set at 8,200 RPM (the 8,500 RPM ceiling is structural margin; leave 300 RPM buffer for the first tune)
 - **8HP downshift RPM inhibit:** configure a maximum engine RPM below which downshifts are permitted. Set conservatively at 7,000 RPM for the initial tune — the 8HP will not execute a downshift command if the resulting engine RPM would exceed this limit. This prevents timing chain slack events under hard engine braking at high RPM. See `18-m5x-timing-oil-pump.md` for the mechanical context. Revisit after break-in if the limit feels restrictive on the track.
+- **If the ITB kit is fitted:** fuel table runs TPS/MAP blend (alpha-N under boost is standard ITB-turbo practice — TPS primary at low load, MAP blended in as boost builds). Expect added session time for blend calibration; confirm ITB experience at booking — see `14-m52-na-calibration.md` note.
 
 **Tuner briefing points:**
 - Iron-block M52B28, forged internal VAC build (CP-Carrillo rods, VAC pistons, solid shim conversion)

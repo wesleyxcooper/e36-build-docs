@@ -32,6 +32,10 @@ MaxxECU provides NA M50/M52 base maps in the MTune base map library. The M52B28 
 
 **Tuner recommendation:** Contact the same MaxxECU-familiar tuner who will handle Phase 3a. Establishing the relationship now costs less later — they already have the car's profile when the turbo M52B28 arrives.
 
+> **If the ITB kit is on the car (end-of-Phase-1 timing path):** the session changes shape — ITBs require alpha-N fueling at idle/low load (shared-plenum MAP is too erratic) with MAP blended in at higher load. MaxxECU supports TPS/MAP blend natively, but this is a few hours of real tuning + six-throttle sync, not the 1–2 hr base-map dial-in. Confirm the tuner has ITB-on-MaxxECU experience specifically — the TPS/MAP blend is the skill; a speed-density-only tuner burns hours learning it. Given the short NA window before the built motor arrives, a driveable alpha-N map (base map + road session + MTune autotune passes) is the right scope — save the polished dyno tune for the turbo session.
+
+> **Track day on the interim map:** acceptable IF WOT AFR is verified first — 3–4 logged pulls confirming AFR across the rev range. Sustained high-RPM load is where an unverified alpha-N map hurts a motor (lean holes up top + air-density drift). For the day: fatten the high-load VE area ~10%, drop rev limit to ~7,200, review wideband logs between sessions and short-shift if AFR creeps lean.
+
 **MTune base map location:** MTune → File → Open Base Map → BMW M50/M52 NA (with VANOS). Select the highest-displacement (2.8L M52B28) variant if available; otherwise use the M52B25 map and scale injector characterization data for the larger displacement.
 
 > ⚠️ **Pitfall:** The MaxxECU M50 pre-terminated harness ships with a Bosch LSU 4.2 wideband sensor. Confirm MTune is set to LSU 4.2 (not LSU 4.9) under Sensors → Lambda → Sensor Type. Wrong sensor type = incorrect AFR reading and an overly rich or lean tune.
