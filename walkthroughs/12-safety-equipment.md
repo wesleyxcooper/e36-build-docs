@@ -66,9 +66,9 @@ Before attending any HPDE or drift event with an open-top car, the roll bar will
 
 ### Fire Extinguisher Mounting
 
-8. **Mount Kidde Halotron 2.5lb fire extinguisher within driver reach** — driver's footwell, transmission tunnel, or behind the driver's seat are common mounting locations. Halotron is a clean-agent suppressor (no corrosive dry chemical residue) — required at virtually all HPDE and drift events.
+8. **Mount Kidde Halotron 2.5lb fire extinguisher within driver reach** — clamped to the roll bar main hoop once the bar is welded in (Phase 1) via a tube-clamp extinguisher mount (e.g. 1.75" billet clamp). Interim before the bar exists: footwell or transmission tunnel mount. Halotron is a clean-agent suppressor (no corrosive dry chemical residue) — required at virtually all HPDE and drift events.
 
-9. **Use a proper mounting bracket rated for the extinguisher's weight.** The bracket must hold the extinguisher securely under track loading — zip ties and tape are not acceptable. Bolt the bracket to a structural mounting point (floor tunnel, seat rail anchor, or reinforced bracket to chassis).
+9. **Use a proper mounting bracket rated for the extinguisher's weight.** The bracket must hold the extinguisher securely under track loading — zip ties and tape are not acceptable. Bolt the bracket to a structural mounting point (roll bar, floor tunnel, or reinforced bracket to chassis). Note: OEM-seat-bolt brackets (Kap Industries, The Bracketeer) do not apply — the build replaces the factory seats with side-mount buckets on aftermarket floor adapters, and an Element E50 (32 mm dia) does not fit a standard 80 mm bottle cradle anyway. If an Element E50 is added as a supplement, mount it to the roll bar with Element's E50 roll-bar mount (~$59, [elementfire.com](https://elementfire.com/collections/element-accessories)) or a Renegade billet side-mount seat bracket.
 
 10. **Verify extinguisher is charged** (pressure gauge in the green) before each event. Replace or recharge after any discharge.
 
@@ -77,6 +77,8 @@ Before attending any HPDE or drift event with an open-top car, the roll bar will
 ---
 
 ## Seats & Restraints
+
+**Driver fit — size seats on waist/hip + shoulder width, not height.** Primary driver: 6'0", ~34" pant waist, 180–190 lb — the top edge of standard fixed-bucket sizing. GT3 is inside its rated 32–36" range; PP ABE is the roomiest standard shell (~52 cm hip width); Zeta IV is snug-but-workable at 34" (driver tolerates a snug fit; note JDM seats run narrow). Zieg IV Wide (36–38" rated) is too big. Second driver: 5'6"–5'7", 140–150 lb — below every rated range, will be loose in all options; she runs the OEM 3-point only so snugness is comfort-only, not safety (bolster inserts optional). ⚠️ If she ever drives at a MoE event, harness is mandatory with a race seat — OEM belt alone fails tech. Boundary-case sit test: OG Racing (Sterling VA) offers free in-person seat fitting. Sources: [OG Racing fit guide](https://www.ogracing.com/blogs/news/racing-seat-fitment-guide-how-to-choose-the-right-seat-for-street-or-track), [sportseats4u GT3 sizing](https://www.sportseats4u.co.uk/product/sabelt-gt3-motorsport-seat/), [tf-works Zeta/Zieg comparison](https://tf-works.com/blogs/whats-the-difference-between-the-bride-zeta-4-and-zieg-4/).
 
 ### Seat Option 1A — Sabelt GT3
 
@@ -222,7 +224,7 @@ Both mounts bolt directly to OEM E36 floor points — no slider, no adapter. Sea
 
 Fixed one-piece full bucket (no recliner), FIA 8855-1999 homologated. The Zeta IV meets all three requirements for this build — OEM seatbelt, 5/6-point harness, and sliding adjustment for two drivers — entirely with off-the-shelf retail products. No fabrication, no custom brackets, no universal adapter shimming.
 
-**Why this option is worth documenting:** The Sabelt GT3 and Recaro PP ABE ecosystems both require multiple bracket layers (VAC floor adapters, side mounts, separate slider) sourced across different vendors. The Bride system collapses this into a chassis-matched rail that is the floor mount and the slider in one piece — it bolts directly to the OEM E36 floor anchor points and the seat drops onto it. OEM seatbelt routing is solved by a retail accessory (K26 guide) that snaps into the shoulder slot. Every part in this stack is a catalogued retail product with a part number.
+**Most straightforward install path of the three seat options.** The Sabelt GT3 and Recaro PP ABE ecosystems both require multiple bracket layers (VAC floor adapters, side mounts, separate slider) sourced across different vendors. The Bride system collapses this into a chassis-matched rail that is the floor mount and the slider in one piece — it bolts directly to the OEM E36 floor anchor points and the seat drops onto it. OEM seatbelt routing is solved by a retail accessory (K26 guide) that snaps into the shoulder slot. Every part in this stack is a catalogued retail product with a part number — no fabrication, no custom brackets, no universal adapter shimming.
 
 **OEM seatbelt (street):** Bride K26 Seat Belt Guide (K26BPO red / K26APO black) snaps into the Zeta IV's shoulder holes and routes the OEM 3-point belt webbing without chafe or improper geometry. The guide is explicitly listed as compatible with the Zeta IV. ([RHDJapan K26BPO](https://www.rhdjapan.com/bride-bucket-seat-and-reclining-seat-optional-parts-seat-belt-guide-red.html)) ~$20/seat.
 
