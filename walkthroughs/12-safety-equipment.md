@@ -277,6 +277,19 @@ For LHD cars these assignments swap. Per sportseats4u Bride fitment guide: *"For
 | Side Protect Pad Set (leather + fabric) | varies by model | [more-japan.com](https://more-japan.com/manufacturers/bride/bride-seat-pads-and-fabric/) | $60–80 |
 | Seat Back Protector — Zeta IV / Zieg IV Wide | — | [more-japan.com](https://more-japan.com/manufacturers/bride/bride-seat-pads-and-fabric/) | $87–92 |
 
+**Other verified seat options (outside the three primary options — mount architecture confirmed):**
+
+| Seat | OEM 3-point | FIA | Mount path | Notes | Price | Source |
+| --- | --- | --- | --- | --- | --- | --- |
+| Recaro Podium CF | **Engineered for it** — road-approved for 3-/4-point with Recaro sidemount | 8855-1999 | EuroConnex JP Spec E36 kit has an explicit Podium config — genuine Podium side mounts + sliders + seat-belt brackets | Only seat on this list that is ABE + FIA + slider-capable. Carbon ~6 kg | ~€3,450 + $1,700/pair mounts | [recaro-automotive.com](https://www.recaro-automotive.com/en/dynamic/recaro-podium-cf) · [euroconnex.co](https://euroconnex.co/products/recaro-jp-spec-mounting-solution-e36-m3) |
+| Cobra Nogaro (Street / Circuit) | **Designed for it** — "standard lap and diagonal seatbelt without modifications" | None — road seat | Standard side-mount stack | Circuit adds 4/6-pt harness slots (no 5-pt). Low sides = easy ingress. GRP 10.2 kg / carbon 5.3 kg | £699–849 | [shop.cobraseats.com](https://shop.cobraseats.com/products/nogaro) |
+| Cobra Nogaro Munich Edition | Same as above | None | Same | E46 CSL reproduction trim — on-theme for the build; limited stock | £1,699 | [shop.cobraseats.com](https://shop.cobraseats.com/products/nogaro-munich-version-1-limited-stock) |
+| Sparco QRT-R | Slot workaround | 8855-1999 | Requires proprietary #600QRT side mounts → universal slider → E36 floor bracket | Fits 36" waist — roomy at 34". Reported tall seated height even without runners — check vs convertible headroom | $929 | [sparcousa.com](https://www.sparcousa.com/product/qrt-r) |
+| OMP HTE-R | Slot workaround | 8855-1999 | Standard W-type side-mount stack | Cheapest FIA-homologated option found; 9.4 kg | ~€750 | [rallystore.eu](https://rallystore.eu/product/hte-r/) (US: OG Racing / Stable Energies) |
+| Corbeau FX1 Pro | Slot workaround — listed 3-pt capable | None | Corbeau E36-specific bottom-mount brackets — cheapest true drop-in | US sizing runs big (S to 36"). No FMVSS certification; fine at MoE/drift orgs (they require the harness, not a certified seat) | $449 | [corbeau.com](https://corbeau.com/products/fx1-pro) |
+
+**OEM-belt reality for non-ABE seats:** the constraint is slot geometry, not certification — the 3-point lap belt must either drape naturally over shallow thigh bolsters or route through the seat's existing lap harness slot ([willandservicecentre.co.uk MOT guide](https://willandservicecentre.co.uk/bucket-seats-mot/)). Only the PP ABE and Podium are *certified* for factory belts; everything else works but is uncertified. On the convertible the belt approaches from the rear quarter panel *behind* the seat, so shoulder-slot routing (K26-type guide) is effectively mandatory, not optional. Relocate the buckle receiver to a mount-side tab so it tracks with slider position — standard practice, most E36 seat brackets include the tab.
+
 ---
 
 ### Harness
