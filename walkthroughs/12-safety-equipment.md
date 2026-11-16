@@ -78,7 +78,7 @@ Before attending any HPDE or drift event with an open-top car, the roll bar will
 
 ## Seats & Restraints
 
-**Driver fit — size seats on waist/hip + shoulder width, not height.** Primary driver: 6'0", ~34" pant waist, 180–190 lb — the top edge of standard fixed-bucket sizing. GT3 is inside its rated 32–36" range; PP ABE is the roomiest standard shell (~52 cm hip width); Zeta IV is snug-but-workable at 34" (driver tolerates a snug fit; note JDM seats run narrow). Zieg IV Wide (36–38" rated) is too big. Second driver: 5'6"–5'7", 140–150 lb — below every rated range, will be loose in all options; she runs the OEM 3-point only so snugness is comfort-only, not safety (bolster inserts optional). ⚠️ If she ever drives at a MoE event, harness is mandatory with a race seat — OEM belt alone fails tech. Boundary-case sit test: OG Racing (Sterling VA) offers free in-person seat fitting. Sources: [OG Racing fit guide](https://www.ogracing.com/blogs/news/racing-seat-fitment-guide-how-to-choose-the-right-seat-for-street-or-track), [sportseats4u GT3 sizing](https://www.sportseats4u.co.uk/product/sabelt-gt3-motorsport-seat/), [tf-works Zeta/Zieg comparison](https://tf-works.com/blogs/whats-the-difference-between-the-bride-zeta-4-and-zieg-4/).
+**Driver fit — size seats on waist/hip + shoulder width, not height.** Primary driver: 6'0", ~34" pant waist, 180–190 lb — the top edge of standard fixed-bucket sizing. GT3 is inside its rated 32–36" range; PP ABE is the roomiest standard shell (~52 cm hip width); Zeta IV is snug-but-workable at 34" (driver tolerates a snug fit; note JDM seats run narrow). Zieg IV Wide (36–38" rated) is too big. Second driver: 5'6"–5'7", 140–150 lb — below every rated range, will be loose in all options; she runs the OEM 3-point only so snugness is comfort-only, not safety (bolster inserts optional). ⚠️ If she ever drives at a MoE event, harness is mandatory with a race seat — OEM belt alone fails tech. Boundary-case sit test — local shops with seats on the floor: **Stable Energies Motorsports**, Saddle Brook NJ (~1.5–1.75hr; Recaro master distributor + OMP/Racetech showroom, 6 days/week — sit in a narrow Profi SPG as the Zeta analog and a Pole Position N.G. for the ABE; [stableenergies.com](https://www.stableenergies.com/)) · **Rogue Engineering**, Upper Saddle River NJ (~1hr; Sabelt) · **797 Performance**, Feasterville PA (~40min; Sparco, call first — [797performance.com](https://797performance.com/)) · **OG Racing**, Sterling VA (~2.5hr; free in-person seat fitting). Sources: [OG Racing fit guide](https://www.ogracing.com/blogs/news/racing-seat-fitment-guide-how-to-choose-the-right-seat-for-street-or-track), [sportseats4u GT3 sizing](https://www.sportseats4u.co.uk/product/sabelt-gt3-motorsport-seat/), [tf-works Zeta/Zieg comparison](https://tf-works.com/blogs/whats-the-difference-between-the-bride-zeta-4-and-zieg-4/).
 
 ### Seat Option 1A — Sabelt GT3
 
@@ -249,6 +249,33 @@ For LHD cars these assignments swap. Per sportseats4u Bride fitment guide: *"For
 | K26 Seat Belt Guide (per seat) | K26BPO (red) / K26APO (black) | [RHDJapan](https://www.rhdjapan.com/bride-bucket-seat-and-reclining-seat-optional-parts-seat-belt-guide-red.html) · [FFP Performance](https://ffperformance.co/product/bride-seat-belt-guide-k26bpo-red/) | **~$20** |
 
 **Total per seat (seat + rails + K26):** ~$1,655–$1,905 — more than the Sabelt GT3 seat alone but the rails replace the entire VAC floor adapter + side mount + slider stack (~$490–600/side).
+
+**Backup / used-market listings (FB Marketplace, verified 2026-11-15, 100 mi radius of Philadelphia):**
+
+| Seat | Notes | Price | Location | Listing |
+| --- | --- | --- | --- | --- |
+| Bride Zeta III Type-L, red | Genuine — FIA CS.255.11 label photographed (homologation expired 11/2022; irrelevant for MoE/drift orgs). **Previously installed in an E36** — cabin fit proven. Includes side mounts + back/side protectors. Type-L = roomy fit at 34" waist | $1,000 | Hershey PA (~1.5h) | [marketplace/item/2518722335312335](https://www.facebook.com/marketplace/item/2518722335312335/) |
+| Bride Zeta IV Silver FRP | Used–like new, gradation fabric, Bride leather bolster guards installed. Standard size — snug at 34"; seller reports thigh pinch on wider hips | $1,200 | Fawn Grove PA (~1.5h) | [marketplace/item/1829553698037087](https://www.facebook.com/marketplace/item/1829553698037087/) |
+| Bride DogFight SPL (ZIEG IV Wide shell, model HCZ10) | NDF collab, FIA CS.445.20 valid to 2028, like-new. Wide shell = loose at 34" (pad down). ⚠️ E36 fit for the wide shell unverified — Type-FO rail is catalogued for Zeta IV width; may need universal side-mount stack | $1,450 | Preston MD (~1.75h) | [marketplace/item/1806205497056930](https://www.facebook.com/marketplace/item/1806205497056930/) |
+| Vertex × Bride Zeta III pair | Genuine collab (gold stitching, VERTEX embroidery, sparkle FRP verified in photos). Likely standard size (snug at 34") — confirm size label on shell before trip. Only matched pair available | $2,500/pair | Mullica Hill NJ (~45min) | [marketplace/item/1242676634656671](https://www.facebook.com/marketplace/item/1242676634656671/) |
+| GREDDY TRUST × Bride Zeta IV | Regular size, like-new, no blemishes per seller. Priced ~$600 over new standard IV for the collab branding | $1,900 | Levittown PA (~35min) | [marketplace/item/4589084708012844](https://www.facebook.com/marketplace/item/4589084708012844/) |
+
+**Authenticity check for any used Bride:** photograph the FIA label on the shell — genuine seats carry homologation number + serial; replicas flood Marketplace/eBay ("Style" listings are reps).
+
+**Retail collab options (aspirational — same Zeta IV shell, drop-in on the documented Type-FO rails; NDF confirms FB/FG/FK/FO/FX/IG rail compatibility):**
+
+| Seat | Notes | Price | Source |
+| --- | --- | --- | --- |
+| ZETA IV DogFight SPL (FRP) | NDF signature collab — preorder windows only; Sept 2026 window closed, next ~spring 2027, ~3mo ETA, no cancellations | $1,515 | [shopndf.com](https://www.shopndf.com/product/zetaivdogfightspl) |
+| ZETA IV Carbon Black Series DogFight SPL | Carbon-aramid shell, all-black tonal embroidery, ~0.5 kg lighter than FRP | $1,995 | [shopndf.com](https://www.shopndf.com/product/bride-japan-zeta-iv-carbon-black-series-dogfight-spl) |
+
+**Bride wear-protection accessories (daily-driver longevity — cloth bolsters wear at the belt-rub and ingress points):**
+
+| Part | PN | Source | Price |
+| --- | --- | --- | --- |
+| Seat Belt Protector (cloth wrap + leather contact strip, velcro on/off) | K09APO | [kamispeed.com](https://www.kamispeed.com/products/bride-seat-belt-and-harness-protector) · [blackhawkjapan.com](https://www.blackhawkjapan.com/collections/seats-others) | ~$30 |
+| Side Protect Pad Set (leather + fabric) | varies by model | [more-japan.com](https://more-japan.com/manufacturers/bride/bride-seat-pads-and-fabric/) | $60–80 |
+| Seat Back Protector — Zeta IV / Zieg IV Wide | — | [more-japan.com](https://more-japan.com/manufacturers/bride/bride-seat-pads-and-fabric/) | $87–92 |
 
 ---
 
