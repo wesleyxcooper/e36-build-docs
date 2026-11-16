@@ -124,6 +124,51 @@ Font reference: [Barbie Medium](https://fontmeme.com/fonts/barbie-medium-font/) 
 > | **Nizo Motorsports** | Queens, NYC | Full custom fabrication (steel, aluminum, titanium, carbon fiber), widebody conversions, fender flares. European-friendly. | [nizomotors.com](https://www.nizomotors.com/services/customization/) |
 > | **Custom Import Performance** | East Stroudsburg, PA (Poconos) | Foreign/import specialist, collision + custom bodywork. Worth a call — European focus and Poconos proximity. | (570) 476-9484 · [customimportperformance.com](https://www.customimportperformance.com/) |
 
+### Rear Spoiler / Wing Options  [EXTERIOR]
+
+Two directions documented. Reference look: a flush-mount body-color slab sitting directly on the trunk's trailing edge — i.e., the **base/pedestal of a Class II (LTW/GT-style) wing run bare** without the top blade, risers, or gurney flap. Second option: the **AC Schnitzer Type-II 3-piece rear deck spoiler**.
+
+#### Option 1 — Class II / LTW-style wing base (flush slab look)
+
+The Class II spoiler family (318is Class II, M3 GT, M3 Lightweight/LTW, Clubsport "GT2") is modular: a body-color **base** bolts to the trunk edge, the interchangeable **top blade** mounts on it, optional **riser blocks** raise the blade, and a **gurney flap** caps the trailing edge. The base alone presents as a flat slab directly on the decklid. Anatomy + OEM PNs per [bmwe36.it GT/LTW guide](https://www.bmwe36.it/e36-info/info-sugli-spoiler-gt-ltw/):
+
+| Component | BMW PN | Notes |
+| :---- | :---- | :---- |
+| Base — sedan | 51 71 2 264 034 | PN molded at outer corner |
+| Base — coupe | 51 71 2 267 486 | PN molded at center |
+| Base — Clubsport | 51 71 2 464 705 | |
+| Top blade (shared by all) | 51 71 2 264 035 | |
+| Risers (left / right) | 51 71 2 265 740 / 51 71 2 265 739 | Optional lift blocks for high-rise config |
+| Gurney flap | 51 71 2 268 786 (104cm) / 51 71 2 265 784 (110cm) | |
+| Install kit | 51 71 2 489 686 | |
+
+- All OEM components discontinued — used/parts-car market only. Search "E36 GT Heckspoiler Basis" on eBay.de.
+- BMW never made a cabrio Class II base — sedan/coupe/Clubsport only. Cabrio decklid contour differs at the edges; any base (OEM or rep) will need body-shop fitting.
+
+**Replica kits (the base comes in the box):**
+
+| Source | Product | Price | Notes |
+| :---- | :---- | :---- | :---- |
+| **Race German** | [E36 LTW Style Spoiler](https://racegerman.com/products/e36-ltw-style-spoiler) — also via [drifthq](https://drifthq.com/products/e36-ltw-style-spoiler) | **$249.99** | Molded ABS (not fiberglass). True 4-piece high-rise or 2-piece low-rise (base + top, no risers). Colors incl. Titanium Silver (354). Coupe/sedan only — not ti. Their own checkered "NOT LTW" mule runs this rep. |
+| **rare36parts** | [E36 LTW Style Rear Spoiler](https://rare36parts.com/products/e36-ltw-style-rear-spoiler) | **$539** | Fiberglass, "true 4 piece (base, risers, top section)," run low or high rise. Unpainted. |
+| **Turner Motorsport** | [E36 LTW Inspired Carbon Spoiler](https://www.turnermotorsport.com/n-E36_Coupe_Sedan_LTW_Carbon_Fiber_Spoiler) | **~$1,767–1,784** | 5 components (base, 70mm risers, upper, gurney, billet brackets). Clamp-on — no drilling. Overkill if only the base is wanted. |
+| eBay fiberglass reps | "LTW style" kits (Lester molds, Italy) | **~$100–200** | Mixed fitment reports per [rmsmotoring](https://rmsmotoring.com/forum/threads/e36-ltw-spoiler.192567/) — usable for the price, expect bodywork. |
+
+- No vendor sells the base as a standalone SKU. Cheapest path: buy the Race German 2-piece and run the base alone; the top mounting channel on the base's upper surface will need a body shop to glass/cap it smooth for the clean slab look.
+- Abrahams Motorsport historically sold riser *blocks* alone ($129/pair for low→high conversion) per [bimmerforums LTW replica thread](https://www.bimmerforums.com/forum/showthread.php?1593277-The-definitive-E36-LTW-Spoiler-Replica-Thread%2Fpage13=).
+- Trunk strut note (rare36parts): heavy spoilers want 610N struts — OEM PN `51242264448`.
+
+#### Option 2 — AC Schnitzer Type-II 3-Piece Rear Deck Spoiler
+
+The period ACS part — center blade + two end sections, flush-mount slab profile. Reference car: Jonathan Huang's Dakar Yellow E36 M3 convertible ([FCP Euro feature, Apr 2019](https://www.fcpeuro.com/blog/ac-schnitzer-e36-s3-sport-m3-dinan-supercharged) / [MotorMavens](https://motormavens.com/ac-schnitzer-e36-m3-convertible-dinan-supercharger/)) — genuine ACS 3-piece sourced from Canada.
+
+| Item | Detail |
+| :---- | :---- |
+| OEM PNs (period ACS catalog) | Coupe **5171-36-50** · Sedan 5171-36-45 · 318ti 5171-36-44 — [karparts ACS list](https://karparts.tripod.com/BodyKitsBMW/3Series92-99.htm) |
+| Cabrio variant | No 3-piece was listed for the convertible; ACS's cabrio-specific item was the taller "Rear Wing" **5171-36-38** (Kevlar/glass) |
+| **Replica — Mway Workshop (Poland)** | [AC Schnitzer 3-piece replica](https://mway-workshop.eu/product/bmw-e36/spoilers-bmw-e36/bmw-e36-compact-spoiler-acs/) — **€198, fiberglass, black gelcoat**. Listed for the Compact; coupe/cabrio decklid fitment would need a body shop — worth emailing mway.workshop@gmail.com about a coupe variant. |
+| Genuine used | Surfaces sporadically — e.g. [ebay.co.uk 275707630549](https://www.ebay.co.uk/itm/275707630549) had a genuine convertible 51713638 at £259 (sanded to primer). NOS sedan 3-piece was seen on ebay.de at €761. |
+
 ---
 
 ## Wheels & Tires  [WHEELS]
