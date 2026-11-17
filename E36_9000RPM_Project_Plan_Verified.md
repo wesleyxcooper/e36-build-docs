@@ -327,6 +327,8 @@ Machine role assignment across the build. No new hardware to purchase.
 > - **Overall 1st:** 4.71 × 3.15 = **14.84:1** — massive launch torque multiplication; low-speed grunt dramatically amplified.
 > - **Overall 8th:** 0.67 × 3.15 = **2.11:1** — very relaxed highway cruise; engine barely off idle at legal speeds, thermal and mechanical load minimal.
 > - The 4.71→0.67 spread (7:1 total ratio range) keeps the engine on its power peak through the entire rev range — critical for a high-revving engine like the 07K.
+>
+> **Full gearing & powerband audit** — speeds per gear at both diffs, upshift landing-RPM vs boost threshold, mean-piston-speed comparison, and the high-RPM 07K precedent survey: `walkthroughs/36-gearing-powerband.md`
 
 ### ECU & Engine Management  [ECU · ELECTRICAL]
 | Component | Specification | Cost / Action |
