@@ -91,6 +91,35 @@ RPM after each upshift at the 8,000 shift point (ratio of outgoing/incoming gear
 
 **M52 path for comparison:** GTX3076R on 2.8L full-boosts ~4,500–5,000; shifting at 8,200–8,500 lands ≥5,470 — also always on-boost. Both paths satisfy the powerband thesis; the 07K's earlier-boosting G25-660 gives a slightly fatter midrange floor.
 
+## 5 — Compressor map: where the G25-660 actually runs out of air
+
+Engine airflow demand = swept volume × VE × manifold density (2.5L, VE 0.90, post-IC charge ~320 K). The G25-660's compressor reaches its map edge at **~49 lb/min corrected flow**:
+
+| RPM | Demand @ 18 psi | Demand @ 20 psi | Demand @ 25 psi |
+| :-- | :-- | :-- | :-- |
+| 6,000 | 36.5 lb/min | 38.8 | 44.4 |
+| 7,000 | 42.6 | 45.2 | 51.7 — off map |
+| 7,500 | 45.7 | 48.5 — at edge | 55.4 — off map |
+| 8,000 | 48.7 — at edge | 51.7 — off map | 59.1 — off map |
+| 8,500 | 51.8 — off map | 54.9 — off map | 62.8 — off map |
+| 9,000 | 54.8 — off map | 58.2 — off map | 66.5 — off map |
+
+**Plateau shape:** torque plateaus ~4,500–6,000 RPM; power flattens at **~6,500–7,500** depending on boost level — not at 8,500. Above the map edge the compressor can't supply more air regardless of wastegate position: boost tapers, turbine backpressure (49 mm exducer) climbs, charge temps rise. Running max boost at 8,500 = hot air and noise, not power. Garrett's "660" rating is crank HP — realistic wheel ceilings: **~450–500whp pump 93, ~500–550whp E85.**
+
+**The mission isn't peak power — it's holding boost to redline.** Solved by boost-by-RPM taper in MaxxECU (GPO 1 boost solenoid):
+
+| Target | Demand @ 8,500 | Demand @ 9,000 | On-map? |
+| :----- | :-- | :-- | :-- |
+| 20 psi | 54.9 lb/min | 58.2 | No — choke |
+| ~14–15 psi | ~45–47 | ~48–50 | **Borderline — feasible** |
+| ~12 psi | ~42 | ~45 | **Yes — comfortable** |
+
+A taper holding **~12–15 psi past 7,500** keeps the compressor on-map to the 9,000 limiter — the turbo stays lit mid-drift for transitions without cooking the charge. This is the configuration intent: pump 93 is the primary fuel (beach-cruiser duty + a few track days), E85 is a dyno/party tune only. On pump gas the G25-660 is right-sized — the 550–650whp figure in earlier planning was an E85 ceiling the turbo can't fully deliver; treat ~500–550whp as the realistic E85 top.
+
+**Hardware pinned to match:** turbine housing is **0.92 A/R** (RR SKU `877895-5010S`) — lower top-end backpressure; spool penalty moot since every upshift lands ≥5,300 RPM. Tial 44mm external WG does the control work; the internal gate on `-5010S` stays capped.
+
+**Upgrade path if the ceiling disappoints:** G30-660/770 RR (~60 lb/min map, ~600–650whp) — modestly larger housing; check against the engine-bay scan before assuming it fails the hood-clearance constraint that drove the G25 choice.
+
 ## Related walkthroughs
 
 - `21-07k-rotating-assembly.md` — crank/rods/pistons (the 9k-capable bottom end)

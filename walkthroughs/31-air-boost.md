@@ -20,7 +20,7 @@ This walkthrough covers the complete air and boost system: SPA TMW22 top-mount e
 | Part | PN / Source | Cost |
 | --- | --- | --- |
 | SPA Turbo MK5 T3 Twin Scroll manifold (TMW22) | [spaturbousa.com](https://spaturbousa.com/products/vw-5-cyl-2-5l-20v-fsi-t3-top-mount-twin-scroll-turbo-manifold-wastegate-v-band) | $459.90 |
-| Garrett G25-660 **Reverse Rotation** | [Full Race G-series](https://www.full-race.com/collections/garrett-g-series) | ~$1,800–2,000 est. |
+| Garrett G25-660 **Reverse Rotation** — PN `877895-5010S` (0.92 A/R V-band/V-band) | [Full Race RR complete](https://www.full-race.com/garrett-g-series-g25-660-reverse-rotation-turbo) $1,960.86 · external-WG kit [JDMuscle](https://jdmuscleusa.com/products/garrett-g25-660-reverse-turbo-assembly-kit-o-v-v-band-v-band-0-92-a-r-external-wg) $2,129.90 | ~$1,961–2,130 |
 | T3-to-V-band adapter (connects SPA T3 outlet to G25-660 V-band inlet) | Various (generic T3/V-band) | ~$35–50 |
 | Tial 44mm MVR wastegate (V-band) | [turbosmart.com](https://www.turbosmart.com) or Tial vendor | $435 |
 | Turbosmart 2-port PWM boost solenoid | [turbosmart.com](https://www.turbosmart.com/product-category/boost-controllers/solenoids/) | ~$65–80 |
@@ -60,7 +60,7 @@ This walkthrough covers the complete air and boost system: SPA TMW22 top-mount e
 
 ### G25-660 RR Turbocharger
 
-5. **Verify reverse rotation** at purchase. Standard rotation directs the compressor outlet into the firewall in this longitudinal position with the SPA MK5 manifold. The G25-660 RR uses distinct SKUs from standard rotation — double-check the part number before ordering.
+5. **Verify reverse rotation AND A/R at purchase.** Standard rotation directs the compressor outlet into the firewall in this longitudinal position with the SPA MK5 manifold. Pinned SKU: **`877895-5010S`** = RR + 0.92 A/R V-band/V-band (`877895-5009S` = RR 0.72; `5002S/5005S/5006S` = standard rotation — do not order). 0.92 A/R chosen for lower turbine backpressure at the 8,000+ RPM operating ceiling; `-5010S` ships with an internal wastegate that stays capped — the Tial 44mm MVR external gate controls boost. If sourcing the external-WG (free-float housing) assembly instead, confirm it carries the same 0.92 A/R V-band housing.
    > ⚠️ **Pitfall:** Must be reverse rotation — standard rotation directs the compressor outlet into the firewall with the SPA MK5 manifold in longitudinal installation. Full Race G-series RR listings use distinct SKUs from standard rotation — double-check at purchase. Source: `E36_DIY_Build_Checklist.md` Phase 3b Air & Boost.
 
 6. Install T3-to-V-band adapter on the SPA manifold T3 outlet (~$35–50). This adapter bridges the SPA T3 flange to the G25-660 V-band turbine inlet and adds ~25–35mm to the total stack height — account for this in hood clearance check.

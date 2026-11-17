@@ -161,6 +161,35 @@ Shop rate confirmed ~$150–165/hr (based on prior Euromotive service receipts).
 
 ---
 
+## High-RPM Load Case — Why the Upgrades Are the Margin
+
+Peak piston acceleration ≈ ω² · r · (1 + r/rod). The 07K's 92.8 mm stroke makes it the *harder* engine to rev vs the M52B28 (84 mm):
+
+| | 8,000 (shift point) | 9,000 (limiter) |
+| --- | --- | --- |
+| **07K** (92.8 mm, 144 mm rod, R/S 1.55) | ~4,390 g | ~5,560 g |
+| M52B28 (84 mm, 135 mm rod, R/S 1.61) | ~3,860 g | ~4,990 g |
+
+At 9,000 the ~600 g reciprocating package (piston + pin + rings + small-end share) pulls roughly **33 kN of tensile load through the rod bolts at every TDC reversal** — twice per rev per cylinder. Load scales with RPM²: 8,000→9,000 adds ~26%. This is why 9k is headroom, not an operating point.
+
+**Architecture that earns the RPM (the real toughness):**
+- **Six mains for five throws** — every crank throw boxed between mains; short unsupported spans.
+- **GJL250 grey-iron block, 220 mm short deck** — graphite-flake damping suppresses harmonic amplitude; compact stiff crankcase.
+- **Iron bores** — tolerate high piston speed and R/S 1.55 side-loading far better than Alusil/Nikasil.
+- Community datapoints: unopened stock BGP engines surviving 8,000+ RPM (see `36-gearing-powerband.md` precedent survey).
+
+**Where the margin actually lives at 9k (the upgrades, not the casting):**
+- **Cylinder walls are already at their limit** — community overbore ceiling is 83 mm, "1 mm is getting sketchy" ([theprojectpad](https://theprojectpad.com/viewtopic.php?t=156)). This build's SPA pistons are 83 mm — there is no wall-thickness reserve. Block strength is stiffness/damping, not surplus material.
+- **Forged crank is a hard gate** — VW cast cranks are graphite-flake iron (not nodular): 2–3.5% elongation, density inconsistency, more flex under torsion → harmonic amplitude → bearing-film breakdown at 5,500 g reversals ([vwcrisisline crank metallurgy](https://www.vwcrisisline.com/single-post/2017/07/05/what-sets-us-apart-quality-crankshafts-and-connecting-rods)). Cast crank in hand is the HOLD; forged `07K105101E` required.
+- **Rod bolts are the fuse** — 33 kN/cycle lives in two bolts per cap. SPA800 bolt rating at 9,000 RPM is an open confirmation with SPA (see parts table above; I19/ARP 625 is the >800 hp community spec).
+- **Solid lifter conversion mandatory** — hydraulic lifters pump up past ~8,500 (07K Wiki); Ferrea shim conversion in head build covers it.
+- **Fluidampr mandatory** — stock crank pulley has no harmonic damping; belt toss + crank/thrust wear in longitudinal orientation is documented.
+- **LPS oil pump mod mandatory** — stock pump cavitates above ~8,000 (`24-07k-oil-system.md`).
+
+**Duty-cycle context:** fatigue is cycle-counted. Limiter bursts at 9k mid-drift = thousands of cycles per event — survivable for this spec. Sustained 9k pulls are where cast cranks and stock pumps die — exactly what the forged-crank HOLD and LPS mod gate.
+
+---
+
 ## References
 
 - [Euromotive Autohaus](https://www.eurohauspa.com/) — 1306 W Chester Pike, West Chester, PA · (610) 416-5702
