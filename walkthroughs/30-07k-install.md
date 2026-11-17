@@ -9,6 +9,8 @@
 
 ## Overview
 
+Mount, adapter-plate, turbo-clocking, and manifold clearance fit checks should be done on the in-hand donor block (kept as a mock-up block per `20-07k-sourcing.md` → Donor Strip List) before the sealed longblock goes into the car.
+
 This walkthrough covers removing the M52 interim engine and installing the Phase 2b 07K longblock with all accessories mounted. The 07K swap is a single-connector engine change at the firewall bulkhead — the cabin harness, 8HP CAN harness, and body integrations are untouched. The critical sequencing constraint is: **scan before pulling the M52** — a Scaniverse envelope pass with the M52 in place gives Blender the bay clearance context the downpipe fabricator needs later, and a dedicated structured-light scan of the exposed E36 subframe mount pads (once the M52 is out) gives Fusion the mating-feature geometry for the custom 07K mount brackets.
 
 **RHD orientation reminder:** In this RHD E36, the 07K exhaust side (SPA manifold, turbo outlet, downpipe) is on the **driver side** (right side of car looking forward). The intake side (BBG manifold, iABED oil filter housing) is on the **passenger side** (left side of car). All hose routing and clearance checks use exhaust/intake terminology — not left/right.
@@ -24,7 +26,7 @@ This walkthrough covers removing the M52 interim engine and installing the Phase
 | VW longitudinal starter | FCP Euro `068911024GX` (Bosch reman, lifetime guarantee) | $349.99 + $50 refundable core |
 | S&P Ti exhaust stud kit (15× M8×1.25×40mm Ti stud + Ti nut + Ti washer, 4mm internal hex) | [s-pautomotive.com](https://s-pautomotive.com/product/titanium-m8x1-25-exhaust-studs/) — $9.05 ea × 15 | $135.75 (order Phase 2b) |
 | Engine crane (rent) | Local tool rental | ~$80–120/day |
-| Transmission jack (rent) | Local tool rental | ~$40–60/day |
+| Transmission jack | PITTSBURGH 2000 lb. Low-Profile Transmission Jack, item 70185 · [harborfreight.com](https://www.harborfreight.com/2000-lb-low-profile-transmission-jack-70185.html) | $379.99 list; $279.99 with HF coupon 33343597 through 11/30/2026 ([coupon](https://go.harborfreight.com/sku/70185/)) |
 | Engine stand (own or rent) | — | — |
 | HF Load Leveler | SKU 96497 · [harborfreight.com](https://www.harborfreight.com/1-ton-capacity-engine-load-leveler-96497.html) | ~$30 |
 | M10×1.5 DIN 580 shoulder eyebolts ×4 | McMaster-Carr `3100T12` | ~$8–12 ea |
@@ -34,7 +36,7 @@ This walkthrough covers removing the M52 interim engine and installing the Phase
 ## Tools
 
 - Engine crane + load leveler
-- Transmission jack
+- Transmission jack (PITTSBURGH 70185)
 - Coolant drain pan (5L+)
 - Oil drain pan
 - Standard socket set (M8–M17), torque wrench

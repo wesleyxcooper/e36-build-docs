@@ -65,7 +65,7 @@ Four controller products exist for controlling the ZF 8HP from an aftermarket EC
 
 ## Tools
 
-- Transmission jack (mandatory — 8HP is significantly heavier than the Getrag; do not attempt without one)
+- [PITTSBURGH 2000 lb. Low-Profile Transmission Jack, item 70185](https://www.harborfreight.com/2000-lb-low-profile-transmission-jack-70185.html) (mandatory — 8HP is significantly heavier than the Getrag; do not attempt without one). 7-1/16 in. to 31 in. lift, saddle tilt 30° forward / 10° back / 12° side ([manual](https://manuals.harborfreight.com/manuals/70000-70999/70185-193175491763.pdf)). Use the safety strap or load-restraint device on the unit.
 - Flywheel lock tool (for manual flywheel removal — do not substitute a screwdriver)
 - Torque wrench covering 6, 44, and 55 lb-ft ranges
 - Metric socket set and breaker bar
@@ -114,7 +114,7 @@ Four controller products exist for controlling the ZF 8HP from an aftermarket EC
 9. **Disconnect the driveshaft at the differential end first, not the trans end.**
 
 10. **Remove the crossmember and lower the Getrag on a transmission jack.**  
-    > ⚠️ **Pitfall:** Rent a transmission jack — the Getrag is heavy and awkward to lower alone. The 8HP is significantly heavier than the Getrag. Two people minimum for the 8HP installation step.
+    > ⚠️ **Pitfall:** Use the transmission jack — the Getrag is heavy and awkward to lower alone. The 8HP is significantly heavier than the Getrag. Two people minimum for the 8HP installation step.
 
 ---
 

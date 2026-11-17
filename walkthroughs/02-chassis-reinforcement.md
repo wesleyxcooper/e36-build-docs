@@ -20,7 +20,7 @@
 - Angle grinder + flap discs (surface prep to bare metal)
 - Wire brush, sandpaper, weld-through primer
 - Floor jack and jack stands
-- Transmission jack (subframe removal)
+- [PITTSBURGH 2000 lb. Low-Profile Transmission Jack, item 70185](https://www.harborfreight.com/2000-lb-low-profile-transmission-jack-70185.html) (subframe removal)
 - Engine support bar or jack stand under oil pan (rear subframe work)
 - Exhaust hanger tools
 - Standard socket set

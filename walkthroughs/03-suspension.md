@@ -19,7 +19,7 @@
 ## Tools
 
 - Floor jack and jack stands
-- Transmission jack (subframe work)
+- [PITTSBURGH 2000 lb. Low-Profile Transmission Jack, item 70185](https://www.harborfreight.com/2000-lb-low-profile-transmission-jack-70185.html) (subframe work)
 - Torque wrench
 - Coilover ride height adjustment spanner
 - Grease gun + poly-compatible lubricant (Revshift-supplied or equivalent)
