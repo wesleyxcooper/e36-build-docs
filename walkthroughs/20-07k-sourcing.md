@@ -5,7 +5,7 @@
 **Shop-mandatory:** No  
 **Prerequisites:** Phase 1 foundation underway; car running on M52 (or at minimum MaxxECU + 8HP commissioned). 8HP variant decision locked before ordering any adapter plate.
 
-> **Status (current):** Block sourced and in hand. Crank inspected — **confirmed cast** (counterweight parting line checked through a window in the bottom of the upper oil pan, near the oil pump, after dropping the lower steel sump). Open item: **source confirmed forged crank before block goes to Euromotive.** Target PN: `07K105101E` (~$1,050–1,250 eBay Germany), community-confirmed forged per Issam Abed VWVortex post #31. TTRS cranks (07K105101P / H) are also confirmed forged but more expensive. Do not send block to shop until forged crank is in hand.
+> **Status (current):** Block sourced and in hand. Crank inspected — **confirmed cast** (counterweight parting line checked through a window in the bottom of the upper oil pan, near the oil pump, after dropping the lower steel sump). Open item: **source confirmed forged crank before block goes to Euromotive.** Target PN: `07K105101E` — used market ~$500; NOS ~$1,167 eBay (see sourcing list below), community-confirmed forged per Issam Abed VWVortex post #31. TTRS cranks (07K105101P / H) are also confirmed forged but more expensive. Do not send block to shop until forged crank is in hand.
 
 ---
 
@@ -57,9 +57,12 @@ Only `07K105101E` is community-confirmed forged (per Issam Abed, VWVortex post #
 **If cast: source a confirmed `07K105101E`.** Inventory is thin — this part is discontinued and sourcing requires active monitoring. Current availability (Nov 2026):
 - eBay UK — AutoPartsHub.ltd (used, from VW): £1,123 + £27 shipping · [ebay.co.uk/p/1617005596](https://www.ebay.co.uk/p/1617005596) — **physically verify forged parting line before buying any used crank regardless of listed PN**
 - athousakis.gr (Greece, used, journals STD, damage noted in listing photos): €175 · [athousakis.gr](https://www.athousakis.gr/en/strofalos/crankshaft-07k105101l-07ke-for-vw-12.html) — verify photos before ordering; verify still in stock
-- eBay.com US: no real inventory found (Nov 2026 live check)
+- eBay.com US: [listing 365953631003](https://www.ebay.com/itm/365953631003) — **NOS `07K105101E`, $1,057.11 + $110.23 shipping ≈ $1,167 landed, flagged "Last one"** (verified live Nov 2026). Sister listing `385346021056` (€1,129 OBO) ended — redirects to catalog page marked sold out.
+- Used `101E` market: ~$500 typical (owner-sourced datapoint Nov 2026). Verify flange PN stamp **and** counterweight parting line — suffix is a part number, not a construction method; `101E`-stamped units still need physical forged confirmation.
 - oemwolf.com lists $1,174 "from Germany" but the checkout link resolves to a parked Russian domain — **not purchasable, ignore**
 - Prior listing (dwparts-teile, eBay UK, £943, 2 new OEM available): no longer active as of Nov 2026
+
+> **Timing architecture follows the crank, not the block.** The crank's timing sprocket is machined into the crankshaft and cannot be swapped ([Audizine 07K turbo-swap thread](https://www.audizine.com/forum/archive/index.php/t-904241.html)). Pairing rules: an early forged `101E` requires the **early roller-chain timing set** in any block it lands in. The in-hand BGP's existing early timing components (chain, guides, tensioner, sprockets, front cover) can transfer to a replacement late block — verify tensioner/cover interface on the late casting before committing (documented precedent runs the other direction: later timing retrofitted onto early blocks for TTRS cranks). A complete early BGP/BGQ pullout avoids the question entirely — crank and timing set arrive vintage-matched.
 
 **TTRS cranks (`07K105101P` / `07K105101H`) — confirmed forged, but non-trivial to use in a BGP build:**
 - **8-bolt flywheel hub** — TTRS crank uses an 8-bolt flywheel pattern vs 6-bolt on the VW 2.5. The DomiWorks billet flexplate (SKU 21015002) is spec'd for a specific hub bolt count; confirm with DomiWorks whether their kit supports the 8-bolt hub before ordering if going TTRS crank.
