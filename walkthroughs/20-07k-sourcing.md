@@ -191,6 +191,22 @@ While the M52 is still in the car, test-position the SPA MK5 manifold + G25-660 
 
 ---
 
+## Donor Strip List — In-Hand Engine (cast `101F` crank)
+
+The in-hand engine is the parts donor and mock-up block. The replacement long block (and forged `101E` crank) is the build block.
+
+| Part | Action | Reason |
+| --- | --- | --- |
+| Oil pump (+ sprocket) | **Keep — send to LPS** if the PN and casting stamp are LPS-compatible (`07K115105G`/`Q`); otherwise buy a used `G`/`Q` (~$34) | LPS mods new or used early-style pumps ($150 service); LPS has final say on PN compatibility. See `24-07k-oil-system.md` § 1 and § 1a |
+| Oil-pump drive chain, tensioner, sprockets | Keep | Early roller-chain loop matches the `101E` crank |
+| Timing chain, guides, tensioner, cam adjusters, front timing cover | Keep; replace chain/guides/tensioner wear items before assembly | Timing architecture follows the crank (see § 2) |
+| Water pump `07K121011B` | Keep; Euromotive removes the impeller, housing stays | Housing is the coolant inlet to the block; the EWP handles pumping. Pulley bearing must spin freely. See plan Water Pump row |
+| Crank/cam position sensors, coil packs | Keep | Reused by MaxxECU harness |
+| Intake manifold, stock cam, valve cover, spare head | Sell | IE manifold, TTRS cam and BBG billet cover are spec'd |
+| Cast crank `101F`, stock rods/pistons, stock springs/retainers/lifters, stock exhaust valves, crank pulley | Scrap or sell as a stock-rebuild lot | Replaced by SPA forged internals, Supertech valvetrain, Ferrea solid shims, Fluidampr |
+| Block | Keep as mock-up block | Test-fit mounts, adapter plate, turbo clocking, manifold clearance; rust scale and re-tapped threads are irrelevant for fit checks |
+| Alternator | None on engine — buy reman or take from replacement pullout | — |
+
 ## Storage Protocol — Uninsulated Garage
 
 *Applies to the as-received donor longblock and to the sealed build longblock returned from Euromotive.*
