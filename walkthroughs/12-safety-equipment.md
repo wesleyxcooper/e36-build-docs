@@ -42,7 +42,7 @@
 5. **Surface prep before welding — bare metal welds only.** Sand, grind, and clean every contact surface at the bar feet and floor mounting points. Paint contamination causes weld porosity — invisible and structurally weak.  
    > ⚠️ **Pitfall:** Surface prep before welding is the critical step — bare metal welds only. Sand, grind, and clean every contact surface. Weld porosity from paint contamination is invisible and structurally weak.
 
-6. **Weld in the full kit**: main hoop, rear diagonal braces, and harness bar. The harness bar provides the rear attachment points for a 4- or 6-point harness.
+6. **Weld in the full kit**: main hoop, rear diagonal braces, and harness bar. The harness bar provides the rear attachment points for a 5- or 6-point harness.
 
 7. **Post-weld inspection:** All welds should have good penetration with no porosity visible. Verify the bar is square in the chassis and that the harness bar is at the correct height for the planned harness mounting.
 
@@ -278,6 +278,30 @@ For LHD cars these assignments swap. Per sportseats4u Bride fitment guide: *"For
 | Side Protect Pad Set (leather + fabric) | varies by model | [more-japan.com](https://more-japan.com/manufacturers/bride/bride-seat-pads-and-fabric/) | $60–80 |
 | Seat Back Protector — Zeta IV / Zieg IV Wide | — | [more-japan.com](https://more-japan.com/manufacturers/bride/bride-seat-pads-and-fabric/) | $87–92 |
 
+### Seat Option 1D — A-1 Racing Products (local showroom)
+
+**Local sourcing:** A-1 Racing Products Inc., 1927 Stout Dr Ste 2, Warminster, PA 18974 · orders 800-669-8442 · tech 215-675-8442 · Mon–Fri 8:30–5:00 ([contact page](https://www.a1racing.com/contact-us.aspx)). In-person showroom — sit in each seat and measure base width before ordering; call to confirm stock on the exact model. A-1 lists no Sabelt, Recaro, or Bride seats ([seats catalog](https://www.a1racing.com/seats.aspx)).
+
+All five are FIA 8855-1999 side-mount fixed shells with no head wings, sold as the seat only. The Sparco and OMP WRC-R side-mount bolt spacing is 290 mm (TRS-E 289–290 mm); the Momo Start spacing is not published. Side mounts, floor adapters, and slider come from the VAC stack in Option A.
+
+| Seat | A-1 PN | A-1 price | Outer shoulders | Height | Outer base | Weight | Notes |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| **Sparco EVO L QRT** | [008013RNR](https://www.a1racing.com/sparco-008013rnr-seat-evo-large-qrt.aspx) | **$929** | 580 mm | 885 mm | 505 mm | 7.7–7.9 kg | QRT fiberglass. Rated up to 36" waist. Seat depth 570 mm. Sparco FIA steel side mounts SS004902. |
+| **OMP WRC-R** | [HA0-0773-B01-071](https://www.a1racing.com/omp-racing-inc-ha0-0773-b01-071-wrc-r-fiberglass-seat-black.aspx) | **$999** | 620 mm | 890 mm | 510 mm | 8.8 kg | No built-in head restraint (lowest shell top of the group). Rated 32–36" waist. Inner width 390 mm. Adjustable lumbar, split leg cushion. |
+| **Sparco Grid Q** | [008009RNR](https://www.a1racing.com/sparco-008009rnr-seat-grid-qrt-black.aspx) | **$929** | 595 mm | 870 mm | 490 mm | 7.3 kg | QRT fiberglass. Removable side cushions for extra room. Sparco USA lists Medium/Large, up to 36" waist. |
+| **OMP TRS-E** | [HA0-0741-B01-071](https://www.a1racing.com/omp-racing-inc-ha0-0741-b01-071-trs-e-seat-black.aspx) | **$499** | 585 mm | 890 mm | 510 mm | 10.3 kg | Steel tube frame. Side and bottom mounting points. Inner width 390 mm. 5 harness slots. |
+| **Momo Start** | [1070BLK](https://www.a1racing.com/momo-automotive-accessories-1070blk-start-racing-seat-regular-size-black.aspx) | **$485** | 580 mm | 870 mm | 410 mm (mount area) | 8.3 kg | Upholstered all the way around. Sizing band 32–36" waist, under 6 ft. |
+
+Reference — Sabelt GT3 (Option 1A): 592 mm shoulders, 920 mm tall, 539 mm front / 416 mm rear base, 9.8 kg, 290 mm side mounts.
+
+**Fit for a 6'0" driver with a 34" waist and broad shoulders:** Waist-rated sizing understates shoulder need for this build, and XL/XXL shells add waist width along with shoulder width. A retailer fitting guide for a tall, broad, 34" waist driver recommends the OMP WRC-R and Sparco EVO L and rules out XL/XXL shells ([sportseats4u](https://www.sportseats4u.co.uk/best-bucket-seat-tall-broad-driver-slim-waist/)). The EVO L keeps the standard EVO's 580 mm shoulder width and adds seat depth (570 vs 510 mm) and hip width (505 vs 490 mm) ([sportseats4u](https://www.sportseats4u.co.uk/which-sparco-evo-qrt-seat-is-right-for-you/)). Shoulder wrap is not published by any maker — confirm in the showroom.
+
+**Sit-test order at A-1:** 1. EVO L · 2. WRC-R · 3. Grid Q · 4. TRS-E · 5. Momo Start.
+
+**Mounting:** VAC floor adapters list Sparco, OMP, and Momo as compatible ([store.vacmotorsports.com](https://store.vacmotorsports.com/vac-motorsports-billet-floor-mount-adapter-bmw-e36e46-p559.aspx)). A Sparco EVO 2 on VAC floor adapters plus a Sparco slider is documented in an E36 install (see the Option A note). Confirm the VAC SKU for the E36 convertible floor before ordering (see Convertible floor note above). OEM 3-point routing is not documented for any of these seats; see the OEM-belt note below.
+
+Sources: [EVO L dimensions — gt2i.com](https://www.gt2i.com/en/sparco-race-seat/124157-sparco-evo-l-qrt-seat-8033280294427.html) · [Sparco Grid Q datasheet](https://media.puravidasportwear.com/product-files/588_R2020_Datasheet_Seat_GRID_Q_008009RNR.pdf) · [OMP dimensions — sportseats4u](https://www.sportseats4u.co.uk/ckit_size_guide/omp-seat-size-guide/) · [OMP TRS-E — pegasusautoracing.com](https://www.pegasusautoracing.com/productselection.asp?Product=3454-741E) · [Momo Start — momo.com](https://momo.com/it-it/product/pista-it/sedili-pista-it/start/) · [Sabelt catalogue](https://www.sabelt.com/wp-content/uploads/2020/12/SABELT-CATALOGO-2021-12web.pdf).
+
 **Other verified seat options (outside the three primary options — mount architecture confirmed):**
 
 | Seat | OEM 3-point | FIA | Mount path | Notes | Price | Source |
@@ -295,19 +319,43 @@ For LHD cars these assignments swap. Per sportseats4u Bride fitment guide: *"For
 
 ### Harness
 
-5- or 6-point, FIA tagged. **No 4-point harnesses** — rejected at MoE, Drift Evergreen, and all other local orgs. FIA-tagged harnesses expire at the end of the year stamped on the tag. All other harnesses (SFI) expire 2 years from born-on date. Do not run an untagged or expired harness — it will fail tech.
+5- or 6-point, SFI- or FIA-tagged. **No 4-point harnesses** — rejected at MoE ([moehpde.com/faq](https://moehpde.com/faq)) and illegal at EMRA (Time Trial §3.3). A 4-point has no anti-submarine strap, and submarining is the failure mode Schroth warns about for 4-point belts ([Schroth instructions](https://www.schroth.com/en/racing/service/installation-instructions/?file=files%2Fdefault%2Fpdf%2Fracing%2Finstallation-instructions%2Fracing-belts%2Fea_8-2_online_2025-04.pdf)). SFI harnesses expire 2 years from the manufacture date; FIA harnesses are good until the end of the year stamped on the tag (NJMP and PCA: 5 years). Do not run an untagged or expired harness — it will fail tech.
 
-Shoulder belt angle off the harness bar is critical: bar must be within 0–5° of horizontal measured at the driver's shoulder height. Too steep an angle (bar too low relative to shoulder) pulls the driver down into the seat in a crash instead of back — the opposite of what's needed. Verify harness bar height against seated shoulder height after seat install.
+Shoulder belts must run horizontally from the shoulders or slope down no more than 20° (EMRA §2.6; [Club Loose rulebook](https://clubloose.com/wp-content/uploads/2026/03/Club-Loose-Rules-2026.pdf); Schroth). Mount them to the roll bar's harness bar, not the seat. A bar that is too low relative to the shoulder pulls the driver down into the seat in a crash instead of back. Verify harness bar height against seated shoulder height after seat install. Lap belts and the sub strap mount to the chassis, not the seat or seat rails (Club Loose rulebook; [PCA HPDE Minimum Standards](https://mediaassets.pca.org/docs/formsanddocs/94/2026%20HPDE%20Minimum%20Standards.pdf)).
+
+**5-point vs 6-point:**
+
+| | 5-point | 6-point |
+| --- | --- | --- |
+| Sub strap | One, centered between the legs | Two, against the inner thighs |
+| Floor anchors | One center sub-strap anchor | Two sub-strap anchors 4–6 in apart, 2–3 in either side of centerline ([Grassroots Motorsports](https://grassrootsmotorsports.com/articles/strap-how-properly-install-racing-harness/)) |
+| Comfort / ease | Simpler to buckle; common choice for HPDE ([ThreePiece](https://www.threepiece.us/blog/racing-harness-guide-4-vs-5-vs-6-point-explained/)) | Sub straps avoid the groin; more to buckle at entry and exit |
+| Rules | Accepted at every org checked: EMRA requires five or more anchor points; PCA treats five, six, and seven point as equal; Club Loose allows 4–6 point and recommends 5-point for caged cars | Same |
+
+Neither is safer if installed wrong: an improperly installed 6-point is not better than a properly installed 5-point ([Speedway Motors](https://www.speedwaymotors.com/the-toolbox/how-to-choose-a-racing-harness/29453)). Choose by the seat's sub-strap slot(s) and the anchor points available; the VAC lap-belt bracket kit ($39.95) and anti-sub mount ($69.95) support 4–6 point belts ([VAC floor adapter page](https://store.vacmotorsports.com/vac-motorsports-billet-floor-mount-adapter-bmw-e36e46-p559.aspx)).
+
+**Harness options at A-1 Racing (Warminster PA):**
+
+| Harness | A-1 PN | A-1 price | Spec |
+| --- | --- | --- | --- |
+| **G-Force 6-pt FIA** | [7622BK](https://www.a1racing.com/g-force-7622bk-6pt-harness-camlock-hnr-indiv-p-u-black-fia.aspx) | **$299** | FIA, camlock, pull-up adjust, clip-in / wrap-around, individual shoulder straps |
+| G-Force 6-pt SFI 16.5 | [7601BK](https://www.a1racing.com/g-force-7601bk-6pt-harness-camlock-black-sfi16-5-hnr.aspx) | $219 | SFI 16.5, camlock, pull-down adjust, bolt-on / wrap-around |
+| Impact Racing 6-pt SFI 16.5 | [52122326](https://www.a1racing.com/impact-racing-52122326-6-pt-harness-land-l-ind-shldr-3in-to-2in-trans.aspx) | $244.95 | SFI 16.5, latch and link, pull-up right adjust, bolt-on / wrap-around, 3 in to 2 in transition shoulders |
+| Impact Racing 5-pt SFI | [53111231](https://www.a1racing.com/impact-racing-53111231-5-pt-harness-system-l-l-pd-3in-2in-trans-shldr.aspx) | $224.95 | Latch and link, pull-down, 3 in / 2 in transition shoulders |
+
+The G-Force 7622BK is the only FIA-tagged harness found at A-1; the FIA tag gives the longer replacement interval (about $598 for two FIA harnesses over six years vs about $657 for three 2-year SFI harnesses at $219). Its listing does not show the FIA standard or tag date — confirm both before buying. Shoulder belts must be 2 in or 3 in wide for HANS use.
 
 ---
 
 ### HANS Device
 
-**Required at:** EMRA (Pocono) — mandatory per EMRA rulebook §3.4 whenever a racing harness replaces OEM belts. NJMP own events — required for in-car instruction sessions with harness. PCA at NJMP — mandatory with any harness.
+**Required at:** EMRA (Pocono) — Time Trial §3.4 whenever a racing harness replaces OEM belts; always in Road Racing ([EMRA rules](https://www.emraracing.org/wp-content/uploads/2022/03/EMRA-Rules-v3.29.22.1.pdf)). NJMP — tech form: "Must show HANS if using a harness system"; also required for in-car instruction in all groups except Novice ([NJMP tech form](https://njmp.com/wp-content/uploads/2026/01/NJMP-Tech-Form-2026.pdf)). PCA at NJMP — required for all occupants of any car with an aftermarket harness and roll bar or cage ([Schattenbaum event requirements](https://www.motorsportreg.com/events/schattenbaum-2026-hpde-calendar-njmp-pca-855091)). Club Loose A group — a containment/head-restraint seat or a HANS (either one satisfies it).
 
-**Not required at:** MoE HPDE, Drift Evergreen (Drums PA), Club Loose (Englishtown), Ready Set Drift (Pocono lot).
+**Not found in the rules:** MoE HPDE (FAQ does not mention HANS; MoE also runs at NJMP — confirm with MoE), Drift Evergreen (Drums PA), Club Loose B and C groups (Englishtown), Ready Set Drift (Pocono lot; rulebook excerpt does not mention HANS).
 
-**Compatibility:** Bell K1 Sport SA2020 and SA2025 both have M6 threaded posts factory-installed. HANS-ready without modification.
+**Helmet compatibility:** The Bell K1 Sport (SA2020 and SA2025) has M6 threaded terminals built into the shell and is homologated for use with approved head and neck devices ([Bell](https://www.us.bellracing.com/p/k1-sport-sa20/)). The helmet anchors and tethers ship with the HANS device and screw into the terminals with threadlocker; no drilling ([HANS quick start guide](https://documents.hansdevice.com/techlibrary_hans_2022_qsg.pdf)).
+
+**Device spec:** HANS III or IV, 20° (HANS recommends 20° for upright sedan and sports-car seats), Medium or Large per HANS's size chart, FIA/SFI labeled, post-anchor tethers (post anchor and Quick Release M6 are SFI and FIA approved; Quick Click is SFI only) ([Fast Racer](https://www.fastracer.com/a/answers/7526093/What-types-of-HANS-anchors-are-there)). A-1 Racing: HANS III 20° $449.95–$493.95, HANS IV 20° $459.95 ([A-1 HANS catalog](https://www.a1racing.com/search.aspx?manufacturer=107)). The seat needs shoulder slots that let the belts run freely, at least 25 mm between the back of the collar and the top of the seat, and a collar angle of 60–90° from horizontal with the harness tight ([FIA HANS guide](https://www.fia.com/sites/default/files/hans_guide_and_installation_spec_19.03.2022.pdf)).
 
 The biomechanical case: a 5/6-point harness fixes the torso; the head can still swing forward under deceleration (clothesline effect). HANS tethers the helmet to the shoulder device so peak neck load is controlled. Running a harness without HANS is considered by most serious orgs to be worse than OEM belts with no harness. Plan for HANS from the start even if some events don't require it.
 

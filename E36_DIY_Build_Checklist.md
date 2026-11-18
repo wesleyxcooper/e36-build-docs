@@ -426,10 +426,10 @@ Left/right and driver/passenger are LHD-centric and ambiguous in an RHD build. A
     - Option A (sliding, fore/aft adjust, convertible-confirmed — call VAC (215) 462-4666 to confirm PP ABE fitment): [VAC E36/E46 Race Seat Kit](https://store.vacmotorsports.com/vac-motorsports-race-seat-installation-kit-bmw-e36-e46-p1605.aspx) + slider + Recaro side mounts ~$750–900/pair
     - Option B (fixed, lowest seat, no fore/aft): [BK R-9240](https://www.ogracing.com/products/brey-krause-r-9240-driver-seat-side-mount-adapter-bmw-e36-large-width) (driver ~$236) + [R-9241](https://www.ogracing.com/products/brey-krause-r-9241-passenger-seat-side-mount-adapter-bmw-e36-large-width) (passenger ~$236) · [install PDF](https://bkauto.com/v/vspfiles/instructions/R9240.pdf)
     - Option C (sliding, PP/SPG-confirmed — DM EuroConnex to confirm convertible fitment before ordering): [EuroConnex JP Spec E36 M3 kit](https://euroconnex.co/collections/pole-position-mounts/products/recaro-jp-spec-mounting-solution-e36-m3) $1,700/pair confirmed
-- [ ] ✅ Source 5- or 6-point harness (FIA-tagged, not expired) — see `walkthroughs/12-safety-equipment.md`
-- [ ] ✅ Source Bell K1 Sport SA2025 (already owned: SA2020 K1 Sport — valid through 2030) + HANS device
-  - K1 Sport SA2020 has M6 anchor posts — HANS-compatible out of the box
-  - HANS required at EMRA (Pocono) and NJMP own events when running harness; not required at MoE or Drift Evergreen
+- [ ] ✅ Source 5- or 6-point harness (SFI- or FIA-tagged, not expired) — see `walkthroughs/12-safety-equipment.md`
+- [ ] ✅ Source Bell K1 Sport SA2025 (already owned: SA2020 K1 Sport — check the manufacture date; Club Loose requires an SA2020/SA2025 helmet less than 5 years old) + HANS device
+  - K1 Sport SA2020 has M6 threaded terminals — HANS anchors and tethers come with the HANS device
+  - HANS required at EMRA (Pocono), NJMP (tech form), and PCA at NJMP when running a harness; Club Loose A group requires a HANS or containment seat; not found in the MoE or Drift Evergreen rules
 
 ---
 
