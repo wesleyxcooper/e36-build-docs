@@ -380,6 +380,9 @@ The period ACS part — center blade + two end sections, flush-mount slab profil
 | :---- | :---- | :---- | :---- |
 | **Limitless Auto Fab Rear** | ✅ Included | **from $259.99** | [limitlessautofab.com](https://limitlessautofab.com/products/bmw-e36-rear-bash-bar) · [drifthq.com](https://drifthq.com/products/bmw-e36-rear-bash-bar) |
 | **True Focus Standard Rear** | Optional +$35 | **from $335** | [truefocusfab.com](https://truefocusfab.com/products/bmw-e36-standard-rear-bash-bar) |
+| **Alex Gold bolt-on rear jack point (E36 / E46)** | ✅ Jack point only, no bash bar | **Not published, DM only** | [Instagram reel](https://www.instagram.com/p/DgHK67_hSmS/) · DM [@alex_gold55](https://www.instagram.com/alex_gold55/) · new page [@echassis.info](https://www.instagram.com/echassis.info/) |
+
+> **Alex Gold jack point:** bolts to the factory rear bumper shocks and sits behind the factory crash bar, so the crash bar and bumper go back on with factory hardware (no zip ties or brackets). The only modification is a small square cut in the rear apron panel for the jack pintle to poke through. Most cars on decent coilovers lift off the ground with just the jack point; a separate jack pad extension adds about 5" of lift for stock or long-travel suspension and to get jack stands under the car. Per the caption: E36 units arrive late December or very early January, front jack points for both chassis in mid-January, and pre-orders are by DM. No price or shop link is published yet; check @echassis.info for a listing ([reel caption and video](https://www.instagram.com/p/DgHK67_hSmS/)).
 
 #### DIY Construction
 
